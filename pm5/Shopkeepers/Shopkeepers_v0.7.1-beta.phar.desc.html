@@ -1,0 +1,210 @@
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>Configuration via in-game GUI</li>
+<li>Admin shops</li>
+<li>Hit prevention for shopkeepers</li>
+<li>Shop inventory</li>
+</ul>
+<h2><a id="user-content-special-thanks" class="anchor" aria-hidden="true" href="#special-thanks"><span aria-hidden="true" class="octicon octicon-link"></span></a>Special thanks</h2>
+<p>Thanks to <a href="https://github.com/Muqsit">Muqsit</a> for the <a href="https://github.com/Muqsit/InvMenu">InvMenu</a> virion who have contributed to the creation for this plugin!<br>
+Also <a href="https://github.com/FrozenArea/TradeAPI">this plugin</a> helped me!</p>
+<h2><a id="user-content-demostration-video-youtube" class="anchor" aria-hidden="true" href="#demostration-video-youtube"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demostration video (YouTube)</h2>
+<p><a href="https://youtu.be/sustUWTgmMo" rel="nofollow">Link to YouTube Video</a></p>
+<h2><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<p>The base command is <code>/shopkeepers</code> but you can also use <code>/sk</code>, <code>/skeepers</code> and <code>/shopk</code> as alias.
+Here a list of all commands that you can use:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Args</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>info</td>
+<td>none</td>
+<td>Show the plugin's informations</td>
+</tr>
+<tr>
+<td>info</td>
+<td>SHOP NAME</td>
+<td>Show the shop configuration page</td>
+</tr>
+<tr>
+<td>edit</td>
+<td>SHOP NAME</td>
+<td>Edit the shop recepies</td>
+</tr>
+<tr>
+<td>create</td>
+<td>SHOP NAME / NULL</td>
+<td>Create a new shop, if the name is leaved empty will be generated</td>
+</tr>
+<tr>
+<td>summon</td>
+<td>SHOP NAME</td>
+<td>Summon a Shopkeeper entity (as a Villager) for your Shop</td>
+</tr>
+<tr>
+<td>rename</td>
+<td>SHOP NAME and NEW NAME</td>
+<td>[NOT AVAILABLE] Rename a current shop</td>
+</tr>
+<tr>
+<td>list</td>
+<td>none</td>
+<td>Show all of your shops</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-permissions" class="anchor" aria-hidden="true" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h2>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">permissions</span>:
+  <span class="pl-ent">shopkeepers.base</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows users to use the base command<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.summon</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows users to summon player's shop<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.create</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to create a shop<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.edit</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to edit they'r shop<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.list</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to see a list of their shops<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.remove</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to despawn they'r Villager shops<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.rename</span>:
+    <span class="pl-ent">descritpion</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to rename they'r shops<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.namevisible</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to decide if the shopkepeer's name should be visible or no<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.admin</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows users to decide if the shopkeepers should be admin or none<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+  <span class="pl-ent">shopkeepers.shop.kill</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to kill every shopkeepers, also of other players<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+  <span class="pl-ent">shopkeepers.shop.defaultGUI</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to see and use the /sk command without args to open the base GUI<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.use</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to use a shopkeeper when they touch it<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.allowRemoteInventoryOpen</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to open a shopkeeper's inventory with the command /sk inventory<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-s">op</span></pre></div>
+<h2><a id="user-content-faq" class="anchor" aria-hidden="true" href="#faq"><span aria-hidden="true" class="octicon octicon-link"></span></a>F.A.Q.</h2>
+<h3><a id="user-content-how-to-create-an-admin-shop" class="anchor" aria-hidden="true" href="#how-to-create-an-admin-shop"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to create an Admin shop</h3>
+<p>There is not really an Admin shop but you can activate this function by using the command <code>/sk info &lt;SHOP NAME&gt;</code> and then clicking on the Blaze Powder and then clicking on the red wool block that has "Admin shop" as its name</p>
+<h3><a id="user-content-how-to-see-a-shopkeepers-inventory" class="anchor" aria-hidden="true" href="#how-to-see-a-shopkeepers-inventory"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to see a Shopkeeper's inventory</h3>
+<p>There are two ways:</p>
+<ul>
+<li>Use the command <code>/sk info &lt;SHOP NAME&gt;</code> and then click on the chest at the center of the GUI</li>
+<li>Click on the Shopkeeper (Villager) entity</li>
+</ul>
+<h3><a id="user-content-i-want-to-access-to-the-shopkeepers-trade-page-but-if-i-click-the-entity-i-access-the-inventory" class="anchor" aria-hidden="true" href="#i-want-to-access-to-the-shopkeepers-trade-page-but-if-i-click-the-entity-i-access-the-inventory"><span aria-hidden="true" class="octicon octicon-link"></span></a>I want to access to the Shopkeeper's trade page but if i click the entity i access the inventory!</h3>
+<p>Easy: shift and click on the Shopkeeper</p>
+<h2><a id="user-content-bug-reporting" class="anchor" aria-hidden="true" href="#bug-reporting"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bug reporting</h2>
+<p>Although I love to receive messages from people who are excited about something I have created it would be better if <strong>any bugs or problems you find are reposted in the issues of this repository</strong> so that everything is more orderly and accessible!</p>
+<h2><a id="user-content-contributing" class="anchor" aria-hidden="true" href="#contributing"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+<p>Everyone can contribute and take inspiration from my code, however for those who would like to contribute here are some guidelines:</p>
+<ul>
+<li>The code you add, please comment on it</li>
+<li>Before making a pull request try the code you submitted</li>
+<li>All classes having <code>FoxWorn3365Shopkeepers\utils</code> as namespace must be static and final</li>
+<li>In the PR please EXPLAIN what you changed because I don't have all the time in the world to decipher unknown and unexplained codes</li>
+<li>Use the used file "headers" but add a row under the <code>Copyright (C) 2023-now FoxWorn3365</code> like <code>Contributor(s): YouGitHubUsername</code> and update the file mapping (<code>Current file</code>)
+That said feel free to contribute, it's not like I'm going to eat you if you make a mistake!</li>
+</ul>
+<h2><a id="user-content-known-bugs" class="anchor" aria-hidden="true" href="#known-bugs"><span aria-hidden="true" class="octicon octicon-link"></span></a>Known bugs:</h2>
+<ul>
+<li>When you trade your inventory on the trade page it doesn't update correctly but as soon as you close the page it all sorts out correctly, so it's not urgent.</li>
+</ul>
+<h2><a id="user-content-objects" class="anchor" aria-hidden="true" href="#objects"><span aria-hidden="true" class="octicon octicon-link"></span></a>Objects</h2>
+<p><strong>Shopkeepers</strong>, to be as configurable and manageable as possible saves IRT (In-Real-Time) player configurations in a .json file located in its PocketMine-MP plugins folder (<code>/path/to/server/plugin_data/</code>) and these are the objects that are serialized and then saved:</p>
+<h3><a id="user-content-shop-object" class="anchor" aria-hidden="true" href="#shop-object"><span aria-hidden="true" class="octicon octicon-link"></span></a>Shop object</h3>
+<p>The main object, if a player have one or more shop will have also a shop object in his .json.</p>
+<blockquote>
+<p><strong>Note</strong><br>
+The Shop object is in an object array and have the title as key!</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>author</td>
+<td>string</td>
+<td>The username of the shop author</td>
+</tr>
+<tr>
+<td>admin</td>
+<td>bool</td>
+<td>If the shop is an Admin shop, so you don't have to put items in the inventory and you won't earn anything</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>The real name of the shop</td>
+</tr>
+<tr>
+<td>namevisible</td>
+<td>bool</td>
+<td>Should the shop name be visible when summoned?</td>
+</tr>
+<tr>
+<td>inventory</td>
+<td>array</td>
+<td>The inventory of the shop</td>
+</tr>
+<tr>
+<td>items</td>
+<td>array</td>
+<td>A list of all recepies (max 9)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight highlight-source-json"><pre>{
+    <span class="pl-ent">"author"</span>:<span class="pl-s"><span class="pl-pds">"</span>[PlayerName]<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"admin"</span>:<span class="pl-c1">false</span>,
+    <span class="pl-ent">"title"</span>:<span class="pl-s"><span class="pl-pds">"</span>[ShopName]<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"namevisible"</span>:<span class="pl-c1">false</span>,
+    <span class="pl-ent">"inventory"</span>:[],
+    <span class="pl-ent">"items"</span>:[
+        <span class="pl-ii">itemObjects</span>
+    ]
+}</pre></div>
+<h3><a id="user-content-item-object" class="anchor" aria-hidden="true" href="#item-object"><span aria-hidden="true" class="octicon octicon-link"></span></a>Item Object</h3>
+<p>How we save items to sell and buy.</p>
+<div class="highlight highlight-source-json"><pre>{
+    <span class="pl-ent">"sell"</span>:<span class="pl-ii">nbtSerializedItemString,</span>
+    <span class="pl-ent">"buy"</span>:<span class="pl-ii">nbtSerializedItemString</span>
+}</pre></div>
+<h3><a id="user-content-serializeditemstring" class="anchor" aria-hidden="true" href="#serializeditemstring"><span aria-hidden="true" class="octicon octicon-link"></span></a>serializedItemString</h3>
+<p>It is the object string as NBT.
+Ez.</p>
+<h2><a id="user-content-roadmap" class="anchor" aria-hidden="true" href="#roadmap"><span aria-hidden="true" class="octicon octicon-link"></span></a>Roadmap</h2>
+<ul>
+<li>[x] Update the item object because now it's the old one</li>
+<li>[x] Make if the ContainerClose packet is received unset the <code>$this-&gt;trades-&gt;{PLAYER}</code> object because otherwise is OP!</li>
+<li>[x] Updated the item object with nbt</li>
+<li>[x] Working Admin shop (without inventory)</li>
+<li>[x] Inventory saving correctly</li>
+<li>[x] Player shop</li>
+<li>[x] Shopkeeper's inventory updating when players buy</li>
+<li>[x] Shopkeeper deny a trade if the inventory is without the item</li>
+<li>[ ] Shopkeeper online editor? Are u serious?</li>
+<li>[ ] Shopkeeper online TRADE?!?'!?!jQuery32105346482203223147_1687197933005! ARE U SERIOUSSS???!?</li>
+</ul>

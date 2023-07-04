@@ -1,0 +1,340 @@
+<p>With <strong>StaminaSystem</strong> you can implement stamina in many common areas in minecraft such as PVP and racing!
+This plugin, thanks to the incredible customization will always reflect your needs and will be easily adaptable to any context!</p>
+<h2><a id="user-content-mechanics" class="anchor" aria-hidden="true" href="#mechanics"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mechanics</h2>
+<p>The plugin offers various mechanics focused on stamina, this is a complete list:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Activable\Deactivable</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regeneration by walking</td>
+<td>true</td>
+<td>true</td>
+</tr>
+<tr>
+<td>Regeneration by item</td>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>Regeneration by food</td>
+<td>true</td>
+<td>true</td>
+</tr>
+<tr>
+<td>Hit enhancer</td>
+<td>true</td>
+<td>true</td>
+</tr>
+<tr>
+<td>Stamina-shield</td>
+<td>true</td>
+<td>true</td>
+</tr>
+<tr>
+<td>Stamina shift-knockback</td>
+<td>true</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-configuration" class="anchor" aria-hidden="true" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h2>
+<p>Here explained in a table all the configurable values.<br>
+In the case of object is used the PHP notation so <code>parent-&gt;child</code></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Nullable</th>
+<th>Outdated</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enabled</code></td>
+<td><code>bool</code></td>
+<td><code>true</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+<td>Whether the plugin is enabled</td>
+</tr>
+<tr>
+<td><code>waiting-moves-before-regenerate</code></td>
+<td><code>int</code></td>
+<td><code>5</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>How much movements must a player do before the stamina restart regenerating?</td>
+</tr>
+<tr>
+<td><code>max-stamina</code></td>
+<td><code>int</code></td>
+<td><code>100</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>The max amout of stamina</td>
+</tr>
+<tr>
+<td><code>stamina-per-move</code></td>
+<td><code>float/int</code></td>
+<td><code>0.5</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>How much stamina should be removed for every move (only when sprinting)?</td>
+</tr>
+<tr>
+<td><code>bed-restore-stamina</code></td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>Should bed restore stamina?</td>
+</tr>
+<tr>
+<td><code>bed-restore-stamina-level</code></td>
+<td><code>int</code></td>
+<td><code>10</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>Should bed restore stamina? If yes, how much?</td>
+</tr>
+<tr>
+<td><code>do-food-regen</code></td>
+<td><code>bool</code></td>
+<td><code>true</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>Do food regen stamina?</td>
+</tr>
+<tr>
+<td><code>level-for-negative-effects</code></td>
+<td><code>int</code></td>
+<td><code>10</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>If stamina is &lt;= to this level will have some negatives effect like slowness and other</td>
+</tr>
+<tr>
+<td><code>stamina-hit-cost</code></td>
+<td><code>int/float</code></td>
+<td><code>1</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+<td>OUTDATED, NOW IN <code>hit</code> ELEMENT!</td>
+</tr>
+<tr>
+<td><code>stamina-run-cost</code></td>
+<td><code>int/float</code></td>
+<td><code>0.1</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+<td>OUTDATED, NOW IN <code>sprint</code> ELEMENT!</td>
+</tr>
+<tr>
+<td><code>stamina-block-break-cost</code></td>
+<td><code>int/float</code></td>
+<td><code>0.5</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+<td>OUTDATED, ABANDONED FEATURE</td>
+</tr>
+<tr>
+<td><code>run-regenerate-stamina</code></td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>If true, running wont' consume stamina</td>
+</tr>
+<tr>
+<td><code>stamina-powerup</code></td>
+<td><code>object</code></td>
+<td>Object</td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>All items in this object will be increase the max stamina level</td>
+</tr>
+<tr>
+<td><code>stamina-powerup-&gt;iron_sword</code></td>
+<td><code>int</code></td>
+<td><code>10</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>The <code>iron_sword</code> item will increase the max stamina level by 10</td>
+</tr>
+<tr>
+<td><code>stamina-food-regen</code></td>
+<td><code>object</code></td>
+<td>Object</td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>All foods in this object when eaten will be regenerate stamina</td>
+</tr>
+<tr>
+<td><code>stamina-food-regen-&gt;default</code></td>
+<td><code>int</code></td>
+<td><code>2</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>If the food is not in the list this value will be used</td>
+</tr>
+<tr>
+<td><code>stamina-food-regen-&gt;apple</code></td>
+<td><code>int</code></td>
+<td><code>4</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>If an apple is eat 4 stamina points will be rigenerated!</td>
+</tr>
+<tr>
+<td><code>item-regeneration</code></td>
+<td><code>object</code></td>
+<td>Object</td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>All items in this list will rigenerate stamina by having it in the hand / inventory</td>
+</tr>
+<tr>
+<td><code>item-regeneration-&gt;iron_axe</code></td>
+<td><code>object</code></td>
+<td>Object</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>All regeneration settings for the item <code>iron_axe</code>
+</td>
+</tr>
+<tr>
+<td><code>item-regeneration-&gt;iron_axe-&gt;should-be-holded</code></td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>The item will regenerate only if holded</td>
+</tr>
+<tr>
+<td><code>item-regeneration-&gt;iron_axe-&gt;amount</code></td>
+<td><code>int/float</code></td>
+<td>N/D</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>How much?</td>
+</tr>
+<tr>
+<td><code>speed</code></td>
+<td><code>perkObject</code></td>
+<td>perkObject</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>The perk object for speed powerup</td>
+</tr>
+<tr>
+<td><code>hit</code></td>
+<td><code>perkObject</code></td>
+<td>perkObject</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>The perk object for speed powerup</td>
+</tr>
+<tr>
+<td><code>shield</code></td>
+<td><code>perkObject</code></td>
+<td>perkObject</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>The perk object for speed powerup</td>
+</tr>
+<tr>
+<td><code>shift-knockback</code></td>
+<td><code>perkObject</code></td>
+<td>perkObject</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>The perk object for speed powerup</td>
+</tr>
+<tr>
+<td><code>rounding-stamina</code></td>
+<td><code>bool</code></td>
+<td><code>true</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>Should stamina be rounded when displayed to a player?</td>
+</tr>
+<tr>
+<td><code>rounding-level</code></td>
+<td><code>int</code></td>
+<td><code>0</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>How much?</td>
+</tr>
+<tr>
+<td><code>show-stamina-level</code></td>
+<td><code>bool</code></td>
+<td><code>true</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>Should the stamina level indicator (as Tip) be displayed to player?</td>
+</tr>
+<tr>
+<td><code>stamina-level-text</code></td>
+<td><code>string</code></td>
+<td>Stamina: %stamina%/%totalstamina%</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>Set the stamina display text. Placeholders: %stamina% -&gt; current stamina level    %totalstamina% -&gt; max stamina for player</td>
+</tr>
+<tr>
+<td><code>stamina-refresh-rate</code></td>
+<td><code>int</code></td>
+<td><code>2</code></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>In tick, every when tick(s) should the player stamina tip be refreshed (so updated)?</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content-perkobject" class="anchor" aria-hidden="true" href="#perkobject"><span aria-hidden="true" class="octicon octicon-link"></span></a>perkObject</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enabled</td>
+<td>bool</td>
+<td>true</td>
+</tr>
+<tr>
+<td>cost</td>
+<td>int/float</td>
+<td>N/D</td>
+</tr>
+<tr>
+<td>perk</td>
+<td>?int/float</td>
+<td>N/D</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-contact-me" class="anchor" aria-hidden="true" href="#contact-me"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact me</h2>
+<p>You can contact me via:</p>
+<ul>
+<li>
+<strong>Email:</strong> <code>foxworn3365@gmail.com</code>
+</li>
+<li>
+<strong>Discord:</strong> <code>@foxworn</code>
+</li>
+</ul>

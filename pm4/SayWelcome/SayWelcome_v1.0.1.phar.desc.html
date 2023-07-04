@@ -1,0 +1,100 @@
+<h1>
+<a id="user-content--saywelcome" class="anchor" href="#-saywelcome" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="speech_balloon" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ac.png">💬</g-emoji> SayWelcome</h1>
+<p align="center">
+    <a href="https://raw.githubusercontent.com/Verre2OuiSki/SayWelcome/main/icon.png" target="_blank" rel="nofollow"><img src="https://raw.githubusercontent.com/Verre2OuiSki/SayWelcome/main/icon.png" style="max-width:100%;"></a>
+    <br>
+    <b>
+      A configurable <i>PocketMine-MP</i> plugin allows you to say welcome to a new player joining the server, and earn rewards for your kindness!
+    </b>
+</p>
+<h1>
+<a id="user-content--how-to-use-" class="anchor" href="#-how-to-use-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="thinking" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f914.png">🤔</g-emoji> How to use ?</h1>
+<p>Very simple !<br>
+Just run <code>/welcome</code> command and that's it ! You will receive your rewards juste after that !</p>
+<h1>
+<a id="user-content--commands" class="anchor" href="#-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="computer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png">💻</g-emoji> Commands</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Permission</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/welcome</code></td>
+<td>saywelcome.command.welcome</td>
+<td><code>true</code></td>
+<td>Allow the player to welcome new players</td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content--config" class="anchor" href="#-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="floppy_disk" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4be.png">💾</g-emoji> Config</h1>
+<div class="highlight highlight-source-yaml"><pre>---
+
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span>   __      __                ___   ____        _  _____ _    _</span>
+<span class="pl-c"><span class="pl-c">#</span>   \ \    / /               |__ \ / __ \      (_)/ ____| |  (_)</span>
+<span class="pl-c"><span class="pl-c">#</span>    \ \  / /__ _ __ _ __ ___   ) | |  | |_   _ _| (___ | | ___</span>
+<span class="pl-c"><span class="pl-c">#</span>     \ \/ / _ \ '__| '__/ _ \ / /| |  | | | | | |\___ \| |/ / |</span>
+<span class="pl-c"><span class="pl-c">#</span>      \  /  __/ |  | | |  __// /_| |__| | |_| | |____) |   &lt;| |</span>
+<span class="pl-c"><span class="pl-c">#</span>       \/ \___|_|  |_|  \___|____|\____/ \__,_|_|_____/|_|\_\_|</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Do you have a problem ?</span>
+<span class="pl-c"><span class="pl-c">#</span> </span>
+<span class="pl-c"><span class="pl-c">#</span> Discord (en) : https://discord.gg/P8R4WhARrY</span>
+<span class="pl-c"><span class="pl-c">#</span> Discord (fr) : https://discord.gg/DnmRbAxMbN</span>
+
+
+
+<span class="pl-c"><span class="pl-c">#</span> Time before you can no longer welcome</span>
+<span class="pl-ent">welcome_time</span>: <span class="pl-s"><span class="pl-pds">"</span>01:00<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">messages</span>:
+
+  <span class="pl-c"><span class="pl-c">#</span> --= Chat</span>
+  <span class="pl-c"><span class="pl-c">#</span> Message when new player join</span>
+  <span class="pl-ent">new_player</span>: <span class="pl-s"><span class="pl-pds">"</span>§2§l» §r§a{player} joined the server for the first time<span class="pl-cce">\n</span>Welcome him !<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Message sent by the player who said welcome</span>
+  <span class="pl-ent">player_say_welcome</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span>Welcome @{player} !<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>Hey @{player} !<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>Hi @{player} ! Welcome to the server!<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>Welcome @{player} ! I hope you like the server!<span class="pl-pds">"</span></span>
+
+
+  <span class="pl-c"><span class="pl-c">#</span> --= Commands</span>
+  <span class="pl-c"><span class="pl-c">#</span> Message when there is no new player</span>
+  <span class="pl-ent">no_new_player</span>: <span class="pl-s"><span class="pl-pds">"</span>§cThere are no new player at this moment...<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Message when the player has already said welcome to the new player</span>
+  <span class="pl-ent">already_say_welcome</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou have already say welcome to {player}<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Message when the player tries to welcome himself</span>
+  <span class="pl-ent">is_new_player</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou can't say welcome to you !<span class="pl-pds">"</span></span>
+
+
+<span class="pl-c"><span class="pl-c">#</span> Command to execute when player say welcome to new player</span>
+<span class="pl-c"><span class="pl-c">#</span> exemple : give {player} 264 4</span>
+<span class="pl-ent">rewards</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>give {player} 264 4<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> give 4 diamonds to the player who said welcome</span>
+  - <span class="pl-s"><span class="pl-pds">"</span>give {player} 265 10<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> give 10 iron ingots to the player who said welcome</span>
+
+
+...</pre></div>
+<h1>
+<a id="user-content--reach-me" class="anchor" href="#-reach-me" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="mailbox" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4eb.png">📫</g-emoji> Reach me</h1>
+<div align="center">
+    <a href="https://discord.gg/P8R4WhARrY" rel="nofollow">
+        <img src="https://camo.githubusercontent.com/41fe94eaf5a9ffeb3f9ce75245ce7d188f6fcb8185192b252b63c9ccc9ee0da7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446973636f7264253238454e2532392d2532333732383944412e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d646973636f7264266c6f676f436f6c6f723d7768697465" data-canonical-src="https://img.shields.io/badge/Discord%28EN%29-%237289DA.svg?style=for-the-badge&amp;logo=discord&amp;logoColor=white" style="max-width:100%;">
+    </a>
+    <a href="https://twitter.com/Verre2OuiSki" rel="nofollow">
+        <img src="https://camo.githubusercontent.com/0686a24ebec208b2f419f9c024e3d1257b69b0c18525e7b75b11730a89b8c627/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5665727265324f7569536b692d2532333144413146322e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d54776974746572266c6f676f436f6c6f723d7768697465" data-canonical-src="https://img.shields.io/badge/Verre2OuiSki-%231DA1F2.svg?style=for-the-badge&amp;logo=Twitter&amp;logoColor=white" style="max-width:100%;">
+    </a>
+    <a href="https://discord.gg/DnmRbAxMbN" rel="nofollow">
+        <img src="https://camo.githubusercontent.com/81f68098f45c569172929142ff6603bb0e2872f5542e678fb031c85132b63901/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446973636f726425323846522532392d2532333732383944412e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d646973636f7264266c6f676f436f6c6f723d7768697465" data-canonical-src="https://img.shields.io/badge/Discord%28FR%29-%237289DA.svg?style=for-the-badge&amp;logo=discord&amp;logoColor=white" style="max-width:100%;">
+    </a>
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14654d2e12943e","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

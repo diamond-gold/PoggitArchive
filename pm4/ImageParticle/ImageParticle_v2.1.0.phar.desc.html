@@ -1,0 +1,20 @@
+<h1><a id="user-content-how-to-use" class="anchor" aria-hidden="true" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a>how to use</h1>
+<ol>
+<li>this plugin load</li>
+<li>image file put at plugin_data/ImageParticle/image/</li>
+<li>Enter a file name at plugin_data/ImageParticle/Images.yml</li>
+<li>server reboot</li>
+</ol>
+<p><a href="https://github.com/sky-min/ImageToParticle/tree/master/example">plugin_data example</a></p>
+<h1><a id="user-content-api" class="anchor" aria-hidden="true" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h1>
+<h2><a id="user-content-registerimageparticle" class="anchor" aria-hidden="true" href="#registerimageparticle"><span aria-hidden="true" class="octicon octicon-link"></span></a>registerImageParticle</h2>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> skymin\<span class="pl-v">ImageParticle</span>\particle\<span class="pl-v">ImageParticleAPI</span>;
+
+<span class="pl-c">/** @see skymin\ImageParticle\utils\ImageTypes for $imageType*/</span>
+<span class="pl-v">ImageParticleAPI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">registerImage</span>(string <span class="pl-s1"><span class="pl-c1">$</span>name</span>, string <span class="pl-s1"><span class="pl-c1">$</span>imageFile</span>, int <span class="pl-s1"><span class="pl-c1">$</span>imageType</span>);</pre></div>
+<h2><a id="user-content-sendimageparticle" class="anchor" aria-hidden="true" href="#sendimageparticle"><span aria-hidden="true" class="octicon octicon-link"></span></a>sendImageParticle</h2>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> skymin\<span class="pl-v">ImageParticle</span>\particle\<span class="pl-v">ImageParticleAPI</span>;
+
+<span class="pl-c">/** @param pocketmine\entity\Location $center */</span>
+<span class="pl-v">ImageParticleAPI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">sendParticle</span>(string <span class="pl-s1"><span class="pl-c1">$</span>name</span>, <span class="pl-v">Location</span> <span class="pl-s1"><span class="pl-c1">$</span>center</span>, int <span class="pl-s1"><span class="pl-c1">$</span>count</span>, float <span class="pl-s1"><span class="pl-c1">$</span>unit</span>, bool <span class="pl-s1"><span class="pl-c1">$</span>asyncEncode</span>);</pre></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1461e0bb9b9440","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

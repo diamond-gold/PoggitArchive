@@ -1,0 +1,250 @@
+<h1>
+<a id="user-content-piggycustomenchants--" class="anchor" href="#piggycustomenchants--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PiggyCustomEnchants <a href="https://poggit.pmmp.io/p/PiggyCustomEnchants" rel="nofollow"><img src="https://camo.githubusercontent.com/796270874709e624b51be94233c35ce5a27eddb132a149b215953e688eb85a86/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2f5069676779437573746f6d456e6368616e7473" alt="Poggit-CI" data-canonical-src="https://poggit.pmmp.io/shield.dl/PiggyCustomEnchants" style="max-width:100%;"></a> <a href="https://discord.gg/qmnDsSD" rel="nofollow"><img src="https://camo.githubusercontent.com/7703e7dbee515375baba2edb8001bea0b7091279d34b235bf124183234ca1930/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3333303835303330373630373336333538353f6c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/330850307607363585?logo=discord" style="max-width:100%;"></a>
+</h1>
+<p>PiggyCustomEnchants is an open-sourced custom enchants plugin for <a href="https://github.com/pmmp/PocketMine-MP">PocketMine-MP</a> featuring over 90 custom enchantments.</p>
+
+<h2>
+<a id="user-content-faq" class="anchor" href="#faq" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FAQ</h2>
+<p><strong>Q:</strong> How do I create/use an enchanted book? 
+<strong>A:</strong> If you want to create an enchanted book, use the /ce enchant command on a normal book. Afterwards, you place the item you want to enchant on top of the enchanted book. It will then enchant your item.</p>
+<h2>
+<a id="user-content-prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prerequisites</h2>
+<ul>
+<li>Basic knowledge on how to install plugins from Poggit Releases and/or Poggit CI</li>
+<li>PMMP 4.2.0+</li>
+<li>MCPE protocol 486 (v1.18.10)</li>
+</ul>
+<h2>
+<a id="user-content-installation--setup" class="anchor" href="#installation--setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation &amp; Setup</h2>
+<ol>
+<li>Install the plugin from Poggit.</li>
+<li>(Optional) Configure your PiggyCE
+<ul>
+<li>Enchantment rarities, max levels, names, descriptions, &amp; chances can be configured in their respective JSON files.
+<ul>
+<li>
+<code>chances.json</code>: Allows custom chance multipliers for any reactive enchantments.
+<ul>
+<li>Reaction chances are calculated by <code>chance multiplier * enchantment level</code>.</li>
+<li>The chance multiplier by default is 100 for most enchantments.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Extra enchantment settings can be found under <code>extra_data.json</code>
+</li>
+<li>The <code>config.yml</code> has many options. Some that you should pay attention to are:
+<ul>
+<li>
+<p><code>disabled-enchants</code>: Allows certain enchants to be disabled</p>
+<div class="highlight highlight-source-yaml"><pre>   <span class="pl-ent">disabled-enchants</span>:
+     - <span class="pl-s">Porkified</span></pre></div>
+</li>
+<li>
+<p><code>per-world-disabled-enchants</code>: Allows certain enchants to be disabled in specific worlds</p>
+<div class="highlight highlight-source-yaml"><pre>   <span class="pl-ent">per-world-disabled-enchants</span>:
+     <span class="pl-c"><span class="pl-c">#</span> Disables Porkified &amp; Volley in PlotWorld</span>
+     <span class="pl-ent">PlotWorld</span>:
+       - <span class="pl-s">Porkified</span>
+       - <span class="pl-s">Volley</span>
+     <span class="pl-c"><span class="pl-c">#</span> Disables Jetpack in SurvivalWorld</span>
+     <span class="pl-ent">SurvivalWorld</span>:
+       - <span class="pl-s">Jetpack</span></pre></div>
+</li>
+<li>
+<p><code>world-damage</code>: Toggles world damage for explosive enchantments</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>(Optional) Install additional plugins supporting PiggyCE:
+<ul>
+<li>
+<a href="https://poggit.pmmp.io/p/PiggyCrates" rel="nofollow">PiggyCrates</a> (Official)</li>
+<li>
+<a href="https://poggit.pmmp.io/p/PiggyCustomEnchantsShop" rel="nofollow">PiggyCustomEnchantsShop</a> (Official)</li>
+<li>
+<a href="https://poggit.pmmp.io/p/PCEAllyChecks" rel="nofollow">PCEAllyChecks</a> (Official)</li>
+<li>
+<a href="https://poggit.pmmp.io/p/PCEBookShop" rel="nofollow">PCEBookShop</a> (Official)</li>
+<li>Kits
+<ul>
+<li><a href="https://poggit.pmmp.io/p/EasyKits" rel="nofollow">EasyKits</a></li>
+<li><a href="https://poggit.pmmp.io/p/AdvancedKits" rel="nofollow">AdvancedKits</a></li>
+<li><a href="https://poggit.pmmp.io/p/KitUI" rel="nofollow">KitUI</a></li>
+<li><a href="https://poggit.pmmp.io/p/KitsPlus" rel="nofollow">KitsPlus</a></li>
+</ul>
+</li>
+<li><a href="https://poggit.pmmp.io/p/EnchantUI" rel="nofollow">EnchantUI</a></li>
+</ul>
+</li>
+<li>You're done! Start your server.</li>
+</ol>
+<h2>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permissions</th>
+<th>Aliases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/customenchant</code></td>
+<td>Main command for PiggyCustomEnchants</td>
+<td><code>piggycustomenchants.command.ce</code></td>
+<td><code>/ce</code></td>
+</tr>
+<tr>
+<td><code>/customenchant about</code></td>
+<td>Shows version and author information</td>
+<td><code>piggycustomenchants.command.ce.about</code></td>
+<td><code>/ce about</code></td>
+</tr>
+<tr>
+<td><code>/customenchant enchant</code></td>
+<td>Command to enchant an item with custom enchants</td>
+<td><code>piggycustomenchants.command.ce.enchant</code></td>
+<td><code>/ce enchant</code></td>
+</tr>
+<tr>
+<td><code>/customenchant help</code></td>
+<td>Lists all PiggyCustomEnchant commands</td>
+<td><code>piggycustomenchants.command.ce.help</code></td>
+<td><code>/ce help</code></td>
+</tr>
+<tr>
+<td><code>/customenchant info</code></td>
+<td>Gives information on a custom enchant</td>
+<td><code>piggycustomenchants.command.ce.info</code></td>
+<td><code>/ce info</code></td>
+</tr>
+<tr>
+<td><code>/customenchant list</code></td>
+<td>Lists all PiggyCustomEnchants enchants</td>
+<td><code>piggycustomenchants.command.ce.list</code></td>
+<td><code>/ce list</code></td>
+</tr>
+<tr>
+<td><code>/customenchant nbt</code></td>
+<td>Outputs the NBT of the held item</td>
+<td><code>piggycustomenchants.command.ce.nbt</code></td>
+<td><code>/ce nbt</code></td>
+</tr>
+<tr>
+<td><code>/customenchant remove</code></td>
+<td>Removes a custom enchant from the held item</td>
+<td><code>piggycustomenchants.command.ce.remove</code></td>
+<td><code>/ce remove</code></td>
+</tr>
+</tbody>
+</table>
+<h2>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h2>
+<table>
+<thead>
+<tr>
+<th>Permissions</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>piggycustomenchants</code></td>
+<td>Allows usage of all PiggyCustomEnchants features</td>
+<td><code>op</code></td>
+</tr>
+<tr>
+<td><code>piggycustomenchants.command</code></td>
+<td>Allow usage of all PiggyCustomEnchants commands</td>
+<td><code>op</code></td>
+</tr>
+<tr>
+<td><code>piggycustomenchants.command.ce</code></td>
+<td>Allow usage of the /customenchant command</td>
+<td><code>op</code></td>
+</tr>
+<tr>
+<td><code>piggycustomenchants.command.ce.about</code></td>
+<td>Allow usage of the /customenchant about subcommand</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>piggycustomenchants.command.ce.enchant</code></td>
+<td>Allow usage of the /customenchant enchant subcommand</td>
+<td><code>op</code></td>
+</tr>
+<tr>
+<td><code>piggycustomenchants.command.ce.help</code></td>
+<td>Allow usage of the /customenchant help subcommand</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>piggycustomenchants.command.ce.info</code></td>
+<td>Allow usage of the /customenchant info subcommand</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>piggycustomenchants.command.ce.list</code></td>
+<td>Allow usage of the /customenchant list subcommand</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>piggycustomenchants.command.ce.nbt</code></td>
+<td>Allow usage of the /customenchant nbt subcommand</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>piggycustomenchants.command.ce.remove</code></td>
+<td>Allow usage of the /customenchant remove subcommand</td>
+<td><code>op</code></td>
+</tr>
+<tr>
+<td><code>piggycustomenchants.overridecheck</code></td>
+<td>Allow overriding of custom enchant level limit and item restriction</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h2>
+<a id="user-content-issue-reporting" class="anchor" href="#issue-reporting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Issue Reporting</h2>
+<ul>
+<li>If you experience an unexpected non-crash behavior with PiggyCustomEnchants, click <a href="https://github.com/DaPigGuy/PiggyCustomEnchants/issues/new?assignees=DaPigGuy&amp;labels=bug&amp;template=bug_report.md&amp;title=">here</a>.</li>
+<li>If you experience a crash in PiggyCustomEnchants, click <a href="https://github.com/DaPigGuy/PiggyCustomEnchants/issues/new?assignees=DaPigGuy&amp;labels=bug&amp;template=crash.md&amp;title=">here</a>.</li>
+<li>If you would like to suggest a feature to be added to PiggyCustomEnchants, click <a href="https://github.com/DaPigGuy/PiggyCustomEnchants/issues/new?assignees=DaPigGuy&amp;labels=suggestion&amp;template=suggestion.md&amp;title=">here</a>.</li>
+<li>If you require support, please join our discord server <a href="https://discord.gg/qmnDsSD" rel="nofollow">here</a>.</li>
+<li>Do not file any issues related to outdated API version; we will resolve such issues as soon as possible.</li>
+<li>We do not support any spoons of PocketMine-MP. Anything to do with spoons (Issues or PRs) will be ignored.
+<ul>
+<li>This includes plugins that modify PocketMine-MP's behavior directly, such as TeaSpoon.</li>
+</ul>
+</li>
+</ul>
+<h2>
+<a id="user-content-additional-information" class="anchor" href="#additional-information" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Information</h2>
+<ul>
+<li>Detailed Plugin Setup, Custom Enchantment List, &amp; API Documentation available at <a href="https://piggydocs.aericio.net/PiggyCustomEnchants.html" rel="nofollow">PiggyDocs</a>.</li>
+</ul>
+<h2>
+<a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<pre><code>   Copyright 2017 DaPigGuy
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+</code></pre>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14644d4cf4175f","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

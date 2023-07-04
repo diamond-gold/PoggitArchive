@@ -1,0 +1,35 @@
+<p>MCPEToDiscord is where you can see the messages sent ingame. You can also see who entered and left the server. You can change the messages in the config. You can also display the rank, for example. I fixed the plugin the Original Plugin: <a href="https://github.com/JaxkDev/MCPEToDiscord">https://github.com/JaxkDev/MCPEToDiscord</a>
+The config:</p>
+<pre><code>---
+
+language: 'english' # english, spanish, german, traditional_chinese, simplified_chinese
+
+debug: false
+
+discord: true
+
+pureperms: false
+factions: false
+
+banned_list:
+- '@here'
+- '@everyone'
+
+webhook_url: ""
+webhook_name: "MCPE Webhook"
+webhook_playerChat?: true
+webhook_playerJoin?: true
+webhook_playerLeave?: true
+webhook_playerDeath?: true
+
+webhook_playerChatFormat: "[ {player} | {time} ] : {msg}"
+webhook_playerJoinFormat: "{player} Joined the server !"
+webhook_playerLeaveFormat: "{player} Left the server !"
+webhook_playerDeathFormat: "{player} Died !"
+
+other_pluginEnabled?: true
+other_pluginDisabled?: true
+other_pluginEnabledFormat: "Plugin Enabled !"
+other_pluginDisabledFormat: "Plugin Disabled !"
+...
+</code></pre>

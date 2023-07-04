@@ -1,0 +1,35 @@
+<ul dir="auto">
+<li>Added support for PocketMine-MP 5.0.0</li>
+<li>Fixed a bug where bedrock never drops when exploded</li>
+</ul>
+<h1 dir="auto">API</h1>
+<ul dir="auto">
+<li>The following classes have been added:
+<ul dir="auto">
+<li><code class="notranslate">BedrockConfig</code></li>
+<li><code class="notranslate">BedrockData</code></li>
+<li><code class="notranslate">BedrockDatabase</code> - used to store all bedrock blocks that changed</li>
+<li><code class="notranslate">TogglingBedrockManager</code> - used to toggle bedrock breakable state for a player</li>
+</ul>
+</li>
+<li><code class="notranslate">Bedrock</code> class has been removed, use <code class="notranslate">BedrockConfig</code> or <code class="notranslate">BedrockData</code> and <code class="notranslate">BedrockDatabase</code> instead.</li>
+<li>The following methods have been added:
+<ul dir="auto">
+<li><code class="notranslate">Main-&gt;getTogglingBedrockManager()</code></li>
+<li><code class="notranslate">Main-&gt;getBedrockConfig()</code></li>
+<li><code class="notranslate">Main-&gt;getBedrockDatabase()</code></li>
+</ul>
+</li>
+<li>The following methods have been removed:
+<ul dir="auto">
+<li><code class="notranslate">Main-&gt;setTogglingBedrock()</code> - use <code class="notranslate">TogglingBedrockManager-&gt;setTogglingBedrock()</code> instead</li>
+<li><code class="notranslate">Main-&gt;removeTogglingBedrock()</code> - use <code class="notranslate">TogglingBedrockManager-&gt;removeTogglingBedrock()</code> instead</li>
+<li><code class="notranslate">Main-&gt;isTogglingBedrock()</code> - use <code class="notranslate">TogglingBedrockManager-&gt;isTogglingBedrock()</code> instead</li>
+<li><code class="notranslate">Main-&gt;getTogglingBedrock()</code> - use <code class="notranslate">TogglingBedrockManager-&gt;getTogglingBedrock()</code> instead</li>
+<li><code class="notranslate">Main-&gt;registerBlock()</code></li>
+<li><code class="notranslate">TileBedrock-&gt;getDefaultName()</code></li>
+<li><code class="notranslate">TileBedrock-&gt;setBreakable()</code></li>
+<li><code class="notranslate">TileBedrock-&gt;setExplodeCount()</code></li>
+</ul>
+</li>
+</ul>

@@ -1,0 +1,80 @@
+<div align="center">
+<h1>
+<a id="user-content-toastbroadcaster--v100" class="anchor" href="#toastbroadcaster--v100" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ToastBroadcaster | v1.0.0<h1>
+<a id="" class="anchor" href="#" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+</h1>
+</h1>
+</div>
+<p align="center">
+<br>
+<a href="https://poggit.pmmp.io/p/ToastBroadcaster" rel="nofollow"><img src="https://camo.githubusercontent.com/0382b4bbea1cd2c641924712d008f1a74e32f7a37b9f21e98ee47088b74ef572/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f546f61737442726f6164636173746572" data-canonical-src="https://poggit.pmmp.io/shield.state/ToastBroadcaster" style="max-width:100%;"></a>
+<br>
+<a href="https://github.com/NoobMCBG/ToastBroadcaster/blob/main/rainbow.gif" target="_blank" rel="noopener noreferrer"><img src="https://github.com/NoobMCBG/ToastBroadcaster/raw/main/rainbow.gif" style="max-width:100%;"></a>
+<br>
+<g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji> Create toast style notifications for all your players <g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+<br>
+<a href="https://github.com/NoobMCBG/ToastBroadcaster/blob/main/toast.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/NoobMCBG/ToastBroadcaster/raw/main/toast.png" style="max-width:100%;"></a>
+<br>
+<a href="https://github.com/NoobMCBG/KillDeathSound/blob/main/rainbow.gif" target="_blank" rel="noopener noreferrer"><img src="https://github.com/NoobMCBG/KillDeathSound/raw/main/rainbow.gif" style="max-width:100%;"></a>
+</p>
+<br>
+<h2>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<blockquote>
+<ul>
+<li>Create toast style notifications for all your players</li>
+</ul>
+</blockquote>
+<br>
+<h2>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h2>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span>  </span>
+<span class="pl-c"><span class="pl-c">#</span>  ░████████╗░█████╗░░█████╗░░██████╗████████╗██████╗░██████╗░░█████╗░░█████╗░██████╗░░█████╗░░█████╗░░██████╗████████╗███████╗██████╗░</span>
+<span class="pl-c"><span class="pl-c">#</span>  ░╚══██╔══╝██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗</span>
+<span class="pl-c"><span class="pl-c">#</span>  ░░░░██║░░░██║░░██║███████║╚█████╗░░░░██║░░░██████╦╝██████╔╝██║░░██║███████║██║░░██║██║░░╚═╝███████║╚█████╗░░░░██║░░░█████╗░░██████╔╝</span>
+<span class="pl-c"><span class="pl-c">#</span>  ░░░░██║░░░██║░░██║██╔══██║░╚═══██╗░░░██║░░░██╔══██╗██╔══██╗██║░░██║██╔══██║██║░░██║██║░░██╗██╔══██║░╚═══██╗░░░██║░░░██╔══╝░░██╔══██╗</span>
+<span class="pl-c"><span class="pl-c">#</span>  ░░░░██║░░░╚█████╔╝██║░░██║██████╔╝░░░██║░░░██████╦╝██║░░██║╚█████╔╝██║░░██║██████╔╝╚█████╔╝██║░░██║██████╔╝░░░██║░░░███████╗██║░░██║</span>
+<span class="pl-c"><span class="pl-c">#</span>  ░░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝╚═════╝░░░░╚═╝░░░╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝╚═════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝</span>
+<span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>§d[ToastBroadcaster]<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> Title toast</span>
+<span class="pl-ent">broadcast</span>:
+  <span class="pl-ent">delay</span>: <span class="pl-c1">60</span> <span class="pl-c"><span class="pl-c">#</span> Delay message</span>
+  <span class="pl-ent">message</span>: <span class="pl-c"><span class="pl-c">#</span> All message broadcast</span>
+  - <span class="pl-s"><span class="pl-pds">"</span>§a1<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>§b2<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>§c3<span class="pl-pds">"</span></span>
+...</pre></div>
+<br>
+<h2>
+<a id="user-content-for-developer" class="anchor" href="#for-developer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For Developer</h2>
+<blockquote>
+<ul>
+<li>You can access to ToastBroadcaster by using <code>ToastBroadcaster::getInstance()</code>
+</li>
+<li>sendToast usage:</li>
+</ul>
+</blockquote>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>player</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getPlayer</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>title</span> = "<span class="pl-s">[Title]</span>";
+<span class="pl-s1"><span class="pl-c1">$</span>subtitle</span> = "<span class="pl-s">Toast</span>";
+<span class="pl-v">ToastBroadcaster</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">sendToast</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s1"><span class="pl-c1">$</span>title</span>, <span class="pl-s1"><span class="pl-c1">$</span>subtitle</span>);</pre></div>
+<blockquote>
+<ul>
+<li>broadcastToast usage:</li>
+</ul>
+</blockquote>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>player</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getPlayer</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>title</span> = "<span class="pl-s">[Title]</span>";
+<span class="pl-s1"><span class="pl-c1">$</span>subtitle</span> = "<span class="pl-s">Toast</span>";
+<span class="pl-v">ToastBroadcaster</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">broadcastToast</span>(<span class="pl-s1"><span class="pl-c1">$</span>title</span>, <span class="pl-s1"><span class="pl-c1">$</span>subtitle</span>);</pre></div>
+<br>
+<h2>
+<a id="user-content-install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+<blockquote>
+<ul>
+<li>Step 1: Click the <code>Direct Download</code> button to download the plugin</li>
+<li>Step 2: move the file <code>ToastBroadcaster.phar</code> into the file <code>plugins</code>
+</li>
+<li>Step 3: Restart server for plugins to work</li>
+</ul>
+</blockquote>

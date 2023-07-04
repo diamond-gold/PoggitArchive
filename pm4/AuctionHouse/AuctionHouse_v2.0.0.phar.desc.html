@@ -1,0 +1,195 @@
+<h2>
+<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h2>
+<p>AuctionHouse allows players to list their items for sale and purchase items that others have listed for sale.</p>
+<p><a href="https://github.com/Shock95x/AuctionHouse/blob/master/img/auctionhouse.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Shock95x/AuctionHouse/raw/master/img/auctionhouse.png" alt="AuctionHouse" style="max-width:100%;"></a></p>
+<h2>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<blockquote>
+<ul>
+<li>Chest GUI</li>
+<li>Categories</li>
+<li>Admin menu</li>
+<li>Multi-lang support</li>
+<li>Custom events</li>
+<li>Cancel listings</li>
+<li>Listing cooldown</li>
+<li>Economy plugin support</li>
+<li>MySQL and SQLite database support</li>
+<li>Customizable messages</li>
+</ul>
+</blockquote>
+<h2>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h2>
+<details>
+  <summary>Click to open</summary>
+<div class="highlight highlight-source-yaml"><pre>---  
+<span class="pl-c"><span class="pl-c">#</span> DO NOT EDIT THIS VALUE, INTERNAL USE ONLY.</span>
+<span class="pl-ent">config-version</span>: <span class="pl-c1">5</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Sets the prefix for this plugin.</span>
+<span class="pl-ent">prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>[&amp;l&amp;6Auction House&amp;r]<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Minimum price required to create a listing</span>
+<span class="pl-ent">min-price</span>: <span class="pl-c1">0</span>
+<span class="pl-c"><span class="pl-c">#</span> Maximum price a listing can have (-1 = No limit)</span>
+<span class="pl-ent">max-price</span>: <span class="pl-c1">-1</span>
+<span class="pl-c"><span class="pl-c">#</span> Sets the default language for the plugin, you can edit text and messages in this file.</span>
+<span class="pl-ent">default-language</span>: <span class="pl-s">en_US</span>
+<span class="pl-c"><span class="pl-c">#</span> Sets the amount of hours a listing is active before being automatically cancelled and expired.</span>
+<span class="pl-ent">expire-interval</span>: <span class="pl-c1">48</span>
+<span class="pl-c"><span class="pl-c">#</span> Sets the price it costs to list an item on the auction house.</span>
+<span class="pl-ent">listing-price</span>: <span class="pl-c1">0</span>
+<span class="pl-c"><span class="pl-c">#</span> Sets a cooldown between listing items in seconds</span>
+<span class="pl-ent">listing-cooldown</span>: <span class="pl-c1">0</span>
+<span class="pl-c"><span class="pl-c">#</span> Allows or blocks players in creative mode from selling items.</span>
+<span class="pl-ent">creative-sale</span>: <span class="pl-c1">false</span>
+<span class="pl-c"><span class="pl-c">#</span> Maximum amount of listings a player can have by default</span>
+<span class="pl-ent">max-listings</span>: <span class="pl-c1">45</span>
+<span class="pl-c"><span class="pl-c">#</span> Shows item lore on the auction house</span>
+<span class="pl-ent">show-lore</span>: <span class="pl-c1">true</span>
+<span class="pl-c"><span class="pl-c">#</span> Days to automatically delete expired listings (-1 to disable)</span>
+<span class="pl-ent">expired-duration</span>: <span class="pl-c1">15</span>
+<span class="pl-c"><span class="pl-c">#</span> Formats price with commas (ex. 1,000,000)</span>
+<span class="pl-ent">price-formatted</span>: <span class="pl-c1">true</span>
+<span class="pl-c"><span class="pl-c">#</span> Items that cannot be listed on the auction. Refer to https://minecraftitemids.com/ or https://minecraft-ids.grahamedgecombe.com/ for a list of item ids.</span>
+<span class="pl-ent">blacklist</span>:
+- <span class="pl-s"><span class="pl-pds">'</span>1000<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">#</span> Example items</span>
+- <span class="pl-s"><span class="pl-pds">'</span>1234:5<span class="pl-pds">'</span></span>
+- <span class="pl-s"><span class="pl-pds">'</span>minecraft:air<span class="pl-pds">'</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> AH sign triggers</span>
+<span class="pl-ent">sign-triggers</span>:
+- <span class="pl-s"><span class="pl-pds">"</span>[AuctionHouse]<span class="pl-pds">"</span></span>
+- <span class="pl-s"><span class="pl-pds">"</span>[AH]<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Menu button items</span>
+<span class="pl-ent">buttons</span>:
+<span class="pl-ent">stats</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:chest<span class="pl-pds">"</span></span>
+<span class="pl-ent">back</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:paper<span class="pl-pds">"</span></span>
+<span class="pl-ent">previous</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:paper<span class="pl-pds">"</span></span>
+<span class="pl-ent">next</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:paper<span class="pl-pds">"</span></span>
+<span class="pl-ent">info</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:book<span class="pl-pds">"</span></span>
+<span class="pl-ent">howto</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:emerald<span class="pl-pds">"</span></span>
+<span class="pl-ent">return_all</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:redstone_block<span class="pl-pds">"</span></span>
+<span class="pl-ent">player_listings</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:diamond<span class="pl-pds">"</span></span>
+<span class="pl-ent">expired_listings</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:poisonous_potato<span class="pl-pds">"</span></span>
+<span class="pl-ent">admin_menu</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:redstone<span class="pl-pds">"</span></span>
+<span class="pl-ent">confirm_purchase</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:stained_glass_pane:5<span class="pl-pds">"</span></span>
+<span class="pl-ent">cancel_purchase</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:stained_glass_pane:14<span class="pl-pds">"</span></span>
+...</pre></div>
+</details>
+<h2>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/ah</td>
+<td align="left">AuctionHouse main command, opens the shop menu if there are no specified parameters</td>
+</tr>
+<tr>
+<td>/ah shop</td>
+<td align="left">Opens the shop menu</td>
+</tr>
+<tr>
+<td>/ah sell <strong>[price]</strong>
+</td>
+<td align="left">Allows player to list items in their hand on the auction house. <strong>[price]</strong> is the amount that the player is listing the item to sell for</td>
+</tr>
+<tr>
+<td>/ah listings</td>
+<td align="left">Shows all active listings of the player</td>
+</tr>
+<tr>
+<td>/ah listings <strong>[player]</strong>
+</td>
+<td align="left">Shows all active listings of a specific player</td>
+</tr>
+<tr>
+<td>/ah category</td>
+<td align="left">Opens category menu</td>
+</tr>
+<tr>
+<td>/ah admin</td>
+<td align="left">Opens the AuctionHouse admin menu (OP Command)</td>
+</tr>
+<tr>
+<td>/ah reload</td>
+<td align="left">Allows player to reload configuration files (OP command)</td>
+</tr>
+<tr>
+<td>/ah about</td>
+<td align="left">Shows AuctionHouse version the server is running</td>
+</tr>
+</tbody>
+</table>
+<h2>
+<a id="user-content-api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h2>
+<h3>
+<a id="user-content-events" class="anchor" href="#events" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/Shock95x/AuctionHouse/blob/master/src/shock95x/auctionhouse/event/AuctionStartEvent.php">shock95x\auctionhouse\event\AuctionStartEvent</a></td>
+<td>Called when an auction is started</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Shock95x/AuctionHouse/blob/master/src/shock95x/auctionhouse/event/AuctionEndEvent.php">shock95x\auctionhouse\event\AuctionEndEvent</a></td>
+<td>Called when an auction has ended</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Shock95x/AuctionHouse/blob/master/src/shock95x/auctionhouse/event/ItemListedEvent.php">shock95x\auctionhouse\event\ItemListedEvent</a></td>
+<td>Called when an item is listed by player (cancellable)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Shock95x/AuctionHouse/blob/master/src/shock95x/auctionhouse/event/ItemPurchasedEvent.php">shock95x\auctionhouse\event\ItemPurchasedEvent</a></td>
+<td>Called when an item is purchased by player (cancellable)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Shock95x/AuctionHouse/blob/master/src/shock95x/auctionhouse/event/MenuCloseEvent.php">shock95x\auctionhouse\event\MenuCloseEvent</a></td>
+<td>Called when a menu is closed by player</td>
+</tr>
+</tbody>
+</table>
+<h2>
+<a id="user-content-contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+<p>You can contribute to this project by creating a new language file and opening a PR on GitHub!</p>
+<h3>
+<a id="user-content-supported-languages-and-contributors" class="anchor" href="#supported-languages-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supported languages and contributors</h3>
+<ul>
+<li>
+<a href="https://github.com/Shock95x">Shock95x</a> (English)</li>
+<li>
+<a href="https://github.com/ipad54">ipad54</a> (Russian)</li>
+<li>
+<a href="https://github.com/No4NaMe">No4NaMe</a> (Russian)</li>
+<li>
+<a href="https://github.com/Unickorn">Unickorn</a> (German)</li>
+<li>Chaosfelix4451#0157 (German)</li>
+<li>
+<a href="https://github.com/xAliTura01">xAliTura01</a> (Turkish)</li>
+</ul>
+<h2>
+<a id="user-content-credits--virions-used" class="anchor" href="#credits--virions-used" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits / Virions Used</h2>
+<ul>
+<li>
+<a href="https://github.com/Muqsit/InvMenu">InvMenu</a> (Muqsit)</li>
+<li>
+<a href="https://github.com/poggit/libasynql">libasynql</a> (SOFe)</li>
+<li>
+<a href="https://github.com/SOF3/await-generator">await-generator</a> (SOFe)</li>
+<li>
+<a href="https://github.com/CortexPE/Commando">Commando</a> (CortexPE)</li>
+<li>
+<a href="https://github.com/JackMD/UpdateNotifier">UpdateNotifier</a> (JackMD)</li>
+</ul>

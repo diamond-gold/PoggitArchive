@@ -1,0 +1,59 @@
+<h1>
+<a id="user-content-hubspawn" class="anchor" href="#hubspawn" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HubSpawn</h1>
+<p>Teleport to hub easyly</p>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Set Hub</li>
+<li>Set Spawn</li>
+<li>Teleport to Hub</li>
+<li>Teleport to Spawn</li>
+<li>With permission (default/OP)</li>
+</ul>
+<h1>
+<a id="user-content-commands--permissions" class="anchor" href="#commands--permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands &amp; Permissions</h1>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Permissions</th>
+<th>Informations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/hubspawn</td>
+<td>hubspawn.admin</td>
+<td>Admin only</td>
+</tr>
+<tr>
+<td>/hub</td>
+<td>hubspawn.hub</td>
+<td>For all players</td>
+</tr>
+<tr>
+<td>/spawn</td>
+<td>hubspawn.spawn</td>
+<td>For all players</td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content-api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h1>
+<h2>
+<a id="user-content-set" class="anchor" href="#set" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Set</h2>
+<h3>
+<a id="user-content-for-type-can-be-filled-with-hub-or-spawn" class="anchor" href="#for-type-can-be-filled-with-hub-or-spawn" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>for "Type" can be filled with "hub" or "spawn"</h3>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> pedhot\hubspawn\<span class="pl-v">HubSpawn</span>;
+<span class="pl-k">use</span> pocketmine\level\<span class="pl-v">Position</span>;
+<span class="pl-k">use</span> pocketmine\<span class="pl-v">Server</span>;
+
+<span class="pl-v">HubSpawn</span>::<span class="pl-en">set</span>(<span class="pl-s">"Type"</span>, <span class="pl-k">new</span> <span class="pl-v">Position</span>(<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-v">Server</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getLevelByName</span>(<span class="pl-s">"worldname"</span>)));</pre></div>
+<h2>
+<a id="user-content-reset" class="anchor" href="#reset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reset</h2>
+<h3>
+<a id="user-content-for-type-can-be-filled-with-hub-or-spawn-1" class="anchor" href="#for-type-can-be-filled-with-hub-or-spawn-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>for "Type" can be filled with "hub" or "spawn"</h3>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> pedhot\hubspawn\<span class="pl-v">HubSpawn</span>;
+
+<span class="pl-v">HubSpawn</span>::<span class="pl-en">reset</span>(<span class="pl-s">"Type"</span>);</pre></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1461b5087fcfc4","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

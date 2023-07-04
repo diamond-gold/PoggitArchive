@@ -1,0 +1,80 @@
+<h1>
+<a id="user-content-about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About</h1>
+<ul>
+<li>
+<strong>PHqx or Phqzing Hacks</strong> is a Server Sided Hack "Client" you can use for trolling friends (if you have one) or destroying other people at pvp.</li>
+<li>I am planning on updating this often and adding more features so if you have any suggestions feel free to dm me on Discord or open up an <a href="https://github.com/Phqzing/PHqx/issues">Issue</a>
+</li>
+</ul>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Kill Aura</li>
+<li>Reach</li>
+<li>Speed</li>
+<li>Anti Knockback</li>
+<li>Phase</li>
+<li>Auto Message</li>
+<li>Tap To Teleport</li>
+<li>GUI (for editing settings)</li>
+</ul>
+<h1>
+<a id="user-content-todo-for-003" class="anchor" href="#todo-for-003" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO (for 0.0.3)</h1>
+<ul>
+<li>[ ] Add Chest Stealer</li>
+<li>[ ] Add Free Cam</li>
+<li>[ ] Add No Fall Damage</li>
+<li>[ ] Add Scaffhold</li>
+<li>[ ] Add Aimbot</li>
+</ul>
+<h1>
+<a id="user-content-commands-and-config" class="anchor" href="#commands-and-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands and Config</h1>
+<h3>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h3>
+<pre><code>.help
+.inject
+.eject
+.toggle killaura
+.toggle reach
+.toggle speed
+.toggle antikb
+.toggle phase
+.toggle automessage
+.toggle taptoteleport
+.killaura edit
+.reach edit
+.speed edit
+.antikb edit
+.automessage edit
+</code></pre>
+<p>For more info just type ".help" in chat and it will show you the commands and what it's used for</p>
+<h3>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h3>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span> the plugin won't work on worlds that are listed here</span>
+<span class="pl-c"><span class="pl-c">#</span> you can add as many worlds as you wan't but make sure you are getting the folder name of the world</span>
+<span class="pl-ent">black-listed-worlds</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>exampleWorld1<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>exampleWorld2<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>exampleWorld3<span class="pl-pds">"</span></span>
+
+
+<span class="pl-c"><span class="pl-c">#</span> this is how often the Kill Aura checks for nearby players</span>
+<span class="pl-c"><span class="pl-c">#</span> Note: value must always be positive</span>
+<span class="pl-c"><span class="pl-c">#</span> 20 = 1 second</span>
+<span class="pl-ent">killaura-tickrate</span>: <span class="pl-c1">10</span>
+
+
+<span class="pl-c"><span class="pl-c">#</span> DO NOT TOUCH UNLESS YOU KNOW EXACTLY WHAT YOU'RE DOING</span>
+<span class="pl-ent">database</span>:
+  <span class="pl-ent">type</span>: <span class="pl-s">sqlite</span>
+  <span class="pl-ent">sqlite</span>:
+    <span class="pl-ent">file</span>: <span class="pl-s">settings.sql</span>
+  <span class="pl-ent">worker-limit</span>: <span class="pl-c1">1</span>
+...</pre></div>
+<h1>
+<a id="user-content-discord" class="anchor" href="#discord" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Discord</h1>
+<h3>
+<a id="user-content-phqzing9470" class="anchor" href="#phqzing9470" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Phqzing#9470</h3>
+<p>Feel free to message me if you have any questions or suggestions regarding this plugin</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14641faebd943b","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

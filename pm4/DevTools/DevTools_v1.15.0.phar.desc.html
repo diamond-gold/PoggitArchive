@@ -1,0 +1,74 @@
+<h1>
+<a id="user-content-development-tools-for-pocketmine-mp" class="anchor" href="#development-tools-for-pocketmine-mp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development Tools <em>for PocketMine-MP</em>
+</h1>
+<p>DevTools is a collection of utilities used for developing PocketMine-MP plugins.</p>
+<h2>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>Generate skeleton files to bootstrap a new plugin</li>
+<li>Build plugin phars from source code</li>
+<li>Load plugins directly from source code (folder plugins), useful for rapid development</li>
+<li>Check player permissions using commands</li>
+</ul>
+<h2>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<ul>
+<li>
+<em>/genplugin  </em>: Generates skeleton files for a new plugin</li>
+<li>
+<em>/makeplugin &lt;pluginName&gt;</em>: Creates a Phar plugin archive for its distribution</li>
+<li>
+<em>/makeplugin *</em>: Creates Phar plugin archives for all loaded plugins</li>
+<li>
+<em>/checkperm &lt;node&gt; [playerName]</em>: Checks a permission node</li>
+</ul>
+<h2>
+<a id="user-content-using-consolescript-to-build-a-devtools-phar-from-source-code" class="anchor" href="#using-consolescript-to-build-a-devtools-phar-from-source-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using ConsoleScript to build a DevTools phar from source code</h2>
+<p>Contrary to popular assumption, this is very simple. Assuming you have a php executable in your PATH variable, cd into the DevTools directory (the folder where plugin.yml is located) and simply run the following:</p>
+<pre><code>php -dphar.readonly=0 path/to/ConsoleScript.php --make path/to/DevTools --relative path/to/DevTools --out path/to/put/devtools/phar/in/DevTools.phar
+</code></pre>
+<p>You can then load the phar onto a PocketMine-MP server. A correctly-built DevTools phar can also be executed directly from the command line as if it was the ConsoleScript.</p>
+<h2>
+<a id="user-content-build-plugin-phars-from-the-command-line" class="anchor" href="#build-plugin-phars-from-the-command-line" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Build plugin phars from the command line</h2>
+<p>You can also use the ConsoleScript or a DevTools phar from the command-line to build PocketMine-MP phars or plugin phars.</p>
+<p>The script currently takes the following arguments:</p>
+<table>
+<thead>
+<tr>
+<th align="center">argument</th>
+<th align="center">required</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>--make</code></td>
+<td align="center">yes</td>
+<td align="left">The path to the files you want to bundle into a phar</td>
+</tr>
+<tr>
+<td align="center"><code>--relative</code></td>
+<td align="center">no</td>
+<td align="left">Relative path to use when building the phar. This usually isn't necessary for plugins. Used to build PocketMine-MP phars with the <code>src</code> directory without including the files in the repository root.</td>
+</tr>
+<tr>
+<td align="center"><code>--entry</code></td>
+<td align="center">no</td>
+<td align="left">PHP file within the phar to execute when running the phar from the command-line. Usually not needed for plugins, but required for a PocketMine-MP phar. Used to generate phar stubs.</td>
+</tr>
+<tr>
+<td align="center"><code>--stub</code></td>
+<td align="center">no</td>
+<td align="left">(Optional) PHP file to use as a custom phar stub. The stub will be executed when the phar is run from the command line.</td>
+</tr>
+<tr>
+<td align="center"><code>--out</code></td>
+<td align="center">yes</td>
+<td align="left">Path and filename of the output phar file.</td>
+</tr>
+</tbody>
+</table>
+<p>Example command line for building a plugin:</p>
+<pre><code>php -dphar.readonly=0 path/to/ConsoleScript.php --make path/to/your/plugin/sourcecode --out path/to/put/your/plugin.phar
+</code></pre>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1464affa55cfc4","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

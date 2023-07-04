@@ -1,0 +1,56 @@
+<h1>
+<a id="user-content-muteall" class="anchor" href="#muteall" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MuteAll</h1>
+<p><a href="https://poggit.pmmp.io/p/MuteAll" rel="nofollow"><img src="https://camo.githubusercontent.com/23b03c2168cb6f20a268b405b07276989632e42e844ffe121c8f2170fb9b8d11/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4d757465416c6c" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/MuteAll" style="max-width:100%;"></a>
+<a href="https://poggit.pmmp.io/p/MuteAll" rel="nofollow"><img src="https://camo.githubusercontent.com/8499ea875f03260a6ac368ed91f7981cdb0920e6353edf34a76fbe0c0d3bc4f9/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f4d757465416c6c" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/MuteAll" style="max-width:100%;"></a></p>
+<p>A PocketMine-MP plugin to mute all players on the server.</p>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Permission bypass.</li>
+<li>Supports <code>&amp;</code> as formatting codes.</li>
+<li>Custom messages.</li>
+<li>Lightweight and open source <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">❤️</g-emoji>
+</li>
+</ul>
+<h1>
+<a id="user-content-default-config" class="anchor" href="#default-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default Config</h1>
+<div class="highlight highlight-source-yaml"><pre>---
+---
+<span class="pl-c"><span class="pl-c">#</span> Do not change this (Only for internal use)!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-c1">1.1</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Messages are used when muting player chats.</span>
+<span class="pl-c"><span class="pl-c">#</span> Use "§" or "&amp;" to color the message.</span>
+<span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cYou can't chat when global mute is enabled<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Turn on mute</span>
+<span class="pl-ent">turn-on</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;aTurn on mute chat for all players<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Turn off mute</span>
+<span class="pl-ent">turn-off</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;aTurn on mute chat for all players<span class="pl-pds">"</span></span>
+...
+</pre></div>
+<h1>
+<a id="user-content-for-developers" class="anchor" href="#for-developers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For Developers</h1>
+<p>We provide API for developers to write addons/plugins that depends with MuteAll.
+To access MuteAll API class, you can use <code>aiptu\muteall\MuteAll::getInstance()</code>.</p>
+<div class="highlight highlight-text-html-php"><pre>- <span class="pl-v">Check</span> whether <span class="pl-k">global</span> mute is enabled or not:
+
+<span class="pl-v">MuteAll</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">isMuteAll</span>();
+
+- <span class="pl-v">Set</span> <span class="pl-k">global</span> mute to turn on or off:
+
+<span class="pl-v">MuteAll</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">setMuteAll</span>(bool <span class="pl-s1"><span class="pl-c1">$</span>value</span>);</pre></div>
+<h1>
+<a id="user-content-upcoming-features" class="anchor" href="#upcoming-features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Upcoming Features</h1>
+<ul>
+<li>Currently none planned. You can contribute or suggest for new features.</li>
+</ul>
+<h1>
+<a id="user-content-additional-notes" class="anchor" href="#additional-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h1>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/AIPTU/MuteAll/issues">here</a>.</li>
+<li>We accept all contributions! If you want to contribute, please make a pull request in <a href="https://github.com/AIPTU/MuteAll/pulls">here</a>.</li>
+<li>Icons made from <a href="https://www.flaticon.com" rel="nofollow">www.flaticon.com</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14635d2bfe97b5","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

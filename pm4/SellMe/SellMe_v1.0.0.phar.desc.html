@@ -1,0 +1,94 @@
+<h1>
+<a id="user-content-sellme" class="anchor" href="#sellme" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SellMe</h1>
+<p>The Ultimate Sell plugin for PocketMine-MP 4</p>
+<p><strong>What is SellMe?</strong></p>
+<ul>
+<li>SellMe is a plugin which allows the items to be sold in exchange with money</li>
+</ul>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<p>The currently offered features are as follows</p>
+<ul>
+<li>Multiple Economy providers like EconomyAPI, BedrockEconomy and Capital</li>
+<li>AutoSell</li>
+<li>Item meta checks</li>
+<li>Multiple sell modes (hand, all, inv)</li>
+</ul>
+<h1>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<pre><code>  sellme.command.sell:
+    default: true
+    description: with this permission the player can use the sell command
+  sellme.subcommand.hand:
+    default: true
+    description: with this permission the player sell his/her hand
+  sellme.subcommand.all:
+    default: true
+    description: with this permission the player sell all items in his/her inv which are similar to his current item in hand
+  sellme.subcommand.inv:
+    default: true
+    description: with this permission the player can sell his/her inventory
+  sellme.command.autosell:
+    default: true
+    description: with this permission the player can toggle his autosell status
+</code></pre>
+<h1>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sell</td>
+<td>Sell command</td>
+<td>sellme.command.sell</td>
+<td></td>
+</tr>
+<tr>
+<td>AutoSell</td>
+<td>AutoSell command</td>
+<td>sellme.command.autosell</td>
+<td>AS</td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content-subcommands" class="anchor" href="#subcommands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SubCommands</h1>
+<p><strong>SELL</strong></p>
+<table>
+<thead>
+<tr>
+<th>SubCommand</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hand</td>
+<td>Sells the item which is held by the user</td>
+<td>sellme.subcommand.hand</td>
+<td>h</td>
+</tr>
+<tr>
+<td>All</td>
+<td>Sells the items in inventory which are similar to the one in the users hands</td>
+<td>sellme.subcommand.all</td>
+<td>a</td>
+</tr>
+<tr>
+<td>Inv</td>
+<td>Sells all the items in the inventory of the user</td>
+<td>sellme.subcommand.hand</td>
+<td>i, inventory</td>
+</tr>
+</tbody>
+</table>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e146558c98afa01","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

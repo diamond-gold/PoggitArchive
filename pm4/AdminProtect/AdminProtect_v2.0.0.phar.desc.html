@@ -1,0 +1,88 @@
+<p>AdminProtect protects the administrator (players with special permissions) from being banned and kicked and prevents offline player ban.</p>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Protects admins from beign kicked, banned or ip-banned</li>
+<li>Protects offline players from beign banned or ip-banned (we can't check if offline players have protection permissions)</li>
+<li>
+<ul>
+<li>Players without <code>adminprotect.banip.use.offline</code> can't ban specified ip-adress, they can only ban specified online player nick</li>
+</ul>
+</li>
+<li>Special permissions for super-adminss (OPerators) to ban and kick players with protection</li>
+<li>Prevents players banned by the specified admins from being unbanned</li>
+<li>Prevents editing bans issued by specified admins</li>
+<li>Temporary ban and ip-ban</li>
+<li>Broadcasting kick and ban messages for all players</li>
+<li>Simple ban duration setting</li>
+</ul>
+<h1>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<ul>
+<li>/kick &lt;player&gt; [reason...] – kick specified player</li>
+<li>/ban &lt;player&gt; [reason...] – ban specified player</li>
+<li>/tempban &lt;player&gt; &lt;date or duration&gt; [reason...] – temporary ban specified player</li>
+<li>/banip &lt;player or IP adress&gt; [reason...] – ban specified IP adress or specified player's IP adress</li>
+<li>/tbanip &lt;player IP adress&gt; &lt;date or duration&gt; [reason...] – temporary ban specified IP adress or specified player's IP adress</li>
+<li>/unban &lt;player&gt; /pardon &lt;player&gt; – unban specified player</li>
+<li>/unbanip &lt;IP&gt; /pardon-ip &lt;IP&gt; – unban specified IP adress</li>
+<li>/baninfo &lt;player|address&gt; - displays information about player's or IP's active ban and shows can you unban him or not</li>
+<li>
+</li>
+</ul>
+<p>More information about commands can be found in the <a href="https://github.com/WeekThor/AdminProtect/wiki/Commands">wiki</a>.</p>
+<h1>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<ul>
+<li>adminprotect.* – all plugin permissions
+<ul>
+<li>adminprotect.kick.protect – Protection from /kick</li>
+<li>adminprotect.kick.use – Allows to use /kick</li>
+<li>adminprotect.kick.use.protected – Allows to kick players with protection</li>
+<li>adminprotect.ban.protect – Protection from /ban</li>
+<li>adminprotect.ban.use – Allows to use /ban</li>
+<li>adminprotect.ban.use.offline – Allows to ban offline players</li>
+<li>adminprotect.ban.use.protected – Allows to ban players with protection</li>
+<li>adminprotect.tempban.protect – Protection from /tempban</li>
+<li>adminprotect.tempban.use – Allows to use /tempban</li>
+<li>adminprotect.tempban.use.offline – Allows to temporary ban offline players</li>
+<li>adminprotect.tempban.use.protected – Allows to temporary ban players with protection</li>
+<li>adminprotect.unban.use – Allows to use /unban</li>
+<li>adminprotect.unban.except.&lt;admin&gt; - prevents unblocking players/IPs that have been banned by &lt;admin&gt; (nickname must be in lowercase)</li>
+<li>adminprotect.unban.except.* - Allows to unban only players/IPs that have been banned by yourself</li>
+<li>adminprotect.banip.protect – Protection from /banip</li>
+<li>adminprotect.banip.use – Allows to use /tbanip (only ban online players' IP and only temporary ban)</li>
+<li>adminprotect.banip.use.offline – Allows to ban offline players' IP</li>
+<li>adminprotect.banip.use.protected – Allows to IP-ban players with protection</li>
+<li>adminprotect.banip.use.permanent – Allows to use /banip (for permanentrly ban)</li>
+<li>adminprotect.unbanip.use – Allows to use /unbanip</li>
+<li>adminprotect.baninfo.use - Allows to use /baninfo</li>
+</ul>
+</li>
+</ul>
+<h1>
+<a id="user-content-temporary-ban" class="anchor" href="#temporary-ban" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Temporary ban</h1>
+<p>You can specify the ban until date in the format dd.mm.YYYY (for example: 03.12.2022) or you can specify the ban duration time in the special format decribed below.</p>
+<p>Ban duration format:</p>
+<ul>
+<li>
+<code>1s</code> - 1 second</li>
+<li>
+<code>1m</code> – 1 minute</li>
+<li>
+<code>1h</code> – 1 hour</li>
+<li>
+<code>1d</code> – 1 day</li>
+<li>
+<code>1w</code> – 1 week</li>
+<li>
+<code>1mo</code> – 1 month</li>
+<li>
+<code>1y</code> – 1 year</li>
+</ul>
+<p>Ban duration is specifying without spaces: <code>/tban Steve 1h30m</code> will ban Steve for 1 hour 30 minutes; <code>/tban Steve 1w3d</code> will ban Steve for 1 week 3 days, etc</p>
+<p>Or you can specify only count of days (<code>/tban Steve 13</code> will ban Steve for 13 days).</p>
+<h1>
+<a id="user-content-prevent-unblocking" class="anchor" href="#prevent-unblocking" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prevent unblocking</h1>
+<p>If player has <code>adminprotect.unban.except.&lt;admin&gt;</code>, he will not be able to unban a player banned by &lt;admin&gt; (admin nick must be in lowercase). Also he will not be able to edit the ban issued by &lt;admin&gt;.This also applies to unblocking and editing an IP ban.</p>
+<p>For example: <code>adminprotect.unban.except.console</code> will be prevent unblocking players banned by CONSOLE (<code>CONSOLE</code> can be changed in config.yml)</p>

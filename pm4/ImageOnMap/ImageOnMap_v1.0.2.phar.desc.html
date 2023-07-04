@@ -1,0 +1,110 @@
+<h1>
+<a id="user-content-imageonmap" class="anchor" href="#imageonmap" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ImageOnMap</h1> 
+<a href="https://poggit.pmmp.io/ci/CzechPMDevs/ImageOnMap/ImageOnMap" rel="nofollow">  
+    <img src="https://camo.githubusercontent.com/81a477cf147106747232e5f980edd5c785d29f8c825040bedda51fe1b41fcad1/68747470733a2f2f706f676769742e706d6d702e696f2f63692e736869656c642f437a656368504d446576732f496d6167654f6e4d61702f496d6167654f6e4d61703f7374796c653d666c61742d737175617265" data-canonical-src="https://poggit.pmmp.io/ci.shield/CzechPMDevs/ImageOnMap/ImageOnMap?style=flat-square" style="max-width:100%;">  
+</a>  
+<a href="https://discord.gg/uwBf2jS" rel="nofollow">  
+    <img src="https://camo.githubusercontent.com/0d6e0e60079493d030dc5b85519754836a1ee8fc837565cc2257dddf06ee8a1a/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3336353230323539343933323731393631362e7376673f7374796c653d666c61742d737175617265" data-canonical-src="https://img.shields.io/discord/365202594932719616.svg?style=flat-square" style="max-width:100%;">  
+</a>  
+<a href="https://github.com/CzechPMDevs/ImageOnMap/releases">  
+    <img src="https://camo.githubusercontent.com/80cd42ad79eb1b9ef6bf3c8ca0020be517d38498233beb7b1aed5fda14ecb263/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f437a656368504d446576732f496d6167654f6e4d61702e7376673f7374796c653d666c61742d737175617265" data-canonical-src="https://img.shields.io/github/release/CzechPMDevs/ImageOnMap.svg?style=flat-square" style="max-width:100%;">  
+</a>  
+<a href="https://github.com/CzechPMDevs/ImageOnMap/releases">  
+    <img src="https://camo.githubusercontent.com/be403819e3ca8602785e221dbce61bcf1f78e59679e571c32fcb031021cb6603/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f646f776e6c6f6164732f437a656368504d446576732f496d6167654f6e4d61702f746f74616c2e7376673f7374796c653d666c61742d737175617265" data-canonical-src="https://img.shields.io/github/downloads/CzechPMDevs/ImageOnMap/total.svg?style=flat-square" style="max-width:100%;">  
+</a>
+<a href="https://github.com/CzechPMDevs/ImageOnMap/blob/master/LICENSE">  
+    <img src="https://camo.githubusercontent.com/f47e41d461b7343b95a1d2d6d5764370284306eea1e2637b146e31c1be072e80/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f437a656368504d446576732f496d6167654f6e4d61702e7376673f7374796c653d666c61742d737175617265" data-canonical-src="https://img.shields.io/github/license/CzechPMDevs/ImageOnMap.svg?style=flat-square" style="max-width:100%;">  
+</a>  
+<a href="https://poggit.pmmp.io/p/ImageOnMap" rel="nofollow">  
+    <img src="https://camo.githubusercontent.com/26f5eafc295675c163692293beb4856807b1c78e9300a1376e6a9f70c1d75dd7/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646f776e6c6f6164732f496d6167654f6e4d61703f7374796c653d666c61742d737175617265" data-canonical-src="https://poggit.pmmp.io/shield.downloads/ImageOnMap?style=flat-square" style="max-width:100%;">  
+</a>
+<br><br>  
+<g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji> Simple usage, without external convertors
+<br>  
+<g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji> Supporting both .png and .jpg image formats
+<br>  
+<g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji> Image is automatically resized to fit item frame
+<br>
+<g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji> Supports last PocketMine API version
+<br>
+<h2>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<ul>
+<li>Plugin implements command <code>/image</code> with aliases <code>/img</code> and <code>/iom</code>.</li>
+<li>To use this command, <strong>permission</strong> <code>imageonmap.command</code> <strong>is needed</strong>.</li>
+<li>This command can be used only in game.
+<br>
+</li>
+<li>There are implemented these subcommands:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Sub-Command</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/img help</td>
+<td>Shows all the available subcommands</td>
+</tr>
+<tr>
+<td>/img list</td>
+<td>Displays all the available images found in <code>/plugin_data/ImageOnMap/images/*</code> path.</td>
+</tr>
+<tr>
+<td>/img obtain <code>&lt;image&gt;</code> <code>[&lt;xChunkCount&gt; &lt;yChunkCount&gt; &lt;x&gt; &lt;y&gt;]</code>
+</td>
+<td>Obtains specific image (or it's specific part) from file as map item.<br><br>Chunk count argument represents to how many parts should be the image split. X and Y coordinates represents which part of that chunked image will be given to player's inventory.<br><br>Aliases: /img o</td>
+</tr>
+<tr>
+<td>/img place <code>&lt;image&gt;</code>
+</td>
+<td>Places the whole images on to item frames in selected area.<br><br>To place an image properly, first execute the command (<code>/img p image</code>). Afterwards, break the first corner of the target position and then break the block to select second position. The image will be placed automatically.<br><br>Aliases: /img p</td>
+</tr>
+</tbody>
+</table>
+<h2>
+<a id="user-content-api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h2>
+<ul>
+<li>Obtaining plugin instance</li>
+</ul>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>api</span> = \czechpmdevs\imageonmap\<span class="pl-v">ImageOnMap</span>::<span class="pl-en">getInstance</span>();</pre></div>
+<ul>
+<li>Loading image from file</li>
+</ul>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// This method caches the map and returns its id. Afterwards the id can be used to obtain map item.</span>
+<span class="pl-s1"><span class="pl-c1">$</span>id</span> = <span class="pl-s1"><span class="pl-c1">$</span>api</span>-&gt;<span class="pl-en">getImageFromFile</span>(
+	file: <span class="pl-s">"path/to/image.png"</span>,
+	xChunkCount: <span class="pl-c1">1</span>,
+	yChunkCount: <span class="pl-c1">1</span>,
+	xOffset: <span class="pl-c1">0</span>,
+	yOffset: <span class="pl-c1">0</span>
+);</pre></div>
+<ul>
+<li>Obtaining Map item, assigning id &amp; giving it to player</li>
+</ul>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">/** @var \czechpmdevs\imageonmap\item\FilledMap $map */</span>
+<span class="pl-s1"><span class="pl-c1">$</span>map</span> = (<span class="pl-v">FilledMap</span>::<span class="pl-en">get</span>())-&gt;<span class="pl-en">setMapId</span>(<span class="pl-s1"><span class="pl-c1">$</span>id</span>);
+<span class="pl-c">/** @var \pocketmine\player\Player $player */</span>
+<span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">getInventory</span>()-&gt;<span class="pl-en">addItem</span>(<span class="pl-s1"><span class="pl-c1">$</span>map</span>);</pre></div>
+<h2>
+<a id="user-content--license" class="anchor" href="#-license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="bulb" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png">💡</g-emoji> License</h2>
+<pre><code>ImageOnMap - Easy to use PocketMine plugin, which allows loading images on maps
+Copyright (C) 2021 CzechPMDevs
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
+</code></pre>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1461d8fdcdcfc4","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

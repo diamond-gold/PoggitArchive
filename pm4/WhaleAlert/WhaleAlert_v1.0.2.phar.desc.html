@@ -1,0 +1,81 @@
+<h1>
+<a id="user-content-general" class="anchor" href="#general" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General</h1>
+<p>WhaleAlert in PocketMine!
+This plugin is for alerts if there is a large amount of Pay Transactions Economys</p>
+<h1>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<p>Commands Toggle for On/Off WhaleAlert
+Default if player Joined is On</p>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Aliases</th>
+<th>Default</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/whalealert</code></td>
+<td>/whalealert</td>
+<td>True</td>
+<td><code>whalealert.toggle</code></td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content-feature" class="anchor" href="#feature" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Feature</h1>
+<ul>
+<li>Alert if Transaction Minimum Reached</li>
+<li>Multiple Economys</li>
+<li>Can Auto detect Economys Plugin</li>
+<li>Customable Minimum</li>
+<li>Customable Broadcast Message</li>
+<li>Broadcast to Discord can Embeds or Not</li>
+</ul>
+<h1>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<div class="highlight highlight-source-yaml"><pre>
+---
+<span class="pl-c"><span class="pl-c">#</span> Your Economy plugin name</span>
+<span class="pl-c"><span class="pl-c">#</span> Available: BedrockEconomy, EconomyAPI, Auto</span>
+<span class="pl-ent">economy</span>: <span class="pl-s"><span class="pl-pds">"</span>Auto<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message for WhaleAlert</span>
+<span class="pl-c"><span class="pl-c">#</span> Tag:</span>
+<span class="pl-c"><span class="pl-c">#</span> {name} Sender Name</span>
+<span class="pl-c"><span class="pl-c">#</span> {target} Target Name</span>
+<span class="pl-c"><span class="pl-c">#</span> {amount} Amount of Transferred Money</span>
+<span class="pl-c"><span class="pl-c">#</span> {economy} Name of Economy</span>
+<span class="pl-c"><span class="pl-c">#</span> {line} New Line</span>
+<span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>§a!!!!!! {amount} #{economy}, transfered from Unknow wallet to Unknow wallet<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Minimum Transferred money for WhaleAlert</span>
+<span class="pl-ent">minimum</span>: <span class="pl-c1">100000</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Discord Webhook</span>
+<span class="pl-ent">discord</span>:
+ <span class="pl-ent">enable</span>: <span class="pl-s">false </span><span class="pl-c"><span class="pl-c">#</span> true / false Discord Webhook</span>
+ <span class="pl-ent">webhook</span>: <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> Your webhook url including https://</span>
+ <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>WhaleAlert<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> Name Webhook</span>
+ <span class="pl-c"><span class="pl-c">#</span> If You enable Embeds Message, WhaleAlert content</span>
+ <span class="pl-c"><span class="pl-c">#</span> Will be in Embeds</span>
+ <span class="pl-ent">embeds</span>: <span class="pl-c"><span class="pl-c">#</span> Embeds message Webhook</span>
+  <span class="pl-ent">enable</span>: <span class="pl-s">false </span><span class="pl-c"><span class="pl-c">#</span> For Embeds message Discord</span>
+  <span class="pl-c"><span class="pl-c">#</span> Title for Message Discord</span>
+  <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>WhaleAlert<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Color for left In HTML Color</span>
+  <span class="pl-ent">color</span>: <span class="pl-s"><span class="pl-pds">"</span>80FF00<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Footer Text</span>
+  <span class="pl-ent">footer</span>: <span class="pl-s"><span class="pl-pds">"</span>Transaction from play.blabla.com<span class="pl-pds">"</span></span>
+...</pre></div>
+<h1>
+<a id="user-content-additional-notes" class="anchor" href="#additional-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h1>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/MulqiGaming64/WhaleAlert/issues">here</a>
+</li>
+<li>Icons By <a href="https://icons8.com" rel="nofollow">icons8.com</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14679e1c799e5e","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

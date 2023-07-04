@@ -1,0 +1,85 @@
+<h1>
+<a id="user-content--launchpad" class="anchor" href="#-launchpad" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="dash" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a8.png">💨</g-emoji> LaunchPad</h1>
+<p align="center">
+    <a href="https://raw.githubusercontent.com/Verre2OuiSki/LaunchPad/main/icon.png" target="_blank" rel="nofollow"><img src="https://raw.githubusercontent.com/Verre2OuiSki/LaunchPad/main/icon.png" style="max-width:100%;"></a>
+    <br>
+    <b>
+      A configurable <i>PocketMine-MP</i> plugin allows you to setup <i>Launch Pads</i> in your worlds
+    </b>
+</p>
+<h1>
+<a id="user-content--features" class="anchor" href="#-features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="scroll" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dc.png">📜</g-emoji> Features</h1>
+<ul>
+<li>Add your own custom launch pads</li>
+<li>Configurable launchers</li>
+</ul>
+<p>For any problems, you can reach me at "Reach ME" tab !</p>
+<h1>
+<a id="user-content--how-to-use-" class="anchor" href="#-how-to-use-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="thinking" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f914.png">🤔</g-emoji> How to use ?</h1>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">pressure_plate</span>:
+  <span class="pl-ent">block</span>:
+    <span class="pl-ent">mutiplier</span>: <span class="pl-s">x </span>
+    <span class="pl-ent">height</span>: <span class="pl-s">x</span></pre></div>
+<p><code>pressure_plate</code>    =&gt; The pressure plate<br>
+<code>block</code>             =&gt; The block under the pressure plate<br>
+<code>mutiplier</code>         =&gt; Velocity<br>
+<code>height</code>            =&gt; Launching height<br><br><br></p>
+<hr>
+<p>Exemple :</p>
+<p>We want a gold pressure plate <em>(light_weighted_pressure_plate)</em><br>
+If block under this plate is a redstone block <em>(redstone_block)</em> player will be launch with a multiplier of 5 and height of 1<br>
+If block under this plate is a diamond block <em>(diamond_block)</em> player will be launch with a multiplier of 2 and height of <br><br></p>
+<p>in config.yml it will be :</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">light_weighted_pressure_plate</span>:
+  <span class="pl-ent">redstone_block</span>:
+    <span class="pl-ent">mutiplier</span>: <span class="pl-c1">5</span>
+    <span class="pl-ent">height</span>: <span class="pl-c1">1</span>
+  <span class="pl-ent">diamond_block</span>:
+    <span class="pl-ent">mutiplier</span>: <span class="pl-c1">2</span>
+    <span class="pl-ent">height</span>: <span class="pl-c1">4</span></pre></div>
+<h1>
+<a id="user-content--config" class="anchor" href="#-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="floppy_disk" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4be.png">💾</g-emoji> Config</h1>
+<div class="highlight highlight-source-yaml"><pre>---
+
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span>   __      __                ___   ____        _  _____ _    _</span>
+<span class="pl-c"><span class="pl-c">#</span>   \ \    / /               |__ \ / __ \      (_)/ ____| |  (_)</span>
+<span class="pl-c"><span class="pl-c">#</span>    \ \  / /__ _ __ _ __ ___   ) | |  | |_   _ _| (___ | | ___</span>
+<span class="pl-c"><span class="pl-c">#</span>     \ \/ / _ \ '__| '__/ _ \ / /| |  | | | | | |\___ \| |/ / |</span>
+<span class="pl-c"><span class="pl-c">#</span>      \  /  __/ |  | | |  __// /_| |__| | |_| | |____) |   &lt;| |</span>
+<span class="pl-c"><span class="pl-c">#</span>       \/ \___|_|  |_|  \___|____|\____/ \__,_|_|_____/|_|\_\_|</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Do you have a problem ?</span>
+<span class="pl-c"><span class="pl-c">#</span> </span>
+<span class="pl-c"><span class="pl-c">#</span> Discord (en) : https://discord.gg/P8R4WhARrY</span>
+<span class="pl-c"><span class="pl-c">#</span> Discord (fr) : https://discord.gg/DnmRbAxMbN</span>
+
+<span class="pl-ent">stone_pressure_plate</span>: <span class="pl-c"><span class="pl-c">#</span> Pressure plate</span>
+  <span class="pl-ent">redstone_block</span>: <span class="pl-c"><span class="pl-c">#</span> Block under pressure plate</span>
+    <span class="pl-ent">mutiplier</span>: <span class="pl-c1">2</span>
+    <span class="pl-ent">height</span>: <span class="pl-c1">1</span>
+
+<span class="pl-ent">light_weighted_pressure_plate</span>:
+  <span class="pl-ent">redstone_block</span>:
+    <span class="pl-ent">mutiplier</span>: <span class="pl-c1">5</span>
+    <span class="pl-ent">height</span>: <span class="pl-c1">1</span>
+  <span class="pl-ent">diamond_block</span>:
+    <span class="pl-ent">mutiplier</span>: <span class="pl-c1">2</span>
+    <span class="pl-ent">height</span>: <span class="pl-c1">4</span>
+
+...</pre></div>
+<h1>
+<a id="user-content--reach-me" class="anchor" href="#-reach-me" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="mailbox" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4eb.png">📫</g-emoji> Reach me</h1>
+<div align="center">
+    <a href="https://discord.gg/P8R4WhARrY" rel="nofollow">
+        </a><a href="#"><img src="https://camo.githubusercontent.com/fb0d35c831a416fad1222424ce5744ecc9a0c9d01e1cbb3d1ff851525e4409e7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446973636f72642b253238454e2532392d2532333732383944412e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d646973636f7264266c6f676f436f6c6f723d7768697465" data-canonical-src="https://img.shields.io/badge/Discord+%28EN%29-%237289DA.svg?style=for-the-badge&amp;logo=discord&amp;logoColor=white" style="max-width:100%;"></a>
+    
+    <a href="https://twitter.com/Verre2OuiSki" rel="nofollow">
+        </a><a href="#"><img src="https://camo.githubusercontent.com/0686a24ebec208b2f419f9c024e3d1257b69b0c18525e7b75b11730a89b8c627/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5665727265324f7569536b692d2532333144413146322e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d54776974746572266c6f676f436f6c6f723d7768697465" data-canonical-src="https://img.shields.io/badge/Verre2OuiSki-%231DA1F2.svg?style=for-the-badge&amp;logo=Twitter&amp;logoColor=white" style="max-width:100%;"></a>
+    
+    <a href="https://discord.gg/DnmRbAxMbN" rel="nofollow">
+        </a><a href="#"><img src="https://camo.githubusercontent.com/467ac58f33d9612a7c467526149dee88f009cbc06fd37f278c2473805d1600ab/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446973636f72642b25323846522532392d2532333732383944412e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d646973636f7264266c6f676f436f6c6f723d7768697465" data-canonical-src="https://img.shields.io/badge/Discord+%28FR%29-%237289DA.svg?style=for-the-badge&amp;logo=discord&amp;logoColor=white" style="max-width:100%;"></a>
+    
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1462a04d86239d","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

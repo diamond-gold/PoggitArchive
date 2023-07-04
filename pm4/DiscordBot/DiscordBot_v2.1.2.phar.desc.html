@@ -1,0 +1,29 @@
+<h1>
+<a id="user-content-about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About</h1>
+<p>DiscordBot is a pocketmine plugin that provides an extensive API for plugin developers to interact with discord creating endless possibilities.</p>
+<p><strong>Please note that this plugin offers no standalone features</strong>, It is a central API plugin for external plugins to use/depend on.</p>
+<h1>
+<a id="user-content-api-documentation" class="anchor" href="#api-documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API Documentation</h1>
+<p>Unfortunately its formatting is very weird on poggit please visit <a href="https://github.com/DiscordBot-PMMP/DiscordBot/blob/2.1.2/API.md">https://github.com/DiscordBot-PMMP/DiscordBot/blob/2.1.2/API.md</a> for API documentation</p>
+<h1>
+<a id="user-content-plugin-structure" class="anchor" href="#plugin-structure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Plugin Structure</h1>
+<p>This is a very complicated plugin when looked at but its essentially broken down into 4 parts.</p>
+<h4>
+<a id="user-content-part-1-the-plugin" class="anchor" href="#part-1-the-plugin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Part 1, The plugin</h4>
+<p>The plugin interacts directly with the pocketmine server and sets up a child thread to start the connection to discord, its also the section responsible for handling API requests from other plugins and emitting events, providing data etc to other plugins.</p>
+<h4>
+<a id="user-content-part-2-the-thread" class="anchor" href="#part-2-the-thread" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Part 2, The thread</h4>
+<p>This 'discord thread' is responsible for keeping a live connection to discords gateway so we can receive and pass on events back to the plugin base.
+We also execute API requests sent from the plugin base here and return a result in the near future when discord sends a response to our API request.</p>
+<p>Technical note, The thread is completely independent of the Main thread and pocketmine so collisions between my composer dependencies and anything else is impossible.</p>
+<h4>
+<a id="user-content-part-3-the-composer-libs" class="anchor" href="#part-3-the-composer-libs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Part 3, The composer libs</h4>
+<p>This part is the biggest part of the plugin that works in the background inside the discord thread, It's a collection of third part libraries including DiscordPHP, React libraries, Monolog and much more.</p>
+<p>Note you should <strong>NEVER</strong> be using or even looking at these libraries, they are not registered in the BaseClassLoader.</p>
+<h4>
+<a id="user-content-part-4-promise-api" class="anchor" href="#part-4-promise-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Part 4, Promise API</h4>
+<p>The 'face' of the plugin, using a shaded library (<a href="https://github.com/DiscordBot-PMMP/promise/tree/2.x">https://github.com/DiscordBot-PMMP/promise/tree/2.x</a>) the plugin provides a 'promise' API which means plugins can make requests to do certain things like sendMessage or createRole and the plugin will send back a promise.</p>
+<p>A promise is sent back because we can't return instantly whether it was a success or not because we have to send it to the Discord Thread which then sends it to discords gateway(/api for some api methods) and then we have to wait for a response then return the response to the plugin/main thread and THEN we can tell you if it was a success or not.</p>
+<p>So you can essentially attach functions to the promise to run when we come back quite a few ticks later with a response.</p>
+<p>Hard to explain, go read the API tab if your still interested...</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e146094eba29e5e","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

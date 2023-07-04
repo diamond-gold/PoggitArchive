@@ -1,0 +1,28 @@
+<h1><a id="user-content-antiblock" class="anchor" aria-hidden="true" href="#antiblock"><span aria-hidden="true" class="octicon octicon-link"></span></a>AntiBlock</h1>
+<p>Easily block player's from placing and breaking specific blocks</p>
+<h2><a id="user-content-permissions" class="anchor" aria-hidden="true" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h2>
+<p>The following permissions are integrated in the plugin:<br>
+<code>antiblock.bypass.break</code>: Allows a player to always* break blocked blocks<br>
+<code>antiblock.bypass.place</code>: Allows a player to always* place blocked blocks<br>
+<code>antiblock.command</code>: Allows the usage of the <code>/antiblock</code> command</p>
+<p>* = There still is a setting in the config that disallows this feature called <code>permission-bypass</code>. Check the config tab for more information</p>
+<h2><a id="user-content-activation" class="anchor" aria-hidden="true" href="#activation"><span aria-hidden="true" class="octicon octicon-link"></span></a>Activation</h2>
+<p>The plugin has a feature called "activation". This feature can be called using <code>/antiblock on</code> and <code>/antiblock off</code>.<br>
+This feature is thought to be used as a bypass for every player to place and break every block in certain situations.</p>
+<h2><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<p>The plugin has the following (sub-)commands</p>
+<p><code>/antiblock info</code>: Gives you general informations like: is the plugin active<br>
+<code>/antiblock add &lt;place/break&gt; hand</code>: (player only) Add the block you have in your hand to the place or break list<br>
+<code>/antiblock add &lt;place/break&gt; &lt;id&gt;</code>: Adds the id to the place or break list<br>
+<code>/antiblock list</code>: Shows you all the blocks that are blocked from placing and breaking<br>
+<code>/antiblock on</code>: Enables the activation feature<br>
+<code>/antiblock off</code>: Disable the activation feature<br>
+<code>/antiblock reload</code>: Reloads the config file</p>
+<h2><a id="user-content-config" class="anchor" aria-hidden="true" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h2>
+<p><code>prefix</code>: This will be in-front of every message that the plugin sends out<br>
+<code>permission-bypass</code>: If this is set to false a player with the permissions mentioned in the permissions tab can not place or break any blocked blocks<br>
+<code>message-player</code>: Sends a message to the player if he places/breaks a blocked block<br>
+<code>place-message</code>: The message a player receives when he places a blocked block. You can insert <code>%block%</code> for the block name<br>
+<code>break-message</code>: The message a player receives when he breaks a blocked block. You can insert <code>%block%</code> for the block name<br>
+<code>break-blocks</code>, <code>place-blocks</code>: These are two arrays that contains the blocked blocks. You can control these with /antiblock add or remove them manually in the config</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e145d867fdb96a2","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

@@ -1,0 +1,75 @@
+<h2>
+<a id="user-content-badwordblocker" class="anchor" href="#badwordblocker" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BadWordBlocker</h2>
+<p align="center">
+    <a href="https://camo.githubusercontent.com/4ff7572f434a2e269277433b5943ebca271ffce08e68ef70b8fc538be3ebdf46/68747470733a2f2f7374617469632e73757276612e6e65742f6f73706c7567696e2d666561747572652d62616e6e6572732f626164776f7264626c6f636b65722e706e67" target="_blank" rel="nofollow"><img src="https://camo.githubusercontent.com/4ff7572f434a2e269277433b5943ebca271ffce08e68ef70b8fc538be3ebdf46/68747470733a2f2f7374617469632e73757276612e6e65742f6f73706c7567696e2d666561747572652d62616e6e6572732f626164776f7264626c6f636b65722e706e67" width="650" height="365" alt="BadWordBlocker plugin features" data-canonical-src="https://static.surva.net/osplugin-feature-banners/badwordblocker.png" style="max-width:100%;"></a>
+</p>
+<p><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Ready for PocketMine-MP version 4.0 (PM4).</p>
+<h2>
+<a id="user-content-description" class="anchor" href="#description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Description</h2>
+<p>BadWorkBlocker is a feature rich chat filter suitable for huge servers to keep the chat clean from swear words and spam. It's highly configurable for nearly every needs.</p>
+<h2>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<p>The main features of this plugin are:</p>
+<ul>
+<li>
+<strong>SWEAR FILTER</strong> Block messages containing swear words (specified in the config file)</li>
+<li>
+<strong>BLOCK SAME MESSAGES</strong> Show a warning to the player if he tries to send the same message twice</li>
+<li>
+<strong>PREVENT SPAM</strong> Prevent spam by preventing the player to send messages in an interval shorter than specified in the config</li>
+<li>
+<strong>ANTI CAPS</strong> Filter messages containing too much uppercase letters</li>
+</ul>
+<h2>
+<a id="user-content-usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+<p>All settings can be changed in the <code>config.yml</code>-file, there are no commands:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Language of the plugin messages</span>
+<span class="pl-c"><span class="pl-c">#</span> Possible options are: en (English), de (German), fr (French), ru (Russian), tr (Turkish), id (Indonesian)</span>
+<span class="pl-ent">language</span>: <span class="pl-s"><span class="pl-pds">"</span>en<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> List of the blocked words</span>
+<span class="pl-ent">badwords</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>fuck<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>shit<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>bitch<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Ignore spaces in messages when checking for swear words / spam</span>
+<span class="pl-ent">ignorespaces</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Show the player which word has been blocked</span>
+<span class="pl-ent">showblocked</span>: <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Minimum time between chat messages in seconds</span>
+<span class="pl-ent">waitingtime</span>: <span class="pl-c1">2</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Percentage of uppercase chars in a message required to trigger caps checker</span>
+<span class="pl-ent">uppercasepercentage</span>: <span class="pl-c1">0.75</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Minimum amount of chars in a message required to activate caps checker (to avoid blocking HI, OK, etc.)</span>
+<span class="pl-ent">minimumchars</span>: <span class="pl-c1">3</span>
+
+<span class="pl-c"><span class="pl-c">#</span> After how many violations against the chat filter, a player should be kicked/banned - set to 0 to disable</span>
+<span class="pl-c"><span class="pl-c">#</span> Violations are reset after a server restart</span>
+<span class="pl-ent">violations</span>:
+  <span class="pl-ent">kick</span>: <span class="pl-c1">0</span>
+  <span class="pl-ent">ban</span>: <span class="pl-c1">0</span>
+  <span class="pl-ent">resetafterkick</span>: <span class="pl-s">true </span><span class="pl-c"><span class="pl-c">#</span> reset violations after kick (this disables banning if kick-count is lower)</span></pre></div>
+<p><a href="https://plugins.surva.net/docs/BadWordBlocker" rel="nofollow">Read the full documentation <g-emoji class="g-emoji" alias="book" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png">📖</g-emoji></a> • <a href="https://discord.gg/t4Kg4j3829" rel="nofollow">Ask questions on Discord <g-emoji class="g-emoji" alias="speech_balloon" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ac.png">💬</g-emoji></a></p>
+<h2>
+<a id="user-content-contribution" class="anchor" href="#contribution" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contribution</h2>
+<p>Feel free to contribute if you have ideas or found an issue.</p>
+<p>You can:</p>
+<ul>
+<li>
+<a href="https://github.com/survanetwork/BadWordBlocker/issues">open an issue</a> (problems, bugs or feature requests)</li>
+<li>
+<a href="https://github.com/survanetwork/BadWordBlocker/pulls">create a pull request</a> (code contributions like fixed bugs or added features)</li>
+<li>
+<a href="https://github.com/survanetwork/BadWordBlocker/tree/master/resources/languages">help translating the plugin</a> (create a new language file or correct an existing one)</li>
+</ul>
+<p>Please read our <strong><a href="CONTRIBUTING.md">Contribution Guidelines</a></strong> before creating an issue or submitting a pull request.</p>
+<p>Many thanks for their support to all contributors!</p>
+<h2>
+<a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<p><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow"><img src="https://camo.githubusercontent.com/f05d4039b67688cfdf339d2a445ad686a60551f9891734c418f7096184de5fac/68747470733a2f2f692e6372656174697665636f6d6d6f6e732e6f72672f6c2f62792d6e632d73612f342e302f38387833312e706e67" alt="Creative Commons License" data-canonical-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" style="max-width:100%;"></a></p>
+<p><a href="https://github.com/survanetwork/BadWordBlocker">BadWordBlocker</a> by <a href="https://github.com/survanetwork">surva network</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. Permissions beyond the scope of this license may be available on request.</p>

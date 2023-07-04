@@ -1,0 +1,40 @@
+<p>ClearLag plugin for PM4, which removes entities after a certain period of time to prevent lags. <br>
+In the configuration file, entities can be excluded if desired.</p>
+<h2>
+<a id="user-content-command" class="anchor" href="#command" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>clearlag</code></td>
+<td>Clear all entities manually</td>
+<td>
+<code>op</code>, <code>clearlag.command</code>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>
+<a id="user-content-configuration" class="anchor" href="#configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h2>
+<p>The configuration file is located in the directory <code>plugin_data/ClearLag/</code> on your server</p>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span> The message prefix which will be displayed in the chat</span>
+<span class="pl-ent">message-prefix</span>: <span class="pl-s"><span class="pl-pds">'</span>&amp;7[&amp;cClearLag&amp;7]<span class="pl-pds">'</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> The time span between each clear-lag</span>
+<span class="pl-c"><span class="pl-c">#</span> m=minutes,s=seconds</span>
+<span class="pl-c"><span class="pl-c">#</span> e.g. 30m20s</span>
+<span class="pl-ent">clear-delay</span>: <span class="pl-c1">15m</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Enter here mobs or items, which should not be cleared</span>
+<span class="pl-c"><span class="pl-c">#</span> e.g. Zombie or Pig or Beacon</span>
+<span class="pl-ent">exceptions</span>:
+  - <span class="pl-s">placeholder</span>
+...</pre></div>
+<p>The messages can also be customized in the <code>lang_1.0.0.ini</code> file.</p>

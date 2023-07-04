@@ -1,0 +1,51 @@
+<h2><a id="user-content-overview" class="anchor" aria-hidden="true" href="#overview"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h2>
+<p><g-emoji class="g-emoji" alias="skull" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f480.png">💀</g-emoji> • Souls is a plugin that adds a fun and interesting system to your server, where when a player kills others, he will receive souls that he can sell or exchange for other things. The plugin is fully customizable and has an API in case you need more integrations.</p>
+<p>Made with <g-emoji class="g-emoji" alias="sparkling_heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f496.png">💖</g-emoji> by Henry8K.</p>
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<p><g-emoji class="g-emoji" alias="link" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f517.png">🔗</g-emoji> • Commands: <code>sell</code> and <code>view souls</code> commands were initially implemented in the plugin where you can customize the description and name of the command all in the configuration.</p>
+<p><g-emoji class="g-emoji" alias="dart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png">🎯</g-emoji> • API: Create other plugins using the core API of souls as a base and thus improve the experience on your server.</p>
+<p><g-emoji class="g-emoji" alias="star" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png">⭐</g-emoji> • Custom: The whole plugin was developed 100% configurable, you can finally have total freedom when using a plugin without having to change the code.</p>
+<p><g-emoji class="g-emoji" alias="compass" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ed.png">🧭</g-emoji> • Clear: enjoy a fast plugin and clean code, this plugin was designed with rules for easy maintenance and good performance.</p>
+<p><g-emoji class="g-emoji" alias="floppy_disk" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4be.png">💾</g-emoji> • Database: All data is stored in YAML, soon I will support the Database and json files. I'm afraid the json will be the most complicated lol.</p>
+<h2><a id="user-content-api" class="anchor" aria-hidden="true" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h2>
+<p>• The plugin's api won't be a difficult problem for you as it's designed to be simple and intuitive, but remember to put the <code>souls</code> plugin dependency in <code>plugin.yml</code></p>
+<ol>
+<li>
+<p>set dependency:
+<code>depend: Souls</code></p>
+</li>
+<li>
+<p>add plugin classes:
+<code>use Henry8K\Souls\API\SoulsAPI;</code></p>
+</li>
+<li>
+<p>add plugin var:
+<code>private $soulsAPI;</code></p>
+</li>
+<li>
+<p>add plugin callback:
+<code>$this-&gt;soulsAPI = new SoulsAPI($this);</code></p>
+</li>
+<li>
+<p>add souls to player
+<code>$this-&gt;soulsAPI-&gt;addSouls($player, $amount);</code></p>
+</li>
+<li>
+<p>remove souls from player
+<code>$this-&gt;soulsAPI-&gt;removeSouls($player, $amount);</code></p>
+</li>
+<li>
+<p>set player souls
+<code>$this-&gt;soulsAPI-&gt;setSouls($player, $amount);</code></p>
+</li>
+<li>
+<p>get player souls
+<code>$this-&gt;soulsAPI-&gt;getSouls($player);</code></p>
+</li>
+</ol>
+<p>• view more informations on our github and get all the API. if you have doubts, create an issue.</p>
+<h2><a id="user-content-others" class="anchor" aria-hidden="true" href="#others"><span aria-hidden="true" class="octicon octicon-link"></span></a>Others</h2>
+<pre><code>🖼️ • Icon: flaticon
+⭐ • Author: Henry8K
+💀 • Idea: PetterLight
+</code></pre>

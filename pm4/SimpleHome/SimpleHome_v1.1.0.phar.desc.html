@@ -1,0 +1,61 @@
+<h3>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands:</h3>
+<ul>
+<li>Sethome Command:
+<ul>
+<li>Create home</li>
+<li>permission: sh.cmd.sethome (no-op)</li>
+<li>usage: /sethome </li>
+</ul>
+</li>
+<li>Home Command:
+<ul>
+<li>Displays list of homes or teleport to home</li>
+<li>permission: sh.cmd.home (no-op)</li>
+<li>usage: /home or /home [home]</li>
+</ul>
+</li>
+<li>Delhome Command:
+<ul>
+<li>Remove home</li>
+<li>permission: sh.cmd.delhome (no-op)</li>
+<li>usage: /delhome </li>
+</ul>
+</li>
+</ul>
+<h3>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions:</h3>
+<ul>
+<li>sh.cmd:
+<ul>
+<li>permission for all commands</li>
+<li>default: TRUE</li>
+</ul>
+</li>
+</ul>
+<h3>
+<a id="user-content-api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API:</h3>
+<ul>
+<li>get SimpleHome instance</li>
+</ul>
+<p><code>$simpleHome = SimpleHome::getInstance();</code></p>
+<ul>
+<li>get the player's home</li>
+</ul>
+<p><code>$home = $simpleHome-&gt;getPlayerHome(Player $player, string $homeName);</code></p>
+<ul>
+<li>teleport player to his home</li>
+</ul>
+<p><code>$home-&gt;teleport($player);</code></p>
+<ul>
+<li>create new home</li>
+</ul>
+<p><code>$simpleHome-&gt;setPlayerHome($player, $newHome = new Home($player, [$x, $y, $z, $levelName], $homeName));</code></p>
+<ul>
+<li>delete home</li>
+</ul>
+<p><code>$simpleHome-&gt;deleteHome($player, $newHome);</code></p>
+<ul>
+<li>get home list (array)</li>
+</ul>
+<p><code>$simpleHome-&gt;getHomeList();</code></p>

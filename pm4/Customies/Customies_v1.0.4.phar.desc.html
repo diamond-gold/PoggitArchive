@@ -1,0 +1,146 @@
+<h1>
+<a id="user-content-customies" class="anchor" href="#customies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Customies</h1>
+<p>A PocketMine-MP plugin that implements support for custom blocks, items and entities.</p>
+<blockquote>
+<p>It is important to note that custom blocks will not work properly with other plugins that also modify the runtime block
+mappings, such as <a href="https://github.com/ipad54/INether">INether</a> and <a href="https://github.com/CLADevs/VanillaX">VanillaX</a>.</p>
+</blockquote>
+<h2>
+<a id="user-content-important-contributors" class="anchor" href="#important-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Important Contributors</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/TwistedAsylumMC">TwistedAsylumMC</a></td>
+<td>Helped research and develop the first versions of Customies as well as maintain the code</td>
+</tr>
+<tr>
+<td><a href="https://github.com/DenielWorld">DenielW</a></td>
+<td>Helped research and develop the first versions of Customies</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Unickorn">Unickorn</a></td>
+<td>Maintained the code during the PM4 betas and kept it up to date</td>
+</tr>
+<tr>
+<td><a href="https://github.com/JackNoordhuis">JackNoordhuis</a></td>
+<td>Suggested the idea of using async workers and helped write the code which made them function</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ScarceityPvP">ScarceityPvP</a></td>
+<td>Helped develop the item components implementation and block-related bug fixes</td>
+</tr>
+</tbody>
+</table>
+<h2>
+<a id="user-content-usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+<h3>
+<a id="user-content-custom-blocks" class="anchor" href="#custom-blocks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom Blocks</h3>
+<p>Registering a custom block can either be done with or without a model using the <code>CustomiesBlockFactory</code> class. Without a
+model all you need to do is register
+the block with the same parameters you would use to construct a Block normally.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> customiesdevs\customies\block\<span class="pl-v">CustomiesBlockFactory</span>;
+<span class="pl-k">use</span> pocketmine\block\<span class="pl-v">BlockBreakInfo</span>;
+
+<span class="pl-c">// ...</span>
+
+<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onEnable</span>(): <span class="pl-smi">void</span> {
+	<span class="pl-v">CustomiesBlockFactory</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">registerBlock</span>(<span class="pl-v">Block</span>::class, "<span class="pl-s">customies:example_block</span>", "<span class="pl-s">Example Block</span>", <span class="pl-k">new</span> <span class="pl-v">BlockBreakInfo</span>(<span class="pl-c1">1</span>));
+}
+
+<span class="pl-c">// ...</span></pre></div>
+<p>If your block contains a different model, you can provide a <code>Model</code> as the 4th argument. A model requires an array of
+materials, a texture, an origin and a size.</p>
+<ul>
+<li>Materials: Array of materials that define how the texture is applied to specific faces</li>
+<li>Texture: Name of the texture to apply to the model</li>
+<li>Origin: The origin point of the selection box. <code>Vector3(0, 0, 0)</code> is the top right corner of the block</li>
+<li>Size: The size of the block in pixels. This must be between <code>Vector3(0, 0, 0)</code> and <code>Vector3(16, 16, 16)</code> as the client
+does not support blocks being larger than this</li>
+</ul>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> customiesdevs\customies\block\<span class="pl-v">CustomiesBlockFactory</span>;
+<span class="pl-k">use</span> customiesdevs\customies\block\<span class="pl-v">Material</span>;
+<span class="pl-k">use</span> customiesdevs\customies\block\<span class="pl-v">Model</span>;
+<span class="pl-k">use</span> pocketmine\block\<span class="pl-v">BlockBreakInfo</span>;
+<span class="pl-k">use</span> pocketmine\math\<span class="pl-v">Vector3</span>;
+
+<span class="pl-c">// ...</span>
+
+<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onEnable</span>(): <span class="pl-smi">void</span> {
+	<span class="pl-s1"><span class="pl-c1">$</span>material</span> = <span class="pl-k">new</span> <span class="pl-v">Material</span>(<span class="pl-v">Material</span>::<span class="pl-c1">TARGET_ALL</span>, "<span class="pl-s">example</span>", <span class="pl-v">Material</span>::<span class="pl-c1">RENDER_METHOD_ALPHA_TEST</span>);
+	<span class="pl-s1"><span class="pl-c1">$</span>model</span> = <span class="pl-k">new</span> <span class="pl-v">Model</span>([<span class="pl-s1"><span class="pl-c1">$</span>material</span>], "<span class="pl-s">geometry.example</span>", <span class="pl-k">new</span> <span class="pl-v">Vector3</span>(-<span class="pl-c1">8</span>, <span class="pl-c1">0</span>, -<span class="pl-c1">8</span>), <span class="pl-k">new</span> <span class="pl-v">Vector3</span>(<span class="pl-c1">16</span>, <span class="pl-c1">16</span>, <span class="pl-c1">16</span>));
+	<span class="pl-v">CustomiesBlockFactory</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">registerBlock</span>(<span class="pl-v">Block</span>::class, "<span class="pl-s">customies:example_block</span>", "<span class="pl-s">Example Block</span>", <span class="pl-k">new</span> <span class="pl-v">BlockBreakInfo</span>(<span class="pl-c1">1</span>));
+}
+
+<span class="pl-c">// ...</span></pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>block</span> = <span class="pl-v">CustomiesBlockFactory</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">get</span>("<span class="pl-s">customies:example_block</span>");</pre></div>
+<blockquote>
+<p>More information about materials and the different properties can be found
+on <a href="https://docs.microsoft.com/en-us/minecraft/creator/reference/content/blockreference" rel="nofollow">docs.microsoft.com</a>.</p>
+</blockquote>
+<h3>
+<a id="user-content-custom-entities" class="anchor" href="#custom-entities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom Entities</h3>
+<p>Registering a custom entity is as simple as registering a normal entity. All you need to do is use
+the <code>CustomiesEntityFactory</code> class to register the entity, and then spawn the entity in the same way as you would
+normally.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> customiesdevs\customies\entity\<span class="pl-v">CustomiesEntityFactory</span>;
+
+<span class="pl-c">// ...</span>
+
+<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onEnable</span>(): <span class="pl-smi">void</span> {
+	<span class="pl-v">CustomiesEntityFactory</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">registerEntity</span>(<span class="pl-v">ExampleEntity</span>::class, "<span class="pl-s">customies:example_entity</span>");
+}
+
+<span class="pl-c">// ...</span></pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>entity</span> = <span class="pl-k">new</span> <span class="pl-v">ExampleEntity</span>(<span class="pl-k">new</span> <span class="pl-v">Location</span>(...));
+<span class="pl-s1"><span class="pl-c1">$</span>entity</span>-&gt;<span class="pl-en">spawnToAll</span>();</pre></div>
+<blockquote>
+<p>If you want to provide your own creation func, <code>registerEntity</code> accepts an optional 3rd parameter to provide your own
+creation func with the same signature as normal (<code>Closure(World $world, CompoundTag $nbt) : Entity</code>)</p>
+</blockquote>
+<h3>
+<a id="user-content-custom-items" class="anchor" href="#custom-items" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom Items</h3>
+<p>Registering a custom item is as simple as registering a normal item, but the ID is calculated for you. All you need to
+do is use the <code>CustomiesItemFactory</code> class to register the item, and fetch it as you would with a vanilla item.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> customiesdevs\customies\item\<span class="pl-v">CustomiesItemFactory</span>;
+
+<span class="pl-c">// ...</span>
+
+<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onEnable</span>(): <span class="pl-smi">void</span> {
+	<span class="pl-v">CustomiesItemFactory</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">registerItem</span>(<span class="pl-v">Item</span>::class, "<span class="pl-s">customies:example_item</span>", "<span class="pl-s">Example Item</span>");
+}
+
+<span class="pl-c">// ...</span></pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>item</span> = <span class="pl-v">CustomiesItemFactory</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">get</span>("<span class="pl-s">customies:example_item</span>", <span class="pl-c1">64</span>);</pre></div>
+<p>Custom items can also have components which are used to change the behaviour of items client side, such as making it
+edible or have durability etc. To get started with components, you need to implement the <code>ItemComponents</code> interface, use
+the <code>ItemComponentsTrait</code> and call the <code>initComponent</code> method in the constructor of your class.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> customiesdevs\customies\item\<span class="pl-v">ItemComponents</span>;
+<span class="pl-k">use</span> customiesdevs\customies\item\<span class="pl-v">ItemComponentsTrait</span>;
+<span class="pl-k">use</span> pocketmine\item\<span class="pl-v">Item</span>;
+
+<span class="pl-k">class</span> <span class="pl-v">ExampleItem</span> <span class="pl-k">extends</span> <span class="pl-v">Item</span> <span class="pl-k">implements</span> <span class="pl-v">ItemComponents</span> {
+	<span class="pl-k">use</span> <span class="pl-v">ItemComponentsTrait</span>;
+
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">__construct</span>() {
+		<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">initComponent</span>("<span class="pl-s">example_item</span>", <span class="pl-c1">64</span>);
+	}
+}</pre></div>
+<p>Now that you have an item with components, you can add either components or properties using the <code>addComponent</code>
+and <code>addProperty</code> methods.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// ...</span>
+
+<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">addComponent</span>("<span class="pl-s">minecraft:armor</span>", ["<span class="pl-s">protection</span>" =&gt; <span class="pl-c1">4</span>]);
+<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">addProperty</span>("<span class="pl-s">allow_off_hand</span>", <span class="pl-c1">true</span>);
+
+<span class="pl-c">// ...</span></pre></div>
+<blockquote>
+<p>More information about all the different item components and properties can be found
+on <a href="https://docs.microsoft.com/en-us/minecraft/creator/reference/content/itemreference" rel="nofollow">docs.microsoft.com</a>.</p>
+</blockquote>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e145ff6c9ac229f","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

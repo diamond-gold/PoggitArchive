@@ -1,0 +1,98 @@
+<h1>
+<a id="user-content-general" class="anchor" href="#general" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General</h1>
+<p>PureChat by 64FF00 is a plugin for PurePerms that provides custom chat format for server owners.</p>
+<h1>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/setsuffix &lt;player&gt; &lt;suffix&gt;</code></td>
+<td>Set a players suffix.</td>
+<td>pchat.command.setsuffix</td>
+</tr>
+<tr>
+<td><code>/setprefix &lt;player&gt; &lt;prefix&gt;</code></td>
+<td>Set a players prefix</td>
+<td>pchat.command.setprefix</td>
+</tr>
+<tr>
+<td><code>/setnametag &lt;group&gt; [world] &lt;format&gt;</code></td>
+<td>Set the default nametag of a group</td>
+<td>pchat.command.setnametag</td>
+</tr>
+<tr>
+<td><code>/setformat &lt;group&gt; [world] &lt;format&gt;</code></td>
+<td>Set default chat format</td>
+<td>pchat.command.setformat</td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<pre><code>YAML
+---
+
+# PureChat by 64FF00 (<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="20584b54495645525a60474d41494c0e434f4d">[email&#160;protected]</a>, @64ff00 for Twitter)
+
+# PureChat version string
+# - string
+version: "1.4.0-BETA-04"
+
+# Set default factions plugin for PureChat
+# - FactionsPro / XeviousPE-Factions (§l§9-§8]§b&gt;§7[§cXevious§aTestSrv§7]§b&lt;§8[§9-) / null
+default-factions-plugin: ~
+
+# Enable this if you want to use per-world chat formats / per-world nametags for players
+# - true / false
+enable-multiworld-chat: false
+
+# Please check if you have all PurePerms groups in your server here
+
+# &amp;0: Black, &amp;1: Dark Blue, &amp;2: Dark Green, &amp;3: Dark Aqua, &amp;4: Dark Red, &amp;5: Dark Purple, &amp;6: Gold, &amp;7: Gray, &amp;8: Dark Gray, &amp;9: Blue
+# &amp;a: Green, &amp;b: Aqua, &amp;c: Red, &amp;d: Light Purple, &amp;e: Yellow, &amp;f: White
+# &amp;k: Obfuscated, &amp;l: Bold, &amp;m: Strikethrough, &amp;n: Underline, &amp;o: Italic, &amp;r: Reset
+
+# Available PureChat tags: {display_name}, {msg}, {fac_name}, {fac_rank}, {prefix}, {suffix}, {world}
+groups:
+  Guest:
+    chat: "&amp;3&amp;l{prefix}&amp;e[Guest]&amp;f&amp;r {display_name} &amp;7&gt; {msg}"
+    nametag: "&amp;3&amp;l{prefix}&amp;e[Guest]&amp;f&amp;r {display_name}"
+    worlds: []
+  Admin:
+    chat: "&amp;3&amp;l{prefix}&amp;c[Admin]&amp;f&amp;r {display_name} &amp;7&gt; {msg}"
+    nametag: "&amp;3&amp;l{prefix}&amp;c[Admin]&amp;f&amp;r {display_name}"
+    worlds: []
+  Owner:
+    chat: "&amp;3&amp;l{prefix}&amp;a[Owner]&amp;f&amp;r {display_name} &amp;7&gt; {msg}"
+    nametag: "&amp;3&amp;l{prefix}&amp;a[Owner]&amp;f&amp;r {display_name}"
+    worlds: []
+  OP:
+    chat: "&amp;3&amp;l{prefix}&amp;9[OP]&amp;f&amp;r {display_name} &amp;7&gt; {msg}"
+    nametag: "&amp;3&amp;l{prefix}&amp;9[OP]&amp;f&amp;r {display_name}"
+    worlds: []
+</code></pre>
+<h1>
+<a id="user-content-faq" class="anchor" href="#faq" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FAQ</h1>
+<p><strong>Why can't players have coloured chat?</strong></p>
+<p>You need to set 'pchat.coloredMessages' permission for the players if you want to allow them to use colored messages</p>
+<p><strong>What are the colour codes to use, and where should I put them?</strong></p>
+<p>See the available colour codes listed in the Config. Do not use colour codes in PurePerms groups directly, use PureChat config instead.</p>
+<h1>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<ul>
+<li>pchat</li>
+<li>pchat.coloredMessages</li>
+<li>pchat.command</li>
+<li>pchat.command.setsuffix</li>
+<li>pchat.command.setprefix</li>
+<li>pchat.command.setnametag</li>
+<li>pchat.command.setformat</li>
+</ul>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1464efd818cef9","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

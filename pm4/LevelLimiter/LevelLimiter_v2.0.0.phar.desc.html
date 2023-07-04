@@ -1,0 +1,47 @@
+<h1>
+<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h1>
+<p>A PocketMine-MP plugin which let's you whitelist/block specific commands on specific worlds.
+This is a very flexible plugin as you can easily give/restrict groups/users via permissions.</p>
+<p>KNOWN BUG: If there is only 1 world a command can work in, it will not get blocked.
+So add at least another world (which can be existing or non-existing) to keep the plugin working.</p>
+<p>NOTE: This plugin cannot block commands that has been overriden by another plugin. (MadCommands)</p>
+<h1>
+<a id="user-content-configyml" class="anchor" href="#configyml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config.yml</h1>
+<p>Set up the commands and the whitelisted world(s) on which the specific command will work on.</p>
+<ul>
+<li>command1:
+<ul>
+<li>"world1"</li>
+<li>"world2"</li>
+</ul>
+</li>
+<li>command2:
+<ul>
+<li>"world3"</li>
+</ul>
+</li>
+</ul>
+<h1>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<p>Operators will be able to bypass this restriction by default. Users with <code>levellimiter.bypass</code> can bypass this restriction.
+If you want to grant access to a group/user to bypass the restriction on a specific world, add <code>levellimiter.bypass.&lt;world&gt;</code>.</p>
+<p><code>&lt;world&gt;</code> denotes the world name.</p>
+<p>Example:</p>
+<ul>
+<li>
+<code>levellimiter.bypass.flat</code> grants the user/group to bypass restrictions on <code>flat</code> world.</li>
+</ul>
+<p>If you want to grant access to a group/user a specific command on a specific world, add <code>levellimiter.bypass.&lt;world&gt;.&lt;command&gt;</code>.
+Example:</p>
+<ul>
+<li>
+<code>levellimiter.bypass.flat.pay</code> grants the user/group to use the <code>/pay</code> command on <code>flat</code> world.</li>
+</ul>
+<h1>
+<a id="user-content-contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h1>
+<ul>
+<li>Email: <a href="/cdn-cgi/l/email-protection#18797a7c6d2f2f757b687d587f75797174367b7775"><span class="__cf_email__" data-cfemail="2f4e4d4b5a1818424c5f4a6f48424e4643014c4042">[email&#160;protected]</span></a>
+</li>
+<li>Discord: MCA7#1245</li>
+</ul>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1462ab0b8ecfc0","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

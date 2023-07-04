@@ -1,0 +1,199 @@
+<p align="center">
+    <a href="https://github.com/Vecnavium/PurePerms"><img src="https://github.com/Vecnavium/PurePerms/raw/stable/icon.png" style="max-width:100%;"></a><br>
+    <b>Manage your permissions like you did on Bukkit. The best permissions manager for PocketMine-MP.</b>
+</p>
+<p align="center">
+    <a href="https://camo.githubusercontent.com/12244e2bfe9bbed3dbebdd6112e57d023a32503d4f28fdf129a12bc68d7941a5/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f5665636e617669756d2f507572655065726d733f6c6162656c3d72656c6561736526736f72743d73656d766572" target="_blank" rel="nofollow"><img alt="GitHubrelease" src="https://camo.githubusercontent.com/12244e2bfe9bbed3dbebdd6112e57d023a32503d4f28fdf129a12bc68d7941a5/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f5665636e617669756d2f507572655065726d733f6c6162656c3d72656c6561736526736f72743d73656d766572" data-canonical-src="https://img.shields.io/github/v/release/Vecnavium/PurePerms?label=release&amp;sort=semver" style="max-width:100%;"></a>
+      <a href="https://camo.githubusercontent.com/7386abba92c831374a68c8d2b91a87578d0e4d4dda78cfb4daa46fbda236a607/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f5665636e617669756d2f507572655065726d733f7374796c653d666f722d7468652d6261646765" target="_blank" rel="nofollow"><img alt="Stars" src="https://camo.githubusercontent.com/7386abba92c831374a68c8d2b91a87578d0e4d4dda78cfb4daa46fbda236a607/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f5665636e617669756d2f507572655065726d733f7374796c653d666f722d7468652d6261646765" data-canonical-src="https://img.shields.io/github/stars/Vecnavium/PurePerms?style=for-the-badge" style="max-width:100%;"></a>
+    <a href="https://discord.gg/6M9tGyWPjr" rel="nofollow"><img src="https://camo.githubusercontent.com/eecc96a3ff0dedc37f275aeeda585ba8d15a316b66809ea2795fdc41b88d5bc9/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833373730313836383634393730393536383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/837701868649709568?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width:100%;"></a>
+</p>
+<h1>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/addgroup &lt;group&gt;</code></td>
+<td>Adds a new group to the groups list.</td>
+<td>pperms.command.addgroup</td>
+</tr>
+<tr>
+<td><code>/addparent &lt;target_group&gt; &lt;parent_group&gt;</code></td>
+<td>Adds a group to another group inheritance list.</td>
+<td>pperms.command.addparent</td>
+</tr>
+<tr>
+<td><code>/defgroup &lt;group&gt; [world]</code></td>
+<td>Allows you to set default group.</td>
+<td>pperms.command.defgroup</td>
+</tr>
+<tr>
+<td><code>/fperms</code></td>
+<td>Allows you to find permissions for a specific plugin.</td>
+<td>pperms.command.fperms</td>
+</tr>
+<tr>
+<td><code>/groups</code></td>
+<td>Shows a list of all groups.</td>
+<td>pperms.command.groups</td>
+</tr>
+<tr>
+<td><code>/grpinfo &lt;group&gt; [world]</code></td>
+<td>Shows info about a group.</td>
+<td>pperms.command.grpinfo</td>
+</tr>
+<tr>
+<td><code>/listgperms &lt;group&gt; &lt;page&gt; [world]</code></td>
+<td>Shows a list of all permissions from a group.</td>
+<td>pperms.command.listgperms</td>
+</tr>
+<tr>
+<td><code>/listuperms &lt;player&gt; &lt;page&gt; [world]</code></td>
+<td>Shows a list of all permissions from a user.</td>
+<td>pperms.command.listuperms</td>
+</tr>
+<tr>
+<td><code>/ppinfo</code></td>
+<td>Shows info about PurePerms.</td>
+<td>pperms.command.ppinfo</td>
+</tr>
+<tr>
+<td><code>/ppsudo &lt;login / register&gt;</code></td>
+<td>Registers or logs into your Noeul account.</td>
+<td>pperms.command.ppsudo</td>
+</tr>
+<tr>
+<td><code>/ppreload</code></td>
+<td>Reloads all PurePerms configurations.</td>
+<td>pperms.command.ppreload</td>
+</tr>
+<tr>
+<td><code>/rmgroup &lt;group&gt;</code></td>
+<td>Removes a group from the groups list.</td>
+<td>pperms.command.rmgroup</td>
+</tr>
+<tr>
+<td><code>/rmparent &lt;target_group&gt; &lt;parent_group&gt;</code></td>
+<td>Removes a group from another group inheritance list.</td>
+<td>pperms.command.rmparent</td>
+</tr>
+<tr>
+<td><code>/setgperm &lt;group&gt; &lt;permission&gt; [world]</code></td>
+<td>Adds a permission to the group.</td>
+<td>pperms.command.setgperm</td>
+</tr>
+<tr>
+<td><code>/setgroup &lt;player&gt; &lt;group&gt; [world]</code></td>
+<td>Sets group for the user.</td>
+<td>pperms.command.setgroup</td>
+</tr>
+<tr>
+<td><code>/setuperm &lt;player&gt; &lt;permission&gt; [world]</code></td>
+<td>Adds a permission to the user.</td>
+<td>pperms.command.setuperm</td>
+</tr>
+<tr>
+<td><code>/unsetgperm &lt;group&gt; &lt;permission&gt; [world]</code></td>
+<td>Removes a permission from the group.</td>
+<td>pperms.command.unsetgperm</td>
+</tr>
+<tr>
+<td><code>/unsetuperm &lt;player&gt; &lt;permission&gt; [world]</code></td>
+<td>Removes a permission from the user.</td>
+<td>pperms.command.unsetuperm</td>
+</tr>
+<tr>
+<td><code>/usrinfo &lt;player&gt; [world]</code></td>
+<td>Shows info about a user.</td>
+<td>pperms.command.usrinfo</td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> PurePerms by 64FF00 (xktiverz@gmail.com, @64ff00 for Twitter)</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 제 블로그 이외에 허락없이 마음대로 플러그인 배포하실 시에는 바로 한국어 파일 삭제 조치하고 공유 중단합니다</span>
+
+---
+<span class="pl-c"><span class="pl-c">#</span> Set default data provider for PurePerms</span>
+<span class="pl-c"><span class="pl-c">#</span> - mysql, yamlv1, yamlv2</span>
+<span class="pl-ent">data-provider</span>: <span class="pl-s">yamlv1</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Set the default language for PurePerms (&lt;3)</span>
+<span class="pl-c"><span class="pl-c">#</span> - en, ko, jp, ru, ua, it, sp, cz, sk, de, idn, tr</span>
+<span class="pl-c"><span class="pl-c">#</span> English message resource by @64FF00 and @Samueljh1 (GitHub)</span>
+<span class="pl-c"><span class="pl-c">#</span> Korean message resource by @64FF00 (GitHub)</span>
+<span class="pl-c"><span class="pl-c">#</span> Japanese message resource by @onebone and @haniokasai (GitHub)</span>
+<span class="pl-c"><span class="pl-c">#</span> Russian message resource by @vvzar and @Pub4Game (GitHub)</span>
+<span class="pl-c"><span class="pl-c">#</span> Ukrainian message resource by @samalero (GitHub)</span>
+<span class="pl-c"><span class="pl-c">#</span> Italian message resource by @AryToNeX (GitHub)</span>
+<span class="pl-c"><span class="pl-c">#</span> Spanish message resource by @iksaku and @JoahDave (Github) </span>
+<span class="pl-c"><span class="pl-c">#</span> Czech message resource by @Michael2010117 (GitHub)</span>
+<span class="pl-c"><span class="pl-c">#</span> Slovak message resource by @Michael2010117 (GitHub)</span>
+<span class="pl-c"><span class="pl-c">#</span> German message resource by @Exxarion (GitHub)</span>
+<span class="pl-c"><span class="pl-c">#</span> Indonesian message resource by @DevillordMCPE (GitHub)</span>
+<span class="pl-c"><span class="pl-c">#</span> Turkish messages resource by @PainTR (GitHub)</span>
+<span class="pl-ent">default-language</span>: <span class="pl-s">en</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Disable /op permission for all players</span>
+<span class="pl-c"><span class="pl-c">#</span> - true / false</span>
+<span class="pl-ent">disable-op</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Setting this option will allow you to use per-world permissions</span>
+<span class="pl-c"><span class="pl-c">#</span> - true / false</span>
+<span class="pl-ent">enable-multiworld-perms</span>: <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Enables 'Noeul', a 'pointless' security management system for PurePerms</span>
+<span class="pl-c"><span class="pl-c">#</span> - true / false</span>
+<span class="pl-ent">enable-noeul-sixtyfour</span>: <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> MySQL Settings (Only configure this if you are going to use MySQL data provider)</span>
+<span class="pl-ent">mysql-settings</span>:
+  <span class="pl-ent">host</span>: <span class="pl-s"><span class="pl-pds">"</span>PurePerms-FTW.loveyou.all<span class="pl-pds">"</span></span>
+  <span class="pl-ent">port</span>: <span class="pl-c1">3306</span>
+  <span class="pl-ent">user</span>: <span class="pl-s"><span class="pl-pds">"</span>YourUsernameGoesHere<span class="pl-pds">"</span></span>
+  <span class="pl-ent">password</span>: <span class="pl-s"><span class="pl-pds">"</span>YourPasswordGoesHere<span class="pl-pds">"</span></span>
+  <span class="pl-ent">db</span>: <span class="pl-s"><span class="pl-pds">"</span>YourDBNameGoesHere<span class="pl-pds">"</span></span>
+  
+<span class="pl-c"><span class="pl-c">#</span> Sets a minimum length for a Noeul password when registering a new account</span>
+<span class="pl-c"><span class="pl-c">#</span> - int  </span>
+<span class="pl-ent">noeul-minimum-pw-length</span>: <span class="pl-c1">6</span>
+  
+<span class="pl-c"><span class="pl-c">#</span> Special thanks to @jazzwhistle for helping me with this cool feature! #JAZZWHISTLE-FTW</span>
+<span class="pl-c"><span class="pl-c">#</span> Ranks that can only be set on console</span>
+<span class="pl-c"><span class="pl-c">#</span> Also, users with a superadmin-rank can only have their rank changed on console</span>
+<span class="pl-c"><span class="pl-c">#</span> - array</span>
+<span class="pl-ent">superadmin-ranks</span>: <span class="pl-s">["OP"]</span></pre></div>
+<pre><code>YAML
+---
+Guest:
+  alias: 'gst'
+  isDefault: true
+  inheritance: []
+  permissions:
+  - -essentials.kit
+  - -essentials.kit.other
+  - -pocketmine.command.me
+  - pchat.colored.format
+  - pchat.colored.nametag
+  - pocketmine.command.list
+  - pperms.command.ppinfo
+  worlds: []
+</code></pre>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Set up permissions for different groups!</li>
+<li>Multi-group inheritance system to allow you to inherit group permissions</li>
+<li>Multi-language support, just choose your favorite language in config.yml! (Currently supports Czech, English, German, Korean, Japanese, Russian, Italian, Indonesian, Slovak, Spanish, Turkish, and Ukrainian! :D)</li>
+<li>Supports YAML + MySQL providers</li>
+<li>Provides simple and flexible PurePerms API for plugin developers</li>
+<li>And so on... ;)</li>
+</ul>

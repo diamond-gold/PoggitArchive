@@ -1,0 +1,25 @@
+<ul dir="auto">
+<li>Added support to PocketMine-MP 4.0</li>
+<li>Refactored the plugin API
+<ul dir="auto">
+<li>Added the <code>Bedrock::getMaxExplodeCount(): int</code> static method</li>
+<li>Added the <code>Bedrock::setMaxExplodeCount(int $maxExplodeCount): void</code> static method</li>
+<li>Added the <code>Bedrock::getBlastResistance(): float</code> static method</li>
+<li>Added the <code>Bedrock::setBlastResistance(float $blastResistance): void</code> static method</li>
+<li>Added the <code>Bedrock::canBeExploded(): bool</code> method</li>
+<li>Added the <code>Bedrock::isBreakable(): bool</code> method</li>
+<li>Added the <code>Bedrock::incrementExplodingCount(int $value = 1): void</code> method</li>
+<li>Added the <code>Main::setTogglingBedrock(Player $player, bool $value): void</code> method</li>
+<li>Added the <code>Main::removeTogglingBedrock(Player $player): void</code> method</li>
+<li>Added the <code>Main::isTogglingBedrock(Player $player): bool</code> method</li>
+<li>Added the <code>Main::getTogglingBedrock(Player $player): ?bool</code> method</li>
+<li>Deprecated the <code>Bedrock::onExplode(): void</code> method</li>
+<li>Deprecated the <code>Bedrock::getBreakable(): bool</code> method, use the <code>Bedrock::isBreakable(): bool</code> method instead</li>
+<li>Deprecated the <code>Bedrock::getDuration(): int</code> method, use the <code>Bedrock::canBeExploded(): bool</code> method instead</li>
+<li>Deprecated the <code>Main::$players</code> static property, use the <code>Main::setTogglingBedrock(Player $player, bool $value): void</code> method instead</li>
+<li>Deprecated the <code>Main::registerBlock(): void</code> method</li>
+<li>Deprecated the <code>TileBedrock</code> class, use the <code>Bedrock</code> class instead</li>
+<li>Deprecated the <code>TileBedrock::getNBT(): CompoundTag</code> method</li>
+</ul>
+</li>
+</ul>

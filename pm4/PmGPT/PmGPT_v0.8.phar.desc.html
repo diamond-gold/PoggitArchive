@@ -1,0 +1,120 @@
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/79281788/230729315-414e95a9-9d1e-4df9-adbc-40a72cf16a20.png"><img src="https://user-images.githubusercontent.com/79281788/230729315-414e95a9-9d1e-4df9-adbc-40a72cf16a20.png" alt="Readme" style="max-width: 100%;"></a></p>
+<p dir="auto">Have a conversation with the <code class="notranslate">ChatGPT gpt-3.5-turbo model</code></p>
+<p dir="auto">Plugin for Pocketmine-MP API4+<br>
+Works only with API-KEY<br>
+<a href="https://platform.openai.com/account/api-keys" rel="nofollow">https://platform.openai.com/account/api-keys</a><br></p>
+<p dir="auto">The use of OpenAi ChatgGTP is limited in the free trial.<br>
+You get a $5 grant per registration, after which you have to top up your credit or create a new account.<br>
+The $5 grant are only valid for one month.<br>
+Prices are per 1,000 tokens. You can think of tokens as pieces of words, where 1,000 tokens is about 750 words.<br>
+$0.002 / 1K tokens.</p>
+<h3 dir="auto">Data storage and use <g-emoji class="g-emoji" alias="card_index_dividers" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f5c2.png">🗂</g-emoji></h3>
+<p dir="auto">So that each user can have his own conversation. This plugin saves the chat history with ChatGPT in a .json file<br>
+This file is saved in plugin_data\PmGPT\temp\playername_chat.json after the first question. The user can delete this file himself for private reasons.</p>
+<p dir="auto">PmGPT use libFormAPI to create the UI</p>
+<h3 dir="auto">How to Start ? <g-emoji class="g-emoji" alias="arrow_forward" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/25b6.png">▶</g-emoji></h3>
+<p dir="auto">Just put your <code class="notranslate">API-KEY</code> in the <code class="notranslate">config.yml</code> and start the server.<br>
+Only users with <code class="notranslate">pmgpt.use</code> permission can run the command <code class="notranslate">/chatgpt</code></p>
+<p dir="auto">Depending on how busy ChatGPT is, an answer can take between 2 and 30+ seconds</p>
+<p dir="auto">if <code class="notranslate">usePluginCertFile</code> is <code class="notranslate">true</code> in the config, the plugin uses the <code class="notranslate">cacert.pem</code> from <a href="https://curl.haxx.se/ca/cacert.pem" rel="nofollow">https://curl.haxx.se/ca/cacert.pem</a><br>
+if not you have to make sure you can establish a secure SSL connection from your system.</p>
+<p dir="auto">You can also set the <code class="notranslate">useInsecureConnection</code> to <code class="notranslate">true</code> to disable SSL verification.</p>
+<h3 dir="auto">few-shot learning <g-emoji class="g-emoji" alias="gear" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2699.png">⚙️</g-emoji></h3>
+<p dir="auto">After you have started the server for the first time, you will find a file called <code class="notranslate">initialPrompt.yml</code> in the plugin_data/PmGPT folder.<br>
+In this file you can teach the model basic things such as server commands, server name, etc.<br>
+In addition, certain dynamic data from the server, such as the player name or the number of online players, can be taught to the model.<br>
+The initialPrompt default only serves as an example. users should customise it according to their needs by editing the file.<br>
+See example initialPrompt for ideas how to use</p>
+<h3 dir="auto">Dynamic Tags <g-emoji class="g-emoji" alias="books" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png">📚</g-emoji></h3>
+<p dir="auto">There are several dynamicTags that can be added to the <code class="notranslate">initialPromt.yml</code> the following is a list of all available dynamicTags<br><br>
+<code class="notranslate">{player_name}</code> The name of the player<br>
+<code class="notranslate">{online_players}</code> A number of online players<br>
+<code class="notranslate">{max_online_players}</code> A number from max allowed online players<br>
+<code class="notranslate">{players_names_online}</code> A List of names from online players<br>
+<code class="notranslate">{item_in_hand}</code> A name from the item in Players hand<br>
+<code class="notranslate">{player_level}</code> A number from Xp-level from player<br>
+<code class="notranslate">{player_world}</code> Name of the world the player is in</p>
+<h3 dir="auto">Features</h3>
+<ul dir="auto">
+<li><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Add gpt-3.5-turbo model instead of text-davinci-002</li>
+<li><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Add remembering previous questions</li>
+<li><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Run response action on async task to prevent freeze on waiting for<br>
+response</li>
+<li><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> few-shot learning by giving an initalPrompt</li>
+<li><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Send a please wait message if the response takes a little longer</li>
+<li><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Work with UI instead of Chat</li>
+<li><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Delete the conversation</li>
+<li><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Add SSL certificate by using <a href="https://curl.haxx.se/ca/cacert.pem" rel="nofollow">https://curl.haxx.se/ca/cacert.pem</a></li>
+<li><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Enable/Disable UseInsecureConnection in config</li>
+<li><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Enable/Disable usePluginCertFile in config</li>
+</ul>
+<h3 dir="auto">ToDos</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Adding support for "set model" to set the "using model" in the config</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Inform user when ChatGPT is at capacity</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Add language file system to support more languages</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> a switch between chat or window mode would be good</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Add more dynamic tags, suggestions ?</li>
+</ul>
+<h3 dir="auto">Answer preview <g-emoji class="g-emoji" alias="robot" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f916.png">🤖</g-emoji><g-emoji class="g-emoji" alias="speech_balloon" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ac.png">💬</g-emoji></h3>
+<p dir="auto"><em><strong>Question: Whats your name ?</strong></em><br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/79281788/233417540-7e1dfed0-5fae-48cd-96bf-b17cb552537b.png"><img src="https://user-images.githubusercontent.com/79281788/233417540-7e1dfed0-5fae-48cd-96bf-b17cb552537b.png" alt="whatsyourname" style="max-width: 100%;"></a></p>
+<p dir="auto"><em><strong>Question: Tell me information that concerns me</strong></em><br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/79281788/233418476-31a3decc-62b1-4fdc-a2a1-f417a9c755f6.png"><img src="https://user-images.githubusercontent.com/79281788/233418476-31a3decc-62b1-4fdc-a2a1-f417a9c755f6.png" alt="info1" style="max-width: 100%;"></a></p>
+<p dir="auto"><em><strong>Question: Do you have any advice for a good redstone machine ?</strong></em><br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/79281788/233418288-1ff3f4c6-c290-4a0b-bba8-6c6427cfd1b9.png"><img src="https://user-images.githubusercontent.com/79281788/233418288-1ff3f4c6-c290-4a0b-bba8-6c6427cfd1b9.png" alt="no redstone" style="max-width: 100%;"></a></p>
+<p dir="auto"><em><strong>Question: Can i earn money here ?</strong></em><br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/79281788/233418107-37cff721-4322-4e88-9211-6c1c7d74008f.png"><img src="https://user-images.githubusercontent.com/79281788/233418107-37cff721-4322-4e88-9211-6c1c7d74008f.png" alt="earn money" style="max-width: 100%;"></a></p>
+<p dir="auto"><em><strong>Question: Can i find more items like this in my hand ?</strong></em><br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/79281788/233417847-932bb5b7-85f7-4d93-ade7-b7baed588276.png"><img src="https://user-images.githubusercontent.com/79281788/233417847-932bb5b7-85f7-4d93-ade7-b7baed588276.png" alt="more items like this" style="max-width: 100%;"></a></p>
+<p dir="auto"><em><strong>Question: do you have a suggestion for good faction names ?, list me a few</strong></em><br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/79281788/231010759-e0425c13-3ddf-4c12-852e-c556e5a8bd20.png"><img src="https://user-images.githubusercontent.com/79281788/231010759-e0425c13-3ddf-4c12-852e-c556e5a8bd20.png" alt="descriptionUI" style="max-width: 100%;"></a></p>
+<h3 dir="auto">Example initialPrompt <g-emoji class="g-emoji" alias="question" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2753.png">❓</g-emoji></h3>
+<p dir="auto">You are an AI named HelperMK3000, a large language trained by OpenAI.<br>
+You are a helper AI designed to help answer player questions regarding this server.<br>
+You are currently chatting to a player on a Minecraft server via a commands.<br>
+Only the player you are responding to can see your messages.<br>
+You do not have any administrative permissions, and you cannot run commands for the player.</p>
+<p dir="auto">Consider the following in your responses:</p>
+<ul dir="auto">
+<li>Be conversational, friendly and helpful.</li>
+<li>Keep responses in short and brief format.</li>
+<li>Do not use use bullet point list unless requested to, remember your responses should be short and brief.</li>
+<li>Help the user on gameplay questions with the information available to you.</li>
+<li>Inform users of your limitation, and suggest them to consult '/guide' or '/help'.</li>
+<li>When you are unsure, you can always recommend the player to consult the others in the chat or with with staff via '/ticket' instead.</li>
+</ul>
+<p dir="auto">Here is the information available to you:</p>
+<ul dir="auto">
+<li>This server name is ExampleCraft, a play to win hardcore factions server with no paid ranks, crates, kits or any pay to win element.</li>
+<li>You can purchase chat tags, player cosmetics, and faction cosmetics at 'shop.examplecraft.com', there are no staff ranks or pay to win items. More information: '/guide shop'.</li>
+<li>You can earn ranks and voter coin by voting at 'vote.examplecraft.com' each vote grants you 10 voter coin, with enough coins you can redeem a rank or upgrade your current rank, voter coin can also be used to exchange for in game resources and exclusive voter cosmetics. More information: '/guide vote'.</li>
+<li>You can join our discord community on 'discord.examplecraft.com'. We hold weekly giveaways of cosmetics, ranks and in game resources. We have channels for discussion and chat for faction to recruit new members.</li>
+<li>There is a '/guide' command which includes useful information about how to play. You should recommend player to consult '/guide' if you are unable to help. Player can search the guide using '/guide search '.</li>
+<li>There is a '/guide getstarted' command for new players.</li>
+<li>The faction menu command is '/f' or '/factions'. More information: '/guide faction'</li>
+<li>Player can use '/report' to submit a report about any disruptive rule breakers, this will bring up a form asking for what kind of rule breaking is taking place, and also automatically record anything important, like chatlog and player's inventory for auditing, any online staff will be notified of the report.</li>
+<li>If the player need help from a staff member, they can request help from staff using '/ticket create' to bring up the ticket creation form, this will notify any online staff.</li>
+<li>Abuse of commands that notify staff is strictly forbidden, doing so may result in temporary bans, or even permanent ones.</li>
+<li>The '/help' command will list all available commands '/help ' will give information of the mentioned command, if it exist.</li>
+<li>If there's an issue on running commands, they may be intentionally disabled for gameplay reasons, consider checking '/help' for valid commands.</li>
+</ul>
+<p dir="auto">Information about your environment:</p>
+<ul dir="auto">
+<li>The player you are talking to: {player_name}</li>
+<li>Other players currently online: {players_names_online}</li>
+</ul>
+<h3 dir="auto">Special Thanks</h3>
+<ul dir="auto">
+<li>
+<p dir="auto"><strong>Muqsit</strong> Explain to use SSL cert file <g-emoji class="g-emoji" alias="handshake" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f91d.png">🤝</g-emoji><br>
+<a href="https://github.com/Muqsit/CurlWithSSL">https://github.com/Muqsit/CurlWithSSL</a></p>
+</li>
+<li>
+<p dir="auto"><strong>Thunder</strong> Helping with initialPrompt and for his suggestions <g-emoji class="g-emoji" alias="handshake" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f91d.png">🤝</g-emoji><br>
+Makes the default and the example initialPrompt</p>
+</li>
+<li>
+<p dir="auto"><strong>OpenAI</strong> For this great ChatGPT <g-emoji class="g-emoji" alias="handshake" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f91d.png">🤝</g-emoji></p>
+</li>
+</ul>

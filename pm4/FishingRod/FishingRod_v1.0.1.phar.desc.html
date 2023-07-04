@@ -1,0 +1,26 @@
+<h1><a id="user-content-fishingrod" class="anchor" aria-hidden="true" href="#fishingrod"><span aria-hidden="true" class="octicon octicon-link"></span></a>FishingRod</h1>
+<p>FishingRod is an open source plugin and is made for <a href="https://github.com/pmmp/PocketMine-MP">PocketMine-MP</a> 4.x.x.</p>
+<p>Note: The fishing rod is designed for PvP and not for fishing.</p>
+<h2><a id="user-content-installation" class="anchor" aria-hidden="true" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+<p>Install the file named <code>FishingRod.phar</code> in the<code>/home/plugins/</code> folder, you can download this file from <a href="https://poggit.pmmp.io/FishingRod" rel="nofollow">Poggit</a>.</p>
+<h2><a id="user-content-developers" class="anchor" aria-hidden="true" href="#developers"><span aria-hidden="true" class="octicon octicon-link"></span></a>Developers</h2>
+<p>Please see <a href="https://github.com/MXJosueDev/FishingRod/blob/main/CONTRIBUTING.md">CONTRIBUTING</a>.</p>
+<h3><a id="user-content-api" class="anchor" aria-hidden="true" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h3>
+<h4><a id="user-content-get-the-fishing-rod" class="anchor" aria-hidden="true" href="#get-the-fishing-rod"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Get the fishing rod</strong></h4>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
+
+<span class="pl-k">use</span> pocketmine\item\<span class="pl-v">VanillaItems</span>; <span class="pl-c">/* Class where the API methods are. */</span>
+
+<span class="pl-s1"><span class="pl-c1">$</span>fishingRod</span> = <span class="pl-v">VanillaItems</span>::<span class="pl-en">FISHING_ROD</span>(); <span class="pl-c">/* Final item that you can add to any inventory. */</span></pre></div>
+<h4><a id="user-content-know-if-a-player-is-fishing" class="anchor" aria-hidden="true" href="#know-if-a-player-is-fishing"><span aria-hidden="true" class="octicon octicon-link"></span></a>Know if a player is fishing</h4>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
+
+<span class="pl-k">use</span> fishingrod\<span class="pl-v">FishingRodManager</span>; <span class="pl-c">/* Class where the API methods are. */</span>
+<span class="pl-k">use</span> pocketmine\<span class="pl-v">Server</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>player</span> = <span class="pl-v">Server</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getPlayerExact</span>("<span class="pl-s">iMXJosue</span>"); <span class="pl-c">/* Player example with instance of 'pocketmine/player/Player'. */</span>
+
+<span class="pl-s1"><span class="pl-c1">$</span>isFishing</span> = <span class="pl-v">FishingRodManager</span>::<span class="pl-en">isFishing</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>); <span class="pl-c">/* Returns a boolean value indicating if the player is fishing. */</span></pre></div>
+<h2><a id="user-content-license" class="anchor" aria-hidden="true" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<p><a href="https://choosealicense.com/licenses/mit/" rel="nofollow">MIT</a></p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e146133beb02314","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

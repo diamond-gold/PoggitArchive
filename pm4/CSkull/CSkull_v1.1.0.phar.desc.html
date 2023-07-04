@@ -1,0 +1,133 @@
+<h2>
+<a id="user-content-cskull" class="anchor" href="#cskull" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CSkull</h2>
+<p>CSkull is a plugin for the Minecraft: Bedrock Edition server software <a href="https://github.com/pmmp/PocketMine-MP">PocketMine-MP</a> which aims to implement vanilla-like player skulls, the way they exist in Minecraft: Java Edition.</p>
+<h3>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h3>
+<ul>
+<li>Proper block collision and breaking <br>
+Many already existing plugins which implemented player skulls, used entities only, which gave the skulls their proper skin but did not give their skulls any collision. <br>
+CSkull implements collision by spawning the entity on top of the normal skull block, which makes both the correct block collision, as well as block-breaking possible.</li>
+<li>Skin data always accessible <br>
+Because we store the skin data of every player, that joined your server, in a database, it is possible to get the skull of a player, which is not online.</li>
+<li>Possibility of hiding skulls <br>
+As every skull is a unique entity, the frames per second of a player's game are likely to drop when being forced to render a big number of skull entities. So, if that is the case or the player just does not want to see those skulls, he can disable them by typing a command. If a player decides to hide the entities, they are not just made invisible but will not even be spawned to him at all. The player will only see the steve skull block below the entity, so that he can see, that there possibly was an entity there.</li>
+<li>Queuing skull entity spawn <br>
+As it can lag a player's client if too many entities are spawned at once, this plugin provides the possibility to only spawn a specific amount of skull entities to a player in the same tick. Read more about it <a href="#customizations">here</a>.</li>
+<li>No deletion of skulls when plugin fails to load <br>
+As we do not store the data in the skull entities which we would save in the chunk, but instead we store them in a database, there will not be any problems when a chunk is loaded without the plugin being enabled because no data is lost. There simply will not be any skull entities spawned if that is the case. <br>
+Unless the skull block is not broken without the plugin being not loaded or the database being deleted, there should not be any problems with deleted skulls.</li>
+<li>Removing the plugin without problems <br>
+Normally, when you would load a chunk that has unkown entities, e.g. from a removed plugin, in it, your console would be spammed with warnings that those entities were deleted. <br>
+Since, we do not store the skull entities on the disk, you can remove the plugin from your server without noticing it. (This plugin only handles the spawn of the skull entities, not of the skull block. So when you remove the plugin, the steve skull blocks, that were under the entities, will remain in your world.)</li>
+<li>/skull command cooldown <br>
+It may be in the interest of some servers to not let their players get unlimited amounts of skulls. By setting specific permission for their players, they can decide the cooldown a player should have on performing the /skull command. For a list of the permissions, look <a href="#permissions">here</a>.</li>
+<li>Language <br>
+Although the plugin's displayed messages are in English, you can customize that file to your need by modifying the <code>language.ini</code> file in the <code>plugin_data</code> folder of this plugin. <br>
+There, you can also change the name and lore of the skull item.</li>
+</ul>
+<h3>
+<a id="user-content-commands-and-permissions" class="anchor" href="#commands-and-permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands and permissions</h3>
+<h4>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h4>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/showskulls &lt;true / false&gt;</td>
+<td>Decide whether skull entities should be shown to you.</td>
+<td>cskull.command.showskulls</td>
+<td>/showheads</td>
+</tr>
+<tr>
+<td>/skull &lt;player&gt;</td>
+<td>Give yourself the skull of a player.</td>
+<td>cskull.command.skull</td>
+<td>/head, /playerhead</td>
+</tr>
+</tbody>
+</table>
+<h4>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h4>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cskull.command.showskulls</td>
+<td>This permission is required to execute the /showskulls command.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>cskull.command.skull</td>
+<td>This permission is required to execute the /skull command.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>cskull.cooldown.2592000</td>
+<td>Set the cooldown on the /skull command to one month for a player with this permission. (30d = 2592000s)</td>
+<td>false</td>
+</tr>
+<tr>
+<td>cskull.cooldown.604800</td>
+<td>Set the cooldown on the /skull command to one week for a player with this permission. (7d = 604800s)</td>
+<td>false</td>
+</tr>
+<tr>
+<td>cskull.cooldown.86400</td>
+<td>Set the cooldown on the /skull command to one day for a player with this permission. (24h = 86400s)</td>
+<td>true</td>
+</tr>
+<tr>
+<td><strong>cskull.cooldown.N</strong></td>
+<td>You can also specify your custom cooldown with this permission. (N is a natural number (a non-fractional number with a positive sign))</td>
+<td>---</td>
+</tr>
+<tr>
+<td>cskull.cooldown.none</td>
+<td>Disable the cooldown on the /skull command for a player with this permission.</td>
+<td>op</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="user-content-customizations" class="anchor" href="#customizations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Customizations</h3>
+<p>Customizations can be done in the <code>config.yml</code> in the plugin's <code>plugin_data</code> folder:</p>
+<ul>
+<li>
+<code>skullEntity.spawn.delay</code>: <code>1</code> <br>
+Define the delay in ticks between the spawn or despawn interval of skull entities for players.</li>
+<li>
+<code>skullEntity.spawn.maxPerTick</code>: <code>2</code> <br>
+Define how many skull entities can be spawned to a player or despawned from it in the same tick. <br>
+If <code>skullEntity.spawn.delay</code> is set to 0, this configuration will be ignored.</li>
+<li>
+<code>database</code> <br>
+Change the settings for the database this plugin will use. This is the default format provided by <a href="https://github.com/poggit/libasynql#configuration">libasynql</a>.</li>
+</ul>
+<h3>
+<a id="user-content-todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO</h3>
+<ul>
+<li>
+<strong>FIXED:</strong> Experience orbs are being attracted by our skull entities which should not happen. <br>
+This is due to the way PMMP handles these attractions: experience orbs are attracted to all human entities and therefore also our skull entities. But since we can not intervene in that by listening to an event, there is no easy way to fix that currently. This problem is already referenced in an <a href="https://github.com/pmmp/PocketMine-MP/issues/4589">issue</a>. <br>
+We would have two solutions: overwrite the <code>ExperienceOrb</code> class to implement our own entity search in the <code>ExperienceOrb::entityBaseTick()</code> method or let the <code>SkullEntity</code> class extend the <code>Entity</code> instead of the <code>Human</code> class and implement the skin handling, etc. ourselves. Both solutions are kind of complicated and in my eyes not worth the effort at the moment, just for them to get ruled out by a far easier way when the issue is resolved. <br>
+UPDATE: The issue was resolved with the <a href="https://github.com/pmmp/PocketMine-MP/pull/4623">PR</a> and merged into PocketMine-MP 4.1.0. If this minor version releases, we can resolve this issue by adding the following to our SkullEntity class: <br>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">initEntity</span>(<span class="pl-smi">CompoundTag</span> <span class="pl-s1"><span class="pl-c1">$</span>nbt</span>) : <span class="pl-smi">void</span> {
+      <span class="pl-smi">parent</span>::<span class="pl-en">initEntity</span>(<span class="pl-s1"><span class="pl-c1">$</span>nbt</span>);
+      <span class="pl-c">// Disables that experience orbs are attracted to skull entities.</span>
+      <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">xpManager</span>-&gt;<span class="pl-en">setCanAttractXpOrbs</span>(<span class="pl-c1">false</span>);
+}</pre></div>
+</li>
+</ul>

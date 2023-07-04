@@ -1,0 +1,101 @@
+<h1>
+<a id="user-content-welcome-to-customitemapi" class="anchor" href="#welcome-to-customitemapi" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to CustomItemAPI</h1>
+<blockquote>
+<p>the Plugin allows you to add as many items as you want
+on your server, you can add new foods,
+New pickaxes and much more !
+A configuration is present for people
+not having the necessary development skills.</p>
+</blockquote>
+<hr>
+<h2>
+<a id="user-content-getting-started-with-api" class="anchor" href="#getting-started-with-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>getting started with API</h2>
+<p>To start development with the API, you need to have some conditions.
+<code>plugin.yml</code></p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">name</span>: <span class="pl-s">TestCustomItem</span>
+<span class="pl-ent">version</span>: <span class="pl-s">1.0.0</span>
+<span class="pl-ent">author</span>: <span class="pl-s">you</span>
+<span class="pl-ent">main</span>: <span class="pl-s">you\test\Main</span>
+<span class="pl-ent">api</span>: <span class="pl-s">4.0.0</span>
+<span class="pl-ent">depend</span>: <span class="pl-s">CustomItemAPI </span><span class="pl-c"><span class="pl-c">#</span> it is very important !!!</span></pre></div>
+<p>Now that our plugin depends on CustomItemAPI, we can start by creating a basic item.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> pocketmine\item\<span class="pl-v">ItemIdentifier</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\<span class="pl-v">CustomItemAPI</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\items\<span class="pl-v">BaseItem</span>;
+
+
+<span class="pl-s1"><span class="pl-c1">$</span>item</span> = <span class="pl-k">new</span> <span class="pl-v">BaseItem</span>(<span class="pl-k">new</span> <span class="pl-v">ItemIdentifier</span>(<span class="pl-c1">1000</span>, <span class="pl-c1">0</span>), <span class="pl-s">'test'</span>, <span class="pl-s">'test_texture'</span>, <span class="pl-c1">64</span>, <span class="pl-c1">false</span>);
+<span class="pl-v">CustomItemAPI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getAPI</span>()-&gt;<span class="pl-en">register</span>(<span class="pl-s1"><span class="pl-c1">$</span>item</span>); <span class="pl-c"># the item is set to hold fill and will be register when onEnable().</span></pre></div>
+<h2>
+<a id="user-content-armor-creation" class="anchor" href="#armor-creation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Armor Creation</h2>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> pocketmine\inventory\<span class="pl-v">ArmorInventory</span>;
+<span class="pl-k">use</span> pocketmine\item\<span class="pl-v">ArmorTypeInfo</span>;
+<span class="pl-k">use</span> pocketmine\item\<span class="pl-v">ItemIdentifier</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\<span class="pl-v">CustomItemAPI</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\items\<span class="pl-v">CustomArmor</span>;
+
+
+<span class="pl-s1"><span class="pl-c1">$</span>item</span> = <span class="pl-k">new</span> <span class="pl-v">CustomArmor</span>(<span class="pl-k">new</span> <span class="pl-v">ItemIdentifier</span>(<span class="pl-c1">1000</span>, <span class="pl-c1">0</span>), <span class="pl-s">'armor_test'</span>, <span class="pl-k">new</span> <span class="pl-v">ArmorTypeInfo</span>(<span class="pl-c1">5</span>, <span class="pl-c1">100</span>, <span class="pl-v">ArmorInventory</span>::<span class="pl-c1">SLOT_HEAD</span>), <span class="pl-s">'test_texture'</span>);
+<span class="pl-v">CustomItemAPI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getAPI</span>()-&gt;<span class="pl-en">register</span>(<span class="pl-s1"><span class="pl-c1">$</span>item</span>); <span class="pl-c"># the item is set to hold fill and will be register when onEnable().</span></pre></div>
+<h2>
+<a id="user-content-food-creation" class="anchor" href="#food-creation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Food Creation</h2>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> pocketmine\item\<span class="pl-v">ItemIdentifier</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\<span class="pl-v">CustomItemAPI</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\items\<span class="pl-v">CustomFood</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>item</span> = <span class="pl-k">new</span> <span class="pl-v">CustomFood</span>(<span class="pl-k">new</span> <span class="pl-v">ItemIdentifier</span>(<span class="pl-c1">1000</span>, <span class="pl-c1">0</span>), <span class="pl-s">'test_food'</span>, <span class="pl-s">'texture_name'</span>, <span class="pl-c1">false</span>, <span class="pl-c1">5</span>, <span class="pl-c1">10.00</span>, <span class="pl-c1">64</span>);
+<span class="pl-v">CustomItemAPI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getAPI</span>()-&gt;<span class="pl-en">register</span>(<span class="pl-s1"><span class="pl-c1">$</span>item</span>); <span class="pl-c"># the item is set to hold fill and will be register when onEnable().</span></pre></div>
+<h2>
+<a id="user-content-potion-creation" class="anchor" href="#potion-creation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Potion Creation</h2>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> pocketmine\item\<span class="pl-v">ItemIdentifier</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\<span class="pl-v">CustomItemAPI</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\items\<span class="pl-v">CustomPotion</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>item</span> = <span class="pl-k">new</span> <span class="pl-v">CustomPotion</span>(<span class="pl-k">new</span> <span class="pl-v">ItemIdentifier</span>(<span class="pl-c1">1000</span>, <span class="pl-c1">0</span>), <span class="pl-s">'test_potion'</span>, <span class="pl-s">'texture_name'</span>, <span class="pl-c1">true</span>, <span class="pl-c1">5</span>, <span class="pl-c1">10.00</span>, <span class="pl-c1">64</span>); <span class="pl-c"># the animation of the eating will be a potion</span>
+<span class="pl-v">CustomItemAPI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getAPI</span>()-&gt;<span class="pl-en">register</span>(<span class="pl-s1"><span class="pl-c1">$</span>item</span>); <span class="pl-c"># the item is set to hold fill and will be register when onEnable().</span></pre></div>
+<h2>
+<a id="user-content-pickaxe-creation" class="anchor" href="#pickaxe-creation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pickaxe Creation</h2>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> pocketmine\item\<span class="pl-v">ItemIdentifier</span>;
+<span class="pl-k">use</span> pocketmine\item\<span class="pl-v">ToolTier</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\<span class="pl-v">CustomItemAPI</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\items\<span class="pl-v">CustomPickaxe</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>item</span> = <span class="pl-k">new</span> <span class="pl-v">CustomPickaxe</span>(<span class="pl-k">new</span> <span class="pl-v">ItemIdentifier</span>(<span class="pl-c1">1000</span>, <span class="pl-c1">0</span>), <span class="pl-s">'test_pickaxe'</span>, <span class="pl-v">ToolTier</span>::<span class="pl-en">DIAMOND</span>(), <span class="pl-s">'texture_path'</span>, <span class="pl-c1">4.5</span>, <span class="pl-c1">455</span>, <span class="pl-c1">2</span>);
+<span class="pl-v">CustomItemAPI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getAPI</span>()-&gt;<span class="pl-en">register</span>(<span class="pl-s1"><span class="pl-c1">$</span>item</span>); <span class="pl-c"># the item is set to hold fill and will be register when onEnable().</span></pre></div>
+<h2>
+<a id="user-content-shovel-creation" class="anchor" href="#shovel-creation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Shovel Creation</h2>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> pocketmine\item\<span class="pl-v">ItemIdentifier</span>;
+<span class="pl-k">use</span> pocketmine\item\<span class="pl-v">ToolTier</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\<span class="pl-v">CustomItemAPI</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\items\<span class="pl-v">CustomShovel</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>item</span> = <span class="pl-k">new</span> <span class="pl-v">CustomShovel</span>(<span class="pl-k">new</span> <span class="pl-v">ItemIdentifier</span>(<span class="pl-c1">1000</span>, <span class="pl-c1">0</span>), <span class="pl-s">'test_shovel'</span>, <span class="pl-v">ToolTier</span>::<span class="pl-en">DIAMOND</span>(), <span class="pl-s">'texture_path'</span>, <span class="pl-c1">4.5</span>, <span class="pl-c1">455</span>, <span class="pl-c1">2</span>);
+<span class="pl-v">CustomItemAPI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getAPI</span>()-&gt;<span class="pl-en">register</span>(<span class="pl-s1"><span class="pl-c1">$</span>item</span>); <span class="pl-c"># the item is set to hold fill and will be register when onEnable().</span></pre></div>
+<h2>
+<a id="user-content-axe-creation" class="anchor" href="#axe-creation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Axe Creation</h2>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> pocketmine\item\<span class="pl-v">ItemIdentifier</span>;
+<span class="pl-k">use</span> pocketmine\item\<span class="pl-v">ToolTier</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\<span class="pl-v">CustomItemAPI</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\items\<span class="pl-v">CustomAxe</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>item</span> = <span class="pl-k">new</span> <span class="pl-v">CustomAxe</span>(<span class="pl-k">new</span> <span class="pl-v">ItemIdentifier</span>(<span class="pl-c1">1000</span>, <span class="pl-c1">0</span>), <span class="pl-s">'test_axe'</span>, <span class="pl-v">ToolTier</span>::<span class="pl-en">DIAMOND</span>(), <span class="pl-s">'texture_path'</span>, <span class="pl-c1">4.5</span>, <span class="pl-c1">455</span>, <span class="pl-c1">2</span>);
+<span class="pl-v">CustomItemAPI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getAPI</span>()-&gt;<span class="pl-en">register</span>(<span class="pl-s1"><span class="pl-c1">$</span>item</span>); <span class="pl-c"># the item is set to hold fill and will be register when onEnable().</span></pre></div>
+<h2>
+<a id="user-content-hoe-creation" class="anchor" href="#hoe-creation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hoe Creation</h2>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> pocketmine\item\<span class="pl-v">ItemIdentifier</span>;
+<span class="pl-k">use</span> pocketmine\item\<span class="pl-v">ToolTier</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\<span class="pl-v">CustomItemAPI</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\items\<span class="pl-v">CustomHoe</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>item</span> = <span class="pl-k">new</span> <span class="pl-v">CustomHoe</span>(<span class="pl-k">new</span> <span class="pl-v">ItemIdentifier</span>(<span class="pl-c1">1000</span>, <span class="pl-c1">0</span>), <span class="pl-s">'test_hoe'</span>, <span class="pl-v">ToolTier</span>::<span class="pl-en">DIAMOND</span>(), <span class="pl-s">'texture_path'</span>, <span class="pl-c1">455</span>, <span class="pl-c1">2</span>);
+<span class="pl-v">CustomItemAPI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getAPI</span>()-&gt;<span class="pl-en">register</span>(<span class="pl-s1"><span class="pl-c1">$</span>item</span>); <span class="pl-c"># the item is set to hold fill and will be register when onEnable().</span></pre></div>
+<h2>
+<a id="user-content-sword-creation" class="anchor" href="#sword-creation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sword Creation</h2>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> pocketmine\item\<span class="pl-v">ItemIdentifier</span>;
+<span class="pl-k">use</span> pocketmine\item\<span class="pl-v">ToolTier</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\<span class="pl-v">CustomItemAPI</span>;
+<span class="pl-k">use</span> refaltor\customitemapi\items\<span class="pl-v">CustomSword</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>item</span> = <span class="pl-k">new</span> <span class="pl-v">CustomSword</span>(<span class="pl-k">new</span> <span class="pl-v">ItemIdentifier</span>(<span class="pl-c1">1000</span>, <span class="pl-c1">0</span>), <span class="pl-s">'test_sword'</span>, <span class="pl-v">ToolTier</span>::<span class="pl-en">DIAMOND</span>(), <span class="pl-s">'texture_path'</span>, <span class="pl-c1">455</span>, <span class="pl-c1">2</span>);
+<span class="pl-v">CustomItemAPI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getAPI</span>()-&gt;<span class="pl-en">register</span>(<span class="pl-s1"><span class="pl-c1">$</span>item</span>); <span class="pl-c"># the item is set to hold fill and will be register when onEnable().</span></pre></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14600328d6f9d0","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

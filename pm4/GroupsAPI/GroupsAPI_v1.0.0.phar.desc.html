@@ -1,0 +1,149 @@
+<h1>
+<a id="user-content-groupsapi" class="anchor" href="#groupsapi" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GroupsAPI</h1>
+<p>Yet another asynchronous permission management plugin for PocketMine-MP.</p>
+<h1>
+<a id="user-content-features-that-compared-to-other-plugins" class="anchor" href="#features-that-compared-to-other-plugins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features that compared to other plugins</h1>
+<table>
+<thead>
+<tr>
+<th>Feature Name</th>
+<th>PurePerms</th>
+<th>RankSystem</th>
+<th>GroupsAPI</th>
+<th>Hierarchy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multiple Rank/Groups</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Asynchronous SQL support</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Flexible APIs</td>
+<td>No</td>
+<td>I don't know</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Easy to use</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Temporary rank/group</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>PM4 Suppport</td>
+<td>Lack</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Priority system like Discord</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Developer-friendly API</li>
+<li>Temporary rank/group support</li>
+<li>Multiple Group/Rank support</li>
+<li>Priority system like Discord (which means the user who has highest priority cannot add/edit/remove group if their
+group priority is higher than the group's priority)</li>
+<li>Many configurations support</li>
+</ul>
+<h1>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/addgroup &lt;player&gt; &lt;group&gt;</td>
+<td>Add a player to a group</td>
+<td>groupsapi.command.addgroup</td>
+</tr>
+<tr>
+<td>/removegroup &lt;player&gt; &lt;group&gt;</td>
+<td>Remove a player from a group</td>
+<td>groupsapi.command.removegroup</td>
+</tr>
+<tr>
+<td>/checkgroup &lt;player&gt;</td>
+<td>Check a player's group</td>
+<td>groupsapi.command.checkgroup</td>
+</tr>
+<tr>
+<td>/editgroup &lt;group&gt;</td>
+<td>Edit a group</td>
+<td>groupsapi.command.editgroup</td>
+</tr>
+<tr>
+<td>/group &lt;group&gt;</td>
+<td>Shows group info</td>
+<td>groupsapi.command.group</td>
+</tr>
+<tr>
+<td>/groups</td>
+<td>Shows all groups</td>
+<td>groupsapi.command.groups</td>
+</tr>
+<tr>
+<td>/newgroup &lt;group&gt;</td>
+<td>Create a new group</td>
+<td>groupsapi.command.newgroup</td>
+</tr>
+<tr>
+<td>/permissions &lt;index&gt;</td>
+<td>Check a permission list</td>
+<td>groupsapi.command.permissions</td>
+</tr>
+<tr>
+<td>/pcheck &lt;player&gt;</td>
+<td>Check a player's group</td>
+<td>groupsapi.command.pcheck</td>
+</tr>
+<tr>
+<td>/tempgroup &lt;player&gt; &lt;group&gt; &lt;date format&gt;</td>
+<td>Give a temporary group to player</td>
+<td>groupsapi.command.tempgroup</td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content-todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO</h1>
+<ul>
+<li>[ ] Make all processes to UI</li>
+<li>[ ] Add more commands</li>
+<li>[ ] InfoAPI Support (Lazy to do, Please make support for this <a href="https://github.com/SOF3/InfoAPI">SOFe</a>!)</li>
+</ul>
+<p>If you have any idea, Please kindly open an issue on GitHub!</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14616538a19440","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

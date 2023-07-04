@@ -1,0 +1,70 @@
+<ul dir="auto">
+<li>Exported recipes can now be loaded as addons by putting them in the <code class="notranslate">plugin_data/Mineflow/addons</code> folder.
+<ul dir="auto">
+<li>Recipes loaded with addons do not list in the recipe list.</li>
+<li>The following command has been added:
+<ul dir="auto">
+<li><code class="notranslate">/mineflow addon list</code>: show list of addons</li>
+<li><code class="notranslate">/mineflow addon reload</code>: reload addons in the <code class="notranslate">plugin_data/Mineflow/addons</code> folder</li>
+<li><code class="notranslate">/mineflow addon load &lt;name&gt;</code>: load an addon <code class="notranslate">plugin_data/Mineflow/addons/&lt;name&gt;.json</code></li>
+<li><code class="notranslate">/mineflow addon unload &lt;name&gt;</code>: unload an addon named <code class="notranslate">&lt;name&gt;</code></li>
+</ul>
+</li>
+<li>Custom actions can now be added using addons.</li>
+</ul>
+</li>
+<li>Recipes can now be temporarily disabled.</li>
+<li>Recipe argument can now specify a variable type.</li>
+<li>Enabling/disabling event triggers now reflects instantly.</li>
+<li>Added new variables
+<ul dir="auto">
+<li><code class="notranslate">_.args</code>: list of recipe arguments</li>
+</ul>
+</li>
+<li>Added new variable properties
+<ul dir="auto">
+<li>Number variable
+<ul dir="auto">
+<li>floor</li>
+<li>ceil</li>
+<li>round</li>
+<li>abs</li>
+</ul>
+</li>
+<li>Entity variable
+<ul dir="auto">
+<li>isVisible</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Added new variable methods
+<ul dir="auto">
+<li>Number variable
+<ul dir="auto">
+<li>floor()</li>
+<li>ceil()</li>
+<li>round(precision)</li>
+<li>abs()</li>
+<li>pad(length)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Added new actions
+<ul dir="auto">
+<li>Set data in a player variable
+<ul dir="auto">
+<li>Stores personal player data in the player variable. To get the data from a player variable, you can use <code class="notranslate">&lt;player variable name&gt;.data.&lt;data name&gt;</code> variable. Example) <code class="notranslate">target.data.money</code></li>
+</ul>
+</li>
+<li>Set the default value for a player data</li>
+<li>Send a message to jukebox popup field</li>
+<li>Send a message to action bar field</li>
+<li>Make a player visible/invisible</li>
+<li>Transfer a player to another server</li>
+<li>Emote</li>
+</ul>
+</li>
+<li>Actions in the <code class="notranslate">Economy</code> category have been moved to <a href="https://github.com/aieuo/MineflowMoreActions">MineflowMoreActions</a> plugin.</li>
+</ul>

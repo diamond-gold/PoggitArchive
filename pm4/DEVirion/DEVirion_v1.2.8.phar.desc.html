@@ -1,0 +1,75 @@
+<p>DEVirion is the virion dependency manager. It can be used to run plugins from source if they require virions.</p>
+<ol>
+<li>Install this plugin</li>
+<li>Create a directory called <code>virions</code> <strong>next to the <code>plugins</code> folder</strong> (not inside it!)</li>
+<li>Drop the virions you use into the <code>virions</code> folder. Both packaged (.phar) virions and source (folder) virions are acceptable. (Just like how you install plugins with DevTools)</li>
+</ol>
+<h3>
+<a id="user-content-notes" class="anchor" href="#notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Notes</h3>
+<ul>
+<li>DEVirion will <strong>not</strong> shade plugins. Hence, this plugin <strong>must only</strong> be used for virion/plugin development. <strong>Released plugins must not depend on DEVirion to load virions</strong>.</li>
+<li>DEVirion cannot automatically detect what virions are needed. Use the <a href="#command-line-interface-standalone-executable">CLI</a> to automatically download virions required for a certain project.</li>
+</ul>
+<h2>
+<a id="user-content-command-line-options-for-pocketmine" class="anchor" href="#command-line-options-for-pocketmine" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command Line Options (for PocketMine)</h2>
+<p>You may also use the command-line option <code>--load-virions</code> to specify an <em>additional</em> folder to scan virions from (similar to the plugin path), or <code>--load-virion</code> (singular) to explicitly load a <strong>folder virion</strong> at the specified path (does not work with phar virions). For example, if you have this folder structure:</p>
+<pre><code>/
+/server/
+/server/PocketMine-MP.phar
+/server/start.sh
+/server/virions/
+/server/virions/libweird.phar
+/server/virions/libstrange/ (with a virion.yml in this folder)
+/libs/
+/libs/libodd.phar
+/libs/librare/ (with a virion.yml in this folder)
+/misc/
+/misc/libnormal.phar
+/misc/libtrivial/ (with a virion.yml in this folder)
+</code></pre>
+<ul>
+<li>Running <code>./start.sh</code> in <code>/server/</code> will <em>automatically</em> load libweird and libstrange.</li>
+<li>Running <code>./start.sh --load-virions=/libs/</code> will <em>additionally</em> load libodd and librare</li>
+<li>Running <code>./start.sh --load-virion=/misc/libtrivial/</code> will <em>additionally</em> load libtrivial.</li>
+<li>Running <code>./start.sh --load-virion=/misc/libnormal.phar</code> will <strong>not</strong> load libnormal, because <code>--load-virion</code> does not support phar virions — it's usually not necessary, and you should copy it to <code>virions</code> folder instead.</li>
+</ul>
+<h2>
+<a id="user-content-command-line-interface-standalone-executable" class="anchor" href="#command-line-interface-standalone-executable" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command Line Interface (Standalone executable)</h2>
+<h3>
+<a id="user-content-usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h3>
+<pre><code>=== DEVirion.phar usage ===
+php /path/to/DEVirion.phar install &lt;manifest&gt; &lt;project&gt; &lt;folder&gt; [--replace]
+    - Downloads all virions required by a project
+    - &lt;manifest&gt; is the path to the .poggit.yml of the project. You may put an
+      URLs here.
+    - &lt;project&gt; is the case-insensitive name of the project.
+    - &lt;folder&gt; is the path to the folder that virions should be installed in.
+      This should be /path/to/your_server/virions
+    - --replace will cause DEVirion to overwrite existing virions with the same
+      name DEVirion uses ({VirionName}_v{MajorVersion}.phar)
+
+php /path/to/DEVirion.phar download &lt;owner&gt; &lt;repo&gt; &lt;project&gt; &lt;version&gt; [--branch=":default"] [--output="/path/to/output.phar"]
+    - Downloads a virion build from Poggit
+    - &lt;owner&gt;, &lt;repo&gt; and &lt;project&gt; are the case-insensitive names of the repo
+      owner, repo and project containing the virion. &lt;project&gt; can be ~ if same
+      as &lt;repo&gt;.
+    - &lt;version&gt; is the SemVer version constraint for the virion required.
+      Same as the version field in .poggit.yml
+    - Only builds from the --branch branch will be used. ":default" means the
+      current default branch of the repo. --branch or --branch=* will accept
+      all branches.
+    - If --output is provided, the virion will be downloaded to there.
+      Otherwise, it is downloaded to &lt;project&gt;.phar (or "&lt;project&gt;_(n).phar" if
+      exists). --output without a value will echo the file contents to stderr.
+      (There is no option to echo to stdout because stdout is used for showing
+      verbose information)
+</code></pre>
+<h3>
+<a id="user-content-requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h3>
+<p>To run the CLI,</p>
+<ul>
+<li>PHP 7.0 or above is required</li>
+<li>The OpenSSL extension must be present to provide the <code>https://</code> wrapper (cURL is not required)</li>
+<li>The YAML extension is required.</li>
+<li>(Will be fixed soon) The production phar may not contain the shebang line <code>#!/usr/bin/env php</code> in the stub, so directly executing <code>devirion.phar blah blah blah</code> may not work.</li>
+</ul>

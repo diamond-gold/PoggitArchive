@@ -1,0 +1,53 @@
+<p>An extremely customizable TNTTag mini-game designed for scalability and simplicity.</p>
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>Customisable messages and scoreboard</li>
+<li>Multi arena support</li>
+<li>Waiting lobby support</li>
+<li>Auto-queue support</li>
+<li>Game statistics</li>
+<li>SQLite support</li>
+<li>MySQL support</li>
+</ul>
+<h2><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Command</th>
+<th align="center">Description</th>
+<th align="center">Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">tnttag create</td>
+<td align="center">Create a new arena.</td>
+<td align="center"><code>tnttag.subcommand.create</code></td>
+</tr>
+<tr>
+<td align="center">tnttag delete</td>
+<td align="center">Delete an existing arena.</td>
+<td align="center"><code>tnttag.subcommand.delete</code></td>
+</tr>
+<tr>
+<td align="center">tnttag list</td>
+<td align="center">List all available arenas.</td>
+<td align="center"><code>tnttag.subcommand.list</code></td>
+</tr>
+<tr>
+<td align="center">tnttag join</td>
+<td align="center">Join a game.</td>
+<td align="center"><code>tnttag.subcommand.join</code></td>
+</tr>
+<tr>
+<td align="center">tnttag quit</td>
+<td align="center">Quit a game.</td>
+<td align="center"><code>tnttag.subcommand.quit</code></td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-arena-creation" class="anchor" aria-hidden="true" href="#arena-creation"><span aria-hidden="true" class="octicon octicon-link"></span></a>Arena creation</h2>
+<h4><a id="user-content-format" class="anchor" aria-hidden="true" href="#format"><span aria-hidden="true" class="octicon octicon-link"></span></a>Format</h4>
+<p><code>tnttag create &lt;name:string&gt; &lt;world:string&gt; &lt;countdown:string&gt; &lt;min_players:string&gt; &lt;max_players:string&gt; &lt;round_duration:string&gt; &lt;grace_duration:string&gt; &lt;end_duration:string&gt; [lobby:string]</code></p>
+<h4><a id="user-content-example" class="anchor" aria-hidden="true" href="#example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h4>
+<p><code>tnttag create test game-world 30 8 40 60 20 10 game-lobby</code></p>

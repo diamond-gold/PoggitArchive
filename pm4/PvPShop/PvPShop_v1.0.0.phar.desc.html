@@ -1,0 +1,302 @@
+<h1><a id="user-content-pvpshop" class="anchor" aria-hidden="true" href="#pvpshop"><span aria-hidden="true" class="octicon octicon-link"></span></a>PvPShop</h1>
+<p><a href="https://poggit.pmmp.io/p/PvPShop" rel="nofollow"><img src="https://camo.githubusercontent.com/a58cecc4f44700f7da1b9d29ea9524457710beed7ea1b4423b39b3e89867a3c8/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f50765053686f70" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/PvPShop" style="max-width: 100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/PvPShop" rel="nofollow"><img src="https://camo.githubusercontent.com/b9f6b1659e3aee8ae0740479a2c1532c1856dda6b352226db125370a21a5ad66/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f50765053686f70" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/PvPShop" style="max-width: 100%;"></a></p>
+<p><strong>A basic pvp item shop. We also added items and armor with magical powers.</strong></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/83558341/215066906-5c06393b-4ada-4222-bcec-a7e47ce8af4d.png"><img src="https://user-images.githubusercontent.com/83558341/215066906-5c06393b-4ada-4222-bcec-a7e47ce8af4d.png" alt="pvpshop-icon" style="max-width: 100%;"></a></p>
+<p><a href="https://discord.gg/YyE9XFckqb" rel="nofollow"><img src="https://camo.githubusercontent.com/eecc96a3ff0dedc37f275aeeda585ba8d15a316b66809ea2795fdc41b88d5bc9/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833373730313836383634393730393536383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/837701868649709568?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width: 100%;"></a></p>
+<h3><a id="user-content--implementations" class="anchor" aria-hidden="true" href="#-implementations"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="bulb" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png">💡</g-emoji> Implementations</h3>
+<ul>
+<li>[X] Configuration.</li>
+<li>[x] MultiLanguage.</li>
+<li>[x] EconmyAPI &amp; BedrockEconomy.</li>
+<li>[X] Commands.</li>
+<li>[x] Keys in config.yml.</li>
+</ul>
+<h3><a id="user-content--config" class="anchor" aria-hidden="true" href="#-config"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="floppy_disk" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4be.png">💾</g-emoji> Config</h3>
+<div class="highlight highlight-source-yaml"><pre>   <span class="pl-c"><span class="pl-c">#</span>   ____            ____    ____    _                     </span>
+   <span class="pl-c"><span class="pl-c">#</span>  |  _ \  __   __ |  _ \  / ___|  | |__     ___    _ __  </span>
+   <span class="pl-c"><span class="pl-c">#</span>  | |_) | \ \ / / | |_) | \___ \  | '_ \   / _ \  | '_ \ </span>
+   <span class="pl-c"><span class="pl-c">#</span>  |  __/   \ V /  |  __/   ___) | | | | | | (_) | | |_) |</span>
+   <span class="pl-c"><span class="pl-c">#</span>  |_|       \_/   |_|     |____/  |_| |_|  \___/  | .__/ </span>
+   <span class="pl-c"><span class="pl-c">#</span>                by fernanACM                      |_|    </span>
+
+   <span class="pl-c"><span class="pl-c">#</span> Basic shop to buy pvp items. We have special items in this </span>
+   <span class="pl-c"><span class="pl-c">#</span> store to make it much more special.</span>
+
+   <span class="pl-c"><span class="pl-c">#</span> Configuration version. DO NOT TOUCH</span>
+   <span class="pl-ent">config-version</span>: <span class="pl-s"><span class="pl-pds">"</span>1.0.0<span class="pl-pds">"</span></span>
+
+   <span class="pl-c"><span class="pl-c">#</span> Languages</span>
+   <span class="pl-c"><span class="pl-c">#</span> "eng", // English</span>
+   <span class="pl-c"><span class="pl-c">#</span> "spa", // Spanish</span>
+   <span class="pl-c"><span class="pl-c">#</span> "ger", // German</span>
+   <span class="pl-c"><span class="pl-c">#</span> "frc", // French</span>
+   <span class="pl-c"><span class="pl-c">#</span> "indo", // Indonesian</span>
+   <span class="pl-c"><span class="pl-c">#</span> "portg", // Portuguese</span>
+   <span class="pl-c"><span class="pl-c">#</span> "vie" // Vietnamese</span>
+   <span class="pl-ent">language</span>: <span class="pl-s">eng</span>
+
+   <span class="pl-c"><span class="pl-c">#</span> Prefix plugin</span>
+   <span class="pl-ent">Prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>§l[§aPvPShop§f]§8»§r <span class="pl-pds">"</span></span>
+
+   <span class="pl-c"><span class="pl-c">#</span> ======(ECONOMY PROVIDER)======</span>
+   <span class="pl-c"><span class="pl-c">#</span> Usa economyapi, bedrockeconomy, xp</span>
+   <span class="pl-ent">Economy</span>: 
+    <span class="pl-ent">provider</span>: <span class="pl-s">bedrockeconomy</span>
+
+   <span class="pl-c"><span class="pl-c">#</span> Price of items in the store.</span>
+   <span class="pl-ent">Price</span>:
+   <span class="pl-c"><span class="pl-c">#</span> ========(CATEGORY - ARMOR)============</span>
+   <span class="pl-ent">Armor</span>:
+     <span class="pl-c"><span class="pl-c">#</span> ===(LEATHER)==</span>
+     <span class="pl-ent">leather-helmet</span>: <span class="pl-c1">20</span>
+     <span class="pl-ent">leather-chestplate</span>: <span class="pl-c1">20</span>
+     <span class="pl-ent">leather-leggings</span>: <span class="pl-c1">20</span>
+     <span class="pl-ent">leather-boots</span>: <span class="pl-c1">20</span>
+     <span class="pl-c"><span class="pl-c">#</span> ===(GOLDEN)===</span>
+     <span class="pl-ent">golden-helmet</span>: <span class="pl-c1">40</span>
+     <span class="pl-ent">golden-chestplate</span>: <span class="pl-c1">40</span>
+     <span class="pl-ent">golden-leggings</span>: <span class="pl-c1">40</span>
+     <span class="pl-ent">golden-boots</span>: <span class="pl-c1">40</span>
+     <span class="pl-c"><span class="pl-c">#</span> ===CHAINMAIL)===</span>
+     <span class="pl-ent">chainmail-helmet</span>: <span class="pl-c1">60</span>
+     <span class="pl-ent">chainmail-chestplate</span>: <span class="pl-c1">60</span>
+     <span class="pl-ent">chainmail-leggings</span>: <span class="pl-c1">60</span>
+     <span class="pl-ent">chainmail-boots</span>: <span class="pl-c1">60</span>
+     <span class="pl-c"><span class="pl-c">#</span> ===(IRON)===</span>
+     <span class="pl-ent">iron-helmet</span>: <span class="pl-c1">100</span>
+     <span class="pl-ent">iron-chestplate</span>: <span class="pl-c1">100</span>
+     <span class="pl-ent">iron-leggings</span>: <span class="pl-c1">100</span>
+     <span class="pl-ent">iron-boots</span>: <span class="pl-c1">100</span>
+     <span class="pl-c"><span class="pl-c">#</span> ===(DIAMOND)===</span>
+     <span class="pl-ent">diamond-helmet</span>: <span class="pl-c1">200</span>
+     <span class="pl-ent">diamond-chestplate</span>: <span class="pl-c1">200</span>
+     <span class="pl-ent">diamond-leggings</span>: <span class="pl-c1">200</span>
+     <span class="pl-ent">diamond-boots</span>: <span class="pl-c1">200</span>
+  
+     <span class="pl-c"><span class="pl-c">#</span> ========(CATEGORY - FOOD)============</span>
+     <span class="pl-ent">Food</span>:
+       <span class="pl-ent">chicken</span>: <span class="pl-c1">30</span>
+       <span class="pl-c"><span class="pl-c">#</span> Amount to receive</span>
+       <span class="pl-ent">chicken-count</span>: <span class="pl-c1">22</span>
+
+       <span class="pl-ent">mutton</span>: <span class="pl-c1">30</span>
+       <span class="pl-c"><span class="pl-c">#</span> Amount to receive</span>
+       <span class="pl-ent">mutton-count</span>: <span class="pl-c1">22</span>
+
+       <span class="pl-ent">porkchop</span>: <span class="pl-c1">60</span>
+       <span class="pl-c"><span class="pl-c">#</span> Amount to receive</span>
+       <span class="pl-ent">porkchop-count</span>: <span class="pl-c1">22</span>
+
+       <span class="pl-ent">rabbit</span>: <span class="pl-c1">50</span>
+       <span class="pl-c"><span class="pl-c">#</span> Amount to receive</span>
+       <span class="pl-ent">rabbit-count</span>: <span class="pl-c1">22</span>
+
+       <span class="pl-ent">salmon</span>: <span class="pl-c1">20</span>
+       <span class="pl-c"><span class="pl-c">#</span> Amount to receive</span>
+       <span class="pl-ent">salmon-count</span>: <span class="pl-c1">22</span>
+
+       <span class="pl-ent">golden_apple</span>: <span class="pl-c1">120</span>
+       <span class="pl-c"><span class="pl-c">#</span> Amount to receive</span>
+       <span class="pl-ent">golden_apple-count</span>: <span class="pl-c1">5</span>
+
+       <span class="pl-ent">enchanted_golden_apple</span>: <span class="pl-c1">300</span>
+       <span class="pl-c"><span class="pl-c">#</span> Amount to receive</span>
+       <span class="pl-ent">enchanted_golden_apple-count</span>: <span class="pl-c1">2</span>
+
+      <span class="pl-c"><span class="pl-c">#</span> ========(CATEGORY - TOOLS)=============</span>
+     <span class="pl-ent">Tools</span>:
+       <span class="pl-c"><span class="pl-c">#</span> ===(WOOD)===</span>
+       <span class="pl-ent">wood_sword</span>: <span class="pl-c1">2</span>
+       <span class="pl-ent">wood_pickaxe</span>: <span class="pl-c1">2</span>
+       <span class="pl-ent">wood_axe</span>: <span class="pl-c1">2</span>
+       <span class="pl-c"><span class="pl-c">#</span> ===(STONE)===</span>
+       <span class="pl-ent">stone_sword</span>: <span class="pl-c1">10</span>
+       <span class="pl-ent">stone_pickaxe</span>: <span class="pl-c1">10</span>
+       <span class="pl-ent">stone_axe</span>: <span class="pl-c1">10</span>
+       <span class="pl-c"><span class="pl-c">#</span> ===(GOLDEN)===</span>
+       <span class="pl-ent">golden_sword</span>: <span class="pl-c1">20</span>
+       <span class="pl-ent">golden_pickaxe</span>: <span class="pl-c1">20</span>
+       <span class="pl-ent">golden_axe</span>: <span class="pl-c1">20</span>
+       <span class="pl-c"><span class="pl-c">#</span> ===(IRON)===</span>
+       <span class="pl-ent">iron_sword</span>: <span class="pl-c1">30</span>
+       <span class="pl-ent">iron_pickaxe</span>: <span class="pl-c1">30</span>
+       <span class="pl-ent">iron_axe</span>: <span class="pl-c1">30</span>
+       <span class="pl-c"><span class="pl-c">#</span> ===(DIAMOND)===</span>
+       <span class="pl-ent">diamond_sword</span>: <span class="pl-c1">60</span> 
+       <span class="pl-ent">diamond_pickaxe</span>: <span class="pl-c1">60</span> 
+       <span class="pl-ent">diamond_axe</span>: <span class="pl-c1">60</span>
+
+     <span class="pl-ent">Extras</span>:
+       <span class="pl-ent">totem</span>: <span class="pl-c1">300</span>
+       <span class="pl-c"><span class="pl-c">#</span> ====(MAGIC ITEMS)=====</span>
+       <span class="pl-ent">speed</span>: <span class="pl-c1">800</span>
+       <span class="pl-ent">health</span>: <span class="pl-c1">850</span>
+       <span class="pl-ent">soup</span>: <span class="pl-c1">450</span>
+       <span class="pl-c"><span class="pl-c">#</span> =====(MAGIC ARMOR)=====</span>
+       <span class="pl-ent">helmet</span>: <span class="pl-c1">1250</span>        
+       <span class="pl-ent">chestplate</span>:  <span class="pl-c1">1350</span>
+       <span class="pl-ent">leggings</span>: <span class="pl-c1">1310</span>
+       <span class="pl-ent">boots</span>: <span class="pl-c1">1320</span>
+       <span class="pl-c"><span class="pl-c">#</span> ====(Cooldown)====</span>
+     <span class="pl-ent">Cooldown</span>:
+       <span class="pl-c"><span class="pl-c">#</span> items</span>
+       <span class="pl-ent">Items</span>:
+         <span class="pl-ent">speed</span>: <span class="pl-c1">60</span>
+         <span class="pl-ent">health</span>: <span class="pl-c1">60</span>
+         <span class="pl-ent">soup</span>: <span class="pl-c1">60</span>
+      <span class="pl-c"><span class="pl-c">#</span> Potions</span>
+       <span class="pl-ent">Potions</span>:
+         <span class="pl-ent">speed</span>: <span class="pl-c1">30</span>
+         <span class="pl-ent">health</span>: <span class="pl-c1">30</span>
+         <span class="pl-ent">soup</span>: <span class="pl-c1">30</span></pre></div>
+<h3><a id="user-content--commands" class="anchor" aria-hidden="true" href="#-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="joystick" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f579.png">🕹</g-emoji> Commands</h3>
+<ul>
+<li>
+<code>/pvpshop</code> &gt; Open a menu for convenience</li>
+<li>
+<code>/pvpshop help</code> &gt; Command list</li>
+<li>
+<code>/pvpshop amor</code> &gt; Open the armor category.</li>
+<li>
+<code>/pvpshop tools</code> &gt; Open the tools category.</li>
+<li>
+<code>/pvpshop food</code> &gt; Open the food category.</li>
+<li>
+<code>/pvpshop extra</code> &gt; Open the extra category.</li>
+</ul>
+<h3><a id="user-content--permissions" class="anchor" aria-hidden="true" href="#-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="lock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f512.png">🔒</g-emoji> Permissions</h3>
+<ul>
+<li>Executing the command: <code>pvpshop.command.acm:</code>
+</li>
+<li>Armor category: <code>pvpshop.category.armor</code>
+</li>
+<li>Tools category: <code>pvpshop.category.tools</code>
+</li>
+<li>Food category: <code>pvpshop.category.food</code>
+</li>
+<li>Extra category: <code>pvpshop.category.extras</code>
+</li>
+<li><strong>EXTRA PERMISSIONS:</strong></li>
+<li><code>pvpshop.items.totem</code></li>
+<li><code>pvpshop.items.speed</code></li>
+<li><code>pvpshop.items.health</code></li>
+<li><code>pvpshop.items.soup</code></li>
+<li><strong>ARMOR</strong></li>
+<li><code>pvpshop.armor.helmet</code></li>
+<li><code>pvpshop.armor.chestplate</code></li>
+<li><code>pvpshop.armor.leggings</code></li>
+<li><code>pvpshop.armor.boots</code></li>
+</ul>
+<h3><a id="user-content--multilanguage" class="anchor" aria-hidden="true" href="#-multilanguage"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="globe_with_meridians" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f310.png">🌐</g-emoji> MultiLanguage</h3>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Translated by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>English</td>
+<td><a href="https://github.com/fernanACM">fernanACM</a></td>
+</tr>
+<tr>
+<td>Spanish</td>
+<td><a href="https://github.com/fernanACM">fernanACM</a></td>
+</tr>
+<tr>
+<td>Indonesian</td>
+<td>PvPShop</td>
+</tr>
+<tr>
+<td>German</td>
+<td><a href="https://github.com/GamerMJay">GamerMJay</a></td>
+</tr>
+<tr>
+<td>French</td>
+<td>PvPShop</td>
+</tr>
+<tr>
+<td>Portuguese</td>
+<td>PvPShop</td>
+</tr>
+<tr>
+<td>Vietnamese</td>
+<td><a href="https://github.com/NhanAZ">NhanAZ</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3><a id="user-content--contact" class="anchor" aria-hidden="true" href="#-contact"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="telephone_receiver" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4de.png">📞</g-emoji> Contact</h3>
+<table>
+<thead>
+<tr>
+<th>Redes</th>
+<th>Tag</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube</td>
+<td>fernanACM</td>
+<td><a href="https://www.youtube.com/channel/UC-M5iTrCItYQBg5GMuX5ySw" rel="nofollow">YouTube</a></td>
+</tr>
+<tr>
+<td>Discord</td>
+<td>fernanACM#5078</td>
+<td><a href="https://discord.gg/YyE9XFckqb" rel="nofollow">Discord</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>fernanACM</td>
+<td><a href="https://github.com/fernanACM">GitHub</a></td>
+</tr>
+<tr>
+<td>Poggit</td>
+<td>fernanACM</td>
+<td><a href="https://poggit.pmmp.io/ci/fernanACM" rel="nofollow">Poggit</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3><a id="user-content--credits" class="anchor" aria-hidden="true" href="#-credits"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji> Credits</h3>
+<table>
+<thead>
+<tr>
+<th>Authors</th>
+<th>Github</th>
+<th>Lib</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CortexPE</td>
+<td><a href="https://github.com/CortexPE">CortexPE</a></td>
+<td><a href="https://github.com/CortexPE/Commando/tree/master/">Commando</a></td>
+</tr>
+<tr>
+<td>Muqsit</td>
+<td><a href="https://github.com/Muqsit">Muqsit</a></td>
+<td><a href="https://github.com/Muqsit/SimplePacketHandler">SimplePacketHandler</a></td>
+</tr>
+<tr>
+<td>Muqsit</td>
+<td><a href="https://github.com/Muqsit">Muqsit</a></td>
+<td><a href="https://github.com/Muqsit/InvMenu">InvMenu</a></td>
+</tr>
+<tr>
+<td>DaPigGuy</td>
+<td><a href="https://github.com/DaPigGuy">DaPigGuy</a></td>
+<td><a href="https://github.com/DaPigGuy/libPiggyEconomy">libPiggyEconomy</a></td>
+</tr>
+<tr>
+<td>DaPigGuy</td>
+<td><a href="https://github.com/DaPigGuy">DaPigGuy</a></td>
+<td><a href="https://github.com/DaPigGuy/libPiggyUpdateChecker">libPiggyUpdateChecker</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1464feed4ace4c","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

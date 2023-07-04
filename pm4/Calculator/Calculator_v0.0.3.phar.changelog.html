@@ -1,0 +1,14 @@
+<ul dir="auto">
+<li>Bump lib <code class="notranslate">muqsit/arithmexp</code> to <code class="notranslate">0.1.16</code>
+<ul dir="auto">
+<li>OSR now optimizes expressions such as <code class="notranslate">x - x</code> to <code class="notranslate">0</code></li>
+<li>OSR now optimizes <code class="notranslate">1 ** x</code> to <code class="notranslate">1</code></li>
+<li>Fixed parse errors arising from OSR not correctly building token tree</li>
+<li>Removed <code class="notranslate">Parser::parseRawExpression()</code>
+<ul dir="auto">
+<li><code class="notranslate">Parser::createUnoptimized()-&gt;parse()</code> may be used instead</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>

@@ -1,0 +1,156 @@
+<p align="center">
+    <a href="https://github.com/Xenophilicy/NaviCompass"><img src="https://github.com/Xenophilicy/NaviCompass/raw/master/icon.png" style="max-width:100%;"></a><br>
+    <b>NaviCompass allows your players to transfer between your server network and worlds with simplicity.</b>
+</p>
+<p align="center">
+    <a href="https://camo.githubusercontent.com/f9faff8d91ce0890f4ebfc7929051fb748ac9e21d5c2f42dc25ef1a42a6cea52/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f58656e6f7068696c6963792f4e617669436f6d706173733f6c6162656c3d72656c6561736526736f72743d73656d766572" target="_blank" rel="nofollow"><img alt="GitHubrelease" src="https://camo.githubusercontent.com/f9faff8d91ce0890f4ebfc7929051fb748ac9e21d5c2f42dc25ef1a42a6cea52/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f58656e6f7068696c6963792f4e617669436f6d706173733f6c6162656c3d72656c6561736526736f72743d73656d766572" data-canonical-src="https://img.shields.io/github/v/release/Xenophilicy/NaviCompass?label=release&amp;sort=semver" style="max-width:100%;"></a>
+      <a href="https://camo.githubusercontent.com/ced32585efb4aebddeaa58252b6dd809c65e09797a34d5269f88ae3b2081fd5b/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f58656e6f7068696c6963792f4e617669436f6d706173733f7374796c653d666f722d7468652d6261646765" target="_blank" rel="nofollow"><img alt="Stars" src="https://camo.githubusercontent.com/ced32585efb4aebddeaa58252b6dd809c65e09797a34d5269f88ae3b2081fd5b/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f58656e6f7068696c6963792f4e617669436f6d706173733f7374796c653d666f722d7468652d6261646765" data-canonical-src="https://img.shields.io/github/stars/Xenophilicy/NaviCompass?style=for-the-badge" style="max-width:100%;"></a>
+    <a href="https://discord.gg/6M9tGyWPjr" rel="nofollow"><img src="https://camo.githubusercontent.com/eecc96a3ff0dedc37f275aeeda585ba8d15a316b66809ea2795fdc41b88d5bc9/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833373730313836383634393730393536383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/837701868649709568?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width:100%;"></a>
+</p>
+<h3>
+<a id="user-content-navicompass-now-supports-the-waterdog-mcbe-proxy" class="anchor" href="#navicompass-now-supports-the-waterdog-mcbe-proxy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>NaviCompass now supports the WaterDog MCBE proxy!</strong>
+</h3>
+<hr>
+<h2>
+<a id="user-content-credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
+<ul>
+<li>
+<a href="https://github.com/Xenophilicy/">Xenophilicy</a> (original developer)</li>
+<li>
+<a href="https://github.com/Vecnavium/">Vecnavium</a> (Maintainer for the longterm)</li>
+</ul>
+<h1>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<h3>
+<a id="user-content-basic-settings" class="anchor" href="#basic-settings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic settings</h3>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Choose your transfer type:</span>
+<span class="pl-c"><span class="pl-c">#</span> "external" will use an IP address and port to move players between SERVERS</span>
+<span class="pl-c"><span class="pl-c">#</span> "internal" will use your preset command string to move players between WORLDS</span>
+<span class="pl-c"><span class="pl-c">#</span> "hybrid" will include both transfer types</span>
+<span class="pl-ent">Transfer-Type</span>: <span class="pl-s"><span class="pl-pds">"</span>hybrid<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> This is the command string that will be used to transfer players between WORLDS</span>
+<span class="pl-c"><span class="pl-c">#</span> Don't worry about this if you're only using the EXTERNAL transfer type</span>
+<span class="pl-c"><span class="pl-c">#</span> Use '{player}' for the player's name</span>
+<span class="pl-c"><span class="pl-c">#</span> Use '{world}' for the world name</span>
+<span class="pl-ent">World-CMD</span>: <span class="pl-s"><span class="pl-pds">"</span>multiworld tp {world} {player}<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> This is where you choose if world command should be run by the player or the console</span>
+<span class="pl-c"><span class="pl-c">#</span> Don't worry about this if you're only using the EXTERNAL transfer type</span>
+<span class="pl-c"><span class="pl-c">#</span> Options are: "console" and "player"</span>
+<span class="pl-ent">World-CMD-Mode</span>: <span class="pl-s"><span class="pl-pds">"</span>console<span class="pl-pds">"</span></span></pre></div>
+<h3>
+<a id="user-content-command-settings" class="anchor" href="#command-settings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command settings</h3>
+<div class="highlight highlight-source-yaml"><pre>  <span class="pl-c"><span class="pl-c">#</span> Choose whether the command method should be enabled</span>
+  <span class="pl-ent">Enabled</span>: <span class="pl-c1">true</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> This is name of the command that players will use to opent the UI</span>
+  <span class="pl-ent">Name</span>: <span class="pl-s"><span class="pl-pds">"</span>/servers<span class="pl-pds">"</span></span>
+
+  <span class="pl-c"><span class="pl-c">#</span> This is the command's description shown in the command window</span>
+  <span class="pl-ent">Description</span>: <span class="pl-s"><span class="pl-pds">"</span>Open the server list!<span class="pl-pds">"</span></span>
+
+  <span class="pl-ent">Permission</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Choose whether to require players to have permission to use the command</span>
+    <span class="pl-ent">Enabled</span>: <span class="pl-c1">false</span>
+
+    <span class="pl-c"><span class="pl-c">#</span> This is the command's usage permission</span>
+    <span class="pl-ent">Node</span>: <span class="pl-s"><span class="pl-pds">"</span>navicompass.use<span class="pl-pds">"</span></span></pre></div>
+<h3>
+<a id="user-content-selector-settings" class="anchor" href="#selector-settings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Selector settings</h3>
+<div class="highlight highlight-source-yaml"><pre>  <span class="pl-c"><span class="pl-c">#</span> Choose whether the selector item should be enabled</span>
+  <span class="pl-ent">Enabled</span>: <span class="pl-c1">true</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Choose what item the server selector should be</span>
+  <span class="pl-c"><span class="pl-c">#</span> Default item is Compass (345)</span>
+  <span class="pl-ent">Item</span>: <span class="pl-c1">345</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Set the cooldown for using the compass to open the UI</span>
+  <span class="pl-ent">Cooldown</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Choose whether the cooldown should be enabled</span>
+    <span class="pl-ent">Enabled</span>: <span class="pl-c1">true</span>
+
+    <span class="pl-c"><span class="pl-c">#</span> Set the duration of the cooldown</span>
+    <span class="pl-ent">Duration</span>: <span class="pl-c1">1</span>
+
+    <span class="pl-c"><span class="pl-c">#</span> Message sent to the player when the item is on cooldown</span>
+    <span class="pl-c"><span class="pl-c">#</span> Set to false to disable the message</span>
+    <span class="pl-ent">Message</span>: <span class="pl-s"><span class="pl-pds">"</span>§cCompass is on cooldown!<span class="pl-pds">"</span></span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Choose what slot of the player's inventory the selector should appear in</span>
+  <span class="pl-c"><span class="pl-c">#</span> The range for this input is 0-35 (0-8 are the player's hotbar)</span>
+  <span class="pl-ent">Slot</span>: <span class="pl-c1">1</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Choose whether to prevent players from dropping or moving the selctor to different slots</span>
+  <span class="pl-ent">Force-Slot</span>: <span class="pl-c1">true</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> This is the text that will show on the selector in the player's inventory</span>
+  <span class="pl-ent">Name</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§aServer Selector<span class="pl-pds">"</span></span>
+
+  <span class="pl-c"><span class="pl-c">#</span> This is the selector item's description that is displayed under the name</span>
+  <span class="pl-ent">Lore</span>: <span class="pl-s"><span class="pl-pds">"</span>§bClick for Servers<span class="pl-pds">"</span></span></pre></div>
+<h3>
+<a id="user-content-ui-settings" class="anchor" href="#ui-settings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>UI settings</h3>
+<div class="highlight highlight-source-yaml"><pre>  <span class="pl-c"><span class="pl-c">#</span> This is the title of the transfer UI</span>
+  <span class="pl-ent">Title</span>: <span class="pl-s"><span class="pl-pds">"</span>§9Server List<span class="pl-pds">"</span></span>
+
+  <span class="pl-c"><span class="pl-c">#</span> This is the message that will show under the title on the transfer UI</span>
+  <span class="pl-ent">Message</span>: <span class="pl-s"><span class="pl-pds">"</span>§aChoose a server to transfer to!<span class="pl-pds">"</span></span>
+
+  <span class="pl-ent">Status-Format</span>:
+
+    <span class="pl-c"><span class="pl-c">#</span> Edit the format for online servers</span>
+    <span class="pl-ent">Online</span>: <span class="pl-s"><span class="pl-pds">"</span>§aOnline<span class="pl-pds">"</span></span>
+
+    <span class="pl-c"><span class="pl-c">#</span> This is where you edit the format for offline servers</span>
+    <span class="pl-ent">Offline</span>: <span class="pl-s"><span class="pl-pds">"</span>§cOffline<span class="pl-pds">"</span></span>
+
+  <span class="pl-ent">Subtext</span>:
+    <span class="pl-c"><span class="pl-c">#</span> This is the message displayed under each SERVER button</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use '{current-players}' for the server's current player count</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use '{max-players}' for the server's max player count</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use '{status}' to show whether the server is online or offline (the colors can be customized under Status-Format)</span>
+    <span class="pl-ent">Server</span>: <span class="pl-s"><span class="pl-pds">"</span>§r{status} §8(§a{current-players}§8/§b{max-players}§8)<span class="pl-pds">"</span></span>
+
+    <span class="pl-c"><span class="pl-c">#</span> This is the message displayed under each WATERDOG button</span>
+    <span class="pl-c"><span class="pl-c">#</span> Don't worry about this if you're only using the EXTERNAL transfer type</span>
+    <span class="pl-ent">WaterDog</span>: <span class="pl-s"><span class="pl-pds">"</span>§r§o§8Tap to transfer<span class="pl-pds">"</span></span>
+
+    <span class="pl-c"><span class="pl-c">#</span> This is the message displayed under each WORLD button</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use '{current-players}' for the world's current player count</span>
+    <span class="pl-ent">World</span>: <span class="pl-s"><span class="pl-pds">"</span>§r§o§8Tap to teleport §8(§a{current-players} §eplayer(s)§8)<span class="pl-pds">"</span></span></pre></div>
+<h3>
+<a id="user-content-sound-settings" class="anchor" href="#sound-settings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sound settings</h3>
+<div class="highlight highlight-source-yaml"><pre>  <span class="pl-c"><span class="pl-c">#</span> Choose what sound (if any) to play when opening the UI</span>
+  <span class="pl-ent">UI</span>: <span class="pl-s"><span class="pl-pds">"</span>random.pop<span class="pl-pds">"</span></span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Choose what sound (if any) to play while transferring SERVERS</span>
+  <span class="pl-ent">Transfer</span>: <span class="pl-s"><span class="pl-pds">"</span>mob.blaze.shoot<span class="pl-pds">"</span></span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Choose what sound (if any) to play while teleporting between WORLDS</span>
+  <span class="pl-ent">Teleport</span>: <span class="pl-s"><span class="pl-pds">"</span>random.anvil_use<span class="pl-pds">"</span></span></pre></div>
+<h3>
+<a id="user-content-titles-settings" class="anchor" href="#titles-settings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Titles settings</h3>
+<div class="highlight highlight-source-yaml"><pre>  <span class="pl-c"><span class="pl-c">#</span> Set the delay to show the title before transferring/teleporting</span>
+  <span class="pl-c"><span class="pl-c">#</span> This value is in seconds (default is 2 seconds)</span>
+  <span class="pl-c"><span class="pl-c">#</span> Set this to false or 0 for no delay</span>
+  <span class="pl-ent">Delay</span>: <span class="pl-c1">2</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Set the formatting for the title shown to players when transferring SERVERS</span>
+  <span class="pl-ent">Transfer</span>: <span class="pl-s"><span class="pl-pds">"</span>§a§oTransferring...<span class="pl-pds">"</span></span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Set the formatting for the title shown to players when teleporting between WORLDS</span>
+  <span class="pl-ent">Teleport</span>: <span class="pl-s"><span class="pl-pds">"</span>§a§oTeleporting...<span class="pl-pds">"</span></span></pre></div>
+<h3>
+<a id="user-content-entry-listing" class="anchor" href="#entry-listing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Entry Listing</h3>
+<p>This is where you list your servers/worlds to be displayed on the server UI</p>
+<p>Server format: "ext:ServerTitle:ServerIP:ServerPort:ImageType:Path/URL"</p>
+<p>WaterDog server format: "wd:ServerTitle:ServerName:ImageType:Path/URL"</p>
+<p>World format: "int:WorldTitle:WorldAlias:ImageType:Path/URL"</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">List</span>:
+ - <span class="pl-s"><span class="pl-pds">"</span>ext:§l§6Lobby §eServer:play.xenoservers.net:19132:url:file.xenoservers.net/Resources/GitHub-Resources/navicompass/lobby.png<span class="pl-pds">"</span></span>
+ - <span class="pl-s"><span class="pl-pds">"</span>ext:§l§2Prison §eServer:play.xenoservers.net:19133<span class="pl-pds">"</span></span>
+ - <span class="pl-s"><span class="pl-pds">"</span>wd:§l§3Sky§cBlock §eServer:skyblock:url:file.xenoservers.net/Resources/GitHub-Resources/navicompass/skyblock.png<span class="pl-pds">"</span></span>
+ - <span class="pl-s"><span class="pl-pds">"</span>wd:§l§bFactions §eServer:factions<span class="pl-pds">"</span></span>
+ - <span class="pl-s"><span class="pl-pds">"</span>int:§l§5Creative §eServer:creative:url:file.xenoservers.net/Resources/GitHub-Resources/navicompass/creative.png<span class="pl-pds">"</span></span>
+ - <span class="pl-s"><span class="pl-pds">"</span>int:§l§cKitPvP §eServer:kitpvp<span class="pl-pds">"</span></span></pre></div>

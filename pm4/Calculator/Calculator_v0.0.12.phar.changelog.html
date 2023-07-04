@@ -1,0 +1,10 @@
+<ul dir="auto">
+<li>Bump lib <code class="notranslate">muqsit/arithmexp</code> to <code class="notranslate">0.1.23</code>
+<ul dir="auto">
+<li>Registered functions for a parser can now be accessed via <code class="notranslate">FunctionRegistry::register()</code> (<a href="https://github.com/Muqsit/arithmexp/commit/d003841c373b003f3fa2c2e15f25dad23e321460"><code class="notranslate">d003841</code></a>)</li>
+<li>Improved operator strength reduction performance over addition with negative operands (<a href="https://github.com/Muqsit/arithmexp/commit/2bf277e4799a8e09b677449d9be2f02345647bda"><code class="notranslate">2bf277e</code></a>, <a href="https://github.com/Muqsit/arithmexp/commit/ff81320defe4e49a15b2913425aae07f4d9a185c"><code class="notranslate">ff81320</code></a>)</li>
+<li>Improved operator strength reduction performance over subtraction with negative operands (<a href="https://github.com/Muqsit/arithmexp/commit/da2168549de8bde9741f5093e7616a5e6f021a6b"><code class="notranslate">da21685</code></a>, <a href="https://github.com/Muqsit/arithmexp/commit/ff81320defe4e49a15b2913425aae07f4d9a185c"><code class="notranslate">ff81320</code></a>)</li>
+<li>Fixed a critical bug where operator strength reduction over subtraction with <code class="notranslate">lvalue=0</code> resulted in <code class="notranslate">rvalue</code> instead of <code class="notranslate">-rvalue</code> (<a href="https://github.com/Muqsit/arithmexp/issues/11" data-hovercard-type="issue" data-hovercard-url="/Muqsit/arithmexp/issues/11/hovercard">#11</a>, <a href="https://github.com/Muqsit/arithmexp/commit/4f4aaea17a350385b2637fed9d5eaf645f2de745"><code class="notranslate">4f4aaea</code></a>, <a href="https://github.com/Muqsit/arithmexp/commit/029e47001543ab3928ad19662d2b0de90fcb03a4"><code class="notranslate">029e470</code></a>)</li>
+</ul>
+</li>
+</ul>

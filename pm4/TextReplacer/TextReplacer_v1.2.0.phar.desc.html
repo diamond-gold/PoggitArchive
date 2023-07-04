@@ -1,0 +1,118 @@
+<h1><a id="user-content-textreplacer" class="anchor" aria-hidden="true" href="#textreplacer"><span aria-hidden="true" class="octicon octicon-link"></span></a>TextReplacer</h1>
+<h2><a id="user-content-description" class="anchor" aria-hidden="true" href="#description"><span aria-hidden="true" class="octicon octicon-link"></span></a>Description</h2>
+<p>Replace any text of chat into a custom preset text.
+It can also work with some unicode characters to make replacement "Emojis" if you wish.</p>
+<h2><a id="user-content-usage" class="anchor" aria-hidden="true" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+<h3><a id="user-content-config" class="anchor" aria-hidden="true" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h3>
+<p>Edit the config.yml.
+It's pretty basic really.</p>
+<p>All you need is to edit the message in the "Before" section to trigger when you say it, and edit the "After" section to replace what you set before.
+Simples :D</p>
+<h3><a id="user-content-config-example" class="anchor" aria-hidden="true" href="#config-example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config Example</h3>
+<p>Here is my example for Emojis :D</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> TextReplacer</span>
+
+<span class="pl-c"><span class="pl-c">#</span> If you want to replace text case-insensitive, set this to true.</span>
+<span class="pl-c"><span class="pl-c">#</span> This is useful if you don't want to write down every case like "hello", "Hello", "hElLo" and so on.</span>
+<span class="pl-ent">case-insensitive</span>: <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Replace any text with the text of your choice.</span>
+<span class="pl-c"><span class="pl-c">#</span> It's good for Emojis too.</span>
+
+<span class="pl-ent">TextReplacer</span>:
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:shrug:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>¯<span class="pl-cce">\\</span>_(ツ)_/¯<span class="pl-pds">"</span></span>
+    
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:star:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>⭐<span class="pl-pds">"</span></span>
+    
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>&lt;3<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>❤<span class="pl-pds">"</span></span>
+    
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:heart:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>❤<span class="pl-pds">"</span></span>
+    
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:love:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>~♡ⓛⓞⓥⓔ♡~<span class="pl-pds">"</span></span>
+    
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:bear:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>ˁ˚ᴥ˚ˀ<span class="pl-pds">"</span></span>
+    
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:tableflip:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>(╯°□°）╯︵ ┻━┻<span class="pl-pds">"</span></span>
+    
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:rage:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>(ノಠ益ಠ)ノ彡<span class="pl-pds">"</span></span>
+    
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:doubletableflip:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>┻━┻︵  <span class="pl-cce">\\</span>(°□°)/ ︵ ┻━┻ <span class="pl-pds">"</span></span>
+    
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:loveyou:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>ᶫᵒᵛᵉᵧₒᵤ<span class="pl-pds">"</span></span>
+    
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:hug:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>(っ◕‿◕)っ<span class="pl-pds">"</span></span>
+    
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:facepalm:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>(&gt;ლ)<span class="pl-pds">"</span></span>
+    
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:cry:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>(╥﹏╥)<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:fight:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>(ง ̀_́)ง<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:yuno:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>(屮ﾟДﾟ)屮 Y U NO<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:riot:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>୧༼ಠ益ಠ༽୨<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:yolo:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>Yᵒᵘ Oᶰˡʸ Lᶤᵛᵉ Oᶰᶜᵉ<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:kiss:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>(o'3'o)<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:russian:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>(°Д°)<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:happy:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>㋡<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:happybirthday:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>ዞᏜ℘℘Ꮍ ℬℹℛʈዞᗬᏜᎽ<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:yay:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\\</span>( ﾟヮﾟ)/<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:dontwant:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>ヽ(｀Д´)ﾉ<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:angel:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>☜(⌒▽⌒)☞<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:radioactive:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>☢<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:peace:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>✌(-‿-)✌<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:zoidberg:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>(V) (°,,,,°) (V)<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:wat:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>(ÒДÓױ)<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:unflip:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>┬──┬ ノ(ò_óノ)<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:whistle:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>(っ^з^)♪♬<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:snowman:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>☃<span class="pl-pds">"</span></span>
+
+  - <span class="pl-ent">Before</span>: <span class="pl-s"><span class="pl-pds">"</span>:depressed:<span class="pl-pds">"</span></span>
+    <span class="pl-ent">After</span>: <span class="pl-s"><span class="pl-pds">"</span>(︶︹︶)<span class="pl-pds">"</span></span></pre></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1466aac8ff1568","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

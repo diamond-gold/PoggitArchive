@@ -1,0 +1,48 @@
+<h1><a id="user-content-general" class="anchor" aria-hidden="true" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a>General</h1>
+<p><a href="https://github.com/thebigcrafter/oh-my-pmmp/actions/workflows/phpstan.yml"><img src="https://github.com/thebigcrafter/oh-my-pmmp/actions/workflows/phpstan.yml/badge.svg" alt="PHPStan" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/oh-my-pmmp" rel="nofollow"><img src="https://camo.githubusercontent.com/96be3ba02df26dea84983d3166f2d03d519fe0c8ea3a67ab5c79e3849e6afa7c/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f6f682d6d792d706d6d70" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/oh-my-pmmp" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/oh-my-pmmp" rel="nofollow"><img src="https://camo.githubusercontent.com/784b96b6e5a136417bf8a214b70e5806ef4bfc818fbeb4cb1f76c3f198c44161/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f6f682d6d792d706d6d70" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/oh-my-pmmp" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/a2b798f1314d8d86ba583cc8ce3304d417d817efebdc39255330324fa0fb0cfa/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f746865626967637261667465722f6f682d6d792d706d6d70"><img src="https://camo.githubusercontent.com/a2b798f1314d8d86ba583cc8ce3304d417d817efebdc39255330324fa0fb0cfa/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f746865626967637261667465722f6f682d6d792d706d6d70" alt="GitHub" data-canonical-src="https://img.shields.io/github/license/thebigcrafter/oh-my-pmmp" style="max-width: 100%;"></a>
+<a href="https://discord.gg/cEXW8uK6QA" rel="nofollow"><img src="https://camo.githubusercontent.com/79fb5e2786955f98be3418ff249dbccb4150c077cc1b31c3fdd01fbccc11b83b/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3937303239343537393337323931323730303f636f6c6f723d626c7565" alt="Discord" data-canonical-src="https://img.shields.io/discord/970294579372912700?color=blue" style="max-width: 100%;"></a></p>
+<p>Oh My PMMP provides commands to allow you to install plugins from <a href="https%22//poggit.pmmp.io">Poggit</a>. It's fast and easy to use.</p>
+<h1><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<p>Oh My PMMP provides <code>omp</code> command to allow you to install, upgrade, remove, etc. plugins from <a href="https%22//poggit.pmmp.io">Poggit</a></p>
+<p><strong><code>omp help</code></strong></p>
+<p><strong><code>Permission:</code> <code>oh-my-pmmp.help</code></strong></p>
+<p>List available commands.</p>
+<p><strong><code>omp version</code></strong></p>
+<p><strong><code>Permission:</code> <code>oh-my-pmmp.version</code></strong></p>
+<p>Print plugin version.</p>
+<p><strong><code>omp install</code> <code>&lt;plugin&gt;</code> <code>&lt;version&gt;</code></strong></p>
+<p><strong><code>Permission:</code> <code>oh-my-pmmp.install</code></strong></p>
+<p>Install a plugin with a specified version or use the word <code>latest</code> as a version to install the latest one.</p>
+<p><strong><code>omp remove</code> <code>&lt;plugin&gt;</code></strong></p>
+<p><strong><code>Permission:</code> <code>oh-my-pmmp.remove</code></strong></p>
+<p>Remove a plugin.</p>
+<p><strong><code>omp update</code></strong></p>
+<p><strong><code>Permission:</code> <code>oh-my-pmmp.update</code></strong></p>
+<p>Update cached data.</p>
+<p><strong><code>omp list</code></strong></p>
+<p><strong><code>Permission:</code> <code>oh-my-pmmp.list</code></strong></p>
+<p>List available plugins or installed plugins.</p>
+<ul>
+<li>To list the installed plugins, you can add <code>i</code>, <code>-installed</code> or <code>--installed</code> behind the command, <code>omp list --installed</code>, for instance.</li>
+</ul>
+<p><strong><code>omp show</code> <code>&lt;plugin&gt;</code> <code>&lt;version&gt;</code></strong></p>
+<p><strong><code>Permission:</code> <code>oh-my-pmmp.show</code></strong></p>
+<p>Get details about a plugin (name, version, api, depends, etc.).</p>
+<p><strong><code>omp upgrade</code> <code>&lt;plugin&gt;</code> <code>&lt;version&gt;</code></strong></p>
+<p><strong><code>Permission:</code> <code>oh-my-pmmp.upgrade</code></strong></p>
+<p>Upgrade a plugin to a specified version or use the word <code>latest</code> as a version to upgrade to the latest one.</p>
+<p><code>NOTE:</code> To use all commands of Oh My PMMP, use <code>oh-my-pmmp.cmds</code> permission.</p>
+<h1><a id="user-content-developer-mode" class="anchor" aria-hidden="true" href="#developer-mode"><span aria-hidden="true" class="octicon octicon-link"></span></a>Developer Mode</h1>
+<p>Turn on this mode in <code>config.yml</code> by changing <code>devMode</code> to <code>true</code></p>
+<p>Some features will be unlocked after developer mode is enabled:</p>
+<ul>
+<li>
+<strong>Download plugins as folder</strong>: Download the plugin and oh-my-pmmp will help you extract it by adding the word <code>true</code> after the install command. For example: <code>omp i latest ExamplePlugin true</code>
+</li>
+</ul>
+<h1><a id="user-content-license" class="anchor" aria-hidden="true" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h1>
+<p>Licensed under the <a href="https://github.com/thebigcrafter/oh-my-pmmp/blob/main/LICENSE">GPL-3.0</a> license.</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e146927ae1616fb","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

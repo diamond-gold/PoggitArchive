@@ -1,0 +1,55 @@
+<h1>
+<a id="user-content-itembrag" class="anchor" href="#itembrag" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ItemBrag</h1>
+<p>A pocketmine plugin that allows players to brag about their items.</p>
+<h1>
+<a id="user-content-how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h1>
+<ol>
+<li>
+<p>Download the phar from poggit.</p>
+</li>
+<li>
+<p>Upload to your servers 'plugin' folder.</p>
+</li>
+<li>
+<p>Restart your server.</p>
+</li>
+</ol>
+<h1>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<p>/brag:</p>
+<p>Hold the item you wish to brag to other players, run /brag and the items name will appear in chat along with its count.
+Any enchants will appear (including enchants from piggy ces) aslong as you have the permissions which can be found in the permissions section of the plugin. A delay for the command has been highly requested so I have done that and made it configurable.</p>
+<h1>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<p>Set this to true if you wish to disable /brag without uninstalling the plugin</p>
+<p>brag-disabled: false</p>
+<p>Message sent to player if brag-feature-disabled is set to true</p>
+<p>brag-feature-disabled-message: "§cThis command is currently disabled!"</p>
+<p>Message sent to player if they run /brag and their hand is empty</p>
+<p>message-sent-to-player-when-hand-is-empty: "§cYou must hold an item while running this command!"</p>
+<p>Message sent to player if they lack the permissions to brag</p>
+<p>no-perms-message: "§cYou do not have permission to use this command!"</p>
+<p>Message sent to player if they lack the permission to brag about items with enchants on</p>
+<p>no-perms-message-enchants: "§cYou do not have permission to brag about items with enchants on!"</p>
+<p>The cooldown of the /brag command in seconds</p>
+<p>brag-cooldown-time: "30"</p>
+<h1>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<p>permissions:</p>
+<p>itembrag.brag.allow:</p>
+<pre><code>description: Allows players to brag using /brag.
+default: op
+</code></pre>
+<p>itembrag.allow.enchants:</p>
+<pre><code>description: Allows players to brag about items with enchants on.
+default: op
+</code></pre>
+<h1>
+<a id="user-content-plans" class="anchor" href="#plans" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Plans</h1>
+<ul>
+<li>Correct colour formats for rarities of enchants from piggy custom enchants.</li>
+</ul>
+<h1>
+<a id="user-content-support" class="anchor" href="#support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support</h1>
+<p>If you need any assistance or have suggestions DM me on discord TPE#3107.</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14622f1c41ce94","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

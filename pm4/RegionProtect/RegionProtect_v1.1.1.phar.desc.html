@@ -1,0 +1,86 @@
+<h1>
+<a id="user-content-general" class="anchor" href="#general" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General</h1>
+<p><strong>RegionProtect is temporarily called a protected region?</strong>
+Once the designated region is protected, the player will no longer worry about the features in a world, and when entering that region, it will display the title to let the player know the characteristics of the region there.</p>
+<p><a href="https://poggit.pmmp.io/p/RegionProtect" rel="nofollow"><img src="https://camo.githubusercontent.com/631c1d4c3e3cffa1974f670c894f9d991e168f89309578dd076a33a41d5dd237/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f526567696f6e50726f74656374" alt="State" data-canonical-src="https://poggit.pmmp.io/shield.state/RegionProtect" style="max-width:100%;"></a>
+<a href="https://poggit.pmmp.io/p/RegionProtect" rel="nofollow"><img src="https://camo.githubusercontent.com/f0940ce9360896c766f4b8a4180d55c5cbf5151b8a703ca7a628d7e1d98d61ee/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f526567696f6e50726f74656374" alt="API" data-canonical-src="https://poggit.pmmp.io/shield.api/RegionProtect" style="max-width:100%;"></a>
+<a href="https://poggit.pmmp.io/p/RegionProtect" rel="nofollow"><img src="https://camo.githubusercontent.com/4607912304f394c67ecee442aa11f6fea638d2d886df2d33cc03aa410ba61d64/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f526567696f6e50726f74656374" alt="Downloads Total" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/RegionProtect" style="max-width:100%;"></a>
+<a href="https://poggit.pmmp.io/p/RegionProtect" rel="nofollow"><img src="https://camo.githubusercontent.com/dd9d9aaf7e765b503b7effbc9c5bedac17e6c10c2ce2b2ce40b15e8329e2b85d/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2f526567696f6e50726f74656374" alt="Downloads" data-canonical-src="https://poggit.pmmp.io/shield.dl/RegionProtect" style="max-width:100%;"></a>
+<a href="https://poggit.pmmp.io/ci/kaidoMC-pm-pl/RegionProtect/RegionProtect" rel="nofollow"><img src="https://camo.githubusercontent.com/bbbb6b1e69076d5c2cb93bc936d85e7cd0c142f4ca42fdb260b692d6d0b5f861/68747470733a2f2f706f676769742e706d6d702e696f2f63692e736869656c642f6b6169646f4d432d706d2d706c2f526567696f6e50726f746563742f526567696f6e50726f74656374" alt="Lint" data-canonical-src="https://poggit.pmmp.io/ci.shield/kaidoMC-pm-pl/RegionProtect/RegionProtect" style="max-width:100%;"></a></p>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Show title when entering region.</li>
+<li>Allow or disallow pvp in the region.</li>
+<li>Allow or disallow block breaking in the region.</li>
+<li>Allow or disallow placing in the region.</li>
+<li>Allow or disallow touching (interaction) in the region.</li>
+</ul>
+<h1>
+<a id="user-content-how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use?</h1>
+<ol>
+<li>
+<code>/region wand</code> - Take the wooden ax and choose the vector.</li>
+<li>Select the start and end points to set up the frameset for the region.</li>
+<li>
+<code>/region create</code> - You are required to fill in information to create an region.</li>
+<li>
+<code>/region edit &lt;regionName&gt;</code> - Edit the region the you wants.</li>
+</ol>
+<h1>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>regionprotect.command.use</code></td>
+<td>Basic permission to be able to use the Region feature.</td>
+</tr>
+<tr>
+<td><code>regionprotect.interactive.use</code></td>
+<td>Permission is allowed to interact in the forbidden region. <code>(Developing)</code>
+</td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content-futures" class="anchor" href="#futures" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Futures</h1>
+<ul>
+<li>[ ] Notification type: subtitle, mess, popup, tip.</li>
+<li>[ ] Sound.</li>
+<li>[ ] Etc.</li>
+</ul>
+<h1>
+<a id="user-content-configs" class="anchor" href="#configs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configs</h1>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span> If true, show title when player enters an region.</span>
+<span class="pl-ent">show-title</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Warning message are sent to players when their actions are blocked.</span>
+<span class="pl-ent">warning-message</span>: <span class="pl-s"><span class="pl-pds">"</span>Can't do this in the standing region.<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Timeout between warning message in seconds.</span>
+<span class="pl-ent">waiting-message</span>: <span class="pl-c1">3</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Operator players can still act in the forbidden region.</span>
+<span class="pl-ent">interactive-operator</span>: <span class="pl-c1">true</span>
+...</pre></div>
+<h1>
+<a id="user-content-contacts" class="anchor" href="#contacts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contacts</h1>
+<p><strong>You can contact me directly through the platforms listed below</strong></p>
+<ul>
+<li>Discord: @kaidojoestar272004#7124</li>
+<li>Facebook: <a href="https://www.fb.com/kaidomc12345" rel="nofollow">https://www.fb.com/kaidomc12345</a>
+</li>
+<li>Youtube: <a href="https://www.youtube.com/KAIDOMC" rel="nofollow">https://www.youtube.com/KAIDOMC</a>
+</li>
+</ul>
+<h1>
+<a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h1>
+<p><a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="nofollow"><strong>GNU General Public License v3.0</strong></a></p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1465266cf32314","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

@@ -1,0 +1,69 @@
+<h1>
+<a id="user-content-simplemotd" class="anchor" href="#simplemotd" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SimpleMotd</h1>
+<p><a href="https://discord.com/invite/EggNF9hvGv" rel="nofollow"><img src="https://camo.githubusercontent.com/4d34039e5f4e2931af97861038c7c6e50a11a075ce0af5d51ec42dc070072a09/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833303036333430393030303038373631323f636f6c6f723d373338394438266c6162656c3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/830063409000087612?color=7389D8&amp;label=discord" style="max-width:100%;"></a></p>
+<p>A PocketMine-MP plugin to change server motd easily.</p>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Supports <code>&amp;</code> as formatting codes.</li>
+<li>
+<code>{PREFIX}</code> can be used to display prefix motd message.</li>
+<li>
+<code>{SUFFIX}</code> can be used to display suffix motd message.</li>
+<li>
+<code>{TIME}</code> can be used to display currently date/time.</li>
+<li>
+<code>{ONLINE_PLAYERS}</code> can be used to display currently online players on the server.</li>
+<li>
+<code>{MAX_PLAYERS}</code> can be used to display maximum online players on the server.</li>
+<li>Lightweight and open source <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">❤️</g-emoji>
+</li>
+</ul>
+<h1>
+<a id="user-content-default-config" class="anchor" href="#default-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default Config</h1>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span> Do not change this (Only for internal use)!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-c1">1.0</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Available tags for motd messages:</span>
+<span class="pl-c"><span class="pl-c">#</span> - {MAX_PLAYERS}: Show the maximum number of players supported by the server.</span>
+<span class="pl-c"><span class="pl-c">#</span> - {ONLINE_PLAYERS}: Show the number of all online players.</span>
+<span class="pl-c"><span class="pl-c">#</span> - {PREFIX}: Show prefix.</span>
+<span class="pl-c"><span class="pl-c">#</span> - {SUFFIX}: Show suffix.</span>
+<span class="pl-c"><span class="pl-c">#</span> - {TIME}: Show current time.</span>
+<span class="pl-c"><span class="pl-c">#</span> Use "§" or "&amp;" to color the message.</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Prefix</span>
+<span class="pl-ent">prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;b»<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Suffix</span>
+<span class="pl-ent">suffix</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;b«<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Date\Time format (replaced in {TIME}).</span>
+<span class="pl-c"><span class="pl-c">#</span> For format codes read https://php.net/manual/en/datetime.formats.php</span>
+<span class="pl-ent">datetime-format</span>: <span class="pl-s"><span class="pl-pds">"</span>H:i:s<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">motd</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Enable the motd.</span>
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+  <span class="pl-c"><span class="pl-c">#</span> Motd interval (in seconds).</span>
+  <span class="pl-ent">time</span>: <span class="pl-c1">15</span>
+  <span class="pl-c"><span class="pl-c">#</span> Messages used to display motd.</span>
+  <span class="pl-ent">messages</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;a[{TIME}] {PREFIX} Welcome to my server {SUFFIX}<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;b[{TIME}] Current online: &amp;a{ONLINE_PLAYERS}/{MAX_PLAYERS}<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;b[{TIME}] {PREFIX} Hello World &amp;a{SUFFIX}<span class="pl-pds">"</span></span>
+...
+</pre></div>
+<h1>
+<a id="user-content-upcoming-features" class="anchor" href="#upcoming-features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Upcoming Features</h1>
+<ul>
+<li>Currently none planned. You can contribute or suggest for new features.</li>
+</ul>
+<h1>
+<a id="user-content-additional-notes" class="anchor" href="#additional-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h1>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/AIPTU/SimpleMotd/issues">here</a>.</li>
+<li>We accept any contributions! If you want to contribute please make a pull request in <a href="https://github.com/AIPTU/SimpleMotd/pulls">here</a>.</li>
+<li>Icons made from <a href="https://www.flaticon.com" rel="nofollow">www.flaticon.com</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1465ae7bf715ea","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

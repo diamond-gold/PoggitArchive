@@ -1,0 +1,65 @@
+<h1><a id="user-content-cb-heads" class="anchor" aria-hidden="true" href="#cb-heads"><span aria-hidden="true" class="octicon octicon-link"></span></a>CB-Heads</h1>
+<p>CB-Heads is a feature-rich plugin for getting and placing playerheads on PocketMine-MP servers.</p>
+<h1><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Usage</th>
+<th>Aliases</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>head</td>
+<td>Gives you the head of a player</td>
+<td>/head &lt;player: target&gt;</td>
+<td>playerhead</td>
+<td>cb-heads.command.head</td>
+</tr>
+</tbody>
+</table>
+<p><br><em>All commands can be configured in the config file.</em></p>
+<h1><a id="user-content-permissions" class="anchor" aria-hidden="true" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<h2><a id="user-content-normal-permissions" class="anchor" aria-hidden="true" href="#normal-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Normal Permissions</h2>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cb-heads.command.head</td>
+<td>Permission for the /head command</td>
+<td>op</td>
+</tr>
+<tr>
+<td>cb-heads.bypass.waiting</td>
+<td>Permission to bypass the head claim cooldown</td>
+<td>op</td>
+</tr>
+<tr>
+<td>cb-heads.bypass.blacklist</td>
+<td>Permission to get heads from players on the blacklist</td>
+<td>false</td>
+</tr>
+<tr>
+<td>cb-heads.bypass.blacklist.playername</td>
+<td>Permission to get heads from the given player even if they are on the blacklist</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-cooldowns" class="anchor" aria-hidden="true" href="#cooldowns"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cooldowns</h2>
+<p>You can create multiple head claim cooldowns for different permissions in the config.
+<br>These permissions will then look like this: <code>cb-heads.waiting.group</code></p>
+<h1><a id="user-content-credits" class="anchor" aria-hidden="true" href="#credits"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h1>
+<p>This plugin is based on PlayerHead by Enes5519, which has been improved by wolfgamer2805.
+<br>CB-Heads only contains little of the original sourcecode though, and I (Wertzui123) have implemented most of the features.
+<br>The icon is composed of the skins "Steve" and "Alex" from Minecraft.</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e145f419e79fa5e","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

@@ -1,0 +1,59 @@
+<h1>
+<a id="user-content-description" class="anchor" href="#description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Description</h1>
+<p>A plugin that allowed you to whitelist player per world</p>
+<h2>
+<a id="user-content-how-does-this-plugin-work" class="anchor" href="#how-does-this-plugin-work" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How does this plugin work?</h2>
+<p>You can set whitelist per world with this plugin. Allowing player for joining the world by whitelisted from Admin</p>
+<h2>
+<a id="user-content-command" class="anchor" href="#command" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/ww set <code>&lt;worldName&gt;</code> [on/off]</td>
+<td>Set on/off whitelist of the world</td>
+</tr>
+<tr>
+<td>/ww add <code>&lt;worldName&gt;</code> <code>&lt;playerName&gt;</code>
+</td>
+<td>Add player name to the whitelist</td>
+</tr>
+<tr>
+<td>/ww remove <code>&lt;worldName&gt;</code> <code>&lt;playerName&gt;</code>
+</td>
+<td>Remove player name from the whitelist</td>
+</tr>
+<tr>
+<td>/ww setmessage <code>&lt;worldName&gt;</code> <code>&lt;message&gt;</code>
+</td>
+<td>Set custom whitelist message, you can coloring the message with '&amp;'</td>
+</tr>
+<tr>
+<td>/ww list <code>&lt;worldName&gt;</code>
+</td>
+<td>See players has been whitelisted</td>
+</tr>
+<tr>
+<td>/ww help</td>
+<td>See all WorldWhitelist Commands</td>
+</tr>
+</tbody>
+</table>
+<h2>
+<a id="user-content-default-config" class="anchor" href="#default-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default Config</h2>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span>The default whitelist message</span>
+<span class="pl-c"><span class="pl-c">#</span> - {WORLD} -&gt; will be replaced with the world name</span>
+<span class="pl-ent">default-whitelist-message</span>: <span class="pl-s"><span class="pl-pds">"</span>§cWorld {WORLD} is whitelisted!<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span>Op bypass world whitelist</span>
+<span class="pl-c"><span class="pl-c">#</span>This allowing OP user to ignore whitelist checking</span>
+<span class="pl-ent">op-bypass</span>: <span class="pl-c1">true</span>
+...
+</pre></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1467d5db1ff9d0","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

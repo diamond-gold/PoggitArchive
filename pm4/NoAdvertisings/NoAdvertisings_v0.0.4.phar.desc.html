@@ -1,0 +1,108 @@
+<p><a href="https://poggit.pmmp.io/p/NoAdvertisings" rel="nofollow"><img src="https://camo.githubusercontent.com/92f11161d4136b795d1d5c0b5f3dd2a9a7df2153e317b62789d8447d4ee9a489/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4e6f4164766572746973696e6773" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/NoAdvertisings" style="max-width:100%;"></a> <a href="https://poggit.pmmp.io/p/NoAdvertisings" rel="nofollow"><img src="https://camo.githubusercontent.com/48985140624bd4665b20b186b90c6e4fdd349f85d05af61fadb8d9a9c031c82c/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f4e6f4164766572746973696e6773" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/NoAdvertisings" style="max-width:100%;"></a> <a href="https://poggit.pmmp.io/p/NoAdvertisings" rel="nofollow"><img src="https://camo.githubusercontent.com/735a426f30f803fcfbafb1ba05f87baff1e04b929efddeca965d31e3d6619f8e/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f4e6f4164766572746973696e6773" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/NoAdvertisings" style="max-width:100%;"></a> <a href="https://poggit.pmmp.io/p/NoAdvertisings" rel="nofollow"><img src="https://camo.githubusercontent.com/aedd75b86a8d32d5a52b27f3c80d4c1919e25643317b02d8180bafd5e1b51c57/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2f4e6f4164766572746973696e6773" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl/NoAdvertisings" style="max-width:100%;"></a></p>
+<div align="center">
+<h1>
+<a id="user-content-noadvertisings-v004" class="anchor" href="#noadvertisings-v004" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NoAdvertisings| v0.0.4<h1>
+<a id="" class="anchor" href="#" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+</h1>
+</h1>
+<p>Block ads for other servers.</p>
+</div>
+<h2>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>Block server ads.</li>
+<li>Easy to setup.</li>
+<li>Block server address ads when chatting, using commands, using sign.</li>
+</ul>
+<h2>
+<a id="user-content-all-noadvertisings-commands" class="anchor" href="#all-noadvertisings-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>All NoAdvertisings Commands:</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Command</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>/noadvertisings</strong></td>
+<td><strong>NoAdvertisings Control</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Aliases:
+<ul>
+<li>/na</li>
+<li>/noads</li>
+</ul>
+</li>
+</ul>
+<h2>
+<a id="user-content---permissions" class="anchor" href="#--permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="page_with_curl" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c3.png">📃</g-emoji>  Permissions:</h2>
+<ul>
+<li>You can use permission <code>noadvertisings.blocked</code> for command /noadvertisings</li>
+</ul>
+<h2>
+<a id="user-content-configs" class="anchor" href="#configs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configs</h2>
+<pre><code>---
+# Main config for NoAdvertisings
+# Message when players advertise
+Message: "Please don't ads."
+# Messages when adding domain
+Domain-exists: "That domain already exist!."
+Domain-added-successfully: "Successfully added {domain} into config."
+# Messages when removing domain
+Domain-not-exists: "That domain not exist!."
+Domain-removed-successfully: "Successfully removed {domain} from config."
+# The domains that allowed to use
+allowed.domain:
+ - "youripserver.net"
+ - "yourip.net"
+# Blocked domain names
+domain:
+ - ".net"
+ - ".com"
+ - ".tk"
+ - ".ddns.net"
+# Lines that will change if player advertise on sign
+lines:
+ - '============='
+ - 'No Advertising!'
+ - '============='
+ - ''
+# The command that will protected from advertising
+blocked.cmd:
+ - "/me"
+ - "/tell"
+ - "/w"
+...
+</code></pre>
+<h2>
+<a id="user-content-history" class="anchor" href="#history" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>History</h2>
+<pre><code>---
+#This is where the system will save the ads player history.
+'Wed 18/08/2021 03:57:24(AM) : Console': example.net.
+'Wed 18/08/2021 03:57:31(AM) : Console': play.example.org
+...
+</code></pre>
+<h2>
+<a id="user-content-project-infomation" class="anchor" href="#project-infomation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project Infomation</h2>
+<table>
+<thead>
+<tr>
+<th>Plugin Version</th>
+<th>Pocketmine API</th>
+<th>PHP Version</th>
+<th>Plugin Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.0.4</td>
+<td>4.x.x</td>
+<td>8.0</td>
+<td>Completed</td>
+</tr>
+</tbody>
+</table>

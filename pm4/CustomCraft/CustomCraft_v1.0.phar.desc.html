@@ -1,0 +1,169 @@
+<h2><a id="user-content--setup" class="anchor" aria-hidden="true" href="#-setup"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="wrench" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji> Setup:</h2>
+<ol>
+<li>Create json file in plugin folder (Furnace or Crafting_table)</li>
+<li>Edit the format using the item's id/meta</li>
+<li>Use the command /customcraft reload or restart the server to load all recipes</li>
+</ol>
+<h2><a id="user-content--formats" class="anchor" aria-hidden="true" href="#-formats"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="scroll" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dc.png">📜</g-emoji> Formats:</h2>
+<ul>
+<li>Crafting Table:</li>
+</ul>
+<div class="highlight highlight-source-json"><pre>{
+  <span class="pl-ent">"pattern"</span>: [
+    <span class="pl-s"><span class="pl-pds">"</span>AAA<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>AB <span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span> B <span class="pl-pds">"</span></span>
+  ],
+  <span class="pl-ent">"key"</span>: {
+    <span class="pl-ent">"A"</span>: {
+      <span class="pl-ent">"item"</span>: <span class="pl-c1">4</span>,
+      <span class="pl-ent">"data"</span>: <span class="pl-c1">0</span>
+    },
+    <span class="pl-ent">"B"</span>: {
+      <span class="pl-ent">"item"</span>: <span class="pl-c1">280</span>,
+      <span class="pl-ent">"data"</span>: <span class="pl-c1">0</span>
+    }
+  },
+  <span class="pl-ent">"result"</span>: {
+    <span class="pl-ent">"item"</span>: <span class="pl-c1">274</span>,
+    <span class="pl-ent">"data"</span>: <span class="pl-c1">0</span>,
+    <span class="pl-ent">"count"</span>: <span class="pl-c1">1</span>,
+    <span class="pl-ent">"enchantments"</span>: {
+      <span class="pl-ent">"unbreaking"</span>: <span class="pl-c1">10</span>,
+      <span class="pl-ent">"efficiency"</span>: <span class="pl-c1">10</span>
+    },
+    <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>Super Stone Pickaxe<span class="pl-pds">"</span></span>
+  }
+}</pre></div>
+<ul>
+<li>Furnace:</li>
+</ul>
+<div class="highlight highlight-source-json"><pre>{
+  <span class="pl-ent">"tags"</span>: [
+    <span class="pl-s"><span class="pl-pds">"</span>furnace<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>blast_furnace<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>smoker_furnace<span class="pl-pds">"</span></span>
+  ],
+  <span class="pl-ent">"output"</span>: {
+    <span class="pl-ent">"item"</span>: <span class="pl-c1">0</span>,
+    <span class="pl-ent">"data"</span>: <span class="pl-c1">0</span>
+  },
+  <span class="pl-ent">"input"</span>: {
+    <span class="pl-ent">"item"</span>: <span class="pl-c1">0</span>,
+    <span class="pl-ent">"data"</span>: <span class="pl-c1">0</span>
+  }
+}</pre></div>
+<h2><a id="user-content--permissions" class="anchor" aria-hidden="true" href="#-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="clipboard" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png">📋</g-emoji> Permissions:</h2>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>customcraft</td>
+<td><code>/customcraft</code></td>
+</tr>
+<tr>
+<td>customcraft.reload</td>
+<td><code>/customcraft reload</code></td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content--enchantments-available" class="anchor" aria-hidden="true" href="#-enchantments-available"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="book" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png">📖</g-emoji> Enchantments available:</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Other plugin register require</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>protection</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>fire_protection</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>blast_protection</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>projectile_protection</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>feather_falling</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>thorns</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>respiration</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>sharpness</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>knockback</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>fire_aspect</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>efficiency</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>silk_touch</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>unbreaking</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>power</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>punch</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>flame</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>infinity</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>mending</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>vanishing</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td>fortune</td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>looting</td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+</tbody>
+</table>

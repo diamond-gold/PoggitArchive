@@ -1,0 +1,48 @@
+<p>MCPEToDiscord is where you can see the messages sent ingame. You can also see who entered and left the server. You can change the messages in the config. You can also display the rank, for example. I fixed the plugin the Original Plugin: <a href="https://github.com/JaxkDev/MCPEToDiscord">https://github.com/JaxkDev/MCPEToDiscord</a>
+The config:</p>
+<pre><code>---
+
+#Version of the config
+#/!\ Do not edit it /!\
+version: "1.1.0"
+
+#Avalaible languages: english, spanish, german, traditional_chinese, simplified_chinese
+language: 'english'
+
+#Activate plugin's debug
+debug: false
+
+#Activate the webhook
+discord: true
+
+#Use PurePerms variables
+#{group}, {nickname}
+pureperms: false
+
+#Use FactionPro variables
+#{faction}, {fac_rank}
+factions: false
+
+banned_list:
+- '@here'
+- '@everyone'
+webhook_url: "https://discord.com/api/webhooks/"
+webhook_name: "MCPE Webhook"
+webhook_playerChat?: true
+webhook_playerJoin?: true
+webhook_playerLeave?: true
+webhook_playerDeath?: true
+webhook_playerCommand?: false
+
+webhook_playerChatFormat: "[{time}] {player} &gt; {msg}"
+webhook_playerJoinFormat: "{player} Joined the server !"
+webhook_playerLeaveFormat: "{player} Left the server !"
+webhook_playerDeathFormat: "{player} Died !"
+webhook_playerCommandFormat: "[{time}] {player} &gt;&gt; {cmd}"
+
+other_pluginEnabled?: true
+other_pluginDisabled?: true
+other_pluginEnabledFormat: "Plugin Enabled !"
+other_pluginDisabledFormat: "Plugin Disabled !"
+...
+</code></pre>

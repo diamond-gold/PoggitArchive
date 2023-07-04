@@ -1,0 +1,145 @@
+<h2>
+<a id="user-content-vanillahopper" class="anchor" href="#vanillahopper" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>VanillaHopper</h2>
+<p>In pm4, hopper blocks were implemented to have an inventory. But the logic for pushing, pulling and picking up items was missing nonetheless.
+This plugin aims to add this logic to the hopper.</p>
+<h3>
+<a id="user-content-optimizations" class="anchor" href="#optimizations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Optimizations</h3>
+<h4>
+<a id="user-content-improved-block-update-scheduling" class="anchor" href="#improved-block-update-scheduling" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Improved block update scheduling</h4>
+<p>Normally a hopper should run a block update every tick to reduce and check its cooldown if it has expired.
+Because it is highly inefficient to update all loaded hoppers every tick, just for letting them reduce their cooldown by one, the block update of hoppers is always scheduled to the expiration of their cooldown and not directly the next tick.
+To prevent any issues with the cooldown, hoppers are saving in which tick they were lastly updated to prevent them from updating too early.</p>
+<h4>
+<a id="user-content-event-driven-hoppers" class="anchor" href="#event-driven-hoppers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Event-driven hoppers</h4>
+<p>If a hopper did anything, it will be set on transfer cooldown and as explained above, its next update will be on the tick of the transfer. But if the hopper did nothing, it wouldn't be on cooldown and therefore would require an update on the next tick.
+As it is highly ineffective to schedule hundreds of hoppers for updates, who are not even doing anything, most parts are now event-driven.
+This means, that hoppers will only be scheduled for another block update, if an item entity landed on them or if any update on the blocks or inventories around them occurred.</p>
+<h3>
+<a id="user-content-customizations" class="anchor" href="#customizations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Customizations</h3>
+<p>Customizations can be done in the <code>config.yml</code> in the plugin's <code>plugin_data</code> folder:</p>
+<ul>
+<li>
+<code>hopper.transferCooldown</code>: <code>8</code>
+<ul>
+<li>The default cooldown of hoppers in Minecraft is 8 ticks. To in- or decrease the cooldown, you can just edit this number.</li>
+</ul>
+</li>
+<li>
+<code>hopper.itemsPerUpdate</code>: <code>1</code>
+<ul>
+<li>Normally a hopper only pushes one item and pulls or picks up one per update. You can specify how many items a hopper will try to push, pull or pick up when updated.
+This can be useful if you increased the cooldown of hoppers but want to keep the same "item per tick" ratio.</li>
+</ul>
+</li>
+<li>
+<code>hopper.updatesPerTick</code>: <code>0</code>
+<ul>
+<li>By default, there is no limit on how many block updates can be scheduled per tick.
+As it would be very performance costly to have scheduled hundreds of hopper updates scheduled on the same tick, you can change this number, to limit the number of hopper updates that are allowed to be scheduled per tick.
+If a hopper update would be scheduled on a tick that is already on the max value, the update is scheduled on the next tick that's not on the max value.</li>
+</ul>
+</li>
+</ul>
+<h3>
+<a id="user-content-faq" class="anchor" href="#faq" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FAQ</h3>
+<h4>
+<a id="user-content-what-are-your-sources" class="anchor" href="#what-are-your-sources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What are your sources?</h4>
+<p>Every information about the logic for pushing, pulling and picking up items came from the <a href="https://minecraft.fandom.com/wiki/Hopper" rel="nofollow">minecraft fandom wiki</a>.</p>
+<h4>
+<a id="user-content-why-are-there-so-many-comments-in-the-code" class="anchor" href="#why-are-there-so-many-comments-in-the-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why are there so many comments in the code?</h4>
+<p>Minecraft's hopper logic is very complex. To prevent anybody from getting confused about how certain things were done, most parts were commented to explain what was done and why.</p>
+<h4>
+<a id="user-content-why-not-create-a-pr" class="anchor" href="#why-not-create-a-pr" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why not create a <a href="https://github.com/pmmp/PocketMine-MP/pull/4416">PR</a>?</h4>
+<p>I did, but it was stated that hopper logic won't be implemented in pm4 and because I didn't want to maintain a PR for the time till pm5, I closed it.
+Still, I wanted to use that logic in a plugin to use it myself and therefore I created this.</p>
+<h3>
+<a id="user-content-tests" class="anchor" href="#tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h3>
+<ul>
+<li>
+<p>Functionality tests</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=4gSyuViaPaU" rel="nofollow">Every block a hopper can push items into was tested if it works as explained in the sources.</a></li>
+<li><a href="https://www.youtube.com/watch?v=6NWvr6Kv88E" rel="nofollow">Every block a hopper can pull items from was tested if it works as explained in the sources.</a></li>
+<li><a href="https://www.youtube.com/watch?v=hVEPiK9KWkA" rel="nofollow">The collision box of the area where the hopper should pick up items was checked and works as explained in the sources.</a></li>
+</ul>
+</li>
+<li>
+<p>"Performance" tests</p>
+<ul>
+<li>128 hoppers pushing 27 * 64 dirt from one chest to another (<a href="https://timings.pmmp.io/?id=158627" rel="nofollow">Timings</a>):
+<a href="https://user-images.githubusercontent.com/54852588/131256515-3611c594-08e1-45a1-8bd2-3ebbaf141c8a.png" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/54852588/131256515-3611c594-08e1-45a1-8bd2-3ebbaf141c8a.png" alt="Performance Test" style="max-width:100%;"></a>
+</li>
+</ul>
+</li>
+</ul>
+<h3>
+<a id="user-content-todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO</h3>
+<h4>
+<a id="user-content-make-pushing-and-pulling-more-modular" class="anchor" href="#make-pushing-and-pulling-more-modular" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Make pushing and pulling more modular</h4>
+<p>Currently, the pushing and pulling methods are not very developer friendly when it comes to customizations, since it is hard to access and overwrite the <code>Hopper::push()</code> and <code>Hopper::pull()</code> methods without beeing forced to copy code.
+This could be done by implementing a behaviour system which lets developers register custom behaviours for any block.
+Since this would include rewriting some parts of the existing core, which would cost much time, what I do not see benefitial at the moment, PLEASE create an issue, if you find yourself needing a better implementation. Till then, this will stay as a TODO.</p>
+<h4>
+<a id="user-content-implementing-entity-pulling" class="anchor" href="#implementing-entity-pulling" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementing entity pulling</h4>
+<p>Normally, hoppers can not only pull items from blocks, but from entities like minecarts too.
+But since PocketMine-MP does not support them, there is no point in implementing this, since this would be out of the scope of this plugin.
+Although it should be at least possible to let hoppers also scan for entities when pulling, which is not possible with the current system.</p>
+<h4>
+<a id="user-content-supporting-more-blocks" class="anchor" href="#supporting-more-blocks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supporting more blocks</h4>
+<p>Composters, Brewing Stands and Jukeboxes are currently either not or just poorly supported. This should be changed.
+But since PocketMine-MP itself does not implement these blocks correctly, there is no reason for us at the moment of writing this.</p>
+<h3>
+<a id="user-content-for-developers" class="anchor" href="#for-developers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For developers</h3>
+<h4>
+<a id="user-content-event-handling" class="anchor" href="#event-handling" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Event handling</h4>
+<ul>
+<li>Through the different events, you can easily implement your own rules for hoppers.
+Handle these events by simply creating an ordinary listener (<code>class EventListener implements Listener</code>) in your plugin and import (<code>use</code> keyword) them by their namespace (<code>event name</code>: <code>namespace</code>).</li>
+<li>
+<code>BlockItemPickupEvent</code>: <code>pocketmine\event\block\BlockItemPickupEvent</code>
+<ul>
+<li>This event is called when a hopper tries to pick up an item.</li>
+</ul>
+</li>
+<li>
+<code>HopperEvent</code>: <code>ColinHDev\VanillaHopper\events\HopperEvent</code>
+<ul>
+<li>This event is called when a hopper either tries to push or pull an item.</li>
+</ul>
+</li>
+<li>
+<code>HopperPushEvent</code>: <code>ColinHDev\VanillaHopper\events\HopperPushEvent</code>
+<ul>
+<li>This event is called when a hopper tries to push an item.</li>
+</ul>
+</li>
+<li>
+<code>HopperPushContainerEvent</code>: <code>ColinHDev\VanillaHopper\events\HopperPushContainerEvent</code>
+<ul>
+<li>This event is called when a hopper tries to push an item into a block's inventory.</li>
+</ul>
+</li>
+<li>
+<code>HopperPushJukeboxEvent</code>: <code>ColinHDev\VanillaHopper\events\HopperPushJukeboxEvent</code>
+<ul>
+<li>This event is called when a hopper tries to push a record into a jukebox.</li>
+</ul>
+</li>
+<li>
+<code>HopperPullEvent</code>: <code>ColinHDev\VanillaHopper\events\HopperPullEvent</code>
+<ul>
+<li>This event is called when a hopper tries to pull an item.</li>
+</ul>
+</li>
+<li>
+<code>HopperPullContainerEvent</code>: <code>ColinHDev\VanillaHopper\events\HopperPullContainerEvent</code>
+<ul>
+<li>This event is called when a hopper tries to pull an item from a block's inventory.</li>
+</ul>
+</li>
+</ul>
+<h4>
+<a id="user-content-custom-itementity-class" class="anchor" href="#custom-itementity-class" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom ItemEntity class</h4>
+<p>As there is no <code>EntityMoveEvent</code>, which can easily be listened for, a way to check whether an item entity moved onto a hopper had to be found.
+This was done by implementing a custom item entity class that checks only when the entity actually moved. Otherwise, we would have to make a task that constantly checks all item entities and if they moved.
+So this method has the most performance benefits. But this method makes this plugin incompatible with other plugins that implement a custom item entity class, as either this or the other plugin will no longer work as intended anymore.</p>

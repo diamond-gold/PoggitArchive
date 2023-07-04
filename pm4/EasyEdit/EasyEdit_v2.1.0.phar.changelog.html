@@ -1,0 +1,110 @@
+<p dir="auto">New Features:</p>
+<ul dir="auto">
+<li>Tile support for schematics
+<ul dir="auto">
+<li>Containers including items with custom names/lores</li>
+<li>Support for mobheads &amp; shulker boxes</li>
+<li>Works with java world edit</li>
+</ul>
+</li>
+<li>Flicker-free setting
+<ul dir="auto">
+<li>only for smaller selections</li>
+</ul>
+</li>
+<li>Added a translation system
+<ul dir="auto">
+<li>Currently supports English, German &amp; Japanese (~ yuko fuyutsuki)</li>
+<li><a href="https://github.com/platz1de/EasyEdit/blob/dev/resources/lang/TRANSLATE.md">Help translate</a></li>
+</ul>
+</li>
+</ul>
+<p dir="auto">Minor Features:</p>
+<ul dir="auto">
+<li>Support for plugins adding new blocks (if properly registered to pmmp)</li>
+<li>Option to remap commands autocompleted by minecraft (start with thee slashes..)</li>
+<li>Implemented gravity pattern
+<ul dir="auto">
+<li>gravity option for brushes</li>
+</ul>
+</li>
+<li>Implemented a paste brush</li>
+<li>Added a horizontal pattern</li>
+<li>Implemented an embed pattern</li>
+<li>Improved smoothing
+<ul dir="auto">
+<li>better handling of floating objects</li>
+<li>not creating any floating nature elements</li>
+<li>no air pockets underwater</li>
+<li>NOTE: Normal smooth pattern was removed</li>
+</ul>
+</li>
+<li>stacking / moving now gets split like all other tasks</li>
+</ul>
+<p dir="auto">Commands:</p>
+<ul dir="auto">
+<li>//fill command</li>
+<li>//drain command</li>
+<li>//overlay command</li>
+<li>//line command
+<ul dir="auto">
+<li>Direct line to given coordinates</li>
+<li>//line find command</li>
+</ul>
+</li>
+<li>//view command</li>
+<li>//builderrod command</li>
+<li>//commands command</li>
+<li>//pastestates command (pastes everything)</li>
+<li>//wand command
+<ul dir="auto">
+<li>default wooden axe still works</li>
+</ul>
+</li>
+</ul>
+<p dir="auto">Utility Improvements:</p>
+<ul dir="auto">
+<li>All blocks can now be made static using # (static blocks are not counted as a group)</li>
+<li>Added a center argument to //copy command</li>
+<li>//replace now replaces all solid blocks by default</li>
+<li>Implemented support for relative &amp; directional coordinates (~ ~10 ~ / ^ ^10 ^)</li>
+<li>Brushes now work through water &amp; underwater</li>
+<li>Leaves no longer decay when set</li>
+<li>Most commands now accept directional arguments ("up", "north"...)
+<ul dir="auto">
+<li>if none is given facing direction will be used</li>
+</ul>
+</li>
+<li>Brushes now save whichever item was in the hand when creating them</li>
+<li>Task progress is now a lot more accurate</li>
+<li>Tool cooldown can now be configured</li>
+</ul>
+<p dir="auto">Bug Fixes:</p>
+<ul dir="auto">
+<li>Benchmarks now actually set a 3d-checkers pattern</li>
+<li>Fix a rare occasion where the thread would freeze the server</li>
+<li>Fixed crashes when data couldn't be loaded</li>
+<li>Hand pattern now works with all items</li>
+<li>Fix crash when using non-numeric weight or weight without a pattern</li>
+<li>Fixed crash when using patterns with insufficient arguments</li>
+<li>Fixed wall pattern missing a side of cubes</li>
+<li>Fixed thread waiting for already sent data ~ JavierLeon9966</li>
+<li>Fixed a bug causing thread to repeatedly crash</li>
+<li>Patterns without closing brackets now throw an error</li>
+<li>Fix brushes crashing the server when created with invalid patterns</li>
+<li>Fixed schematics generating with duplicate palette entries</li>
+<li>Deleting the data directory now doesn't crash the server</li>
+<li>Fix crash when raycasting fails</li>
+</ul>
+<p dir="auto">Internal Changes:</p>
+<ul dir="auto">
+<li>datafiles are now shipped with the plugin
+<ul dir="auto">
+<li>full usage without an internet connection</li>
+<li>downloaded files are cached to save bandwidth</li>
+</ul>
+</li>
+<li>chunks now get cached instead of being loaded repeatedly</li>
+<li>Improved chunk handling by a lot</li>
+<li>Most magic arguments were changed to actual parameters, improving error handling</li>
+</ul>

@@ -1,0 +1,562 @@
+<h1>
+<a id="user-content-buildertools" class="anchor" href="#buildertools" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BuilderTools</h1>
+<br>
+<p align="left">  
+   <a href="https://poggit.pmmp.io/ci/CzechPMDevs/BuilderTools/BuilderTools" rel="nofollow">  
+      <img src="https://camo.githubusercontent.com/ef1af5accad77c706adc2a883437b884a4317d00d5b1361baf00007be0e0fa28/68747470733a2f2f706f676769742e706d6d702e696f2f63692e736869656c642f437a656368504d446576732f4275696c646572546f6f6c732f4275696c646572546f6f6c733f7374796c653d666c61742d737175617265" data-canonical-src="https://poggit.pmmp.io/ci.shield/CzechPMDevs/BuilderTools/BuilderTools?style=flat-square" style="max-width:100%;">  
+   </a>  
+   <a href="https://discord.gg/uwBf2jS" rel="nofollow">  
+      <img src="https://camo.githubusercontent.com/0d6e0e60079493d030dc5b85519754836a1ee8fc837565cc2257dddf06ee8a1a/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3336353230323539343933323731393631362e7376673f7374796c653d666c61742d737175617265" data-canonical-src="https://img.shields.io/discord/365202594932719616.svg?style=flat-square" style="max-width:100%;">  
+   </a>  
+   <a href="https://github.com/CzechPMDevs/BuilderTools/releases">  
+      <img src="https://camo.githubusercontent.com/1cecd3ce61fe82a41b4e4f34fbca87c0800491043f5c3eae1a31b5f0c9228978/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f437a656368504d446576732f4275696c646572546f6f6c732e7376673f7374796c653d666c61742d737175617265" data-canonical-src="https://img.shields.io/github/release/CzechPMDevs/BuilderTools.svg?style=flat-square" style="max-width:100%;">  
+   </a>  
+   <a href="https://github.com/CzechPMDevs/BuilderTools/releases">  
+      <img src="https://camo.githubusercontent.com/3d19047b89fdf52f82d6badf6900ee471e4329b6041af27f552f20b42cce1a18/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f646f776e6c6f6164732f437a656368504d446576732f4275696c646572546f6f6c732f746f74616c2e7376673f7374796c653d666c61742d737175617265" data-canonical-src="https://img.shields.io/github/downloads/CzechPMDevs/BuilderTools/total.svg?style=flat-square" style="max-width:100%;">  
+   </a>
+   <a href="https://github.com/CzechPMDevs/BuilderTools/blob/master/LICENSE">  
+      <img src="https://camo.githubusercontent.com/f66aedacfaef56434f8f7e252570e78a5abde5fa47de5dc7adcce46e399cfb6c/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f437a656368504d446576732f4275696c646572546f6f6c732e7376673f7374796c653d666c61742d737175617265" data-canonical-src="https://img.shields.io/github/license/CzechPMDevs/BuilderTools.svg?style=flat-square" style="max-width:100%;">  
+   </a>  
+   <a href="https://poggit.pmmp.io/p/BuilderTools" rel="nofollow">  
+      <img src="https://camo.githubusercontent.com/14e31eaaacfac875319110a4fe8d543ce8b3806038d8566cdc67ef3526bd26f3/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646f776e6c6f6164732f4275696c646572546f6f6c733f7374796c653d666c61742d737175617265" data-canonical-src="https://poggit.pmmp.io/shield.downloads/BuilderTools?style=flat-square" style="max-width:100%;">  
+   </a>  
+<br><br>  
+    <g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji> Advanced World Editor commands  
+    <br>  
+    <g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji> Using Sub Chunk Iterator to make updating world faster
+    <br>  
+    <g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji> Supports 4 different types of schematics
+    <br>  
+    <g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji> Asynchronous Minecraft: Java Version maps world fixer  
+    <br>  
+    <g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji> Supports latest PocketMine API version  
+    <br><br>  
+</p>  
+<h2>
+<a id="user-content--faq" class="anchor" href="#-faq" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="speech_balloon" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ac.png">💬</g-emoji> FAQ</h2>
+<ul>
+<li>
+<code>Required extension Core has an incompatible version (* not &gt;= 8.0)</code>
+<ul>
+<li>Your server is using outdated PHP version. If you host your server by yourself, update your php binaries <a href="https://pmmp.readthedocs.io/en/rtfd/installation/installing-manually.html#getting-php-for-your-server" rel="nofollow">More information</a>. If you are using some host provider, contact them to update their php version.</li>
+</ul>
+</li>
+<li>
+<code>Out of memory (allocated ******) (tried to allocate ****** bytes)</code> OR <code>Allowed memory size exhausted</code>
+<ul>
+<li>Your server needs more memory for this action. To avoid this issue, you should disable memory limits in pocketmine.yml (by setting both <code>main-hard-limit</code> and <code>async-worker-hard-limit</code> to <code>0</code>). After that, enable <code>clipboard-compression</code> in config.yml</li>
+</ul>
+</li>
+<li>
+<code>Plugin crashes when I do ...</code>
+<ul>
+<li>In this case, submit issue on <a href="https://github.com/CzechPMDevs/BuilderTools/issues/new/choose">github</a>. Make sure you used pre-formatted document and filled all the information. Only then, the problem can begin to be solved.</li>
+</ul>
+</li>
+</ul>
+<h2>
+<a id="user-content--buildertools-commands" class="anchor" href="#-buildertools-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="house" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e0.png">🏠</g-emoji> BuilderTools commands</h2>
+<ul>
+<li>All BuilderTools commands starts with <code>//</code>except for the <code>/buildertools</code> command that was added as an alias because <code>//help</code> not works in newer versions.</li>
+<li>In game, you can get list of all commands using commands <code>//commands</code>
+</li>
+</ul>
+<br>  
+<p><strong>Commands</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Command</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>//commands</strong></td>
+<td>
+<strong>Displays list BuilderTools commands</strong> <br><br> Alias: <code>//commands</code>, <code>/buildertools</code> <br>Usage: <code>//commands &lt;page: 1-4&gt;</code>
+</td>
+</tr>
+<tr>
+<td><strong>//biome</strong></td>
+<td>
+<strong>Changes biome in selected area</strong> <br><br> Usage: <code>//biome list</code> OR <code>//biome &lt;biomeId&gt;</code>
+</td>
+</tr>
+<tr>
+<td><strong>//blockinfo</strong></td>
+<td>
+<strong>Switch block info mode</strong> <br><br>Usage: <code>//blockinfo</code><br>Alias: <code>//bi</code><br><br>In blockinfo mode you can get information about block by touching it.</td>
+</tr>
+<tr>
+<td><strong>//clearinventory</strong></td>
+<td>
+<strong>Clears inventory</strong> <br><br>Usage: <code>//clearinventory</code><br>Alias: <code>//ci</code>
+</td>
+</tr>
+<tr>
+<td><strong>//center</strong></td>
+<td>
+<strong>Finds center of the selection</strong> <br><br> Usage: <code>//center</code> <br><br> Bedrock will appear in the middle of the selection</td>
+</tr>
+<tr>
+<td><strong>//copy</strong></td>
+<td>
+<strong>Copy selected area into the clipboard</strong> <br><br> Usage: <code>//copy</code> <br><br> Copied area can be placed again using <code>//paste</code>, merged with the environment <code>//merge</code> or rotated <code>//rotate</code>.</td>
+</tr>
+<tr>
+<td><strong>//cube</strong></td>
+<td>
+<strong>Creates cube</strong> <br><br> Usage: <code>//cube &lt;id1:dmg1,id2,...&gt; &lt;radius&gt;</code> <br><br> Creates a cube at your position.</td>
+</tr>
+<tr>
+<td><strong>//cut</strong></td>
+<td>
+<strong>Cuts out selected area</strong> <br><br> Usage: <code>//cube &lt;id1:dmg1,id2,...&gt; &lt;radius&gt;</code> <br><br> The are is afterwards moved on to clipboard.</td>
+</tr>
+<tr>
+<td><strong>//cylinder</strong></td>
+<td>
+<strong>Creates cylinder</strong> <br><br> Usage: <code>//cube &lt;id1:dmg1,id2,...&gt; &lt;radius&gt;</code> <br><br> Creates a cylinder at your position.</td>
+</tr>
+<tr>
+<td><strong>//draw</strong></td>
+<td>
+<strong>Draws with blocks</strong> <br><br>Usage: `//draw &lt;cube</td>
+</tr>
+<tr>
+<td><strong>//fill</strong></td>
+<td>
+<strong>Fill selected area</strong> <br><br> Aliases: <code>//set</code>, <code>//change</code> <br> Usage: <code>//fill &lt;id1:dmg1,id2,...&gt;</code> <br><br> First you must create area using <code>//pos1</code>, <code>//pos2</code> or by <code>//wand</code>.</td>
+</tr>
+<tr>
+<td><strong>//fix</strong></td>
+<td>
+<strong>Fixes block in world from Minecraft: Java Edition</strong> <br><br> Usage: <code>//fix &lt;world&gt;</code>
+</td>
+</tr>
+<tr>
+<td><strong>//flip</strong></td>
+<td>
+<strong>Flips selection</strong> <br><br>Usage <code>//flip x</code> OR <code>//flip y</code> OR <code>//flip z</code><br><br>The argument represents axis to flip the selection through.</td>
+</tr>
+<tr>
+<td><strong>//hcube</strong></td>
+<td>
+<strong>Creates hollow cube</strong> <br><br>Usage: <code>//hcube &lt;id1:dmg1,id2,...&gt; &lt;radius&gt;</code><br><br>Creates hollow cube at your position.</td>
+</tr>
+<tr>
+<td><strong>//hcylinder</strong></td>
+<td>
+<strong>Creates hollow cylinder</strong> <br><br>Usage: <code>//hcyl &lt;id1:dmg1,id2,...&gt; &lt;radius&gt;</code><br><br>Creates hollow cylinder at your position.</td>
+</tr>
+<tr>
+<td><strong>//hpyramid</strong></td>
+<td>
+<strong>Creates hollow pyramid</strong> <br><br>Usage: <code>//hpyramid &lt;id1:dmg1,id2,...&gt; &lt;radius&gt;</code><br><br>Creates hollow pyramid at your position.</td>
+</tr>
+<tr>
+<td><strong>//hsphere</strong></td>
+<td>
+<strong>Creates hollow sphere</strong> <br><br>Usage: <code>//hsphere &lt;id1:dmg1,id2,...&gt; &lt;radius&gt;</code><br><br>Creates hollow sphere at your position.</td>
+</tr>
+<tr>
+<td><strong>//id</strong></td>
+<td>
+<strong>Displays id of item in your hand</strong> <br><br>Usage: <code>//id</code>
+</td>
+</tr>
+<tr>
+<td><strong>//merge</strong></td>
+<td>
+<strong>Merge copied area</strong> <br><br> Usage: <code>//merge</code>
+</td>
+</tr>
+<tr>
+<td><strong>//move</strong></td>
+<td>
+<strong>Move blocks in selection</strong> <br><br>Usage: <code>//move &lt;x&gt; &lt;y&gt; &lt;z&gt;</code><br><br>Move blocks in selected area.</td>
+</tr>
+<tr>
+<td><strong>//naturalize</strong></td>
+<td>
+<strong>Replaces blocks in selected area to grass,dirt and stone</strong> <br><br>Usage: <code>//naturalize</code>
+</td>
+</tr>
+<tr>
+<td><strong>//outline</strong></td>
+<td>
+<strong>Fills hollow selected area</strong> <br><br>Usage: <code>//outline &lt;id1:dmg1,id2,...&gt;</code><br><br>Changes the all the outer layers.</td>
+</tr>
+<tr>
+<td><strong>//paste</strong></td>
+<td>
+<strong>Paste copied area</strong> <br><br> Usage: <code>//paste</code>
+</td>
+</tr>
+<tr>
+<td><strong>//pos1</strong></td>
+<td>
+<strong>Select first position</strong> <br><br> Aliases: <code>//1</code>, <code>//pos1</code> <br> Usage: <code>//pos1</code> <br><br> You need select two positions for eg. filling or fixing Minecraft: Java Edition maps.</td>
+</tr>
+<tr>
+<td><strong>//pos2</strong></td>
+<td>
+<strong>Select second position</strong> <br><br> Aliases: <code>//2</code>, <code>//pos2</code> <br> Usage: <code>//pos2</code> <br><br> You need select two positions for eg. filling or fixing Minecraft: Java Edition maps.</td>
+</tr>
+<tr>
+<td><strong>//pyramid</strong></td>
+<td>
+<strong>Creates pyramid</strong> <br><br>Usage: <code>//pyramid &lt;id1:dmg1,id2,...&gt; &lt;radius&gt;</code><br><br>Creates pyramid in your position.</td>
+</tr>
+<tr>
+<td><strong>//redo</strong></td>
+<td>
+<strong>Re-do BuilderTools action</strong> <br><br> Usage: <code>//redo</code>
+</td>
+</tr>
+<tr>
+<td><strong>//replace</strong></td>
+<td>
+<strong>Replace blocks in selected area</strong> <br><br> Usage: <code>//replace &lt;blocksToReplace: id1,id2&gt; &lt;blocks: id1:dmg1,id2,...&gt;</code> <br><br> Replace blocks in selected area. First you must create area using <code>//pos1</code>, <code>//pos2</code> or by <code>//wand</code>.</td>
+</tr>
+<tr>
+<td><strong>//rotate</strong></td>
+<td>
+<strong>Rotate copied area</strong> <br><br>Usage: <code>//rotate &lt;y&gt; [x] [z]</code> <br><br> Y, X or Z is axis you can rotate object around. Use degrees as unit. Example: <code>//rotate 90</code>
+</td>
+</tr>
+<tr>
+<td><strong>//schematic</strong></td>
+<td>
+<strong>Manage with schematics</strong> <br><br>Usage: <code>//schem &lt;reload OR load OR list OR paste&gt; [filename]</code><br><br>Manage with schematics (reload - loads all schematics to memory; load - loads schematics for //schem paste; list - displays list of loaded schematics.</td>
+</tr>
+<tr>
+<td><strong>//sphere</strong></td>
+<td>
+<strong>Creates sphere</strong> <br><br> Usage: <code>//sphere &lt;id1:dmg1,id2,...&gt; &lt;radius&gt;</code> <br><br> Creates a sphere in your position.</td>
+</tr>
+<tr>
+<td><strong>//stack</strong></td>
+<td>
+<strong>Stacks copied area</strong> <br><br>Usage: `//stack  [side</td>
+</tr>
+<tr>
+<td><strong>//tree</strong></td>
+<td>
+<strong>Spawns tree</strong> <br><br> Usage: <code>//tree &lt;tree OR list&gt;</code> <br><br> There are implemented only basic trees (<code>oak</code>, <code>spruce</code>, <code>jungle</code> and <code>birch</code>)</td>
+</tr>
+<tr>
+<td><strong>//undo</strong></td>
+<td>
+<strong>Cancels BuilderTools action</strong> <br><br> Usage: <code>//undo</code>
+</td>
+</tr>
+<tr>
+<td><strong>//walls</strong></td>
+<td>
+<strong>Makes walls around selection</strong> <br><br> Usage: <code>//walls</code>
+</td>
+</tr>
+<tr>
+<td><strong>//wand</strong></td>
+<td>
+<strong>Switch wand tool</strong> <br><br> Usage: <code>//wand</code> <br><br> First position is set  by breaking the block, second by touching the block. Wand tool can be turned of typing <code>//wand</code> again.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h2>
+<a id="user-content-️-other-features" class="anchor" href="#%EF%B8%8F-other-features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="hammer_and_wrench" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f6e0.png">🛠️</g-emoji> Other features:</h2>
+<h3>
+<a id="user-content--schematics" class="anchor" href="#-schematics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="scroll" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dc.png">📜</g-emoji> Schematics</h3>
+<ul>
+<li>You can save your selection to a file and then load it again</li>
+<li>BuilderTools supports loading <a href="https://minecraft.fandom.com/wiki/Schematic_file_format" rel="nofollow">MCEdit</a> and <a href="https://minecraft.fandom.com/wiki/Structure_Block#Save" rel="nofollow">MCStructure</a> formats and creating schematics wth MCEdit format.</li>
+<li>Schematics are loaded asynchronously, that means it won't lag server while loading.</li>
+</ul>
+<h4>
+<a id="user-content-loading-schematics" class="anchor" href="#loading-schematics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Loading schematics:</h4>
+<ol>
+<li>Move schematic file to <code>/plugin_data/BuilderTools/schematics</code> directory</li>
+<li>Load schematic using <code>//schem load &lt;schematic&gt;</code>
+</li>
+<li>Paste into the world using <code>//schem paste &lt;schematic&gt;</code>
+</li>
+</ol>
+<h4>
+<a id="user-content-creating-schematics" class="anchor" href="#creating-schematics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating schematics:</h4>
+<ol>
+<li>Select two positions using <code>//pos1</code> &amp; <code>//pos2</code> commands or using wand axe.</li>
+<li>Use <code>//schem create &lt;schematicName&gt;</code>
+</li>
+<li>File will be saved in directory <code>/plugin_data/BuilderTools/schematics/schematicName.schematic</code>
+</li>
+</ol>
+<h3>
+<a id="user-content--fixing-java-edition-worlds" class="anchor" href="#-fixing-java-edition-worlds" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="earth_americas" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f30e.png">🌎</g-emoji> Fixing Java: Edition worlds</h3>
+<ul>
+<li>BuilderTools is able to fix block ids in worlds generated by Minecraft: Java Edition.</li>
+<li>Currently, we support only <a href="https://minecraft.fandom.com/wiki/Anvil_file_format" rel="nofollow">Anvil</a> world format</li>
+<li>To fix a world use <code>//fix &lt;worldName&gt;</code>
+</li>
+<li>Worlds are fixed asynchronously, so the process will not freeze server. Players are able to play while fixing world, but are not able to join the world, which is being fixed.</li>
+</ul>
+<h2>
+<a id="user-content---permissions" class="anchor" href="#--permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="page_with_curl" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c3.png">📃</g-emoji>  Permissions</h2>
+<br>  
+<p><strong>All BuilderTools Permissions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Command</th>
+<th>Operator Permissions required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buildertools.command.help</td>
+<td><code>//commands</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.biome</td>
+<td><code>//biome</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.blockinfo</td>
+<td><code>//blockinfo</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.clearinventory</td>
+<td><code>//clearinventory</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.copy</td>
+<td><code>//copy</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.cube</td>
+<td><code>//cube</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.cut</td>
+<td><code>//cut</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.cylinder</td>
+<td><code>//cylinder</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.decoration</td>
+<td><code>//decoration</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.draw</td>
+<td><code>//draw</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.fill</td>
+<td><code>//fill</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.fix</td>
+<td><code>//fix</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.hcube</td>
+<td><code>//hcube</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.hcylinder</td>
+<td><code>//hcylinder</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.hpyramid</td>
+<td><code>//hpyramid</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.hsphere</td>
+<td><code>//hsphere</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.id</td>
+<td><code>//id</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.merge</td>
+<td><code>//merge</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.move</td>
+<td><code>//move</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.naturalize</td>
+<td><code>//naturalize</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.outline</td>
+<td><code>//outline</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.paste</td>
+<td><code>//paste</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.pos1</td>
+<td><code>//pos1</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.pos2</td>
+<td><code>//pos2</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.pyramid</td>
+<td><code>//pyramid</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.rotate</td>
+<td><code>//rotate</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.schematic</td>
+<td><code>//schematic</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.sphere</td>
+<td><code>//sphere</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.stack</td>
+<td><code>//stack</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.tree</td>
+<td><code>//tree</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.undo</td>
+<td><code>//undo</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.walls</td>
+<td><code>//walls</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+<tr>
+<td>buildertools.command.wand</td>
+<td><code>//wand</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+</tr>
+</tbody>
+</table>
+<h2>
+<a id="user-content--configuration" class="anchor" href="#-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="wrench" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji> Configuration</h2>
+<ul>
+<li>New in 1.2</li>
+<li>Default configuration:</li>
+</ul>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span> BuilderTools configuration file</span>
+<span class="pl-c"><span class="pl-c">#</span> Target BuilderTools version: 1.3.0-beta1</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Do not change this line.</span>
+<span class="pl-ent">config-version</span>: <span class="pl-s">1.3.0.0</span>
+
+<span class="pl-c"><span class="pl-c">#</span> This is format which will be used for creating schematics</span>
+<span class="pl-c"><span class="pl-c">#</span> Supported formats: 'mcedit', 'mcstructure', 'buildertools'</span>
+<span class="pl-ent">output-schematics-format</span>: <span class="pl-s"><span class="pl-pds">'</span>mcedit<span class="pl-pds">'</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Option for compressing clipboards. This will make the actions</span>
+<span class="pl-c"><span class="pl-c">#</span> slower, but reduces RAM usage.</span>
+<span class="pl-ent">clipboard-compression</span>: <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Some shapes are generated with duplicate blocks. This problem causes</span>
+<span class="pl-c"><span class="pl-c">#</span> some blocks are not reverted right when doing //undo. This option</span>
+<span class="pl-c"><span class="pl-c">#</span> is for removing duplicates.</span>
+<span class="pl-c"><span class="pl-c">#</span> Warning: This action takes around 98% time of the whole process!</span>
+<span class="pl-ent">remove-duplicate-blocks</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> BuilderTools saves player's clipboard, undo &amp; redo stuff when player</span>
+<span class="pl-c"><span class="pl-c">#</span> leaves server to disk. This cache should be cleaned after restart (to</span>
+<span class="pl-c"><span class="pl-c">#</span> avoid unexpected bugs). This  option is to disable removing those files.</span>
+<span class="pl-ent">clean-cache</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> When player leaves the server, player's session is saved, even if player did not</span>
+<span class="pl-c"><span class="pl-c">#</span> do any action with BuilderTools. If you enable this, player's sessions will not</span>
+<span class="pl-c"><span class="pl-c">#</span> be saved and when player joins the server again, his clipboard data will be lost</span>
+<span class="pl-c"><span class="pl-c">#</span> This option is good when BuilderTools is only used as api plugin on server with</span>
+<span class="pl-c"><span class="pl-c">#</span> high amount of players.</span>
+<span class="pl-ent">discard-sessions</span>: <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> PowerItems settings:</span>
+
+<span class="pl-c"><span class="pl-c">#</span> When disabled, //wand command still works, but instead of wand axe is hand</span>
+<span class="pl-c"><span class="pl-c">#</span> going to be the 'wand tool'</span>
+<span class="pl-ent">wand-axe</span>:
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>§r§fWand Axe<span class="pl-cce">\n</span>§7§oBreak for first pos<span class="pl-cce">\n</span>§7§oTouch for second pos<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">blockinfo-stick</span>:
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>§r§fDebug Stick<span class="pl-cce">\n</span>§7§oTouch block for info<span class="pl-pds">"</span></span>
+...</pre></div>
+<br>
+<h2>
+<a id="user-content--credits" class="anchor" href="#-credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="moneybag" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4b0.png">💰</g-emoji> Credits</h2>
+<ul>
+<li>Icon made by <a href="https://www.freepik.com/" title="Freepik" rel="nofollow">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" rel="nofollow">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" rel="nofollow">CC 3.0 BY</a>
+</li>
+<li>Seabuild spawn built by CryptoKey</li>
+</ul>
+<br>
+<h2>
+<a id="user-content--license" class="anchor" href="#-license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="bulb" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png">💡</g-emoji> License</h2>
+<pre><code>Copyright 2018-2021 CzechPMDevs    
+    
+Licensed under the Apache License, Version 2.0 (the "License");    
+you may not use this file except in compliance with the License.    
+You may obtain a copy of the License at    
+   
+http://www.apache.org/licenses/LICENSE-2.0    
+   
+Unless required by applicable law or agreed to in writing, software    
+distributed under the License is distributed on an "AS IS" BASIS,    
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.    
+See the License for the specific language governing permissions and    
+limitations under the License.  
+</code></pre>
+<p>Full license <a href="https://github.com/CzechPMDevs/BuilderTools/blob/master/LICENSE">here</a>.</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e145ef2087815ea","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

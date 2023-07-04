@@ -1,0 +1,37 @@
+<h1><a id="user-content-safercon" class="anchor" aria-hidden="true" href="#safercon"><span aria-hidden="true" class="octicon octicon-link"></span></a>SafeRCON</h1>
+<p>A PMMP Plugin that allows you to run commands in your server through discord without worrying about RCON insecurities</p>
+<h1><a id="user-content-setup" class="anchor" aria-hidden="true" href="#setup"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h1>
+<ul>
+<li>Add the plugin to your server</li>
+<li>Restart your server</li>
+<li>Edit the config</li>
+<li>Change the <code>Enabled</code> to <code>true</code> in config then save everything</li>
+<li>Restart the server and you're good to go</li>
+</ul>
+<h1><a id="user-content-how-to-use-in-discord" class="anchor" aria-hidden="true" href="#how-to-use-in-discord"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use in discord</h1>
+<ul>
+<li>Use the command that is set up in the config. (default is <code>!rcon</code>)</li>
+<li>Examples of usage:
+<ul>
+<li>!rcon say hi</li>
+<li>!rcon ban username</li>
+</ul>
+</li>
+</ul>
+<h1><a id="user-content-config-example" class="anchor" aria-hidden="true" href="#config-example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config Example</h1>
+<pre><code>config:
+ IdOnly: false
+ RoleOnly: true
+ ChannelOnly: true
+ Enabled: true 
+ Command: "!rcon" 
+
+IdOnly: []
+
+RoleOnly:
+ 931321481089126401: 931321481089126401
+ 
+ChannelOnly:
+ 980964684146557009: 980964684146557009
+</code></pre>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e146541ee899e5e","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

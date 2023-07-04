@@ -1,0 +1,12 @@
+<h1>
+<a id="user-content-how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>how to use</h1>
+<ol>
+<li>this plugin load</li>
+<li>image file put at plugin_data/ImageParticle/image/</li>
+<li>Enter a file name at plugin_data/ImageParticle/Images.txt</li>
+<li>server reboot</li>
+</ol>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> skymin\<span class="pl-v">ImageParticle</span>\<span class="pl-v">ImageParticleAPI</span>;
+
+<span class="pl-v">ImageParticleAPI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">sendParticle</span>(string <span class="pl-s1"><span class="pl-c1">$</span>name</span>, <span class="pl-v">Position</span> <span class="pl-s1"><span class="pl-c1">$</span>center</span>, float <span class="pl-s1"><span class="pl-c1">$</span>yaw</span>, float <span class="pl-s1"><span class="pl-c1">$</span>pitch</span>, int <span class="pl-s1"><span class="pl-c1">$</span>count</span>, float <span class="pl-s1"><span class="pl-c1">$</span>unit</span>, bool <span class="pl-s1"><span class="pl-c1">$</span>asyncEncode</span>);</pre></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1461e4f838fa5e","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

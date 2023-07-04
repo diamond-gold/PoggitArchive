@@ -1,0 +1,163 @@
+<h1>
+<a id="user-content-palermotown" class="anchor" href="#palermotown" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PalermoTown</h1>
+<p>Pocketmine Minigame</p>
+<p>In this minigame there are three main roles:</p>
+<ol>
+<li>Murder - You have to kill everybody</li>
+<li>Sherif - Your goal is to kill Murder</li>
+<li>Innocent - Help sherif, survive as long as possible</li>
+</ol>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Easy to setup Arenas</li>
+<li>Easily editable language file</li>
+<li>Map saving</li>
+<li>Lobby and Game map</li>
+</ul>
+<h1>
+<a id="user-content-how-to-setup" class="anchor" href="#how-to-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to setup</h1>
+<ol>
+<li>
+<p>Create Arena: /pt admin create </p>
+</li>
+<li>
+<p>Go to Setup mode: /pt admin setup
+(datas are saved in memory)</p>
+</li>
+</ol>
+<p>In setup mode it is possible to see all editable values using the command:
+/pt info</p>
+<ol start="3">
+<li>Set basic info:</li>
+</ol>
+<ul>
+<li>/pt set name &lt;arena_display_name&gt;</li>
+<li>/pt set slots &lt;max_players&gt;</li>
+<li>/pt set world_lobby &lt;lobby_world_name&gt;</li>
+<li>/pt set world_game &lt;game_world_name&gt;</li>
+<li>/pt set save_lobby  | game map is saved automaticly, but you can also enable lobby save</li>
+</ul>
+<ol start="4">
+<li>Set position data:</li>
+</ol>
+<ul>
+<li>
+<p>You can use tags to set position value.</p>
+</li>
+<li>
+<p>Availble tags are: player_pos ,  look_pos , look_block</p>
+</li>
+<li>
+<p>To setup spawns:</p>
+<ul>
+<li>/pt set spawns 0 player_pos</li>
+<li>/pt set spawns 1 player_pos</li>
+<li>/pt set spawns 2 look_pos</li>
+<li>etc...</li>
+</ul>
+</li>
+<li>
+<p>To setup chests you have to aim at the chests and use "look_block" tag</p>
+<ul>
+<li>/pt set chests 0 look_block</li>
+<li>/pt set chests 1 look_block</li>
+<li>/pt set chests 2 look_block</li>
+<li>etc...</li>
+</ul>
+</li>
+<li>
+<p>To setup lobby position (in the lobby world)</p>
+<ul>
+<li>/pt set lobby player_pos</li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>Last thing you want to do is save the map(s), save data and enable arena</li>
+</ol>
+<ul>
+<li>/pt savelevels</li>
+<li>/pt savedata</li>
+<li>/pt set enable true</li>
+<li>RESTART SERVER</li>
+</ul>
+<ol start="6">
+<li>The arena is ready to play</li>
+</ol>
+<h1>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<ul>
+<li>Basic Commands:
+<ul>
+<li>/pt join &lt;arena_name&gt;</li>
+<li>/pt leave</li>
+<li>/pt list</li>
+</ul>
+</li>
+<li>Admin commands (op only)
+<ul>
+<li>/pt admin create &lt;arena_name&gt;</li>
+<li>/pt admin remove &lt;arena_name&gt;</li>
+<li>/pt admin setup</li>
+<li>/pt | to list commands</li>
+</ul>
+</li>
+<li>Setup Commands (setup only)
+<ul>
+<li>/pt set  </li>
+<li>/pt set   </li>
+<li>/pt info</li>
+<li>/pt dump | show raw data</li>
+<li>/pt dump [data] | show specific part of data | /pt dump spawns</li>
+</ul>
+</li>
+</ul>
+<h1>
+<a id="user-content-upcoming-features" class="anchor" href="#upcoming-features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Upcoming features</h1>
+<ul>
+<li>Map vote</li>
+<li>Better item shop</li>
+<li>Cosmetics</li>
+</ul>
+<h1>
+<a id="user-content-known-bugs" class="anchor" href="#known-bugs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Known bugs</h1>
+<ul>
+<li>Works only on 4.0.0 Pocketmine version</li>
+<li>This is beta release, for entertainment purposes only</li>
+<li>There are some issues with Map saving on non Windows OS.</li>
+</ul>
+<h1>
+<a id="user-content-author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author</h1>
+<ul>
+<li>This plugin was created by MinekCz</li>
+<li>You can contact me on discord: Minek#2962</li>
+</ul>
+<h1>
+<a id="user-content-credit-me" class="anchor" href="#credit-me" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credit me</h1>
+<ul>
+<li>If you're making video please use poggit/github link.</li>
+</ul>
+<h1>
+<a id="user-content-video" class="anchor" href="#video" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Video</h1>
+<p>Showcase:
+<a href="https://www.youtube.com/watch?v=bmq_-e6qfGM" title="Watch on Youtube" rel="nofollow"><img src="https://camo.githubusercontent.com/824a9abaf52be55669615bfaf4100053ca4b9bf28d8d3cc109ac7775f420e851/687474703a2f2f696d672e796f75747562652e636f6d2f76692f626d715f2d65367166474d2f302e6a7067" alt="IMAGE ALT TEXT" data-canonical-src="http://img.youtube.com/vi/bmq_-e6qfGM/0.jpg" style="max-width:100%;"></a></p>
+<p>How to setup:
+<a href="https://www.youtube.com/watch?v=Fe01td9GhYM" title="Watch on Youtube" rel="nofollow"><img src="https://camo.githubusercontent.com/286b8c81fc09d28f26acebff31c0319566561e4b30cbd86cea1fa04796fce220/687474703a2f2f696d672e796f75747562652e636f6d2f76692f466530317464394768594d2f302e6a7067" alt="IMAGE ALT TEXT" data-canonical-src="http://img.youtube.com/vi/Fe01td9GhYM/0.jpg" style="max-width:100%;"></a></p>
+<h1>
+<a id="user-content-api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Api</h1>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">MinekCz</span>\<span class="pl-v">PalermoTown</span>\<span class="pl-v">PalermoTown</span>;
+
+<span class="pl-v">PalermoTown</span>::<span class="pl-en">FindArena</span>() :?<span class="pl-v">Arena</span>
+<span class="pl-v">PalermoTown</span>::<span class="pl-en">GetAvailbleArenas</span>() :array
+<span class="pl-v">PalermoTown</span>::<span class="pl-en">IsInArena</span>(<span class="pl-v">Player</span> <span class="pl-s1"><span class="pl-c1">$</span>player</span>) :bool
+<span class="pl-v">PalermoTown</span>::<span class="pl-en">GetArenaByPlayer</span>(<span class="pl-v">Player</span> <span class="pl-s1"><span class="pl-c1">$</span>player</span>) :?<span class="pl-v">Arena</span>
+<span class="pl-v">PalermoTown</span>::<span class="pl-en">StartArena</span>(<span class="pl-v">Arena</span> <span class="pl-s1"><span class="pl-c1">$</span>arena</span>) :void
+<span class="pl-v">PalermoTown</span>::<span class="pl-en">EndArena</span>(<span class="pl-v">Arena</span> <span class="pl-s1"><span class="pl-c1">$</span>arena</span>) :void
+<span class="pl-v">PalermoTown</span>::<span class="pl-en">SetTime</span>(<span class="pl-v">Arena</span> <span class="pl-s1"><span class="pl-c1">$</span>arena</span>, int <span class="pl-s1"><span class="pl-c1">$</span>time</span>) :void
+<span class="pl-v">PalermoTown</span>::<span class="pl-en">GetArenaWorlds</span>(<span class="pl-v">Arena</span> <span class="pl-s1"><span class="pl-c1">$</span>arena</span>) :array <span class="pl-c">//[0 =&gt; gameWorld, 1 =&gt; lobbyWorld]</span>
+<span class="pl-v">PalermoTown</span>::<span class="pl-en">GetAllPlayer</span>(<span class="pl-v">Arena</span> <span class="pl-s1"><span class="pl-c1">$</span>arena</span>) :array <span class="pl-c">//Get all players in arena including spectators</span>
+<span class="pl-v">PalermoTown</span>::<span class="pl-en">GetArenaByName</span>(string <span class="pl-s1"><span class="pl-c1">$</span>id</span>) :?<span class="pl-v">Arena</span>
+
+´´´</pre></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e146403cb94169a","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

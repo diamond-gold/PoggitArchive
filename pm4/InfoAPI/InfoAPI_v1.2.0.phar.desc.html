@@ -1,0 +1,133 @@
+<h2>
+<a id="user-content-user-guide-for-config-setup" class="anchor" href="#user-guide-for-config-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>User guide (for config setup)</h2>
+<h3>
+<a id="user-content-formatting-infos" class="anchor" href="#formatting-infos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Formatting infos</h3>
+<p>InfoAPI formats your text using placeholders called "info".
+You can put the info in <code>{}</code> and it will be replaced into the actual value.</p>
+<p>For example, if you are using a chat plugin
+that provides an info called <code>player</code>
+which represents the player chatting,
+and an info called <code>message</code> which represents the message to be sent.
+Then you can customize the chat message like this:</p>
+<pre><code>&lt;{player}&gt; {message}
+</code></pre>
+<p>If the player is called <code>Steve</code> and the message is <code>Hello world</code>, the formatted chat message would become</p>
+<pre><code>&lt;Steve&gt; Hello world
+</code></pre>
+<h3>
+<a id="user-content-more-detailed-templates" class="anchor" href="#more-detailed-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>More detailed templates</h3>
+<p>Some types of infos provide extra details.
+For example, an info representing a player has a detail called <code>health</code>.
+So you can write the detail name after the original info name
+(separated by a space):</p>
+<pre><code>[{player health}] &lt;{player}&gt; {message}
+</code></pre>
+<p>This will become</p>
+<pre><code>[9.5/10] &lt;Steve&gt; Hello world
+</code></pre>
+<p>You can get details of details!
+The player health is a proportion.
+Proportion infos have a detail called <code>percent</code>,
+which converts the fraction into a percentage:</p>
+<pre><code>[{player health percent}] &lt;{player}&gt; {message}
+</code></pre>
+<p>This will become</p>
+<pre><code>[95%] &lt;Steve&gt; Hello world
+</code></pre>
+<h3>
+<a id="user-content-checking-available-info-types" class="anchor" href="#checking-available-info-types" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Checking available info types</h3>
+<p>All default info types are listed here:
+<a href="https://sof3.github.io/InfoAPI/defaults.html" rel="nofollow">https://sof3.github.io/InfoAPI/defaults.html</a></p>
+<p>Other plugins may also provide their info types.
+Check out their plugin description to learn more.</p>
+<h3>
+<a id="user-content-how-to-write--if-i-dont-want-it-replaced" class="anchor" href="#how-to-write--if-i-dont-want-it-replaced" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to write <code>{}</code> if I don't want it replaced?</h3>
+<p>Simply write <code>{{</code> or <code>}}</code> when you want <code>{</code> or <code>}</code>.</p>
+<blockquote>
+<p>What if I really want <code>{{</code> or <code>}}</code>?</p>
+</blockquote>
+<p>Write <code>{{{{</code> or <code>}}}}</code>. Just duplicate every brace. Simple.</p>
+<h2>
+<a id="user-content-developer-guide" class="anchor" href="#developer-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Developer guide</h2>
+<h3>
+<a id="user-content-providing-info-for-infoapi" class="anchor" href="#providing-info-for-infoapi" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Providing info for InfoAPI</h3>
+<p>If your plugin stores data (esp. about players, etc.), you can expose your data to InfoAPI so that users can use these data in other plugins.</p>
+<p>To provide info for InfoAPI, use the API methods on <code>InfoRegistry</code> in <code>onEnable</code>:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onEnable</span>(){
+	<span class="pl-c">// other normal stuff</span>
+	<span class="pl-k">if</span>(<span class="pl-en">class_exists</span>(<span class="pl-v">InfoAPI</span>::class)){
+		<span class="pl-v">InfoAPI</span>::<span class="pl-en">provideInfo</span>(<span class="pl-v">SomeInfo</span>::class, <span class="pl-v">MyInfo</span>::class, <span class="pl-s">"pluginname.infoname"</span>, <span class="pl-k">function</span>(<span class="pl-smi">SomeInfo</span> <span class="pl-s1"><span class="pl-c1">$</span>info</span>){
+			<span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">MyInfo</span>(...);
+		});
+	}
+}</pre></div>
+<p><code>SomeInfo</code> is the type of the parent of the info you provide, and <code>MyInfo</code> is the type of the info provided.</p>
+<p>The third parameter is a fully-qualified identifier for the info you provide. Users only need to type the part behind the last dot, but they can use the previous parts in case two infos have identical names (especially from different plugins). (For the first example above, <code>{infoname}</code>, <code>{modulename.infoname}</code> and <code>{pluginname.modulename.infoname}</code> will all be matched)</p>
+<p>For example, if you provide a kills/deaths ratio for a player in a plugin called KDCounter, your code might look like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onEnable</span>(){
+	<span class="pl-c">// other normal stuff</span>
+	<span class="pl-k">if</span>(<span class="pl-en">class_exists</span>(<span class="pl-v">InfoRegistry</span>::class)){
+		<span class="pl-v">InfoAPI</span>::<span class="pl-en">provideInfo</span>(<span class="pl-v">PlayerInfo</span>::class, <span class="pl-v">NumberInfo</span>::class, <span class="pl-s">"kdcounter.kills"</span>, <span class="pl-k">function</span>(<span class="pl-smi">PlayerInfo</span> <span class="pl-s1"><span class="pl-c1">$</span>info</span>){
+			<span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">NumberInfo</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">getKills</span>(<span class="pl-s1"><span class="pl-c1">$</span>info</span>-&gt;<span class="pl-en">getPlayer</span>()));
+		});
+		<span class="pl-v">InfoAPI</span>::<span class="pl-en">provideInfo</span>(<span class="pl-v">PlayerInfo</span>::class, <span class="pl-v">NumberInfo</span>::class, <span class="pl-s">"kdcounter.deaths"</span>, <span class="pl-k">function</span>(<span class="pl-smi">PlayerInfo</span> <span class="pl-s1"><span class="pl-c1">$</span>info</span>){
+			<span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">NumberInfo</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">getDeaths</span>(<span class="pl-s1"><span class="pl-c1">$</span>info</span>-&gt;<span class="pl-en">getPlayer</span>()));
+		});
+		<span class="pl-v">InfoAPI</span>::<span class="pl-en">provideInfo</span>(<span class="pl-v">PlayerInfo</span>::class, <span class="pl-v">NumberInfo</span>::class, <span class="pl-s">"kdcounter.kd"</span>, <span class="pl-k">function</span>(<span class="pl-smi">PlayerInfo</span> <span class="pl-s1"><span class="pl-c1">$</span>info</span>){
+			<span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">RatioInfo</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">getKills</span>(<span class="pl-s1"><span class="pl-c1">$</span>info</span>-&gt;<span class="pl-en">getPlayer</span>()), <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">getDeaths</span>(<span class="pl-s1"><span class="pl-c1">$</span>info</span>-&gt;<span class="pl-en">getPlayer</span>()));
+		});
+	}
+}</pre></div>
+<p>The second parameter is a closure that gets called if the event is matched. It should return an <code>Info</code> object that is the resolved result.</p>
+<p>InfoAPI introduces some builtin subclasses for <code>Info</code>, but plugins may also implement new subclasses of such type. Please consult the API documentation for usage.</p>
+<h3>
+<a id="user-content-using-infoapi-for-config" class="anchor" href="#using-infoapi-for-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using InfoAPI for config</h3>
+<p>If your plugin uses placeholders in your config, you can use InfoAPI so that users can use data from other plugins.</p>
+<p>To use InfoAPI, add <code>InfoAPI</code> to the <code>depend</code> attribute in plugin.yml</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">depend</span>: <span class="pl-s">[InfoAPI]</span></pre></div>
+<p>Let's say the template string is retrieved with <code>$this-&gt;getConfig()-&gt;get("format")</code>.
+Extra placeholders are <code>{speaker}</code>, which refers to a <code>pocketmine\Player</code> object in the variable <code>$player</code>,
+and <code>{message}</code>, which refers to a string in the variable <code>$arg</code>.
+Then we can create the formatted string with this code:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">SOFe</span>\<span class="pl-v">InfoAPI</span>\{<span class="pl-v">InfoAPI</span>, <span class="pl-v">PlayerInfo</span>, <span class="pl-v">StringInfo</span>};
+
+<span class="pl-c">// ...</span>
+
+<span class="pl-s1"><span class="pl-c1">$</span>formatted</span> = <span class="pl-v">InfoAPI</span>::<span class="pl-en">resolve</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">getConfig</span>()-&gt;<span class="pl-en">get</span>(<span class="pl-s">"format"</span>), <span class="pl-k">new</span> <span class="pl-v">MyInfo</span>([
+	<span class="pl-s">"message"</span> =&gt; <span class="pl-k">new</span> <span class="pl-v">StringInfo</span>(<span class="pl-s1"><span class="pl-c1">$</span>msg</span>),
+	<span class="pl-s">"speaker"</span> =&gt; <span class="pl-k">new</span> <span class="pl-v">PlayerInfo</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>),
+]));</pre></div>
+<p>Then we create the class <code>MyInfo</code> according to the arguments we have:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
+
+<span class="pl-k">namespace</span> <span class="pl-v">Your</span>\<span class="pl-v">Plug</span>\<span class="pl-v">In</span>;
+
+<span class="pl-k">use</span> <span class="pl-v">SOFe</span>\<span class="pl-v">InfoAPI</span>\{<span class="pl-v">ContextInfo</span>, <span class="pl-v">PlayerInfo</span>, <span class="pl-v">StringInfo</span>};
+
+<span class="pl-k">final</span> <span class="pl-k">class</span> <span class="pl-v">MyInfo</span> <span class="pl-k">extends</span> <span class="pl-v">ContextInfo</span> {
+	<span class="pl-k">public</span> <span class="pl-v">StringInfo</span> <span class="pl-c1"><span class="pl-c1">$</span>message</span>;
+	<span class="pl-k">public</span> <span class="pl-v">PlayerInfo</span> <span class="pl-c1"><span class="pl-c1">$</span>speaker</span>;
+}</pre></div>
+<p>If you need to resolve at multiple places with different argument sets,
+create a new class for each set of arguments.
+InfoAPI is strict about the keys provided and properties declared:
+The keys that appear in the <code>InfoAPI::resolve</code> array must be
+exactly the same as the property names in the custom info class.</p>
+<p>You may also add up to 1 line of doc comment to the properties in <code>MyInfo</code>,
+which are displayed to users in help menus.
+The doc comment can be multiline,
+but only the first line will be used as the description.
+Furthermore, add an <code>@example</code> tag to provide examples.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">final</span> <span class="pl-k">class</span> <span class="pl-v">MyInfo</span> <span class="pl-k">extends</span> <span class="pl-v">ContextInfo</span> {
+	<span class="pl-c">/** The message spoken by the player */</span>
+	<span class="pl-k">public</span> <span class="pl-v">StringInfo</span> <span class="pl-c1"><span class="pl-c1">$</span>message</span>;
+
+	<span class="pl-c">/**</span>
+<span class="pl-c">	 * The player who spoke the message</span>
+<span class="pl-c">	 * @example Steve</span>
+<span class="pl-c">	 */</span>
+	<span class="pl-k">public</span> <span class="pl-v">PlayerInfo</span> <span class="pl-c1"><span class="pl-c1">$</span>speaker</span>;
+}</pre></div>
+<p>Do NOT use <code>ContextInfo</code> for return values in <code>provideInfo</code>/<code>provideFallback</code>!
+<code>ContextInfo</code> is only for the convenient creation when resolving.
+Please refer to the previous guide if you are actively <em>providing</em> some info.</p>

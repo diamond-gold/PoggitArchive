@@ -1,0 +1,30 @@
+<h1>
+<a id="user-content-alias" class="anchor" href="#alias" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Alias</h1>
+<p>Detects players possible alternatives accounts</p>
+<h2>
+<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h2>
+<p>This plugin stores players <code>Address</code>, <code>ClientRandomId</code>, <code>DeviceId</code>, <code>SelfSignedId</code>, and <code>XUID</code>.
+Which will detect players accurately and hard for hackers to ban evade.</p>
+<p>Also it has a command and alert system to staff members.</p>
+<h2>
+<a id="user-content-configuration" class="anchor" href="#configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h2>
+<p>In the configuration you can modify the <code>mode</code>, <code>data</code> and <code>alert</code>.</p>
+<p>Here's a example of the default configuration:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">alert</span>: <span class="pl-s">false </span><span class="pl-c"><span class="pl-c">#</span>Everyone that has alias.alerts permission</span>
+<span class="pl-ent">ban</span>: <span class="pl-s"><span class="pl-pds">'</span>You are banned<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">#</span>Ban message</span>
+<span class="pl-ent">mode</span>: <span class="pl-s">none </span><span class="pl-c"><span class="pl-c">#</span>Options: none, ban</span>
+<span class="pl-ent">data</span>: <span class="pl-s">['Address', 'ClientRandomId', 'DeviceId', 'SelfSignedId', 'XUID'] </span><span class="pl-c"><span class="pl-c">#</span>Check for matching data in which will alert the staff members or ban the player</span></pre></div>
+<h2>
+<a id="user-content-command" class="anchor" href="#command" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command</h2>
+<p><code>/alias &lt;name: target&gt;</code></p>
+<p>Only users with <code>alias.command.alias</code> permission can execute this command.</p>
+<p>Returns a list of possible players matching <code>IP</code>, <code>ClientRandomId</code>, <code>DeviceId</code>, <code>SelfSignedId</code>, and <code>XUID</code>.</p>
+<h2>
+<a id="user-content-api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h2>
+<p>You can use this plugin API by the following:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">JavierLeon9966</span>\<span class="pl-v">Alias</span>\<span class="pl-v">Alias</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>aliases</span> = <span class="pl-v">Alias</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getAliases</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">getName</span>()); <span class="pl-c">//returns a array of detected players</span></pre></div>
+<h2>
+<a id="user-content-database" class="anchor" href="#database" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Database</h2>
+<p>In the data folder of this plugin there is a file called <code>players.json</code> which there's stored all the players that have logged into the server.</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e145d565a51986c","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

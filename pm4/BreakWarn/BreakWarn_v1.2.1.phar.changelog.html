@@ -1,0 +1,48 @@
+<ul dir="auto">
+<li>Languages
+<ul dir="auto">
+<li>Add: "onlyOnTool" string in de_DE for v1.2.1</li>
+<li>Add: "breakwarnUseTool" string in de_DE for v1.2.1</li>
+<li>Add "onlyOnTool" String in en_EN for v1.2.1</li>
+</ul>
+</li>
+<li>Changes for Php Stan
+<ul dir="auto">
+<li>Use $handItem instead of $event-&gt;getItem()</li>
+<li>Add default =&gt; "unknown" to match function</li>
+<li>Add Check if hand item instance of tool</li>
+</ul>
+</li>
+<li>Changes for v1.2 (OOP)
+<ul dir="auto">
+<li>Add Check if item is tool item For fixing crash when item is not a Tool item</li>
+<li>Add $player = $this-&gt;getServer()-&gt;getPlayerExact($playerString) for getting the player</li>
+<li>Add Command registration for diferrent modes needed for OOP</li>
+<li>Remove onCommand function, now use __construct and execute()</li>
+<li>Change privat variables to public variables to use in other classes</li>
+<li>Create Two command classes for diferrent modes and for OOP</li>
+<li>Outsourcing the command for object-oriented programming</li>
+<li>Remove Switch cases, use if statements instead</li>
+<li>Add check if item is Tool item</li>
+<li>Add getOwningPlugin() function for OOP</li>
+</ul>
+</li>
+<li>Modify plugin.yml for use with construct
+<ul dir="auto">
+<li>Remove commands for use with __construct</li>
+<li>Add description for both permissions:</li>
+</ul>
+</li>
+<li>Change version to 1.2.1
+<ul dir="auto">
+<li>from 1.1 to 1.2.1</li>
+</ul>
+</li>
+<li>changes for PHPStan
+<ul dir="auto">
+<li>Add if($player-&gt;getInventory()-&gt;getItemInHand() instanceof Tool){}</li>
+<li>Change Tool to TieredTool</li>
+<li>Add use pocketmine\item\TieredTool;</li>
+</ul>
+</li>
+</ul>

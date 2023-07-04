@@ -1,0 +1,176 @@
+<p dir="auto">API5 support</p>
+<p dir="auto">New Features:</p>
+<ul dir="auto">
+<li>Improved block parser
+<ul dir="auto">
+<li>Now accepts block states (full or partial, auto-completion included)</li>
+<li>Full support for java block states</li>
+</ul>
+</li>
+<li>Block tags
+<ul dir="auto">
+<li>Allows to affect a group of similar blocks (e.g. all logs)</li>
+<li>Can be used to set random variants (//set #wool)</li>
+</ul>
+</li>
+<li>Command Flags
+<ul dir="auto">
+<li>Allows to specify more options for commands (see the command usages for more information)</li>
+</ul>
+</li>
+</ul>
+<p dir="auto">Minor Features:</p>
+<ul dir="auto">
+<li>Added movement related commands
+<ul dir="auto">
+<li>//thru command</li>
+<li>//unstuck command</li>
+<li>//up command</li>
+</ul>
+</li>
+<li>Added more pasting options
+<ul dir="auto">
+<li>//merge command</li>
+<li>//rpaste command</li>
+<li>flag for options above</li>
+</ul>
+</li>
+<li>Added generation commands for cubes
+<ul dir="auto">
+<li>//cube command</li>
+<li>//hcube command</li>
+</ul>
+</li>
+<li>Improved support for java &lt;-&gt; bedrock conversion
+<ul dir="auto">
+<li>Data files are now specific for your pocketmine version</li>
+<li>Improved handling of unknown blocks to allow partial conversion</li>
+<li>Implemented item conversion
+<ul dir="auto">
+<li>Also converts display properties (name, lore, enchantments)</li>
+</ul>
+</li>
+<li>Added support for new tile data:
+<ul dir="auto">
+<li>Bells</li>
+<li>Note Blocks &amp; Jukeboxes</li>
+<li>Flower Pots</li>
+<li>Beds &amp; Banners</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>New Languages
+<ul dir="auto">
+<li>Vietnamese ~NhanAZ</li>
+<li>Indonesian ~Kylan1940</li>
+</ul>
+</li>
+</ul>
+<p dir="auto">Utility Improvements:</p>
+<ul dir="auto">
+<li>Execution Time now includes all time spent on the task
+<ul dir="auto">
+<li>previously it only included the time spent setting blocks</li>
+</ul>
+</li>
+<li>Cancelling someones task now notifies them</li>
+<li>Improved error handling
+<ul dir="auto">
+<li>Server no longer crashes due to a world being invalid</li>
+<li>Detect broken block states in config</li>
+</ul>
+</li>
+<li>All commands now accept parameters case-insensitive</li>
+<li>Improved handling of utility blocks
+<ul dir="auto">
+<li>Selection outlines should now show way more reliably</li>
+<li>Selection outlines now show up after teleporting</li>
+<li>//view block now automatically disappears when moving</li>
+</ul>
+</li>
+<li>Added option for count command to show block states
+<ul dir="auto">
+<li>Use -d flag to show block states</li>
+</ul>
+</li>
+<li>Improved benchmarks
+<ul dir="auto">
+<li>Added option to keep benchmarked world after completing (use -keep flag)</li>
+<li>Increased benchmark size</li>
+<li>Allow cancelling benchmarks</li>
+</ul>
+</li>
+</ul>
+<p dir="auto">Removed features relying on old chunk loading system</p>
+<ul dir="auto">
+<li>around &amp; horizontal pattern</li>
+<li>embed pattern</li>
+</ul>
+<p dir="auto">Bug Fixes:</p>
+<ul dir="auto">
+<li>Fixed random patterns not working</li>
+<li>Fixed brush cooldown affecting all players</li>
+<li>Fixed crash when pasting tiles outside of world boundaries</li>
+<li>Fixed undo of expanding tasks not being complete</li>
+<li>Task results now properly report all the time (even when cancelled)</li>
+<li>Fixed minor synchronization issues</li>
+<li>Fixed crash when moving blocks outside of world boundaries</li>
+<li>Requesting unknown blocks no longer causes invalid blocks to be placed</li>
+<li>Fixed some cases where an internal EasyEdit crash would affect the main thread</li>
+<li>Fix tiles being written multiple times when pasting</li>
+<li>Fixed possibility for edit thread to enter a crash loop</li>
+<li>Report invalid player names in commands instead of crashing</li>
+<li>Fixed crash when using line command without specifying a mode</li>
+<li>Fixed crash when using an empty legacy pattern</li>
+<li>Fixed wall pattern being offset by two blocks in southern direction</li>
+</ul>
+<p dir="auto">Performance Improvements:</p>
+<ul dir="auto">
+<li>Chunks are now loaded on the fly
+<ul dir="auto">
+<li>This drastically reduces the amount of time tasks take to execute</li>
+<li>Allowed chunks to be executed in any order</li>
+</ul>
+</li>
+<li>Only actual needed chunks are loaded
+<ul dir="auto">
+<li>e.g. when setting a large sphere, chunks outside of the sphere are no longer loaded</li>
+</ul>
+</li>
+<li>Huge improvements to performance of some specialized tasks
+<ul dir="auto">
+<li>moving and stacking tasks now load chunks in a much more efficient order</li>
+<li>Line tasks no longer save all blocks to be set in a list</li>
+<li>Pasting now ignores empty chunks altogether</li>
+<li>Cutting is now executed in a single step (Chunks no longer need to be loaded twice)</li>
+<li>Loading schematics has an about 90% reduced memory footprint
+<ul dir="auto">
+<li>Only the compressed schematic is loaded into memory and decompressed on the fly</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Added some caches for frequent calculations
+<ul dir="auto">
+<li>All needed block states are being loaded from the main thread on server startup</li>
+<li>Loading McEdit schematics no longer loads block states every time</li>
+</ul>
+</li>
+<li>Undoing data is no longer copied for every edited piece</li>
+</ul>
+<p dir="auto">Internal Changes:</p>
+<ul dir="auto">
+<li>Switched to a promise based task system
+<ul dir="auto">
+<li>Allows third party plugins to easily hook into task execution</li>
+</ul>
+</li>
+<li>Implemented own vector system
+<ul dir="auto">
+<li>This allows for more flexibility and reliability when working around world boundaries</li>
+</ul>
+</li>
+<li>Api is now independent from player instances</li>
+<li>Chunks are now edited on a one by one basis instead of splitting the selection into smaller parts</li>
+</ul>

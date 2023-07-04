@@ -1,0 +1,435 @@
+<h2><a id="user-content-general" class="anchor" aria-hidden="true" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a>General</h2>
+<p>A complete suite of Economy plugins by onebone:</p>
+<ul>
+<li>User oriented plugin</li>
+<li>EconomyAPI Individual language support</li>
+<li>Economy API support</li>
+<li>Direct accessible API</li>
+<li>Lots of configurations</li>
+<li>Lots of events to handle</li>
+<li>Fast processing with massive features</li>
+</ul>
+<p><strong>IMPORTANT: You MUST install EconomyAPI to use ANY of the EconomyS plugins</strong></p>
+<h2><a id="user-content-economys" class="anchor" aria-hidden="true" href="#economys"><span aria-hidden="true" class="octicon octicon-link"></span></a>EconomyS</h2>
+<ol>
+<li>
+<p>EconomyAPI - Main of the €conom¥$ - All plugins below requires this plugin</p>
+</li>
+<li>
+<p>EconomyShop - Buy items</p>
+</li>
+<li>
+<p>EconomySell - Sell items</p>
+</li>
+<li>
+<p>EconomyAirport - Teleport by money</p>
+</li>
+<li>
+<p>EconomyJob - Provide job system into your server</p>
+</li>
+<li>
+<p>EconomyTax - Helps your server balancing money</p>
+</li>
+<li>
+<p>EconomyLand - Helps your server manage lands</p>
+</li>
+<li>
+<p>EconomyPShop - Shops for non-op players - requires ItemCloud plugin</p>
+</li>
+<li>
+<p>EconomyAuction - Open your auction!</p>
+</li>
+<li>
+<p>EconomyCasino - Do casino in your server!</p>
+</li>
+<li>
+<p>EconomyProperty - Buy your land with signs - requires EconomyLand</p>
+</li>
+<li>
+<p>EconomyUsury - Create your usury host and take a loan from host</p>
+</li>
+</ol>
+<h2><a id="user-content-economyapi" class="anchor" aria-hidden="true" href="#economyapi"><span aria-hidden="true" class="octicon octicon-link"></span></a>EconomyAPI</h2>
+<h3><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h3>
+<table>
+<thead>
+<tr>
+<th align="center">Default command</th>
+<th align="center">Parameter</th>
+<th align="center">Description</th>
+<th align="center">Default Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">/mymoney</td>
+<td align="center"></td>
+<td align="center">Shows your money</td>
+<td align="center">All</td>
+</tr>
+<tr>
+<td align="center">/mydebt</td>
+<td align="center"></td>
+<td align="center">Shows your debt</td>
+<td align="center">All</td>
+</tr>
+<tr>
+<td align="center">/takedebt</td>
+<td align="center"><code>&lt;money&gt;</code></td>
+<td align="center">Borrows $<code>&lt;money&gt;</code> from plugin</td>
+<td align="center"><code>All</code></td>
+</tr>
+<tr>
+<td align="center">/returndebt</td>
+<td align="center"><code>&lt;money&gt;</code></td>
+<td align="center">Returns $<code>&lt;money&gt;</code> to plugin</td>
+<td align="center"><code>All</code></td>
+</tr>
+<tr>
+<td align="center">/topmoney</td>
+<td align="center"><code>&lt;page&gt;</code></td>
+<td align="center">Shows server's top money</td>
+<td align="center"><code>All</code></td>
+</tr>
+<tr>
+<td align="center">/moneysave</td>
+<td align="center"></td>
+<td align="center">Saves data to your hardware</td>
+<td align="center"><code>Console</code></td>
+</tr>
+<tr>
+<td align="center">/moneyload</td>
+<td align="center"></td>
+<td align="center">Loads data from your hardware</td>
+<td align="center"><code>Console</code></td>
+</tr>
+<tr>
+<td align="center">/setmoney</td>
+<td align="center">
+<code>&lt;player&gt;</code> <code>&lt;money&gt;</code>
+</td>
+<td align="center">Sets <code>&lt;player&gt;</code>'s money to $<code>&lt;money&gt;</code>
+</td>
+<td align="center">
+<code>OP</code> <code>Console</code>
+</td>
+</tr>
+<tr>
+<td align="center">/economys</td>
+<td align="center"></td>
+<td align="center">Shows plugin which are using EconomyAPI</td>
+<td align="center"><code>All</code></td>
+</tr>
+<tr>
+<td align="center">/givemoney</td>
+<td align="center">
+<code>&lt;player&gt;</code> <code>&lt;money&gt;</code>
+</td>
+<td align="center">Gives $<code>&lt;money&gt;</code> <code>&lt;player&gt;</code>
+</td>
+<td align="center">
+<code>OP</code> <code>Console</code>
+</td>
+</tr>
+<tr>
+<td align="center">/takemoney</td>
+<td align="center">
+<code>&lt;player&gt;</code> <code>&lt;money&gt;</code>
+</td>
+<td align="center">Takes $<code>&lt;money&gt;</code> from <code>&lt;player&gt;</code>
+</td>
+<td align="center">
+<code>OP</code> <code>Console</code>
+</td>
+</tr>
+<tr>
+<td align="center">/seemoney</td>
+<td align="center"><code>&lt;player&gt;</code></td>
+<td align="center">Shows <code>&lt;player&gt;</code>'s money</td>
+<td align="center"><code>All</code></td>
+</tr>
+<tr>
+<td align="center">/bank deposit</td>
+<td align="center"><code>&lt;money&gt;</code></td>
+<td align="center">Deposit $<code>&lt;money&gt;</code> to your account</td>
+<td align="center"><code>All</code></td>
+</tr>
+<tr>
+<td align="center">/bank withdraw</td>
+<td align="center"><code>&lt;money&gt;</code></td>
+<td align="center">Withdraw $<code>&lt;money&gt;</code> from your account</td>
+<td align="center"><code>All</code></td>
+</tr>
+<tr>
+<td align="center">/bank mymoney</td>
+<td align="center"></td>
+<td align="center">Shows your money from your account</td>
+<td align="center"><code>All</code></td>
+</tr>
+<tr>
+<td align="center">/mystatus</td>
+<td align="center"></td>
+<td align="center">Shows your money status</td>
+<td align="center"><code>All</code></td>
+</tr>
+<tr>
+<td align="center">/bankadmin takemoney</td>
+<td align="center">
+<code>&lt;player&gt;</code> <code>&lt;money&gt;</code>
+</td>
+<td align="center">Takes $<code>&lt;money&gt;</code> from <code>&lt;player&gt;</code>'s account</td>
+<td align="center">
+<code>OP</code> <code>Console</code>
+</td>
+</tr>
+<tr>
+<td align="center">/bankadmin givemoney</td>
+<td align="center">
+<code>&lt;player&gt;</code> <code>&lt;money&gt;</code>
+</td>
+<td align="center">Gives $<code>&lt;money&gt;</code> for <code>&lt;player&gt;</code>'s account</td>
+<td align="center">
+<code>OP</code> <code>Console</code>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content-configuration" class="anchor" aria-hidden="true" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h3>
+<blockquote>
+<p>File : <code>plugins/EconomyAPI/economy.properties</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">Key</th>
+<th align="center">Description</th>
+<th align="center">Available Value</th>
+<th align="center">Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">show-using-economy</td>
+<td align="center">Changes server name to <code>[EconomyS] SERVER NAME</code>   <code>on : Change</code> <code>off : Don't change</code>
+</td>
+<td align="center">
+<code>on</code> <code>off</code>
+</td>
+<td align="center">on</td>
+</tr>
+<tr>
+<td align="center">once-debt-limit</td>
+<td align="center">Limits borrowing debt at once</td>
+<td align="center"><code>All integers</code></td>
+<td align="center">100</td>
+</tr>
+<tr>
+<td align="center">debt-limit</td>
+<td align="center">Limits available debt</td>
+<td align="center"><code>All integers</code></td>
+<td align="center">500</td>
+</tr>
+<tr>
+<td align="center">add-op-at-rank</td>
+<td align="center">Shows OP at top money rank    <code>on : Shows OP</code> <code>off : Don't shows OP</code>
+</td>
+<td align="center">
+<code>on</code> <code>off</code>
+</td>
+<td align="center">off</td>
+</tr>
+<tr>
+<td align="center">default-money</td>
+<td align="center">Sets default money</td>
+<td align="center"><code>All integers</code></td>
+<td align="center">1000</td>
+</tr>
+<tr>
+<td align="center">default-debt</td>
+<td align="center">Sets default debt</td>
+<td align="center"><code>All integers</code></td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">time-for-increase-debt</td>
+<td align="center">Sets how long will take for debt increase</td>
+<td align="center"><code>All integers</code></td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">percent-of-increase-debt</td>
+<td align="center">Sets percentage of increasing debt</td>
+<td align="center"><code>All integers</code></td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">default-bank-money</td>
+<td align="center">Sets default bank money</td>
+<td align="center"><code>All integers</code></td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">time-for-increase-money</td>
+<td align="center">Sets how long will take for credit increase</td>
+<td align="center"><code>All integers</code></td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">bank-increase=money-rate</td>
+<td align="center">Sets percentage of increasing credit</td>
+<td align="center"><code>All integers</code></td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">debug</td>
+<td align="center">Money debugging preferences  <code>on : yes</code> <code>off : no</code>
+</td>
+<td align="center">
+<code>on</code> <code>off</code>
+</td>
+<td align="center">on</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-economyland" class="anchor" aria-hidden="true" href="#economyland"><span aria-hidden="true" class="octicon octicon-link"></span></a>EconomyLand</h2>
+<p>EconomyLand provides your players a land protection system. If the player buys land, the land will protected for the bought player.</p>
+<h3><a id="user-content-commands-1" class="anchor" aria-hidden="true" href="#commands-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h3>
+<p>List of commands :</p>
+<p><code>/land &lt;list | here | move | invite | invitee | give | buy | whose&gt;</code></p>
+<p><code>/landsell &lt;here | land number&gt;</code></p>
+<p>Instructions for /land command :</p>
+<p><code>/startp</code> : Sets the start position.</p>
+<p><code>/endp</code> : Sets the end position.</p>
+<p><code>/land list [page]</code> : Shows the list of land.</p>
+<p><code>/land here</code> : Shows the land where you are standing on.</p>
+<p><code>/land move &lt;land id&gt;</code> : Move to land.</p>
+<p><code>/land invite &lt;land id&gt; &lt;invitee&gt;</code> : Invites player to your land.</p>
+<p><code>/land invitee &lt;land id&gt;</code> : Shows the list of invitee in land.</p>
+<p><code>/land give &lt;land id&gt; &lt;player&gt;</code> : Give the land to other player.</p>
+<p><code>/land buy</code> : Buys land.</p>
+<p><code>/land whose &lt;keyword&gt;</code> : Queries the list of land-bought players.</p>
+<p><code>/landsell here</code> : Sells land where you're standing on.</p>
+<p><code>/landsell &lt;land id&gt;</code> : Sells land by land ID.</p>
+<p>If you use <code>/startp</code> and <code>/endp</code> commands you'll set the position where you'll buy. Then, you can use <code>/land buy</code> command to buy the land.</p>
+<p>The <code>land id</code> is the land ID that shows in <code>/land list</code> command.</p>
+<p>EconomyLand will ignore Y axis. It will protect all of Y axis which is in area.</p>
+<h3><a id="user-content-permissions" class="anchor" aria-hidden="true" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h3>
+<pre><code>economyland.*
+economyland.land.*
+economyland.land.modify.others
+economyland.land.modify.whiteland
+economyland.land.modify.others
+economyland.landsell.*
+economyland.landsell.others
+economyland.command.*
+economyland.command.startp
+economyland.command.endp
+economyland.command.land.buy
+economyland.command.land.move
+economyland.command.land.list
+economyland.command.land.whose
+economyland.command.land.give
+economyland.command.land.here
+economyland.command.landsell
+economyland.command.landsell.here
+economyland.command.landsell.number
+</code></pre>
+<h2><a id="user-content-economyshop" class="anchor" aria-hidden="true" href="#economyshop"><span aria-hidden="true" class="octicon octicon-link"></span></a>EconomyShop</h2>
+<h3><a id="user-content-commands-2" class="anchor" aria-hidden="true" href="#commands-2"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h3>
+<p><code>/shop create &lt;create|remove|list&gt; [item[:damage]] [amount] [price] [side]</code> - Tap to activate SHOP signs | <code>OP</code> |</p>
+<p>Shop are created with <code>/shop</code> then tapping any block to activate it.
+For example to make a shop selling a Diamond Sword for 500$:</p>
+<p><code>/shop create 276 1 500</code> then tap a block/sign.</p>
+<p><code>Sell Center</code> in <code>EconomySell</code> can be created in same way with <code>/sell create 276 1 500</code>. And also <code>Player's Shop</code> in <code>EconomyPShop</code></p>
+<h3><a id="user-content-configuration-1" class="anchor" aria-hidden="true" href="#configuration-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h3>
+<blockquote>
+<p>File : <code>plugins/EconomyShop/shop.properties</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">Key</th>
+<th align="center">Description</th>
+<th align="center">Available Value</th>
+<th align="center">Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">handler-priority</td>
+<td align="center">The priority of handling shop touches</td>
+<td align="center">Integer</td>
+<td align="center">5</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-economypshop" class="anchor" aria-hidden="true" href="#economypshop"><span aria-hidden="true" class="octicon octicon-link"></span></a>EconomyPShop</h2>
+<p>EconomyPShop is the system that lets non-OP players to open their own shop.</p>
+<p><strong>Important: EconomyPShop requires ItemCloud</strong></p>
+<p>First, you have to register and upload your item. Then, you'll create the PShop (Player shop).
+Second, other players will tap your pshop sign/block <strong>twice</strong> to buy your item. Then, your item in ItemCloud will be removed.</p>
+<h3><a id="user-content-commands-3" class="anchor" aria-hidden="true" href="#commands-3"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h3>
+<p><code>/pshop create &lt;create|remove|list&gt; [item[:damage]] [amount] [price] [side]</code> - Tap to activate SHOP signs | <code>OP</code> |</p>
+<h2><a id="user-content-economyjob" class="anchor" aria-hidden="true" href="#economyjob"><span aria-hidden="true" class="octicon octicon-link"></span></a>EconomyJob</h2>
+<h5><a id="user-content-instructions-for-jobsyml-configuration" class="anchor" aria-hidden="true" href="#instructions-for-jobsyml-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instructions for jobs.yml configuration</h5>
+<pre><code>tree-cutter:
+"17:0:break": 10
+</code></pre>
+<p>This is one of the config items in jobs.yml.</p>
+<p>'tree-cutter' is name of the job,</p>
+<p>In <code>"17:0:break"</code> - 17 is item code, 0 is damage of item, break is the method and the 10 on the far right side is the money earned.</p>
+<p>So</p>
+<p><code>"18:0:place": 10</code></p>
+<p>Means : If I place a block with ID 18 and damage 0 I will earn $10.</p>
+<h5><a id="user-content-instructions-for-configyml-configuration" class="anchor" aria-hidden="true" href="#instructions-for-configyml-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instructions for config.yml configuration</h5>
+<p><code>refresh-time:</code> The time of changing price of item, Integer</p>
+<p><code>broadcast-refresh:</code> Whether to broadcast the item has refreshed the price, true/false</p>
+<p><code>max-change-rate:</code> The maximum rate of changing money, Integer</p>
+<h5><a id="user-content-permissions-1" class="anchor" aria-hidden="true" href="#permissions-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h5>
+<pre><code>economyjob.command.*
+economyjob.command.job.join
+economyjob.command.job.reture
+economyjob.command.job.list
+economyjob.command.job.me
+</code></pre>
+<h2><a id="user-content-economyairport" class="anchor" aria-hidden="true" href="#economyairport"><span aria-hidden="true" class="octicon octicon-link"></span></a>EconomyAirport</h2>
+<blockquote>
+<p>File : <code>%CONFIG_PATH%/DepartureSign.yml</code>
+File : <code>%CONFIG_PATH%/ArrivalSign.yml</code>
+File : <code>%CONFIG_PATH%/Identifier.yml</code></p>
+</blockquote>
+<p>This documentation is focused on default configuration.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Line1</th>
+<th align="center">Line2</th>
+<th align="center">Line3</th>
+<th align="center">Line4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">`&lt;international</td>
+<td align="center">airport&gt;`</td>
+<td align="center">`&lt;arrival</td>
+<td align="center">departure&gt;`</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<p>Line1: airport
+Line2: departure
+Line3: 10
+Line4: onebone</p>
+<p>Takes $10 to go to <code>onebone</code> airport</p>
+<p>Line1: airport
+Line2: arrival
+Line3: onebone
+Line4:</p>
+<p>Arrival sign : <code>onebone</code> airport</p>
+<p>If there's no target airport to fly, it aborts riding a flight.</p>
+<h2><a id="user-content-for-developers" class="anchor" aria-hidden="true" href="#for-developers"><span aria-hidden="true" class="octicon octicon-link"></span></a>For Developers</h2>
+<p>You can access to EconomyAPI by using <code>EconomyAPI::getInstance()</code></p>
+<p>Example:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-v">EconomyAPI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">addMoney</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s1"><span class="pl-c1">$</span>amount</span>);</pre></div>

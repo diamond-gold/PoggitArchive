@@ -1,0 +1,101 @@
+<h1>
+<a id="user-content-viriontools" class="anchor" href="#viriontools" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>VirionTools</h1>
+<p><a href="https://github.com/JackMD/VirionTools/blob/master/meta/VirionTools.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/JackMD/VirionTools/raw/master/meta/VirionTools.png" height="250" width="250" style="max-width:100%;"></a></p>
+<p>A handy plugin for developers who wish to compile and inject virions without using Poggit.</p>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Compile a virion to virion.phar.</li>
+<li>Inject a virion into another plugin.</li>
+<li>Works <strong>cross-platform</strong> i.e. it works on both Linux and Windows systems</li>
+</ul>
+<h1>
+<a id="user-content-setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h1>
+<ul>
+<li>Get the <a href="https://poggit.pmmp.io/ci/JackMD/VirionTools/VirionTools" rel="nofollow">.phar</a> of this plugin from <a href="https://poggit.pmmp.io/ci/JackMD/VirionTools/VirionTools" rel="nofollow">poggit</a>
+</li>
+<li>Put into your plugins folder.</li>
+<li>Restart the server.</li>
+<li>Enjoy..</li>
+</ul>
+<h1>
+<a id="user-content-compile-a-virion" class="anchor" href="#compile-a-virion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Compile a Virion</h1>
+<ul>
+<li>To <strong>compile</strong> a virion folder to virion.phar, you will need to put the virion in the <code>virions</code> folder.</li>
+<li>The <code>virions</code> folder should be located in the folder where <code>PocketMine-MP.phar</code> exists.</li>
+<li>Next run the command <code>/bv [string:virion]</code>. The <code>[string:virion]</code> is the name of the virion located in the <code>virions</code> folder which you want to compile.</li>
+<li>The compiled (phared) virion will appear in <code>plugin_data\VirionTools\builds</code> folder.</li>
+</ul>
+<h1>
+<a id="user-content-inject-a-virion" class="anchor" href="#inject-a-virion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Inject a Virion</h1>
+<ul>
+<li>To <strong>inject</strong> a virion to a plugin, you will need to put a compiled virion i.e. a <code>virion.phar</code> in <code>plugin_data\VirionTools\builds</code> folder.</li>
+<li>You will also need to put a compiled plugin i.e a <code>plugin.phar</code> in <code>plugin_data\VirionTools\plugins</code> folder.</li>
+<li>Next run the command <code>/iv [string:virion] [string:plugin]</code>.</li>
+<li>The <code>[string:virion]</code> should be the name of the virion located in <code>plugin_data\VirionTools\builds</code> folder.</li>
+<li>The <code>[string:plugin]</code> should be the name of the plugin located in <code>plugin_data\VirionTools\plugins</code> folder.</li>
+<li>Note: Adding the <code>.phar</code> extension doesn't matter. The plugin will add it itself.</li>
+<li>After successful virion injection, the injected plugin would be present in <code>plugin_data\VirionTools\plugins</code> folder.</li>
+</ul>
+<h1>
+<a id="user-content-inject-all-virions" class="anchor" href="#inject-all-virions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Inject all Virions</h1>
+<ul>
+<li>To <strong>inject all virions</strong> into the plugin you need to use <code>injectall [string:plugin]</code> command.</li>
+<li>Make sure the virions required by the plugin are already compiled.</li>
+<li>Most importantly make a <code>virions</code> key in <code>plugin.yml</code> of the plugin.</li>
+<li>List all the virions required by your plugin under it.</li>
+<li>Next run the command <code>/injectall [string:plugin]</code> Alias for <code>injectall</code> are <code>ia</code>.</li>
+<li>The <code>[string:plugin]</code> should be the name of the plugin located in <code>plugin_data\VirionTools\plugins</code> folder.</li>
+<li>After successful virions injection, the injected plugin would be present in <code>plugin_data\VirionTools\plugins</code> folder.</li>
+</ul>
+<h1>
+<a id="user-content-commands-and-permissions" class="anchor" href="#commands-and-permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands and Permissions</h1>
+<table>
+<thead>
+<tr>
+<th align="center">Description</th>
+<th align="center">Command</th>
+<th align="center">Aliases</th>
+<th align="center">Permission</th>
+<th align="center">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Compile a virion</td>
+<td align="center"><code>/compilevirion [string:virion]</code></td>
+<td align="center">
+<code>cv</code>, <code>bv</code>, <code>buildvirion</code>
+</td>
+<td align="center"><code>vt.cmd.cv</code></td>
+<td align="center"><code>op</code></td>
+</tr>
+<tr>
+<td align="center">Inject a virion</td>
+<td align="center"><code>/injectvirion [string:virion] [string:plugin]</code></td>
+<td align="center"><code>iv</code></td>
+<td align="center"><code>vt.cmd.iv</code></td>
+<td align="center"><code>op</code></td>
+</tr>
+<tr>
+<td align="center">Inject all virions</td>
+<td align="center"><code>/injectall [string:plugin]</code></td>
+<td align="center"><code>ia</code></td>
+<td align="center"><code>vt.cmd.ia</code></td>
+<td align="center"><code>op</code></td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content-disclaimer" class="anchor" href="#disclaimer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Disclaimer</h1>
+<p>This plugin is designed to be used only by PocketMine-MP developers who wish to compile a virion without using Poggit. Normal users should'nt be using it.</p>
+<h1>
+<a id="user-content-credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits:</h1>
+<ul>
+<li>
+<a href="https://poggit.pmmp.io/p/DevTools/1.13.0" rel="nofollow">DevTools</a> by PMMP Team for providing the <code>ConsoleScript.php</code>
+</li>
+<li>
+<a href="https://poggit.pmmp.io" rel="nofollow">Poggit</a> by Poggit Team for providing <code>virion.php</code> and <code>virion_stub.php</code>.</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14676c89c7d039","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

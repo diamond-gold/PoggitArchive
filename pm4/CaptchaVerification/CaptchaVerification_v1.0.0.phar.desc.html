@@ -1,0 +1,100 @@
+<h1>
+<a id="user-content-general" class="anchor" href="#general" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General</h1>
+<p>this plugin can help to verify bot or human
+for Pocketmine 4.0.0</p>
+<h1>
+<a id="user-content-pre-requires" class="anchor" href="#pre-requires" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pre-Requires</h1>
+<ul>
+<li>Php Gd Image Library</li>
+<li><a href="https://poggit.pmmp.io/p/ImageOnMap/1.0.0" rel="nofollow">ImageOnMap</a></li>
+</ul>
+<h1>
+<a id="user-content-screenshot" class="anchor" href="#screenshot" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshot</h1>
+<p><a href="https://github.com/MulqiGaming64/CaptchaVerification/blob/170a988a456112e57f53d47943fe44bf14534808/Screenshot.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/MulqiGaming64/CaptchaVerification/raw/170a988a456112e57f53d47943fe44bf14534808/Screenshot.png" alt="Screenshot" style="max-width:100%;"></a></p>
+<h1>
+<a id="user-content-feature" class="anchor" href="#feature" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Feature</h1>
+<ul>
+<li>Captcha code are Random Generate</li>
+<li>can set max attempt</li>
+<li>Captcha in Image Map</li>
+<li>Cancel move / cmd if you haven't written the captcha correctly</li>
+<li>can set background color</li>
+<li>can set text color</li>
+<li>can set for first join only</li>
+<li>can set session time for captcha code</li>
+<li>can set if attempt reach max regenerate new or kick</li>
+</ul>
+<h1>
+<a id="user-content-to-do" class="anchor" href="#to-do" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To-Do</h1>
+<ul>
+<li>Max Time to Input code</li>
+<li>do you have any ideas?</li>
+</ul>
+<h1>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<div class="highlight highlight-source-yaml"><pre>
+---
+<span class="pl-c"><span class="pl-c">#</span> Text Captcha Color</span>
+<span class="pl-c"><span class="pl-c">#</span> Can use § or &amp; or TextFormat ( GRAY etc )</span>
+<span class="pl-ent">text-color</span>: <span class="pl-s"><span class="pl-pds">"</span>§f<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Background Captcha Color</span>
+<span class="pl-c"><span class="pl-c">#</span> Can use § or &amp; or TextFormat ( GRAY etc )</span>
+<span class="pl-ent">background-color</span>: <span class="pl-s"><span class="pl-pds">"</span>§b<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Add Number in Captcha?</span>
+<span class="pl-ent">number</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> maximum attempt when captcha</span>
+<span class="pl-ent">max-attempt</span>: <span class="pl-c1">3</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Mode if the Attempt reach max</span>
+<span class="pl-c"><span class="pl-c">#</span> Mode: kick ( if there are too many wrong captcha code )</span>
+<span class="pl-c"><span class="pl-c">#</span> Mode: regenerate ( Regenerate new Captcha code when many wrong captcha code )</span>
+<span class="pl-ent">mode</span>: <span class="pl-s"><span class="pl-pds">"</span>regenerate<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message when kick</span>
+<span class="pl-ent">kick</span>: <span class="pl-s"><span class="pl-pds">"</span>§cyou have tried many captcha code but it's wrong, please join again<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message when regenerate</span>
+<span class="pl-ent">regenerate</span>: <span class="pl-s"><span class="pl-pds">"</span>§cyou have tried many captcha code but it's wrong, <span class="pl-cce">\n</span>§aregenerating new code please wait 3 seconds<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> cancel move if the player has not written the captcha?</span>
+<span class="pl-ent">cancel-move</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> can command? if the player has not written the captcha?</span>
+<span class="pl-ent">can-command</span>: <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Add Captcha Only on First Joined?</span>
+<span class="pl-c"><span class="pl-c">#</span> if true then session time will be disabled</span>
+<span class="pl-ent">first-join</span>: <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Session time for players to enter captcha again</span>
+<span class="pl-c"><span class="pl-c">#</span> when join</span>
+<span class="pl-c"><span class="pl-c">#</span> In Seconds ( 3600 is 1 Hours )</span>
+<span class="pl-ent">session</span>: <span class="pl-c1">3600</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Execute cmd Message</span>
+<span class="pl-ent">cmd-message</span>: <span class="pl-s"><span class="pl-pds">"</span>§cPlease write captcha before run a commands!<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Input code Message</span>
+<span class="pl-ent">input-code</span>: <span class="pl-s"><span class="pl-pds">"</span>§aPlease write down the captcha in your hand <span class="pl-cce">\n</span> §aTo identify you as a bot or not<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Wrong code Message</span>
+<span class="pl-ent">wrong-code</span>: <span class="pl-s"><span class="pl-pds">"</span>§cCaptcha code is Wrong! try again!<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Correct Code Message</span>
+<span class="pl-ent">correct-code</span>: <span class="pl-s"><span class="pl-pds">"</span>you have entered the correct captcha code!, happy playing<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Tip message</span>
+<span class="pl-ent">tip-message</span>: <span class="pl-s"><span class="pl-pds">"</span>§cplease complete the captcha<span class="pl-pds">"</span></span>
+...</pre></div>
+<h1>
+<a id="user-content-additional-notes" class="anchor" href="#additional-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h1>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/MulqiGaming64/CaptchaVerification/issues">here</a>
+</li>
+<li>Icons By <a href="https://www.flaticon.com" rel="nofollow">flaticon.com</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e145f3dfff115ea","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

@@ -1,0 +1,62 @@
+<h1><a id="user-content-kygektagsshop" class="anchor" aria-hidden="true" href="#kygektagsshop"><span aria-hidden="true" class="octicon octicon-link"></span></a>KygekTagsShop</h1>
+<p><a href="https://discord.gg/cEXW8uK6QA" rel="nofollow"><img src="https://camo.githubusercontent.com/d9bd4fd0c7d0227de49715db4ed63992a5a5cd608a5139b3ee0329dc89b84568/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3937303239343537393337323931323730302e7376673f6c6162656c3d266c6f676f3d646973636f7264266c6f676f436f6c6f723d66666666666626636f6c6f723d373338394438266c6162656c436f6c6f723d364137454332" alt="Discord" data-canonical-src="https://img.shields.io/discord/970294579372912700.svg?label=&amp;logo=discord&amp;logoColor=ffffff&amp;color=7389D8&amp;labelColor=6A7EC2" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/KygekTeam/KygekTagsShop/blob/master/images/KygekTagsShop.png?raw=true"><img src="https://github.com/KygekTeam/KygekTagsShop/raw/master/images/KygekTagsShop.png?raw=true" alt="KygekTagsShop" style="max-width: 100%;"></a></p>
+<p>Allow players to use tags that they can show to other players by using this plugin!</p>
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>EconomyAPI support for tags prices
+<ul>
+<li>Shows warning if EconomyAPI plugin is not installed or enabled (Can be disabled in <code>config.yml</code>)</li>
+</ul>
+</li>
+<li>Compatible with PureChat</li>
+<li>Unlimited tags</li>
+<li>Forms to buy and sell tags</li>
+<li>Highly customizeable forms
+<ul>
+<li>Supports <code>{player}</code> to display the player name in all forms</li>
+<li>Supports <code>&amp;</code> as formatting codes in all forms</li>
+<li>Supports <code>\n</code> to break new line in all forms</li>
+<li>Supports <code>{tagname}</code> to display tag name and <code>{tagprice}</code> to display tag price in some forms</li>
+</ul>
+</li>
+<li>Command descrption can be changed</li>
+<li>Customizeable message prefix</li>
+<li>Supports command aliases</li>
+<li>Enable/disable return to previous form when the (X) button is pressed</li>
+<li>Automatic plugin updates checker</li>
+<li>Missing config file detection</li>
+<li>Empty tags detection</li>
+<li>Multiple languages support (English, Indonesian)</li>
+<li>API for developers (see <strong>For Developers</strong> tab)</li>
+<li>Events (<code>TagBuyEvent</code> and <code>TagSellEvent</code>)</li>
+</ul>
+<h1><a id="user-content-commands--permissions" class="anchor" aria-hidden="true" href="#commands--permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands &amp; Permissions</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Default Description</th>
+<th>Permission</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/tagsshop</code></td>
+<td>Allows player to use KygekTagsShop to buy and sell tags</td>
+<td><code>kygektagsshop.tags</code></td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p>Command description can be changed in <code>config.yml</code>. You can also add command aliases in <code>config.yml</code>.</p>
+<p>Use <code>-kygektagsshop.tags</code> to blacklist the <code>/tagsshop</code> command permission to groups/users in PurePerms.</p>
+<h1><a id="user-content-for-developers" class="anchor" aria-hidden="true" href="#for-developers"><span aria-hidden="true" class="octicon octicon-link"></span></a>For Developers</h1>
+<p>We provide API for developers to write addons/plugins that depends with KygekTagsShop.<br>
+To access KygekTagsShop API class, you can use <code>Kygekraqmak\KygekTagsShop\TagsShop::getAPI()</code>.</p>
+<p>Example:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>tags</span> = <span class="pl-v">Kygekraqmak</span>\<span class="pl-v">KygekTagsShop</span>\<span class="pl-v">TagsShop</span>::<span class="pl-en">getAPI</span>()-&gt;<span class="pl-en">getAllTags</span>(); <span class="pl-c">// Get all tags from KygekTagsShop</span></pre></div>
+<p>API code can be seen <a href="https://github.com/KygekTeam/KygekTagsShop/blob/master/src/Kygekraqmak/KygekTagsShop/TagsActions.php">here</a>.<br>
+Please regularly check the changelogs for any changes in the API in future versions.</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1462952d13943b","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

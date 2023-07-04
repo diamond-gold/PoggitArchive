@@ -1,0 +1,77 @@
+<h1><a id="user-content-worldinventory-101" class="anchor" aria-hidden="true" href="#worldinventory-101"><span aria-hidden="true" class="octicon octicon-link"></span></a><div>WorldInventory 1.0.1</div></h1>
+<h3><a id="user-content-by-xbeastmode" class="anchor" aria-hidden="true" href="#by-xbeastmode"><span aria-hidden="true" class="octicon octicon-link"></span></a><div>by xBeastMode</div></h3>
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>[x] Clear inventories between worlds</li>
+<li>[x] Link inventories between worlds</li>
+<li>[x] Save individual inventories per world</li>
+<li>[x] Define custom inventories per world</li>
+<li>[x] MySQL and SQLite support</li>
+<li>[x] Full API to extend plugin</li>
+<li>[ ] Command support</li>
+</ul>
+<p>If you have an idea for a change or a feature create an issue!</p>
+<h1><a id="user-content-configuration" class="anchor" aria-hidden="true" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h1>
+<p>The supported database types are "mysql" and "sqlite", you can find these values in the default plugin config as so:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">database</span>:
+  <span class="pl-c"><span class="pl-c">#</span> The database type. "sqlite" and "mysql" are supported.</span>
+  <span class="pl-ent">type</span>: <span class="pl-s">sqlite</span>
+  <span class="pl-c"><span class="pl-c">#</span> Edit these settings only if you choose "sqlite".</span>
+  <span class="pl-ent">sqlite</span>:
+    <span class="pl-c"><span class="pl-c">#</span> The file name of the database in the plugin data folder.</span>
+    <span class="pl-c"><span class="pl-c">#</span> You can also put an absolute path here.</span>
+    <span class="pl-ent">file</span>: <span class="pl-s">data.sqlite</span>
+  <span class="pl-c"><span class="pl-c">#</span> Edit these settings only if you choose "mysql".</span>
+  <span class="pl-ent">mysql</span>:
+    <span class="pl-ent">host</span>: <span class="pl-s">127.0.0.1</span>
+    <span class="pl-c"><span class="pl-c">#</span> Avoid using the "root" user for security reasons.</span>
+    <span class="pl-ent">username</span>: <span class="pl-s">root</span>
+    <span class="pl-ent">password</span>: <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+    <span class="pl-ent">schema</span>: <span class="pl-s">your_schema</span>
+  <span class="pl-c"><span class="pl-c">#</span> The maximum number of simultaneous SQL queries</span>
+  <span class="pl-c"><span class="pl-c">#</span> Recommended: 1 for sqlite, 2 for MySQL. You may want to further increase this value if your MySQL connection is very slow.</span>
+  <span class="pl-ent">worker-limit</span>: <span class="pl-c1">1</span></pre></div>
+<p>This is self-explanatory</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> the inventory types for worlds</span>
+<span class="pl-c"><span class="pl-c">#</span> clear - player's inventory gets cleared in world</span>
+<span class="pl-c"><span class="pl-c">#</span> linked - player's inventory will be linked (the same) in worlds using this type</span>
+<span class="pl-c"><span class="pl-c">#</span> saved - player's inventory will be unique to that world</span>
+<span class="pl-c"><span class="pl-c">#</span> custom - player's inventory will be set to custom items see "items" config for example</span>
+<span class="pl-ent">worlds</span>:
+  <span class="pl-ent">world</span>: <span class="pl-s"><span class="pl-pds">"</span>linked<span class="pl-pds">"</span></span>
+  <span class="pl-ent">foo</span>: <span class="pl-s"><span class="pl-pds">"</span>linked<span class="pl-pds">"</span></span>
+  <span class="pl-ent">bar</span>: <span class="pl-s"><span class="pl-pds">"</span>saved<span class="pl-pds">"</span></span>
+  <span class="pl-ent">baz</span>: <span class="pl-s"><span class="pl-pds">"</span>clear<span class="pl-pds">"</span></span>
+  <span class="pl-ent">qux</span>: <span class="pl-s"><span class="pl-pds">"</span>custom<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> custom item definitions for custom inventory type worlds</span>
+<span class="pl-c"><span class="pl-c">#</span> the format should be defined as so:</span>
+<span class="pl-c"><span class="pl-c">#</span> items:</span>
+<span class="pl-c"><span class="pl-c">#</span>   world_name:</span>
+<span class="pl-c"><span class="pl-c">#</span>     armor:</span>
+<span class="pl-c"><span class="pl-c">#</span>       - "item name:item count:custom item name:custom item lore:enchantments..."</span>
+<span class="pl-c"><span class="pl-c">#</span>     inventory:</span>
+<span class="pl-c"><span class="pl-c">#</span>       - "item name:item count:custom item name:custom item lore:enchantments..."</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> enchantments can be one or multiple as so:</span>
+<span class="pl-c"><span class="pl-c">#</span>   protection:1:unbreaking:1...etc...</span>
+<span class="pl-ent">items</span>:
+  <span class="pl-ent">qux</span>:
+    <span class="pl-ent">armor</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>diamond_helmet:1:custom armor:custom lore:protection:1<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>diamond_chestplate:1:custom armor:custom lore:protection:1<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>diamond_leggings:1:custom armor:custom lore:protection:1<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>diamond_boots:1:custom armor:custom lore:protection:1<span class="pl-pds">"</span></span>
+    <span class="pl-ent">inventory</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>diamond_sword:1:custom sword:custom lore:protection:1<span class="pl-pds">"</span></span></pre></div>
+<h1><a id="user-content-inventory-types" class="anchor" aria-hidden="true" href="#inventory-types"><span aria-hidden="true" class="octicon octicon-link"></span></a>Inventory types</h1>
+<ul>
+<li>
+<code>clear</code> if I go to world with this inventory type my inventory will get cleared, even if I collected items they will not be saved and everytime I go back to that world my inventory will be cleared.</li>
+<li>
+<code>linked</code> worlds that share this inventory type will combine player's inventory, meaning if I go from world <code>a</code> to <code>b</code> and they share the <code>linked</code> inventory type they will be the same exact inventory.</li>
+<li>
+<code>saved</code> instead of getting linked between worlds, player's inventory is now unique to that world. If <code>c</code> uses <code>saved</code> inventory type, and player from <code>a</code> to <code>c</code> instead of getting their inventory linked like from <code>a</code> to <code>b</code>, player's inventory is now a new inventory and everything the player has in that world will be saved only to world <code>c</code>.</li>
+<li>
+<code>custom</code> allows operator to customize the contents given to player in world, see configuration for an example.</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1467b4ff3496a2","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

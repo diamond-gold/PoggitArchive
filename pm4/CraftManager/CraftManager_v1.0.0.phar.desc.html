@@ -1,0 +1,71 @@
+<h3><a id="user-content-craftmanager" class="anchor" aria-hidden="true" href="#craftmanager"><span aria-hidden="true" class="octicon octicon-link"></span></a>CraftManager</h3>
+<p>Allows you to create or delete crafts ! Works with the new pocketmine crafting system (&gt;= 4.18)</p>
+<h3><a id="user-content-config" class="anchor" aria-hidden="true" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h3>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Plugin Shop</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> https://discord.gg/pocketmine</span>
+<span class="pl-c"><span class="pl-c">#</span> https://maxoooz.mysellix.io/</span>
+
+<span class="pl-c"><span class="pl-c">#</span> All items you want to remove from the workbench</span>
+<span class="pl-c"><span class="pl-c">#</span> You can set the meta "-1" or not set it all to include all items</span>
+<span class="pl-ent">delete</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>id:meta<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">new</span>:
+  -
+    <span class="pl-c"><span class="pl-c">#</span> Organization on the 9 slots in the workbench</span>
+    <span class="pl-ent">shape</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>A<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>A<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>B<span class="pl-pds">"</span></span>
+
+    <span class="pl-c"><span class="pl-c">#</span> All items that relate to the letters you entered just above ^</span>
+    <span class="pl-ent">input</span>:
+      <span class="pl-ent">A</span>: <span class="pl-s"><span class="pl-pds">"</span>133:0<span class="pl-pds">"</span></span>
+      <span class="pl-ent">B</span>: <span class="pl-s"><span class="pl-pds">"</span>280:0<span class="pl-pds">"</span></span>
+
+    <span class="pl-c"><span class="pl-c">#</span> Item that will be given when the player makes the craft</span>
+    <span class="pl-ent">output</span>: <span class="pl-s"><span class="pl-pds">"</span>283:0:1<span class="pl-pds">"</span></span>
+
+    <span class="pl-c"><span class="pl-c">#</span> Are the crafts for the basic item removed?</span>
+    <span class="pl-ent">remove-old-crafts</span>: <span class="pl-c1">true</span></pre></div>
+<h3><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>CraftManager</th>
+<th>CreateDelCraft</th>
+<th>CraftingPlus</th>
+<th>CustomCraftDraz</th>
+<th>SimpleCustomCraft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Create Craft</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+</tr>
+<tr>
+<td><code>Replace craft</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td><code>Delete craft</code></td>
+<td><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji> Not functional since PM 4.18</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+</tbody>
+</table>

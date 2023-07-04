@@ -1,0 +1,78 @@
+<h1>
+<a id="user-content-nosprint" class="anchor" href="#nosprint" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NoSprint</h1>
+<p><a href="https://discord.com/invite/EggNF9hvGv" rel="nofollow"><img src="https://camo.githubusercontent.com/4d34039e5f4e2931af97861038c7c6e50a11a075ce0af5d51ec42dc070072a09/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833303036333430393030303038373631323f636f6c6f723d373338394438266c6162656c3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/830063409000087612?color=7389D8&amp;label=discord" style="max-width:100%;"></a>
+<a href="https://github.com/AIPTU/NoSprint/blob/master/LICENSE"><img src="https://camo.githubusercontent.com/4c258753e8511bfee712f88290f3163f1ca2187fb7bd5e03c6f617da6f3ae381/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f41495054552f4e6f537072696e742e737667" alt="GitHub License" data-canonical-src="https://img.shields.io/github/license/AIPTU/NoSprint.svg" style="max-width:100%;"></a>
+<a href="https://poggit.pmmp.io/p/NoSprint" rel="nofollow"><img src="https://camo.githubusercontent.com/f585bbfb9470f47f325b2cd7e6b315e60b54a810e8ddbe477b0b9590170ee615/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4e6f537072696e74" alt="Poggit State" data-canonical-src="https://poggit.pmmp.io/shield.state/NoSprint" style="max-width:100%;"></a>
+<a href="https://poggit.pmmp.io/p/NoSprint" rel="nofollow"><img src="https://camo.githubusercontent.com/da9c463584b92198c74f612b296aada5bab3d51a94b23237551d532eee44282c/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f4e6f537072696e74" alt="Poggit Download Total" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/NoSprint" style="max-width:100%;"></a></p>
+<p>A PocketMine-MP plugin to cancel the player's spint.</p>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Permission bypass.</li>
+<li>Custom messages.</li>
+<li>Per world support.</li>
+<li>Lightweight and open source <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">❤️</g-emoji>
+</li>
+</ul>
+<h1>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span> Do not change this (Only for internal use)!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-c1">1</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message used when canceling a player's sprint</span>
+<span class="pl-c"><span class="pl-c">#</span> Use "§" or "&amp;" to color the message</span>
+<span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cYou can't sprint in this world<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> List of world folder names to blacklist sprint.</span>
+<span class="pl-c"><span class="pl-c">#</span> Set it to [] if you want to sprint in all worlds.</span>
+<span class="pl-ent">blacklisted-worlds</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>world<span class="pl-pds">"</span></span>
+...</pre></div>
+<h1>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<ul>
+<li>Permission <code>nosprint.bypass</code> allows users to bypass sprint.</li>
+</ul>
+<h1>
+<a id="user-content-how-to-install" class="anchor" href="#how-to-install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to Install</h1>
+<ol>
+<li>Download the plugin from <a href="https://poggit.pmmp.io/p/NoSprint" rel="nofollow">here</a>
+</li>
+<li>Put the <code>NoSprint.phar</code> file into the <code>plugins</code> folder.</li>
+<li>Restart the server.</li>
+<li>Done!</li>
+</ol>
+<h1>
+<a id="user-content-additional-notes" class="anchor" href="#additional-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h1>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/AIPTU/NoSprint/issues">here</a>
+</li>
+<li>Icons made from <a href="https://www.flaticon.com" rel="nofollow">www.flaticon.com</a>
+</li>
+</ul>
+<h1>
+<a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h1>
+<pre><code>MIT License
+
+Copyright (c) 2021 AIPTU
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</code></pre>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1463d4ddb1175f","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

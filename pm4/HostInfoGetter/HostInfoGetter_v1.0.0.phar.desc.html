@@ -1,0 +1,33 @@
+<h1><a id="user-content-general" class="anchor" aria-hidden="true" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a>General</h1>
+<p>A Plugin for PocketMine-MP Software for get Information from Host Like Ram, CPU, Disk Space.</p>
+<p>Usually this plugin is used for  Check if Pterodactyl or Host Panel is Fake Ram or Not.</p>
+<h2><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<p>You can use commands <code>/gethostinfo</code> or <code>/hostinfo</code> Only Player with permission <code>gethostinfo.cmd</code> can use the commands!</p>
+<h2><a id="user-content-config" class="anchor" aria-hidden="true" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h2>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span> Available Tags</span>
+<span class="pl-c"><span class="pl-c">#</span> RAM</span>
+<span class="pl-c"><span class="pl-c">#</span> {total_ram} Get Total Used Ram</span>
+<span class="pl-c"><span class="pl-c">#</span> {available_ram} Get Available Ram</span>
+<span class="pl-c"><span class="pl-c">#</span> CPU</span>
+<span class="pl-c"><span class="pl-c">#</span> {total_cpu_load} Get Total CPU Loaded</span>
+<span class="pl-c"><span class="pl-c">#</span> {cpu_count} Get Count of CPU</span>
+<span class="pl-c"><span class="pl-c">#</span> DISK SPACE</span>
+<span class="pl-c"><span class="pl-c">#</span> {total_space} Get Total DiskSpace</span>
+<span class="pl-c"><span class="pl-c">#</span> {available_space} Get Total Available DiskSpace</span>
+<span class="pl-c"><span class="pl-c">#</span> OTHERS</span>
+<span class="pl-c"><span class="pl-c">#</span> {line} use for New line you can use \n</span>
+
+<span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>§aYour Host Statistics{line}{line}§aRAM Information{line}§fAvailable RAM: §a{available_ram} §f/ §a{total_ram}{line}{line}§aCPU Information{line}§fCPU: §a{cpu_count}{line}§fLoad: §a{total_cpu_load}{line}{line}§aDiskSpace Information{line}§fAvailable DiskSpace: §a{available_space} §f/ §a{total_space}<span class="pl-pds">"</span></span>
+
+...</pre></div>
+<h2><a id="user-content-screenshot" class="anchor" aria-hidden="true" href="#screenshot"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshot</h2>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/XanderID/HostInfoGetter/main/.assets/screenshot.jpg"><img src="https://raw.githubusercontent.com/XanderID/HostInfoGetter/main/.assets/screenshot.jpg" alt="Screenshot" style="max-width: 100%;"></a></p>
+<h2><a id="user-content-additional-notes" class="anchor" aria-hidden="true" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h2>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/XanderID/HostInfoGetter/issues">here</a>
+</li>
+<li>Icons By <a href="https://icons8.com" rel="nofollow">icons8.com</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1461a77f1efa1a","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

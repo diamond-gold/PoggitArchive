@@ -1,0 +1,53 @@
+<h1>
+<a id="user-content-crashbanusers" class="anchor" href="#crashbanusers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CrashBanUsers</h1>
+<p>Upon onPlayerLogin, crash-banned user's clients will be crashed.</p>
+<p><strong><strong>How it works:</strong></strong>
+Basically if the y coordinate ≃ <code>-2,147,483,648</code> (Min x32 Signed Int) or <code>2,147,483,647</code> (Max x32 Signed Int), the client will crash.
+After inspiration from <a href="https://github.com/jasonwynn10/CrashAndBan/">Jason's Plugin</a>, I've made this feature plugin of its own.
+This plugin is different, seeing as the fact that <code>$sender</code> is also able to unban the player via command, also (within the <code>crash-banned-users.json</code> file it tells you who banned the player.</p>
+<h2>
+<a id="user-content-usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage:</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Alias(es)</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/crashban &lt;player&gt;</code></td>
+<td>Bans the player</td>
+<td>cban</td>
+<td>crashbanusers.command.ban</td>
+</tr>
+<tr>
+<td><code>/crashunban &lt;player&gt;</code></td>
+<td>Unbans the player</td>
+<td>cpardon, crashpardon</td>
+<td>crashbanusers.command.unban</td>
+</tr>
+</tbody>
+</table>
+<h2>
+<a id="user-content-how-do-i-unban-a-player-manually" class="anchor" href="#how-do-i-unban-a-player-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How do I unban a player manually?</h2>
+<p>This shouldn't be necessary, as <code>/crashunban</code> already does the advanced option already, but it's here so you know what to do if you're bored. Just don't come running to me when there are issues.</p>
+<ol>
+<li>In <code>plugin_data/CrashBanUsers/crash-banned-users.json</code>, delete the user's name.</li>
+<li>In the <code>players/</code> directory, search for the player's name, and do either one of the following:
+<ul>
+<li>(Easiest Option - Deletes their data:) Delete the player's <code>.dat</code> file</li>
+<li>(Advanced Option:) Head to your favourite NBT Editor (For example, <a href="https://irath96.github.io/webNBT/" rel="nofollow">https://irath96.github.io/webNBT/</a> or <a href="https://github.com/jaquadro/NBTExplorer">https://github.com/jaquadro/NBTExplorer</a>). Head to "Pos", and change the integers to any coordinate of your choice, so long as it's sensible.</li>
+</ul>
+</li>
+</ol>
+<h2>
+<a id="user-content-plugins-inspiration" class="anchor" href="#plugins-inspiration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Plugin's Inspiration:</h2>
+<ul>
+<li>I was playing around and found out (with help from @JavierLeon9966) that (in this case) the height integer was 32bit signed.</li>
+<li>
+<a href="https://github.com/jasonwynn10/CrashAndBan">https://github.com/jasonwynn10/CrashAndBan</a> - Jason's CrashAndBan Plugin (which is currently archived)</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e145fba0af224e2","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

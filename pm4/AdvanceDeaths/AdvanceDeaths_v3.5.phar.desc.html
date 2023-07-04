@@ -1,0 +1,338 @@
+<h1>
+<a id="user-content-advancedeaths" class="anchor" href="#advancedeaths" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AdvanceDeaths</h1>
+<p><a href="https://poggit.pmmp.io/p/AdvanceDeaths" rel="nofollow"><img src="https://camo.githubusercontent.com/bef89761c4324e8466ff2e3d672ec78a68b0c835b42919f983d9124471558604/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f416476616e6365446561746873" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/AdvanceDeaths" style="max-width:100%;"></a> <a href="https://poggit.pmmp.io/p/AdvanceDeaths" rel="nofollow"><img src="https://camo.githubusercontent.com/c98854e20f6e2bc5cb03430c40726e6e36c53dab135db4e91a8d0d01e68808e3/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f416476616e6365446561746873" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/AdvanceDeaths" style="max-width:100%;"></a> <a href="https://poggit.pmmp.io/p/AdvanceDeaths" rel="nofollow"><img src="https://camo.githubusercontent.com/95259610529335d4f40d068c15b2ab2979e219c186673c1f3c08d2d28bc85d8b/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2f416476616e6365446561746873" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl/AdvanceDeaths" style="max-width:100%;"></a> <a href="https://poggit.pmmp.io/p/AdvanceDeaths" rel="nofollow"><img src="https://camo.githubusercontent.com/fc5ee51f6b22606771f55043b14abdeaed6c93990f9a61b6c54b18ef7333407d/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f416476616e6365446561746873" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/AdvanceDeaths" style="max-width:100%;"></a></p>
+<p>Discord: <a href="https://discord.gg/96yKvdDxrR" rel="nofollow">https://discord.gg/96yKvdDxrR</a></p>
+<p>Discord Bot link: <a href="https://discord.com/api/oauth2/authorize?client_id=900282852577509436&amp;permissions=537259089&amp;scope=bot" rel="nofollow">https://discord.com/api/oauth2/authorize?client_id=900282852577509436&amp;permissions=537259089&amp;scope=bot</a></p>
+<p>A plugin to take advantage of the Minecraft Death to improve your server.
+With this plugin you can customize death messages with advanced keywords.
+Vanilia like Instant Respawn, KDR, Kill and Death stats, including a Leaderboard!</p>
+<p>Read setup for more info!</p>
+<h1>
+<a id="user-content-important" class="anchor" href="#important" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Important</h1>
+<p>When you are updating AdvanceDeaths to V3.0 make sure you delete the previous database.</p>
+<p>ScoreHUD support is disabled until ScoreHUD updates their plugin or another scoreboard plugin is released.</p>
+<h1>
+<a id="user-content-setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h1>
+<p>The setup is really easy, you'll just need to download the phar file at the plugins folder.
+After that reboot/start your server up, all configurations are now editable at the config.yml located at plugin_data/AdvanceDeaths.
+If you own a sql server the set the parameters in the config.yml</p>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<p>Features:</p>
+<ul>
+<li>Death Messages
+<ul>
+<li>You can modify all the death messages with variables</li>
+</ul>
+</li>
+<li>EconomyAPI Support
+<ul>
+<li>Gain/Lose money on both Death and Kill.</li>
+</ul>
+</li>
+<li>Commands
+<ul>
+<li>Commands to see other player stats</li>
+</ul>
+</li>
+<li>Configuration
+<ul>
+<li>All Configurations will be automatically updated from 2.0.0 to 2.5</li>
+<li>Configuration Validator to prevent crashes caused by mis-configured config file.</li>
+</ul>
+</li>
+<li>AI Mobs
+<ul>
+<li>Pure Entities is now supported.</li>
+</ul>
+</li>
+<li>ScoreHud
+<ul>
+<li>You can display a player Kills, Deaths or KDR on a scoreHud</li>
+<li>Multiworld is now supported</li>
+</ul>
+</li>
+<li>Instant Respawn
+<ul>
+<li>Instant Respawn is now client sided unlike other plugins!</li>
+</ul>
+</li>
+<li>Leaderboards
+<ul>
+<li>There are 3 leaderboards available that can be enabled on the config file. They include Kills, Killstreaks, and deaths leaderboards.</li>
+</ul>
+</li>
+<li>Effects
+<ul>
+<li>There are currently two effects. <code>CreeperParticle</code> and <code>Lighting</code>.</li>
+</ul>
+</li>
+<li>Databases
+<ul>
+<li>AdvanceDeaths supports SQLite and MySql Databases</li>
+<li>SQLite is preferred over MySql.</li>
+<li>Database queries are asynchronous</li>
+</ul>
+</li>
+<li>Particles
+<ul>
+<li>You can enable hitted-hearts on config.yml to show hearts when a player is hit.</li>
+</ul>
+</li>
+<li>Killer Effetcs
+<ul>
+<li>You can heal the killer after death.</li>
+</ul>
+</li>
+<li>Discord
+<ul>
+<li>You can enable discord webhooks to display death messages in your discord server.</li>
+<li>You can also have support for the Discord Bot to get the ingame leaderboards.</li>
+</ul>
+</li>
+</ul>
+<h1>
+<a id="user-content-bug-report" class="anchor" href="#bug-report" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bug Report</h1>
+<p>Found a bug?</p>
+<ul>
+<li>Head to <a href="https://github.com/ErikPDev/AdvanceDeaths/issues">Issues</a>
+</li>
+<li>Tap on <a href="https://github.com/ErikPDev/AdvanceDeaths/issues/new">New Issue</a>
+</li>
+<li>Write information about the bug.</li>
+<li>Send Issue</li>
+<li>The end</li>
+</ul>
+<h1>
+<a id="user-content-scorehud" class="anchor" href="#scorehud" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ScoreHUD</h1>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>advancedeaths.myDeaths</td>
+<td>Get's the player Deaths</td>
+</tr>
+<tr>
+<td>advancedeaths.myKills</td>
+<td>Get's the player Kills</td>
+</tr>
+<tr>
+<td>advancedeaths.topKiller</td>
+<td>Shows the Top Killer</td>
+</tr>
+<tr>
+<td>advancedeaths.kdr</td>
+<td>Shows the player KDR</td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content-config-variables" class="anchor" href="#config-variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config Variables</h1>
+<table>
+<thead>
+<tr>
+<th>Tag name</th>
+<th>Description</th>
+<th>Death Types that can be used on.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{name}</td>
+<td>The player that got killed.</td>
+<td>All Death Types</td>
+</tr>
+<tr>
+<td>{killer}</td>
+<td>The player who killed {name}</td>
+<td>Player, Mob, Arrow, and explosion.</td>
+</tr>
+<tr>
+<td>{killerCurrentHealth}</td>
+<td>Shows the killer's health</td>
+<td>Player</td>
+</tr>
+<tr>
+<td>{killerMaxHealth}</td>
+<td>Shows the killer's Max Health</td>
+<td>Player</td>
+</tr>
+<tr>
+<td>{weapon}</td>
+<td>What's the weapon name the killer used.</td>
+<td>Player</td>
+</tr>
+<tr>
+<td>{killer_kills}</td>
+<td>Kills of the Killer</td>
+<td>Player</td>
+</tr>
+<tr>
+<td>{player_kills}</td>
+<td>Kills of the player</td>
+<td>Player</td>
+</tr>
+<tr>
+<td>{killer_deaths}</td>
+<td>Deaths of the Killer</td>
+<td>Player</td>
+</tr>
+<tr>
+<td>{player_deaths}</td>
+<td>Deaths of the player</td>
+<td>Player</td>
+</tr>
+<tr>
+<td>{killer_kdr}</td>
+<td>KDR of the killer</td>
+<td>Player</td>
+</tr>
+<tr>
+<td>{player_kdr}</td>
+<td>KDR of the player</td>
+<td>Player</td>
+</tr>
+<tr>
+<td>{killer_killstreak}</td>
+<td>Killstreak of the killer</td>
+<td>Player</td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>advancedeaths</td>
+<td>See an online player stats.</td>
+<td>advancedeaths.use</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ads</td>
+<td>See an online player stats.</td>
+<td>advancedeaths.use</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content-photos" class="anchor" href="#photos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Photos</h1>
+<p><a href="https://github.com/ErikPDev/AdvanceDeaths/raw/master/assets/Kill.jpg" target="_blank" rel="noopener noreferrer"><img src="https://github.com/ErikPDev/AdvanceDeaths/raw/master/assets/Kill.jpg" style="max-width:100%;"></a></p>
+<p><a href="https://github.com/ErikPDev/AdvanceDeaths/raw/master/assets/Deaths.jpg" target="_blank" rel="noopener noreferrer"><img src="https://github.com/ErikPDev/AdvanceDeaths/raw/master/assets/Deaths.jpg" style="max-width:100%;"></a></p>
+<p><a href="https://github.com/ErikPDev/AdvanceDeaths/raw/master/assets/Killstreak.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/ErikPDev/AdvanceDeaths/raw/master/assets/Killstreak.png" style="max-width:100%;"></a></p>
+<p><a href="https://github.com/ErikPDev/AdvanceDeaths/raw/master/assets/ScoreBoard.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/ErikPDev/AdvanceDeaths/raw/master/assets/ScoreBoard.png" style="max-width:100%;"></a></p>
+<p><a href="https://github.com/ErikPDev/AdvanceDeaths/raw/master/assets/Form.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/ErikPDev/AdvanceDeaths/raw/master/assets/Form.png" style="max-width:100%;"></a></p>
+<h1>
+<a id="user-content-effects" class="anchor" href="#effects" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Effects</h1>
+<p>There are currently two effects supported.
+These are <code>CreeperParticle</code>, and <code>Lighting</code>.
+Feel free to add more Types in Github.</p>
+<h1>
+<a id="user-content-credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h1>
+<p>Special thank to minijaham for helping me out with this project, and Primus for introducing me to Psuedo.</p>
+<h1>
+<a id="user-content-api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h1>
+<p>Usage example:
+<code>$AdvanceDeathDatabase = new \ErikPDev\AdvanceDeaths\utils\DatabaseProvider($AdvanceDeathsMain);</code>
+Check out the source code to see how to use it, or create an issue.</p>
+<h1>
+<a id="user-content-used-by" class="anchor" href="#used-by" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Used by:</h1>
+<p>Create an issue or open an ticket on discord to add you server to this list.</p>
+<h1>
+<a id="user-content-minecraft-color-coding" class="anchor" href="#minecraft-color-coding" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Minecraft color coding</h1>
+<p>Color coding the death messages is possible!
+Here's a list of color codes.</p>
+<table>
+<thead>
+<tr>
+<th>Color Name</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dark Red</td>
+<td>§4</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>§c</td>
+</tr>
+<tr>
+<td>Gold</td>
+<td>§6</td>
+</tr>
+<tr>
+<td>Yellow</td>
+<td>§e</td>
+</tr>
+<tr>
+<td>Dark Yellow</td>
+<td>§g</td>
+</tr>
+<tr>
+<td>Dark Green</td>
+<td>§2</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>§a</td>
+</tr>
+<tr>
+<td>Aqua</td>
+<td>§b</td>
+</tr>
+<tr>
+<td>Dark Aqua</td>
+<td>§3</td>
+</tr>
+<tr>
+<td>Dark Blue</td>
+<td>§1</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>§9</td>
+</tr>
+<tr>
+<td>Light Purple</td>
+<td>§d</td>
+</tr>
+<tr>
+<td>Dark Purple</td>
+<td>§5</td>
+</tr>
+<tr>
+<td>White</td>
+<td>§f</td>
+</tr>
+<tr>
+<td>Gray</td>
+<td>§7</td>
+</tr>
+<tr>
+<td>Dark Gray</td>
+<td>§8</td>
+</tr>
+<tr>
+<td>Black</td>
+<td>§0</td>
+</tr>
+</tbody>
+</table>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e145d3f9a59239d","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

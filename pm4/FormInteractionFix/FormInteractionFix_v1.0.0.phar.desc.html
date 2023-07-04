@@ -1,0 +1,53 @@
+<h1><a id="user-content--form-interaction-fix" class="anchor" aria-hidden="true" href="#-form-interaction-fix"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/Endermanbugzjfc/FormInteractionFix/blob/master/assets/icon.jpeg"><img src="https://github.com/Endermanbugzjfc/FormInteractionFix/raw/master/assets/icon.jpeg" width="75/" title="Credit: from windows93.net" style="max-width: 100%;"></a> Form Interaction Fix</h1>
+<p><a href="https://github.com/Endermanbugzjfc/FormInteractionFix/actions/workflows/main.yml"><img src="https://github.com/Endermanbugzjfc/FormInteractionFix/actions/workflows/main.yml/badge.svg" alt="CI" style="max-width: 100%;"></a>
+<a href="https://github.com/Endermanbugzjfc/FormInteractionFix/issues/new"><img src="https://camo.githubusercontent.com/d1124a55b6eec965d1faaaa6ac53c58cfae484802b39dcaf68590c6cb520d0bf/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732d7261772f456e6465726d616e6275677a6a66632f466f726d496e746572616374696f6e466978" alt="Please click here to report a problem." data-canonical-src="https://img.shields.io/github/issues-raw/Endermanbugzjfc/FormInteractionFix" style="max-width: 100%;"></a></p>
+<h1><a id="user-content-interaction-spam" class="anchor" aria-hidden="true" href="#interaction-spam"><span aria-hidden="true" class="octicon octicon-link"></span></a>Interaction spam</h1>
+<h2><a id="user-content-explanation" class="anchor" aria-hidden="true" href="#explanation"><span aria-hidden="true" class="octicon octicon-link"></span></a>Explanation</h2>
+<p>Interaction spam is often a problem for players who use the mouse as their input.
+Try to interact (right-click) while facing a block.
+You may notice that PlayerInteractEvent is called many times in a short period.
+If a plugin opens its form on interaction, these players will see the form opens more than once.</p>
+<h2><a id="user-content-problem-demo-before-installing" class="anchor" aria-hidden="true" href="#problem-demo-before-installing"><span aria-hidden="true" class="octicon octicon-link"></span></a>Problem demo (before installing)</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/Endermanbugzjfc/FormInteractionFix/blob/master/assets/problem.gif"><img src="https://github.com/Endermanbugzjfc/FormInteractionFix/raw/master/assets/problem.gif" alt="Before installing FormInteractionFix" style="max-width: 100%;"></a></p>
+<h2><a id="user-content-fix-demo-after-installing" class="anchor" aria-hidden="true" href="#fix-demo-after-installing"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fix demo (after installing)</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/Endermanbugzjfc/FormInteractionFix/blob/master/assets/fix.gif"><img src="https://github.com/Endermanbugzjfc/FormInteractionFix/raw/master/assets/fix.gif" alt="After installing FormInteractionFix" style="max-width: 100%;"></a></p>
+<h1><a id="user-content-the-fix" class="anchor" aria-hidden="true" href="#the-fix"><span aria-hidden="true" class="octicon octicon-link"></span></a>The fix</h1>
+<p>This plugin blocks interaction when a form opens.
+(NPC dialogues will be supported soon™.) By listening for packets and cancelling interaction events after a form is sent to the player.
+Until the player responds to (or closes) it.</p>
+<h1><a id="user-content-potential-problems" class="anchor" aria-hidden="true" href="#potential-problems"><span aria-hidden="true" class="octicon octicon-link"></span></a>Potential problems</h1>
+<p>This plugin relies on packets very much. And can malfunction if a client does not respond with the correct packet. For instance, official clients would not open a form in that the JSON of its packet is invalid. Eventually, the client can neither react to any form nor make any interaction.</p>
+<h1><a id="user-content-inclusiveness" class="anchor" aria-hidden="true" href="#inclusiveness"><span aria-hidden="true" class="octicon octicon-link"></span></a>Inclusiveness</h1>
+<p>As this plugin is driven by packets, it works for all forms, no matter which plugin creates them.</p>
+<h1><a id="user-content-disclaimer" class="anchor" aria-hidden="true" href="#disclaimer"><span aria-hidden="true" class="octicon octicon-link"></span></a>Disclaimer</h1>
+<p>This plugin cannot prevent any malicious attacks or behaviours.</p>
+<h1><a id="user-content-developer-note" class="anchor" aria-hidden="true" href="#developer-note"><span aria-hidden="true" class="octicon octicon-link"></span></a>Developer note</h1>
+<h2><a id="user-content-depending-on-this-plugin" class="anchor" aria-hidden="true" href="#depending-on-this-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a>Depending on this plugin</h2>
+<p>Your plugin can depend on this plugin instead of verbosely implementing an interaction cool down on your own.</p>
+<h2><a id="user-content-await-generator--await-std" class="anchor" aria-hidden="true" href="#await-generator--await-std"><span aria-hidden="true" class="octicon octicon-link"></span></a>await-generator &amp; await-std</h2>
+<p>Both were made by <a href="https://github.com/SOF3">@SOF3</a>:</p>
+<ul>
+<li>
+<a href="https://github.com/SOF3/await-generator">await-generator</a>:  brings async/awaits to PHP. (Version ^3.4.3 is required because it fixes the <a href="https://github.com/SOF3/await-generator/pull/184">Traverser error.</a>)</li>
+<li>
+<a href="https://github.com/SOF3/await-std">await-std</a>: enables the use of PM API in async/await style, such as tasks and events.</li>
+</ul>
+<p>Do not worry when you see unusual code like <code>while (true)</code> and <code>yield</code>. It will not block the thread. Instead, <code>yield</code> can pause the code flow and make it behaves like concurrency.</p>
+<h2><a id="user-content-integratedtestphp" class="anchor" aria-hidden="true" href="#integratedtestphp"><span aria-hidden="true" class="octicon octicon-link"></span></a>IntegratedTest.php</h2>
+<p>Performs integrated tests with <a href="https://github.com/muqsit/fakeplayer">FakePlayer by Muqsit</a>. Please refer to the <a href="https://github.com/Endermanbugzjfc/FormInteractionFix/blob/b38e413e1de56660c4a2ba99e2f1498258cae3ad/IntegratedTest.php#L34-L48">doc comments</a> in it for more details.</p>
+<h2><a id="user-content-phpstan--php-cs-fixer" class="anchor" aria-hidden="true" href="#phpstan--php-cs-fixer"><span aria-hidden="true" class="octicon octicon-link"></span></a>PHPStan &amp; PHP-CS-Fixer</h2>
+<p>Common PHP dev tools:</p>
+<ul>
+<li>
+<a href="https://github.com/phpstan/phpstan">PHPStan</a>: lint. (static code check.)</li>
+<li>
+<a href="https://github.com/PHP-CS-Fixer/PHP-CS-Fixer">PHP-CS-Fixer</a>: fixes code standard. (Format code, replace FQCN with <code>use</code>, etc... Do not get confused with <a href="https://github.com/squizlabs/PHP_CodeSniffer">PHP_CodeSniffer</a>!)</li>
+</ul>
+<h1><a id="user-content-credit" class="anchor" aria-hidden="true" href="#credit"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credit</h1>
+<ul>
+<li>Icon from <a href="https://windows93.net" rel="nofollow">https://windows93.net</a>
+</li>
+<li>Thanks <a href="https://github.com/alvin0319">@alvin0319</a> for providing me environment to perform live tests and record the demos.</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14613ddcaa227e","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

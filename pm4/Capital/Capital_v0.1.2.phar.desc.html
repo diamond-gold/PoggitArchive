@@ -1,0 +1,528 @@
+<h1>
+<a id="user-content-capital" class="anchor" href="#capital" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Capital</h1>
+<p><a href="https://github.com/SOF3/Capital/actions/workflows/ci.yml"><img src="https://github.com/SOF3/Capital/actions/workflows/ci.yml/badge.svg" alt="CI" style="max-width:100%;"></a></p>
+<p>An extensible economy plugin for PocketMine-MP.</p>
+<p>Important: To use this plugin, you have to <strong>install <a href="https://poggit.pmmp.io/p/InfoAPI" rel="nofollow">InfoAPI</a></strong> too.</p>
+<h2>
+<a id="user-content-how-is-capital-different-from-other-economy-plugins" class="anchor" href="#how-is-capital-different-from-other-economy-plugins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How is Capital different from other economy plugins?</h2>
+<p>As a core API for economy, Capital supports different styles of account management:</p>
+<ul>
+<li>You can have the old, simple one-account-per-player mechanism.</li>
+<li>Or do you like currencies? You can add new currencies to config.yml
+and other plugins will let you configure which currency to use in each case.</li>
+<li>Or are currencies too complicated for you?
+What about just having one account per world?
+You don't need any special configuration in other plugins!</li>
+<li>Are commands and form UI boring for you?
+Maybe use banknote/wallet items
+so that players lose money when they drop the item?
+(Capital itself does not support banknote/wallet items,
+but it is the <em>only</em> economy API where both
+simple accounts and item payment can be used from other plugins
+without writing code twice)</li>
+<li>Or maybe sometimes the money goes to the faction bank account
+instead of player account?</li>
+<li>Capital is extensible for other plugins to include new account management styles,
+And it will work automatically with all plugins!</li>
+</ul>
+<p>Other cool features include:</p>
+<ul>
+<li>Powerful analytics commands.
+How much active capital is there?
+How is wealth distributed on the server?
+Which industries are the most active?
+What are the biggest transactions in the server yesterday?
+Capital can help you answer these questions with label-based analytics.</li>
+<li>Is editing the config file too confusing for you?
+Capital supports self-healing configuration.
+Your config file will be automatically regenerated if something is wrong,
+and Capital will try its best to guess what you really wanted.</li>
+<li>Supports migration from other economy plugins, including:
+<ul>
+<li>EconomyAPI</li>
+</ul>
+</li>
+<li>Uses async database access, supporting both SQLite and MySQL.
+Capital will not lag your server.</li>
+<li>Safe for multiple servers. Transactions are strictly atomic.
+Players cannot duplicate money by joining multiple servers.</li>
+</ul>
+<h2>
+<a id="user-content-setting-up" class="anchor" href="#setting-up" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setting up</h2>
+<p>After running the server with Capital the first time,
+Capital generates config.yml and db.yml,
+which you can edit to configure Capital.</p>
+<p>db.yml is used for configuring the database used by Capital.
+You can use sqlite or mysql here.
+The configuration is same as most other plugins.</p>
+<p>config.yml is a large config that allows you to change almost everything in Capital.
+Read the comments in config.yml for more information.
+Text after <code>'# xxx:</code> are comments.
+If you edit config.yml incorrectly,
+Capital will try to fix the config.yml and save the old one as config.yml.old
+so that you can refer to it if Capital fixed it incorrectly.</p>
+<h2>
+<a id="user-content-default-commands" class="anchor" href="#default-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default commands</h2>
+<p>All commands in Capital can be configured in config.yml.
+Try searching them in the config file to find out the correct place.
+The following commands come from the default config:</p>
+<p>Player commands:</p>
+<ul>
+<li>
+<code>/pay &lt;player&gt; &lt;amount&gt; [account...]</code>:
+Pay money to another player with your own account.</li>
+<li>
+<code>/checkmoney</code>:
+Check your own wealth.</li>
+<li>
+<code>/richest</code>:
+View the richest players on the server.</li>
+</ul>
+<p>Admin commands:</p>
+<ul>
+<li>
+<code>addmoney &lt;player&gt; &lt;amount&gt; [account...]</code>:
+Add money to a player's account.</li>
+<li>
+<code>takemoney &lt;player&gt; &lt;amount&gt; [account...]</code>:
+Remove money from a player's account.</li>
+<li>
+<code>/checkmoney &lt;player&gt;</code>:
+Check the wealth of another player.</li>
+<li>
+<code>/capital-migrate</code>:
+Import database from EconomyAPI.</li>
+</ul>
+<p><code>[account...]</code> can be used to select the account (e.g. currency)
+if you change the schema in config.yml.
+(You can still disable these arguments by setting up <code>selector</code> in config.yml)</p>
+<p>You can create many other useful commands by editing config.yml,
+e.g. check how much money was paid by <code>/pay</code> command!
+Check out the comments in config.yml for more information.</p>
+<h2>
+<a id="user-content-community-contact--contributing" class="anchor" href="#community-contact--contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Community, Contact &amp; Contributing</h2>
+<p>If you want to get help, share your awesome config setup
+or show off your cool plugin that uses Capital,
+create a discussion <a href="https://github.com/SOF3/Capital/discussions">on GitHub</a>.</p>
+<p>To report bugs, create an isuse <a href="https://github.com/SOF3/Capital/issues">on GitHub</a>.</p>
+<p>If you want to help with developing Capital,
+see the API tab.</p>
+<h1>
+<a id="user-content-simple-api" class="anchor" href="#simple-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Simple API</h1>
+<h2>
+<a id="user-content-summary" class="anchor" href="#summary" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Summary</h2>
+<p>Capital supports different account classifications (known as <a href="#schema">schemas</a>).
+All operations involving player accounts require
+a config entry to select which account,
+e.g. if the user selects the Currency schema,
+you need a config that selects which currency to use.
+The good news is, you don't have to consider each schema,
+because Capital will figure it out.
+For each use case, just create an empty config entry to select the account:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">selector</span>:</pre></div>
+<p>Users can fill this selector with options like <code>allowed-currencies</code> etc.,
+depending on the schema they chose.</p>
+<p>In <code>onEnable</code>, store this in a class property:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">SOFe</span>\<span class="pl-v">Capital</span>\{<span class="pl-v">Capital</span>, <span class="pl-v">CapitalException</span>, <span class="pl-v">LabelSet</span>};
+
+<span class="pl-k">class</span> <span class="pl-v">Main</span> <span class="pl-k">extends</span> <span class="pl-v">PluginBase</span> {
+  <span class="pl-k">private</span> <span class="pl-c1"><span class="pl-c1">$</span>selector</span>;
+
+  <span class="pl-k">protected</span> <span class="pl-k">function</span> <span class="pl-en">onEnable</span>() : <span class="pl-smi">void</span> {
+    <span class="pl-v">Capital</span>::<span class="pl-en">api</span>(<span class="pl-s">"0.1.0"</span>, <span class="pl-k">function</span>(<span class="pl-smi">Capital</span> <span class="pl-s1"><span class="pl-c1">$</span>api</span>) {
+      <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">selector</span> = <span class="pl-s1"><span class="pl-c1">$</span>api</span>-&gt;<span class="pl-en">completeConfig</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">getConfig</span>()-&gt;<span class="pl-en">get</span>(<span class="pl-s">"selector"</span>));
+    });
+  }
+}</pre></div>
+<p>Then you can use the stored selector in the code
+where you want to manipulate player money.</p>
+<h2>
+<a id="user-content-take-money-from-a-player" class="anchor" href="#take-money-from-a-player" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Take money from a player</h2>
+<p>Let's make a plugin called "ChatFee"
+which charges the player $5 for every chat message:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onChat</span>(<span class="pl-smi">PlayerChatEvent</span> <span class="pl-s1"><span class="pl-c1">$</span>event</span>) : <span class="pl-smi">void</span> {
+  <span class="pl-s1"><span class="pl-c1">$</span>player</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getPlayer</span>();
+
+  <span class="pl-v">Capital</span>::<span class="pl-en">api</span>(<span class="pl-s">"0.1.0"</span>, <span class="pl-k">function</span>(<span class="pl-smi">Capital</span> <span class="pl-s1"><span class="pl-c1">$</span>api</span>) <span class="pl-k">use</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>) {
+      <span class="pl-k">try</span> {
+        yield from <span class="pl-s1"><span class="pl-c1">$</span>api</span>-&gt;<span class="pl-en">takeMoney</span>(
+          <span class="pl-s">"ChatFee"</span>,
+          <span class="pl-s1"><span class="pl-c1">$</span>player</span>,
+          <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">selector</span>,
+          <span class="pl-c1">5</span>, 
+          <span class="pl-k">new</span> <span class="pl-v">LabelSet</span>([<span class="pl-s">"reason"</span> =&gt; <span class="pl-s">"chatting"</span>]),
+        );
+
+        <span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">sendMessage</span>(<span class="pl-s">"You lost $5 for chatting"</span>);
+      } <span class="pl-k">catch</span>(<span class="pl-smi">CapitalException</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">kick</span>(<span class="pl-s">"You don't have money to chat"</span>);
+      }
+  });
+}</pre></div>
+<p>The first "ChatFee" is your plugin name
+so that server admins can track which plugin gave the money.
+Capital will create a system account for your plugin,
+and the money will actually go into the ChatFee system account.</p>
+<p>The second parameter <code>$player</code> tells Capital which player to take money from.</p>
+<p>The third parameter <code>$this-&gt;selector</code> tells Capital which account to take money from,
+as we have explained in the previous section.
+Note: if you have multiple different scenarios of giving/taking money,
+consider using different selectors.</p>
+<p>The fourth parameter <code>5</code> is the amount of money to take.
+This value must be an integer.</p>
+<p>The last parameter <code>new LabelSet(["reason" =&gt; "chatting"])</code>
+provides the labels for the transaction.
+Server admins can use these labels to perform analytics.
+You may want to let users configure these labels in the config too.</p>
+<p>The try-catch block lets you handle the scenario where
+player does not have enough money to be taken.
+However, remember that <strong>you cannot cancel <code>$event</code> after the first <code>yield</code></strong>,
+because transactions are asynchronous, which means that
+the event already happened by that time and it is too late to cancel.</p>
+<h2>
+<a id="user-content-giving-money-to-a-player" class="anchor" href="#giving-money-to-a-player" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Giving money to a player</h2>
+<p>Giving money is similar to taking money,
+except <code>takeMoney</code> becomes <code>addMoney</code>.
+Let's make a plugin called "HitReward" that
+gives the player money when they attack someone:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onDamage</span>(<span class="pl-smi">EntityDamageByEntityEvent</span> <span class="pl-s1"><span class="pl-c1">$</span>event</span>) : <span class="pl-smi">void</span> {
+  <span class="pl-s1"><span class="pl-c1">$</span>player</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getDamager</span>();
+  <span class="pl-k">if</span>(!<span class="pl-s1"><span class="pl-c1">$</span>player</span> instanceof <span class="pl-v">Player</span>) {
+    <span class="pl-k">return</span>;
+  }
+
+  <span class="pl-v">Capital</span>::<span class="pl-en">api</span>(<span class="pl-s">"0.1.0"</span>, <span class="pl-k">function</span>(<span class="pl-smi">Capital</span> <span class="pl-s1"><span class="pl-c1">$</span>api</span>) <span class="pl-k">use</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>) {
+    <span class="pl-k">try</span> {
+      yield from <span class="pl-s1"><span class="pl-c1">$</span>api</span>-&gt;<span class="pl-en">addMoney</span>(
+        <span class="pl-s">"HitReward"</span>,
+        <span class="pl-s1"><span class="pl-c1">$</span>player</span>,
+        <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">selector</span>,
+        <span class="pl-c1">5</span>, 
+        <span class="pl-k">new</span> <span class="pl-v">LabelSet</span>([<span class="pl-s">"reason"</span> =&gt; <span class="pl-s">"attacking"</span>]),
+      );
+
+      <span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">sendMessage</span>(<span class="pl-s">"You got $5"</span>);
+    } <span class="pl-k">catch</span>(<span class="pl-smi">CapitalException</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+      <span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">sendMessage</span>(<span class="pl-s">"You have too much money!"</span>);
+    }
+  });
+}</pre></div>
+<h2>
+<a id="user-content-paying-money-from-a-player-to-another" class="anchor" href="#paying-money-from-a-player-to-another" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Paying money from a player to another</h2>
+<p>Paying money is like taking money from one player and giving to another,
+but it only happens when <em>both</em> players have enough money and don't exceed limits.
+Neither player will lose or receive money if any limits are violated.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">pay</span>(<span class="pl-smi">Player</span> <span class="pl-s1"><span class="pl-c1">$</span>player1</span>, <span class="pl-smi">Player</span> <span class="pl-s1"><span class="pl-c1">$</span>player2</span>) : <span class="pl-smi">void</span> {
+  <span class="pl-v">Capital</span>::<span class="pl-en">api</span>(<span class="pl-s">"0.1.0"</span>, <span class="pl-k">function</span>(<span class="pl-smi">Capital</span> <span class="pl-s1"><span class="pl-c1">$</span>api</span>) <span class="pl-k">use</span>(<span class="pl-s1"><span class="pl-c1">$</span>player1</span>, <span class="pl-s1"><span class="pl-c1">$</span>player2</span>) {
+    <span class="pl-k">try</span> {
+      yield from <span class="pl-s1"><span class="pl-c1">$</span>api</span>-&gt;<span class="pl-en">pay</span>(
+        <span class="pl-s1"><span class="pl-c1">$</span>player1</span>,
+        <span class="pl-s1"><span class="pl-c1">$</span>player2</span>,
+        <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">selector</span>,
+        <span class="pl-c1">5</span>, 
+        <span class="pl-k">new</span> <span class="pl-v">LabelSet</span>([<span class="pl-s">"reason"</span> =&gt; <span class="pl-s">"payment"</span>]),
+      );
+
+      <span class="pl-s1"><span class="pl-c1">$</span>player1</span>-&gt;<span class="pl-en">sendMessage</span>(<span class="pl-s">"You paid $5 to "</span> . <span class="pl-s1"><span class="pl-c1">$</span>player2</span>-&gt;<span class="pl-en">getName</span>());
+    } <span class="pl-k">catch</span>(<span class="pl-smi">CapitalException</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+      <span class="pl-s1"><span class="pl-c1">$</span>player1</span>-&gt;<span class="pl-en">sendMessage</span>(<span class="pl-s">"Failed!"</span>);
+    }
+  });
+}</pre></div>
+<p>All arguments are same as before,
+except you don't need to pass your plugin name
+because the money came from a player and you don't need a plugin account.</p>
+<p>If the payer and receiver sides have different amounts (e.g. service fee),
+you have to use <code>payUnequal</code> instead.
+The following code makes <code>$player1</code> pay <code>$player2</code> $5,
+plus giving $3 service fee to the "ServiceFee" system account:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">pay</span>(<span class="pl-smi">Player</span> <span class="pl-s1"><span class="pl-c1">$</span>player1</span>, <span class="pl-smi">Player</span> <span class="pl-s1"><span class="pl-c1">$</span>player2</span>) : <span class="pl-smi">void</span> {
+  <span class="pl-v">Capital</span>::<span class="pl-en">api</span>(<span class="pl-s">"0.1.0"</span>, <span class="pl-k">function</span>(<span class="pl-smi">Capital</span> <span class="pl-s1"><span class="pl-c1">$</span>api</span>) <span class="pl-k">use</span>(<span class="pl-s1"><span class="pl-c1">$</span>player1</span>, <span class="pl-s1"><span class="pl-c1">$</span>player2</span>) {
+    <span class="pl-k">try</span> {
+      yield from <span class="pl-s1"><span class="pl-c1">$</span>api</span>-&gt;<span class="pl-en">payUnequal</span>(
+        <span class="pl-s">"ServiceFee"</span>,
+        <span class="pl-s1"><span class="pl-c1">$</span>player1</span>,
+        <span class="pl-s1"><span class="pl-c1">$</span>player2</span>,
+        <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">selector</span>,
+        <span class="pl-c1">5</span> + <span class="pl-c1">3</span>, <span class="pl-c">// this is the total amount that $player1 has to lose</span>
+        <span class="pl-c1">5</span>, <span class="pl-c">// this is the total amount that $player2 gets</span>
+        <span class="pl-k">new</span> <span class="pl-v">LabelSet</span>([<span class="pl-s">"reason"</span> =&gt; <span class="pl-s">"payment"</span>]),
+        <span class="pl-k">new</span> <span class="pl-v">LabelSet</span>([<span class="pl-s">"reason"</span> =&gt; <span class="pl-s">"service-fee"</span>]), <span class="pl-c">// this label set is applied on the transaction from $player1 to the system account</span>
+      );
+
+      <span class="pl-s1"><span class="pl-c1">$</span>player1</span>-&gt;<span class="pl-en">sendMessage</span>(<span class="pl-s">"You paid $5 to "</span> . <span class="pl-s1"><span class="pl-c1">$</span>player2</span>-&gt;<span class="pl-en">getName</span>() . <span class="pl-s">" and paid $3 service fee"</span>);
+    } <span class="pl-k">catch</span>(<span class="pl-smi">CapitalException</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+      <span class="pl-s1"><span class="pl-c1">$</span>player1</span>-&gt;<span class="pl-en">sendMessage</span>(<span class="pl-s">"Failed!"</span>);
+    }
+  });
+}</pre></div>
+<p>It is also possible for player1 to pay less and player2 to pay more.
+In that case, player1 only pays the amount to player2,
+then the system account will pay the rest to player2.</p>
+<h2>
+<a id="user-content-getting-money-for-a-player" class="anchor" href="#getting-money-for-a-player" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting money for a player</h2>
+<p>If you want to check whether the player has enough money for something,
+use <code>takeMoney</code> as explained above and handle the error case.</p>
+<p>If you just want to display player money, use InfoAPI.
+The default config registered the <code>{money}</code> info on players,
+but users can change this based on their config setup.
+Consider using InfoAPI to compute the messages
+and let the user set their own messages.
+See <a href="https://github.com/SOF3/InfoAPI">InfoAPI readme</a> for usage guide.</p>
+<h1>
+<a id="user-content-advanced-api" class="anchor" href="#advanced-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advanced API</h1>
+<p>The advanced API is for advanced developers
+who want to use the specific features in Capital
+in addition to the basic money manipulation operations.</p>
+<h2>
+<a id="user-content-async-functions" class="anchor" href="#async-functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Async functions</h2>
+<p>Capital uses <a href="https://github.com/SOF3/await-generator">await-generator</a>,
+which enables asynchronous programming using generators.
+Functions that return <code>Generator&lt;mixed, mixed, mixed, T&gt;</code>
+are async functions that return values of type <code>T</code>.
+There is a special phpstan-level type alias <code>VoidPromise</code>,
+which is just shorthand for <code>Generator&lt;mixed, mixed, mixed, void&gt;</code>.</p>
+<p>Generator functions must always be called with <code>yield from</code> instead of <code>yield</code>.
+Functions that delegate to another generator function MUST always
+<code>return yield from delegate_function();</code>,
+even though <code>return delegate_function();</code> and
+<code>return yield delegate_function();</code> have similar semantics.
+This is to ensure consistent behavior where
+async functions only start executing when passed to the await-generator runtime.</p>
+<h2>
+<a id="user-content-module-system-and-dependency-injection" class="anchor" href="#module-system-and-dependency-injection" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Module system and dependency injection</h2>
+<p>Capital is module-based.
+Every module containing a <code>Mod</code> class is a module.
+Each module has its independent semantic versioning line,
+as indicated by the <code>API_VERSION</code> constant.
+The <code>Mod</code> class is responsible for starting and stopping
+components that cannot wait to be initialized only on-demand,
+such as commands, event handlers and InfoAPI infos/fallbacks.</p>
+<p>Classes that only have one useful instance in the runtime are called "singletons".
+To facilitate unit testing in the future,
+singletons do not use the traditional <code>getInstance()</code> style.
+Instead, all singletons are managed by the <code>Di</code> namespace.
+If a (singleton or non-singleton) class requires an instance of a singleton class,
+it can implement the <code>Di\FromContext</code> interface and use the <code>Di\SingletonArgs</code> trait,
+then declare all required classes in the constructor, for example:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">SOFe</span>\<span class="pl-v">Capital</span>\<span class="pl-v">Di</span>;
+
+<span class="pl-k">class</span> <span class="pl-v">Foo</span> <span class="pl-k">implements</span> <span class="pl-v">Di</span>\<span class="pl-v">FromContext</span> {
+  <span class="pl-k">use</span> <span class="pl-v">Di</span>\<span class="pl-v">SingletonArgs</span>;
+
+  <span class="pl-k">public</span> <span class="pl-k">function</span> __construct(
+    <span class="pl-smi">private</span> <span class="pl-v">Bar</span> <span class="pl-s1"><span class="pl-c1">$</span>bar</span>,
+    <span class="pl-smi">private</span> <span class="pl-v">Qux</span> <span class="pl-s1"><span class="pl-c1">$</span>qux</span>,
+  )
+}</pre></div>
+<p>Alternatively, if initialization of the object is async
+(e.g. <code>Database\Database</code> initialization requires waiting for table creation queries),
+or the developer does not wish to mix initialization logic in the constructor
+(it is a bad practice to do anything
+other than field initialization and validation in the constructor),
+declare <code>public static function fromSingletonArgs</code> in a similar style.
+<code>fromSingletonArgs</code> can return either <code>self</code> or <code>Generator&lt;mixed, mixed, mixed, self&gt;</code>.</p>
+<p>The class can be instantiated with <code>Foo::instantiateFromContext(Di\Context $context)</code>.
+Alternatively, if <code>Foo</code> itself is a singleton class,
+it can additionally implement <code>Di\Singleton</code> and use the trait <code>Di\SingletonTrait</code>,
+then it can be requested from another <code>FromContext</code> class with the same style.</p>
+<p>All <code>Mod</code> classes are singleton and use <code>Di\SingletonArgs</code>.
+They are required in the <code>Loader\Loader</code> (this is <em>not</em> the main class) singleton,
+which is explicitly created from the main class <code>onEnable</code>.</p>
+
+<p>The main class (<code>Plugin\MainClass</code>) is a singleton,
+although it is not initialized lazily like other FromContext classes
+(since it is the same instance that started loading everything).
+Note that, unlike many other plugins,
+the main class does not have any functionality by itself.
+It serves only to implement the <code>Plugin</code> interface
+as required by some PocketMine APIs,
+and is generally useless except for registering commands and event handlers.</p>
+<p>The <code>Di\Context</code> is also a singleton,
+but similar to the main class, it is not initialized lazily.
+Other classes can use it to flexibly require new objects that
+were not requested in the constructor under special circumstances.</p>
+<p>The await-std instance (<code>\SOFe\AwaitStd\AwaitStd</code>) does not implement <code>Di\Singleton</code>,
+but it is also special-cased to allow singleton-like usage.</p>
+<p>The <code>\Logger</code> interface is not a singleton.
+However, <code>FromContext</code> classes can declare a parameter of type <code>\Logger</code>,
+then the DI framework will create a new logger for the class.
+(This logger is derived from the plugin logger,
+but is not equal to the plugin logger itself)</p>
+<h2>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h2>
+<p>Capital implements a self-healing config manager.
+Each module has its own <code>Config</code> class to manage module-specific configuration.
+In addition to the singleton and FromContext interfaces,
+each <code>Config</code> class also implements <code>Config\ConfigInterface</code> and uses <code>Config\ConfigTrait</code>,
+implementing a <code>parse</code> method that reads values
+from a <code>Config\Parser</code> object into itself.</p>
+<p>The first time <code>parse</code> is called, <code>Config\Parser</code> is in non-fail-safe mode,
+which means methods like <code>expectString</code> would throw a <code>Config\ConfigException</code>
+if the parsed config contains invalid types or data.
+Upon catching a <code>Config\ConfigException</code>,
+the config framework calls <code>parse</code> on all <code>Config</code> classes again,
+this time providing a <code>Config\Parser</code> in fail-safe mode,
+which would no longer throw <code>Config\ConfigException</code>.
+Instead, the parser will add missing fields (along with documentation)
+or replace incorrect fields in the config,
+which are saved to the config after all module configs have been parsed.
+<code>Config</code> classes can also use the <code>failSafe</code> method in the <code>Config\Parser</code>
+to <em>either</em> return a value <em>or</em> throw a <code>Config\ConfigException</code>
+depending on the parser mode.
+This strategy allows automatic config refactor when the user changes critical settings
+like the <a href="#schema">schema</a>, which cascades changes to many other parts in the config.</p>
+<p>Due to difficulties with cyclic dependencies,
+all <code>Config</code> classes must be separated listed in the <code>Config\Raw::ALL_CONFIG</code> constant.</p>
+<h2>
+<a id="user-content-database" class="anchor" href="#database" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Database</h2>
+<p>Capital uses <a href="https://github.com/poggit/libasynql">libasynql</a> for database connection.
+Note that the libasynql DataConnector is exposed in the Database API,
+whcih means the SQL definition is part of semantic versioning.
+All structural changes are considered as backward-incompatible changes.
+The <code>Database</code> class also provides some low-level
+(although higher level than raw SQL queries) APIs to access the database.
+Other modules should consider using the APIs in the <code>SOFe\Capital\Capital</code> singleton,
+which provides more user-friendly and type-safe APIs than the <code>Database</code> class.</p>
+<p>Raw queries are written in <a href="resources/mysql">resources/mysql</a>
+and <a href="resources/sqlite">resources/sqlite</a>.
+There is a slight diversion in MySQL and SQLite queries due to different requirements;
+SQLite does not require any synchronization and assumes FIFO query execution.
+MySQL assumes there may be multiple servers using the database,
+plus external services (such as web servers) that may modify the data arbitrarily.</p>
+<h2>
+<a id="user-content-labels" class="anchor" href="#labels" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Labels</h2>
+<p>The Capital database is gameplay-agnostic.
+This means the database design is independent of how accounts are created.
+The database module does not know anything about players or currencies or worlds.
+Instead, each account is attached with <em>labels</em> (a string-to-string map),
+which provide information about the account and enable account searching.</p>
+<p>Each player may have zero or more accounts,
+determined by the <a href="#schema">schema</a> configured.
+Generally speaking, player accounts are identified by the <code>capital/playerUuid</code> label
+(or <code>capital/playerName</code> if username display is required);
+analytics modules can use this label to identify accounts associated to a player.</p>
+<p>Capital aims to provide reproducible transactions.
+All account balance changes other than initial account creation
+should be performed through a transaction.
+In the case of balance change as initiated by an operator
+or automatic reward provided by certain gameplay (e.g. kill reward),
+a system account (known as an "oracle") should be used as the payer/payee.
+Oracles do not have player identification labels like <code>capital/playerUuid</code>,
+but they use the <code>capital/oracle</code> to identify themselves.</p>
+<p>Other modules/plugins can also define other account types.
+As long as they have their own labels that do not collide with existing labels,
+they are expected to work smoothly along with other components.</p>
+<p>Transactions can also have their own labels.
+At the current state, the exact usage of transaction labels is not confirmed yet.
+It is expected that transaction labels can be used to analyze economic activity,
+such as the amount of capital flow in certain industries.</p>
+<p>The database can search accounts and transactions matching a "label selector",
+which is an array of label names to values.
+Accounts/transactions are matched by a selector if
+they have all the labels specified in the selector.
+An empty value in a label selector matches all accounts/transactions
+with that label name regardless of the value.</p>
+<h2>
+<a id="user-content-schema" class="anchor" href="#schema" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Schema</h2>
+<p>A schema abstracts the concept of labels
+by expressing them in more user-friendly terminology.
+A schema is responsible for defining the accounts for a player
+and parsing config into a specific account selector.</p>
+<p>There are currently two builtin schema types:</p>
+<ul>
+<li>
+<code>basic</code>: Each player uses the same account for everything.</li>
+<li>
+<code>currency</code>: Currencies are defined in schema config,
+where each player has one account for each currency.</li>
+</ul>
+<p>There are other planned schema types, which impose speical challenges:</p>
+<ul>
+<li>
+<code>world</code>: Each player has one account for each world.
+This means accounts must be created lazily and dynamically,
+because new worlds may be loaded over time.</li>
+<li>
+<code>wallet</code>: Accounts are bound to inventory items instead of players.
+Players can spend money in an account
+when the item associated with the account is in the player's inventory.
+This means the player label is mutable and requires real-time updating.</li>
+</ul>
+<p>Let's explain how schemas work with a payment command and a currency schema.
+The default schema is configured as:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">schema</span>:
+  <span class="pl-ent">type</span>: <span class="pl-s">currency</span>
+  <span class="pl-ent">currencies</span>:
+    <span class="pl-ent">coins</span>: <span class="pl-s">{...}</span>
+    <span class="pl-ent">gems</span>: <span class="pl-s">{...}</span>
+    <span class="pl-ent">tokens</span>: <span class="pl-s">{...}</span></pre></div>
+<p>The payment command is configured with a section like this:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">accounts</span>:
+  <span class="pl-ent">allowed-currencies</span>: <span class="pl-s">[coins, tokens]</span></pre></div>
+<p>This config section is passed to the default schema,
+which returns a new <code>Schema</code> object that
+only contains the currency subset <code>[coins, tokens]</code>.</p>
+<p>When a player runs the payment command (e.g. <code>/pay SOFe 100 coins</code>),
+the remaining command arguments (<code>["coins"]</code>)
+are passed to the subset schema,
+which decides to parse the first argument as the currency name.
+Since we only use the subset schema,
+only coins and tokens are accepted.
+The subset schema returns a final <code>Schema</code> object
+that knows <code>coins</code> have been selected.
+The sender and recipient are passed to the final <code>Schema</code>,
+which returns a label selector for the sender and recipient accounts.
+If no eligible accounts are found,
+the plugin tries to migrate the accounts
+from imported sources as specified by the schema.
+If no migration is eligible,
+it creates new accounts based on initial setup specified by the schema.</p>
+<h2>
+<a id="user-content-analytics" class="anchor" href="#analytics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Analytics</h2>
+<p>The Analytics module consists of two parts: Single and Top.</p>
+<h2>
+<a id="user-content-single-metrics" class="anchor" href="#single-metrics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Single metrics</h2>
+<p><code>Analytics\Single</code> computes single-value metrics.</p>
+<p>The <code>Analytics\Single\Query</code> interface abstracts different metric types
+parameterized by a generic parameter <code>P</code>.
+Use <code>CachedValue::loop</code> to spawn a refresh loop that fetches the latest metric value.
+If <code>P</code> is <code>Player</code>, use <code>PlayerInfoUpdater::registerListener()</code>
+to automatically spawn refresh loops for online players.</p>
+<h2>
+<a id="user-content-top-metrics" class="anchor" href="#top-metrics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Top metrics</h2>
+<p><code>Analytics\Top</code> reports server-wide top metrics.</p>
+<p>Due to the label-oriented mechanism,
+it is not possible to efficiently fetch the top accounts directly
+because the SQL database cannot be indexed by a specific label.
+To allow efficient top metric queries,
+the metric is first computed for each grouping label value
+(usually the player UUID) and cached in the <code>capital_analytics_top_cache</code> table.</p>
+<p>A top metric query is defined by the following:</p>
+<ul>
+<li>The aggregator to use.
+This also defines whether the query operates on accounts or transactions.
+Currently all aggregators are accounts-only or transactions-only,
+but there will be aggregators on transactions for each account in the future.</li>
+<li>The label selector that filters rows.
+For example, if the aggregator is about number of transactions of each player,
+the label selector filters away non-player accounts
+(it is not a transaction label selector).</li>
+<li>The grouping label name, where its values will be used to group rows.
+For queries on top players, this is <code>AccountLabels::PLAYER_UUID</code>.</li>
+</ul>
+<p>These three values uniquely identify a top query for computation cache.
+These values are md5-hashed into the <code>capital_analytics_top_cache.query</code> column,
+which are reused on multiple servers.
+The computation takes place in batches, updating a subset of label values each time.
+Call <code>Analytics\Top\Mod::runRefreshLoop()</code> to start a refreshing loop.</p>
+<p><code>Analytics\Top\DatabaseUtils::fetchTopAnalytics</code> fetches the cached data for display.
+For each <code>displayLabels</code> label, a random label value for matching rows
+with the name equal to the <code>displayLabels</code> label is returned in the output for display.</p>
+<h2>
+<a id="user-content-transfer" class="anchor" href="#transfer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Transfer</h2>
+
+<h2>
+<a id="user-content-migration" class="anchor" href="#migration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Migration</h2>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e145f3809e59e5e","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

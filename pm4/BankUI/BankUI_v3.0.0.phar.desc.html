@@ -1,0 +1,88 @@
+<h1>
+<a id="user-content-information" class="anchor" href="#information" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Information</h1>
+<ul>
+<li>This plugin allows players to store their money in a bank.</li>
+</ul>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Withdraw Money into Bank</li>
+<li>Deposit Money from Bank</li>
+<li>Transfer Money to Other Players Bank Accounts</li>
+<li>Transaction Log</li>
+<li>Daily Interest</li>
+<li>Configurable Interest Rates</li>
+<li>Admins Can Manage Other Players Bank With "/bank {PlayerName}"</li>
+</ul>
+<h1>
+<a id="user-content-command" class="anchor" href="#command" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command</h1>
+<ul>
+<li>/bank</li>
+<li>/bank {PlayerName}</li>
+</ul>
+<h1>
+<a id="user-content-important" class="anchor" href="#important" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Important</h1>
+<ul>
+<li>This plugin Requires EconomyAPI by OneBone</li>
+</ul>
+<h1>
+<a id="user-content-images" class="anchor" href="#images" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Images</h1>
+<p><a href="https://user-images.githubusercontent.com/34932094/124204221-37c3c280-daa4-11eb-826f-8c6511cf9649.png" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/34932094/124204221-37c3c280-daa4-11eb-826f-8c6511cf9649.png" alt="Bank5" style="max-width:100%;"></a>
+<a href="https://user-images.githubusercontent.com/34932094/122729370-b7e55f00-d23e-11eb-8aa6-1d8e8b47e70f.PNG" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/34932094/122729370-b7e55f00-d23e-11eb-8aa6-1d8e8b47e70f.PNG" alt="Bank2" style="max-width:100%;"></a>
+<a href="https://user-images.githubusercontent.com/34932094/122729371-b7e55f00-d23e-11eb-8a94-ee292bab50f8.PNG" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/34932094/122729371-b7e55f00-d23e-11eb-8a94-ee292bab50f8.PNG" alt="Bank3" style="max-width:100%;"></a>
+<a href="https://user-images.githubusercontent.com/34932094/122729372-b7e55f00-d23e-11eb-9a8c-f44571718108.PNG" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/34932094/122729372-b7e55f00-d23e-11eb-9a8c-f44571718108.PNG" alt="Bank4" style="max-width:100%;"></a>
+<a href="https://user-images.githubusercontent.com/34932094/124215248-48cafe80-dab9-11eb-930d-df1b113a7d3d.PNG" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/34932094/124215248-48cafe80-dab9-11eb-930d-df1b113a7d3d.PNG" alt="Bank6" style="max-width:100%;"></a>
+<a href="https://user-images.githubusercontent.com/34932094/141248349-65d9629c-2e30-42d3-aa4a-d05909c5908e.PNG" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/34932094/141248349-65d9629c-2e30-42d3-aa4a-d05909c5908e.PNG" alt="admn" style="max-width:100%;"></a></p>
+<h1>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<ul>
+<li>bankui.admin</li>
+</ul>
+<h1>
+<a id="user-content-developer-api" class="anchor" href="#developer-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Developer API</h1>
+<ul>
+<li>
+<p>You can give/take/set/get players money/transactions using functions.</p>
+</li>
+<li>
+<p>Add Money:
+<code>BankUI::getInstance()-&gt;addMoney($playerName, $amount);</code></p>
+</li>
+<li>
+<p>Take Money:
+<code>BankUI::getInstance()-&gt;takeMoney($playerName, $amount);</code></p>
+</li>
+<li>
+<p>Set Money:
+<code>BankUI::getInstance()-&gt;setMoney($playerName, $amount);</code></p>
+</li>
+<li>
+<p>Get Money:
+<code>BankUI::getInstance()-&gt;getMoney($playerName);</code></p>
+</li>
+<li>
+<p>Add Transaction:
+<code>BankUI::getInstance()-&gt;addTransaction($playerName, $message);</code></p>
+</li>
+</ul>
+<h1>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<pre><code># DO NOT TOUCH
+config-ver: 1
+
+# If true, players will get daily interest for the money in their bank
+enable-interest: = true
+
+# Interst Rates is in percentage so if interst-rates = 50, it means 50% Interest Rates, if it is set at 1, it means 1% interest rates. (It is recommended to keep this low)
+interest-rates: 1
+
+# Timezones can be found at https://www.php.net/manual/en/timezones.php if you don't know what your doing, keep this at "America/Chicago" (OR IT WILL BREAK THE PLUGIN). Players will recieve their daily interest at 12pm in this timezone.
+timezone: America/Chicago
+</code></pre>
+<h1>
+<a id="user-content-credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h1>
+<ul>
+<li>Icon from <a href="https://www.flaticon.com" rel="nofollow">www.flaticon.com</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e145e121cb9986c","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

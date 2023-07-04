@@ -1,0 +1,85 @@
+<h1>
+<a id="user-content-stackstorage-" class="anchor" href="#stackstorage-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>StackStorage <a href="https://poggit.pmmp.io/p/StackStorage" rel="nofollow"><img src="https://camo.githubusercontent.com/2dfa39a1bb37da7a993ecb3d93c6d8cec8ac045d98a3e924ca0bbf92eba6b3fd/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f537461636b53746f72616765" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/StackStorage" style="max-width:100%;"></a>
+</h1>
+<p>Add endless storage that is simple and easy to use<br>
+Please check the Feature tab for details.</p>
+<h1>
+<a id="user-content-setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h1>
+<h2>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h2>
+<h3>
+<a id="user-content-configyml" class="anchor" href="#configyml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>config.yml</h3>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> If you are using mysql, choose whether to initialize the function in the DB at server startup</span>
+<span class="pl-c"><span class="pl-c">#</span> It is recommended to disable it only when using the same database on multiple servers</span>
+<span class="pl-c"><span class="pl-c">#</span> You need to enable this once to load the plugin and initialize the function.</span>
+<span class="pl-ent">init_func</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> You can specify the interval to save the cache in seconds</span>
+<span class="pl-ent">cache_interval</span>: <span class="pl-c1">1</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Checks storage data when the server starts</span>
+<span class="pl-ent">problem_auto_solution</span>: <span class="pl-c1">true</span></pre></div>
+<h3>
+<a id="user-content-sqlyml" class="anchor" href="#sqlyml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>sql.yml</h3>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">database</span>:
+  <span class="pl-c"><span class="pl-c">#</span> mysql or sqlite</span>
+  <span class="pl-ent">type</span>: <span class="pl-s">mysql</span>
+
+    <span class="pl-c"><span class="pl-c">#</span> Edit these settings only if you choose "sqlite".</span>
+  <span class="pl-ent">sqlite</span>:
+    <span class="pl-c"><span class="pl-c">#</span> The file name of the database in the plugin data folder.</span>
+  <span class="pl-c"><span class="pl-c">#</span> You can also put an absolute path here.</span>
+    <span class="pl-ent">file</span>: <span class="pl-s">data.sqlite</span>
+  <span class="pl-c"><span class="pl-c">#</span> Edit these settings only if you choose "mysql".</span>
+  <span class="pl-ent">mysql</span>:
+    <span class="pl-ent">host</span>: <span class="pl-s">127.0.0.1</span>
+    <span class="pl-c"><span class="pl-c">#</span> Avoid using the "root" user for security reasons.</span>
+    <span class="pl-ent">username</span>: <span class="pl-s">StackStorage</span>
+    <span class="pl-ent">password</span>: <span class="pl-s">password</span>
+    <span class="pl-c"><span class="pl-c">#</span> Database name</span>
+    <span class="pl-ent">schema</span>: <span class="pl-s">StackStorage</span>
+  <span class="pl-c"><span class="pl-c">#</span> The maximum number of simultaneous SQL queries</span>
+  <span class="pl-c"><span class="pl-c">#</span> Recommended: 1 for sqlite, 2 for MySQL. You may want to further increase this value if your MySQL connection is very slow.</span>
+  <span class="pl-ent">worker-limit</span>: <span class="pl-c1">2</span></pre></div>
+<h3>
+<a id="user-content-mysql-setup" class="anchor" href="#mysql-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mysql Setup</h3>
+<div class="highlight highlight-source-sql"><pre><span class="pl-k">CREATE</span> <span class="pl-k">DATABASE</span> <span class="pl-en">StackStorage</span>;
+<span class="pl-k">CREATE</span> <span class="pl-k">USER</span> <span class="pl-en">StackStorage</span> IDENTIFIED BY <span class="pl-s"><span class="pl-pds">'</span>password<span class="pl-pds">'</span></span>;
+<span class="pl-k">GRANT</span> ALL <span class="pl-k">on</span> StackStorage.<span class="pl-k">*</span> to StackStorage;</pre></div>
+<h1>
+<a id="user-content-how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h1>
+<p>You can open the storage at <code>/ stackstorage</code> or <code>/st</code></p>
+<h1>
+<a id="user-content-admin" class="anchor" href="#admin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Admin</h1>
+<p>You can open someone else's storage with the following command Also, if the player is online, you can also open it with
+the player's name.</p>
+<p>/stackstorage [xuid]</p>
+<h1>
+<a id="user-content-feature" class="anchor" href="#feature" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Feature</h1>
+<p>Use the familiar chest gui that opens the most while playing with Minecraft to get items in and out infinitely
+Enchantments and durability can also be saved
+<a href="https://github.com/Ree-jp-minecraft/StackStrage/blob/master/image/image1.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Ree-jp-minecraft/StackStrage/raw/master/image/image1.png" alt="image" style="max-width:100%;"></a></p>
+<p>If you put more than 64 pieces of one item, only 64 pieces will be displayed in the storage, but the amount currently
+stored in the storage is written in the item description field.
+The description field will be automatically deleted when the player puts it in the inventory, so it will not interfere
+<a href="https://github.com/Ree-jp-minecraft/StackStrage/blob/master/image/image2.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Ree-jp-minecraft/StackStrage/raw/master/image/image2.png" alt="image2" style="max-width:100%;"></a></p>
+<h1>
+<a id="user-content-permission" class="anchor" href="#permission" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permission</h1>
+<p><code>stackstorage.command.my</code><br>
+Permission to open my storage by command<br>
+Default can be used by anyone</p>
+<p><code>stackstorage.command.user</code><br>
+Permission to open all user storage by command<br>
+Default can be used by op</p>
+<h1>
+<a id="user-content-stackstorage-api" class="anchor" href="#stackstorage-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>StackStorage API</h1>
+<p>Interface<br>
+<a href="https://github.com/Ree-jp-minecraft/StackStrage/blob/master/src/ree_jp/stackstorage/api/IStackStorageAPI.php">IStackStorageAPI</a></p>
+<p>Document<br>
+<a href="https://blog.ree-jp.net/stack-storage-api/" rel="nofollow">https://blog.ree-jp.net/stack-storage-api/</a></p>
+<h1>
+<a id="user-content-note" class="anchor" href="#note" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Note</h1>
+<ul>
+<li>Data of versions below 0.1.0 cannot be inherited</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e146667cd6dcfc4","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

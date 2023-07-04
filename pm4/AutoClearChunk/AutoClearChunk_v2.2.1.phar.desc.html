@@ -1,0 +1,34 @@
+<h1>
+<a id="user-content-autoclearchunk" class="anchor" href="#autoclearchunk" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AutoClearChunk</h1>
+<p>A PocketMine-MP plugin that can reduce or clean up the chunks in your world</p>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Custom Clear Message</li>
+<li>Custom Clear Interval Time</li>
+<li>Per world clear chunk</li>
+</ul>
+<h1>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span> The time used to run the clear chunk task.</span>
+<span class="pl-c"><span class="pl-c">#</span> Default: 600 seconds.</span>
+<span class="pl-ent">clear-interval</span>: <span class="pl-c1">600</span>
+
+<span class="pl-c"><span class="pl-c">#</span> The message used when successfully clearing the chunk.</span>
+<span class="pl-c"><span class="pl-c">#</span> Use {COUNT} to get chunk count cleared.</span>
+<span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;aSuccessfully cleared &amp;b{COUNT} chunks<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> The name of the world folder that you don't want to clear the chunk.</span>
+<span class="pl-ent">blacklisted-worlds</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>Lobby<span class="pl-pds">"</span></span>
+...</pre></div>
+<h1>
+<a id="user-content-additional-notes" class="anchor" href="#additional-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h1>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/HazardTeam/AutoClearChunk/issues">here</a>
+</li>
+<li>Icons By <a href="https://icons8.com" rel="nofollow">icons8.com</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e145ddd1a68d021","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

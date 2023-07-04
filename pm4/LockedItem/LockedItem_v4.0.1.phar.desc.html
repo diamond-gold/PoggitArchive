@@ -1,0 +1,87 @@
+<div align="center">
+<h1>
+<a id="user-content-lockeditem-v401" class="anchor" href="#lockeditem-v401" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LockedItem| v4.0.1<h1>
+<a id="" class="anchor" href="#" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+</h1>
+</h1>
+<p>Player's item lock</p>
+</div>
+<h2>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>Player's item lock</li>
+<li>Players aren't afraid of losing items</li>
+</ul>
+<h2>
+<a id="user-content-for-devolopers" class="anchor" href="#for-devolopers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For Devolopers</h2>
+<p>You can access to LockedItem by using <code>LockedItem::getInstance()</code></p>
+<p><strong>Example:</strong></p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-v">LockedItem</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">setLocked</span>(<span class="pl-s1"><span class="pl-c1">$</span>item</span>);</pre></div>
+<h2>
+<a id="user-content-all-lockeditem-commands" class="anchor" href="#all-lockeditem-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>All LockedItem Commands:</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Command</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>/setlock</strong></td>
+<td><strong>Lock the item in hand</strong></td>
+</tr>
+<tr>
+<td><strong>/unlock</strong></td>
+<td><strong>Unlock the item in hand</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>LockedItem Pocketmine plugin in <a href="https://youtu.be/4urZM6Zgkww" rel="nofollow">Youtube</a> !</li>
+</ul>
+<h2>
+<a id="user-content---permissions" class="anchor" href="#--permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="page_with_curl" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c3.png">📃</g-emoji>  Permissions:</h2>
+<ul>
+<li>You can use permission <code>lockeditem.setlock</code> for command /setlock</li>
+<li>You can use permission <code>lockeditem.unlock</code> for command /unlock</li>
+</ul>
+<h2>
+<a id="user-content-configs" class="anchor" href="#configs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configs</h2>
+<pre><code>---
+# Config Main of LockedItem
+perm-message: You are not allowed to use this command!
+lock-message: Your item has been locked successfully!
+no-lock-message: Your item was previously locked!
+unlock-message: Your item has been successfully unlocked!
+no-unlock-message: Your item has not been locked before!
+item-hand-message: You need to hold the item in your hand to unlock!
+
+#Lore of item when locked
+item-lore: LOCKED
+# The item locked will not be able to interact with the itemframe if this is true
+no-touch: true
+# The when the item is locked, it cannot be put in the chest if this is true
+no-change-inventory: true
+...
+</code></pre>
+<h2>
+<a id="user-content-project-infomation" class="anchor" href="#project-infomation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project Infomation</h2>
+<table>
+<thead>
+<tr>
+<th>Plugin Version</th>
+<th>Pocketmine API</th>
+<th>PHP Version</th>
+<th>Plugin Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.0.1</td>
+<td>4.x.x</td>
+<td>8.0</td>
+<td>Completed</td>
+</tr>
+</tbody>
+</table>

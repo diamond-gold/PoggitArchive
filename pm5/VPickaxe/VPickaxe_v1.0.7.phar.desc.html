@@ -1,0 +1,81 @@
+<h1><a id="user-content-vpickaxe" class="anchor" aria-hidden="true" href="#vpickaxe"><span aria-hidden="true" class="octicon octicon-link"></span></a>VPickaxe</h1>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/VennDev/VPickaxe/blob/main/icon.png"><img src="https://github.com/VennDev/VPickaxe/raw/main/icon.png" alt="VPickaxe" height="150" width="150" style="max-width: 100%;"></a></p>
+- This is Plugin VPickaxe for PocketMine-PMMP 5.x
+- This Pickaxe makes your server experience even better with the levels that this plugin brings.
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Integrate and use everything based on commands to execute according to the level that you have.</li>
+</ul>
+<h1><a id="user-content-config" class="anchor" aria-hidden="true" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<pre lang="config"><code>---
+
+# Default name for Pickaxe
+default-name: "§r§l§bV§aPickaxe§r"
+
+# Lore for Pickaxe
+lore:
+  - "§r§7Owner: §e%owner%§r"
+  - "§r§7Level: §e%level%§r"
+  - "§r§7Exp: §e%exp%§r/§e%next_exp%§r"
+  - "§r§7Next Level: §e%next_level%§r"
+
+# The number is used to calculate the player's next level.
+formula: 5
+
+# Max level of the player.
+max-level: 2
+
+# Settings for level stage.
+level-stage:
+  2:
+    # The message to send to the player when they reach level 2.
+    message:
+      - '§aYou will now receive a reward for reaching level 2!'
+
+    # The enchantment to give the player when they reach level 2.
+    # You can see list enchants here: https://github.com/VennDev/NameEnchantPMMP
+    # In the source code of PMMP comes "enchantment." you should remove it and get their name.
+    enchants:
+      digging:
+        level: 1
+        command: 'enchant %player% efficiency 1'
+
+    # When the player breaks a block, they will receive a reward.
+    rewards-on-break-block:
+      chance: 10 # The chance to receive a reward. If you want to receive a reward every time, set it to 100.
+      random-mode: true
+      random-count: 1
+      commands:
+        - 'give %player% diamond 1'
+        - 'give %player% iron_ingot 1'
+        - 'give %player% gold_ingot 1'
+
+    # The command always to run when the player reaches level 2.
+    always-run-command:
+      random-mode: true
+      random-count: 1
+      commands:
+        - 'say %player% message a!'
+        - 'say %player% message b!'
+
+    # The command to run when the player reaches level 2 for the first time.
+    first-run-command:
+      random-mode: false
+      random-count: 1
+      commands:
+        - 'say %player% has reached level 5 for the first time!'
+        - 'give %player% diamond 1'
+        - 'enchant %player% efficiency 1'
+
+...
+</code></pre>
+<h1><a id="user-content-images" class="anchor" aria-hidden="true" href="#images"><span aria-hidden="true" class="octicon octicon-link"></span></a>Images</h1>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/VennDev/images/blob/main/VPickaxe.png"><img src="https://github.com/VennDev/images/raw/main/VPickaxe.png" alt="VPickaxe" height="300" width="400" style="max-width: 100%;"></a></p>
+<h1><a id="user-content-credits" class="anchor" aria-hidden="true" href="#credits"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h1>
+<ul>
+<li>Email: <a href="/cdn-cgi/l/email-protection#aadac4cbc79f9a9a9feacdc7cbc3c684c9c5c7"><span class="__cf_email__" data-cfemail="33435d525e0603030673545e525a5f1d505c5e">[email&#160;protected]</span></a>
+</li>
+<li>Paypal: <a href="/cdn-cgi/l/email-protection#a7cbcec1c2c5c8c6d39e979ee7c0cac6cecb89c4c8ca"><span class="__cf_email__" data-cfemail="6d01040b080f020c19545d542d0a000c0401430e0200">[email&#160;protected]</span></a>
+</li>
+</ul>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1469cc9fef15ea","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

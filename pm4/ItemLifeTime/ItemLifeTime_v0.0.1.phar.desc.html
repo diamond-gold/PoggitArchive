@@ -1,0 +1,44 @@
+<h1>
+<a id="user-content--itemlifetime" class="anchor" href="#-itemlifetime" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/DavyCraft648/ItemLifeTime/blob/main/icon.png" target="_blank" rel="noopener noreferrer"><img height="64" src="https://github.com/DavyCraft648/ItemLifeTime/raw/main/icon.png" width="64" style="max-width:100%;"></a> ItemLifeTime</h1>
+<p>Set custom dropped item lifetime in your server</p>
+<h2>
+<a id="user-content-how-does-this-works" class="anchor" href="#how-does-this-works" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How does this works?</h2>
+<p>Default lifetime for dropped items is 5 minutes (300 seconds)
+but you can change it with this plugin!</p>
+<h2>
+<a id="user-content-how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use?</h2>
+<ul>
+<li>
+<p><code>item-lifetime</code> in config.yml is used to change the lifetime in your whole server.</p>
+</li>
+<li>
+<p>Use <code>worlds</code> in the config if you want a separated item lifetime on each world in your server,
+Example:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">worlds</span>:
+  <span class="pl-ent">MyPrettyWorld</span>: <span class="pl-c1">120</span> <span class="pl-c"><span class="pl-c">#</span> Set item lifetime on MyPrettyWorld world to 120 second</span>
+  <span class="pl-ent">MyBadWorld</span>: <span class="pl-c1">360</span> <span class="pl-c"><span class="pl-c">#</span> Set item lifetime on MyBadWorld world to 360 second</span></pre></div>
+<p>Item lifetime in the world that not listed in <code>worlds</code> will set to <code>item-lifetime</code></p>
+</li>
+</ul>
+<h2>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h2>
+<div class="highlight highlight-source-yaml"><pre>--- <span class="pl-c"><span class="pl-c">#</span> ItemLifeTime plugin configuration file</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Set dropped item lifetime in your server (in second)</span>
+<span class="pl-c"><span class="pl-c">#</span> Default is 5 minutes (300 seconds)</span>
+<span class="pl-c"><span class="pl-c">#</span> Minimum value is 0, maximum is 1938</span>
+<span class="pl-c"><span class="pl-c">#</span> Item will never despawn if this set to -1</span>
+<span class="pl-ent">item-lifetime</span>: <span class="pl-c1">300</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Set different custom item lifetime on each of these worlds (optional)</span>
+<span class="pl-c"><span class="pl-c">#</span> Example configuration:</span>
+<span class="pl-c"><span class="pl-c">#</span> worlds:</span>
+<span class="pl-c"><span class="pl-c">#</span>   MyPrettyWorld: 120</span>
+<span class="pl-c"><span class="pl-c">#</span>   MyBadWorld: 360</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> This will set item lifetime in MyPrettyWorld world to 120 seconds, 360 seconds in MyBadWorld, else 300</span>
+<span class="pl-c"><span class="pl-c">#</span> seconds in the other worlds</span>
+<span class="pl-ent">worlds</span>: <span class="pl-s">{}</span>
+...
+</pre></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14623dbffcce9c","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

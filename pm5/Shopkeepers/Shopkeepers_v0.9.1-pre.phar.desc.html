@@ -1,0 +1,305 @@
+<p align="center">
+    <a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/FoxWorn3365/Shopkeepers/main/plugin-banner-white.png"><img src="https://raw.githubusercontent.com/FoxWorn3365/Shopkeepers/main/plugin-banner-white.png" style="max-width: 100%;"></a><br>
+    <strong>Add Shopkeepers to your PocketMine-MP world! Allow the creation of simple barter stores between players or create adminshops!</strong>
+    
+</p>
+<hr>
+<br>
+<p><strong><g-emoji class="g-emoji" alias="warning" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png">⚠️</g-emoji> We are not in any way related to the <a href="https://dev.bukkit.org/projects/shopkeepers" rel="nofollow">Shopkeepers plugin</a> for Bukkit!</strong></p>
+<br>
+Trying to get **Shopkeepers** for **PocketMine-MP 4**?<br>
+You can find the official version only on GitHub at [this link](<a href="https://github.com/FoxWorn3365/Shopkeepers/releases/tag/v0.9.1a-pre-pmmp4">https://github.com/FoxWorn3365/Shopkeepers/releases/tag/v0.9.1a-pre-pmmp4</a>)
+<h2><a id="user-content-introduction-video" class="anchor" aria-hidden="true" href="#introduction-video"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction video</h2>
+<p><a href="https://www.youtube.com/watch?v=sustUWTgmMo" rel="nofollow">Watch the video on YouTube</a></p>
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>Players can create theyr own Shopkeepers and manage it</li>
+<li>Admin Shopkeepers</li>
+<li>Vanilla trade page</li>
+<li>Shopkeeper inventory for non-admin Shopkeepers</li>
+<li>Hit prevention for shopkeepers</li>
+<li>Easy configuration with in-game GUI</li>
+<li>User-friendly Menu</li>
+<li>Support for Custom items</li>
+<li>PMMP4 and 5 support</li>
+</ul>
+<h2><a id="user-content-compatibility" class="anchor" aria-hidden="true" href="#compatibility"><span aria-hidden="true" class="octicon octicon-link"></span></a>Compatibility</h2>
+<p><strong>Shopkeepers</strong> is made to be multi-version, in fact I announce with great joy that the plugin is available for both PocketMine-MP 5 and PocketMine-MP 4!</p>
+<blockquote>
+<p><strong>Warning</strong><br>
+The Shopkeepers version for PocketMine-MP 4 is available exclusively here on GitHub since InvMenu has versions that are not compatible with each other!
+The branch can be found <a href="https://github.com/FoxWorn3365/Shopkeepers/tree/pmmp4">here</a></p>
+</blockquote>
+<h2><a id="user-content-configuration" class="anchor" aria-hidden="true" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h2>
+<p>The configuration of <strong>Shopkeepers</strong> allows you to customize some values to make it suitable for all servers.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enabled</td>
+<td>bool</td>
+<td>true</td>
+<td>Is the plugin enabled?</td>
+</tr>
+<tr>
+<td>max-entities-for-player</td>
+<td>int</td>
+<td>5</td>
+<td>Max shopkeeper's entities for one player (PER SHOP)</td>
+</tr>
+<tr>
+<td>max-entities-bypass</td>
+<td>array</td>
+<td>[]</td>
+<td>Player that can bypass this limitation</td>
+</tr>
+<tr>
+<td>banned-shop-names</td>
+<td>array</td>
+<td>[]</td>
+<td>List of banned names</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<p>The base command is <code>/shopkeepers</code> but you can also use <code>/sk</code>, <code>/skeepers</code> and <code>/shopk</code> as aliases.
+Here a list of all commands that you can use:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Args</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>info</td>
+<td>none</td>
+<td>Show the plugin's informations</td>
+</tr>
+<tr>
+<td>info</td>
+<td>SHOP NAME</td>
+<td>Show the shop configuration page</td>
+</tr>
+<tr>
+<td>edit</td>
+<td>SHOP NAME</td>
+<td>Edit the shop recepies</td>
+</tr>
+<tr>
+<td>create</td>
+<td>SHOP NAME / NULL</td>
+<td>Create a new shop, if the name is leaved empty will be generated</td>
+</tr>
+<tr>
+<td>summon</td>
+<td>SHOP NAME</td>
+<td>Summon a Shopkeeper entity (as a Villager) for your Shop</td>
+</tr>
+<tr>
+<td>rename</td>
+<td>SHOP NAME and NEW NAME</td>
+<td>[NOT AVAILABLE] Rename a current shop</td>
+</tr>
+<tr>
+<td>list</td>
+<td>none</td>
+<td>Show all of your shops</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-faq" class="anchor" aria-hidden="true" href="#faq"><span aria-hidden="true" class="octicon octicon-link"></span></a>F.A.Q.</h2>
+<h3><a id="user-content-how-to-create-an-admin-shop" class="anchor" aria-hidden="true" href="#how-to-create-an-admin-shop"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to create an Admin shop</h3>
+<p>There is not really an Admin shop but you can activate this function by using the command <code>/sk info &lt;SHOP NAME&gt;</code> and then clicking on the Blaze Powder and then clicking on the red wool block that has "Admin shop" as its name</p>
+<h3><a id="user-content-how-to-see-a-shopkeepers-inventory" class="anchor" aria-hidden="true" href="#how-to-see-a-shopkeepers-inventory"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to see a Shopkeeper's inventory</h3>
+<p>There are two ways:</p>
+<ul>
+<li>Use the command <code>/sk info &lt;SHOP NAME&gt;</code> and then click on the chest at the center of the GUI</li>
+<li>Click on the Shopkeeper (Villager) entity</li>
+</ul>
+<h3><a id="user-content-i-want-to-access-to-the-shopkeepers-trade-page-but-if-i-click-the-entity-i-access-the-inventory" class="anchor" aria-hidden="true" href="#i-want-to-access-to-the-shopkeepers-trade-page-but-if-i-click-the-entity-i-access-the-inventory"><span aria-hidden="true" class="octicon octicon-link"></span></a>I want to access to the Shopkeeper's trade page but if i click the entity i access the inventory!</h3>
+<p>Easy: shift and click on the Shopkeeper</p>
+<h3><a id="user-content-how-to-despawn-a-shopkeeper" class="anchor" aria-hidden="true" href="#how-to-despawn-a-shopkeeper"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to despawn a Shopkeeper</h3>
+<p>More easy: just hit it, it will die in only one hit!</p>
+<h2><a id="user-content-bug-reporting" class="anchor" aria-hidden="true" href="#bug-reporting"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bug reporting</h2>
+<p>Reporting bugs <del>to developers</del> to the developer<g-emoji class="g-emoji" alias="cry" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png">😢</g-emoji> is very important to ensure the stability of the plugin, so in order to better track and manage all reports it is <strong>incredibly necessary</strong> that they are reported via <a href="https://github.com/FoxWorn3365/Shopkeepers/issues">GitHub Issues</a>.<br>
+Here is what to include in the reporting to make it perfect:</p>
+<ol>
+<li>The <strong>complete</strong> crash error</li>
+</ol>
+<blockquote>
+<p>If it is not complete how do we know how it all happened?</p>
+</blockquote>
+<ol start="2">
+<li>All files from the <code>plugin_data/Shopkeepers</code> folder</li>
+</ol>
+<blockquote>
+<p>This way we can compare the error with those files to find a possible transcription error</p>
+</blockquote>
+<ol start="3">
+<li>The plugin's version</li>
+</ol>
+<blockquote>
+<p>It changes a lot from version to version, and this would help us a lot to understand where to look for</p>
+</blockquote>
+<ol start="4">
+<li>(OPTIONAL) The plugin download source</li>
+</ol>
+<blockquote>
+<p>Knowing where you downloaded the plugin from might help, always better to know some information</p>
+</blockquote>
+<ol start="5">
+<li>(OPTIONAL) The <code>Shopkeepers.phar</code>
+</li>
+</ol>
+<blockquote>
+<p>"Last wade," in case we can analyze the source</p>
+</blockquote>
+<h2><a id="user-content-contribution-guide" class="anchor" aria-hidden="true" href="#contribution-guide"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contribution guide</h2>
+<p>Any contribution is greatly appreciated because you help me to lighten my workload, so here are some small guidelines to follow when you want to contribute:</p>
+<ul>
+<li>Clear code</li>
+</ul>
+<blockquote>
+<p>I don't want to see things like this:</p>
+</blockquote>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">class</span> <span class="pl-v">Fox</span> {
+    <span class="pl-k">protected</span> <span class="pl-c1"><span class="pl-c1">$</span>fox</span>;  <span class="pl-c">// WHAT'S THE TYPEjQuery32108860561903979838_1687895631285???'?'Q'2'wqiadw sdfbuhwhwrf jhs</span>
+
+    <span class="pl-k">function</span> <span class="pl-en">create</span>(<span class="pl-s1"><span class="pl-c1">$</span>int</span>, <span class="pl-s1"><span class="pl-c1">$</span>bruh</span>) { <span class="pl-s1"><span class="pl-c1">$</span>bruh</span> = <span class="pl-c1">10</span>-<span class="pl-s1"><span class="pl-c1">$</span>int</span>+<span class="pl-s1"><span class="pl-c1">$</span>bruh</span>; <span class="pl-c">// AAAAAAAAAA. IT'S A PUBLIC, PRIVATE OR PROTECTED FUNCTION?!?!??!?</span>
+<span class="pl-c"></span>    <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>bruh</span>;                                       <span class="pl-c">// AND WHAT'S THE RETURN TYPE???? AND WHY THE CODE IS IN THE FIRST LINE????????</span>
+    }
+}</pre></div>
+<ul>
+<li>Update the "headers" of the file correctly</li>
+</ul>
+<blockquote>
+<p>They allow new contributors to understand what the file is for without having them parse 250 lines, so update them with the true purpose of the file!</p>
+</blockquote>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// CORRECT: </span>
+<span class="pl-c">/*</span>
+<span class="pl-c"> * Shopkeepers for PocketMine-MP</span>
+<span class="pl-c"> * Add custom shopkeepers to your PocketMine-MP server!</span>
+<span class="pl-c"> * </span>
+<span class="pl-c"> * Copyright (C) 2023-now FoxWorn3365</span>
+<span class="pl-c"> * Relased under GNU General Public License v3.0 (https://github.com/FoxWorn3365/Shopkeepers/blob/main/LICENSE)</span>
+<span class="pl-c"> * You can find the license file in the root folder of the project inside the LICENSE file!</span>
+<span class="pl-c"> * If not, see https://www.gnu.org/licenses/</span>
+<span class="pl-c"> * </span>
+<span class="pl-c"> * Useful links:</span>
+<span class="pl-c"> * - GitHub: https://github.com/FoxWorn3365/Shopkeepers</span>
+<span class="pl-c"> * - Contribution guidelines: https://github.com/FoxWorn3365/Shopkeepers#contributing</span>
+<span class="pl-c"> * - Author GitHub: https://github.com/FoxWorn3365</span>
+<span class="pl-c"> * </span>
+<span class="pl-c"> * Current file: /EntityManager.php</span>
+<span class="pl-c"> * Description: Load and save custom entities into and from a simple string</span>
+<span class="pl-c"> */</span>
+
+
+ <span class="pl-c">// WRONG:</span>
+ <span class="pl-c">/*</span>
+<span class="pl-c"> * Shopkeepers for PocketMine-MP</span>
+<span class="pl-c"> * Add custom shopkeepers to your PocketMine-MP server!</span>
+<span class="pl-c"> * </span>
+<span class="pl-c"> * Copyright (C) 2023-now FoxWorn3365</span>
+<span class="pl-c"> * Relased under GNU General Public License v3.0 (https://github.com/FoxWorn3365/Shopkeepers/blob/main/LICENSE)</span>
+<span class="pl-c"> * You can find the license file in the root folder of the project inside the LICENSE file!</span>
+<span class="pl-c"> * If not, see https://www.gnu.org/licenses/</span>
+<span class="pl-c"> * </span>
+<span class="pl-c"> * Useful links:</span>
+<span class="pl-c"> * - GitHub: https://github.com/FoxWorn3365/Shopkeepers</span>
+<span class="pl-c"> * - Contribution guidelines: https://github.com/FoxWorn3365/Shopkeepers#contributing</span>
+<span class="pl-c"> * - Author GitHub: https://github.com/FoxWorn3365</span>
+<span class="pl-c"> * </span>
+<span class="pl-c"> * Current file: /EntityManager.php</span>
+<span class="pl-c"> * Description: Idk make entites ez</span>
+<span class="pl-c"> */</span></pre></div>
+<ul>
+<li>
+<code>utils</code> is reserved for Static functions and final classes</li>
+</ul>
+<blockquote>
+<p>All functions in <code>utils</code> must have all static methods and all static classes must be in that directory and namespace</p>
+</blockquote>
+<ul>
+<li>Please <strong>DESCRIBE</strong> your changes in the pull request!</li>
+</ul>
+<blockquote>
+<p>I want to understand it</p>
+</blockquote>
+<h2><a id="user-content-permissions" class="anchor" aria-hidden="true" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h2>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">permissions</span>:
+  <span class="pl-ent">shopkeepers.base</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows users to use the base command<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.summon</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows users to summon player's shop<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.create</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to create a shop<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.edit</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to edit they'r shop<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.list</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to see a list of their shops<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.remove</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to despawn they'r Villager shops<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.rename</span>:
+    <span class="pl-ent">descritpion</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to rename they'r shops<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.namevisible</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to decide if the shopkepeer's name should be visible or no<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.admin</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows users to decide if the shopkeepers should be admin or none<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+  <span class="pl-ent">shopkeepers.shop.kill</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to kill every shopkeepers, also of other players<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+  <span class="pl-ent">shopkeepers.shop.defaultGUI</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to see and use the /sk command without args to open the base GUI<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.use</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to use a shopkeeper when they touch it<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">shopkeepers.shop.allowRemoteInventoryOpen</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow users to open a shopkeeper's inventory with the command /sk inventory<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-s">op</span></pre></div>
+<h2><a id="user-content-special-thanks" class="anchor" aria-hidden="true" href="#special-thanks"><span aria-hidden="true" class="octicon octicon-link"></span></a>Special thanks</h2>
+<p>Thanks to <a href="https://github.com/Muqsit">Muqsit</a> for the <a href="https://github.com/Muqsit/InvMenu">InvMenu</a> virion who have contributed to the creation for this plugin!<br>
+Also <a href="https://github.com/FrozenArea/TradeAPI">this plugin</a> helped me!</p>
+<h2><a id="user-content-roadmap" class="anchor" aria-hidden="true" href="#roadmap"><span aria-hidden="true" class="octicon octicon-link"></span></a>Roadmap</h2>
+<ul>
+<li>[x] Update the item object because now it's the old one</li>
+<li>[x] Make if the ContainerClose packet is received unset the <code>$this-&gt;trades-&gt;{PLAYER}</code> object because otherwise is OP!</li>
+<li>[x] Updated the item object with nbt</li>
+<li>[x] Working Admin shop (without inventory)</li>
+<li>[x] Inventory saving correctly</li>
+<li>[x] Player shop</li>
+<li>[x] Shopkeeper's inventory updating when players buy</li>
+<li>[x] Shopkeeper deny a trade if the inventory is without the item</li>
+<li>[x] Pre-stable version</li>
+<li>[ ] Stable version</li>
+<li>[ ] Online shopkeeper editor</li>
+<li>[ ] Online shopkeeper shop (yes, you will be able to make shopping from your phone on the subway!)</li>
+</ul>
+<h2><a id="user-content-contacts" class="anchor" aria-hidden="true" href="#contacts"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contacts</h2>
+<p>You can contact me via:</p>
+<ul>
+<li>Discord: <code>@foxworn</code>
+</li>
+<li>Email: <code>foxworn3365@gmail.com</code>
+</li>
+</ul>

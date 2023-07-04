@@ -1,0 +1,76 @@
+<h1>
+<a id="user-content-kygeklastposition" class="anchor" href="#kygeklastposition" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>KygekLastPosition</h1>
+<p><a href="https://discord.gg/CXtqUZv" rel="nofollow"><img src="https://camo.githubusercontent.com/7a7485cf4329bd9c625eb66cb957b45d9b7ce22cdcbf061dfa30c44f45bedc91/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3733353433393437323939323332313538372e7376673f6c6162656c3d266c6f676f3d646973636f7264266c6f676f436f6c6f723d66666666666626636f6c6f723d373338394438266c6162656c436f6c6f723d364137454332" alt="Discord" data-canonical-src="https://img.shields.io/discord/735439472992321587.svg?label=&amp;logo=discord&amp;logoColor=ffffff&amp;color=7389D8&amp;labelColor=6A7EC2" style="max-width:100%;"></a></p>
+<p><strong>NOTICE:</strong> Version 2.x.y is only compatible with PM4 and will not work with PM3. If you need a PM3-compatible version, please download the 1.x.y version by switching the version displayed on Poggit through the 'Switch version' dropdown.</p>
+<p>A PocketMine-MP plugin to teleport back to the position before the last teleport.</p>
+<h2>
+<a id="user-content--why-this-plugin-exists" class="anchor" href="#-why-this-plugin-exists" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="question" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2753.png">❓</g-emoji> Why This Plugin Exists</h2>
+<p>Sometimes you teleported to a location and you want to go back to the location before you got teleported. It takes time to go back to the location before you got teleported, so you might thinking of a plugin that could teleport you to the location before you got teleported. That's why we made KygekLastPosition plugin.</p>
+<h2>
+<a id="user-content--features" class="anchor" href="#-features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Features</h2>
+<ul>
+<li>Teleport yourself or other players back to the position before the last teleport</li>
+<li>Customizeable messages in the configuration file
+<ul>
+<li>Enable or disable the KygekLastPosition prefix and default coloring</li>
+<li>The <code>&amp;</code> symbol can be used as text formatting codes</li>
+<li>No need to restart server, changes are applied immediately as soon the <code>/lastposition</code> command gets executed</li>
+</ul>
+</li>
+<li>Configurable ommand description and aliases</li>
+<li>Automatic plugin updates checker to notify you if a new version has been released on Poggit</li>
+<li>Configuration file gets updated automatically when a newer configuration file is available</li>
+<li>
+<strong>For Developers:</strong> API to teleport player back to the position before the last teleport (<code>KygekTeam\KygekLastPosition\LastPosition-&gt;teleport(Player $player)</code>)</li>
+</ul>
+<h2>
+<a id="user-content--installation" class="anchor" href="#-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="wrench" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji> Installation</h2>
+<ol>
+<li>
+<g-emoji class="g-emoji" alias="arrow_down_small" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f53d.png">🔽</g-emoji> Download the latest version on Poggit by clicking the "Direct Download" button.</li>
+<li>
+<g-emoji class="g-emoji" alias="file_folder" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c1.png">📁</g-emoji> Drop the downloaded <code>KygekLastPosition.phar</code> plugin file into your PocketMine-MP server's <code>plugins</code> directory.</li>
+<li>
+<g-emoji class="g-emoji" alias="arrows_counterclockwise" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f504.png">🔄</g-emoji> Restart your server and you're ready to use the plugin!</li>
+</ol>
+<h2>
+<a id="user-content--commands--permissions" class="anchor" href="#-commands--permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="closed_lock_with_key" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f510.png">🔐</g-emoji> Commands &amp; Permissions</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Default Description</th>
+<th>Permission</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/lastposition</code></td>
+<td>Teleport back to the position before the last teleport</td>
+<td>
+<code>kygeklastposition.cmd</code> (Root permission), <code>kygeklastposition.cmd.self</code> (For self), <code>kygeklastposition.cmd.other</code> (For other)</td>
+<td><code>op</code></td>
+</tr>
+</tbody>
+</table>
+<p>Command description can be changed in <code>config.yml</code>. You can also add command aliases in <code>config.yml</code>.</p>
+<h2>
+<a id="user-content--planned-features" class="anchor" href="#-planned-features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="receipt" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f9fe.png">🧾</g-emoji> Planned Features</h2>
+<ul>
+<li>Save teleport history in disk, to allow players teleport back even if the server has been restarted</li>
+<li>Configurable teleport history limit</li>
+<li>Teleport back to a very old position (e.g. <code>/lastposition [player] 20</code>)</li>
+<li>And much more...</li>
+</ul>
+<p>You can request for a feature to be added in a future update <a href="https://github.com/KygekTeam/KygekLastPosition/issues">here</a>!</p>
+<h2>
+<a id="user-content--additional-info" class="anchor" href="#-additional-info" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="heavy_plus_sign" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2795.png">➕</g-emoji> Additional Info</h2>
+<p>KygekLastPosition is a plugin by KygekTeam and licensed under <strong>GPL-3.0</strong>.</p>
+<ul>
+<li>Join our Discord server <a href="https://discord.gg/CXtqUZv" rel="nofollow">here</a> for latest news and support from KygekTeam.</li>
+<li>If you found bugs or want to give suggestions, please visit <a href="https://github.com/KygekTeam/KygekLastPosition/issues">here</a> or join our Discord server.</li>
+<li>We accept all contributions! If you want to contribute please make a pull request in <a href="https://github.com/KygekTeam/KygekLastPosition/pulls">here</a>.</li>
+</ul>
+<p><a href="https://www.freepnglogos.com/pics/pin" rel="nofollow">Pin icon from freepnglogos.com</a></p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1462879ac396a2","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

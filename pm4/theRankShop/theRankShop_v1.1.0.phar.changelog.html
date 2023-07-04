@@ -1,0 +1,18 @@
+<ul dir="auto">
+<li><em>[NEW]</em> - added support for <a href="https://github.com/alvin0319/GroupsAPI">GroupsAPI</a>
+<ul dir="auto">
+<li>added <code>rank-management-plugin</code> entry to <em>config.yml</em></li>
+</ul>
+</li>
+<li><em>[NEW]</em> - added support for <a href="https://github.com/cooldogedev/BedrockEconomy">BedrockEconomy</a>
+<ul dir="auto">
+<li>added <code>economy-plugin</code> entry to <em>config.yml</em></li>
+</ul>
+</li>
+<li><em>[NEW]</em> - added a buyer-protection and price calculating (<a href="https://github.com/supercrafter333/theRankShop/issues/7" data-hovercard-type="issue" data-hovercard-url="/supercrafter333/theRankShop/issues/7/hovercard">#7</a>)</li>
+<li><em>[NEW]</em> - <a href="https://github.com/supercrafter333/theRankShop/blob/master/src/supercrafter333/theRankShop/Manager/PlayerMgr.php#L50"><code>PlayerMgr::havingHigherRank()</code></a> will now check if a player is having a higher rank</li>
+<li><em>[NEW]</em> - <a href="https://github.com/supercrafter333/theRankShop/blob/master/src/supercrafter333/theRankShop/Manager/RankMgr.php#L36"><code>RankMgr::calculateRankPrices()</code></a> will now calculate the prices between two ranks</li>
+<li><em>[NEW]</em> - added icon</li>
+<li><em>[CHANGE]</em> - <a href="https://github.com/supercrafter333/theRankShop/blob/master/src/supercrafter333/theRankShop/Manager/PlayerMgr.php#L68"><code>PlayerMgr::buyRank()</code></a> will now return an integer. <code>0 = event cancelled | 1 = successfully | 2 = same or higher rank</code>  ---  this function will also no longer check if the player is having enough money to buy a rank (because of BedrockEconomy support) -&gt; that will be checked before calling that function now</li>
+<li><em>[CHANGE]</em> - default rank-management plugin is now GroupsAPI (before: PurePerms)</li>
+</ul>

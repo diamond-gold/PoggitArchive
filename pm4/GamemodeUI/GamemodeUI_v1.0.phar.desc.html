@@ -1,0 +1,53 @@
+<h1>
+<a id="user-content-gamemodeui" class="anchor" href="#gamemodeui" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GamemodeUI</h1>
+<p><a href="https://poggit.pmmp.io/p/GamemodeUI" rel="nofollow"><img src="https://camo.githubusercontent.com/e6024bcd262dfa34d1108107462ef0c8ea145c26b5af188c8337f118a0e359ed/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f47616d656d6f64655549" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/GamemodeUI" style="max-width:100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/GamemodeUI" rel="nofollow"><img src="https://camo.githubusercontent.com/c12179d1d7779ca0936e7e0d1c9f3f9a20c501530c16dd77ae396a3c6538b1d0/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f47616d656d6f64655549" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/GamemodeUI" style="max-width:100%;"></a></p>
+<p><strong>A Plugin For Pocketmine-MP To Change Gamemode With UI</strong></p>
+<p><a href="https://user-images.githubusercontent.com/83558341/173310827-9b1e9821-bb36-4df0-85d6-5ecfeeee07a4.png" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/83558341/173310827-9b1e9821-bb36-4df0-85d6-5ecfeeee07a4.png" alt="Captura de pantalla 2022-06-13 032031" style="max-width:100%;"></a></p>
+<h3>
+<a id="user-content--config" class="anchor" href="#-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="floppy_disk" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4be.png">💾</g-emoji> Config</h3>
+<div class="highlight highlight-source-yaml"><pre>  <span class="pl-c"><span class="pl-c">#</span> GamemodeUI plugin</span>
+  <span class="pl-c"><span class="pl-c">#</span> Made By FlynnKunz and fernanACM</span>
+
+  <span class="pl-c"><span class="pl-c">#</span>#############################</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Use "§" as formatting codes</span>
+  <span class="pl-c"><span class="pl-c">#</span> Use "\n" to break into new line</span>
+  <span class="pl-c"><span class="pl-c">#</span> ======(PREFIX)======</span>
+  <span class="pl-ent">Prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§7[§eGM§7]§8»§r <span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> ======(MESSAGES FORMS)======</span>
+  <span class="pl-ent">GamemodeUI</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Set The Title</span>
+    <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§9GAMEMODE MENU<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span> Set The Content</span>
+    <span class="pl-ent">content</span>: <span class="pl-s"><span class="pl-pds">"</span>§eSelect your game mode:<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span> Buttons</span>
+    <span class="pl-ent">button-survival</span>: <span class="pl-s"><span class="pl-pds">"</span>§2§lSurvival<span class="pl-cce">\n</span>§r§0Tap To Change<span class="pl-pds">"</span></span>
+    <span class="pl-ent">button-creative</span>: <span class="pl-s"><span class="pl-pds">"</span>§2§lCreative<span class="pl-cce">\n</span>§r§0Tap To Change<span class="pl-pds">"</span></span>
+    <span class="pl-ent">button-adventure</span>: <span class="pl-s"><span class="pl-pds">"</span>§2§lAdventure<span class="pl-cce">\n</span>§r§0Tap To Change<span class="pl-pds">"</span></span>
+    <span class="pl-ent">button-spectator</span>: <span class="pl-s"><span class="pl-pds">"</span>§2§lSpectator<span class="pl-cce">\n</span>§r§0Tap To Change<span class="pl-pds">"</span></span>
+    <span class="pl-ent">button-exit</span>: <span class="pl-s"><span class="pl-pds">"</span>§4§lEXIT§r<span class="pl-cce">\n</span>§r§0Tap To Change<span class="pl-pds">"</span></span>
+  
+  <span class="pl-c"><span class="pl-c">#</span> ======(MESSAGES FORMS)======</span>
+  <span class="pl-ent">Messages</span>:
+    <span class="pl-ent">survival</span>: <span class="pl-s"><span class="pl-pds">"</span>§eYour game mode has been changed to §dSURVIVAL<span class="pl-pds">"</span></span>
+    <span class="pl-ent">creative</span>: <span class="pl-s"><span class="pl-pds">"</span>§eYour game mode has been changed to §dCREATIVE<span class="pl-pds">"</span></span>
+    <span class="pl-ent">adventure</span>: <span class="pl-s"><span class="pl-pds">"</span>§eYour game mode has been changed to §dADVENTURE<span class="pl-pds">"</span></span>
+    <span class="pl-ent">spectator</span>: <span class="pl-s"><span class="pl-pds">"</span>§eYour game mode has been changed to §dSPECTATOR<span class="pl-pds">"</span></span></pre></div>
+<h3>
+<a id="user-content--implementations" class="anchor" href="#-implementations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="bulb" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png">💡</g-emoji> Implementations</h3>
+<ul>
+<li>[x] Message customization.</li>
+</ul>
+<h3>
+<a id="user-content--permissions" class="anchor" href="#-permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="lock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f512.png">🔒</g-emoji> Permissions</h3>
+<ul>
+<li>Executing the command: <code>gamemodeui.cmd</code>
+</li>
+</ul>
+<h3>
+<a id="user-content--credits" class="anchor" href="#-credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji> Credits</h3>
+<ul>
+<li><strong><a href="https://github.com/fernanACM">fernanACM</a></strong></li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14614d5db396c0","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

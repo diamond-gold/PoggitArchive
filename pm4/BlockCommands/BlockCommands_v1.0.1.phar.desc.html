@@ -1,0 +1,151 @@
+<h2>
+<a id="user-content-general" class="anchor" href="#general" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General</h2>
+<blockquote>
+<p>Allows commands to run when people punch, break, step, or interact with blocks.</p>
+</blockquote>
+<blockquote>
+<p>A BlockCommand is an object that stores commands, blocks, areas, and events. When events happen in-game a BlockCommand is able to respond by running it's commands.</p>
+</blockquote>
+<blockquote>
+<p>Tips:</p>
+<ol>
+<li>
+<code>/sudo</code> only runs commands if the message has a "/."</li>
+<li>You can inject information of the event inside of commands
+<ul>
+<li>
+<code>{player}</code> will be replaced by the player's name when a BlockCommand is triggered.</li>
+<li>
+<code>{position}</code> will be the position of the block affected.</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<h2>
+<a id="user-content-usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+<ol>
+<li>Make a new BlockCommand with <code>/bc create &lt;name&gt; [...events]</code>. The <code>[...events]</code> is a list of available block events, separated by space, that will be enabled. Ex: <code>/bc create launchpad step interact</code>.
+<ul>
+<li>List all BlockCommands with <code>/bc list</code>.</li>
+<li>You can delete a BlockCommand with <code>/bc remove &lt;name&gt;</code>.</li>
+</ul>
+</li>
+<li>Add a command to the BlockCommand with <code>/bc edit addcommand &lt;name&gt; &lt;command&gt;</code>.
+<ul>
+<li>List commands on a BlockCommand with <code>/bc edit listcommands &lt;name&gt;</code>.</li>
+<li>Use the index of a command to remove it from a BlockCommand <code>/bc edit removecommand &lt;name&gt; &lt;index&gt;</code>.</li>
+<li>Remove all commands from a BlockCommand with <code>/bc edit clearcommands &lt;name&gt; &lt;index&gt;</code>.</li>
+</ul>
+</li>
+<li>Add a block to the BlockCommand with <code>/bc edit addblock &lt;name&gt; &lt;x&gt; &lt;y&gt; &lt;z&gt;</code> or <code>/bc edit addblock &lt;name&gt;</code> to add the block you're looking at. You can also add whole areas with <code>/bc edit addarea &lt;name&gt; &lt;x1&gt; &lt;y1&gt; &lt;z1&gt; &lt;x2&gt; &lt;y2&gt; &lt;z2&gt;</code>. Blocks and areas that are on BlockCommands are called <em>attachments</em>.
+<ul>
+<li>List attachments on a BlockCommand with <code>/bc edit listattachments &lt;name&gt;</code>.</li>
+<li>Use the index from the command to remove an attachment from a BlockCommand with <code>/bc edit removeattachment &lt;name&gt; &lt;index&gt;</code>.</li>
+<li>Clear all attachments from a BlockCommand with <code>/bc edit clearattachments &lt;name&gt;</code>.</li>
+</ul>
+</li>
+<li>Configure the BlockCommand to run commands on different events with <code>/bc edit configure &lt;name&gt; [...events]</code>.</li>
+</ol>
+<h2>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<blockquote>
+<h3>
+<a id="user-content-in-general" class="anchor" href="#in-general" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>In general...</h3>
+<ul>
+<li>The plugin comes with several extra commands like <code>/launch</code> to make it easy to build specific contraptions like launchpads.</li>
+<li>Editing commands for multiple blocks is quick since they are all stored on a single BlockCommand.</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>Commands can be run on the block events:</p>
+<ul>
+<li>punch (When a player hits a block)</li>
+<li>break (When a player destroys a block)</li>
+<li>step (When a player first lands on a block)</li>
+<li>interact (When a player right-clicks a block)</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>Commands can be attached to:</p>
+<ul>
+<li>Blocks</li>
+<li>Areas</li>
+</ul>
+</blockquote>
+<h2>
+<a id="user-content-all-commands" class="anchor" href="#all-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>All Commands</h2>
+<p><strong>Every command with examples</strong></p>
+<blockquote>
+<p>Miscellaneous Commands</p>
+<ul>
+<li><code>/launch &lt;direction-x&gt; &lt;direction-z&gt; &lt;direction-z&gt; [player]</code></li>
+</ul>
+<p>Launches the player in the given direction. Use the <code>[player]</code> argument instead of <code>/sudo &lt;player&gt; ...</code> to bypass permission requirements.</p>
+<p>"/launch 2 5 0" will launch the player who ran the command in the air</p>
+<ul>
+<li><code>/sudo &lt;player&gt; &lt;message&gt;</code></li>
+</ul>
+<p>Sends a message as the player. If the message starts with a "/" it will be ran as a command. Great for commands that needs commands to be sent as player. This will not give the player extra permissions.</p>
+<p><code>/sudo player1 /tp 0 0 0</code> will teleport the player to 0, 0, 0 if they have permission to use <code>/tp</code></p>
+</blockquote>
+<blockquote>
+<p>Admin Commands</p>
+<p><em>Key: <code>&lt;name&gt;</code> will be the name of a BlockCommand.</em></p>
+<ul>
+<li>
+<code>/bc ...</code>
+You can also use /blockcommands.</li>
+<li>
+<code>/bc help</code> or <code>/bc edit help</code>
+Fetches help for the following admin commands.</li>
+<li>
+<code>/bc loadconfig</code>
+This reloads data from data.yml.</li>
+<li>
+<code>/bc saveconfig</code>
+This saves data to data.yml.</li>
+<li>
+<code>/bc create &lt;name&gt; [...events]</code>
+This makes a new BlockCommand with the given block events turned on. Valid <code>[...events]</code> are: punch, break, step, interact.</li>
+<li>
+<code>/bc list</code>
+Lists all BlockCommands.</li>
+<li>
+<code>/bc remove &lt;name&gt;</code>
+Removes a BlockCommand.</li>
+<li>
+<code>/bc edit configure &lt;name&gt;</code>
+Lists all the block events for the BlockCommand.</li>
+<li>
+<code>/bc edit configure &lt;name&gt; [...events]</code>
+Changes the BlockCommand events to <code>[...events]</code>. Ex: <code>/bc configure teleport_sign punch interact</code>
+</li>
+<li>
+<code>/bc edit addcommand &lt;name&gt; &lt;command&gt;</code>
+Adds a command to a BlockCommand.</li>
+<li>
+<code>/bc edit listcommands &lt;name&gt;</code>
+Lists commands on a BlockCommand and their index.</li>
+<li>
+<code>/bc edit removecommand &lt;name&gt; &lt;index&gt;</code>
+Removes the command at the given index from the BlockCommand.</li>
+<li>
+<code>/bc edit addblock &lt;name&gt; &lt;x&gt; &lt;y&gt; &lt;z&gt;</code>
+Adds the block at <code>&lt;x&gt; &lt;y&gt; &lt;z&gt;</code> to the BlockCommand.</li>
+<li>
+<code>/bc edit addblock &lt;name&gt;</code>
+Adds the block the player is looking at to the BlockCommand.</li>
+<li>
+<code>/bc edit addarea &lt;name&gt; &lt;x1&gt; &lt;y1&gt; &lt;z1&gt; &lt;x2&gt; &lt;y2&gt; &lt;z2&gt;</code>
+Adds an area to the block command starting from <code>&lt;x1&gt; &lt;y1&gt; &lt;z1&gt;</code> ending at <code>&lt;x2&gt; &lt;y2&gt; &lt;z2&gt;</code>.</li>
+<li>
+<code>/bc edit listattachments &lt;name&gt;</code>
+Lists the blocks and areas along with their indexes that are attached to the BlockCommand.</li>
+<li>
+<code>/bc edit removeattachment &lt;name&gt; &lt;index&gt;</code>
+Removes the block or area at <code>&lt;index&gt;</code> from the BlockCommand.</li>
+<li>
+<code>/bc edit clearattachments &lt;name&gt;</code>
+Removes all blocks and areas associated with the BlockCommand.</li>
+</ul>
+</blockquote>

@@ -1,0 +1,208 @@
+<h1><a id="user-content-funblockoneblock" class="anchor" aria-hidden="true" href="#funblockoneblock"><span aria-hidden="true" class="octicon octicon-link"></span></a>FunBlockOneBlock</h1>
+<p align="center">
+<a href="https://github.com/cosmicnebula200/FunBlockOneBlock"><img src="https://camo.githubusercontent.com/a2100811ccc216cabc3647505f4e5fa7e1768c3f2fe429b408b54363eaf886a5/68747470733a2f2f6d656469612e646973636f72646170702e6e65742f6174746163686d656e74732f3832393637333531313030393737393732332f3931383530363132303039343536343339322f706e675f32303231313230395f3232313531335f303030302e706e673f77696474683d323430266865696768743d323430" data-canonical-src="https://media.discordapp.net/attachments/829673511009779723/918506120094564392/png_20211209_221513_0000.png?width=240&amp;height=240" style="max-width: 100%;"></a>
+</p>
+<p>A OneBlock plugin for PocketMine-4.0.0</p>
+<p><strong>What is OneBlock?</strong></p>
+<p>OneBlock is a survival gamemode in which you stand on a lonely block floating in the void. You can mine the same block over and over, and it gives you basic materials that slowly become better and better. You go through certain phases, and the infinite block slowly upgrades to better blocks and this continues forever and ever.</p>
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>MySql and Sqlite3 providers</li>
+<li>Easy to set up</li>
+<li>Fully customizable (including messages and levels <g-emoji class="g-emoji" alias="pleading_face" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f97a.png">🥺</g-emoji> )</li>
+<li>Lucky Block support (coming as FunBlockLuckyBlock plugin)</li>
+</ul>
+<h1><a id="user-content-todo" class="anchor" aria-hidden="true" href="#todo"><span aria-hidden="true" class="octicon octicon-link"></span></a>Todo</h1>
+<ul>
+<li>[<g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji>] Chests with items on block generation</li>
+<li>[<g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji>] Mobs with no AI to be spawned with some blocks on configurable levels</li>
+<li>Suggest more stuff so it can come here</li>
+</ul>
+<h1><a id="user-content-permissions" class="anchor" aria-hidden="true" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<pre><code>  funblockoneblock.command:
+    default: true
+    description: this permission allows the set user to use the oneblock command
+  funblockoneblock.create:
+    default: true
+    description: this permission allows the user to create a oneblock island
+  funblockoneblock.chat:
+    default: true
+    description: this permission allows the user to use the oneblock chat
+  funblockoneblock.delete:
+    default: true
+    description: with this permission the user can delete their oneblock island
+  funblockoneblock.deleteothers:
+    default: op
+    description: with this permission the user can delete other players oneblock islands
+  funblockoneblock.go:
+    default: true
+    description: this permission allows the user to teleport to the oneblock island
+  funblockoneblock.visit:
+    default: true
+    description: this permission allows the user to visit other players oneblock islands
+  funblockoneblock.invite:
+    default: true
+    description: this permission allows the user to invite players to their oneblock island
+  funblockoneblock.accept:
+    default: true
+    description: this permission allows the user to accept incoming invites when they have no oneblock island
+  funblockoneblock.rename:
+    default: true
+    description: this permission allows the user to rename their oneblock island
+</code></pre>
+<h1><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OneBlock</td>
+<td>OneBlock command for FunBlockOneBlock</td>
+<td>funblockoneblock.command</td>
+<td>ob</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>SubCommand</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accept</td>
+<td>accepts the invite from the mentioned player</td>
+<td>funblockoneblock.accept</td>
+<td></td>
+</tr>
+<tr>
+<td>create</td>
+<td>creates a oneblock island</td>
+<td>funblockoneblock.create</td>
+<td>c, make</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>deletes the mentioned players island</td>
+<td>funblockoneblock.delete/ funblockoneblock.delete.others</td>
+<td></td>
+</tr>
+<tr>
+<td>go</td>
+<td>teleports to your oneblock island</td>
+<td>funblockoneblock.go</td>
+<td></td>
+</tr>
+<tr>
+<td>invite</td>
+<td>invites the mentioned player to your oneblock island</td>
+<td>funblockoneblock.invite</td>
+<td></td>
+</tr>
+<tr>
+<td>visit</td>
+<td>visit the mentioned player's oneblock island</td>
+<td>funblockoneblock.visit</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1><a id="user-content-scorehud-tags" class="anchor" aria-hidden="true" href="#scorehud-tags"><span aria-hidden="true" class="octicon octicon-link"></span></a>ScoreHud Tags</h1>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>funblockoneblock.xp</code></td>
+<td>Shows the XP of the member's OneBlock island</td>
+</tr>
+<tr>
+<td><code>funblockoneblock.level</code></td>
+<td>Shows the Level of the member's OneBlock island</td>
+</tr>
+<tr>
+<td><code>funblockoneblock.leader</code></td>
+<td>Shows the Leader of the member's OneBlock island</td>
+</tr>
+<tr>
+<td><code>funblockoneblock.world</code></td>
+<td>Shows the World name of the member's OneBlock island</td>
+</tr>
+<tr>
+<td><code>funblockoneblock.chat</code></td>
+<td>Shows the status (on/off) of the island chat</td>
+</tr>
+<tr>
+<td><code>funblockoneblock.level_name</code></td>
+<td>Shows the Level Name of the member's OneBlock island</td>
+</tr>
+<tr>
+<td><code>funblockoneblock.island_name</code></td>
+<td>Shows the Island Name of the member's OneBlock island</td>
+</tr>
+</tbody>
+</table>
+<h1><a id="user-content-settings" class="anchor" aria-hidden="true" href="#settings"><span aria-hidden="true" class="octicon octicon-link"></span></a>Settings</h1>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>autoinv.enable</td>
+<td>Enables the autoinventory <strong>ON THE ONEBLOCK ISLANDS</strong>
+</td>
+<td>boolean (true/false)</td>
+</tr>
+<tr>
+<td>autoinv.drop-when-full</td>
+<td>Drops items on ground when the player has a full inventory</td>
+<td>boolean (true/false)</td>
+</tr>
+<tr>
+<td>autoxp</td>
+<td>Automatically sends xp on Mining on the OneBlock Islands</td>
+<td>boolean (true/false)</td>
+</tr>
+<tr>
+<td>invite-time-out</td>
+<td>The number of seconds to wait before an invite to a OneBlock Island expires</td>
+<td>int (in seconds)</td>
+</tr>
+<tr>
+<td>max-members</td>
+<td>The maximum number of players a OneBlock Island can have . This value includes the Leader too</td>
+<td>int</td>
+</tr>
+<tr>
+<td>reset-xp</td>
+<td>Reset xp upon level-ups</td>
+<td>boolean (true/false)</td>
+</tr>
+<tr>
+<td>damage</td>
+<td>Toggles damages on OneBlock Island. <strong>Here false means they wont take damage due to that cause</strong>
+</td>
+<td>boolean (true/false)</td>
+</tr>
+</tbody>
+</table>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1461443bc9986c","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

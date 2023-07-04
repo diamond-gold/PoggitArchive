@@ -1,0 +1,13 @@
+<h1><a id="user-content-perworldplayer" class="anchor" aria-hidden="true" href="#perworldplayer"><span aria-hidden="true" class="octicon octicon-link"></span></a>PerWorldPlayer</h1>
+<p>Per-world player data (inventories, effects, hp, hunger etc) for PocketMine-MP</p>
+<p>This plugin allows servers to separate out player data among worlds (or a group of worlds). It's based on <a href="https://github.com/BlockHorizons/PerWorldInventory">PerWorldInventory</a> and has a few things in similar.</p>
+<h2><a id="user-content-installation" class="anchor" aria-hidden="true" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+<p>It is mostly recommended to use released versions of the plugin, which can be found in the released version on Poggit. (once there is one)
+If you do decide you want the latest version of the plugin, it is recommended you fetch a pre-compiled phar file from Poggit-CI, which can be found below.</p>
+<h2><a id="user-content-configurables" class="anchor" aria-hidden="true" href="#configurables"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configurables</h2>
+<ol>
+<li>You can stop players from switching inventories per world by giving them the permission: <code>per-world-player.bypass</code>.</li>
+<li>You can group worlds so the same player data is shared among two (or more) worlds by configuring <a href="https://github.com/BlockHorizons/PerWorldPlayer/blob/master/resources/config.yml#L43"><code>Bundled-Worlds</code> in <code>config.yml</code></a>. This can be useful for creative mode servers.</li>
+<li>You can configure which player data you want to add multi-world support to by modifying <a href="https://github.com/BlockHorizons/PerWorldPlayer/blob/master/resources/config.yml#L5"><code>Save-Data</code> in <code>config.yml</code></a>.</li>
+</ol>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e146936ad8415c0","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

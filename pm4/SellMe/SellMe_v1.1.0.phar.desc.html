@@ -1,0 +1,132 @@
+<h1>
+<a id="user-content-sellme" class="anchor" href="#sellme" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SellMe</h1>
+<p>The Ultimate Sell plugin for PocketMine-MP 4</p>
+<p><strong>What is SellMe?</strong></p>
+<ul>
+<li>SellMe is a plugin which allows the items to be sold in exchange with money</li>
+</ul>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<p>The currently offered features are as follows</p>
+<ul>
+<li>Multiple Economy providers like EconomyAPI, BedrockEconomy and Capital</li>
+<li>AutoSell</li>
+<li>Item meta checks</li>
+<li>Multiple sell modes (hand, all, inv)</li>
+<li>List command which shows the list of all the prices of items.</li>
+<li>Check command which allows you to check the price of the items in your inventory.</li>
+<li>Add command which allows you to add items to the price list.</li>
+<li>Overwrite command which allows you to modify any item which is currently in the price list.</li>
+</ul>
+<h1>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<pre><code>permissions:
+  sellme.command.sell.hand:
+    default: true
+    description: with this permission the player sell his/her hand
+  sellme.command.sell.all:
+    default: true
+    description: with this permission the player sell all items in his/her inv which are similar to his current item in hand
+  sellme.command.sell.inv:
+    default: true
+    description: with this permission the player can sell his/her inventory
+  sellme.command.sell.list:
+    default: true
+    description: with this permission the player can view sell listing
+  sellme.command.sell.add:
+    default: op
+    description: with this permission the player can add items to the sell prices
+  sellme.command.sell.overwrite:
+    default: op
+    description: with this permission the player can overwrite the prices of the items from the list of prices
+  sellme.command.sell.check:
+    default: true
+    description: with this permission the player can view the price of the items in their inventory
+  sellme.command.autosell:
+    default: true
+    description: with this permission the player can toggle his autosell status
+</code></pre>
+<h1>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Sell</code></td>
+<td>Sell command</td>
+<td>sellme.command.sell</td>
+<td></td>
+</tr>
+<tr>
+<td><code>AutoSell</code></td>
+<td>AutoSell command</td>
+<td>sellme.command.autosell</td>
+<td>AS</td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content-subcommands" class="anchor" href="#subcommands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SubCommands</h1>
+<p><strong>SELL</strong></p>
+<table>
+<thead>
+<tr>
+<th>SubCommand</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Hand</code></td>
+<td>Sells the item which is held by the user</td>
+<td>sellme.command.sell.hand</td>
+<td>h</td>
+</tr>
+<tr>
+<td><code>All</code></td>
+<td>Sells the items in inventory which are similar to the one in the users hands</td>
+<td>sellme.command.sell.all</td>
+<td>a</td>
+</tr>
+<tr>
+<td><code>Inv</code></td>
+<td>Sells all the items in the inventory of the user</td>
+<td>sellme.command.sell.hand</td>
+<td>i, inventory</td>
+</tr>
+<tr>
+<td><code>List</code></td>
+<td>View available items/prices</td>
+<td>sellme.command.sell.list</td>
+<td>l</td>
+</tr>
+<tr>
+<td><code>Check</code></td>
+<td>Checks the amount that you can receive after using the sell command</td>
+<td>sellme.command.sell.check</td>
+<td>c</td>
+</tr>
+<tr>
+<td><code>Add</code></td>
+<td>Adds the item in hand to the list of current prices</td>
+<td>sellme.command.sell.add</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Overwrite</code></td>
+<td>Overwrites the item price in the list of current prices</td>
+<td>sellme.command.sell.overwrite</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1465566b0896a2","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

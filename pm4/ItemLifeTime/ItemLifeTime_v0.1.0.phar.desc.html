@@ -1,0 +1,51 @@
+<h1>
+<a id="user-content--itemlifetime" class="anchor" href="#-itemlifetime" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/DavyCraft648/ItemLifeTime/blob/main/icon.png" target="_blank" rel="noopener noreferrer"><img height="64" src="https://github.com/DavyCraft648/ItemLifeTime/raw/main/icon.png" width="64" style="max-width:100%;"></a> ItemLifeTime</h1>
+<p>Adjust the time of dropped items to disappear in your server</p>
+<h2>
+<a id="user-content-how-does-this-plugin-work" class="anchor" href="#how-does-this-plugin-work" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How does this plugin work?</h2>
+<p>Default time of dropped items to disappear in PocketMine is 5 minutes (300 seconds),
+but you can change it with this plugin!</p>
+<h2>
+<a id="user-content-how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use?</h2>
+<ul>
+<li>
+<p><code>item-lifetime</code> in config.yml is used to change dropped items' time to disappear in your whole server.</p>
+</li>
+<li>
+<p>Use <code>worlds</code> in the config if you want a separated item lifetime on each world in your server,
+Example:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">worlds</span>:
+  <span class="pl-ent">MyPrettyWorld</span>: <span class="pl-c1">120</span> <span class="pl-c"><span class="pl-c">#</span> Set item lifetime on MyPrettyWorld world to 120 second</span>
+  <span class="pl-ent">MyDirtyWorld</span>: <span class="pl-c1">360</span> <span class="pl-c"><span class="pl-c">#</span> Set item lifetime on MyDirtyWorld world to 360 second</span></pre></div>
+<p>Item lifetime in the world that not listed in <code>worlds</code> will set to <code>item-lifetime</code></p>
+</li>
+</ul>
+<h2>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h2>
+<div class="highlight highlight-source-yaml"><pre>--- <span class="pl-c"><span class="pl-c">#</span> ItemLifeTime plugin configuration file</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Set dropped item lifetime in your server (in second)</span>
+<span class="pl-c"><span class="pl-c">#</span> Default is 300 seconds (5 minutes)</span>
+<span class="pl-c"><span class="pl-c">#</span> Minimum value is 0, maximum is 1938</span>
+<span class="pl-c"><span class="pl-c">#</span> Item will never despawn if this set to -1</span>
+<span class="pl-ent">item-lifetime</span>: <span class="pl-c1">300</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Set different custom item lifetime on each of these worlds (optional)</span>
+<span class="pl-c"><span class="pl-c">#</span> Example configuration:</span>
+<span class="pl-c"><span class="pl-c">#</span> worlds:</span>
+<span class="pl-c"><span class="pl-c">#</span>   MyPrettyWorld: 120</span>
+<span class="pl-c"><span class="pl-c">#</span>   MyDirtyWorld: 360</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> This will set item lifetime in MyPrettyWorld world to 120 seconds, 360 seconds in MyDirtyWorld</span>
+<span class="pl-ent">worlds</span>: <span class="pl-s">{}</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Show remaining time to disappear in item's nametag</span>
+<span class="pl-ent">display-time</span>:
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">false</span>
+  <span class="pl-c"><span class="pl-c">#</span> Text to be set in item's nametag</span>
+  <span class="pl-c"><span class="pl-c">#</span> {MINUTE}, {SECOND}, {TIME}</span>
+  <span class="pl-c"><span class="pl-c">#</span> Set this to "{MINUTE}:{SECOND} {TIME}" will be shown as "01:20 01 minute" (example)</span>
+  <span class="pl-ent">text</span>: <span class="pl-s"><span class="pl-pds">"</span>{MINUTE}:{SECOND}<span class="pl-pds">"</span></span>
+...
+</pre></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14623b9a40cf61","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

@@ -1,0 +1,40 @@
+<h1>
+<a id="user-content-advancekillmoney" class="anchor" href="#advancekillmoney" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AdvanceKillMoney</h1>
+<p>AdvanceKillMoney is really advanced and fully configurable KillMoney plugin for PocketMine-MP</p>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>
+<p>[x] Can configure if you want to reduce money from victim or not</p>
+</li>
+<li>
+<p>[x] Can add custom percentage that you want to deduct from victim and give it to the killer</p>
+</li>
+<li>
+<p>[x] Supports Multiple worlds</p>
+</li>
+<li>
+<p>[x] And many more</p>
+</li>
+</ul>
+<h1>
+<a id="user-content-configyml" class="anchor" href="#configyml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config.yml</h1>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> AdvanceKillMoney</span>
+<span class="pl-c"><span class="pl-c">#</span> Plugin By DeadBush</span>
+<span class="pl-c"><span class="pl-c">#</span> https://github.com/deadbushmc</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Write the names of world to enable kill money on</span>
+<span class="pl-ent">worlds</span>: <span class="pl-s">["world1", "world2", "world3"]</span>
+
+<span class="pl-c"><span class="pl-c">#</span> if you keep it as off then the victim won't loose the money on death but only killer will get the money</span>
+<span class="pl-c"><span class="pl-c">#</span> if you keep it true then the victim will loose certain amount of money on death and will be given to the killer</span>
+<span class="pl-ent">reduceMoney</span>: <span class="pl-s"><span class="pl-pds">"</span>on<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> choose if the the money should be random or custom</span>
+<span class="pl-c"><span class="pl-c">#</span> keep it as on to make it custom or keep it as on to make it fully random 1-100%</span>
+<span class="pl-ent">custom</span>: <span class="pl-s"><span class="pl-pds">"</span>on<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> if you have kept custom as on then edit the values how much percentage max should be deducted from victim and given to killer no need to add % at end just add the numeric value</span>
+<span class="pl-c"><span class="pl-c">#</span> if you have kept custom as off then ignore it</span>
+<span class="pl-ent">randomise</span>: <span class="pl-c1">40</span> <span class="pl-c"><span class="pl-c">#</span> means the killer will get 1-40% money from the victim's account</span></pre></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e145d514ea5175f","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

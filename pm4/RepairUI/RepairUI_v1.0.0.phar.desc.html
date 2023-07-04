@@ -1,0 +1,182 @@
+<h1>
+<a id="user-content-repairui" class="anchor" href="#repairui" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>RepairUI</h1>
+<p><a href="https://poggit.pmmp.io/p/RepairUI" rel="nofollow"><img src="https://camo.githubusercontent.com/e48673351d6b5100601e30473246117d0faae8a6ff7c06b209573dd6b27c6074/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f5265706169725549" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/RepairUI" style="max-width:100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/RepairUI" rel="nofollow"><img src="https://camo.githubusercontent.com/ed8ce16275223bfce56e5a91dcf8d044892b491ea608e1c5f2be4a7c3aab87e8/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f5265706169725549" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/RepairUI" style="max-width:100%;"></a></p>
+<p><strong>Repair and customize your item names with RepairUI, use money or experience to perform these actions. Only for PocketMine-MP 4.0 servers</strong></p>
+<p><a href="https://user-images.githubusercontent.com/83558341/176567746-9eda44e8-2ce8-4a36-9b84-eacf611e1385.png" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/83558341/176567746-9eda44e8-2ce8-4a36-9b84-eacf611e1385.png" alt="Captura de pantalla 2022-06-29 174022" style="max-width:100%;"></a></p>
+<p><a href="https://discord.gg/YyE9XFckqb" rel="nofollow"><img src="https://camo.githubusercontent.com/eecc96a3ff0dedc37f275aeeda585ba8d15a316b66809ea2795fdc41b88d5bc9/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833373730313836383634393730393536383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/837701868649709568?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width:100%;"></a></p>
+<h3>
+<a id="user-content--implementations" class="anchor" href="#-implementations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="bulb" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png">💡</g-emoji> Implementations</h3>
+<ul>
+<li>[x] Images &gt; <em>To load the images, use <a href="https://poggit.pmmp.io/r/146450/FormImagesFix_dev-14.phar" rel="nofollow">FormImagesFIX</a></em>
+</li>
+<li>[X] Configuration</li>
+<li>[x] Sounds.</li>
+<li>[x] Message customization.</li>
+<li>[X] Commands.</li>
+<li>[x] Keys in messages.yml.</li>
+</ul>
+<hr>
+<h3>
+<a id="user-content--config" class="anchor" href="#-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="floppy_disk" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4be.png">💾</g-emoji> Config</h3>
+<div class="highlight highlight-source-yaml"><pre>   <span class="pl-c"><span class="pl-c">#</span>  ____                           _          _   _   ___ </span>
+   <span class="pl-c"><span class="pl-c">#</span> |  _ \    ___   _ __     __ _  (_)  _ __  | | | | |_ _|</span>
+   <span class="pl-c"><span class="pl-c">#</span> | |_) |  / _ \ | '_ \   / _` | | | | '__| | | | |  | | </span>
+   <span class="pl-c"><span class="pl-c">#</span> |  _ &lt;  |  __/ | |_) | | (_| | | | | |    | |_| |  | | </span>
+   <span class="pl-c"><span class="pl-c">#</span> |_| \_\  \___| | .__/   \__,_| |_| |_|     \___/  |___|</span>
+   <span class="pl-c"><span class="pl-c">#</span>                |_|                                     </span>
+   <span class="pl-c"><span class="pl-c">#</span>   Copyright [2022-2022] [fernanACM]</span>
+
+   <span class="pl-c"><span class="pl-c">#</span>   Licensed under the Apache License, Version 2.0 (the "License");</span>
+   <span class="pl-c"><span class="pl-c">#</span>   you may not use this file except in compliance with the License.</span>
+   <span class="pl-c"><span class="pl-c">#</span>   You may obtain a copy of the License at</span>
+
+   <span class="pl-c"><span class="pl-c">#</span>       http://www.apache.org/licenses/LICENSE-2.0</span>
+
+   <span class="pl-c"><span class="pl-c">#</span>   Unless required by applicable law or agreed to in writing, software</span>
+   <span class="pl-c"><span class="pl-c">#</span>   distributed under the License is distributed on an "AS IS" BASIS,</span>
+   <span class="pl-c"><span class="pl-c">#</span>   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+   <span class="pl-c"><span class="pl-c">#</span>   See the License for the specific language governing permissions and</span>
+   <span class="pl-c"><span class="pl-c">#</span>   limitations under the License.</span>
+
+   <span class="pl-c"><span class="pl-c">#</span> Repair and customize your item names with RepairUI, for PocketMine-MP 4.0 servers</span>
+
+   <span class="pl-c"><span class="pl-c">#</span> =======(SETTINGS)=======</span>
+   <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to interact with the anvil</span>
+   <span class="pl-ent">Use</span>:
+     <span class="pl-ent">Anvil</span>: <span class="pl-c1">true</span>
+     <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to run the command</span>
+   <span class="pl-ent">Commands</span>:
+     <span class="pl-c"><span class="pl-c">#</span> RepairAll command &lt;/repair all&gt;</span>
+     <span class="pl-ent">all</span>: <span class="pl-c1">true</span>
+     <span class="pl-c"><span class="pl-c">#</span> RepairHand command &lt;/repair hand&gt;</span>
+     <span class="pl-ent">hand</span>: <span class="pl-c1">true</span>
+
+   <span class="pl-ent">RepairCost</span>:
+    <span class="pl-c"><span class="pl-c">#</span> RepairUI</span>
+    <span class="pl-ent">Repair</span>:
+      <span class="pl-c"><span class="pl-c">#</span> Put the amount of money cost to repair the items</span>
+      <span class="pl-c"><span class="pl-c">#</span> SMALL NUMBERS RECOMMENDED!!</span>
+      <span class="pl-ent">Money</span>: <span class="pl-c1">30</span>
+      <span class="pl-c"><span class="pl-c">#</span> Put the amount of experience cost to repair the items</span>
+      <span class="pl-c"><span class="pl-c">#</span> SMALL NUMBERS RECOMMENDED!!</span>
+      <span class="pl-ent">XP</span>: <span class="pl-c1">10</span>
+
+    <span class="pl-c"><span class="pl-c">#</span> RenameUI</span>
+    <span class="pl-ent">Rename</span>:
+      <span class="pl-c"><span class="pl-c">#</span> Put the amount of money cost to change the name of the items</span>
+      <span class="pl-ent">Money</span>: <span class="pl-c1">50</span>
+      <span class="pl-c"><span class="pl-c">#</span> Put the amount of experence cost to change the name of the items</span>
+      <span class="pl-ent">XP</span>: <span class="pl-c1">20</span>
+
+    <span class="pl-c"><span class="pl-c">#</span> LoreUI</span>
+    <span class="pl-ent">Lore</span>:
+      <span class="pl-c"><span class="pl-c">#</span> Put the amount of money cost to change the lore of the items</span>
+      <span class="pl-ent">Money</span>: <span class="pl-c1">60</span>
+      <span class="pl-c"><span class="pl-c">#</span> Put the amount of experience cost to change the lore of the items</span>
+      <span class="pl-ent">XP</span>: <span class="pl-c1">20</span></pre></div>
+<h3>
+<a id="user-content--commands" class="anchor" href="#-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="joystick" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f579.png">🕹</g-emoji> Commands</h3>
+<ul>
+<li>
+<code>/repairui</code> &gt; Open a menu for convenience</li>
+<li>
+<code>/repairui help</code> &gt; Command list</li>
+<li>
+<code>/repairui hand</code> &gt; Repair all your items at your fingertips</li>
+<li>
+<code>/repairui all</code> &gt; Repair the items in your hand</li>
+</ul>
+<h3>
+<a id="user-content--permissions" class="anchor" href="#-permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="lock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f512.png">🔒</g-emoji> Permissions</h3>
+<ul>
+<li>Executing the command: <code>repairui.cmd.acm</code>
+</li>
+<li>Command list: <code>repairui.help.acm</code>
+</li>
+<li>RepairAll: <code>repairui.repair.all</code>
+</li>
+<li>RepairHand: <code>repairui.repair.hand</code>
+</li>
+<li>RepairMoney: <code>repairui.repair.money</code>
+</li>
+<li>RepairXP: <code>repairui.repair.xp</code>
+</li>
+<li>RenameMoney: <code>repairui.rename.money</code>
+</li>
+<li>RenameXP: <code>repairui.rename.xp</code>
+</li>
+<li>LoreMoney: <code>repairui.lore.money</code>
+</li>
+<li>LoreXP: <code>repairui.lore.xp</code>
+</li>
+</ul>
+<h3>
+<a id="user-content--contact" class="anchor" href="#-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="telephone_receiver" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4de.png">📞</g-emoji> Contact</h3>
+<table>
+<thead>
+<tr>
+<th>Redes</th>
+<th>Tag</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube</td>
+<td>fernanACM</td>
+<td><a href="https://www.youtube.com/channel/UC-M5iTrCItYQBg5GMuX5ySw" rel="nofollow">YouTube</a></td>
+</tr>
+<tr>
+<td>Discord</td>
+<td>fernanACM#5078</td>
+<td><a href="https://discord.gg/YyE9XFckqb" rel="nofollow">Discord</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>fernanACM</td>
+<td><a href="https://github.com/fernanACM">GitHub</a></td>
+</tr>
+<tr>
+<td>Poggit</td>
+<td>fernanACM</td>
+<td><a href="https://poggit.pmmp.io/ci/fernanACM" rel="nofollow">Poggit</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3>
+<a id="user-content--credits" class="anchor" href="#-credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji> Credits</h3>
+<table>
+<thead>
+<tr>
+<th>Authors</th>
+<th>Github</th>
+<th>Lib</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CortexPE</td>
+<td><a href="https://github.com/CortexPE">CortexPE</a></td>
+<td><a href="https://github.com/CortexPE/Commando/tree/master/">Commando</a></td>
+</tr>
+<tr>
+<td>Muqsit</td>
+<td><a href="https://github.com/Muqsit">Muqsit</a></td>
+<td><a href="https://github.com/Muqsit/SimplePacketHandler">SimplePacketHandler</a></td>
+</tr>
+<tr>
+<td>Vecnavium</td>
+<td><a href="https://github.com/Vecnavium">Vecnavium</a></td>
+<td><a href="https://github.com/Vecnavium/FormsUI/tree/master/">FormsUI</a></td>
+</tr>
+<tr>
+<td>David-pm-pl</td>
+<td><a href="https://github.com/David-pm-pl">David-pm-pl</a></td>
+<td><a href="https://github.com/David-pm-pl/libEco">LibEco</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e146532583096a2","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

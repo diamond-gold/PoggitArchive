@@ -1,0 +1,543 @@
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>large variety of commands</li>
+<li>High performance:
+<ul>
+<li>async editing, allowing the server to run normally while editing in the background</li>
+<li>low memory consumption by splitting your actions into multiple smaller edits</li>
+</ul>
+</li>
+<li>flicker-free editing</li>
+<li>support for unique Patterns
+<ul>
+<li>set blocks in effectively infinite ways</li>
+<li>see <a href="#Patterns">Pattern Documentation</a>
+</li>
+</ul>
+</li>
+<li>selection axe &amp; brushes</li>
+<li>undo &amp; redo your actions</li>
+<li>tile support</li>
+<li>load &amp; save java selections (load MCEdit &amp; Sponge format, save to Sponge)</li>
+<li>rotate &amp; flip support</li>
+<li>Translation support
+<ul>
+<li><a href="https://github.com/platz1de/EasyEdit/blob/dev/resources/lang/TRANSLATE.md">help translate EasyEdit</a></li>
+</ul>
+</li>
+</ul>
+<h1>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<p>&lt;argument&gt; - required Argument<br>
+[argument] - optional Argument</p>
+<p>Selection:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases/Notice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//pos1 [x] [y] [z]</td>
+<td>Set the first position</td>
+<td>easyedit.select</td>
+<td>//1<br>left click a block in creative with a wooden axe</td>
+</tr>
+<tr>
+<td>//pos2 [x] [y] [z]</td>
+<td>Set the first position</td>
+<td>easyedit.select</td>
+<td>//2<br>break a block in creative with a wooden axe</td>
+</tr>
+<tr>
+<td>//extend [direction] [count]<br>//extend vertical</td>
+<td>Extend the selected area</td>
+<td>easyedit.select</td>
+<td>//expand<br>Look into the direction you want to extend to</td>
+</tr>
+<tr>
+<td>//set &lt;pattern&gt;</td>
+<td>Set blocks in the selected area</td>
+<td>easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//replace &lt;block&gt; &lt;pattern&gt;</td>
+<td>Replace blocks in the selected area</td>
+<td>easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//replace &lt;pattern&gt;</td>
+<td>Replace all solid blocks in the selected area</td>
+<td>easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//overlay &lt;pattern&gt;</td>
+<td>Overlay blocks in the selected area</td>
+<td>easyedit.edit</td>
+<td>Set blocks above existing blocks</td>
+</tr>
+<tr>
+<td>//naturalize [pattern] [pattern] [pattern]</td>
+<td>Naturalize the selected area</td>
+<td>easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//smooth</td>
+<td>Smooth the selected area</td>
+<td>easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//center [pattern]</td>
+<td>Set the center blocks of the selected area</td>
+<td>easyedit.edit</td>
+<td>//middle</td>
+</tr>
+<tr>
+<td>//walls [pattern]</td>
+<td>Set the walls of the selected area</td>
+<td>easyedit.edit</td>
+<td>//wall</td>
+</tr>
+<tr>
+<td>//sides [pattern]</td>
+<td>Set the sides of the selected area</td>
+<td>easyedit.edit</td>
+<td>//side</td>
+</tr>
+<tr>
+<td>//move [direction] [count]</td>
+<td>Move the selected area</td>
+<td>easyedit.edit</td>
+<td>Look into the direction you want the selected blocks to move into</td>
+</tr>
+<tr>
+<td>//stack [direction] [count]</td>
+<td>Stack the selected area</td>
+<td>easyedit.edit</td>
+<td>Look into the direction you want the selected blocks to stack into</td>
+</tr>
+<tr>
+<td>//istack [direction] [count]</td>
+<td>Stack the selected area without overwriting existing terrain</td>
+<td>easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//count [radius]</td>
+<td>Count blocks in the selected area</td>
+<td>easyedit.select</td>
+<td></td>
+</tr>
+<tr>
+<td>//extinguish [radius]</td>
+<td>Extinguish fire in the selected area</td>
+<td>easyedit.edit</td>
+<td>//ext</td>
+</tr>
+<tr>
+<td>//view</td>
+<td>View the selected area</td>
+<td>easyedit.select</td>
+<td>//show<br>also allows exporting as a 3d model (thank mojang for buggy textures)</td>
+</tr>
+</tbody>
+</table>
+<p>History:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases/Notice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//undo [count]</td>
+<td>Revert your latest change</td>
+<td>easyedit.history easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//undo &lt;target&gt; [count]</td>
+<td>Revert targets latest change</td>
+<td>easyedit.history easyedit.edit easyedit.edit.other</td>
+<td>Can be disabled via config</td>
+</tr>
+<tr>
+<td>//redo [count]</td>
+<td>Revert your latest undo</td>
+<td>easyedit.history easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//redo &lt;target&gt; [count]</td>
+<td>Revert targets latest undo</td>
+<td>easyedit.history easyedit.edit easyedit.edit.other</td>
+<td>Can be disabled via config</td>
+</tr>
+</tbody>
+</table>
+<p>Clipboard:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases/Notice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//copy<br>//copy center</td>
+<td>Copy the selected area</td>
+<td>easyedit.clipboard</td>
+<td></td>
+</tr>
+<tr>
+<td>//cut<br>//cut copy</td>
+<td>Cut the selected area and copy it to your clipboard</td>
+<td>easyedit.clipboard easyedit.edit</td>
+<td>Copies and replaces with air</td>
+</tr>
+<tr>
+<td>//paste</td>
+<td>Paste the clipboard</td>
+<td>easyedit.clipboard easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//insert</td>
+<td>Insert the clipboard</td>
+<td>easyedit.clipboard easyedit.edit</td>
+<td>Paste only into air blocks</td>
+</tr>
+<tr>
+<td>//rotate</td>
+<td>Rotate the clipboard</td>
+<td>easyedit.clipboard</td>
+<td>Rotates by 90 Degrees</td>
+</tr>
+<tr>
+<td>//flip [direction]</td>
+<td>Flip the clipboard, mirroring at copied position</td>
+<td>easyedit.clipboard</td>
+<td>Flips on axis you look on, always uses selected point as "mirror"</td>
+</tr>
+<tr>
+<td>//loadschematic &lt;schematicName&gt;</td>
+<td>Load a saved schematic from disk</td>
+<td>easyedit.readdisk easyedit.clipboard</td>
+<td>//load</td>
+</tr>
+<tr>
+<td>//saveschematic &lt;schematicName&gt;</td>
+<td>Save your clipboard as a schematic to disk</td>
+<td>easyedit.writedisk easyedit.clipboard</td>
+<td>//save</td>
+</tr>
+</tbody>
+</table>
+<p>Generation:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases/Notice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//sphere &lt;radius&gt; &lt;pattern&gt;</td>
+<td>Generate a sphere</td>
+<td>easyedit.generate easyedit.edit</td>
+<td>//sph</td>
+</tr>
+<tr>
+<td>//hsphere &lt;radius&gt; &lt;pattern&gt; [thickness]</td>
+<td>Generate a hollow sphere</td>
+<td>easyedit.generate easyedit.edit</td>
+<td>//hsph //hollowsphere</td>
+</tr>
+<tr>
+<td>//cylinder &lt;radius&gt; &lt;height&gt; &lt;pattern&gt;</td>
+<td>Generate a cylinder</td>
+<td>easyedit.generate easyedit.edit</td>
+<td>//cy</td>
+</tr>
+<tr>
+<td>//hcylinder &lt;radius&gt; &lt;height&gt; &lt;pattern&gt; [thickness]</td>
+<td>Generate a hollow cylinder</td>
+<td>easyedit.generate easyedit.edit</td>
+<td>//hcy //hollowcylinder</td>
+</tr>
+<tr>
+<td>//noise</td>
+<td>Generate using a simple noise function</td>
+<td>easyedit.generate easyedit.edit</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Utility:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases/Notice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//commands [page]</td>
+<td>List all EasyEdit commands</td>
+<td>-</td>
+<td>//h //cmd</td>
+</tr>
+<tr>
+<td>//brush sphere [radius] [pattern] [gravity]</td>
+<td>Create a spherical Brush</td>
+<td>easyedit.brush <br> (To use: easyedit.edit)</td>
+<td>//br sph</td>
+</tr>
+<tr>
+<td>//brush smooth [radius]</td>
+<td>Create a smoothing Brush</td>
+<td>easyedit.brush <br> (To use: easyedit.edit)</td>
+<td>//br smooth</td>
+</tr>
+<tr>
+<td>//brush naturalize [radius] [topBlock] [middleBlock] [bottomBlock]</td>
+<td>Create a naturalize Brush</td>
+<td>easyedit.brush <br> (To use: easyedit.edit)</td>
+<td>//br nat</td>
+</tr>
+<tr>
+<td>//brush cylinder [radius] [height] [pattern] [gravity]</td>
+<td>Create a cylindrical Brush</td>
+<td>easyedit.brush <br> (To use: easyedit.edit)</td>
+<td>//br cy</td>
+</tr>
+<tr>
+<td>//brush paste [insert]</td>
+<td>Create a pasting Brush</td>
+<td>easyedit.brush <br> (To use: easyedit.edit)</td>
+<td>//br paste</td>
+</tr>
+<tr>
+<td>//fill &lt;Block&gt; [direction]</td>
+<td>Fill an area</td>
+<td>easyedit.edit easyedit.generate</td>
+<td>Fills into looking direction</td>
+</tr>
+<tr>
+<td>//drain</td>
+<td>Drain an area</td>
+<td>easyedit.edit easyedit.generate</td>
+<td></td>
+</tr>
+<tr>
+<td>//line &lt;x&gt; &lt;y&gt; &lt;z&gt; [pattern]</td>
+<td>Draw a line</td>
+<td>easyedit.edit easyedit.generate</td>
+<td></td>
+</tr>
+<tr>
+<td>//blockinfo</td>
+<td>Get a blockinfo stick</td>
+<td>easyedit.util</td>
+<td>//bi</td>
+</tr>
+<tr>
+<td>//builderrod</td>
+<td>Get a builder rod</td>
+<td>easyedit.rod</td>
+<td>//rod<br>Expands the clicked blockface</td>
+</tr>
+<tr>
+<td>//status</td>
+<td>Check on the EditThread</td>
+<td>easyedit.manage</td>
+<td></td>
+</tr>
+<tr>
+<td>//cancel</td>
+<td>Cancel the current task</td>
+<td>easyedit.manage</td>
+<td></td>
+</tr>
+<tr>
+<td>//benchmark</td>
+<td>Start a benchmark</td>
+<td>easyedit.manage</td>
+<td>This will create a temporary world and edit a few preset actions</td>
+</tr>
+<tr>
+<td>//pastestates</td>
+<td>Paste all known blockstates</td>
+<td>easyedit.edit easyedit.generate easyedit.manage</td>
+<td>Mainly for debugging (can be used as an oversight of all existing blocks though)</td>
+</tr>
+<tr>
+<td>//wand</td>
+<td>Get a wooden Axe</td>
+<td>easyedit.util</td>
+<td>Every normal axe works as well (as long as you have permissions and are in creative mode)</td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content-patterns" class="anchor" href="#patterns" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Patterns</h1>
+<p>Visit the <a href="https://github.com/platz1de/EasyEdit/wiki/Patterns">wiki</a> for more information.</p>
+<h2>
+<a id="user-content-block-patterns" class="anchor" href="#block-patterns" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Block Patterns</h2>
+<p>Block Patterns are just blocks, they just consist out of the name of the block or its numeric ID</p>
+<p>Examples:<br></p>
+<ul>
+<li>stone</li>
+<li>4</li>
+<li>red_wool</li>
+<li>stone:1</li>
+</ul>
+<p>The keyword "hand" represents the block you hold in your hand (or air for items/nothing) and can be used like normal blocks</p>
+<h2>
+<a id="user-content-random-pattern" class="anchor" href="#random-pattern" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Random Pattern</h2>
+<p>The Random Pattern as it name suggests selects a random Pattern<br>
+The patterns are separated by a comma and can be used in any order</p>
+<p>Examples:<br>
+<code>dirt,stone,air</code><br>
+<code>red_wool,green_wool,yellow_wool,orange_wool</code></p>
+<h2>
+<a id="user-content-weighted-patterns" class="anchor" href="#weighted-patterns" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Weighted Patterns</h2>
+<p>When one pattern should be more likely than another, the weighted notation can be used: <br>
+<code>propability%pattern</code></p>
+<p>Example: <br>
+<code>70%dirt,30%grass</code></p>
+<p>If the sum of given percentages is smaller than 100, there is a chance to not change anything:<br>
+<code>10%stone,10%dirt</code> - 80% of the selected area will not be affected</p>
+<p>If the sum of given percentages is greater than 100, given probabilities are scaled accordingly:<br>
+<code>150%stone,50%dirt</code> - 75% will be set to stone, 25% will be set to dirt</p>
+<h2>
+<a id="user-content-complex-patterns" class="anchor" href="#complex-patterns" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Complex Patterns</h2>
+<p>Complex patterns follow strict rules and as such allow the creation of complex structures</p>
+<p>Usage of Complex Patterns: patternName;arg1;arg2...(subPattern1,subPattern2...)</p>
+<p>Complex patterns can be chained together with dots to create a logic construct: <br>
+<code>block;stone(dirt).grass</code> - Replace all stone blocks with dirt and everything else with grass</p>
+<p>Chained constructs are executed from left to right until a valid block is found, otherwise the block will stay unaffected</p>
+<p>They can also be used with the default comma notation and are selected randomly, or in combination: <br>
+<code>stone,block;stone(dirt).grass,wool</code> - Places either stone, wool or following the pattern described above</p>
+<h3>
+<a id="user-content-logic-patterns" class="anchor" href="#logic-patterns" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Logic Patterns</h3>
+<p>These Patterns allow control over when to set certain blocks</p>
+<p>These are especially useful in complex structures or even nested: <br>
+<code>odd;x(odd;z(black_wool).white_wool).odd;z(white_wool).black_wool</code> - A 2d checkers pattern</p>
+<p>&lt;argument&gt; - required Argument<br>
+[argument] - optional Argument<br>
+patterns - children patterns, can be separated by a comma</p>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>block;&lt;block&gt;(patterns)</td>
+<td>Executes Patterns if the block is the same as the specified block (like in //replace)</td>
+</tr>
+<tr>
+<td>solid(patterns)</td>
+<td>Executes Patterns if the block is not an air-like block (ignored in config)</td>
+</tr>
+<tr>
+<td>above;&lt;block&gt;(patterns)</td>
+<td>Executes Patterns if the block is above the specified block</td>
+</tr>
+<tr>
+<td>around;&lt;block&gt;(patterns)</td>
+<td>Executes Patterns if the block is next to the specified block</td>
+</tr>
+<tr>
+<td>horizontal;&lt;block&gt;(patterns)</td>
+<td>Executes Patterns if the block is next to the specified block in horizontal direction</td>
+</tr>
+<tr>
+<td>below;&lt;block&gt;(patterns)</td>
+<td>Executes Patterns if the block is below the specified block</td>
+</tr>
+<tr>
+<td>not(condition(patterns))</td>
+<td>Executes Patterns of next Pattern is false (only works when nested)</td>
+</tr>
+<tr>
+<td>odd;[x];[y];[z](patterns)</td>
+<td>Executes Patterns if the block is at odd coordinates at x, y and z Axis, the x, y and z can be left out (only given ones will be checked)</td>
+</tr>
+<tr>
+<td>even;[x];[y];[z](patterns)</td>
+<td>Executes Patterns if the block is at even coordinates (see odd for more info)</td>
+</tr>
+<tr>
+<td>divisible;&lt;number&gt;;[x];[y];[z](patterns)</td>
+<td>Executes Patterns if the block is at coordinates which are divisible by the given number (see odd for more info)</td>
+</tr>
+<tr>
+<td>walls;[thickness](patterns)</td>
+<td>Executes Patterns if the block is one of the walls of the selection</td>
+</tr>
+<tr>
+<td>sides;[thickness](patterns)</td>
+<td>Executes Patterns if the block is one of the sides of the selection (walls + bottom and top)</td>
+</tr>
+<tr>
+<td>center(patterns)</td>
+<td>Executes Patterns if the block is in the center of the selection</td>
+</tr>
+<tr>
+<td>embed;&lt;block&gt;(patterns)</td>
+<td>Executes Patterns if the block is around a higher specified block</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="user-content-functional-patterns" class="anchor" href="#functional-patterns" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Functional Patterns</h3>
+<p>These Patterns have a unique use and are mostly used for the default commands</p>
+<p>&lt;argument&gt; - required Argument<br>
+[argument] - optional Argument<br>
+patterns - children patterns, can be separated by a comma</p>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>naturalize([pattern],[pattern],[pattern])</td>
+<td>makes your selection more natural (1 layer of pattern1 (eg. grass), 3 layers of pattern2 (eg. dirt), all below pattern3 (eg. stone))</td>
+</tr>
+<tr>
+<td>gravity([pattern])</td>
+<td>makes your blocks fall down until they reach the ground</td>
+</tr>
+</tbody>
+</table>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1460b66f3c15ea","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

@@ -1,0 +1,190 @@
+<h2><a id="user-content-worlds" class="anchor" aria-hidden="true" href="#worlds"><span aria-hidden="true" class="octicon octicon-link"></span></a>Worlds</h2>
+<p align="center">
+    <a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/a1ac4e3926f499626a6c782a1f83be0b7b7dcc0e0d706b905a71b7c89c94bb89/68747470733a2f2f7374617469632e73757276612e6e65742f6f73706c7567696e2d666561747572652d62616e6e6572732f776f726c64732e706e67"><img src="https://camo.githubusercontent.com/a1ac4e3926f499626a6c782a1f83be0b7b7dcc0e0d706b905a71b7c89c94bb89/68747470733a2f2f7374617469632e73757276612e6e65742f6f73706c7567696e2d666561747572652d62616e6e6572732f776f726c64732e706e67" width="650" height="366" alt="World plugin features" data-canonical-src="https://static.surva.net/osplugin-feature-banners/worlds.png" style="max-width: 100%;"></a>
+</p>
+<p><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Ready for PocketMine-MP version 4.0 (PM4).</p>
+<h2><a id="user-content-description" class="anchor" aria-hidden="true" href="#description"><span aria-hidden="true" class="octicon octicon-link"></span></a>Description</h2>
+<p>Because there was no plugin to manage all aspects of Minecraft: Bedrock Edition servers for each world like WorldGuard on Bukkit, I made Worlds.
+With Worlds, you can control events like breaking blocks, dropping items, and many more. And it's getting even more!</p>
+<p>If you want to help or you have ideas to make our plugin better, feel free to make a commit or open an issue.
+Please report bugs on the issues page on GitHub.</p>
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>
+<strong>CREATE / REMOVE</strong> Create and remove worlds (even special ones with custom world generators)</li>
+<li>
+<strong>COPY / RENAME</strong> Copy and rename worlds (including all necessary files)</li>
+<li>
+<strong>LOAD / UNLOAD</strong> Load and unload worlds</li>
+<li>
+<strong>TELEPORT</strong> Teleport to worlds</li>
+<li>
+<strong>CONTROL EVERYTHING</strong> Control nearly every event for each world (it's getting more and more).
+<ul>
+<li>World's gamemode</li>
+<li>Permission to join a world</li>
+<li>Block breaking and placing</li>
+<li>PvP</li>
+<li>Damage (everything like attacking, fall damage, ...)</li>
+<li>Explosion</li>
+<li>Item drop</li>
+<li>Hunger</li>
+<li>Fly</li>
+<li>Daylight cycle</li>
+<li>Leaves decay</li>
+<li>Potion</li>
+<li>Executing commands</li>
+<li>You have an idea what to add? Feel free to open an issue.</li>
+</ul>
+</li>
+<li>
+<strong>CONTROL LISTS</strong> Create whitelists and blacklists for many events like block placing, interacting with blocks, ...</li>
+<li>
+<strong>DEFAULT VALUES</strong> Set default values for worlds without settings</li>
+<li>
+<strong>SOPHISTICATED</strong> Easy to use, fast and mostly bug-free.</li>
+</ul>
+<p><strong>NEW</strong> Control lists can be used to create whitelists and blacklists instead of just allowing/disabling a world flag!</p>
+<p><strong>NEW</strong> Edit the settings of a world (gamemode, building, damage, and so on) using a super-easy form GUI!</p>
+<p><a target="_blank" rel="noopener noreferrer" href=".github/.media/world-settings-form.png"><img src=".github/.media/world-settings-form.png" width="540px" alt="Screenshot of world settings form" style="max-width: 100%;"></a></p>
+<h2><a id="user-content-usage" class="anchor" aria-hidden="true" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+<p>Worlds is really easy to use. Here is the command syntax:</p>
+<pre><code>/worlds list
+/worlds create &lt;worldname&gt; [type]
+/worlds &lt;remove|load|unload|teleport&gt; &lt;worldname&gt;
+/worlds teleport &lt;player&gt; &lt;worldname&gt;
+/worlds &lt;copy|rename&gt; &lt;from&gt; &lt;to&gt;
+/worlds set
+/worlds set show
+/worlds set permission &lt;permissionstring&gt;
+/worlds set gamemode &lt;survival|creative|adventure|spectator&gt;
+/worlds set &lt;rulename&gt; &lt;true|false&gt;
+/worlds set &lt;rulename&gt; &lt;true|false|white|black&gt;
+/worlds set &lt;rulename&gt; list &lt;add|remove&gt; &lt;item&gt;
+/worlds set &lt;rulename&gt; list &lt;show|reset&gt;
+/worlds unset
+/worlds unset &lt;rulename&gt;
+/worlds defaults
+/worlds defaults show
+/worlds defaults set permission &lt;permissionstring&gt;
+/worlds defaults set gamemode &lt;survival|creative|adventure|spectator&gt;
+/worlds defaults set &lt;rulename&gt; &lt;true|false&gt;
+/worlds defaults set &lt;rulename&gt; &lt;true|false|white|black&gt;
+/worlds defaults set &lt;rulename&gt; list &lt;add|remove&gt; &lt;item&gt;
+/worlds defaults set &lt;rulename&gt; list &lt;show|reset&gt;
+/worlds defaults unset &lt;rulename&gt;
+</code></pre>
+<p>Available world rules are:</p>
+<table>
+<thead>
+<tr>
+<th>Flag name</th>
+<th>available as default rule</th>
+<th>control lists</th>
+<th>listed by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>permission</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji> no</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji> no</td>
+<td></td>
+</tr>
+<tr>
+<td>gamemode</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji> no</td>
+<td></td>
+</tr>
+<tr>
+<td>build</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td>block ID</td>
+</tr>
+<tr>
+<td>pvp</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji> no</td>
+<td></td>
+</tr>
+<tr>
+<td>damage</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji> no</td>
+<td></td>
+</tr>
+<tr>
+<td>interact</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td>block ID</td>
+</tr>
+<tr>
+<td>explode</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji> no</td>
+<td></td>
+</tr>
+<tr>
+<td>drop</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td>item ID</td>
+</tr>
+<tr>
+<td>hunger</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji> no</td>
+<td></td>
+</tr>
+<tr>
+<td>fly</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji> no</td>
+<td></td>
+</tr>
+<tr>
+<td>daylightcycle</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji> no</td>
+<td></td>
+</tr>
+<tr>
+<td>leavesdecay</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji> no</td>
+<td></td>
+</tr>
+<tr>
+<td>potion</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td>item ID</td>
+</tr>
+<tr>
+<td>command</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> yes</td>
+<td>command name</td>
+</tr>
+</tbody>
+</table>
+<p>For a full list of commands, their usage and a description what they are for, take a look at the <a href="https://plugins.surva.net/docs/Worlds#commands" rel="nofollow">wiki</a>.</p>
+<p><a href="https://plugins.surva.net/docs/Worlds" rel="nofollow">Read the full documentation <g-emoji class="g-emoji" alias="book" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png">📖</g-emoji></a> • <a href="https://discord.gg/t4Kg4j3829" rel="nofollow">Ask questions on Discord <g-emoji class="g-emoji" alias="speech_balloon" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ac.png">💬</g-emoji></a></p>
+<h2><a id="user-content-contribution" class="anchor" aria-hidden="true" href="#contribution"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contribution</h2>
+<p>Feel free to contribute if you have ideas or found an issue.</p>
+<p>You can:</p>
+<ul>
+<li>
+<a href="https://github.com/survanetwork/Worlds/issues">open an issue</a> (problems, bugs or feature requests)</li>
+<li>
+<a href="https://github.com/survanetwork/Worlds/pulls">create a pull request</a> (code contributions like fixed bugs or added features)</li>
+<li>
+<a href="https://www.transifex.com/surva/worlds" rel="nofollow">help translating the plugin</a> (help us to translate this plugin into your language on Transifex platform)</li>
+</ul>
+<p>Please read our <strong><a href="CONTRIBUTING.md">Contribution Guidelines</a></strong> before creating an issue or submitting a pull request.</p>
+<p>Many thanks for their support to all contributors!</p>
+<h2><a id="user-content-license" class="anchor" aria-hidden="true" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<p><a href="https://github.com/survanetwork/Worlds/blob/master/LICENSE">MIT</a></p>

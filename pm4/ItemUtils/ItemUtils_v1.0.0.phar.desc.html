@@ -1,0 +1,32 @@
+<h1>
+<a id="user-content-itemutils" class="anchor" href="#itemutils" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ItemUtils</h1>
+<p>Add simple commands to duplicate, rename, import and export items.</p>
+<h2>
+<a id="user-content-usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+<ul>
+<li>
+<code>/itemutils duplicate</code> duplicate item in hand.</li>
+<li>
+<code>/itemutils rename</code> rename item in hand.</li>
+<li>
+<code>/itemutils import</code> import item from json string exported by this plugin.</li>
+<li>
+<code>/itemutils export</code> export item json into writable book. Keyboard user can copy and paste in writable book.</li>
+</ul>
+<h2>
+<a id="user-content-permission" class="anchor" href="#permission" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permission</h2>
+<p>All commands require op by default.</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">permissions</span>:
+  <span class="pl-ent">itemutils.command.duplicate</span>:
+    <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+    <span class="pl-ent">description</span>: <span class="pl-s">allow to duplicate item.</span>
+  <span class="pl-ent">itemutils.command.export</span>:
+    <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+    <span class="pl-ent">description</span>: <span class="pl-s">allow to export item information in serialized json format.</span>
+  <span class="pl-ent">itemutils.command.import</span>:
+    <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+    <span class="pl-ent">description</span>: <span class="pl-s">allow to import item information from serialized json format.</span>
+  <span class="pl-ent">itemutils.command.rename</span>:
+    <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+    <span class="pl-ent">description</span>: <span class="pl-s">allow to rename item.</span></pre></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e146248fe73cef9","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

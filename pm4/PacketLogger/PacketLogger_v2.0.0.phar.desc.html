@@ -1,0 +1,30 @@
+<h1>
+<a id="user-content-packetlogger" class="anchor" href="#packetlogger" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PacketLogger</h1>
+<p>A packet logger for Pocketmine-MP</p>
+<p>WARNING: This plugin is experimental and may lag your server with large amount of players (If it does please make an issue, and report any bugs)<br>
+Make sure to delete your config if you were using older versions</p>
+<h2>
+<a id="user-content-whats-this" class="anchor" href="#whats-this" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What's this?</h2>
+<p>It logs any packet sent between the player and the server</p>
+<h2>
+<a id="user-content-usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+<p>Download the plugin and drop it into your plugins folder<br>
+<code>/pkclear</code> Clears the log file<br>
+<code>/pkreload</code> Reloads config</p>
+<h2>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h2>
+<p><code>pklogger.clear</code> Gives permission to use <code>/pkclear</code><br>
+<code>pklogger.reload</code> Gives permission to use <code>/pkreload</code></p>
+<h2>
+<a id="user-content-log-format" class="anchor" href="#log-format" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Log format</h2>
+<p><code>date</code> Self-explanatory<br>
+<code>time</code> Self-explanatory<br>
+<code>packet</code> Name of the packet (again, self-explanatory :D)<br>
+<code>cancelled</code> Whenever a plugin cancels either DataPacket receive or send events it will not be handled/sent by the server and it will show as true, false otherwise<br>
+<code>src</code> Source<br>
+<code>src-ip</code> IP address of the source<br>
+<code>src-port</code> Port of the source<br>
+<code>dst</code> Destination<br>
+<code>dst-ip</code> IP address of the destination<br>
+<code>dst-port</code> Port of the destination</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1464004933175f","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

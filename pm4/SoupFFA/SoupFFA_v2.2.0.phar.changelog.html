@@ -1,0 +1,11 @@
+<p dir="auto">Optimized code performance and made some code updates to get better performance on the server.</p>
+<p dir="auto">Changes:</p>
+<ul dir="auto">
+<li>Added strict types to all parameters and functions.</li>
+<li>Use of VanillaItems class constants instead of creating new objects at each check.</li>
+<li>Changed string equality check with === operator instead of ==.</li>
+<li>Optimized loading of plugin settings using the getConfig() and getDescription()-&gt;getVersion() methods instead of creating unnecessary temporary variables.</li>
+<li>Using a switch instead of several cascaded if statements to check if the item is soup.</li>
+<li>Added a return right after sending the message to the player that their health is already full, to avoid unnecessary code processing.</li>
+<li>Fix undefined VanillaItems::AIR()</li>
+</ul>

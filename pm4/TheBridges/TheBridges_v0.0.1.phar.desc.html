@@ -1,0 +1,57 @@
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>Customisable messages and scoreboard</li>
+<li>Multi arena support</li>
+<li>Waiting lobby support</li>
+<li>Auto-queue support</li>
+<li>Game statistics</li>
+<li>SQLite support</li>
+<li>MySQL support</li>
+</ul>
+<h2><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Command</th>
+<th align="center">Description</th>
+<th align="center">Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">thebridge create</td>
+<td align="center">Create a new arena.</td>
+<td align="center"><code>thebridge.subcommand.create</code></td>
+</tr>
+<tr>
+<td align="center">thebridge delete</td>
+<td align="center">Delete an existing arena.</td>
+<td align="center"><code>thebridge.subcommand.delete</code></td>
+</tr>
+<tr>
+<td align="center">thebridge list</td>
+<td align="center">List all available arenas.</td>
+<td align="center"><code>thebridge.subcommand.list</code></td>
+</tr>
+<tr>
+<td align="center">thebridge test</td>
+<td align="center">Force online players to join a game.</td>
+<td align="center"><code>thebridge.subcommand.quit</code></td>
+</tr>
+<tr>
+<td align="center">thebridge join</td>
+<td align="center">Join a game.</td>
+<td align="center"><code>thebridge.subcommand.join</code></td>
+</tr>
+<tr>
+<td align="center">thebridge quit</td>
+<td align="center">Quit a game.</td>
+<td align="center"><code>thebridge.subcommand.quit</code></td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content-arena-creation" class="anchor" aria-hidden="true" href="#arena-creation"><span aria-hidden="true" class="octicon octicon-link"></span></a>Arena creation</h3>
+<h4><a id="user-content-format" class="anchor" aria-hidden="true" href="#format"><span aria-hidden="true" class="octicon octicon-link"></span></a>Format</h4>
+<p><code>thebridge create &lt;name: string&gt; &lt;lobby: string&gt; &lt;world: string&gt; &lt;countdown: int&gt; &lt;duration: int&gt; &lt;grace_duration: int&gt; &lt;end_duration: int&gt; &lt;mode: solo|duo|trio|squad&gt;</code></p>
+<h4><a id="user-content-example" class="anchor" aria-hidden="true" href="#example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h4>
+<p><code>thebridge create name game-lobby game-world 30 600 5 10 solo</code></p>

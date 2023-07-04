@@ -1,0 +1,107 @@
+<h2>
+<a id="user-content-description" class="anchor" href="#description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Description</h2>
+<ul>
+<li>A <a href="https://pmmp.io/" rel="nofollow">PocketMine</a> plugin for stealing other player's skins</li>
+<li>Can get skins from online players, offline players, files and Minecraft: Java Edition players</li>
+</ul>
+<h2>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<p>The command of this plugin is <code>/skin</code>. It has the following subcommands:</p>
+<ul>
+<li>
+<code>/skin load [file name] [target player]</code>
+<ul>
+<li>Description: Load skin from a png file in <code>plugin_data/SkinThief/skins</code>
+</li>
+<li>Note: If no file name is given, the player's name is used</li>
+</ul>
+</li>
+<li>
+<code>/skin save [file name] [target player]</code>
+<ul>
+<li>Description: Save skin to a png file in <code>plugin_data/SkinThief/skins</code>
+</li>
+<li>Note: If no file name is given, the player's name is used</li>
+</ul>
+</li>
+<li>
+<code>/skin steal &lt;player to steal from&gt; [target player]</code>
+<ul>
+<li>Description: Steal the skin of another player (online or offline)</li>
+</ul>
+</li>
+<li>
+<code>/skin mcje &lt;player to steal from&gt; [target player]</code>
+<ul>
+<li>Description: Steal the skin of a Minecraft: Java Edition player</li>
+</ul>
+</li>
+</ul>
+<h2>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h2>
+<ul>
+<li>
+<code>skinthief.command</code>
+<ul>
+<li>Description: Allow access to the <code>/skin</code> base command (subcommands need seperate permissions!)</li>
+<li>Default: op</li>
+</ul>
+</li>
+<li>
+<code>skinthief.command.load</code>
+<ul>
+<li>Description: Allow access to <code>/skin load</code>
+</li>
+<li>Default: op</li>
+</ul>
+</li>
+<li>
+<code>skinthief.command.save</code>
+<ul>
+<li>Description: Allow access to <code>/skin save</code>
+</li>
+<li>Default: op</li>
+</ul>
+</li>
+<li>
+<code>skinthief.command.steal</code>
+<ul>
+<li>Description: Allow access to <code>/skin steal</code>
+</li>
+<li>Default: op</li>
+</ul>
+</li>
+<li>
+<code>skinthief.command.mcje</code>
+<ul>
+<li>Description: Allow access to <code>/skin mcje</code>
+</li>
+<li>Default: op</li>
+</ul>
+</li>
+<li>
+<code>skinthief.command.all</code>
+<ul>
+<li>Description: Allow access to all <code>/skin</code> subcommands</li>
+<li>Default: op</li>
+</ul>
+</li>
+<li>
+<code>skinthief.otherplayer</code>
+<ul>
+<li>Description: Allow changing another player's skin (using the <code>target player</code> argument)</li>
+<li>Default: op</li>
+</ul>
+</li>
+<li>
+<code>skinthief.anyfilename</code>
+<ul>
+<li>Description: Allow picking any file name when saving or loading a skin (otherwise only the player's name is
+allowed)</li>
+<li>Default: op</li>
+</ul>
+</li>
+</ul>
+<h2>
+<a id="user-content-additional-information" class="anchor" href="#additional-information" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Information</h2>
+<p>Icon credits: <a href="https://pixabay.com/vectors/moneybag-hand-coins-symbol-icon-400290/" rel="nofollow">https://pixabay.com/vectors/moneybag-hand-coins-symbol-icon-400290/</a></p>

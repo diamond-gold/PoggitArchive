@@ -1,0 +1,201 @@
+<h1><a id="user-content-emojis-v100" class="anchor" aria-hidden="true" href="#emojis-v100"><span aria-hidden="true" class="octicon octicon-link"></span></a>Emojis v1.0.0</h1>
+<div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/xBeastMode/Emojis/raw/main/icon.png"><img src="https://github.com/xBeastMode/Emojis/raw/main/icon.png" alt="" style="max-width: 100%;"></a>
+</div>
+<p>by xBeastMode</p>
+<h1><a id="user-content-feature" class="anchor" aria-hidden="true" href="#feature"><span aria-hidden="true" class="octicon octicon-link"></span></a>Feature</h1>
+<ul>
+<li>[x] Use emojis via chat</li>
+<li>[x] Spawn emoji models</li>
+<li>[x] Create custom emojis</li>
+<li>[x] Disable emojis per world</li>
+<li>[x] Option to enable use permission</li>
+<li>[x] Duration and max stack limiter</li>
+<li>[ ] Use emojis via modal forms</li>
+<li>[ ] Use emojis via commands</li>
+</ul>
+<h1><a id="user-content-usage" class="anchor" aria-hidden="true" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h1>
+<p>Simply send your desired emoji's name in chat, you may use multiple emojis
+in one message, you can also set the duration of the emoji in seconds by separating it with dot "."
+for example including "cool.10" in your chat message will activate the "cool" emoji for 10 seconds.
+The time separation character is configurable as well as the default and max duration time.</p>
+<p><strong>NOTE</strong>: Use permissions are required by default, but can be disabled in config,
+by setting <code>requires-permission</code> to <code>false</code>.<br>
+<strong>Permission node</strong>:
+<code>emojis.emoji.[name]</code>, e.g. <code>emojis.emoji.joy</code> for a single emoji
+<strong>OR</strong> <code>emojis.emoji.all</code> for all emojis.</p>
+<p>The default emoji list includes:</p>
+<ul>
+<li>blush</li>
+<li>cool</li>
+<li>cry</li>
+<li>heart</li>
+<li>heart_eyes</li>
+<li>joy</li>
+<li>kiss</li>
+<li>pensive</li>
+<li>pepe</li>
+<li>pepegang</li>
+<li>pog</li>
+<li>sad</li>
+<li>smile</li>
+<li>smile_hearts</li>
+<li>smirk</li>
+<li>sweat</li>
+<li>tongue</li>
+<li>tongue_wink</li>
+<li>unamused</li>
+<li>wink</li>
+<li>worried</li>
+</ul>
+<h1><a id="user-content-screenshot" class="anchor" aria-hidden="true" href="#screenshot"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshot</h1>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/xBeastMode/Emojis/raw/main/screenshot.png"><img src="https://github.com/xBeastMode/Emojis/raw/main/screenshot.png" alt="" style="max-width: 100%;"></a></p>
+<h1><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<ul>
+<li>
+<code>/spawnemojimodel</code>
+<ul>
+<li>permission: <code>command.spawnemojimodel</code>
+</li>
+<li>usage: <code>/spawnemojimodel &lt;name&gt; [text...]</code>
+</li>
+</ul>
+</li>
+</ul>
+<p>the <code>/spawnemojimodel</code> command as the name suggests spawns a emoji model
+with the desired name. To remove the model once spawned simply use <code>/spawnemojimodel remove</code>
+and tap the model to remove it.</p>
+<p><strong>NOTE</strong>: if emoji uses custom geometry, the emoji will not render as expected
+because the command uses the default emoji geometry
+for which I suggest you write your own model spawn code if you wish to spawn custom emoji models.</p>
+<h1><a id="user-content-configuration" class="anchor" aria-hidden="true" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h1>
+<div class="highlight highlight-source-yaml"><pre>---
+---
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> default list of emojis</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> blush, cool, cry, heart, heart_eyes, joy, kiss, pensive</span>
+<span class="pl-c"><span class="pl-c">#</span> pepe, pepegang, pog, sad, smile, smile_hearts, smirk, sweat,</span>
+<span class="pl-c"><span class="pl-c">#</span> tongue, tongue_wink, unamused, wink, worried</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> This is an array containing the names of the emojis</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> you want to disable. The format should go as such:</span>
+<span class="pl-c"><span class="pl-c">#</span> disabled-emojis: [blush, cool, etc...]</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-ent">disabled-emojis</span>: <span class="pl-s">[]</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> This is an array containing the names of the worlds</span>
+<span class="pl-c"><span class="pl-c">#</span> you want to disable.</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> To disable all emojis in a specific</span>
+<span class="pl-c"><span class="pl-c">#</span> world the format should go as such:</span>
+<span class="pl-c"><span class="pl-c">#</span> disabled-worlds:</span>
+<span class="pl-c"><span class="pl-c">#</span>   world: "*"</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> To disable specific emojis in a specific</span>
+<span class="pl-c"><span class="pl-c">#</span> world the format should go as such:</span>
+<span class="pl-c"><span class="pl-c">#</span> disabled-worlds:</span>
+<span class="pl-c"><span class="pl-c">#</span>   world: [blush, cool, etc...]</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-ent">disabled-worlds</span>: <span class="pl-s">[]</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> This is an array containing the names of additional</span>
+<span class="pl-c"><span class="pl-c">#</span> 3rd party emojis you may want to add outside of</span>
+<span class="pl-c"><span class="pl-c">#</span> default emojis</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> To add new emojis simply drop your new emoji's texture</span>
+<span class="pl-c"><span class="pl-c">#</span> in the "plugin_data/Emojis/textures" folder and add</span>
+<span class="pl-c"><span class="pl-c">#</span> the name inside the array</span>
+<span class="pl-c"><span class="pl-c">#</span> =====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> NOTE: textures must be in 64x64 PNG 32-bit color format</span>
+<span class="pl-c"><span class="pl-c">#</span> if the emoji uses the default geometry</span>
+<span class="pl-c"><span class="pl-c">#</span> =====================================================</span>
+<span class="pl-ent">additional-emojis</span>: <span class="pl-s">[]</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> Set this to "true" if you want to require player's to have</span>
+<span class="pl-c"><span class="pl-c">#</span> permission to use emojis, otherwise set this to "false"</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-ent">requires-permission</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> This is the character that separates the emoji name</span>
+<span class="pl-c"><span class="pl-c">#</span> and duration time in the emoji chat format.</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> For example if the separator is "." and I chat "cool.5"</span>
+<span class="pl-c"><span class="pl-c">#</span> then the emoji will be "cool" and have a 5 second duration.</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> This can also have multiple characters or have other</span>
+<span class="pl-c"><span class="pl-c">#</span> characters than a dot for example "::" and that would be</span>
+<span class="pl-c"><span class="pl-c">#</span> used as such: "cool::5"</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-ent">time-separator</span>: <span class="pl-s"><span class="pl-pds">"</span>.<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> This is the default duration of an emoji</span>
+<span class="pl-c"><span class="pl-c">#</span> if not provided by the player</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-ent">default-duration</span>: <span class="pl-c1">5</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> Set this to "true" if you want to enable an active emoji</span>
+<span class="pl-c"><span class="pl-c">#</span> limit and set that limit in the "max-emojis" value</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-ent">limit-emojis</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> This is the limit of emojis a player can have active at once</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-ent">max-emojis</span>: <span class="pl-c1">3</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> Set this to "true" if you want to enable an emoji duration</span>
+<span class="pl-c"><span class="pl-c">#</span> limit and set that duration in the "max-duration" value</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-ent">limit-duration</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> This is the maximum duration of an emoji in seconds</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-ent">max-duration</span>: <span class="pl-c1">10</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> Set this to "true" if you want to cancel messages</span>
+<span class="pl-c"><span class="pl-c">#</span> when players use emojis via chat</span>
+<span class="pl-c"><span class="pl-c">#</span> ====================================================</span>
+<span class="pl-ent">cancel-chat</span>: <span class="pl-c1">false</span>
+...</pre></div>
+<h1><a id="user-content-api" class="anchor" aria-hidden="true" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h1>
+<p><strong>To register new emojis</strong> via the api simply drop
+your new emoji's texture in your <code>plugin_data/Emojis/textures</code>
+folder. Textures must be in 64x64 PNG 32-bit color format if using default geometry.
+Say new emojis name is <code>watermelon</code>,
+the file must be named <code>watermelon.png</code>.
+Now to register it use:</p>
+<div class="highlight highlight-text-html-php"><pre>\xBeastMode\<span class="pl-v">Emojis</span>\<span class="pl-v">EmojiManager</span>::<span class="pl-en">getInstance</span>()
+-&gt;<span class="pl-en">getEmojiManager</span>()
+-&gt;<span class="pl-en">registerEmoji</span>("<span class="pl-s">watermelon</span>")</pre></div>
+<p>You may optionally provide a second argument with a
+custom extension of the <code>\xBeastMode\Emojis\Emoji</code>
+class. This allows you to do more stuff with the emoji's
+entity and create your own animations.</p>
+<p><strong>To get an emoji (class)</strong> use</p>
+<div class="highlight highlight-text-html-php"><pre>\xBeastMode\<span class="pl-v">Emojis</span>\<span class="pl-v">EmojiManager</span>::<span class="pl-en">getInstance</span>()
+-&gt;<span class="pl-en">getEmojiManager</span>()
+-&gt;<span class="pl-en">getEmoji</span>("<span class="pl-s">watermelon</span>")</pre></div>
+<p>this returns an instance of <code>\xBeastMode\Emojis\Emoji</code>.</p>
+<p><strong>To activate an emoji</strong> for a player simply pass the player
+and emoji class to this function:</p>
+<div class="highlight highlight-text-html-php"><pre>\xBeastMode\<span class="pl-v">Emojis</span>\<span class="pl-v">EmojiManager</span>::<span class="pl-en">getInstance</span>()
+-&gt;<span class="pl-en">getEmojiManager</span>()
+-&gt;<span class="pl-en">addActiveEmoji</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s1"><span class="pl-c1">$</span>emoji</span>)</pre></div>
+<p>If you wanna learn more of the api I encourage you to explore
+around the code, it's quite a simple plugin really with little functions
+and features, so I'm hoping other devs are encouraged to write
+"addons" for this plugin as I believe is a fun concept. Enjoy!</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1460edcbcdd021","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

@@ -1,0 +1,73 @@
+<p dir="auto">API4 support</p>
+<p dir="auto">Note: The syntax and function of pattern has changes, please refer to the <a href="https://github.com/platz1de/EasyEdit#patterns">documentation</a></p>
+<p dir="auto">New Features:</p>
+<ul dir="auto">
+<li>Improved Patterns
+<ul dir="auto">
+<li>Support for percentage notation</li>
+<li>differentiation between logical and classical patterns</li>
+</ul>
+</li>
+<li>Schematics
+<ul dir="auto">
+<li>McEdit Format (until Java 1.12.2)</li>
+<li>Sponge Format (Java 1.13+)</li>
+<li>Block translations, converting blocks from java to bedrock</li>
+</ul>
+</li>
+<li>“hand” argument, representing the current held block</li>
+<li>revert actions of other players (//undo ; deactivatable via config)</li>
+</ul>
+<p dir="auto">Commands:</p>
+<ul dir="auto">
+<li>Clipboard:
+<ul dir="auto">
+<li>//loadschematic (//load) command, loading schematics from “schematics” directory in plugin_data directory</li>
+<li>//saveschematic (//save) command, saving current clipboard</li>
+<li>//rotate command</li>
+<li>//flip command</li>
+<li>//cut command</li>
+</ul>
+</li>
+<li>//noise command</li>
+<li>//blockinfo command</li>
+<li>//istack command</li>
+</ul>
+<p dir="auto">Utility Improvements:</p>
+<ul dir="auto">
+<li>New blockparser allowing use of string ids like “red_wool”
+<ul dir="auto">
+<li>Legacy numeric ids are still supported</li>
+</ul>
+</li>
+<li>Inserting now ignores the same blocks as smoothing does (configurable via config)</li>
+<li>Proper permission naming system</li>
+<li>More tolerant pattern parser, allow use of spaces in most commands</li>
+<li>//status command now shows memory consumption of edit thread</li>
+<li>World generation is no longer handled differently, this allows support for custom generators depending on special properties</li>
+<li>Patterns now report wrong usage directly</li>
+<li>//center command is now async &amp; undoable</li>
+<li>Parameters like radius or thickness now allow use of floating point numbers</li>
+</ul>
+<p dir="auto">Bug Fixes:</p>
+<ul dir="auto">
+<li>Selection axe now works properly on mobile devices</li>
+<li>Fix some potential data loss when passing chunk data</li>
+<li>Fix some rounding faults causing selections to have unexpected behavior</li>
+<li>Fix some crashes when trying to exceed world height limitations</li>
+<li>Fix selection level being ignored in some cases</li>
+</ul>
+<p dir="auto">Performance Optimizations:</p>
+<ul dir="auto">
+<li>Clipboard &amp; History is now saved on the editing Thread directly, saving cost of transferring data</li>
+<li>Add selection contexts, reducing checked blocks for commands like //center drastically</li>
+<li>A ton of other tiny improvements</li>
+<li>Tiles of selections now get split into pieces like blocks do</li>
+</ul>
+<p dir="auto">Internal Changes:</p>
+<ul dir="auto">
+<li>Complete rewrite of task structure, switching to a request-based thread</li>
+<li>Allows for way more customization of features</li>
+<li>Gave Config &amp; Message files updating scripts allowing to update to newer versions without loosing settings</li>
+<li>Tracking read &amp; written block count for edits</li>
+</ul>

@@ -1,0 +1,60 @@
+<h1><a id="user-content-motdshuffle" class="anchor" aria-hidden="true" href="#motdshuffle"><span aria-hidden="true" class="octicon octicon-link"></span></a>MOTDShuffle</h1>
+<p>Gives a random MOTD shuffle, such as the Minecraft Featured Servers!</p>
+<p>Ever wanted a moving MOTD like the featured servers?
+Well, now you can. With his simple Shuffling plugin.
+It is a configurable plugin. All you need to know is in config.yml.
+You can also choose to have it in sequence too!</p>
+<h2><a id="user-content-config" class="anchor" aria-hidden="true" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h2>
+<pre><code>---
+# The Ammount of time in ticks that you wish for the MOTD Delay.
+# This doesn't make the client's query change,
+# This affects the amount of time the server sends the message.
+# -----------------------
+# One second is 20 ticks.
+# Default: 100
+MOTD Delay: 100
+
+# Here you can set if you want the shuffle "on", or "off".
+# It is required to use quotations.
+# Default: "on"
+MOTD Shuffle: "on"
+
+# The MOTD Messages.
+# You can add to as much as you like! 
+# Just make sure you copy it correctly.
+# VARIABLES:
+# Use these within the MOTD Messages below. 
+# {POCKETMINE_API}   - Displays the PocketMine version.
+# {SERVER_VERSION}   - Displays the Minecraft version for the server.
+# {ONLINE_PLAYERS}   - Displays the current amount of online players.
+# {MAX_PLAYERS}      - Displays the current Max players stated in server.properties.
+# {PREFIX}           - Displays the set prefix below.
+# {SUFFIX}           - Displays the set suffix below.
+Prefix: "Example #1"
+Suffix: "Example #2"
+
+MOTD Message:
+    - "&amp;aMessage 1&amp;r"
+    - "&amp;bMessage 2&amp;r"
+    - "&amp;cMessage 3&amp;r"
+    - "&amp;dMessage 4&amp;r"
+    - "&amp;eMessage 5&amp;r"
+
+# Config Version:
+# Do not touch the config version. 
+# It's only to allow changes without issue  
+Config Version: 1.0.0
+...
+</code></pre>
+<h2><a id="user-content-commands-and-permissions" class="anchor" aria-hidden="true" href="#commands-and-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands and Permissions</h2>
+<p>No Permissions or Commands are required. Simply Stop your server, edit the config.yml and start the server again.</p>
+<h2><a id="user-content-php-82" class="anchor" aria-hidden="true" href="#php-82"><span aria-hidden="true" class="octicon octicon-link"></span></a>PHP 8.2+</h2>
+<p>If you are having errors on PHP 8.2, head on over to <a href="https://poggit.pmmp.io/ci/HBIDamian/MOTDShuffle/MOTDShuffle/dev:20" rel="nofollow">https://poggit.pmmp.io/ci/HBIDamian/MOTDShuffle/MOTDShuffle/dev:20</a>!</p>
+<h2><a id="user-content-issues" class="anchor" aria-hidden="true" href="#issues"><span aria-hidden="true" class="octicon octicon-link"></span></a>Issues</h2>
+<h3><a id="user-content-known-issue" class="anchor" aria-hidden="true" href="#known-issue"><span aria-hidden="true" class="octicon octicon-link"></span></a>Known Issue:</h3>
+<pre><code>Attention:
+Due to the way the plugin "CustomAlerts" works, it does not allow MOTDShuffle to work. Please stop sending me issues saying it's not working. Disable "CustomAlerts" first then try again. Then decide which plugin you'd rather have. It's up to you!
+</code></pre>
+<h3><a id="user-content-found-some-bugs" class="anchor" aria-hidden="true" href="#found-some-bugs"><span aria-hidden="true" class="octicon octicon-link"></span></a>Found some Bugs?</h3>
+<p>If you find some bugs, click the handy dandy Bugs button at the top of this page!</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14690f1d0d270e","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

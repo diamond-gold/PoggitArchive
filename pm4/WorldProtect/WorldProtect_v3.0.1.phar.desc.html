@@ -1,0 +1,390 @@
+<h1><a id="user-content-overview" class="anchor" aria-hidden="true" href="#overview"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h1>
+
+
+<p><strong>DO NOT POST QUESTIONS/BUG-REPORTS/REQUESTS IN THE REVIEWS</strong></p>
+<p>It is difficult to carry a conversation in the reviews.  If you
+have a question/bug-report/request please use the
+<a href="https://github.com/poggit-orphanage/WorldProtect/issues">Issue Tracker</a> for
+that.  You are more likely to get a response and help that way.</p>
+<p><strong>A fully featured World protection plugin.</strong></p>
+<p>Features:</p>
+
+<ul>
+<li>Ban commands on a per world basis</li>
+<li>Per world game modes</li>
+<li>Limit the number of players in a world</li>
+<li>Control explosions per world</li>
+<li>Unbreakable blocks</li>
+<li>World borders</li>
+<li>Automatically displayed/per world MOTD</li>
+<li>Protect worlds from building/block breaking</li>
+<li>Per World PvP</li>
+<li>Ban specific items in a world</li>
+</ul>
+
+<p>All commands require a <em>world</em> name to be given, otherwise a default
+is selected.  If in-game, the default <em>world</em> is the world the player
+is currently in.  On the console the default is the <em>default-world</em> as
+specified in the <em>server.properties</em> file.</p>
+<h2><a id="user-content-main-commands" class="anchor" aria-hidden="true" href="#main-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Main Commands</h2>
+<ul>
+<li>/motd: Shows the world's <em>motd</em> text</li>
+<li>/worldprotect: Main WorldProtect command</li>
+</ul>
+<h2><a id="user-content-sub-commands" class="anchor" aria-hidden="true" href="#sub-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sub Commands</h2>
+<ul>
+<li>add: Add player to the authorized list</li>
+<li>bancmd|unbancmd: Prevents commands to be used in worlds</li>
+<li>banitem|unbanitem: Control items that can/cannot be used</li>
+<li>border: defines a border for a world</li>
+<li>gm: Configures per world game modes</li>
+<li>lock: Locks world, not even Op can use.</li>
+<li>ls: List info on world protection.</li>
+<li>max: Limits the number of players per world</li>
+<li>motd: Modifies the world's <em>motd</em> text.</li>
+<li>noexplode: Stops explosions in a world</li>
+<li>protect: Protects world, only certain players can build.</li>
+<li>pvp: Controls PvP in a world</li>
+<li>rm: Removes player from the authorized list</li>
+<li>unbreakable|breakable: Control blocks that can/cannot be broken</li>
+<li>unlock: Removes protection</li>
+</ul>
+
+<h1><a id="user-content-documentation" class="anchor" aria-hidden="true" href="#documentation"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h1>
+<p>This plugin allows you limit what happens in a world.</p>
+
+<p>It is possible to create limits in your limitless worlds.
+So players are not able to go beyond a preset border.  This is
+useful if you want to avoid overloading the server by
+generating new Terrain.</p>
+<p>Show a text file when players enter a world.  To explain players
+what is allowed (or not allowed) in specific worlds.  For example,
+you could warn players when they are entering a PvP world.</p>
+<p>This plugin protects worlds from griefers by restricing placing and breaking
+blocks.  Worlds have three protection levels:</p>
+<ul>
+<li>unlock - anybody can place/break blocks</li>
+<li>protect - players in the <em>authorized</em> list or, if the list is empty,
+players with <strong>worldprotect.cmd.protect.auth</strong> permission can place/break
+blocks.</li>
+<li>lock - nobody (even <em>ops</em>) is allowed to place/break blocks.</li>
+</ul>
+<p>Some items are able to modify a world by being consumed (i.e. do not
+need to be placed).  For example, <em>bonemeal</em>, <em>water or lava buckets</em>.
+To prevent this type of griefing, you can use the <strong>banitem</strong>
+feature.</p>
+
+<h3><a id="user-content-command-reference" class="anchor" aria-hidden="true" href="#command-reference"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command Reference</h3>
+<p>The following commands are available:</p>
+
+<ul>
+<li>
+<p>/motd: Shows the world's <em>motd</em> text<br>
+usage: /motd  <em>[world]</em></p>
+<p>Shows the <em>motd</em> text of a <em>world</em>.  This can be used to show
+rules around a world.</p>
+</li>
+<li>
+<p>/worldprotect: Main WorldProtect command<br>
+usage: /worldprotect  <em>[world]</em> <em>&lt;subcmd&gt;</em> <em>[options]</em></p>
+</li>
+<li>
+<p>add: Add player to the authorized list<br>
+usage: /worldprotect <em>[world]</em> <strong>add</strong> <em>&lt;player&gt;</em></p>
+</li>
+<li>
+<p>bancmd|unbancmd: Prevents commands to be used in worlds<br>
+usage: /worldprotect <em>[world]</em> <strong>bancmd|unbancmd</strong> <em>[command]</em></p>
+<p>If no commands are given it will show a list of banned
+commands.   The <em>command</em> will be added/removed
+from the ban list otherwise.</p>
+</li>
+<li>
+<p>banitem|unbanitem: Control itmes that can/cannot be used<br>
+usage: /worldprotect  <em>[world]</em> <strong>banitem|unbanitem</strong> <em>[Item-ids]</em></p>
+<p>Manages which Items can or can not be used in a given world.
+You can get a list of items currently banned
+if you do not specify any <em>[item-ids]</em>.  These are
+added or removed from the list otherwise.</p>
+</li>
+<li>
+<p>border: defines a border for a world<br>
+usage: /worldprotect  <em>[world]</em> <strong>border</strong> <em>[range|none|x1 z1 x2 z2]</em></p>
+<p>Defines a border for an otherwise infinite world.  Usage:</p>
+<ul>
+<li>/worldprotect <em>[world]</em> <strong>border</strong>
+<ul>
+<li>will show the current borders for <em>[world]</em>.</li>
+</ul>
+</li>
+<li>/worldprotect <em>[world]</em> <strong>border</strong> <em>x1 z1 x2 z2</em>
+<ul>
+<li>define the border as the region defined by <em>x1,z1</em> and <em>x2,z2</em>.</li>
+</ul>
+</li>
+<li>/worldprotect <em>[world]</em> <strong>border</strong> <em>range</em>
+<ul>
+<li>define the border as being <em>range</em> blocks in <code>x</code> and <code>z</code> axis away
+from the spawn point.</li>
+</ul>
+</li>
+<li>/worldprotect <em>[world]</em> <strong>border</strong> <strong>none</strong>
+<ul>
+<li>Remove borders</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>gm: Configures per world game modes<br>
+usage: /worldprotect <em>[world]</em> gm <em>[value]</em></p>
+<p>Options:</p>
+<ul>
+<li>/worldprotect <em>[world]</em> <strong>gm</strong>
+<ul>
+<li>show current gamemode</li>
+</ul>
+</li>
+<li>/worldprotect <em>[world]</em> <strong>gm</strong> <em>&lt;mode&gt;</em>
+<ul>
+<li>Sets the world gamemode to <em>mode</em>
+</li>
+</ul>
+</li>
+<li>/worldprotect <em>[world]</em> <strong>gm</strong> <strong>none</strong>
+<ul>
+<li>Removes per world game mode</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>lock: Locks world, not even Op can use.<br>
+usage: /worldprotect <em>[world]</em> <strong>lock</strong></p>
+</li>
+<li>
+<p>ls: List info on world protection.<br>
+usage: /worldprotect <strong>ls</strong> <em>[world]</em></p>
+<ul>
+<li>/worldprotect <strong>ls</strong>
+<ul>
+<li>shows an overview of protections applied to all loaded worlds</li>
+</ul>
+</li>
+<li>/worldprotect <strong>ls</strong> <em>[world]</em>
+<ul>
+<li>lists details of a specific world</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>max: Limits the number of players per world<br>
+usage : /worldprotect <em>[world]</em> max <em>[value]</em></p>
+<ul>
+<li>/worldprotect <em>[world]</em> <strong>max</strong>
+<ul>
+<li>shows the current limit</li>
+</ul>
+</li>
+<li>/worldprotect <em>[world]</em> <strong>max</strong> <em>value</em>
+<ul>
+<li>Sets limit value to <em>value</em>.</li>
+</ul>
+</li>
+<li>/worldprotect <em>[world]</em> <strong>max</strong> <strong>0</strong>
+<ul>
+<li>Removes world limits</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>motd: Modifies the world's <em>motd</em> text.<br>
+usage: /worldprotect <em>[world]</em> <strong>motd</strong> <em>&lt;text&gt;</em></p>
+<p>Allows you to modify the world's <em>motd</em> text.  The command only
+supports a single line, however you can modify the <em>motd</em> text
+by editing the <strong>wpcfg.yml</strong> file that is stored in the <strong>world</strong>
+folder.  For example:</p>
+<ul>
+<li>[CODE]
+<ul>
+<li>motd:
+<ul>
+<li>line 1</li>
+<li>line 2</li>
+<li>line 3</li>
+<li>line 4... etc</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[/CODE]</li>
+</ul>
+</li>
+<li>
+<p>noexplode: Stops explosions in a world<br>
+usage: /worldprotect  <em>[world]</em> <strong>noexplode</strong> <em>[off|world|spawn]</em></p>
+<ul>
+<li>/worldprotect <em>[world]</em> <strong>noexplode</strong> <strong>off</strong>
+<ul>
+<li>no-explode feature is <code>off</code>, so explosions are allowed.</li>
+</ul>
+</li>
+<li>/worldprotect <em>[world]</em> <strong>noexplode</strong> <strong>world</strong>
+<ul>
+<li>no explosions allowed in the whole <em>world</em>.</li>
+</ul>
+</li>
+<li>/worldprotect <em>[world]</em> <strong>noexplode</strong> <strong>spawn</strong>
+<ul>
+<li>no explosions allowed in the world's spawn area.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>protect: Protects world, only certain players can build.<br>
+usage: /worldprotect <em>[world]</em> <strong>protect</strong></p>
+<p>When in this mode, only players in the <em>authorized</em> list can build.
+If there is no authorized list, it will use <strong>worldprotect.cmd.protect.auth</strong>
+permission instead.</p>
+</li>
+<li>
+<p>pvp: Controls PvP in a world<br>
+usage: /worldprotect  <em>[world]</em> <strong>pvp</strong> <em>[on|off|spawn-off]</em></p>
+<ul>
+<li>/worldprotect <em>[world]</em> <strong>pvp</strong> <strong>off</strong>
+<ul>
+<li>no PvP is allowed.</li>
+</ul>
+</li>
+<li>/worldprotect <em>[world]</em> <strong>pvp</strong> <strong>on</strong>
+<ul>
+<li>PvP is allowed</li>
+</ul>
+</li>
+<li>/worldprotect <em>[world]</em> <strong>pvp</strong> <strong>spawn-off</strong>
+<ul>
+<li>PvP is allowed except if inside the spawn area.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>rm: Removes player from the authorized list<br>
+usage: /worldprotect <em>[world]</em> <strong>rm</strong> <em>&lt;player&gt;</em></p>
+</li>
+<li>
+<p>unbreakable|breakable: Control blocks that can/cannot be broken<br>
+usage: /worldprotect  <em>[world]</em> <strong>breakable|unbreakable</strong> <em>[block-ids]</em></p>
+<p>Manages which blocks can or can not be broken in a given world.
+You can get a list of blocks currently set to <strong>unbreakable</strong>
+if you do not specify any <em>[block-ids]</em>.  Otherwise these are
+added or removed from the list.</p>
+</li>
+<li>
+<p>unlock: Removes protection<br>
+usage: /worldprotect <em>[world]</em> <strong>unlock</strong></p>
+</li>
+</ul>
+
+<h3><a id="user-content-module-reference" class="anchor" aria-hidden="true" href="#module-reference"><span aria-hidden="true" class="octicon octicon-link"></span></a>Module reference</h3>
+
+
+<h4><a id="user-content-gm-save-inv" class="anchor" aria-hidden="true" href="#gm-save-inv"><span aria-hidden="true" class="octicon octicon-link"></span></a>gm-save-inv</h4>
+<p>Will save inventory contents when switching gamemodes.</p>
+<p>This is useful for when you have per world game modes so that
+players going from a survival world to a creative world and back
+do not loose their inventory.</p>
+
+<h3><a id="user-content-configuration" class="anchor" aria-hidden="true" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h3>
+<p>Configuration is through the <strong>config.yml</strong> file.  The following sections
+are defined.</p>
+
+
+<h4><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>features</h4>
+<p>This section you can enable/disable modules.
+You do this in order to avoid conflicts between different
+PocketMine-MP plugins.  It has one line per feature:</p>
+<pre><code>feature: true|false
+</code></pre>
+<p>If <strong>true</strong> the feature is enabled.  if <strong>false</strong> the feature is disabled.</p>
+<h4><a id="user-content-motd" class="anchor" aria-hidden="true" href="#motd"><span aria-hidden="true" class="octicon octicon-link"></span></a>motd</h4>
+<ul>
+<li>ticks: line delay when showing multi-line motd texts.</li>
+<li>auto-motd: Automatically shows motd when entering world</li>
+</ul>
+
+
+
+<h3><a id="user-content-permission-nodes" class="anchor" aria-hidden="true" href="#permission-nodes"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permission Nodes</h3>
+<ul>
+<li>worldprotect.motd: Display MOTD</li>
+<li>worldprotect.cmd.all (op): Allow access to protect command</li>
+<li>worldprotect.cmd.protect (op): Change protect mode</li>
+<li>worldprotect.cmd.protect.auth (op): Permit place/destroy in protected worlds</li>
+<li>worldprotect.cmd.border (op): Allow contfol of border functionality</li>
+<li>worldprotect.cmd.pvp (op): Allow PvP controls</li>
+<li>worldprotect.cmd.noexplode (op): Allow NoExplode controls</li>
+<li>worldprotect.cmd.limit (op): Allow control to limit functionality</li>
+<li>worldprotect.cmd.wpmotd (op): Allow editing the motd</li>
+<li>worldprotect.cmd.addrm (op): Allow modifying the auth list</li>
+<li>worldprotect.cmd.unbreakable (op): Modify unbreakable block list</li>
+<li>worldprotect.cmd.bancmd (op): Ban/unban commands</li>
+<li>worldprotect.cmd.banitem (op): Ban/unban items</li>
+<li>worldprotect.banitem.exempt (disabled): it is able to use banned items</li>
+<li>worldprotect.cmd.info: Show WP config info</li>
+<li>worldprotect.cmd.gm (op): Allow setting a per-world gamemode</li>
+<li>worldprotect.cmd.gm.exempt (disabled): Users with this permissions will ignore per world gm</li>
+</ul>
+
+
+<h3><a id="user-content-translations" class="anchor" aria-hidden="true" href="#translations"><span aria-hidden="true" class="octicon octicon-link"></span></a>Translations</h3>
+<p>This plugin will honor the server language configuration.  The
+languages currently available are:</p>
+<ul>
+<li>English</li>
+<li>Spanish</li>
+</ul>
+<p>You can provide your own message file by creating a file called
+<strong>messages.ini</strong> in the plugin config directory.
+Check <a href="https://github.com/Muirfield/pocketmine-plugins/tree/master/WorldProtect/resources/messages/">github</a>
+for sample files.
+Alternatively, if you have
+<a href="https://poggit.pmmp.io/p/GrabBag" rel="nofollow">GrabBag</a> v2.3
+installed, you can create an empty <strong>messages.ini</strong> using the command:</p>
+<pre><code> pm dumpmsgs WorldProtect [lang]
+</code></pre>
+
+<h1><a id="user-content-api" class="anchor" aria-hidden="true" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h1>
+<p>There is a minimal API to determine the max number of players per world:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">getServer</span>()-&gt;<span class="pl-en">getPluginManager</span>()-&gt;<span class="pl-en">getPlugin</span>("<span class="pl-s">WorldProtect</span>")-&gt;<span class="pl-en">getMaxPlayers</span>(<span class="pl-s1"><span class="pl-c1">$</span>world</span>);</pre></div>
+<p>Where:</p>
+<ul>
+<li>$this - plugin pointer</li>
+<li>$world - either a world name or an instance of World.</li>
+</ul>
+<p>Returns an integer or null.</p>
+
+
+<h1><a id="user-content-copyright" class="anchor" aria-hidden="true" href="#copyright"><span aria-hidden="true" class="octicon octicon-link"></span></a>Copyright</h1>
+<pre><code>WorldProtect
+Copyright (C) 2015 Alejandro Liu
+All Rights Reserved.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</code></pre>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1467b8ce6e97b5","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

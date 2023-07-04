@@ -1,0 +1,87 @@
+<h1>
+<a id="user-content-joinacm" class="anchor" href="#joinacm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JoinACM</h1>
+<p><a href="https://poggit.pmmp.io/p/JoinACM" rel="nofollow"><img src="https://camo.githubusercontent.com/42cc33eb3836c7532beddb62e56d0852d9910cc89152cbc83765174a8ad9b630/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4a6f696e41434d" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/JoinACM" style="max-width:100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/JoinACM" rel="nofollow"><img src="https://camo.githubusercontent.com/c793e693273777d9219ff3428f188c787e8e086a50392a1e26a6bff0b6027adf/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f4a6f696e41434d" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/JoinACM" style="max-width:100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/JoinACM" rel="nofollow"><img src="https://camo.githubusercontent.com/13b1af730887e0facb2190a239bd0caaf63fe24ebd758f3855707250ba0f537f/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f4a6f696e41434d" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/JoinACM" style="max-width:100%;"></a></p>
+<p>A simple JoinUI customizable through the 'config.yml' file, you can edit the form and chat messages, you can also edit the sounds.</p>
+<p><a href="https://user-images.githubusercontent.com/83558341/145087376-84190bc4-3d3b-4624-b5df-2e7152ca24c7.png" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/83558341/145087376-84190bc4-3d3b-4624-b5df-2e7152ca24c7.png" alt="Captura de pantalla 2021-12-07 133425" style="max-width:100%;"></a>
+<a href="https://discord.gg/YyE9XFckqb" rel="nofollow"><img src="https://camo.githubusercontent.com/eecc96a3ff0dedc37f275aeeda585ba8d15a316b66809ea2795fdc41b88d5bc9/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833373730313836383634393730393536383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/837701868649709568?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width:100%;"></a></p>
+<p><strong>FormJoin All of this can be customized through the data plugin</strong></p>
+<h3>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h3>
+<div class="highlight highlight-source-yaml"><pre>        <span class="pl-s">_         _            _      ___   __  __ </span>
+     <span class="pl-s">_ | |  ___  (_)  _ _     /_\    / __| |  \/  |</span>
+    <span class="pl-s">| || | / _ \ | | | ' \   / _ \  | (__  | |\/| |</span>
+     <span class="pl-s">\__/  \___/ |_| |_||_| /_/ \_\  \___| |_|  |_|</span>
+           <span class="pl-s">by fernanACM</span>
+    <span class="pl-c"><span class="pl-c">#</span>Here is the page for you to choose the sound you like: https://www.digminecraft.com/lists/sound_list_pe.php</span>
+    <span class="pl-c"><span class="pl-c">#</span>Remember that the type of music must be of the " ", </span>
+    <span class="pl-c"><span class="pl-c">#</span>I show you an example.</span>
+    <span class="pl-c"><span class="pl-c">#</span>PlaySoundJoin: "random.pop"</span>
+    <span class="pl-c"><span class="pl-c">#</span>===========================================</span>
+           <span class="pl-c"><span class="pl-c">#</span>SOUNDS</span>
+    <span class="pl-c"><span class="pl-c">#</span>Sound when it enters the server</span>
+    <span class="pl-ent">PlaySoundJoin</span>: <span class="pl-s"><span class="pl-pds">"</span>mob.irongolem.hit<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span>Sound when you exit the server.</span>
+    <span class="pl-ent">PlaySoundQuit</span>: <span class="pl-s"><span class="pl-pds">"</span>mob.irongolem.walk<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span>JoinACM button sound</span>
+    <span class="pl-ent">PlaySoundButton</span>: <span class="pl-s"><span class="pl-pds">"</span>random.fizz<span class="pl-pds">"</span></span>                                               
+    <span class="pl-c"><span class="pl-c">#</span>============================================</span>
+          <span class="pl-c"><span class="pl-c">#</span>TITLES - MESSAGES</span>
+    <span class="pl-c"><span class="pl-c">#</span>Message chat: Use '\n' to go down in the text</span>
+    <span class="pl-ent">Join-Message</span>: <span class="pl-s"><span class="pl-pds">"</span>§aWolcome bro :)<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span>Welcome title</span>
+    <span class="pl-ent">Join-Title</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§5Wolcome<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span>welcome subtitle</span>
+    <span class="pl-ent">Join-SubTitle</span>: <span class="pl-s"><span class="pl-pds">"</span>§rThanks for using JoinACM<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span>============================================</span>
+          <span class="pl-c"><span class="pl-c">#</span>FORM</span>
+    <span class="pl-c"><span class="pl-c">#</span>JoinACM Title</span>
+    <span class="pl-ent">JoinUI-Title</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§5JoinACM<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span>JoinACM Content: Use '\n' to go down in the text</span>
+    <span class="pl-ent">JoinUI-Content</span>: <span class="pl-s"><span class="pl-pds">"</span>§eWelcome to the server friend :D<span class="pl-cce">\n</span>§e I hope you like it very much.<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span>JoinACm Button</span>
+    <span class="pl-ent">JoinUI-Button</span>: <span class="pl-s"><span class="pl-pds">"</span>Click to continue<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span>============================================</span></pre></div>
+<hr>
+<h3>
+<a id="user-content-contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h3>
+<table>
+<thead>
+<tr>
+<th>Redes</th>
+<th>Tag</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube</td>
+<td>fernanACM</td>
+<td><a href="https://www.youtube.com/channel/UC-M5iTrCItYQBg5GMuX5ySw" rel="nofollow">YouTube</a></td>
+</tr>
+<tr>
+<td>Discord</td>
+<td>fernanACM#5078</td>
+<td><a href="https://discord.gg/YyE9XFckqb" rel="nofollow">Discord</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>fernanACM</td>
+<td><a href="https://github.com/fernanACM">GitHub</a></td>
+</tr>
+<tr>
+<td>Poggit</td>
+<td>fernanACM</td>
+<td><a href="https://poggit.pmmp.io/ci/fernanACM" rel="nofollow">Poggit</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3>
+<a id="user-content-credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h3>
+<ul>
+<li><strong><a href="https://github.com/Vecnavium">Vecnavium</a></strong></li>
+<li><strong><a href="https://github.com/Vecnavium/FormsUI/tree/master/">FormsUI</a></strong></li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e146252a864239d","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

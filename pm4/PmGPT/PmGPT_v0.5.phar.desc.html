@@ -1,0 +1,36 @@
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/79281788/230729315-414e95a9-9d1e-4df9-adbc-40a72cf16a20.png"><img src="https://user-images.githubusercontent.com/79281788/230729315-414e95a9-9d1e-4df9-adbc-40a72cf16a20.png" alt="Readme" style="max-width: 100%;"></a><br>
+Have a conversation with the <code>ChatGPT gpt-3.5-turbo model</code><br>
+Plugin for Pocketmine-MP API4+<br></p>
+<p>Works only with API-KEY<br>
+<a href="https://platform.openai.com/account/api-keys" rel="nofollow">https://platform.openai.com/account/api-keys</a><br></p>
+<p>The use of OpenAi ChatgGTP is limited in the free trial.<br>
+You get a $5 grant per registration, after which you have to top up your credit or create a new account.<br>
+The $5 grant are only valid for one month.<br>
+Prices are per 1,000 tokens. You can think of tokens as pieces of words, where 1,000 tokens is about 750 words.<br>
+$0.002 / 1K tokens.<br></p>
+<h3><a id="user-content-data-storage-and-use-" class="anchor" aria-hidden="true" href="#data-storage-and-use-"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data storage and use <g-emoji class="g-emoji" alias="card_index_dividers" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f5c2.png">🗂</g-emoji></h3>
+<p>So that each user can have his own conversation. This plugin saves the chat history with ChatGPT in a .txt file<br>
+This file is saved in plugin_data\PmGPT\temp\playername_chat.txt after the first question.<br>
+<br>
+PmGPT use libFormAPI to create the UI</p>
+<h3><a id="user-content-how-to-start--" class="anchor" aria-hidden="true" href="#how-to-start--"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to Start ? <g-emoji class="g-emoji" alias="arrow_forward" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/25b6.png">▶</g-emoji></h3>
+<p>Just put your API-KEY in the config.yml and start the server.<br>
+Only users with <code>pmgpt.use</code> permission can run the command <code>/chatgpt</code><br>
+Depending on how busy ChatGPT is, an answer can take between 2 and 30+ seconds<br></p>
+<h3><a id="user-content-answer-preview-" class="anchor" aria-hidden="true" href="#answer-preview-"><span aria-hidden="true" class="octicon octicon-link"></span></a>Answer preview <g-emoji class="g-emoji" alias="robot" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f916.png">🤖</g-emoji><g-emoji class="g-emoji" alias="speech_balloon" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ac.png">💬</g-emoji></h3>
+<p><em><strong>Question: tell me good names for factions</strong></em><br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/79281788/231010759-e0425c13-3ddf-4c12-852e-c556e5a8bd20.png"><img src="https://user-images.githubusercontent.com/79281788/231010759-e0425c13-3ddf-4c12-852e-c556e5a8bd20.png" alt="descriptionUI" style="max-width: 100%;"></a><br></p>
+<h3><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h3>
+<ul>
+<li><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Add gpt-3.5-turbo model instead of text-davinci-002</li>
+<li><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Add remembering previous questions</li>
+<li><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Run response action on async task to prevent freeze on waiting for response</li>
+<li><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Send a please wait message if the response takes a little longer</li>
+<li><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Work with UI instead of Chat</li>
+</ul>
+<h3><a id="user-content-todos" class="anchor" aria-hidden="true" href="#todos"><span aria-hidden="true" class="octicon octicon-link"></span></a>ToDos</h3>
+<ul>
+<li>[ ] Inform user when ChatGPT is at capacity</li>
+<li>[ ] Add SSL certificate by using <a href="https://github.com/Muqsit/CurlWithSSL">https://github.com/Muqsit/CurlWithSSL</a>
+</li>
+</ul>

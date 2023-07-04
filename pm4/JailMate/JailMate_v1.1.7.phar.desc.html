@@ -1,0 +1,39 @@
+<h1>
+<a id="user-content-jailmate---for-pmmp-api-403" class="anchor" href="#jailmate---for-pmmp-api-403" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JailMate - for PMMP API 4.0.3</h1>
+<p>You need this plugin for API 3.26.2 instead? Check my github!</p>
+<p><a href="https://poggit.pmmp.io/p/JailMate" rel="nofollow"><img src="https://camo.githubusercontent.com/47629191be7468e5524c536453631cae23120b2f610d9e152eb93596804fb743/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4a61696c4d617465" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/JailMate" style="max-width:100%;"></a></p>
+<h2>
+<a id="user-content-general-info" class="anchor" href="#general-info" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General info</h2>
+<p>Smart plugin that will allow you to safely check suspicious players</p>
+<h2>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<p><code>/jail &lt;nick&gt;</code> - Arrests a suspicious player <br><br>
+<code>/setjail confirm</code> - Set jail position <br><br>
+<code>/unjail &lt;player&gt;</code> - Unjail player</p>
+<h2>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h2>
+<p><code>jail</code> - Gives authority to all jail commands &amp; bypass<br><br>
+<code>jail.setjail</code> - Gives the powers of the place to establish an arrest<br><br>
+<code>jail.jail</code> - Gives you the power to release from arrest and arrest others<br><br>
+<code>jail.bypass</code> - Gives power to bypass aresst (anyone with this permission cannot be arrested)</p>
+<h2>
+<a id="user-content-detailed-information" class="anchor" href="#detailed-information" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Detailed information</h2>
+<h3>
+<a id="user-content-blocked-events-while-arrested" class="anchor" href="#blocked-events-while-arrested" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Blocked events while arrested:</h3>
+<p><code>PlayerMoveEvent</code> - Players can't move while arrested<br><br>
+<code>PlayerCommandPreprocessEvent</code> - Players can't use all commands while arrested<br><br>
+<code>PlayerDropItemEvent</code> - Players can't drop items while arrested<br><br>
+<code>BlockPlaceEvent</code> - Players can't place blocks while arrested<br><br>
+<code>BlockBreakEvent</code> - Players can't destroy blocks while arrested<br><br></p>
+<h3>
+<a id="user-content-additional-security" class="anchor" href="#additional-security" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional security:</h3>
+<ul>
+<li>When a player quits the game while being checked, they will be automatically banned (ban name)<br>
+</li>
+<li>If the server is shut down (for example by a crash or restart) during the interrogation, the player will be arrested again when he next time enter the game<br><br><br>
+</li>
+</ul>
+<h2>
+<a id="user-content-social-media" class="anchor" href="#social-media" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Social media</h2>
+<p><a href="https://discord.gg/8b3rKZPYM8" rel="nofollow"><img src="https://camo.githubusercontent.com/3f990cfefb64f13d28397fe586c3aa38a81fde585de479205d63c79363ebe07a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446973636f72642d3732383944413f7374796c653d666f722d7468652d6261646765266c6f676f3d646973636f7264266c6f676f436f6c6f723d7768697465" alt="" data-canonical-src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&amp;logo=discord&amp;logoColor=white" style="max-width:100%;"></a></p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14624a5bb09441","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

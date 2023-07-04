@@ -1,0 +1,23 @@
+<h1>
+<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h1>
+<p>This plugin is very simple that the only thing you need is one command:</p>
+<p><code>/monitor entity [ticking: bool]</code>
+<code>/monitor tile [ticking: bool]</code></p>
+<p>It returns every world with a chunk XY and the amount of entities/tiles and if they are ticking. This could be used as an anti-grief plugin so you can see where players are making lag machines or summoning too many entities to save your server performance.</p>
+<h1>
+<a id="user-content-api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h1>
+<p>If you want to access this plugin api you can do the following:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">JavierLeon9966</span>\<span class="pl-v">EntityMonitor</span>\<span class="pl-v">EntityMonitor</span>;
+<span class="pl-k">use</span> pocketmine\world\<span class="pl-v">World</span>;
+<span class="pl-c">/**</span>
+<span class="pl-c"> * @var ?int $chunkHash</span>
+<span class="pl-c"> * @var int $count</span>
+<span class="pl-c"> */</span>
+[<span class="pl-s1"><span class="pl-c1">$</span>chunkHash</span>, <span class="pl-s1"><span class="pl-c1">$</span>count</span>] = <span class="pl-v">EntityMonitor</span>::<span class="pl-en">getChunkWithEntities</span>(<span class="pl-v">World</span> <span class="pl-s1"><span class="pl-c1">$</span>world</span>, bool <span class="pl-s1"><span class="pl-c1">$</span>ticking</span>): array;
+
+<span class="pl-c">/**</span>
+<span class="pl-c"> * @var ?int $chunkHash</span>
+<span class="pl-c"> * @var int $count</span>
+<span class="pl-c"> */</span>
+[<span class="pl-s1"><span class="pl-c1">$</span>chunkHash</span>, <span class="pl-s1"><span class="pl-c1">$</span>count</span>] = <span class="pl-v">EntityMonitor</span>::<span class="pl-en">getChunkWithTiles</span>(<span class="pl-v">World</span> <span class="pl-s1"><span class="pl-c1">$</span>world</span>, bool <span class="pl-s1"><span class="pl-c1">$</span>ticking</span>): array;</pre></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1461004c669441","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

@@ -1,0 +1,35 @@
+<ul dir="auto">
+<li>
+<p dir="auto">Changes for v0.8</p>
+<ul dir="auto">
+<li>Add useInsecureConnection: false in config</li>
+<li>Add usePluginCertFile: true in config</li>
+<li>Add example initialPrompt</li>
+<li>Add default initialPrompt (which is needed for few-shot learning)</li>
+<li>change data extensions from .txt to .json</li>
+<li>Remove old code that gives the conversation only as a user role in post fields to the api</li>
+<li>Add an array that contains system,user and assistant role</li>
+<li>Also in the GPTResponseTask class a .json is now used instead of a .txt</li>
+<li>$messages array now use splat operator</li>
+<li>Add a option to use a certification file from <a href="https://curl.haxx.se/ca/cacert.pem" rel="nofollow">https://curl.haxx.se/ca/cacert.pem</a></li>
+<li>Add label in form to info user about conversation deleting</li>
+<li>Add getInitialPrompt(), which gets the initialPrompt string and replaces tags with dynamic values.</li>
+<li>Add getOnlinePlayerNames() which returns a player name list for the tag {players_names_online}</li>
+<li>add getOnlinePlayers() to get a number of actual online players {online_players}</li>
+<li>Add getMaxServerPlayer() which return the max allowed players on the server for the tag {max_online_players}</li>
+<li>Add <code class="notranslate">/chatgpt delete</code> command for deleting the playername_chat.json file</li>
+</ul>
+</li>
+<li>
+<p dir="auto">Edit README.md for v0.8</p>
+<ul dir="auto">
+<li>Add dynamic tags and examples tab</li>
+<li>Add Example initialPrompt tab</li>
+<li>Add Points to Features an Todo</li>
+<li>Add more Preview images</li>
+<li>Add more infos in data storage and use</li>
+<li>Add some text to inform user</li>
+<li>Add few-Shot learning tab, and explain a bit</li>
+</ul>
+</li>
+</ul>

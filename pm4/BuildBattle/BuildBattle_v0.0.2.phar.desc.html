@@ -1,0 +1,53 @@
+<p>An extremely customizable BuildBattle mini-game designed for scalability and simplicity.</p>
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>Customisable messages and scoreboard</li>
+<li>Multi arena support</li>
+<li>Waiting lobby support</li>
+<li>Auto-queue support</li>
+<li>Game statistics</li>
+<li>SQLite support</li>
+<li>MySQL support</li>
+</ul>
+<h2><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Command</th>
+<th align="center">Description</th>
+<th align="center">Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">buildbattle create</td>
+<td align="center">Create a new arena.</td>
+<td align="center"><code>buildbattle.subcommand.create</code></td>
+</tr>
+<tr>
+<td align="center">buildbattle delete</td>
+<td align="center">Delete an existing arena.</td>
+<td align="center"><code>buildbattle.subcommand.delete</code></td>
+</tr>
+<tr>
+<td align="center">buildbattle list</td>
+<td align="center">List all available arenas.</td>
+<td align="center"><code>buildbattle.subcommand.list</code></td>
+</tr>
+<tr>
+<td align="center">buildbattle join</td>
+<td align="center">Join a game.</td>
+<td align="center"><code>buildbattle.subcommand.join</code></td>
+</tr>
+<tr>
+<td align="center">buildbattle quit</td>
+<td align="center">Quit a game.</td>
+<td align="center"><code>buildbattle.subcommand.quit</code></td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content-arena-creation" class="anchor" aria-hidden="true" href="#arena-creation"><span aria-hidden="true" class="octicon octicon-link"></span></a>Arena creation</h3>
+<h4><a id="user-content-format" class="anchor" aria-hidden="true" href="#format"><span aria-hidden="true" class="octicon octicon-link"></span></a>Format</h4>
+<p><code>buildbattle create &lt;name: string&gt; &lt;lobby: string&gt; &lt;world: string&gt; &lt;countdown: int&gt; &lt;min_players: int&gt; &lt;max_players: int&gt; &lt;build_duration: int&gt; &lt;build_height: int&gt; &lt;vote_duration: int&gt; &lt;end_duration: int&gt;</code></p>
+<h4><a id="user-content-example" class="anchor" aria-hidden="true" href="#example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h4>
+<p><code>buildbattle create name game-lobby game-world 30 6 24 300 30 10 10 10</code></p>

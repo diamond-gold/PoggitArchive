@@ -1,0 +1,50 @@
+<h2>
+<a id="user-content-about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About</h2>
+<blockquote>
+<p>A support plugin for Pocketmine-MP 4. This plugin causes players who step on a block to receive corresponding effects.</p>
+</blockquote>
+<h2>
+<a id="user-content-utilities" class="anchor" href="#utilities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Utilities</h2>
+<ul>
+<li>[x] Adjust</li>
+<li>[x] Config</li>
+</ul>
+<h2>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h2>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> You can adjust the blocks that can receive effects with format is: "format is: format is: "blockId|blockMeta|effectId|effectDuration|effectAmplifier" .</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Find block ids here: https://www.digminecraft.com/lists/item_id_list_pe.php. Note, some items or blocks do not exist in the pocketmine .</span>
+
+<span class="pl-c"><span class="pl-c">#</span> All effects id</span>
+<span class="pl-c"><span class="pl-c">#</span>        SPEED = 1</span>
+<span class="pl-c"><span class="pl-c">#</span>	 SLOWNESS = 2</span>
+<span class="pl-c"><span class="pl-c">#</span>	 HASTE = 3</span>
+<span class="pl-c"><span class="pl-c">#</span>	 MINING_FATIGUE = 4</span>
+<span class="pl-c"><span class="pl-c">#</span>	 STRENGTH = 5</span>
+<span class="pl-c"><span class="pl-c">#</span>	 INSTANT_HEALTH = 6</span>
+<span class="pl-c"><span class="pl-c">#</span>	 INSTANT_DAMAGE = 7</span>
+<span class="pl-c"><span class="pl-c">#</span>	 JUMP_BOOST = 8</span>
+<span class="pl-c"><span class="pl-c">#</span>	 NAUSEA = 9</span>
+<span class="pl-c"><span class="pl-c">#</span>	 REGENERATION = 10</span>
+<span class="pl-c"><span class="pl-c">#</span>	 RESISTANCE = 11</span>
+<span class="pl-c"><span class="pl-c">#</span>	 FIRE_RESISTANCE = 12</span>
+<span class="pl-c"><span class="pl-c">#</span>	 WATER_BREATHING = 13</span>
+<span class="pl-c"><span class="pl-c">#</span>	 INVISIBILITY = 14</span>
+<span class="pl-c"><span class="pl-c">#</span>	 BLINDNESS = 15</span>
+<span class="pl-c"><span class="pl-c">#</span>	 NIGHT_VISION = 16</span>
+<span class="pl-c"><span class="pl-c">#</span>	 HUNGER = 17</span>
+<span class="pl-c"><span class="pl-c">#</span>	 WEAKNESS = 18</span>
+<span class="pl-c"><span class="pl-c">#</span>	 POISON = 19</span>
+<span class="pl-c"><span class="pl-c">#</span>	 WITHER = 20</span>
+<span class="pl-c"><span class="pl-c">#</span>	 HEALTH_BOOST = 21</span>
+<span class="pl-c"><span class="pl-c">#</span>	 ABSORPTION = 22</span>
+<span class="pl-c"><span class="pl-c">#</span>	 SATURATION = 23</span>
+<span class="pl-c"><span class="pl-c">#</span>	 LEVITATION = 24</span>
+<span class="pl-c"><span class="pl-c">#</span>	 FATAL_POISON = 25</span>
+<span class="pl-c"><span class="pl-c">#</span>	 CONDUIT_POWER = 26</span>
+<span class="pl-c"><span class="pl-c">#</span>	 SLOW_FALLING = 27</span>
+<span class="pl-c"><span class="pl-c">#</span>	 BAD_OMEN = 28</span>
+<span class="pl-c"><span class="pl-c">#</span>	 VILLAGE_HERO = 29</span>
+<span class="pl-ent">blocks</span>:
+- <span class="pl-s"><span class="pl-pds">"</span>2|0|17|50|1<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> If the player steps on a block of grass, the player will receive a counter effect for 50 seconds with amplifier is 1 .</span>
+</pre></div>

@@ -1,0 +1,507 @@
+<h1>
+<a id="user-content-worldprotect" class="anchor" href="#worldprotect" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WorldProtect</h1>
+<ul>
+<li>Summary: protect worlds from griefers, pvp, limits and borders</li>
+<li>PocketMine-MP version: ^4.0.0 Tested with API 4.0.0</li>
+<li>Categories: Anti-Griefing</li>
+<li>Plugin Access: Commands, Data Saving, World Editing</li>
+</ul>
+<h2>
+<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h2>
+<p>A full featured World protection plugin.</p>
+<p>Features:</p>
+<ul>
+<li>Ban commands on a per world basis</li>
+<li>Ban specific items in a world</li>
+<li>Per world game modes</li>
+<li>Limit the number of players in a world</li>
+<li>Control explosions per world</li>
+<li>Unbreakable blocks</li>
+<li>World borders</li>
+<li>Automatically displayed/per world MOTD</li>
+<li>Protect worlds from building/block breaking</li>
+<li>Per World PvP</li>
+<li>Save Inventory on gamemode change and/or death</li>
+</ul>
+<p>All commands require a <em>world</em> name to be given, otherwise a default<br>
+is selected.  If in-game, the default <em>world</em> is the world the player<br>
+is currently in.  On the console the default is the <em>default-world</em> as<br>
+specified in the <em>server.properties</em> file.</p>
+<h3>
+<a id="user-content-basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic Usage</h3>
+<h4>
+<a id="user-content-main-commands" class="anchor" href="#main-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Main Commands</h4>
+<ul>
+<li>/motd: Shows the world's <em>motd</em> text</li>
+<li>/worldprotect: Main WorldProtect command</li>
+</ul>
+<h4>
+<a id="user-content-sub-commands" class="anchor" href="#sub-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sub Commands</h4>
+<ul>
+<li>add: Add player to the authorized list</li>
+<li>bancmd|unbancmd: Prevents commands to be used in worlds</li>
+<li>banitem|unbanitem: Control itmes that can/cannot be used</li>
+<li>border: defines a border for a world</li>
+<li>gm: Configures per world game modes</li>
+<li>lock: Locks world, not even Op can use.</li>
+<li>ls: List info on world protection.</li>
+<li>max: Limits the number of players per world</li>
+<li>motd: Modifies the world's <em>motd</em> text.</li>
+<li>noexplode: Stops explosions in a world</li>
+<li>protect: Protects world, only certain players can build.</li>
+<li>pvp: Controls PvP in a world</li>
+<li>rm: Removes player from the authorized list</li>
+<li>unbreakable|breakable: Control blocks that can/cannot be broken</li>
+<li>unlock: Removes protection</li>
+</ul>
+<h3>
+<a id="user-content-modules" class="anchor" href="#modules" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Modules</h3>
+<ul>
+<li>gm-save-inv: Will save survival inventory contents when switching gamemodes</li>
+<li>death-save-inv: Will restore inventory contents on death</li>
+</ul>
+<h2>
+<a id="user-content-documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
+<p>This plugin let's you limit what happens in a world.</p>
+<p>Some items are able to modify a world by being consume (i.e. do not<br>
+need to be placed).  For example, <em>bonemeal</em>, <em>water or lava buckets</em>.<br>
+To prevent this type of griefing, you can use the <strong>banitem</strong><br>
+feature.</p>
+<p>It is possible to create limits in your limitless worlds.<br>
+So players are not able to go beyond a preset border.  This is<br>
+useful if you want to avoid overloading the server by<br>
+generating new Terrain.</p>
+<p>Show a text file when players enter a world.  To explain players<br>
+what is allowed (or not allowed) in specific worlds.  For example<br>
+you could warn players when they are entering a PvP world.</p>
+<p>This plugin protects worlds from griefers by restricing placing and breaking<br>
+blocks.  Worlds have three protection levels:</p>
+<ul>
+<li>unlock - anybody can place/break blocks</li>
+<li>protect - players in the <em>authorized</em> list or, if the list is empty,<br>
+players with <strong>wp.cmd.protect.auth</strong> permission can place/break<br>
+blocks.</li>
+<li>lock - nobody (even <em>ops</em>) is allowed to place/break blocks.</li>
+</ul>
+<h3>
+<a id="user-content-command-reference" class="anchor" href="#command-reference" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command Reference</h3>
+<p>The following commands are available:</p>
+<ul>
+<li>
+<p>/motd: Shows the world's <em>motd</em> text<br><br>
+usage: /motd  <em>[world]</em></p>
+<p>Shows the <em>motd</em> text of a <em>world</em>.  This can be used to show<br>
+rules around a world.</p>
+</li>
+<li>
+<p>/worldprotect: Main WorldProtect command<br><br>
+usage: /worldprotect  <em>[world]</em> <em>&lt;subcmd&gt;</em> <em>[options]</em></p>
+</li>
+<li>
+<p>add: Add player to the authorized list<br><br>
+usage: /wp <em>[world]</em> <strong>add</strong> <em>&lt;player&gt;</em></p>
+</li>
+<li>
+<p>bancmd|unbancmd: Prevents commands to be used in worlds<br><br>
+usage: /wp <em>[world]</em> <strong>bancmd|unbancmd</strong> <em>[command]</em></p>
+<p>If no commands are given it will show a list of banned<br>
+commands.   Otherwise the <em>command</em> will be added/removed<br>
+from the ban list</p>
+</li>
+<li>
+<p>banitem|unbanitem: Control itmes that can/cannot be used<br><br>
+usage: /wp  <em>[world]</em> <strong>banitem|unbanitem</strong> <em>[Item-ids]</em></p>
+<p>Manages which Items can or can not be used in a given world.<br>
+You can get a list of items currently banned<br>
+if you do not specify any <em>[item-ids]</em>.  Otherwise these are<br>
+added or removed from the list.</p>
+</li>
+<li>
+<p>border: defines a border for a world<br><br>
+usage: /wp  <em>[world]</em> <strong>border</strong> <em>[range|none|x1 z1 x2 z2]</em></p>
+<p>Defines a border for an otherwise infinite world.  Usage:</p>
+<ul>
+<li>/wp <em>[world]</em> <strong>border</strong>
+<ul>
+<li>will show the current borders for <em>[world]</em>.</li>
+</ul>
+</li>
+<li>/wp <em>[world]</em> <strong>border</strong> <em>x1 z1 x2 z2</em>
+<ul>
+<li>define the border as the region defined by <em>x1,z1</em> and <em>x2,z2</em>.</li>
+</ul>
+</li>
+<li>/wp <em>[world]</em> <strong>border</strong> <em>range</em>
+<ul>
+<li>define the border as being <em>range</em> blocks in <code>x</code> and <code>z</code> axis away<br>
+from the spawn point.</li>
+</ul>
+</li>
+<li>/wp <em>[world]</em> <strong>border</strong> <strong>none</strong>
+<ul>
+<li>Remove borders</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>gm: Configures per world game modes<br><br>
+usage: /wp <em>[world]</em> gm <em>[value]</em></p>
+<p>Options:</p>
+<ul>
+<li>/wp <em>[world]</em> <strong>gm</strong>
+<ul>
+<li>show current gamemode</li>
+</ul>
+</li>
+<li>/wp <em>[world]</em> <strong>gm</strong> <em>&lt;mode&gt;</em>
+<ul>
+<li>Sets the world gamemode to <em>mode</em>
+</li>
+</ul>
+</li>
+<li>/wp <em>[world]</em> <strong>gm</strong> <strong>none</strong>
+<ul>
+<li>Removes per world game mode</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>lock: Locks world, not even Op can use.<br><br>
+usage: /wp <em>[world]</em> <strong>lock</strong></p>
+</li>
+<li>
+<p>ls: List info on world protection.<br><br>
+usage: /wp <strong>ls</strong> <em>[world]</em></p>
+<ul>
+<li>/wp <strong>ls</strong>
+<ul>
+<li>shows an overview of protections applied to all loaded worlds</li>
+</ul>
+</li>
+<li>/wp <strong>ls</strong> <em>[world]</em>
+<ul>
+<li>shows details of an specific world</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>max: Limits the number of players per world<br><br>
+usage : /wp <em>[world]</em> max <em>[value]</em></p>
+<ul>
+<li>/wp <em>[world]</em> <strong>max</strong>
+<ul>
+<li>shows the current limit</li>
+</ul>
+</li>
+<li>/wp <em>[world]</em> <strong>max</strong> <em>value</em>
+<ul>
+<li>Sets limit value to <em>value</em>.</li>
+</ul>
+</li>
+<li>/wp <em>[world]</em> <strong>max</strong> <strong>0</strong>
+<ul>
+<li>Removes world limits</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>motd: Modifies the world's <em>motd</em> text.<br><br>
+usage: /wp <em>[world]</em> <strong>motd</strong> <em>&lt;text&gt;</em></p>
+<p>Let's you modify the world's <em>motd</em> text.  The command only<br>
+supports a single line, however you can modify the <em>motd</em> text<br>
+by editing the <strong>wpcfg.yml</strong> file that is stored in the <strong>world</strong><br>
+folder.  For example:</p>
+<ul>
+<li>[CODE]
+<ul>
+<li>motd:
+<ul>
+<li>line 1</li>
+<li>line 2</li>
+<li>line 3</li>
+<li>line 4... etc</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[/CODE]</li>
+</ul>
+</li>
+<li>
+<p>noexplode: Stops explosions in a world<br><br>
+usage: /wp  <em>[world]</em> <strong>noexplode</strong> <em>[off|world|spawn]</em></p>
+<ul>
+<li>/wp <em>[world]</em> <strong>noexplode</strong> <strong>off</strong>
+<ul>
+<li>no-explode feature is <code>off</code>, so explosions are allowed.</li>
+</ul>
+</li>
+<li>/wp <em>[world]</em> <strong>noexplode</strong> <strong>world</strong>
+<ul>
+<li>no explosions allowed in the whole <em>world</em>.</li>
+</ul>
+</li>
+<li>/wp <em>[world]</em> <strong>noexplode</strong> <strong>spawn</strong>
+<ul>
+<li>no explosions allowed in the world's spawn area.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>protect: Protects world, only certain players can build.<br><br>
+usage: /wp <em>[world]</em> <strong>protect</strong></p>
+<p>When in this mode, only players in the <em>authorized</em> list can build.<br>
+If there is no authorized list, it will use <strong>wp.cmd.protect.auth</strong><br>
+permission instead.</p>
+</li>
+<li>
+<p>pvp: Controls PvP in a world<br><br>
+usage: /wp  <em>[world]</em> <strong>pvp</strong> <em>[on|off|spawn-off]</em></p>
+<ul>
+<li>/wp <em>[world]</em> <strong>pvp</strong> <strong>off</strong>
+<ul>
+<li>no PvP is allowed.</li>
+</ul>
+</li>
+<li>/wp <em>[world]</em> <strong>pvp</strong> <strong>on</strong>
+<ul>
+<li>PvP is allowed</li>
+</ul>
+</li>
+<li>/wp <em>[world]</em> <strong>pvp</strong> <strong>spawn-off</strong>
+<ul>
+<li>PvP is allowed except if inside the spawn area.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>rm: Removes player from the authorized list<br><br>
+usage: /wp <em>[world]</em> <strong>rm</strong> <em>&lt;player&gt;</em></p>
+</li>
+<li>
+<p>unbreakable|breakable: Control blocks that can/cannot be broken<br><br>
+usage: /wp  <em>[world]</em> <strong>breakable|unbreakable</strong> <em>[block-ids]</em></p>
+<p>Manages which blocks can or can not be broken in a given world.<br>
+You can get a list of blocks currently set to <strong>unbreakable</strong><br>
+if you do not specify any <em>[block-ids]</em>.  Otherwise these are<br>
+added or removed from the list.</p>
+</li>
+<li>
+<p>unlock: Removes protection<br><br>
+usage: /wp <em>[world]</em> <strong>unlock</strong></p>
+</li>
+</ul>
+<h3>
+<a id="user-content-module-reference" class="anchor" href="#module-reference" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Module reference</h3>
+<h4>
+<a id="user-content-gm-save-inv" class="anchor" href="#gm-save-inv" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>gm-save-inv</h4>
+<p>Will save inventory contents when switching gamemodes.</p>
+<p>This is useful for when you have per world game modes so that<br>
+players going from a survival world to a creative world and back<br>
+do not lose their inventory.</p>
+<h4>
+<a id="user-content-death-save-inv" class="anchor" href="#death-save-inv" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>death-save-inv</h4>
+<p>Will save inventory contents on death</p>
+<p>This can only be applied if gm-save-inv is enabled</p>
+<h3>
+<a id="user-content-configuration" class="anchor" href="#configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h3>
+<p>Configuration is through the <strong>config.yml</strong> file.  The following sections<br>
+are defined.</p>
+<h4>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>features</h4>
+<p>This section you can enable/disable modules.<br>
+You do this in order to avoid conflicts between different<br>
+PocketMine-MP plugins.  It has one line per feature:</p>
+<pre><code>feature: true|false
+</code></pre>
+<p>If <strong>true</strong> the feature is enabled.  if <strong>false</strong> the feature is disabled.</p>
+<h4>
+<a id="user-content-motd" class="anchor" href="#motd" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>motd</h4>
+<ul>
+<li>ticks: line delay when showing multi-line motd texts.</li>
+<li>auto-motd: Automatically shows motd when entering world</li>
+</ul>
+<h3>
+<a id="user-content-permission-nodes" class="anchor" href="#permission-nodes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permission Nodes</h3>
+<ul>
+<li>wp.motd: Display MOTD</li>
+<li>wp.cmd.all (op): Allow access to protect command</li>
+<li>wp.cmd.protect (op): Change protect mode</li>
+<li>wp.cmd.protect.auth (op): Permit place/destroy in protected worlds</li>
+<li>wp.cmd.border (op): Allow contfol of border functionality</li>
+<li>wp.cmd.pvp (op): Allow PvP controls</li>
+<li>wp.cmd.noexplode (op): Allow NoExplode controls</li>
+<li>wp.cmd.limit (op): Allow control to limit functionality</li>
+<li>wp.cmd.wpmotd (op): Allow editing the motd</li>
+<li>wp.cmd.addrm (op): Allow modifying the auth list</li>
+<li>wp.cmd.unbreakable (op): Modify unbreakable block list</li>
+<li>wp.cmd.bancmd (op): Ban/unban commands</li>
+<li>wp.cmd.banitem (op): Ban/unban items</li>
+<li>wp.cmd.info: Show WP config info</li>
+<li>wp.cmd.gm (op): Allow setting a per-world gamemode</li>
+<li>wp.cmd.gm.exempt (disabled): Users with this permissions will ignore per world gm</li>
+</ul>
+<h2>
+<a id="user-content-issues" class="anchor" href="#issues" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Issues</h2>
+<ul>
+<li>World names can not contain spaces.</li>
+<li>When going from survival to creative then back to survival inventory<br>
+contents get lost.</li>
+</ul>
+<h2>
+<a id="user-content-translations" class="anchor" href="#translations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Translations</h2>
+<p>This plugin will honour the server language configuration.  The<br>
+languages currently available are:</p>
+<ul>
+<li>English</li>
+<li>Spanish</li>
+</ul>
+<p>You can provide your own message file by creating a file called<br>
+<strong>messages.ini</strong> in the plugin config directory.<br>
+Check <a href="https://github.com/alejandroliu/pocketmine-plugins/tree/master/WorldProtect/resources/messages/">github</a><br>
+for sample files.<br>
+Alternatively, if you have<br>
+<a href="http://forums.pocketmine.net/plugins/grabbag.1060/" rel="nofollow">GrabBag</a> v2.3<br>
+installed, you can create an empty <strong>messages.ini</strong> using the command:</p>
+<pre><code> pm dumpmsgs WorldProtect [lang]
+</code></pre>
+<h1>
+<a id="user-content-api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h1>
+<p>There is a minimal API to determine the max number of players per world:</p>
+<div><pre>$this-&gt;getServer()-&gt;getPluginManager()-&gt;getPlugin("WorldProtect")-&gt;getMaxPlayers($world);</pre></div>
+<p>Where:</p>
+<ul>
+<li>$this - plugin pointer</li>
+<li>$world - either a world name or an instance of Level.</li>
+</ul>
+<p>Returns an integer or null.</p>
+<h1>
+<a id="user-content-faq" class="anchor" href="#faq" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FAQ</h1>
+<ul>
+<li>Q: How do I keep my inventory so that it does not get clear when I<br>
+switch gamemodes?</li>
+<li>A: Enable gm-save-inv module.</li>
+</ul>
+<h1>
+<a id="user-content-changes" class="anchor" href="#changes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Changes</h1>
+<ul>
+<li>2.2.0: minor Update
+<ul>
+<li>Implemented banned commands (<a href="https://github.com/Tolo">@Tolo</a>)</li>
+<li>Documentation update</li>
+</ul>
+</li>
+<li>2.1.2: bug fix
+<ul>
+<li>Load/Unload events were not being registered (Bug reported by @GuddaJ)</li>
+</ul>
+</li>
+<li>2.1.1: minor Update
+<ul>
+<li>updated to libcommon 1.2.0dev2
+<ul>
+<li>Upgraded to ItemName module</li>
+<li>permissions defined in <code>plugin.yml</code> are applied<br>
+properly which means most sub commands are now <strong>OP only</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.1.0: API
+<ul>
+<li>Added API to determine max players</li>
+</ul>
+</li>
+<li>2.0.3: Minor bug fix
+<ul>
+<li>Fixed bug: Configuration is not applied when reloading</li>
+</ul>
+</li>
+<li>2.0.2: Feature request
+<ul>
+<li>Feature Request(@Nifo2000): Option to control if MOTD is shown<br>
+automatically</li>
+</ul>
+</li>
+<li>2.0.1: critical bug fix
+<ul>
+<li>Fixed a crash</li>
+<li>Can now add to auth list when players are off-line</li>
+</ul>
+</li>
+<li>2.0.0: Complete re-write
+<ul>
+<li>Refactor so it is now more modular</li>
+<li>Added per world gamemode and gamemode inventory save</li>
+<li>Added banitem functionality</li>
+<li>Added translation: Spanish</li>
+</ul>
+</li>
+<li>1.2.4: CallbackTask
+<ul>
+<li>Removed CallbackTask deprecation warnings</li>
+</ul>
+</li>
+<li>1.2.3: Suggested change
+<ul>
+<li>Simpler border setting using a single "range" number</li>
+</ul>
+</li>
+<li>1.2.2: protection overview (un-published)
+<ul>
+<li>Added an overview of protected worlds</li>
+</ul>
+</li>
+<li>1.2.1: BugFix
+<ul>
+<li>Positions are not configured correctly.</li>
+</ul>
+</li>
+<li>1.2.0: Update
+<ul>
+<li>Bugfix in sending motd text</li>
+<li>Bugfixes WpProtect</li>
+<li>wp ls/ld - will call ManyWorlds.  Needs ManyWorlds v1.3.2.</li>
+<li>Fixed Signs Tiles being left all over...</li>
+<li>Added stop PvP in spawn areas</li>
+<li>Added Unbreakable blocks</li>
+<li>Max players per world should now work <em>without</em> ManyWorlds.</li>
+</ul>
+</li>
+<li>1.1.1 : bugfix
+<ul>
+<li>Fixes bugs reported by <a href="http://crash.pocketmine.net/search" rel="nofollow">Crash Archive</a>
+</li>
+</ul>
+</li>
+<li>1.1.0: no-explode
+<ul>
+<li>Added NoExplode functionality</li>
+<li>Fixed stupid typo about /mw subcommands</li>
+</ul>
+</li>
+<li>1.0.0 : Initial release</li>
+</ul>
+<h1>
+<a id="user-content-copyright" class="anchor" href="#copyright" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Copyright</h1>
+<pre><code>WorldProtect
+Copyright (C) 2015 Alejandro Liu
+All Rights Reserved.
+<p>This program is free software: you can redistribute it and/or modify<br>
+it under the terms of the GNU General Public License as published by<br>
+the Free Software Foundation, either version 2 of the License, or<br>
+(at your option) any later version.</p>
+<p>This program is distributed in the hope that it will be useful,<br>
+but WITHOUT ANY WARRANTY; without even the implied warranty of<br>
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<br>
+GNU General Public License for more details.</p>
+</code><p><code>You should have received a copy of the GNU General Public License<br>
+along with this program.  If not, see &lt;<a href="http://www.gnu.org/licenses/" rel="nofollow">http://www.gnu.org/licenses/</a>&gt;.<br>
+</code></p></pre><p></p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1467bd3f9615ea","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

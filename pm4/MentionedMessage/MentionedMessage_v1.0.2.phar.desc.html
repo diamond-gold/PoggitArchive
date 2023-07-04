@@ -1,0 +1,69 @@
+<h1>
+<a id="user-content-general" class="anchor" href="#general" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General</h1>
+<p>now you can save MentionedMessage in UI</p>
+<p>Example: You Chat Hi @MulqiGaming @Friends</p>
+<p>it will be save Message later to MulqiGaming and Friends</p>
+<h1>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<p>Commands For Getting all Mentioned Message:</p>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Aliases</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/mymessage</code></td>
+<td><code>/mm</code></td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h1>
+<a id="user-content-screenshot" class="anchor" href="#screenshot" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshot</h1>
+<p><a href="https://github.com/MulqiGaming64/MentionedMessage/blob/6db7af686c18e22c79832e974167c1c430c6a88e/Screenshot.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/MulqiGaming64/MentionedMessage/raw/6db7af686c18e22c79832e974167c1c430c6a88e/Screenshot.png" alt="Screenshot" style="max-width:100%;"></a></p>
+<h1>
+<a id="user-content-feature" class="anchor" href="#feature" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Feature</h1>
+<ul>
+<li>You can clear All Mentioned Message</li>
+<li>Can Multiple Mention Player</li>
+<li>can Mention Players offline</li>
+<li>can set content format in config</li>
+<li>can set custom timezone</li>
+</ul>
+<h1>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<div class="highlight highlight-source-yaml"><pre>
+---
+<span class="pl-c"><span class="pl-c">#</span> Timezone</span>
+<span class="pl-ent">timezone</span>: <span class="pl-s"><span class="pl-pds">"</span>asia/jakarta<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Auto Save Interval Message</span>
+<span class="pl-c"><span class="pl-c">#</span> Seconds</span>
+<span class="pl-ent">save-interval</span>: <span class="pl-c1">180</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Tag</span>
+<span class="pl-c"><span class="pl-c">#</span> {MSG} Messages</span>
+<span class="pl-c"><span class="pl-c">#</span> {YEARS} yyyy Years Message</span>
+<span class="pl-c"><span class="pl-c">#</span> {MONTH} 1-12 Month Message</span>
+<span class="pl-c"><span class="pl-c">#</span> {DATE} 1-31 Date Message</span>
+<span class="pl-c"><span class="pl-c">#</span> {HOURS} Hours Time Message</span>
+<span class="pl-c"><span class="pl-c">#</span> {MINUTES} Minutes Time Message</span>
+<span class="pl-c"><span class="pl-c">#</span> {NAME} Name Who Mentioned</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Mention Message Format</span>
+<span class="pl-c"><span class="pl-c">#</span> Content</span>
+<span class="pl-ent">mention-message</span>: <span class="pl-s"><span class="pl-pds">"</span>§f[§a{HOURS}:{MINUTES}§r] From §a{NAME}: §f{MSG}<span class="pl-pds">"</span></span>
+...</pre></div>
+<h1>
+<a id="user-content-additional-notes" class="anchor" href="#additional-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h1>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/MulqiGaming64/MentionedMessage/issues">here</a>
+</li>
+<li>Icons By <a href="https://icons8.com" rel="nofollow">icons8.com</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1462f63ebf229f","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

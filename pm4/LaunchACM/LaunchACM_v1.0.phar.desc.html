@@ -1,0 +1,101 @@
+<h1>
+<a id="user-content-launchacm" class="anchor" href="#launchacm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LaunchACM</h1>
+<p><a href="https://poggit.pmmp.io/p/LaunchACM" rel="nofollow"><img src="https://camo.githubusercontent.com/49f8a0fbce05e9fc8d7edc49dd2812e03ce0190612b3f878793314d55517b62e/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4c61756e636841434d" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/LaunchACM" style="max-width:100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/LaunchACM" rel="nofollow"><img src="https://camo.githubusercontent.com/e1f49aa1f53f5ec57d27f45f80e20d6d6d80a6a7de5ee2a37a23d01532cdd7a4/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f4c61756e636841434d" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/LaunchACM" style="max-width:100%;"></a></p>
+<p>Review plugin in <a href="https://www.youtube.com/watch?v=cRYzN2SWjd8&amp;ab_channel=fernanACM" rel="nofollow">youtube</a></p>
+<p>The best launch release for Pocketmine-MP 4.0, easy to use.
+It adds fun sounds that you can configure in the 'config.yml'. This is the page for the sounds:
+<a href="https://www.digminecraft.com/lists/sound_list_pe.php" rel="nofollow">sounds minecraft</a></p>
+<p><a href="https://user-images.githubusercontent.com/83558341/167067748-a3ebce32-c6ba-448e-8be2-6811733670f0.png" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/83558341/167067748-a3ebce32-c6ba-448e-8be2-6811733670f0.png" alt="Captura de pantalla 2022-05-05 233217" style="max-width:100%;"></a>
+<a href="https://discord.gg/YyE9XFckqb" rel="nofollow"><img src="https://camo.githubusercontent.com/eecc96a3ff0dedc37f275aeeda585ba8d15a316b66809ea2795fdc41b88d5bc9/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833373730313836383634393730393536383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/837701868649709568?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width:100%;"></a></p>
+<h3>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h3>
+<div class="highlight highlight-source-yaml"><pre>   <span class="pl-c"><span class="pl-c">#</span>    _                                      _          _       ____   __  __ </span>
+   <span class="pl-c"><span class="pl-c">#</span>   | |       __ _   _   _   _ __     ___  | |__      / \     / ___| |  \/  |</span>
+   <span class="pl-c"><span class="pl-c">#</span>   | |      / _` | | | | | | '_ \   / __| | '_ \    / _ \   | |     | |\/| |</span>
+   <span class="pl-c"><span class="pl-c">#</span>   | |___  | (_| | | |_| | | | | | | (__  | | | |  / ___ \  | |___  | |  | |</span>
+   <span class="pl-c"><span class="pl-c">#</span>   |_____|  \__,_|  \__,_| |_| |_|  \___| |_| |_| /_/   \_\  \____| |_|  |_|                                                                         </span>
+   <span class="pl-c"><span class="pl-c">#</span>           by fernanACM</span>
+   <span class="pl-c"><span class="pl-c">#</span> The best launchpad for PocketMine-MP 4.0, easy to use.</span>
+   <span class="pl-c"><span class="pl-c">#</span> The best launch release for Pocketmine-MP 4.0, easy to use.</span>
+   <span class="pl-c"><span class="pl-c">#</span> It adds fun sounds that you can configure in the 'config.yml'. This is the page for the sounds:</span>
+   <span class="pl-c"><span class="pl-c">#</span> https://www.digminecraft.com/lists/sound_list_pe.php</span>
+
+   <span class="pl-c"><span class="pl-c">#</span> ========(CONFIGURATION)========</span>
+   <span class="pl-ent">Settings</span>:
+   <span class="pl-c"><span class="pl-c">#</span> Disable the worlds where you don't want the launchpad not to work. </span>
+   <span class="pl-ent">disabled-worlds</span>:
+     - <span class="pl-s">world1</span>
+     - <span class="pl-s">FFA</span>
+   <span class="pl-c"><span class="pl-c">#</span> Add the amount of thrust you want for the LaunchPad, </span>
+   <span class="pl-c"><span class="pl-c">#</span> example: 1, 2, 3, 4, 5, 6...</span>
+   <span class="pl-ent">knockback-amount</span>: <span class="pl-c1">1</span>
+   <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to activate/disable sound option when using the launchpad</span>
+   <span class="pl-ent">launchpad-no-sound</span>: <span class="pl-c1">true</span>
+   <span class="pl-c"><span class="pl-c">#</span> The sounds can be found at: https://www.digminecraft.com/lists/sound_list_pe.php</span>
+   <span class="pl-c"><span class="pl-c">#</span> Add the type of sound you want for the launchpad, example: "random.click"</span>
+   <span class="pl-ent">launchpad-sound</span>: <span class="pl-s"><span class="pl-pds">"</span>mob.irongolem.walk<span class="pl-pds">"</span></span>
+   <span class="pl-c"><span class="pl-c">#</span> ========(TYPES OF lAUNCHPADS)========</span>
+   <span class="pl-ent">LaunchPad</span>:
+   <span class="pl-c"><span class="pl-c">#</span> Use "True or" false "to activate/disable the use of this launchpad</span>
+   <span class="pl-c"><span class="pl-c">#</span> Type: Stone</span>
+   <span class="pl-ent">StonePressurePlate</span>: <span class="pl-c1">true</span>
+   <span class="pl-c"><span class="pl-c">#</span> Use "True or" false "to activate/disable the use of this launchpad</span>
+   <span class="pl-c"><span class="pl-c">#</span> Type: Oak</span>
+   <span class="pl-ent">OakPressurePlate</span>: <span class="pl-c1">true</span>
+   <span class="pl-c"><span class="pl-c">#</span> Use "True or" false "to activate/disable the use of this launchpad</span>
+   <span class="pl-c"><span class="pl-c">#</span> Type: Acacia</span>
+   <span class="pl-ent">AcaciaPressurePlate</span>: <span class="pl-c1">true</span>
+   <span class="pl-c"><span class="pl-c">#</span> Use "True or" false "to activate/disable the use of this launchpad</span>
+   <span class="pl-c"><span class="pl-c">#</span> Type: Birch</span>
+   <span class="pl-ent">BirchPressurePlate</span>: <span class="pl-c1">true</span>
+   <span class="pl-c"><span class="pl-c">#</span> Use "True or" false "to activate/disable the use of this launchpad</span>
+   <span class="pl-c"><span class="pl-c">#</span> Type: Dark Oak</span>
+   <span class="pl-ent">DarkOakPressurePlate</span>: <span class="pl-c1">true</span>
+   <span class="pl-c"><span class="pl-c">#</span> Use "True or" false "to activate/disable the use of this launchpad</span>
+   <span class="pl-c"><span class="pl-c">#</span> Type: Jungle</span>
+   <span class="pl-ent">JunglePressurePlate</span>: <span class="pl-c1">true</span>
+   <span class="pl-c"><span class="pl-c">#</span> Use "True or" false "to activate/disable the use of this launchpad</span>
+   <span class="pl-c"><span class="pl-c">#</span> Type: Spruce</span>
+   <span class="pl-ent">SprucePressurePlate</span>: <span class="pl-c1">true</span>
+   <span class="pl-c"><span class="pl-c">#</span> Use "True or" false "to activate/disable the use of this launchpad</span>
+   <span class="pl-c"><span class="pl-c">#</span> Type: Light Weighted</span>
+   <span class="pl-ent">LightWeightedPressurePlate</span>: <span class="pl-c1">true</span>
+   <span class="pl-c"><span class="pl-c">#</span> Use "True or" false "to activate/disable the use of this launchpad</span>
+   <span class="pl-c"><span class="pl-c">#</span> Type: Heavy Weighted</span>
+   <span class="pl-ent">HeavyWeightedPressurePlate</span>: <span class="pl-c1">true</span></pre></div>
+<h3>
+<a id="user-content-contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h3>
+<table>
+<thead>
+<tr>
+<th>Redes</th>
+<th>Tag</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube</td>
+<td>fernanACM</td>
+<td><a href="https://www.youtube.com/channel/UC-M5iTrCItYQBg5GMuX5ySw" rel="nofollow">YouTube</a></td>
+</tr>
+<tr>
+<td>Discord</td>
+<td>fernanACM#5078</td>
+<td><a href="https://discord.gg/YyE9XFckqb" rel="nofollow">Discord</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>fernanACM</td>
+<td><a href="https://github.com/fernanACM">GitHub</a></td>
+</tr>
+<tr>
+<td>Poggit</td>
+<td>fernanACM</td>
+<td><a href="https://poggit.pmmp.io/ci/fernanACM" rel="nofollow">Poggit</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14629edc62227e","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

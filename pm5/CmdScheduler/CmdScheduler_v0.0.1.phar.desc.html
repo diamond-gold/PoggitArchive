@@ -1,0 +1,48 @@
+<h1><a id="user-content-cmdscheduler" class="anchor" aria-hidden="true" href="#cmdscheduler"><span aria-hidden="true" class="octicon octicon-link"></span></a>CmdScheduler<a target="_blank" rel="noopener noreferrer" href="https://github.com/Taylor-pm-pl/CmdScheduler/blob/master/icon.png"><img src="https://github.com/Taylor-pm-pl/CmdScheduler/raw/master/icon.png" height="64" width="64" align="left" style="max-width: 100%;"></a>
+</h1><br>
+<p><a href="https://poggit.pmmp.io/ci/Taylor-pm-pl/CmdScheduler/CmdScheduler" rel="nofollow"><img src="https://camo.githubusercontent.com/907fd1c9ac46e51d60f79ff95e442a2ae45ecaf1d7eac6524708c7f5277cb228/68747470733a2f2f706f676769742e706d6d702e696f2f63692e736869656c642f5461796c6f722d706d2d706c2f436d645363686564756c65722f436d645363686564756c6572" alt="Lint" data-canonical-src="https://poggit.pmmp.io/ci.shield/Taylor-pm-pl/CmdScheduler/CmdScheduler" style="max-width: 100%;"></a>
+<a href="https://discord.gg/yAhsgskaGy" rel="nofollow"><img src="https://camo.githubusercontent.com/c7165f58ee862ff15e2d3eb8705534af09d9553eae3ac114cf96d062f7c0c9e5/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f313130303635303032393537333733383530382e7376673f6c6162656c3d266c6f676f3d646973636f7264266c6f676f436f6c6f723d66666666666626636f6c6f723d373338394438266c6162656c436f6c6f723d364137454332" alt="Discord" data-canonical-src="https://img.shields.io/discord/1100650029573738508.svg?label=&amp;logo=discord&amp;logoColor=ffffff&amp;color=7389D8&amp;labelColor=6A7EC2" style="max-width: 100%;"></a></p>
+<p><strong>CmdScheduler</strong> is a plugin for PocketMine-MP 5, It performs processing of CRON expressions when due will execute 1 scheduled instruction.</p>
+<h2><a id="user-content-why-cmdscheduler-" class="anchor" aria-hidden="true" href="#why-cmdscheduler-"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why CmdScheduler ?</h2>
+<ul>
+<li>CmdScheduler helps create a specific schedule in an easy to understand way such as: every minute, hour, day, week, month, ... to execute the command.</li>
+<li>In addition, CmdScheduler can also execute 3 types of commands: ConsoleCommand, Shell and Script.</li>
+</ul>
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>[x] CRON expressions</li>
+<li>[x] Execute command: Console, Shell, Script</li>
+</ul>
+<h2><a id="user-content-cron-expressions" class="anchor" aria-hidden="true" href="#cron-expressions"><span aria-hidden="true" class="octicon octicon-link"></span></a>CRON Expressions</h2>
+<p>A CRON expression is a string representing the schedule for a particular command to execute.  The parts of a CRON schedule are as follows:</p>
+<pre><code>*    *    *    *    *
+-    -    -    -    -
+|    |    |    |    |
+|    |    |    |    |
+|    |    |    |    +----- day of week (0 - 7) (Sunday=0 or 7)
+|    |    |    +---------- month (1 - 12)
+|    |    +--------------- day of month (1 - 31)
+|    +-------------------- hour (0 - 23)
++------------------------- min (0 - 59)
+</code></pre>
+<p>This library also supports a few macros:</p>
+<ul>
+<li>
+<code>@yearly</code>, <code>@annually</code> - Run once a year, midnight, Jan. 1 - <code>0 0 1 1 *</code>
+</li>
+<li>
+<code>@monthly</code> - Run once a month, midnight, first of month - <code>0 0 1 * *</code>
+</li>
+<li>
+<code>@weekly</code> - Run once a week, midnight on Sun - <code>0 0 * * 0</code>
+</li>
+<li>
+<code>@daily</code>, <code>@midnight</code> - Run once a day, midnight - <code>0 0 * * *</code>
+</li>
+<li>
+<code>@hourly</code> - Run once an hour, first minute - <code>0 * * * *</code>
+</li>
+</ul>
+<h2><a id="user-content-contact" class="anchor" aria-hidden="true" href="#contact"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h2>
+<p>If you have any questions you can contact me on Discord (Taylor#1837) or on <a href="https://discord.gg/yAhsgskaGy" rel="nofollow">my Discord server</a>.</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e14684f1d00235c","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

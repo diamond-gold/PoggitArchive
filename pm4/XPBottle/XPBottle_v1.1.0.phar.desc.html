@@ -1,0 +1,93 @@
+<h1>
+<a id="user-content-xpbottle" class="anchor" href="#xpbottle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>XPBottle</h1>
+<p>A pocketmine plugin that allows players to bottle their xp with a command.</p>
+<h1>
+<a id="user-content-how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h1>
+<ol>
+<li>Download the phar from <a href="https://poggit.pmmp.io/" rel="nofollow">https://poggit.pmmp.io/</a>.</li>
+<li>Upload to your servers plugin directory.</li>
+<li>Restart your server.</li>
+</ol>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Players can extract XP into a bottle.</li>
+<li>Ability to create new xp bottles regardless of XP via another player.</li>
+<li>Players can also check their XP.</li>
+<li>All messages configurable in the config.yml!</li>
+</ul>
+<h1>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<ul>
+<li>/xpbottle  - The user of this command has XP extracted from them and put into a bottle.</li>
+<li>/newxpbottle   - This command can be run by only players, whatever amount specified will be given as a bottle to the
+specified player.</li>
+<li>/myxp - Informs the user how much XP they currently have!</li>
+</ul>
+<h1>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<ul>
+<li>
+<p>xpbottle.xpbottle.command:</p>
+<pre><code>default: true
+description: Allows players to use /xpbottle.
+</code></pre>
+</li>
+<li>
+<p>xpbottle.newxpbottle.command:</p>
+<pre><code>default: op
+description: Allows players to use /newxpbottle.
+</code></pre>
+</li>
+<li>
+<p>xpbottle.command.myxp:</p>
+<pre><code>default: true
+description: Allows players to use /myxp.
+</code></pre>
+</li>
+</ul>
+<h1>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<p>~ Message sent to player if they lack the permission to extract XP:</p>
+<pre><code>  no-perms-message-xpbottle: "§cYou do not have permission to extract XP!"
+</code></pre>
+<p>~ Message sent to player if they lack the permission to create an xp bottle:</p>
+<pre><code>  no-perms-message-newxpbottle: "§cYou do not have permission to create an XP bottle regardless of XP that you currently possess!"
+</code></pre>
+<p>~ Message sent to player if they lack the permissions to check their XP:</p>
+<pre><code>  no-perms-message-myxp: "§cYou do not have permission to check your XP!"
+</code></pre>
+<p>~ Message sent to player if amount specified is below 1:</p>
+<pre><code>  must-be-above-0: "§cAmount specified must be above 0!"
+</code></pre>
+<p>~ Message sent to player if the amount specified exceeds the amount of xp the player currently possesses, use %XP% for how much xp the sender has:</p>
+<pre><code>  insufficient-xp: "§cAmount specified exceeds how much XP you currently have, you currently have §b%XP%§c!"
+</code></pre>
+<p>~ Message sent to player if the amount specified is not numeric (a number):</p>
+<pre><code>  not-integer-message: "§cAmount specified must be numeric!"
+</code></pre>
+<p>~ Message sent to player when xp is extracted successfully, use %AMOUNT-EXTRACTED% for the amount of XP the player extracted into a bottle:</p>
+<pre><code>  success-message: "§aSuccesfully extracted §b%AMOUNT-EXTRACTED%§a XP!"
+</code></pre>
+<p>~ Message sent to player if they have 0 XP:</p>
+<pre><code>no-xp: "§cYou have no XP to extract!"
+</code></pre>
+<p>~ Message sent to sender if specified player is not online:</p>
+<pre><code>invalid-player: "§cSpecified player does not exist!"
+</code></pre>
+<p>~ Message sent to player if specified player is themselves. Use %AMOUNT% for the amount of XP:</p>
+<pre><code>self-success-message: "§aSuccessfully given yourself an XP bottle worth §b%AMOUNT% §aXP!"
+</code></pre>
+<p>~ Message sent to reciever of the xp bottle from another player, use %AMOUNT% for the amount given and %SENDER% for the name of the player who gave it to them:</p>
+<pre><code>  target-success-message: "§aYou have recieved an XP bottle worth §b%AMOUNT% §aXP from §b%SENDER%§a!"
+</code></pre>
+<p>~ Message sent to the player who gives an xp bottle to another player, use %AMOUNT% for the amount given and %TARGET% for the name of the specified player:</p>
+<pre><code>  sender-success-message: "§aSuccessfully given §b%TARGET%§a an XP bottle worth §b%AMOUNT%§a XP!"
+</code></pre>
+<p>~ Message sent to player when they check their XP, use %XP% for the amount of XP they possess:</p>
+<pre><code>  xp-success-message: "§aYou currently have §b%XP%§a XP!"
+</code></pre>
+<h1>
+<a id="user-content-support" class="anchor" href="#support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support</h1>
+<p>If you have any suggestions, complaints or need help, leave an issue on github, a review on poggit or message me on discord TPE#1061</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e1467db198bd039","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

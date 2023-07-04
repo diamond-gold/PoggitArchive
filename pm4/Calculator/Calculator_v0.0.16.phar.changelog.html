@@ -1,0 +1,15 @@
+<ul dir="auto">
+<li>Bump lib <code class="notranslate">muqsit/arithmexp</code> to <code class="notranslate">0.1.26</code>
+<ul dir="auto">
+<li>Introduced <code class="notranslate">Parser::getOperatorManager()</code> (<a href="https://github.com/Muqsit/arithmexp/commit/4ff725f3b958a2372668729195193438880b73e1"><code class="notranslate">4ff725f</code></a>)</li>
+<li>Replaced <code class="notranslate">Parser::getBinaryOperatorRegistry()</code> with <code class="notranslate">Parser::getOperatorManager()-&gt;getBinaryRegistry()</code></li>
+<li>Replaced <code class="notranslate">Parser::getUnaryOperatorRegistry()</code> with <code class="notranslate">Parser::getOperatorManager()-&gt;getUnaryRegistry()</code></li>
+<li>Fixed a few cases where optimizers did not account for INF and NAN (<a href="https://github.com/Muqsit/arithmexp/issues/16" data-hovercard-type="issue" data-hovercard-url="/Muqsit/arithmexp/issues/16/hovercard">#16</a>) (<a href="https://github.com/Muqsit/arithmexp/commit/1ef49eb44e1a0723e42a771cc680f2afc15396f6"><code class="notranslate">1ef49eb</code></a>, <a href="https://github.com/Muqsit/arithmexp/commit/db1df91b986e023dfdba1bf002da0b2410ddaefa"><code class="notranslate">db1df91</code></a>, <a href="https://github.com/Muqsit/arithmexp/commit/03440abd8d9cede1a22ce6cf90991a293934a6ed"><code class="notranslate">03440ab</code></a>, <a href="https://github.com/Muqsit/arithmexp/commit/b9dd31e9bb23faace4203493b85f6dc7c5f9aaca"><code class="notranslate">b9dd31e</code></a>, <a href="https://github.com/Muqsit/arithmexp/commit/3c9b8a081c947c136204a18685f27cf58e6d9fe7"><code class="notranslate">3c9b8a0</code></a>, <a href="https://github.com/Muqsit/arithmexp/commit/14442caf91dcfe540c595ac3be06af554d7b2c77"><code class="notranslate">14442ca</code></a>, <a href="https://github.com/Muqsit/arithmexp/commit/082ccf3bfde0aff653fb0819bf3b9728a309d538"><code class="notranslate">082ccf3</code></a>)</li>
+<li>Fixed operator precedence of unary operators being greater than exponentiation (<a href="https://github.com/Muqsit/arithmexp/issues/17" data-hovercard-type="issue" data-hovercard-url="/Muqsit/arithmexp/issues/17/hovercard">#17</a>) (<a href="https://github.com/Muqsit/arithmexp/commit/4ff725f3b958a2372668729195193438880b73e1"><code class="notranslate">4ff725f</code></a>)</li>
+<li>Fixed division by zero with zero <code class="notranslate">0 / 0</code> returning <code class="notranslate">int(0)</code> with optimizations (<a href="https://github.com/Muqsit/arithmexp/commit/167297038be3529e90d554abe6027fbbf6be18ef"><code class="notranslate">1672970</code></a>)</li>
+<li>Function properties (commutativity and determinism) are governed by function flags instead of boolean properties (3e34845)</li>
+<li>See newer examples on the <a href="https://github.com/Muqsit/arithmexp/wiki">wiki</a> about how to register custom binary operators, unary operators, and functions</li>
+<li>Implemented idempotent functions (<a href="https://github.com/Muqsit/arithmexp/commit/bd0860973098224497d2dc731f8eeef3f8f6f4a2"><code class="notranslate">bd08609</code></a>)</li>
+</ul>
+</li>
+</ul>

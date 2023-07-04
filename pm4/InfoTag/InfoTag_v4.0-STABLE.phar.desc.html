@@ -1,0 +1,53 @@
+<h1>
+<a id="user-content-infotag" class="anchor" href="#infotag" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>InfoTag</h1>
+<p>A simple PocketMine-MP (4.0.0) plugin that allows you to view basic player information in the player's nametag, with <a href="https://poggit.pmmp.io/p/PureChat/" rel="nofollow">PureChat</a> &amp; <a href="https://poggit.pmmp.io/p/RankSystem" rel="nofollow">RankSystem</a> integration (and factions support).</p>
+<h1>
+<a id="user-content--first-steps" class="anchor" href="#-first-steps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="eyes" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f440.png">👀</g-emoji> First steps</h1>
+<p>You must first install the plugin ("plugins/" folder) and start the server, and then shut it down.</p>
+<p>Inside the "plugin_data/InfoTag" folder a file called "format.yml" will be created, which you can modify.</p>
+<h1>
+<a id="user-content--how-to-modify-the-format" class="anchor" href="#-how-to-modify-the-format" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="question" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2753.png">❓</g-emoji> How to modify the format?</h1>
+<p>You can modify the <a href="https://github.com/AmmyR/InfoTag/blob/main/resources/format.yml#L36">"format"</a> key inside the file <a href="https://github.com/AmmyR/InfoTag/blob/main/resources/format.yml">"format.yml"</a>.</p>
+<p>The following options are available within the available format:</p>
+<p><b>[<g-emoji class="g-emoji" alias="exclamation" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2757.png">❗</g-emoji>]<i> If PureChat or RankSystem (you can only use one!) are disabled or not installed, the player's nametag will be used instead.</i></b></p>
+<ul>
+  <li>
+<b>{nametag}</b> -&gt; PureChat &amp; RankSystem nametag format. </li>
+  <li>
+<b>{health}</b> -&gt; Player's current health.</li>
+  <li>
+<b>{maxhealth}</b> -&gt; Player's max health.</li>
+  <li>
+<b>{food}</b> -&gt; Player's current food.</li>
+  <li>
+<b>{maxfood}</b> -&gt; Player's max food.</li>
+  <li>
+<b>{ping}</b> -&gt; Player's ping (ms).</li>
+  <li>
+<b>{device}</b> -&gt; The device from which the player is playing.</li>
+  <li>
+<b>{faction}</b> -&gt; Faction to which the player belongs
+</li>
+</ul>
+<p>You can also use the unicode symbols of the game and add colors! (See the <a href="https://github.com/AmmyR/InfoTag/blob/main/resources/format.yml#L31">format.yml</a> file for more information).</p>
+<h1>
+<a id="user-content--factions" class="anchor" href="#-factions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="crossed_flags" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f38c.png">🎌</g-emoji> Factions</h1>
+<div id="user-content-factions">
+There is support for 4 factions plugins:
+<ul>
+  <li><a href="https://poggit.pmmp.io/p/SimpleFaction/" rel="nofollow">SimpleFaction</a></li>
+  <li><a href="https://poggit.pmmp.io/p/FactionMaster/" rel="nofollow">FactionMaster</a></li>
+  <li><a href="https://poggit.pmmp.io/p/PiggyFactions/" rel="nofollow">PiggyFactions</a></li>
+  <li><a href="https://poggit.pmmp.io/p/FactionsPE/" rel="nofollow">FactionsPE</a></li>
+</ul>
+<p>You can set which plugin you want to use in the format.yml file, in the <a href="https://github.com/AmmyR/InfoTag/blob/main/resources/format.yml#L16">"factions-plugin"</a> key.</p>
+<p>If the plugin of your choice does not exist or is deactivated, the "{faction}" key will simply be ignored and will be displayed without formatting.</p>
+<p><b>[<g-emoji class="g-emoji" alias="exclamation" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2757.png">❗</g-emoji>] Use plugins provided by Poggit (links above). If you use factions plugins that do not come from this source, an error may occur. Sometimes those who provide plugins from external sources (such as YouTube) modify them.</b></p>
+</div>
+<h1>
+<a id="user-content--example-default-formatted-nametag" class="anchor" href="#-example-default-formatted-nametag" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="mag_right" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f50e.png">🔎</g-emoji> Example (Default formatted nametag)</h1>
+<div align="center">
+  <br>
+  <a href="https://github.com/AmmyR/InfoTag/blob/main/example.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/AmmyR/InfoTag/raw/main/example.png" style="max-width:100%;"></a>
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e146204dd86986c","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

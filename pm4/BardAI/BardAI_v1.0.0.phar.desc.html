@@ -1,0 +1,65 @@
+<h1><a id="user-content-bard-ai" class="anchor" aria-hidden="true" href="#bard-ai"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bard-AI<a target="_blank" rel="noopener noreferrer" href="https://github.com/Taylor-pm-pl/Bard-AI/blob/main/asset/img/icon.png?raw=true"><img src="https://github.com/Taylor-pm-pl/Bard-AI/raw/main/asset/img/icon.png?raw=true" height="64" align="left" style="max-width: 100%;"></a>
+</h1><br>
+<p><a href="https://discord.gg/yAhsgskaGy" rel="nofollow"><img src="https://camo.githubusercontent.com/c7165f58ee862ff15e2d3eb8705534af09d9553eae3ac114cf96d062f7c0c9e5/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f313130303635303032393537333733383530382e7376673f6c6162656c3d266c6f676f3d646973636f7264266c6f676f436f6c6f723d66666666666626636f6c6f723d373338394438266c6162656c436f6c6f723d364137454332" alt="Discord" data-canonical-src="https://img.shields.io/discord/1100650029573738508.svg?label=&amp;logo=discord&amp;logoColor=ffffff&amp;color=7389D8&amp;labelColor=6A7EC2" style="max-width: 100%;"></a></p>
+<p><strong>NOTICE:</strong> This plugin branch is for PocketMine-MP 4. <br>
+<g-emoji class="g-emoji" alias="sparkles" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png">✨</g-emoji> <strong>Bard-AI is a Google Bard AI integrated chatbot plugin like ChatGPT</strong></p>
+
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Ask a question to Google Bard</li>
+<li>Customizable messages</li>
+<li>Customizable forms</li>
+<li>FormUI support</li>
+</ul>
+<h1><a id="user-content-commands--permissions" class="anchor" aria-hidden="true" href="#commands--permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands &amp; Permissions</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/bardai</code></td>
+<td>Ask a question to Google Bard</td>
+<td><code>bardai.command</code></td>
+</tr>
+</tbody>
+</table>
+<h1><a id="user-content-authentication" class="anchor" aria-hidden="true" href="#authentication"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authentication</h1>
+<ol>
+<li>Visit <a href="https://bard.google.com/" rel="nofollow">https://bard.google.com/</a>
+</li>
+<li>F12 for console</li>
+<li>Session: <code>Application → Cookies → Copy the value of __Secure-1PSID cookie.</code>
+</li>
+</ol>
+<h1><a id="user-content-config" class="anchor" aria-hidden="true" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">token</span>: <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>
+
+<span class="pl-ent">messages</span>:
+  <span class="pl-ent">not-ready</span>: <span class="pl-s"><span class="pl-pds">'</span>&amp;cThe AI is not ready yet, please check token in config.yml<span class="pl-pds">'</span></span>
+  <span class="pl-ent">player-only</span>: <span class="pl-s"><span class="pl-pds">'</span>&amp;cThis command can only be used by players.<span class="pl-pds">'</span></span>
+  <span class="pl-ent">no-permission</span>: <span class="pl-s"><span class="pl-pds">'</span>&amp;cYou do not have permission to use this command.<span class="pl-pds">'</span></span>
+  <span class="pl-ent">empty-question</span>: <span class="pl-s"><span class="pl-pds">'</span>&amp;cYou must ask a question.<span class="pl-pds">'</span></span>
+  <span class="pl-ent">processing</span>: <span class="pl-s"><span class="pl-pds">'</span>&amp;aAsking Bard...<span class="pl-pds">'</span></span>
+
+<span class="pl-ent">ask-form</span>:
+  <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">'</span>Bard AI<span class="pl-pds">'</span></span>
+  <span class="pl-ent">label</span>: <span class="pl-s"><span class="pl-pds">'</span>Ask Bard a question!<span class="pl-pds">'</span></span>
+  <span class="pl-ent">input</span>:
+    <span class="pl-ent">text</span>: <span class="pl-s"><span class="pl-pds">'</span>Question<span class="pl-pds">'</span></span>
+    <span class="pl-ent">placeholder</span>: <span class="pl-s"><span class="pl-pds">'</span>Ask a question...<span class="pl-pds">'</span></span>
+
+<span class="pl-ent">result-form</span>:
+  <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">'</span>Bard AI<span class="pl-pds">'</span></span>
+  <span class="pl-ent">content</span>: <span class="pl-s"><span class="pl-pds">'</span>{content}<span class="pl-pds">'</span></span>
+  <span class="pl-ent">button</span>: <span class="pl-s"><span class="pl-pds">'</span>&amp;cClose<span class="pl-pds">'</span></span></pre></div>
+<h1><a id="user-content-additional-notes" class="anchor" aria-hidden="true" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h1>
+<ul>
+<li>If you found bugs or want to give suggestions, please visit <a href="https://github.com/Taylor-pm-pl/Bard-AI/issues">here</a> or join our Discord server.</li>
+<li>We accept all contributions! If you want to contribute, please make a pull request in <a href="https://github.com/Taylor-pm-pl/Bard-AI/pulls">here</a>.</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e145e143d65fa5e","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

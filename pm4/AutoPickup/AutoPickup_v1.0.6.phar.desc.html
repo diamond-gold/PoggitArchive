@@ -1,0 +1,28 @@
+<h1>
+<a id="user-content-autopickup" class="anchor" href="#autopickup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AutoPickup</h1>
+<h2>
+<a id="user-content-autopickup-1" class="anchor" href="#autopickup-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AutoPickup</h2>
+<p><a href="https://poggit.pmmp.io/p/AutoPickup" rel="nofollow"><img src="https://camo.githubusercontent.com/34b0d8b2f74c8edb97bd2cf2742797e96f7014ecd43525fc4a793ea4a2a459df/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4175746f5069636b7570" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/AutoPickup" style="max-width:100%;"></a> | <a href="https://poggit.pmmp.io/p/AutoPickup" rel="nofollow"><img src="https://camo.githubusercontent.com/e9f961cad8ff5849a8ee75923685af2d97d65f471489d39279dc33e63b8589df/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2f4175746f5069636b7570" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl/AutoPickup" style="max-width:100%;"></a> <br><br>
+A simple plugin that sends drops directly to the inventory.</p>
+<h1>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Sends drops of mined blocks directly to the player</li>
+<li>Sends drops of killed entities directly to the player</li>
+<li>Sends xp directly to the player</li>
+<li>Easy to use</li>
+</ul>
+<h1>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<p>In the configuration file you can decide in which worlds AutoPickup should be activated. <br></p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Mode can be either "whitelist" or "blacklist".</span>
+<span class="pl-c"><span class="pl-c">#</span> Whitelist ensures that AutoPickup is only active in the worlds entered below.</span>
+<span class="pl-c"><span class="pl-c">#</span> Blacklist ensures that AutoPickup is deactivated in the worlds entered below.</span>
+<span class="pl-ent">mode</span>: <span class="pl-s">blacklist</span>
+<span class="pl-c"><span class="pl-c">#</span> Set whitelisted/blacklisted worlds here.</span>
+<span class="pl-ent">worlds</span>: <span class="pl-s">[]</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Set a pop-up message here that appears when the player's inventory is full.</span>
+<span class="pl-c"><span class="pl-c">#</span> Leave blank to disable pop-up messages.</span>
+<span class="pl-ent">full-inventory-popup</span>: <span class="pl-s"><span class="pl-pds">'</span>&amp;cYour inventory is full!<span class="pl-pds">'</span></span></pre></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e145de55c75cfc0","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

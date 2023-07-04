@@ -1,0 +1,49 @@
+<div align="center">
+<a href="https://poggit.pmmp.io/p/LobbyPlayerLimit" rel="nofollow"><img src="https://camo.githubusercontent.com/efec1c178cfecb9bab375c9c834ba6580c345a050c1010fc2e29718f68b111a1/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4c6f626279506c617965724c696d6974" data-canonical-src="https://poggit.pmmp.io/shield.state/LobbyPlayerLimit" style="max-width:100%;"></a>
+<a href="https://poggit.pmmp.io/p/LobbyPlayerLimit" rel="nofollow"><img src="https://camo.githubusercontent.com/370024abd96c1811ac17f659a6899a25d0ea305f366e13108c5597353e2a7268/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f4c6f626279506c617965724c696d6974" data-canonical-src="https://poggit.pmmp.io/shield.api/LobbyPlayerLimit" style="max-width:100%;"></a>
+<a href="https://poggit.pmmp.io/p/LobbyPlayerLimit" rel="nofollow"><img src="https://camo.githubusercontent.com/7f71a1fac4a635c70600005cb0ea0e21f676284e349e290636dc6e258dbb7fec/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f4c6f626279506c617965724c696d6974" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/LobbyPlayerLimit" style="max-width:100%;"></a>
+<a href="https://poggit.pmmp.io/p/LobbyPlayerLimit" rel="nofollow"><img src="https://camo.githubusercontent.com/d042ec63bba29b2cf41b329a4cb8c4a6057fdbbbd6e8299b23192f0f0cfffc97/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2f4c6f626279506c617965724c696d6974" data-canonical-src="https://poggit.pmmp.io/shield.dl/LobbyPlayerLimit" style="max-width:100%;"></a>
+</div>
+<hr>
+<div align="center">
+<a href="https://github.com/BestCodrEver/LobbyPlayerLimit/blob/main/icon.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/BestCodrEver/LobbyPlayerLimit/raw/main/icon.png" width="64" height="64" style="max-width:100%;"></a>
+<h1 align="center">
+<a id="user-content-lobbyplayerlimit" class="anchor" href="#lobbyplayerlimit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LobbyPlayerLimit</h1>
+</div>
+<div align="center">
+<p align="center">A plugin which adds an automatic player transfer throughout multiple lobbies when you do /lobby with a player limit for each lobby.</p>
+<p>If you didn’t know, a lobby is where people spawn and they can join minigames, teleport to places etc. It is the starting point of a server as players spawn there for the first time. It’s practically a hub :D</p>
+</div>
+<hr>
+<h2>
+<a id="user-content-how-to-setup" class="anchor" href="#how-to-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to setup?</h2>
+<p>Drop the plugin into your server and start-and-stop it. Navigate to your <code>plugin_data</code> folder and find <code>lobbies.yml</code>.</p>
+<p>Now, add the names of the worlds of your lobbies after <code>lobbies:</code>. You can add as many as you want as long as they follow the <code>- "Example"</code> format. Make sure they have the same amount of indentation!</p>
+<p>Example:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">lobbies</span>:
+ - <span class="pl-s"><span class="pl-pds">"</span>world<span class="pl-pds">"</span></span>
+ - <span class="pl-s"><span class="pl-pds">"</span>worldone<span class="pl-pds">"</span></span></pre></div>
+<p>Then, add your fallback lobby world after <code>fallback:"</code>. Check the comments in the config if you don’t know what a fallback lobby is.</p>
+<p>Example:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">fallback</span>: <span class="pl-s"><span class="pl-pds">"</span>fallbackworld<span class="pl-pds">"</span></span></pre></div>
+<p>After that, replace <code>limit: 0</code> with <code>limit: AMOUNT OF PLAYERS PER LOBBY</code>.</p>
+<p>Add your “lobby full” message after <code>lobbyfullmsg:</code>.</p>
+<p>Now, restart the server and you're all done!</p>
+<h2>
+<a id="user-content-make-yourself-immune-to-the-system" class="anchor" href="#make-yourself-immune-to-the-system" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Make yourself immune to the system</h2>
+<p>Whenever you join the server, you will immediately be joined to a lobby with an amount of players less than your limit. If you want to disable this, you have to remove the <code>lobbyplayerlimit.lobby</code> permission from yourself.</p>
+<p>Assuming you have PurePerms installed and the server is online, run this command in console or in game:
+<code>/unsetuperm PLAYERNAME lobbyplayerlimit.lobby</code>
+Note: Doing this also disables your ability to run <code>/lobby</code>.</p>
+<p>Now you will be immune to the system!</p>
+<p>To add yourself back to the system, assuming you have PurePerms installed and the server is online, run this command in console or in game:
+<code>/setuperm PLAYERNAME lobbyplayerlimit.lobby</code></p>
+<h2>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<p><code>/lobby</code> - Teleport to a lobby (LobbyPlayerLimit main command)</p>
+<h2>
+<a id="user-content-permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h2>
+<p><code>lobbyplayerlimit.lobby</code> - Ability to run /lobby and be teleported to a lobby automatically on join.</p>
+<h2>
+<a id="user-content-report-a-bugleave-a-suggestion" class="anchor" href="#report-a-bugleave-a-suggestion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Report a bug/leave a suggestion!</h2>
+<p>Feel free to tell me <a href="https://github.com/BestCodrEver/LobbyPlayerLimit/issues/new">here</a>!</p>

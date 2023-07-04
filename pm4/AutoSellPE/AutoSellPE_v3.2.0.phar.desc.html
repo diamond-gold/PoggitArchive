@@ -1,0 +1,129 @@
+<h1><a id="user-content-overview" class="anchor" aria-hidden="true" href="#overview"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h1>
+<p>A PocketMine-MP plugin which automatically sells the blocks that you mine.</p>
+<ul>
+<li>This plugin is compatible with AutoInv</li>
+<li>This plugin supports BedrockEconomy, Capital &amp; EconomyAPI</li>
+</ul>
+<h1><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<p>Usage: <code>/autosell &lt; on | off | add | remove | view &gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Sub-commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>autosell</td>
+<td>on</td>
+<td>Turns on autosell</td>
+</tr>
+<tr>
+<td></td>
+<td>off</td>
+<td>Turns off autosell</td>
+</tr>
+<tr>
+<td></td>
+<td>add</td>
+<td>Adds the item the user is holding to the autosell price list. Proper usage: <code>/autosell add {price}</code> {price} should be a integer or float. For updating prices repeat with different price</td>
+</tr>
+<tr>
+<td></td>
+<td>remove</td>
+<td>Removes the item the user is holding from the autosell price list</td>
+</tr>
+<tr>
+<td></td>
+<td>view</td>
+<td>Lists the prices of all blocks/items added to the autosell price list</td>
+</tr>
+</tbody>
+</table>
+<p>Alias: <code>/as</code></p>
+<h1><a id="user-content-configyml" class="anchor" aria-hidden="true" href="#configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config.yml</h1>
+<pre><code>#     _              _             ____           _   _   ____    _____
+#    / \     _   _  | |_    ___   / ___|    ___  | | | | |  _ \  | ____|
+#   / _ \   | | | | | __|  / _ \  \___ \   / _ \ | | | | | |_) | |  _|
+#  / ___ \  | |_| | | |_  | (_) |  ___) | |  __/ | | | | |  __/  | |___
+# /_/   \_\  \__,_|  \__|  \___/  |____/   \___| |_| |_| |_|     |_____|
+#
+# Author: MCA7
+# Website: https://github.com/MCPEAbdu77/AutoSellPE
+# Apache-2.0 (C) 2021
+
+# Don't change this shit
+ver: 1.2
+
+# Prefix: (use § for color coding)
+prefix: "§6AutoSell§aPE§7:"
+
+# Name of the world autosell works on.
+# Example:
+# worlds:
+#  - "world1"
+#  - "world2"
+
+worlds:
+  - "world"
+  - "world2"
+  - "world3"
+
+# Economy provider
+# the possible values for this currently are
+# 1. BedrockEconomy
+# 2. Capital
+# 3. EconomyAPI
+economy-provider: BedrockEconomy
+
+# DO NOT TOUCH IF YOU DONT KNOW WHAT YOU ARE DOING
+# BY DEFAULT SELECTOR ENTRY IS EMPTY
+capital-settings:
+  selector:
+
+# New system for adding/removing blocks/items for AutoSell
+# has been changed to in-game configeration.
+# Hold the block/item and use the command,
+# /autosell add &lt;price&gt;
+# Example:
+# Hold cobblestone block and then use
+# /autosell add 10
+# This will autosell cobblestone block for $10
+# when stone is mined.
+# Likewise for removing, hold the block and
+# use /autosell remove
+</code></pre>
+<h1><a id="user-content-permissions" class="anchor" aria-hidden="true" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>autosell.command</code></td>
+<td>Grants the user/group the permission to toggle autosell ON or OFF - Restricted to OP's by default</td>
+</tr>
+<tr>
+<td><code>autosell.command.add</code></td>
+<td>Grants the user/group the permission to add or update block prices - Restricted to OP's by default</td>
+</tr>
+<tr>
+<td><code>autosell.command.remove</code></td>
+<td>Grants the user/group the permission to remove blocks from autosell - Restricted to OP's by default</td>
+</tr>
+<tr>
+<td><code>autosell.command.view</code></td>
+<td>Grants the user/group the permission to view/list all the prices for the autoselling blocks - Granted to everyone by default</td>
+</tr>
+</tbody>
+</table>
+<h1><a id="user-content-contact" class="anchor" aria-hidden="true" href="#contact"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h1>
+<ul>
+<li>Discord: MCA7#1245 (<a href="https://discord.gg/RPSz2RgPPs" rel="nofollow">https://discord.gg/RPSz2RgPPs</a>)</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e145debda5c270e","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

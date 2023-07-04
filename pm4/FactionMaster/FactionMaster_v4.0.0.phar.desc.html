@@ -1,0 +1,473 @@
+<p><a href="https://poggit.pmmp.io/p/FactionMaster" rel="nofollow"><img src="https://camo.githubusercontent.com/80252bc6252f58f228d48b4d56d8fb966f3a53ad936b9072c4c4519bcdf7b80e/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f46616374696f6e4d6173746572" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/FactionMaster" style="max-width:100%;"></a> <a href="https://poggit.pmmp.io/p/FactionMaster" rel="nofollow"><img src="https://camo.githubusercontent.com/9e8866eb541a11907515b146264e026423e9b75df81afd5ffe23969ff776b564/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f46616374696f6e4d6173746572" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/FactionMaster" style="max-width:100%;"></a> <a href="https://discord.gg/9dyYQjPpnA" rel="nofollow"><img src="https://camo.githubusercontent.com/28fecb16ad3770c3005ee997d5a79c892015020ed56e8856bf85649183cc8555/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3839363639343636303437333433343139323f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="" data-canonical-src="https://img.shields.io/discord/896694660473434192?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width:100%;"></a></p>
+<h1>
+<a id="user-content-factionmaster" class="anchor" href="#factionmaster" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FactionMaster</h1>
+<h5>
+<a id="user-content-for-pocketmine-4" class="anchor" href="#for-pocketmine-4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For PocketMine-4</h5>
+<p>FactionMaster is a new faction plugin that aims at flexibility and customization of the plugin by the user and the developers. It includes all the basic functionality of a faction plugin and data storage in MySQL or SQLITE. This is done by adding an extension system and a translation system. FactionMaster has a will of accessibility to the players and especially not to have to remember a lot of commands to play, all is done via interface.</p>
+<p>The PVP Faction mode is a game mode that consists of creating your faction and growing it. You can ally with other factions, fight and even request territories. All the available features will be listed in another section.</p>
+<h2>
+<a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<p>FactionMaster have multiple server support, see the Installation section for more information</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th align="center">FactionMaster</th>
+<th align="center">FactionsPro</th>
+<th align="center">PiggyFactions</th>
+<th align="center">SimpleFaction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SQLite3 Support</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+</tr>
+<tr>
+<td><code>MySQL Support</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+</tr>
+<tr>
+<td><code>Multiple claim</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+</tr>
+<tr>
+<td><code>Multiple faction home</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td><code>Image for UI (Texture pack)</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td><code>Translation system</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+</tr>
+<tr>
+<td><code>Extension system</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td><code>Per Faction Permissions</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td><code>SQL Injection Protection</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td><code>Command Autocomplete</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td><code>Form UI</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td><code>Async Queries</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+</tr>
+<tr>
+<td><code>Faction level</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td><code>Custom level reward</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td><code>Faction/ally chat</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+</tr>
+<tr>
+<td><code>Awaiting invitation</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td><code>Faction visibility</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td><code>Editable message</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+</tr>
+<tr>
+<td><code>Custom event</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+</tr>
+<tr>
+<td><code>Claim title</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+</tr>
+<tr>
+<td><code>Scoreboard faction top</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+</tr>
+<tr>
+<td><code>Banned faction name</code></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+<td align="center"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji></td>
+</tr>
+</tbody>
+</table>
+<h2>
+<a id="user-content-additionnal-plugins" class="anchor" href="#additionnal-plugins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additionnal plugins</h2>
+<ul>
+<li>
+<code>ScoreHUD v6.0.0</code>: FactionMaster support this plugin and implements all this tags :
+<ul>
+<li><em>factionmaster.faction.name</em></li>
+<li><em>factionmaster.faction.power</em></li>
+<li><em>factionmaster.faction.level</em></li>
+<li><em>factionmaster.faction.xp</em></li>
+<li><em>factionmaster.faction.message</em></li>
+<li><em>factionmaster.faction.description</em></li>
+<li><em>factionmaster.faction.visibility</em></li>
+<li><em>factionmaster.player.rank</em></li>
+</ul>
+</li>
+<li>
+<code>PureChat</code>: To use PureChat tags, download our fork of it <a href="https://github.com/ShockedPlot7560/PureChat/releases/tag/v1.4.1">here</a>
+</li>
+</ul>
+<h2>
+<a id="user-content-installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+<ul>
+<li>If you just want to use it on the same machine, no special installation is required, just download the .phar plugin and put it in the plugins folder.</li>
+<li>If you wish to use FactionMaster on more than one server at a time, please modify the <code>config.yml</code> after starting your server for the first time with FactionMaster on it and change the <code>PROVIDER: "SQLITE"</code> with MYSQL. Enter your database connection details and restart your server.</li>
+</ul>
+<h2>
+<a id="user-content-use-resource-pack" class="anchor" href="#use-resource-pack" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use resource pack</h2>
+<p>You have two ways to use the images under the Master faction</p>
+<ul>
+<li>Define the path to your resource pack directly in the config file with the line : <code>resource-pack-path</code>
+</li>
+<li>Use a .zip of a trusted FactionMaster resource_pack directly in the server folder and configure it by hand.
+<ul>
+<li>Download factionMaster texture pack available <a href="https://github.com/FactionMaster/FactionMaster/tree/stable/resource_pack">here</a>
+</li>
+<li>Install it on your server as a mandatory Texture pack</li>
+<li>Put the line : active-image to true in <code>config.yml</code> file</li>
+<li>Stop and start your server</li>
+</ul>
+</li>
+</ul>
+<h2>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<ul>
+<li>
+<code>/f</code>, <code>/faction</code>, <code>/fac</code>: Opens the main menu of FactionMaster</li>
+<li>
+<code>/f manage</code>: Opens the faction management interface</li>
+<li>
+<code>/f sethome &lt;:name&gt;</code>: Place a home at the player's location</li>
+<li>
+<code>/f delhome &lt;:name&gt;</code>: Remove the faction home</li>
+<li>
+<code>/f tp &lt;:name&gt;</code>: TP at the faction home</li>
+<li>
+<code>/f home</code>: Opens the home menu</li>
+<li>
+<code>/f claim</code>: Claim the current chunk</li>
+<li>
+<code>/f unclaim</code>: Remove the current claim</li>
+<li>
+<code>/f create</code>: Opens the menu to create a faction</li>
+<li>
+<code>/f map [on/off]</code>: Displays the map listing all claims</li>
+<li>
+<code>/f help</code>: Displays the orders</li>
+<li>
+<code>/f info &lt;:name&gt;</code>: Displays information about a faction</li>
+<li>
+<code>/f claiminfo</code>: Displays information about a chunk</li>
+<li>
+<code>/f extension</code>: Display extensions enabled <em>For op only</em>
+</li>
+<li>
+<code>/f placeleaderboards &lt;slug&gt;</code>: Place a leaderboard to your location</li>
+<li>
+<code>/f removeleaderboard</code>: Remove the nearest leaderboard around you</li>
+<li>
+<code>/f settings</code>: Give all the FactionMaster settings</li>
+<li>
+<code>/f synchro</code>: Submit task to make synchronisation manually of the database</li>
+<li>
+<code>/f addflag &lt;areaName&gt; &lt;type&gt;</code>: Add a claim considered like an area</li>
+<li>
+<code>/f removeflag</code>: Remove the actual claim considered like an area</li>
+</ul>
+<h2>
+<a id="user-content-extensions" class="anchor" href="#extensions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extensions</h2>
+<p>Extensions, a new way to customize your plugin to your liking. You just have to download the plugin corresponding to the desired extension and place it in the corresponding folder on your server. If you have an urge to stop using the functionality, delete the plugin from your server and the changes will be gone! You can use those approved by the FactionMaster team or do it yourself (<em>refer to the GitHub</em>) and submit it to us if you feel like it.</p>
+<p>All extensions made by the FactionMaster team and those approved by the FactionMaster team, which are accessible via poggit will be listed here.</p>
+<ul>
+<li>
+<strong>Bank system</strong> : <a href="https://poggit.pmmp.io/p/FactionMasterBank" rel="nofollow">here</a> <em>by FactionMaster</em>
+</li>
+<li>
+<strong>Invitation system improve</strong> : <a href="https://poggit.pmmp.io/p/FactionMasterInvitationImprove" rel="nofollow">here</a> <em>by FactionMaster</em>
+</li>
+</ul>
+<p><em>To submit your extension ideas, create an issue on our <a href="https://github.com/FactionMaster/FactionMaster/issues/new/choose">GitHub</a> and select the corresponding category</em></p>
+<h2>
+<a id="user-content-translators" class="anchor" href="#translators" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Translators</h2>
+<p>To participate in the translation of FactionMaster and probably see yourself here, create a Pull Request on the FactionMaster <a href="https://github.com/ShockedPlot7560/FactionMaster/">GitHub</a>. Once the language has been translated on the main plugin and on all the extensions listed in the <code>Extension</code> section, it will be added and all its contributors thanked.</p>
+<ul>
+<li>
+<strong>French</strong> (fr_Fr): @ShockedPlot7560</li>
+<li>
+<strong>English</strong> (en_EN): @ShockedPlot7560</li>
+<li>
+<strong>Spanish</strong> (es_SPA): @MrBlasyMSK</li>
+<li>
+<strong>Turkish</strong> (tr_TR): @xAliTura01</li>
+</ul>
+<h2>
+<a id="user-content-developers" class="anchor" href="#developers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Developers</h2>
+<p>Adding and modifying extensions is rather simple and explained on the README.md of the <a href="https://github.com/ShockedPlot7560/FactionMaster/">GitHub</a> repository with a documentation for the handling of the API.
+Many extensions will be made and approved by the FactionMaster team to allow users to modulate the plugin to their choice.
+All approved extensions will have a line in the README and and listed in the <code>Extension</code> section .</p>
+<h2>
+<a id="user-content-config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h2>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> --------------------- DATABASE --------------------------</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Use only SQLITE or MYSQL</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> To enabled Multiple server support</span>
+<span class="pl-c"><span class="pl-c">#</span> please use MYSQL for PROVIDER, give the good information and restart the server</span>
+<span class="pl-ent">PROVIDER</span>: <span class="pl-s"><span class="pl-pds">"</span>SQLITE<span class="pl-pds">"</span></span>
+<span class="pl-ent">MYSQL_database</span>:
+  <span class="pl-ent">host</span>: <span class="pl-s"><span class="pl-pds">"</span>localhost<span class="pl-pds">"</span></span>
+  <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>FactionMaster<span class="pl-pds">"</span></span>
+  <span class="pl-ent">user</span>: <span class="pl-s"><span class="pl-pds">"</span>root<span class="pl-pds">"</span></span>
+  <span class="pl-ent">pass</span>: <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+<span class="pl-ent">SQLITE_database</span>: 
+  <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>FactionMasterv3<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> --------------------- GLOBAL CONFIGURATION --------------------------</span>
+
+<span class="pl-c"><span class="pl-c">#</span> If you want to disable this feature, empty this array and reload your server</span>
+<span class="pl-ent">banned-faction-name</span>: <span class="pl-s">["op", "staff", "admin", "fuck", "shit"]</span>
+
+<span class="pl-ent">xp-win-per-kill</span>: <span class="pl-c1">1</span>
+<span class="pl-ent">power-win-per-kill</span>: <span class="pl-c1">2</span>
+<span class="pl-ent">power-loose-per-death</span>: <span class="pl-c1">2</span>
+<span class="pl-c"><span class="pl-c">#</span>Use to multiply the power win and loose if players are in factions</span>
+<span class="pl-ent">faction-multiplicator</span>: <span class="pl-c1">2</span>
+<span class="pl-c"><span class="pl-c">#</span>check if player have armor equip</span>
+<span class="pl-ent">allow-no-stuff</span>: <span class="pl-c1">false</span>
+
+<span class="pl-ent">default-home-limit</span>: <span class="pl-c1">2</span>
+<span class="pl-ent">default-claim-limit</span>: <span class="pl-c1">2</span>
+<span class="pl-ent">default-player-limit</span>: <span class="pl-c1">2</span>
+<span class="pl-ent">default-ally-limit</span>: <span class="pl-c1">2</span>
+<span class="pl-c"><span class="pl-c">#</span> PUBLIC: 0  /  PRIVATE: 1  /  INVITATION: 2</span>
+<span class="pl-ent">default-faction-visibility</span>: <span class="pl-c1">0</span>
+<span class="pl-ent">default-faction-xp</span>: <span class="pl-c1">0</span>
+<span class="pl-ent">default-faction-level</span>: <span class="pl-c1">1</span>
+<span class="pl-ent">default-faction-description</span>: <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+<span class="pl-ent">default-faction-message</span>: <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+<span class="pl-ent">default-power</span>: <span class="pl-c1">0</span>
+
+<span class="pl-ent">min-faction-name-length</span>: <span class="pl-c1">3</span>
+<span class="pl-ent">max-faction-name-length</span>: <span class="pl-c1">20</span>
+
+<span class="pl-c"><span class="pl-c">#</span> If it set to true, image will be display near button</span>
+<span class="pl-c"><span class="pl-c">#</span> If it set to false, image will be disabled</span>
+<span class="pl-ent">active-image</span>: <span class="pl-c1">true</span>
+<span class="pl-c"><span class="pl-c">#</span> If you want to keep using the old system by paste your zip in resource_pack folder of the server, fill it to null</span>
+<span class="pl-c"><span class="pl-c">#</span> else, give the path to the zip like this : resource_pack/path/to/your</span>
+<span class="pl-ent">resource-pack-path</span>: <span class="pl-c1">null</span> 
+
+<span class="pl-ent">faction-chat-active</span>: <span class="pl-c1">false</span>
+<span class="pl-ent">faction-chat-symbol</span>: <span class="pl-s"><span class="pl-pds">"</span>$<span class="pl-pds">"</span></span>
+<span class="pl-ent">faction-chat-message</span>: <span class="pl-s"><span class="pl-pds">"</span>[{factionName}] {playerName}: {message}<span class="pl-pds">"</span></span>
+<span class="pl-ent">ally-chat-active</span>: <span class="pl-c1">false</span>
+<span class="pl-ent">ally-chat-symbol</span>: <span class="pl-s"><span class="pl-pds">"</span>%<span class="pl-pds">"</span></span>
+<span class="pl-ent">ally-chat-message</span>: <span class="pl-s"><span class="pl-pds">"</span>[{factionName}] {playerName}: {message}<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">help-command-header</span>: <span class="pl-s"><span class="pl-pds">"</span>§8=§7=§8=§7=§8=§7=§8=§7=§8=§7= §bFactionMaster command §8=§7=§8=§7=§8=§7=§8=§7=§8=§7=<span class="pl-pds">"</span></span>
+<span class="pl-ent">help-command-lign</span>: <span class="pl-s"><span class="pl-pds">"</span> §8&gt;&gt; §r§b{command}: §7{description}<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ------------------ BROADCAST MESSAGE CONFIGURATION ---------------------</span>
+
+<span class="pl-ent">broadcast-faction-create</span>: <span class="pl-c1">false</span>
+<span class="pl-ent">broadcast-faction-create-message</span>: <span class="pl-s"><span class="pl-pds">"</span>{playerName} has created the faction {factionName}<span class="pl-pds">"</span></span>
+<span class="pl-ent">broadcast-faction-delete</span>: <span class="pl-c1">false</span>
+<span class="pl-ent">broadcast-faction-delete-message</span>: <span class="pl-s"><span class="pl-pds">"</span>{playerName} has deleted the faction {factionName}<span class="pl-pds">"</span></span>
+<span class="pl-ent">broadcast-faction-transferProperty</span>: <span class="pl-c1">false</span>
+<span class="pl-ent">broadcast-faction-transferProperty-message</span>: <span class="pl-s"><span class="pl-pds">"</span>{playerName} transferred the property to {targetName} of the faction {factionName}<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> --------------------- F MAP CONFIGURATION -------------------------</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Set thiis value to false if you want to disable /f map on | /f map off</span>
+<span class="pl-c"><span class="pl-c">#</span> Otherwise set this value to the number of ticks between each display </span>
+<span class="pl-ent">f-map-task</span>: <span class="pl-c1">false</span>
+<span class="pl-c"><span class="pl-c">#</span>f-map-task: 40</span>
+
+<span class="pl-ent">available-symbol</span>: <span class="pl-s">["/", "\\", "#", "$", "?", "%", "=", "&amp;", "^", "$"]</span>
+
+<span class="pl-ent">player-symbol</span>: <span class="pl-s"><span class="pl-pds">"</span>+<span class="pl-pds">"</span></span>
+<span class="pl-ent">player-color</span>: <span class="pl-s"><span class="pl-pds">"</span>§b<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">wilderness-symbol</span>: <span class="pl-s"><span class="pl-pds">"</span>-<span class="pl-pds">"</span></span>
+<span class="pl-ent">wilderness-color</span>: <span class="pl-s"><span class="pl-pds">"</span>§7<span class="pl-pds">"</span></span> 
+<span class="pl-ent">spawn-symbol</span>: <span class="pl-s"><span class="pl-pds">"</span>-<span class="pl-pds">"</span></span>
+<span class="pl-ent">spawn-color</span>: <span class="pl-s"><span class="pl-pds">"</span>§8<span class="pl-pds">"</span></span> 
+<span class="pl-ent">warzone-symbol</span>: <span class="pl-s"><span class="pl-pds">"</span>-<span class="pl-pds">"</span></span>
+<span class="pl-ent">warzone-color</span>: <span class="pl-s"><span class="pl-pds">"</span>§7<span class="pl-pds">"</span></span> 
+
+<span class="pl-ent">claim-color</span>: <span class="pl-s"><span class="pl-pds">"</span>§f<span class="pl-pds">"</span></span>
+<span class="pl-ent">claim-ally-color</span>: <span class="pl-s"><span class="pl-pds">"</span>§e<span class="pl-pds">"</span></span>
+<span class="pl-ent">claim-ennemie-color</span>: <span class="pl-s"><span class="pl-pds">"</span>§4<span class="pl-pds">"</span></span>
+<span class="pl-ent">claim-own-color</span>: <span class="pl-s"><span class="pl-pds">"</span>§b<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">compass-color</span>: <span class="pl-s"><span class="pl-pds">"</span>§c<span class="pl-pds">"</span></span>
+<span class="pl-ent">compass-color-actual</span>: <span class="pl-s"><span class="pl-pds">"</span>§e<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">map-width</span>: <span class="pl-c1">48</span>
+<span class="pl-ent">map-height</span>: <span class="pl-c1">10</span>
+<span class="pl-ent">map-header-color</span>: <span class="pl-s"><span class="pl-pds">"</span>§6<span class="pl-pds">"</span></span>
+<span class="pl-ent">map-middle-header</span>: <span class="pl-s"><span class="pl-pds">"</span>.[ §2({{x}},{{z}}) {{factionLabel}} {{headerColor}}].<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> --------------------- CLAIM CONFIGURATION --------------------------</span>
+
+<span class="pl-ent">claim-cost</span>:
+  <span class="pl-c"><span class="pl-c">#</span> the type is the same type as level reward, you can put :</span>
+  <span class="pl-c"><span class="pl-c">#</span>   power / allyLimit / claimLimit / homeLimit / memberLimit</span>
+  <span class="pl-c"><span class="pl-c">#</span>   to make your own reward, please read the documentation</span>
+  <span class="pl-ent">type</span>: <span class="pl-s"><span class="pl-pds">"</span>power<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> the start value for the first claim</span>
+  <span class="pl-ent">value</span>: <span class="pl-c1">200</span>
+
+<span class="pl-c"><span class="pl-c">#</span> flat: cost all the time, the same price</span>
+<span class="pl-c"><span class="pl-c">#</span> addition: first claim will be cost: Ex: 100</span>
+<span class="pl-c"><span class="pl-c">#</span>      second claim will be cost: Ex: 200</span>
+<span class="pl-c"><span class="pl-c">#</span>      second claim will be cost: Ex: 300</span>
+<span class="pl-c"><span class="pl-c">#</span> multiplication: will be times by a factor</span>
+<span class="pl-c"><span class="pl-c">#</span> decrease: descrease the start value by the factor</span>
+<span class="pl-ent">claim-provider</span>: <span class="pl-s"><span class="pl-pds">"</span>flat<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Equation for mutliplication :</span>
+<span class="pl-c"><span class="pl-c">#</span>   cost-price = cost-start * (factor ** number-claim)</span>
+<span class="pl-ent">multiplication-factor</span>: <span class="pl-c1">2</span>
+<span class="pl-c"><span class="pl-c">#</span>Equation for decrease</span>
+<span class="pl-c"><span class="pl-c">#</span>   cost-price = cost-start - (number-claim * decrease-factor)</span>
+<span class="pl-ent">decrease-factor</span>: <span class="pl-c1">100</span>
+
+<span class="pl-c"><span class="pl-c">#</span> If set to false, the player cant /f sethome in a ennemy claim</span>
+<span class="pl-ent">allow-home-ennemy-claim</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> --------------------- TITLE CONFIGURATION --------------------------</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Set this to true if you want to display on player's screen the message when entering a claim</span>
+<span class="pl-ent">message-alert</span>: <span class="pl-c1">true</span>
+<span class="pl-c"><span class="pl-c">#</span> The following line define which message will be print</span>
+<span class="pl-c"><span class="pl-c">#</span> on the screen of players when entering a claim chunk</span>
+<span class="pl-c"><span class="pl-c">#</span> active parameter which can set : {factionName} / {colorStatus} / {x} / {z} / {world}</span>
+<span class="pl-c"><span class="pl-c">#</span> - colorStatus : color set in the f map configuration</span>
+<span class="pl-c"><span class="pl-c">#</span> to purpose a suggestion, open an issue on our github</span>
+<span class="pl-ent">message-alert-title</span>: <span class="pl-s"><span class="pl-pds">"</span>{colorStatus}{factionName}<span class="pl-pds">"</span></span>
+<span class="pl-ent">message-alert-subtitle</span>: <span class="pl-s"><span class="pl-pds">"</span>{x} - {z} - {world}<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Defines the time that will be applied before the message is displayed again</span>
+<span class="pl-ent">message-alert-cooldown</span>: <span class="pl-c1">10</span>
+
+<span class="pl-ent">message-alert-flag-enabled</span>: <span class="pl-c1">false</span>
+<span class="pl-c"><span class="pl-c">#</span> -------------- TOP FACTION'S SCOREBOARD CONFIGURATION -----------------</span>
+
+<span class="pl-c"><span class="pl-c">#</span> This is the scoreboard header, display on the top for the factionLevel top</span>
+<span class="pl-ent">factionLevel-leaderboard-header</span>: <span class="pl-s"><span class="pl-pds">"</span>- Top 10 faction -<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Lign patern for each faction</span>
+<span class="pl-c"><span class="pl-c">#</span> you can use this parameter : </span>
+<span class="pl-c"><span class="pl-c">#</span> {factionName} / {level} / {power}</span>
+<span class="pl-c"><span class="pl-c">#</span> to purpose a parameter suggestion, please open an issue on github</span>
+<span class="pl-ent">factionLevel-leaderboard-body</span>: <span class="pl-s"><span class="pl-pds">"</span>{factionName}: Level {level}<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> This is the scoreboard header, display on the top for the factionPower top</span>
+<span class="pl-ent">factionPower-leaderboard-header</span>: <span class="pl-s"><span class="pl-pds">"</span>- Top 10 faction -<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Lign patern for each faction</span>
+<span class="pl-c"><span class="pl-c">#</span> you can use this parameter : </span>
+<span class="pl-c"><span class="pl-c">#</span> {factionName} / {level} / {power}</span>
+<span class="pl-c"><span class="pl-c">#</span> to purpose a parameter suggestion, please open an issue on github</span>
+<span class="pl-ent">factionPower-leaderboard-body</span>: <span class="pl-s"><span class="pl-pds">"</span>{factionName}: Level {level}<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> --------------------- PLUGIN CONFIGURATION --------------------------</span>
+<span class="pl-c"><span class="pl-c">#</span>       DONT CHANGE IF YOU DONT KNOW WHAT YOU ARE DOING</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Change this value only if you are sure of what you are doing, </span>
+<span class="pl-c"><span class="pl-c">#</span> reducing it may break some functionality of the plugin, </span>
+<span class="pl-c"><span class="pl-c">#</span> increasing it may reduce the players experience.</span>
+<span class="pl-c"><span class="pl-c">#</span> Default: 60</span>
+<span class="pl-ent">timeout-task</span>: <span class="pl-c1">60</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Change this value only if you are sure of what you are doing, </span>
+<span class="pl-c"><span class="pl-c">#</span> reducing it may break some functionality of the plugin, </span>
+<span class="pl-c"><span class="pl-c">#</span> increasing it may reduce the players experience.</span>
+<span class="pl-c"><span class="pl-c">#</span> Default: 200</span>
+<span class="pl-c"><span class="pl-c">#</span> It will determine ow much time Database synchronisation will be done</span>
+<span class="pl-ent">sync-time</span>: <span class="pl-c1">200</span></pre></div>
