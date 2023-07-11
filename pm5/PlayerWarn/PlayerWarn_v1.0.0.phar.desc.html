@@ -1,0 +1,68 @@
+<h1><a id="user-content-playerwarn" class="anchor" aria-hidden="true" href="#playerwarn"><span aria-hidden="true" class="octicon octicon-link"></span></a>PlayerWarn</h1>
+<p>A PocketMine-MP plugin that allows server administrators to issue warnings to players and keep track of their warning history.</p>
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Warn players for rule violations or misconduct.</li>
+<li>Set a warning limit per player and define different punishment types when the limit is reached (kick, ban, or ban-ip).</li>
+<li>View and clear warnings for players.</li>
+<li>Customization options through the configuration file.</li>
+</ul>
+<h1><a id="user-content-default-config" class="anchor" aria-hidden="true" href="#default-config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default Config</h1>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> PlayerWarn Configuration</span>
+
+<span class="pl-c"><span class="pl-c">#</span> The `warning_limit` option specifies the maximum number of warnings a player can have before being banned.</span>
+<span class="pl-c"><span class="pl-c">#</span> Set a positive integer value for this option. The default value is 3.</span>
+<span class="pl-ent">warning_limit</span>: <span class="pl-c1">3</span>
+
+<span class="pl-c"><span class="pl-c">#</span> The `punishment_type` option specifies the type of punishment to apply when a player reaches the warning limit.</span>
+<span class="pl-c"><span class="pl-c">#</span> Valid options are "kick", "ban", "ban-ip", and "none".</span>
+<span class="pl-c"><span class="pl-c">#</span> The default value is "none", which means no punishment will be applied.</span>
+<span class="pl-ent">punishment_type</span>: <span class="pl-s">none</span></pre></div>
+<h1><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<p>The PlayerWarn plugin provides the following commands for chunk clearing:</p>
+<ul>
+<li>
+<code>/warn &lt;player&gt; [reason]</code>: Command to issue a warning to a player. Specify the player's username and an optional reason for the warning.
+<ul>
+<li>Permission: <code>playerwarn.command.warn</code>
+</li>
+</ul>
+</li>
+<li>
+<code>/clearwarns &lt;player&gt;</code>: Command to clear all warnings for a player.
+<ul>
+<li>Permission: <code>playerwarn.command.warn</code>
+</li>
+</ul>
+</li>
+<li>
+<code>/warns [player]</code>: Command to view all warnings. If a player is specified, it will show the warnings for that player. If no player is specified, it will show warnings for all players.
+<ul>
+<li>Permission: <code>playerwarn.command.warn</code>
+</li>
+</ul>
+</li>
+</ul>
+<h1><a id="user-content-permissions" class="anchor" aria-hidden="true" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<p>To control access to the commands provided by the PlayerWarn plugin, the following permissions are available:</p>
+<ul>
+<li>
+<code>playerwarn.command.warn</code>: Allows players to use the <code>/warn</code> command.</li>
+<li>
+<code>playerwarn.command.clearwarns</code>: Allows players to use the <code>/clearwarns</code> command.</li>
+<li>
+<code>playerwarn.command.warns</code>: Allows players to use the <code>/warns</code> command.</li>
+</ul>
+<p>Grant these permissions to specific player groups or individuals using a permissions management plugin of your choice.</p>
+<h1><a id="user-content-upcoming-features" class="anchor" aria-hidden="true" href="#upcoming-features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Upcoming Features</h1>
+<ul>
+<li>Currently none planned. You can contribute or suggest for new features.</li>
+</ul>
+<h1><a id="user-content-additional-notes" class="anchor" aria-hidden="true" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h1>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/AIPTU/PlayerWarn/issues">here</a>.</li>
+<li>We accept all contributions! If you want to contribute, please make a pull request in <a href="https://github.com/AIPTU/PlayerWarn/pulls">here</a>.</li>
+<li>Icons made from <a href="https://www.flaticon.com" rel="nofollow">www.flaticon.com</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e4de86ddc216fc7","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

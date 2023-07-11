@@ -1,0 +1,144 @@
+<h1><a id="user-content-vminingsack" class="anchor" aria-hidden="true" href="#vminingsack"><span aria-hidden="true" class="octicon octicon-link"></span></a>VMiningSack</h1>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/VennDev/VMiningSack/blob/main/icon.png"><img src="https://github.com/VennDev/VMiningSack/raw/main/icon.png" alt="VMiningSack" height="150" width="150" style="max-width: 100%;"></a></p>
+- One plugin for PocketMine-PMMP 5
+<h1><a id="user-content-how-to-install-it-" class="anchor" aria-hidden="true" href="#how-to-install-it-"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to install it ?</h1>
+<ul>
+<li>You should install InvMenu here: <a href="https://github.com/Muqsit/InvMenu">Sources</a>
+</li>
+</ul>
+<h1><a id="user-content-notes" class="anchor" aria-hidden="true" href="#notes"><span aria-hidden="true" class="octicon octicon-link"></span></a>Notes</h1>
+<ul>
+<li>The image representing this plugin is for illustrative purposes only, if you want similar objects you can customize your own.</li>
+</ul>
+<h1><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<pre><code>/vminingsack or /vms - give &lt;player&gt; &lt;type&gt; &lt;amount&gt;
+</code></pre>
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Save your bag space as you dig mines or collect blocks packed into something called VMiningSack</li>
+<li>Automatically pocket objects or so-called blocks into your Sack when digging them.</li>
+<li>Allow pocketing similar items or blocks in your Sack with 1 tap.</li>
+</ul>
+<h1><a id="user-content-config" class="anchor" aria-hidden="true" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<pre lang="config"><code>---
+
+####################################################################################################
+# Frequently Asked Questions:
+#
+# What is the material? - They are the names of id-like objects in vanilla
+#                         minecraft bedrock, example: /give @s diamond 1
+#
+# Can I create multiple types of sacks? - Quite possibly, you can just copy a template
+#                                         I already have and rename it like small, medium, ... according
+#                                         to your preferences and reset everything according to
+#                                         the needs that you need.
+####################################################################################################
+
+# GUI Settings
+gui:
+  border:
+    # Border material
+    material: "barrier"
+  ore_item:
+    lore:
+      - "§r§7%count%x§f/§c%max%x"
+
+  insert_item:
+    # The place of this object on the GUI
+    slot: 49
+    # Material
+    material: "chest"
+    # Name for the item
+    name: "§aInsert inventory"
+    # Lore for the item
+    lore:
+      - "§r§7Insert your inventory items into your sacks!"
+      - "§r§eClick to put all items in!"
+
+# Types of mining stacks
+types:
+  small:
+    # Item for the mining sack
+    item:
+      material: "chest"
+    # Sizes to accommodate each type of ores
+    size: 100
+    # Name to be displayed in the GUI
+    name: "Small Mining Sack"
+    # Types of ores, max is 28
+    ores:
+      # material, name (name is optional)
+      - [ "coal", false ]
+      - [ "raw_iron", false ]
+      - [ "raw_gold", false ]
+      - [ "raw_copper", false ]
+      - [ "redstone_dust", false ]
+      - [ "diamond", false ]
+      - [ "emerald", false ]
+  medium:
+    # Item for the mining sack
+    item:
+      material: "chest"
+    # Sizes to accommodate each type of ores
+    size: 500
+    # Name to be displayed in the GUI
+    name: "Medium Mining Sack"
+    # Types of ores, max is 28
+    ores:
+      # material, name (name is optional)
+      - [ "coal", false ]
+      - [ "raw_iron", false ]
+      - [ "raw_gold", false ]
+      - [ "raw_copper", false ]
+      - [ "redstone_dust", false ]
+      - [ "diamond", false ]
+      - [ "emerald", false ]
+  large:
+    # Item for the mining sack
+    item:
+      material: "chest"
+    # Sizes to accommodate each type of ores
+    size: 1000
+    # Name to be displayed in the GUI
+    name: "Large Mining Sack"
+    # Types of ores, max is 28
+    ores:
+      # material, name (name is optional)
+      - [ "coal", false ]
+      - [ "raw_iron", false ]
+      - [ "raw_gold", false ]
+      - [ "raw_copper", false ]
+      - [ "redstone_dust", false ]
+      - [ "diamond", false ]
+      - [ "emerald", false ]
+  extra:
+    # Item for the mining sack
+    item:
+      material: "chest"
+    # Sizes to accommodate each type of ores
+    size: 2500
+    # Name to be displayed in the GUI
+    name: "Extra Mining Sack"
+    # Types of ores, max is 28
+    ores:
+      # material, name (name is optional)
+      - [ "coal", false ]
+      - [ "raw_iron", false ]
+      - [ "raw_gold", false ]
+      - [ "raw_copper", false ]
+      - [ "redstone_dust", false ]
+      - [ "diamond", false ]
+      - [ "emerald", false ]
+
+...
+</code></pre>
+<h1><a id="user-content-images" class="anchor" aria-hidden="true" href="#images"><span aria-hidden="true" class="octicon octicon-link"></span></a>Images</h1>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/VennDev/VMiningSack/blob/main/images/Untitled.png"><img src="https://github.com/VennDev/VMiningSack/raw/main/images/Untitled.png" alt="VMiningSack" height="300" width="300" style="max-width: 100%;"></a></p>
+<h1><a id="user-content-credits" class="anchor" aria-hidden="true" href="#credits"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h1>
+<ul>
+<li>Email: <a href="/cdn-cgi/l/email-protection#e4948a8589d1d4d4d1a48389858d88ca878b89"><span class="__cf_email__" data-cfemail="85f5ebe4e8b0b5b5b0c5e2e8e4ece9abe6eae8">[email&#160;protected]</span></a>
+</li>
+<li>Paypal: <a href="/cdn-cgi/l/email-protection#caa6a3acafa8a5abbef3faf38aada7aba3a6e4a9a5a7"><span class="__cf_email__" data-cfemail="b4d8ddd2d1d6dbd5c08d848df4d3d9d5ddd89ad7dbd9">[email&#160;protected]</span></a>
+</li>
+</ul>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e4de8732a501fe5","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>
