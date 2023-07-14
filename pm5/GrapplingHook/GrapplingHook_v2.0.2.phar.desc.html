@@ -1,0 +1,152 @@
+<h1><a id="user-content-grapplinghook" class="anchor" aria-hidden="true" href="#grapplinghook"><span aria-hidden="true" class="octicon octicon-link"></span></a>GrapplingHook</h1>
+<p><a href="https://poggit.pmmp.io/p/GrapplingHook" rel="nofollow"><img src="https://camo.githubusercontent.com/f69b147267b365a1ef1d313594864d0388339d7ebf687d2ce96b7dd02af91988/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f47726170706c696e67486f6f6b" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/GrapplingHook" style="max-width: 100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/GrapplingHook" rel="nofollow"><img src="https://camo.githubusercontent.com/3ea8a727811d37f8f423134a61dfd7bd81a44b72baec090d586d978b87a27644/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f47726170706c696e67486f6f6b" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/GrapplingHook" style="max-width: 100%;"></a></p>
+<p><strong>The best hook to play Spider-Man, only in PocketMine-MP 5.0!. See this review to see its functionality:</strong> <a href="https://www.youtube.com/watch?v=9ALqOhq6Xkg&amp;t=27s&amp;ab_channel=fernanACM" rel="nofollow">GrapplingHook</a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/83558341/169100954-a8ced538-3b3c-4eaf-bb85-b19fdf663dc4.png"><img src="https://user-images.githubusercontent.com/83558341/169100954-a8ced538-3b3c-4eaf-bb85-b19fdf663dc4.png" alt="icon-grapplinghook" style="max-width: 100%;"></a></p>
+<p><a href="https://discord.gg/YyE9XFckqb" rel="nofollow"><img src="https://camo.githubusercontent.com/eecc96a3ff0dedc37f275aeeda585ba8d15a316b66809ea2795fdc41b88d5bc9/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833373730313836383634393730393536383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/837701868649709568?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width: 100%;"></a></p>
+<h3><a id="user-content--implementations" class="anchor" aria-hidden="true" href="#-implementations"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="bulb" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png">💡</g-emoji> Implementations</h3>
+<ul>
+<li>[X] Configuration</li>
+<li>[X] Cooldown</li>
+</ul>
+<h3><a id="user-content--config" class="anchor" aria-hidden="true" href="#-config"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="floppy_disk" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4be.png">💾</g-emoji> Config</h3>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span>    ____                                  _   _                   _   _                   _    </span>
+<span class="pl-c"><span class="pl-c">#</span>  / ___|  _ __    __ _   _ __    _ __   | | (_)  _ __     __ _  | | | |   ___     ___   | | __</span>
+<span class="pl-c"><span class="pl-c">#</span> | |  _  | '__|  / _` | | '_ \  | '_ \  | | | | | '_ \   / _` | | |_| |  / _ \   / _ \  | |/ /</span>
+<span class="pl-c"><span class="pl-c">#</span> | |_| | | |    | (_| | | |_) | | |_) | | | | | | | | | | (_| | |  _  | | (_) | | (_) | |   &lt; </span>
+<span class="pl-c"><span class="pl-c">#</span>  \____| |_|     \__,_| | .__/  | .__/  |_| |_| |_| |_|  \__, | |_| |_|  \___/   \___/  |_|\_\</span>
+<span class="pl-c"><span class="pl-c">#</span>                        |_|     |_|                      |___/                                </span>
+<span class="pl-c"><span class="pl-c">#</span>           by fernanACM and korado531m7</span>
+<span class="pl-c"><span class="pl-c">#</span> The best hook to play Spider-Man, only in PocketMine-MP 5.0!. Updated by fernanACM</span>
+
+<span class="pl-c"><span class="pl-c">#</span> DO NOT TOUCH</span>
+<span class="pl-ent">config-version</span>: <span class="pl-s"><span class="pl-pds">"</span>1.0.0<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Prefix plugin</span>
+<span class="pl-ent">Prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;f[&amp;bGrapplingHook&amp;f]&amp;8»&amp;r <span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Item from GrapplingHook</span>
+<span class="pl-ent">GrapplingHook</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Item name</span>
+  <span class="pl-ent">name</span>: 
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;l&amp;aGrapplingHook<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;7[RIGHT CLICK]<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Lore for the item</span>
+  <span class="pl-ent">lore</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;bHave fun playing Spider-Man<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;aby: &amp;ffernanACM<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Cooldown</span>
+  <span class="pl-ent">cooldown</span>: <span class="pl-c1">5</span>
+
+<span class="pl-c"><span class="pl-c">#</span> TIME MODE</span>
+<span class="pl-ent">TimeMode</span>:
+  <span class="pl-ent">years</span>: <span class="pl-s"><span class="pl-pds">"</span>{YEAR} year(s)<span class="pl-pds">"</span></span>
+  <span class="pl-ent">months</span>: <span class="pl-s"><span class="pl-pds">"</span>{MONTH} month(s)<span class="pl-pds">"</span></span>
+  <span class="pl-ent">days</span>: <span class="pl-s"><span class="pl-pds">"</span>{DAY} day(s)<span class="pl-pds">"</span></span>
+  <span class="pl-ent">hours</span>: <span class="pl-s"><span class="pl-pds">"</span>{HOUR} hour(s)<span class="pl-pds">"</span></span>
+  <span class="pl-ent">minutes</span>: <span class="pl-s"><span class="pl-pds">"</span>{MINUTE} minute(s)<span class="pl-pds">"</span></span>
+  <span class="pl-ent">seconds</span>: <span class="pl-s"><span class="pl-pds">"</span>{SECOND} second(s)<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> MESSAGES</span>
+<span class="pl-ent">Messages</span>:
+  <span class="pl-ent">no-permission</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cYou don't have permissions for this!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">not-numeric</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cIt is not numeric!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">full-inventory</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cYour inventory is full!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">received successfully</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;aYou have successfully received your &amp;bGrapplingHook<span class="pl-pds">"</span></span>
+  <span class="pl-ent">you-have-cooldown</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cCooldown:&amp;b {COOLDOWN}<span class="pl-pds">"</span></span></pre></div>
+<h3><a id="user-content--commands" class="anchor" aria-hidden="true" href="#-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="joystick" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f579.png">🕹</g-emoji> Commands</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/grapplinghook</code></td>
+<td>Receive the special item</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content--permissions" class="anchor" aria-hidden="true" href="#-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="lock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f512.png">🔒</g-emoji> Permissions</h3>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>grapplinghook.acm</code></td>
+<td>Executing the command</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content--contact" class="anchor" aria-hidden="true" href="#-contact"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="telephone_receiver" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4de.png">📞</g-emoji> Contact</h3>
+<table>
+<thead>
+<tr>
+<th>Redes</th>
+<th>Tag</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube</td>
+<td>fernanACM</td>
+<td><a href="https://www.youtube.com/channel/UC-M5iTrCItYQBg5GMuX5ySw" rel="nofollow">YouTube</a></td>
+</tr>
+<tr>
+<td>Discord</td>
+<td>fernanACM#5078</td>
+<td><a href="https://discord.gg/YyE9XFckqb" rel="nofollow">Discord</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>fernanACM</td>
+<td><a href="https://github.com/fernanACM">GitHub</a></td>
+</tr>
+<tr>
+<td>Poggit</td>
+<td>fernanACM</td>
+<td><a href="https://poggit.pmmp.io/ci/fernanACM" rel="nofollow">Poggit</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3><a id="user-content--credits" class="anchor" aria-hidden="true" href="#-credits"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji> Credits</h3>
+<table>
+<thead>
+<tr>
+<th>Authors</th>
+<th>Github</th>
+<th>Lib</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CortexPE</td>
+<td><a href="https://github.com/CortexPE">CortexPE</a></td>
+<td><a href="https://github.com/CortexPE/Commando/tree/master/">Commando</a></td>
+</tr>
+<tr>
+<td>Muqsit</td>
+<td><a href="https://github.com/Muqsit">Muqsit</a></td>
+<td><a href="https://github.com/Muqsit/SimplePacketHandler">SimplePacketHandler</a></td>
+</tr>
+<tr>
+<td>DaPigGuy</td>
+<td><a href="https://github.com/DaPigGuy">DaPigGuy</a></td>
+<td><a href="https://github.com/DaPigGuy/libPiggyUpdateChecker">libPiggyUpdateChecker</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/JackNoordhuis">JackNoordhuis</a></td>
+<td>Thank you for helping me update it to PM4</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2cb3a2ab87c5498db5ce7e6608cf55231689030342039" integrity="sha512-DI3rPuZDcpH/mSGyN22erN5QFnhl760f50/te7FTIYxodEF8jJnSFnfnmG/c+osmIQemvUrnBtxnMpNdzvx1/g==" data-cf-beacon='{"rayId":"7e66a9389c15346e","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

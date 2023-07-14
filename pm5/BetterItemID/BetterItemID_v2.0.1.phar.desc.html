@@ -1,0 +1,117 @@
+<h1><a id="user-content-betteritemid" class="anchor" aria-hidden="true" href="#betteritemid"><span aria-hidden="true" class="octicon octicon-link"></span></a>BetterItemID</h1>
+<p><a href="https://poggit.pmmp.io/p/BetterItemID" rel="nofollow"><img src="https://camo.githubusercontent.com/a62b3942cf42032ccb27008aeb5df9ba897c62e2fc3640a77829d08796e98341/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4265747465724974656d4944" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/BetterItemID" style="max-width: 100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/BetterItemID" rel="nofollow"><img src="https://camo.githubusercontent.com/025595817e5ccb1da57c775ae73b8f7dbefeb09960edac24e02aa2ce9459a702/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f4265747465724974656d4944" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/BetterItemID" style="max-width: 100%;"></a></p>
+<p><strong>The best ItemID for PocketMine-MP 5.0 servers. Special use for builders.</strong></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/83558341/167280782-a099e1f2-189f-4698-bf13-aaeb271c5375.png"><img src="https://user-images.githubusercontent.com/83558341/167280782-a099e1f2-189f-4698-bf13-aaeb271c5375.png" alt="icon-betteritemid" style="max-width: 100%;"></a></p>
+<p>This plugin adds options to see the ID of the blocks in the game, you can customize their texts and sounds very easily through 'config.yml'. Page for the sounds of the game <a href="https://www.digminecraft.com/lists/sound_list_pe.php" rel="nofollow">sounds</a></p>
+<p><a href="https://discord.gg/YyE9XFckqb" rel="nofollow"><img src="https://camo.githubusercontent.com/eecc96a3ff0dedc37f275aeeda585ba8d15a316b66809ea2795fdc41b88d5bc9/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833373730313836383634393730393536383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/837701868649709568?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width: 100%;"></a></p>
+<h3><a id="user-content--implementations" class="anchor" aria-hidden="true" href="#-implementations"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="bulb" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png">💡</g-emoji> Implementations</h3>
+<ul>
+<li>Sounds.</li>
+<li>Message customization.</li>
+<li>Command [/betteritemid, /itemid /id]</li>
+</ul>
+<hr>
+<h3><a id="user-content--config" class="anchor" aria-hidden="true" href="#-config"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="floppy_disk" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4be.png">💾</g-emoji> Config</h3>
+<div class="highlight highlight-source-yaml"><pre>   <span class="pl-c"><span class="pl-c">#</span>   ____           _     _                   ___   _                        ___   ____  </span>
+   <span class="pl-c"><span class="pl-c">#</span>  | __ )    ___  | |_  | |_    ___   _ __  |_ _| | |_    ___   _ __ ___   |_ _| |  _ \ </span>
+   <span class="pl-c"><span class="pl-c">#</span>  |  _ \   / _ \ | __| | __|  / _ \ | '__|  | |  | __|  / _ \ | '_ ` _ \   | |  | | | |</span>
+   <span class="pl-c"><span class="pl-c">#</span>  | |_) | |  __/ | |_  | |_  |  __/ | |     | |  | |_  |  __/ | | | | | |  | |  | |_| |</span>
+   <span class="pl-c"><span class="pl-c">#</span>  |____/   \___|  \__|  \__|  \___| |_|    |___|  \__|  \___| |_| |_| |_| |___| |____/ </span>
+   <span class="pl-c"><span class="pl-c">#</span>         by fernanACM</span>
+
+   <span class="pl-c"><span class="pl-c">#</span> The best ItemID for PocketMine-MP 4.0 servers. Special use for builders.</span>
+   <span class="pl-c"><span class="pl-c">#</span> This plugin adds options to see the ID of the blocks in the game, you can </span>
+   <span class="pl-c"><span class="pl-c">#</span> customize their texts and sounds very easily through 'config.yml'. </span>
+   <span class="pl-c"><span class="pl-c">#</span> Page for the sounds of the game: https://www.digminecraft.com/lists/sound_list_pe.php</span>
+
+   <span class="pl-c"><span class="pl-c">#</span> DO NOT TOUCH!</span>
+   <span class="pl-ent">config-version</span>: <span class="pl-s"><span class="pl-pds">"</span>1.0.0<span class="pl-pds">"</span></span>
+   <span class="pl-c"><span class="pl-c">#</span> =======(SETTINGS)=======</span>
+   <span class="pl-ent">Settings</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to enable/disable tip-id</span>
+    <span class="pl-ent">No-tip-itemid</span>: <span class="pl-c1">true</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to enable/disable the sound when executing the command.</span>
+    <span class="pl-ent">Id-no-sound</span>: <span class="pl-c1">true</span>
+    <span class="pl-c"><span class="pl-c">#</span> I put the name of the sound you like: example:</span>
+    <span class="pl-c"><span class="pl-c">#</span> Id-sound: "cauldron.adddye"</span>
+    <span class="pl-ent">Id-sound</span>: <span class="pl-s"><span class="pl-pds">"</span>random.burp<span class="pl-pds">"</span></span>
+
+   <span class="pl-c"><span class="pl-c">#</span> =======(MESSAGES)=======</span>
+   <span class="pl-ent">Messages</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Tip ID message</span>
+    <span class="pl-ent">Tip-itemid</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;b»&amp;r&amp;f[&amp;eITEM&amp;f] §a{ID}&amp;l&amp;b«<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span> Use '{LINE}' like 'enter' and use '{NAME}' to see the player's name.</span>
+    <span class="pl-ent">Itemid</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>§e=======(§bBetterItemID§e)=======<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>§cHELLO: §f{NAME}<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>§aID: §b{ID}<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>§e==========================<span class="pl-pds">"</span></span></pre></div>
+<h3><a id="user-content--commands" class="anchor" aria-hidden="true" href="#-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="joystick" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f579.png">🕹</g-emoji> Commands</h3>
+<p>/betteritemid - To see the ID of the item in hand.</p>
+<h3><a id="user-content--permissions" class="anchor" aria-hidden="true" href="#-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="lock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f512.png">🔒</g-emoji> Permissions</h3>
+<ul>
+<li>Executing the command: <code>betteritemid.cmd.acm</code>
+</li>
+</ul>
+<h3><a id="user-content--contact" class="anchor" aria-hidden="true" href="#-contact"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="telephone_receiver" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4de.png">📞</g-emoji> Contact</h3>
+<table>
+<thead>
+<tr>
+<th>Redes</th>
+<th>Tag</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube</td>
+<td>fernanACM</td>
+<td><a href="https://www.youtube.com/channel/UC-M5iTrCItYQBg5GMuX5ySw" rel="nofollow">YouTube</a></td>
+</tr>
+<tr>
+<td>Discord</td>
+<td>fernanACM#5078</td>
+<td><a href="https://discord.gg/YyE9XFckqb" rel="nofollow">Discord</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>fernanACM</td>
+<td><a href="https://github.com/fernanACM">GitHub</a></td>
+</tr>
+<tr>
+<td>Poggit</td>
+<td>fernanACM</td>
+<td><a href="https://poggit.pmmp.io/ci/fernanACM" rel="nofollow">Poggit</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3><a id="user-content--credits" class="anchor" aria-hidden="true" href="#-credits"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji> Credits</h3>
+<table>
+<thead>
+<tr>
+<th>Authors</th>
+<th>Github</th>
+<th>Lib</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CortexPE</td>
+<td><a href="https://github.com/CortexPE">CortexPE</a></td>
+<td><a href="https://github.com/CortexPE/Commando/tree/master/">Commando</a></td>
+</tr>
+<tr>
+<td>Muqsit</td>
+<td><a href="https://github.com/Muqsit">Muqsit</a></td>
+<td><a href="https://github.com/Muqsit/SimplePacketHandler">SimplePacketHandler</a></td>
+</tr>
+<tr>
+<td>DaPigGuy</td>
+<td><a href="https://github.com/DaPigGuy">DaPigGuy</a></td>
+<td><a href="https://github.com/DaPigGuy/libPiggyUpdateChecker">libPiggyUpdateChecker</a></td>
+</tr>
+</tbody>
+</table>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2cb3a2ab87c5498db5ce7e6608cf55231689030342039" integrity="sha512-DI3rPuZDcpH/mSGyN22erN5QFnhl760f50/te7FTIYxodEF8jJnSFnfnmG/c+osmIQemvUrnBtxnMpNdzvx1/g==" data-cf-beacon='{"rayId":"7e66a922cb3c464d","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

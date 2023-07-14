@@ -1,0 +1,130 @@
+<h1><a id="user-content-portablecrates" class="anchor" aria-hidden="true" href="#portablecrates"><span aria-hidden="true" class="octicon octicon-link"></span></a>PortableCrates</h1>
+<p>A PocketMine-MP Crates Plugin that lets players open their crates in place without having them teleport to a warp</p>
+<h2><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands:</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Usage</th>
+<th>Alias</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/portablecrate</code></td>
+<td>Main Command</td>
+<td><code>/portablecrate</code></td>
+<td><code>/pcrate</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>SubCommand</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>help</code></td>
+<td>View all subcommands</td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>View all existing crates</td>
+</tr>
+<tr>
+<td><code>info &lt;crateName&gt;</code></td>
+<td>View all reward infos, indexes and probabilities of an existing crate</td>
+</tr>
+<tr>
+<td><code>create &lt;crateName&gt;</code></td>
+<td>Creates a new crate (You must hold an item that we'll be the crate)</td>
+</tr>
+<tr>
+<td><code>delete &lt;crateName&gt;</code></td>
+<td>Deletes an existing crate</td>
+</tr>
+<tr>
+<td><code>add &lt;crateName&gt; &lt;probability&gt; [amount]</code></td>
+<td>Adds a reward to an existing crate with a drop rate chance from 1 to 100. You can also specify the amount of the item you want to give out or you can leave that field empty to get the amount directly from the item you're holding (You must hold the item you want to add as reward)</td>
+</tr>
+<tr>
+<td><code>remove &lt;crateName&gt; &lt;rewardIndex&gt;</code></td>
+<td>Removes a reward by index from an existing crate (Indexes are listed in <code>list</code> subcommand)</td>
+</tr>
+<tr>
+<td><code>give &lt;crateName&gt; all:&lt;player&gt; [amount]</code></td>
+<td>Gives 1 or a defined amount of crates to a defined player or to all online players</td>
+</tr>
+<tr>
+<td><code>toggle</code></td>
+<td>Toggles GiveOnWorld function</td>
+</tr>
+<tr>
+<td><code>reload</code></td>
+<td>Reloads config files</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-how-to-set-up-a-crate" class="anchor" aria-hidden="true" href="#how-to-set-up-a-crate"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to Set up a Crate</h2>
+<h3><a id="user-content-create-a-crate" class="anchor" aria-hidden="true" href="#create-a-crate"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create a crate</h3>
+<p>First we'll need an Item that is going to be our crate, in my case im going to give myself a chest with custom name and lore using the following command:</p>
+<blockquote>
+<p>/give GrosserZak chest 1 {display:{Name:"§r§6§6lRare §fCrate",Lore:["§r", "§r§fContains §6Rare §fItems"]}}</p>
+</blockquote>
+<p><a target="_blank" rel="noopener noreferrer" href="/images/img1.jpg"><img src="/images/img1.jpg" alt="Rare Crate" style="max-width: 100%;"></a></p>
+<p>Then we hold our future crate item and use the command <code>/pcrate create &lt;crateName&gt;</code> to create our crate.<br>
+In my case im going to use <code>/pcrate crate rare</code>.<br>
+Now we can get rid of this item and start adding our rewards to our crate.</p>
+<h3><a id="user-content-adding-rewards" class="anchor" aria-hidden="true" href="#adding-rewards"><span aria-hidden="true" class="octicon octicon-link"></span></a>Adding Rewards</h3>
+<p>To add rewards to our crate we're going to use the <code>/pcrate add</code> command.</p>
+<p>For example: <br>
+Lets add 8 EnderPearls with 75% drop rate chance. We'll need to hold 8 EnderPearls and type the following command:
+<code>/pcrate add &lt;crateName&gt; 75</code> in my case <code>/pcrate add rare 75</code>
+<strong>NOTE: Im not specifying the amount field because I wanted to add just 8 EnderPearls and that's the amount that Im holding.</strong> <br>
+And there we go! <br>
+We've added 8 EnderPearls with 75% drop rate chance</p>
+<p><a target="_blank" rel="noopener noreferrer" href="/images/img2.jpg"><img src="/images/img2.jpg" alt="x8 EnderPearls added with 75% drop rate chance to Rare Crate" style="max-width: 100%;"></a></p>
+<p>We can check its index with the command <code>/pcrate info &lt;crateName&gt;</code> in my case <code>/pcrate info rare</code> <br>
+<a target="_blank" rel="noopener noreferrer" href="/images/img3.jpg"><img src="/images/img3.jpg" alt="Rare Crate infos" style="max-width: 100%;"></a></p>
+<p>Now I'm going to add x1 Uncommon Crate with 20% drop rate chance.<br>
+So as before I'm going to hold the uncommon crate and use the command <code>/pcrate add rare 20</code>
+<a target="_blank" rel="noopener noreferrer" href="/images/img4.jpg"><img src="/images/img4.jpg" alt="x1 Uncommon Crate added with 20% drop rate chance to Rare Crate" style="max-width: 100%;"></a></p>
+<p>Once we've finished setting up our crate we can give it to ourselves with the command:<br>
+<code>/pcrate give &lt;crateName&gt; all:&lt;player&gt; [count]</code> in my case <code>/pcrate give rare GrosserZak</code><br>
+Now we can open our crates</p>
+<h3><a id="user-content-removing-rewards" class="anchor" aria-hidden="true" href="#removing-rewards"><span aria-hidden="true" class="octicon octicon-link"></span></a>Removing Rewards</h3>
+<p>To remove rewards from a crate we'll need to see the reward index that we want to remove from the crate.
+We'll need to use the command <code>/pcrate info &lt;crateName&gt;</code> to see all reward indexes.<br>
+(Note: The indexes of the rewards are their listing numbers)<br>
+Once we've found the reward index we want to remove we'll need to use the command <code>/pcrate remove &lt;crateName&gt; &lt;rewardIndex&gt;</code></p>
+<h3><a id="user-content-delete-a-crate" class="anchor" aria-hidden="true" href="#delete-a-crate"><span aria-hidden="true" class="octicon octicon-link"></span></a>Delete a crate</h3>
+<p>Simply just use the command <code>/pcrate delete &lt;crateName&gt;</code></p>
+<h2><a id="user-content-giveonworld-function" class="anchor" aria-hidden="true" href="#giveonworld-function"><span aria-hidden="true" class="octicon octicon-link"></span></a>GiveOnWorld Function</h2>
+<p>This function ables to give crates on the world where the server administrator runs the <code>/pcrate give</code> command.</p>
+<p><strong>Note: This function is not available from console!</strong></p>
+<p>For example:<br>
+The function is enabled:<br>
+[Admin] GrossserZak is in world "FactionLands" with 47 players<br>
+[User] GrossTest is in world "Hub"<br>
+If GrosserZak runs <code>/pcrate give &lt;crateName&gt; all</code>, himself and the 47 players, that are in the world he's in, will receive the crate and GrossTest will get nothing.<br>
+Otherwise if the function was disabled all players would receive the crate</p>
+<h2><a id="user-content-drop-protection" class="anchor" aria-hidden="true" href="#drop-protection"><span aria-hidden="true" class="octicon octicon-link"></span></a>Drop Protection</h2>
+<p>This function allows to lock the dropped rewards in case the player had his inventory full</p>
+<p>The dropped rewards will be locked for 1 minute. <br>
+What does it mean? <br>
+The player who dropped those rewards will be the only one who can pick them up.</p>
+<p><strong>NOTE: After 1 minute anybody can pickup the rewards, so be fast!</strong></p>
+<h2><a id="user-content-todo" class="anchor" aria-hidden="true" href="#todo"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO</h2>
+<ul>
+<li>[ ] Add multi language support</li>
+</ul>
+<p><strong>Note: Any suggestion is appreciated</strong></p>
+<h2><a id="user-content-contacts" class="anchor" aria-hidden="true" href="#contacts"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contacts</h2>
+<p>Telegram: <a href="http://telegram.me/zGross" rel="nofollow">@zGross</a> <br>
+Discord: Zak_#0998 <br>
+For issues, open an issue on the GitHub page</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2cb3a2ab87c5498db5ce7e6608cf55231689030342039" integrity="sha512-DI3rPuZDcpH/mSGyN22erN5QFnhl760f50/te7FTIYxodEF8jJnSFnfnmG/c+osmIQemvUrnBtxnMpNdzvx1/g==" data-cf-beacon='{"rayId":"7e66a948ec26464d","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>
