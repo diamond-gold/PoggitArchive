@@ -1,0 +1,229 @@
+<h1><a id="user-content-general" class="anchor" aria-hidden="true" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a>General</h1>
+<p>EconomyEnchant Shop For Pocketmine 5.0.0, With Many features</p>
+<h2><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/eshop</code></td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-feature" class="anchor" aria-hidden="true" href="#feature"><span aria-hidden="true" class="octicon octicon-link"></span></a>Feature</h2>
+<ul>
+<li>Support Multiple Economys</li>
+<li>Support Multiple CustomEnchant</li>
+<li>Support EnchantTable Direct</li>
+<li>Support Sound When Enchant Success</li>
+<li>Auto Check Enchant Available in Hand</li>
+<li>Blacklist System</li>
+<li>Customable Message</li>
+<li>Customable Form (GUI / UI)</li>
+<li>Form
+<ul>
+<li>Configurable Form</li>
+<li>Slide for Level</li>
+</ul>
+</li>
+<li>GUI
+<ul>
+<li>Configurable GUI</li>
+<li>If the enchant exceeds 26 Will be Divided into Pages</li>
+<li>Confirmation GUI</li>
+</ul>
+</li>
+</ul>
+<h2><a id="user-content-how-to-registering-enchantment" class="anchor" aria-hidden="true" href="#how-to-registering-enchantment"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to Registering Enchantment</h2>
+<p>Do you want to register your enchant Into this EnchantShop, Please follow this <a href="https://github.com/XanderID/EconomyEnchant/wiki/Registering-Enchantment">Wiki</a></p>
+<h2><a id="user-content-api" class="anchor" aria-hidden="true" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h2>
+<p>First Import Class MulqiGaming64\EconomyEnchant\Manager\EnchantManager</p>
+<ul>
+<li>Getting Item Flags
+<ul>
+<li>EnchantManager::getItemFlags(/** Items you want */);</li>
+</ul>
+</li>
+<li>Checking if Enchant Blacklisted
+<ul>
+<li>EnchantManager::isEnchantBlacklisted(/** Name the enchantment with Lower */);</li>
+</ul>
+</li>
+<li>Checking if Enchant blacklisted in Item
+<ul>
+<li>EnchantManager::isItemBlacklisted(/** The Item <em>/, /</em>* Name Enchantment with Lower */);</li>
+</ul>
+</li>
+</ul>
+<h2><a id="user-content-screenshot" class="anchor" aria-hidden="true" href="#screenshot"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshot</h2>
+<ul>
+<li>Form ( UI )
+<ul>
+<li>Selecting Form
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/XanderID/EconomyEnchant/blob/main/.screenshot/Form1.jpg"><img src="https://github.com/XanderID/EconomyEnchant/raw/main/.screenshot/Form1.jpg" alt="Screenshot" style="max-width: 100%;"></a>
+</li>
+<li>Confirmation Form
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/XanderID/EconomyEnchant/blob/main/.screenshot/Form2.jpg"><img src="https://github.com/XanderID/EconomyEnchant/raw/main/.screenshot/Form2.jpg" alt="Screenshot" style="max-width: 100%;"></a>
+</li>
+</ul>
+</li>
+<li>InvMenu ( GUI )
+<ul>
+<li>Selecting GUI ( Page )
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/XanderID/EconomyEnchant/blob/main/.screenshot/GUI1.jpg"><img src="https://github.com/XanderID/EconomyEnchant/raw/main/.screenshot/GUI1.jpg" alt="Screenshot" style="max-width: 100%;"></a>
+</li>
+<li>Confirmation GUI
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/XanderID/EconomyEnchant/blob/main/.screenshot/GUI2.jpg"><img src="https://github.com/XanderID/EconomyEnchant/raw/main/.screenshot/GUI2.jpg" alt="Screenshot" style="max-width: 100%;"></a>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a id="user-content-supported-custom-enchant-plugin" class="anchor" aria-hidden="true" href="#supported-custom-enchant-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supported Custom Enchant Plugin</h2>
+<ul>
+<li>
+<a href="https://poggit.pmmp.io/p/VanillaEC/" rel="nofollow">VanillaEC</a> By David-pm-pl</li>
+</ul>
+<h2><a id="user-content-supported-economy-providers" class="anchor" aria-hidden="true" href="#supported-economy-providers"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supported Economy Providers</h2>
+<ul>
+<li>
+<a href="https://poggit.pmmp.io/p/BedrockEconomy" rel="nofollow">BedrockEconomy</a> by cooldogedev</li>
+<li>
+<a href="https://github.com/pmmp/PocketMine-MP">XP</a> By PocketMine-MP</li>
+</ul>
+<h1><a id="user-content-config" class="anchor" aria-hidden="true" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h1>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span> Please don't edit this, only for internal use</span>
+<span class="pl-ent">config-version</span>: <span class="pl-c1">3</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Your Economy plugin name</span>
+<span class="pl-c"><span class="pl-c">#</span> Available: BedrockEconomy, XP, Auto</span>
+<span class="pl-c"><span class="pl-c">#</span> If you select auto but there is no Economy Plugin it will automatically use XP</span>
+<span class="pl-ent">economy</span>: <span class="pl-s"><span class="pl-pds">"</span>Auto<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Can EnchantTable Redirect to EconomyEnchant</span>
+<span class="pl-ent">enchant-table</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Add Anvil Sound to Player if Enchant is Successful</span>
+<span class="pl-ent">sound</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Form Type</span>
+<span class="pl-c"><span class="pl-c">#</span> Can use UI or GUI</span>
+<span class="pl-ent">form-type</span>: <span class="pl-s"><span class="pl-pds">"</span>UI<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Form</span>
+<span class="pl-ent">form</span>:
+ <span class="pl-c"><span class="pl-c">#</span> Buy Menu</span>
+ <span class="pl-ent">buy-shop</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Title for BuyShop</span>
+  <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>EnchantShop<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Content for BuyShop</span>
+  <span class="pl-ent">content</span>: <span class="pl-s"><span class="pl-pds">"</span>Select Enchantment:<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Tag: {price} Price Enchantment, {enchant} Name Of Enchantment</span>
+  <span class="pl-ent">button</span>:
+   <span class="pl-c"><span class="pl-c">#</span> Only can 0-1</span>
+   <span class="pl-ent">0</span>: <span class="pl-s"><span class="pl-pds">"</span>{enchant}<span class="pl-pds">"</span></span>
+   <span class="pl-ent">1</span>: <span class="pl-s"><span class="pl-pds">"</span>{price}<span class="pl-pds">"</span></span>
+ <span class="pl-c"><span class="pl-c">#</span> Submit Menu</span>
+ <span class="pl-ent">submit</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Title for SubmitMenu</span>
+  <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>EnchantShop<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Content</span>
+  <span class="pl-c"><span class="pl-c">#</span> Tag: {price} Price of Enchantment</span>
+  <span class="pl-ent">content</span>: <span class="pl-s"><span class="pl-pds">"</span>§aYou will pay {price} Per Level<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Max Content</span>
+  <span class="pl-ent">max-content</span>: <span class="pl-s"><span class="pl-pds">"</span>§aYour item has reached the level limit!<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Slider Content</span>
+  <span class="pl-ent">slider</span>: <span class="pl-s"><span class="pl-pds">"</span>Level<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> GUI</span>
+<span class="pl-ent">gui</span>:
+ <span class="pl-c"><span class="pl-c">#</span> Buy Menu</span>
+ <span class="pl-ent">buy-shop</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Title for BuyShop</span>
+  <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>EnchantShop<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Tag: {level} Level Enchantment, {enchant} Name Of Enchantment</span>
+  <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>§f{enchant} §b{level}<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Tag: {price} Price Enchantment</span>
+  <span class="pl-c"><span class="pl-c">#</span> if you want to empty lore just put value []</span>
+  <span class="pl-ent">lore</span>:
+   - <span class="pl-s"><span class="pl-pds">"</span>Price for This Enchant {price}<span class="pl-pds">"</span></span>
+ <span class="pl-c"><span class="pl-c">#</span> Submit Menu</span>
+ <span class="pl-ent">submit</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Title for SubmitMenu</span>
+  <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>EnchantShop<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Buy Item</span>
+  <span class="pl-ent">buy</span>:
+   <span class="pl-c"><span class="pl-c">#</span> Buy Item Name</span>
+   <span class="pl-c"><span class="pl-c">#</span> Tag: {level} Level Enchantment, {enchant} Name Of Enchantment</span>
+   <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Buy §f{enchant} §b{level}<span class="pl-pds">"</span></span>
+   <span class="pl-c"><span class="pl-c">#</span> Buy Item Lore</span>
+   <span class="pl-c"><span class="pl-c">#</span> Tag: {price} Price Enchantment</span>
+   <span class="pl-c"><span class="pl-c">#</span> if you want to empty lore just put value []</span>
+   <span class="pl-ent">lore</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span>Are you sure to buy<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>This Enchant With price {price}<span class="pl-pds">"</span></span>
+   <span class="pl-c"><span class="pl-c">#</span> Cancel Item</span>
+  <span class="pl-ent">cancel</span>:
+   <span class="pl-c"><span class="pl-c">#</span> Cancel Item Name</span>
+   <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>§cCancel<span class="pl-pds">"</span></span>
+   <span class="pl-c"><span class="pl-c">#</span> Cancel Item Lore</span>
+   <span class="pl-c"><span class="pl-c">#</span> if you want to empty lore just put value []</span>
+   <span class="pl-ent">lore</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span>Cancel buying Enchantment<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message</span>
+<span class="pl-ent">message</span>:
+ <span class="pl-c"><span class="pl-c">#</span> Cannot Enchant On This Item</span>
+ <span class="pl-ent">err-item</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou cannot add Enchantment to This Item!<span class="pl-pds">"</span></span>
+ <span class="pl-c"><span class="pl-c">#</span> Exit Message</span>
+ <span class="pl-ent">exit</span>: <span class="pl-s"><span class="pl-pds">"</span>§aThank you for visiting!<span class="pl-pds">"</span></span>
+ <span class="pl-c"><span class="pl-c">#</span> Successfully Buy Enchant</span>
+ <span class="pl-c"><span class="pl-c">#</span> Tag: {enchant} Name Enchantment, {item} Name Item, {price} Price Enchantment</span>
+ <span class="pl-ent">success</span>: <span class="pl-s"><span class="pl-pds">"</span>§aSuccessfully Enchant {enchant} to {item}, with Price {price}<span class="pl-pds">"</span></span>
+ <span class="pl-c"><span class="pl-c">#</span> Error Max Enchant</span>
+ <span class="pl-ent">max</span>: <span class="pl-s"><span class="pl-pds">"</span>§cEnchant failed!, Your item is reached Max Level<span class="pl-pds">"</span></span>
+ <span class="pl-c"><span class="pl-c">#</span> Error Money not Enough</span>
+ <span class="pl-c"><span class="pl-c">#</span> Tag: {need} Needed Money</span>
+ <span class="pl-ent">enough</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYour money is not enough need {need}<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Mode</span>
+<span class="pl-c"><span class="pl-c">#</span> If false Enchantment those that are not set will not be in the shop</span>
+<span class="pl-c"><span class="pl-c">#</span> If true Enchantment Auto added and price will be to Default ( Not Setted )</span>
+<span class="pl-ent">mode</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Enchantment</span>
+<span class="pl-ent">enchantment</span>:
+ <span class="pl-c"><span class="pl-c">#</span> Name Enchantment</span>
+ <span class="pl-ent">sharpness</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Price</span>
+  <span class="pl-ent">price</span>: <span class="pl-c1">1000</span>
+ <span class="pl-c"><span class="pl-c">#</span> Default, If the enchantment is not set above</span>
+ <span class="pl-c"><span class="pl-c">#</span> it will be redirected here</span>
+ <span class="pl-ent">default</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Price</span>
+  <span class="pl-ent">price</span>: <span class="pl-c1">10000</span>
+  
+<span class="pl-c"><span class="pl-c">#</span> Blacklist Enchantment from Shop</span>
+<span class="pl-c"><span class="pl-c">#</span> if you want blacklist just add</span>
+<span class="pl-c"><span class="pl-c">#</span> example: ["sharpness", "silk_touch"] or ["sharpness"]</span>
+<span class="pl-ent">blacklist</span>: <span class="pl-s">[]</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Blacklist Enchantment from Item</span>
+<span class="pl-c"><span class="pl-c">#</span> if you want blacklist just add</span>
+<span class="pl-c"><span class="pl-c">#</span> example: </span>
+<span class="pl-c"><span class="pl-c">#</span> blacklist:</span>
+<span class="pl-c"><span class="pl-c">#</span>  sharpness: ["diamond_sword"]</span>
+<span class="pl-ent">blacklist-item</span>: <span class="pl-s">[]</span>
+...
+</pre></div>
+<h1><a id="user-content-additional-notes" class="anchor" aria-hidden="true" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h1>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/XanderID/EconomyEnchant/issues">here</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2cb3a2ab87c5498db5ce7e6608cf55231689030342039" integrity="sha512-DI3rPuZDcpH/mSGyN22erN5QFnhl760f50/te7FTIYxodEF8jJnSFnfnmG/c+osmIQemvUrnBtxnMpNdzvx1/g==" data-cf-beacon='{"rayId":"7e6eea75f80e24d6","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>
