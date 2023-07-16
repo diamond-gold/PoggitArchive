@@ -1,11 +1,11 @@
 # HideCommands
-<img src="https://raw.githubusercontent.com/HimbeersaftLP/HideCommands/1644db3f2be41366160b2eaa637820effff43cf2/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/HimbeersaftLP/HideCommands/b78f7ea59ed47cc5de14e6d64c1717cfaa1c85cd/icon.png" width="128" height="128" />
 
 ## Remove specific commands from the in-game command suggestions. Supports different settings per world.
 ```properties
-Version: 3.0.3
+Version: 3.0.4
     API: 4.4.0
-    Updated: 12-06-2023 19:14:08 UTC
+    Updated: 15-07-2023 10:45:29 UTC
 Repo: https://github.com/HimbeersaftLP/HideCommands
 License: AGPL-3.0
 Categories: Informational

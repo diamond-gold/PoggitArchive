@@ -1,0 +1,117 @@
+<h1><a id="user-content-worlddefend" class="anchor" aria-hidden="true" href="#worlddefend"><span aria-hidden="true" class="octicon octicon-link"></span></a>WorldDefend<a target="_blank" rel="noopener noreferrer" href="icon.png"><img src="icon.png" height="64" width="64" align="left" style="max-width: 100%;"></a>
+</h1><br>
+<p><a href="https://poggit.pmmp.io/ci/Taylor-pm-pl/WorldDefend/WorldDefend" rel="nofollow"><img src="https://camo.githubusercontent.com/2e062f7452bb4cc47f4e6bd81060d0c75bbf1e61b9d45d3e9ee1c084ed7eef97/68747470733a2f2f706f676769742e706d6d702e696f2f63692e736869656c642f5461796c6f722d706d2d706c2f576f726c64446566656e642f576f726c64446566656e64" alt="Lint" data-canonical-src="https://poggit.pmmp.io/ci.shield/Taylor-pm-pl/WorldDefend/WorldDefend" style="max-width: 100%;"></a>
+<a href="https://discord.gg/yAhsgskaGy" rel="nofollow"><img src="https://camo.githubusercontent.com/c7165f58ee862ff15e2d3eb8705534af09d9553eae3ac114cf96d062f7c0c9e5/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f313130303635303032393537333733383530382e7376673f6c6162656c3d266c6f676f3d646973636f7264266c6f676f436f6c6f723d66666666666626636f6c6f723d373338394438266c6162656c436f6c6f723d364137454332" alt="Discord" data-canonical-src="https://img.shields.io/discord/1100650029573738508.svg?label=&amp;logo=discord&amp;logoColor=ffffff&amp;color=7389D8&amp;labelColor=6A7EC2" style="max-width: 100%;"></a></p>
+<p><strong>NOTICE:</strong> This plugin branch is for PocketMine-MP 5. <br>
+<g-emoji class="g-emoji" alias="sparkles" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png">✨</g-emoji> <strong>Protect your world from grief, break, pvp, command, item, decay.</strong></p>
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>[x] Per world settings</li>
+<li>[x] Protect world from break/place</li>
+<li>[x] Per world pvp</li>
+<li>[x] Ban items in world</li>
+<li>[x] Ban commands in world</li>
+<li>[x] Anti farm land decay in world</li>
+</ul>
+<h2><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<ul>
+<li>Default command: <code>/worlddefend</code>
+</li>
+<li>Aliases: <code>/wd</code>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/wd</code></td>
+<td>Show help</td>
+</tr>
+<tr>
+<td><code>/wd build</code></td>
+<td>Locks world, not even Op can use.</td>
+</tr>
+<tr>
+<td><code>/wd pvp</code></td>
+<td>Enable/disable pvp in world.</td>
+</tr>
+<tr>
+<td><code>/wd antidecay</code></td>
+<td>Enable/disable decay in world.</td>
+</tr>
+<tr>
+<td><code>/wd keepinventory</code></td>
+<td>Enable/disable keep inventory.</td>
+</tr>
+<tr>
+<td><code>/wd keepexperience</code></td>
+<td>Enable/disable keep experience.</td>
+</tr>
+<tr>
+<td><code>/wd banitem</code></td>
+<td>Ban item in world.</td>
+</tr>
+<tr>
+<td><code>/wd unbanitem</code></td>
+<td>Unban item in world.</td>
+</tr>
+<tr>
+<td><code>/wd bancmd</code></td>
+<td>Ban command in world.</td>
+</tr>
+<tr>
+<td><code>/wd unbancmd</code></td>
+<td>Unban command in world.</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-permissions" class="anchor" aria-hidden="true" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h2>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>worlddefend.command</code></td>
+<td>Allow use all commands.</td>
+</tr>
+<tr>
+<td><code>worlddefend.build.bypass</code></td>
+<td>allows players to build in locked worlds</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-documentation" class="anchor" aria-hidden="true" href="#documentation"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
+<ul>
+<li>This plugin allows you to protect your world from grief, break, pvp, command, item, decay.</li>
+<li>For example, you can use <code>/wd build world true</code> to prevent other players from destroying your world named <code>world</code>.</li>
+<li>You can also use /wd pvp world false to disable pvp in world.</li>
+<li>You Want to keep a world-only inventory called <code>MyStuff</code>? don't worry WorldDefend can also help you just <code>/wd keepinv MyStuff true</code> immediately that world will keep your inventory when you die.</li>
+<li>You hate other people using wheat seed in the world called <code>SkyBlock</code> without knowing its <code>TypeId</code>? It's okay just hold the wheat seed in your hand and use <code>/wd banitem SkyBlock</code>
+</li>
+</ul>
+<h2><a id="user-content-todo" class="anchor" aria-hidden="true" href="#todo"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO</h2>
+<ul>
+<li>[ ] World Border</li>
+<li>[x] Per world gamemode</li>
+<li>[ ] Limit player in world</li>
+<li>[ ] No explode in world</li>
+</ul>
+<h2><a id="user-content-translation" class="anchor" aria-hidden="true" href="#translation"><span aria-hidden="true" class="octicon octicon-link"></span></a>Translation</h2>
+<p>This plugin will honour the server language configuration. The languages currently available are:</p>
+<ul>
+<li>English (en-US)</li>
+<li>Vietnamese (vi-VN)</li>
+</ul>
+<p>We would love to receive contributions on the missing languages or corrections on the existing ones. Please read <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> on how to do so.</p>
+<h2><a id="user-content-license" class="anchor" aria-hidden="true" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<p>This plugin is licensed under the <a href="LICENSE">MIT License</a>.</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2cb3a2ab87c5498db5ce7e6608cf55231689030342039" integrity="sha512-DI3rPuZDcpH/mSGyN22erN5QFnhl760f50/te7FTIYxodEF8jJnSFnfnmG/c+osmIQemvUrnBtxnMpNdzvx1/g==" data-cf-beacon='{"rayId":"7e772b78e8ccf973","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>
