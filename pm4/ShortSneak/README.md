@@ -1,11 +1,11 @@
 # ShortSneak
-<img src="https://raw.githubusercontent.com/DavyCraft648/ShortSneak/bdcb2094f3fef607cee0dcf9ff30601165574737/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/DavyCraft648/ShortSneak/52a206fc106fc4a2ca6f30368e5bd2dc36e99bd6/icon.png" width="128" height="128" />
 
 ## Sneak shorter like in Minecraft Java
 ```properties
-Version: 1.1.0
-    API: 4.20.0
-    Updated: 08-06-2023 21:50:39 UTC
+Version: 1.1.1
+    API: 4.21.1
+    Updated: 16-07-2023 10:44:08 UTC
 Repo: https://github.com/DavyCraft648/ShortSneak
 License: MIT
 Categories: General,Vanilla Mechanics
