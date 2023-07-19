@@ -1,0 +1,21 @@
+<p>PlayerSelectors implements all the default Minecraft selectors:<br></p>
+<ul>
+<li>@a - All players<br>
+</li>
+<li>@p - Nearest player<br>
+</li>
+<li>@e - Entities<br>
+</li>
+<li>@r - Random player<br>
+</li>
+<li>@s - Self/Sender<br><br>
+but also features a custom made one:<br>
+Since PocketMine implements a multi-world system, you can easily select players from your current world using the "@w" selector!
+<br><br>
+Minecraft also supports specific search parameters such as the distance from the sender, the count of matched player/entities, ...<br>
+All the standard Minecraft search params can be used with the syntax</li>
+</ul>
+<pre><code>@&lt;selector name&gt;[key=param,other=value]
+</code></pre>
+<p>EXCEPT the team &amp; score params since the /scoreboard command isn't implemented into PocketMine yet<br> Though, one new param that comes with this plugin is the "lvl" param, which is for searching in a specific world.</p>
+<p>Have fun!</p>

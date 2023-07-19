@@ -1,11 +1,11 @@
 # BedrockBreaker
-<img src="https://raw.githubusercontent.com/JavierLeon9966/BedrockBreaker/1ee506eccbe5ceb496cd70546b40f08b0e0c19e8/resources/Bedrock.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/JavierLeon9966/BedrockBreaker/06bc6e29f1f0acc71ae2fdbd643152130543bbe5/resources/Bedrock.png" width="128" height="128" />
 
 ## Allow breaking bedrock with TNT
 ```properties
-Version: 4.0.0
+Version: 4.1.0
     API: 5.0.0
-    Updated: 04-06-2023 22:44:52 UTC
+    Updated: 18-07-2023 22:25:33 UTC
 Repo: https://github.com/JavierLeon9966/BedrockBreaker
 License: GPL-3.0
 Categories: Mechanics,Miscellaneous,General

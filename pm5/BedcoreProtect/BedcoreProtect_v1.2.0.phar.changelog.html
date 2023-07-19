@@ -1,0 +1,32 @@
+<h1 dir="auto">Introductory notes</h1>
+<p dir="auto">This update is recommended because it contains many improvements and bug fixes.</p>
+<p dir="auto"><strong>NOTE: The update is backward compatible with the previous versions.</strong></p>
+<h1 dir="auto">Changelog</h1>
+<h2 dir="auto">Enhancements</h2>
+<ul dir="auto">
+<li>Correctly tracking liquids placed by player</li>
+<li>Correctly tracking TNT exploded by player</li>
+<li>Correctly tracking blocks burning by player using fire</li>
+<li>Correctly tracking ìfalling blocks placed by player</li>
+<li>Added option to skip tracking generic data like daylight burning</li>
+<li>Added tracking of entities killed due to suffocation</li>
+<li>Added tracking of entities killed due to drowning</li>
+<li>Added tracking of entities killed due to fire ticking (e.g. daylight)</li>
+<li>Added tracking of player commands, messages and sessions (request <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1727904839" data-permission-text="Title is private" data-url="https://github.com/matcracker/BedcoreProtect/issues/68" data-hovercard-type="issue" data-hovercard-url="/matcracker/BedcoreProtect/issues/68/hovercard" href="https://github.com/matcracker/BedcoreProtect/issues/68">#68</a>)</li>
+<li>Added tracking of tree growth</li>
+</ul>
+<h2 dir="auto">Changes</h2>
+<ul dir="auto">
+<li>Changed and improved management of logging block UUID (this does not affect any previous log)</li>
+<li>The <code class="notranslate">/bcp near</code> command now uses a radius of 5 blocks. The radius is not customizable anymore.</li>
+</ul>
+<h2 dir="auto">Bug fixes</h2>
+<ul dir="auto">
+<li>Removed debug message sent to the inspector</li>
+<li>Fixed action dropdown not working on UI form</li>
+<li>Fixed crash when stopping the server while database is loading</li>
+<li>Fixed crash in case player is breaking an unregistered block</li>
+<li>Fixed crash when lookup logs with entities</li>
+<li>Fixed return to main form when closing other forms</li>
+<li>Fixed missing management of config. option max-radius = 0 and default-radius = 0</li>
+</ul><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2cb3a2ab87c5498db5ce7e6608cf55231689030342039" integrity="sha512-DI3rPuZDcpH/mSGyN22erN5QFnhl760f50/te7FTIYxodEF8jJnSFnfnmG/c+osmIQemvUrnBtxnMpNdzvx1/g==" data-cf-beacon='{"rayId":"7e9004649c420935","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

@@ -6,7 +6,7 @@
 Version: 1.1.0
     API: 5.0.0
     Updated: 15-07-2023 10:50:02 UTC
-Repo: https://github.com/Clickedtran/WarpGUI-PM4
+Repo: https://github.com/Clickedtran/WarpGUI
 License: GPL-3.0
 Categories: General,API plugins,Developer Tools,Admin Tools
 Keywords: gui,warp,warpgui

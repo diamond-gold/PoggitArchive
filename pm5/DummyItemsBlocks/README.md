@@ -9,5 +9,5 @@ Version: 1.0.1
 Repo: https://github.com/diamond-gold/DummyItemsBlocks
 License: MIT
 Categories: General,Vanilla Mechanics,Miscellaneous,Educational
-Keywords: 
+Keywords: decor,decoration
 ```
