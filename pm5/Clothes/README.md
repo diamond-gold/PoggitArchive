@@ -6,7 +6,7 @@
 Version: 7.2
     API: 5.0.0
     Updated: 03-06-2023 13:14:49 UTC
-Repo: https://github.com/Taylor-pm-pl/Clothes
+Repo: https://github.com/jacob3105/Clothes
 License: Unlicense
 Categories: General,Fun
 Keywords: 3d,4d,cloth,cosplay,costume,costumes,hammer,shield,skin,wing,wings
