@@ -1,0 +1,70 @@
+<h1><a id="user-content-simplemotd" class="anchor" aria-hidden="true" href="#simplemotd"><span aria-hidden="true" class="octicon octicon-link"></span></a>SimpleMotd</h1>
+<p><a href="https://poggit.pmmp.io/p/SimpleMotd" rel="nofollow"><img src="https://camo.githubusercontent.com/faa6a84b4b8244c2c125b39102b35827c78e82520f8c307a4305840478d2578c/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f53696d706c654d6f7464" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/SimpleMotd" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/SimpleMotd" rel="nofollow"><img src="https://camo.githubusercontent.com/6fe7548d974dba7221eba0ddbc8e483b66d4f841b06875868e4e0c3d9ff514c1/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f53696d706c654d6f7464" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/SimpleMotd" style="max-width: 100%;"></a></p>
+<p>A PocketMine-MP plugin to change server motd easily.</p>
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>
+<code>Dynamic Message of the Day (MOTD)</code>: The plugin allows server administrators to set up a dynamic MOTD that changes periodically, showing different messages to players when they join the server.</li>
+<li>
+<code>MOTD Configuration</code>: The plugin provides a configuration file that allows administrators to customize various aspects of the MOTD, including enabling or disabling it, setting the interval for message changes, specifying the messages to display, and configuring prefix and suffix text.</li>
+<li>
+<code>Placeholder Support</code>: The plugin supports placeholders in the MOTD messages, allowing administrators to show dynamic information to players. Available placeholders include the maximum number of players supported by the server, the number of online players, the configured prefix and suffix, and the current time.</li>
+<li>
+<code>Color Formatting</code>: The MOTD messages can be colored using "§" or "&amp;" color codes, providing visual appeal and customization options for the server's welcome messages.</li>
+<li>
+<code>MOTD Update Interval</code>: Administrators can set the interval (in seconds) between each MOTD change. This allows them to control how frequently the MOTD messages cycle through the configured options.</li>
+<li>
+<code>Config Version Management</code>: The plugin ensures that the configuration file is up-to-date. If an outdated config file is provided, it generates a new one and backs up the old config, preventing compatibility issues.</li>
+<li>
+<code>Error Handling</code>: The plugin includes error handling mechanisms to notify administrators in case of any configuration issues or critical errors during the generation of a new config.</li>
+<li>
+<code>Date/Time Customization</code>: Administrators can customize the date and time format displayed in the MOTD to match their desired format, using the standard PHP date format codes.</li>
+<li>
+<code>MOTD Enable/Disable</code>: Administrators have the flexibility to enable or disable the MOTD feature altogether. When disabled, the plugin will not proceed with displaying the MOTD messages.</li>
+<li>
+<code>MOTD Scheduler</code>: The plugin uses the PocketMine scheduler to periodically change the MOTD messages based on the configured interval, ensuring a seamless and automatic rotation of messages.</li>
+</ul>
+<h1><a id="user-content-default-config" class="anchor" aria-hidden="true" href="#default-config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default Config</h1>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Do not change this (Only for internal use)!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-c1">1.2</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Prefix used in MOTD messages. Use "§" or "&amp;" to color the message.</span>
+<span class="pl-ent">prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;b»<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Suffix used in MOTD messages. Use "§" or "&amp;" to color the message.</span>
+<span class="pl-ent">suffix</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;b«<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Date\Time format (replaced in {TIME}).</span>
+<span class="pl-c"><span class="pl-c">#</span> For format codes read https://php.net/manual/en/datetime.formats.php</span>
+<span class="pl-ent">datetime-format</span>: <span class="pl-s"><span class="pl-pds">"</span>H:i:s<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message of the Day (MOTD) Configuration</span>
+<span class="pl-ent">motd</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Enable the MOTD.</span>
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+  <span class="pl-c"><span class="pl-c">#</span> MOTD interval (in seconds).</span>
+  <span class="pl-ent">time</span>: <span class="pl-c1">15</span>
+  <span class="pl-c"><span class="pl-c">#</span> Messages used to display the MOTD. You can use placeholders to show dynamic information.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Available placeholders:</span>
+  <span class="pl-c"><span class="pl-c">#</span> - {MAX_PLAYERS}: Show the maximum number of players supported by the server.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - {ONLINE_PLAYERS}: Show the number of all online players.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - {PREFIX}: Show the configured prefix.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - {SUFFIX}: Show the configured suffix.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - {TIME}: Show current time based on the 'datetime-format' setting.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Use "§" or "&amp;" to color the message.</span>
+  <span class="pl-ent">messages</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;a[{TIME}] {PREFIX} Welcome to our awesome server {SUFFIX}<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> Example: [10:30:45] » Welcome to our awesome server «</span>
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;b[{TIME}] Current online: &amp;a{ONLINE_PLAYERS}/{MAX_PLAYERS}<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> Example: [10:30:45] Current online: 50/100</span>
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;b[{TIME}] {PREFIX} Thanks for joining! Have fun! {SUFFIX}<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> Example: [10:30:45] » Thanks for joining! Have fun! «</span>
+</pre></div>
+<h1><a id="user-content-upcoming-features" class="anchor" aria-hidden="true" href="#upcoming-features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Upcoming Features</h1>
+<ul>
+<li>Currently none planned. You can contribute or suggest for new features.</li>
+</ul>
+<h1><a id="user-content-additional-notes" class="anchor" aria-hidden="true" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h1>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/AIPTU/SimpleMotd/issues">here</a>.</li>
+<li>We accept all contributions! If you want to contribute, please make a pull request in <a href="https://github.com/AIPTU/SimpleMotd/pulls">here</a>.</li>
+<li>Icons made from <a href="https://www.flaticon.com" rel="nofollow">www.flaticon.com</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2cb3a2ab87c5498db5ce7e6608cf55231689030342039" integrity="sha512-DI3rPuZDcpH/mSGyN22erN5QFnhl760f50/te7FTIYxodEF8jJnSFnfnmG/c+osmIQemvUrnBtxnMpNdzvx1/g==" data-cf-beacon='{"rayId":"7ea04558ae173904","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

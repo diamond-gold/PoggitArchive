@@ -1,0 +1,48 @@
+<h1><a id="user-content-muteall" class="anchor" aria-hidden="true" href="#muteall"><span aria-hidden="true" class="octicon octicon-link"></span></a>MuteAll</h1>
+<p><a href="https://poggit.pmmp.io/p/MuteAll" rel="nofollow"><img src="https://camo.githubusercontent.com/23b03c2168cb6f20a268b405b07276989632e42e844ffe121c8f2170fb9b8d11/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4d757465416c6c" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/MuteAll" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/MuteAll" rel="nofollow"><img src="https://camo.githubusercontent.com/8499ea875f03260a6ac368ed91f7981cdb0920e6353edf34a76fbe0c0d3bc4f9/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f4d757465416c6c" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/MuteAll" style="max-width: 100%;"></a></p>
+<p>A PocketMine-MP plugin to mute all players on the server.</p>
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>
+<code>Global Chat Mute</code>: Enable a global chat mute for all players on the server, preventing them from sending chat messages.</li>
+<li>
+<code>Bypass Permission</code>: Allow players with the <code>muteall.bypass</code> permission to chat even during global mute.</li>
+<li>
+<code>Customizable Messages</code>: Personalize messages displayed to players when they attempt to chat during global mute and when the mute is turned on or off.</li>
+<li>
+<code>Color Formatting</code>: The messages can be colored using "§" or "&amp;" color codes, providing visual appeal and customization options for the messages.</li>
+<li>
+<code>Config Version Management</code>: The plugin ensures that the configuration file is up-to-date. If an outdated config file is provided, it generates a new one and backs up the old config, preventing compatibility issues.</li>
+<li>
+<code>User-friendly Command</code>: Use the simple <code>/muteall</code> command to toggle the global chat mute on or off easily.</li>
+</ul>
+<h1><a id="user-content-default-config" class="anchor" aria-hidden="true" href="#default-config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default Config</h1>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Do not change this (Only for internal use)!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-c1">1.2</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Messages Configuration</span>
+<span class="pl-c"><span class="pl-c">#</span> These messages are used when muting player chats.</span>
+<span class="pl-c"><span class="pl-c">#</span> You can use "§" or "&amp;" to color the messages.</span>
+
+<span class="pl-c"><span class="pl-c">#</span> The message displayed to players when they attempt to chat during global mute.</span>
+<span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cYou can't chat when global mute is enabled<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> The message displayed to players when the global mute is turned on.</span>
+<span class="pl-ent">turn-on</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;aMute chat for all players has been turned on<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> The message displayed to players when the global mute is turned off.</span>
+<span class="pl-ent">turn-off</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;aMute chat for all players has been turned off<span class="pl-pds">"</span></span>
+</pre></div>
+<h1><a id="user-content-upcoming-features" class="anchor" aria-hidden="true" href="#upcoming-features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Upcoming Features</h1>
+<ul>
+<li>Currently none planned. You can contribute or suggest for new features.</li>
+</ul>
+<h1><a id="user-content-additional-notes" class="anchor" aria-hidden="true" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h1>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/AIPTU/MuteAll/issues">here</a>.</li>
+<li>We accept all contributions! If you want to contribute, please make a pull request in <a href="https://github.com/AIPTU/MuteAll/pulls">here</a>.</li>
+<li>Icons made from <a href="https://www.flaticon.com" rel="nofollow">www.flaticon.com</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2cb3a2ab87c5498db5ce7e6608cf55231689030342039" integrity="sha512-DI3rPuZDcpH/mSGyN22erN5QFnhl760f50/te7FTIYxodEF8jJnSFnfnmG/c+osmIQemvUrnBtxnMpNdzvx1/g==" data-cf-beacon='{"rayId":"7ea04557aaee3b8c","version":"2023.4.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>
