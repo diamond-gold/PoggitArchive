@@ -8,6 +8,6 @@ Version: 1.1.0
     Updated: 08-12-2021 05:59:41 UTC
 Repo: https://github.com/AIPTU/NoSprint
 License: mit
-Categories: General,Miscellaneous,Fun
+Categories: General,Miscellaneous,Fun,Anti-Griefing Tools,Admin Tools
 Keywords: pocketmine-mp,pocketmine-plugin
 ```
