@@ -1,9 +1,9 @@
 # PlayerVaults
 ## Per-player GUI-based vaults plugin for PocketMine-MP
 ```properties
-Version: 3.5.2
+Version: 3.5.3
     API: 5.3.0
-    Updated: 14-07-2023 08:08:53 UTC
+    Updated: 24-07-2023 19:54:01 UTC
 Repo: https://github.com/Muqsit/PlayerVaults
 License: LGPL-2.1
 Categories: Mechanics,Miscellaneous,Fun,General
