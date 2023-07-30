@@ -1,4 +1,7 @@
 # Poggit Archive
+![GitHub repo size](https://img.shields.io/github/repo-size/diamond-gold/poggitArchive?label=Total%20Size)
+![PM4 plugin count](https://img.shields.io/github/directory-file-count/diamond-gold/poggitArchive/pm4?label=PM4%20plugins)
+![PM4 plugin count](https://img.shields.io/github/directory-file-count/diamond-gold/poggitArchive/pm5?label=PM5%20plugins)
 
 Automated daily archival of plugins on poggit.
 
