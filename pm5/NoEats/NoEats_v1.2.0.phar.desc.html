@@ -1,0 +1,83 @@
+<h1><a id="user-content-noeats" class="anchor" aria-hidden="true" href="#noeats"><span aria-hidden="true" class="octicon octicon-link"></span></a>NoEats</h1>
+<p><a href="https://poggit.pmmp.io/p/NoEats" rel="nofollow"><img src="https://camo.githubusercontent.com/e5c594445eb905e3b69500ac7f0c8578c8db73ada7812c1a8ab9afa0727a49f9/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4e6f45617473" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/NoEats" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/NoEats" rel="nofollow"><img src="https://camo.githubusercontent.com/f0bea341f38146a87e347a7e629f8b69a9f4be03eef192bba82aa94691a74468/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f4e6f45617473" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/NoEats" style="max-width: 100%;"></a></p>
+<p>A PocketMine-MP plugin to regulate player hunger and prohibit eating certain foods easily.</p>
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>
+<code>Food Item Restriction</code>: Administrators can define a list of food items that players are not allowed to eat.</li>
+<li>
+<code>World-Specific Configuration</code>: Different worlds can have different food item restrictions.</li>
+<li>
+<code>Mode Selection</code>: Choose between "None," "Blacklist," or "Whitelist" mode to determine how world-specific configurations are applied.</li>
+<li>
+<code>Hunger Event Control</code>: Administrators can enable or disable hunger events for players.</li>
+<li>
+<code>Customizable Messages</code>: Customize the message displayed to players when they attempt to eat a restricted food item.</li>
+<li>
+<code>Bypass Permissions</code>: Operators can be granted permissions to bypass the food item restrictions and hunger event cancellation.</li>
+<li>
+<code>World Validation</code>: It checks if the worlds listed in the configuration file exist and are generated in the server. Invalid worlds are ignored.</li>
+<li>
+<code>Item Validation</code>: It ensures that the food items listed in the configuration are valid edible items. Non-edible items are ignored.</li>
+</ul>
+<h1><a id="user-content-permissions" class="anchor" aria-hidden="true" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<ul>
+<li>
+<code>noeats.bypass.eating</code>: Players with this permission can bypass the plugin's restrictions on eating food items.</li>
+<li>
+<code>noeats.bypass.hunger</code>: Players with this permission can bypass the cancellation of hunger events imposed by the plugin.</li>
+</ul>
+<h1><a id="user-content-default-config" class="anchor" aria-hidden="true" href="#default-config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default Config</h1>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Do not change this (Only for internal use)!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-c1">1.2</span>
+
+<span class="pl-c"><span class="pl-c">#</span> If set to true, players will experience hunger. If set to false, players won't experience hunger.</span>
+<span class="pl-c"><span class="pl-c">#</span> This option allows you to enable or disable the hunger mechanic for players in the server.</span>
+<span class="pl-ent">hunger</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> The message displayed when a player attempts to eat a restricted food item.</span>
+<span class="pl-c"><span class="pl-c">#</span> You can use color codes by using "§" or "&amp;" before the color code.</span>
+<span class="pl-c"><span class="pl-c">#</span> This message will be shown to players when they try to eat an item that is restricted based on the configuration.</span>
+<span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cYou can't eat your food here<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Item Restriction Settings</span>
+<span class="pl-ent">items</span>:
+  <span class="pl-c"><span class="pl-c">#</span> List of food items that players are not allowed to eat.</span>
+  <span class="pl-c"><span class="pl-c">#</span> This list determines which food items are restricted for consumption by players.</span>
+  <span class="pl-ent">list</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span>golden_apple<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>cooked_beef<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>cooked_chicken<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> World Restriction Settings</span>
+<span class="pl-ent">worlds</span>:
+  <span class="pl-c"><span class="pl-c">#</span> The mode can be either "blacklist," "whitelist," or "none".</span>
+  <span class="pl-c"><span class="pl-c">#</span> - "blacklist" mode will prevent players from eating in the specified worlds (blacklisted) and allow eating in other worlds.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - "whitelist" mode will only allow players to eat in the specified worlds (whitelisted) and prevent eating in other worlds.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - "none" mode will not apply any restrictions, and eating will be allowed in all worlds.</span>
+  <span class="pl-ent">mode</span>: <span class="pl-s"><span class="pl-pds">"</span>blacklist<span class="pl-pds">"</span></span>
+
+  <span class="pl-c"><span class="pl-c">#</span> List of world folder names to be blacklisted or whitelisted (depending on the mode set above).</span>
+  <span class="pl-c"><span class="pl-c">#</span> If "mode" is set to "blacklist" or "whitelist," add the world folder names accordingly.</span>
+  <span class="pl-c"><span class="pl-c">#</span> If "mode" is set to "none," leave the "list" empty ([]) to allow eating in all worlds.</span>
+  <span class="pl-ent">list</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span>world<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Example: The "world" world folder is blacklisted, and players can't eat here.</span>
+    - <span class="pl-s"><span class="pl-pds">"</span>world_nether<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Example: The "world_nether" world folder is blacklisted, and players can't eat here.</span>
+
+<span class="pl-c"><span class="pl-c">#</span> You can add more worlds to the list as needed.</span>
+<span class="pl-c"><span class="pl-c">#</span> Note: Make sure to use the correct world folder names as specified in your PocketMine-MP server configuration.</span>
+<span class="pl-c"><span class="pl-c">#</span> To disable world-specific eating restriction and allow eating in all worlds, set "mode" to "none" and leave the "list" empty ([]) or remove the "list" entirely.</span>
+</pre></div>
+<h1><a id="user-content-upcoming-features" class="anchor" aria-hidden="true" href="#upcoming-features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Upcoming Features</h1>
+<ul>
+<li>Currently none planned. You can contribute or suggest for new features.</li>
+</ul>
+<h1><a id="user-content-additional-notes" class="anchor" aria-hidden="true" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h1>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/AIPTU/NoEats/issues">here</a>.</li>
+<li>We accept all contributions! If you want to contribute, please make a pull request in <a href="https://github.com/AIPTU/NoEats/pulls">here</a>.</li>
+<li>Icons made from <a href="https://www.flaticon.com" rel="nofollow">www.flaticon.com</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7efae9a8ac016434","version":"2023.7.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>
