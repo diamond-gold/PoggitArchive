@@ -1,11 +1,11 @@
 # PortableCrates
-<img src="https://raw.githubusercontent.com/GrosserZak/PortableCrates/ec8eaf33f32ad1bec925114fe015f281ab3188ec/PortableCrates.gif" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/GrosserZak/PortableCrates/9644d4778bc54645fdcf05a995cfaad7a6ca128e/PortableCrates.gif" width="128" height="128" />
 
 ## Plugin that give carriable crates
 ```properties
-Version: 2.3.1
+Version: 2.3.3
     API: 5.0.0
-    Updated: 17-07-2023 13:09:45 UTC
+    Updated: 01-08-2023 22:23:36 UTC
 Repo: https://github.com/GrosserZak/PortableCrates
 License: AGPL-3.0
 Categories: General,Miscellaneous
