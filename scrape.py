@@ -77,15 +77,14 @@ def download(base,plugins):
                 f.write(data)
         changelog = phar+'.changelog.html'
         if not os.path.exists(changelog): 
-            if plugin['changelog_url'] == 'https://poggit.pmmp.io/r/0': # first release, no changelog
-                continue
-            print('Getting changelog {:s}'.format(progress))
-            req = Request(plugin['changelog_url'])
-            req.add_header('User-Agent', UA)
-            with urlopen(req) as f:
-                data = f.read().decode('utf-8')
-            with open(changelog,'w', encoding='utf-8') as f:
-                f.write(data)
+            if plugin['changelog_url'] != 'https://poggit.pmmp.io/r/0': # first release, no changelog
+                print('Getting changelog {:s}'.format(progress))
+                req = Request(plugin['changelog_url'])
+                req.add_header('User-Agent', UA)
+                with urlopen(req) as f:
+                    data = f.read().decode('utf-8')
+                with open(changelog,'w', encoding='utf-8') as f:
+                    f.write(data)
         readme = path+'/README.md'
         if not plugin['is_obsolete']:
             # print('Generate readme {:s}'.format(progress))
