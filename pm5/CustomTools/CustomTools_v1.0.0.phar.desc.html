@@ -1,0 +1,58 @@
+<h1><a id="user-content-customtools" class="anchor" aria-hidden="true" href="#customtools"><span aria-hidden="true" class="octicon octicon-link"></span></a>CustomTools</h1>
+<p>Tools customizer for PocketMine-MP V5</p>
+<h2><a id="user-content-commands--permission" class="anchor" aria-hidden="true" href="#commands--permission"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands &amp; Permission</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Permission</th>
+<th>Usage</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/ctools give</td>
+<td>customtools.command.give</td>
+<td>/ctools give  
+</td>
+<td>Give custom tools to player</td>
+<td>OP</td>
+</tr>
+<tr>
+<td>/ctools list</td>
+<td>customtools.command.list</td>
+<td>/ctools list</td>
+<td>List of custom tools</td>
+<td>OP</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-registering-custom-tools-api" class="anchor" aria-hidden="true" href="#registering-custom-tools-api"><span aria-hidden="true" class="octicon octicon-link"></span></a>Registering Custom Tools API</h2>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// Import</span>
+<span class="pl-k">use</span> <span class="pl-v">PedhotDev</span>\<span class="pl-v">CustomTools</span>\<span class="pl-v">Main</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>customTools</span> = [
+    "<span class="pl-s">type</span>" =&gt; "<span class="pl-s">hoe</span>",
+    "<span class="pl-s">tier</span>" =&gt; "<span class="pl-s">netherite</span>",
+    "<span class="pl-s">glint</span>" =&gt; <span class="pl-c1">true</span>,
+    "<span class="pl-s">durability</span>" =&gt; <span class="pl-c1">0</span>,
+    "<span class="pl-s">mining-efficiency</span>" =&gt; <span class="pl-c1">10</span>,
+    "<span class="pl-s">attack-points</span>" =&gt; <span class="pl-c1">1000</span>,
+    "<span class="pl-s">name</span>" =&gt; "<span class="pl-s">ExampleHoe</span>",
+    "<span class="pl-s">lore</span>" =&gt; [
+        "<span class="pl-s">ExampleHoe</span>"
+    ]
+];
+<span class="pl-v">Main</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getCustomToolsManager</span>()-&gt;<span class="pl-en">registerTools</span>("<span class="pl-s">Tools_Name</span>", <span class="pl-s1"><span class="pl-c1">$</span>customTools</span>)</pre></div>
+<h2><a id="user-content-todo-list" class="anchor" aria-hidden="true" href="#todo-list"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO List</h2>
+<ul>
+<li>[ ] Create and edit tools inside game</li>
+<li>[ ] Custom Tools craft</li>
+<li>[ ] Fix mining speed</li>
+<li>[ ] Fix glint</li>
+</ul>
+<h2><a id="user-content-icons" class="anchor" aria-hidden="true" href="#icons"><span aria-hidden="true" class="octicon octicon-link"></span></a>Icons</h2>
+<p>Icon by <a href="https://www.flaticon.com/" rel="nofollow">flaticon</a></p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7f0b62be6eb79c85","version":"2023.7.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

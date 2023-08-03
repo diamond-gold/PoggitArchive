@@ -1,0 +1,62 @@
+<p align="center">
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/HakanBabus/EasyAnnouncement/assets/90573332/986e3c5c-a117-47a1-9f7f-d1e418841ebf"><img align="center" src="https://github.com/HakanBabus/EasyAnnouncement/assets/90573332/986e3c5c-a117-47a1-9f7f-d1e418841ebf" width="80" height="80" style="max-width: 100%;"></a>
+</p><p align="center">
+    <b>EasyAnnouncement plugin for PocketMine-MP</b>
+  </p><p align="center">
+Created by: <a href="https://github.com/HakanBabus">https://github.com/HakanBabus</a>
+  </p><p align="center">
+    <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/a34321a057a7703ca8d3a40055ab98c3b655b069742b526e5d7c3a79b0728476/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f48616b616e42616275732f45617379416e6e6f756e63656d656e743f6c6162656c3d72656c6561736526736f72743d73656d766572"><img alt="GitHubrelease" src="https://camo.githubusercontent.com/a34321a057a7703ca8d3a40055ab98c3b655b069742b526e5d7c3a79b0728476/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f48616b616e42616275732f45617379416e6e6f756e63656d656e743f6c6162656c3d72656c6561736526736f72743d73656d766572" data-canonical-src="https://img.shields.io/github/v/release/HakanBabus/EasyAnnouncement?label=release&amp;sort=semver" style="max-width: 100%;"></a>
+</p>
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Easy config</li>
+<li>Include auto announcement</li>
+<li>Prefix, time invertal settings</li>
+<li>Include manuel announcement (/announcement)</li>
+<li>Announcement with sound (custom, random)</li>
+<li>Fully customizable</li>
+</ul>
+<h1><a id="user-content-requirements" class="anchor" aria-hidden="true" href="#requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h1>
+<ul>
+<li>PocketMine-MP API 4-5</li>
+</ul>
+<h1><a id="user-content-add-your-server" class="anchor" aria-hidden="true" href="#add-your-server"><span aria-hidden="true" class="octicon octicon-link"></span></a>Add your server</h1>
+<ul>
+<li>Click direct download.</li>
+<li>Move the file to the plugins folder</li>
+</ul>
+<h1><a id="user-content-config-management" class="anchor" aria-hidden="true" href="#config-management"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config Management</h1>
+<pre><code>#sound management
+#multiple or single sound
+#distribute if there is more than one sound
+sound:
+  - mob.ghast.fireball
+
+
+#auto announcement settings
+auto-announcement:
+  enabled: true       # Enable setting for auto announcement
+  prefix: "§e§l&gt; §f"  # Message prefix
+  time: 180           # Repeat time (seconds) (default 3 min = 180 seconds)
+  sound:
+    enabled: false    # if is true -&gt; when send auto announcement, play random sound
+  messages:
+    - Message 1
+    - Message 2
+    - Message 3
+
+#player announcement settings
+player-announcement:
+  enabled: true      # if is false, don't register the command
+  prefix: "§e[ANNOUNCEMENT] §f{player} §e&gt;§f "
+  command-settings:
+    name: announcement
+    description: Send announcement to server players
+    usage: "§cUsage: §f/announcement (message: string)"
+    aliases: []
+  sound:
+    enabled: true     #if is true -&gt; when send announcement, play random sound
+</code></pre>
+<h1><a id="user-content-command-permissions" class="anchor" aria-hidden="true" href="#command-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>COMMAND PERMISSIONS</h1>
+<p>permission: announcement.command
+default setting is op</p>
