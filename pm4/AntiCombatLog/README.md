@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/ElectroGamesYT/AntiCombatLog
 License: gpl-3.0
 Categories: General
-Keywords: Combat,CombatLog,Anti,AntiCombat,Log
+Keywords: Anti,AntiCombat,Combat,CombatLog,Log
 ```
