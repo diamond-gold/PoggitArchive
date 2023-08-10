@@ -1,11 +1,11 @@
 # Profile-Ui
-<img src="https://raw.githubusercontent.com/GabBiswajit/Profile-ui/00c33040d4554271462628d8f5bea0cca2c9f524/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/GabBiswajit/Profile-ui/b2ffb2e898b8007de2063bb4fab207d33d0d316f/icon.png" width="128" height="128" />
 
 ## A Player Profile Plugin For Pocketmine
 ```properties
-Version: 1.0.0
+Version: 1.0.1
     API: 5.0.0
-    Updated: 09-08-2023 01:37:36 UTC
+    Updated: 09-08-2023 20:10:34 UTC
 Repo: https://github.com/GabBiswajit/Profile-ui
 License: Apache-2.0
 Categories: General,API plugins,Fun,Economy,Informational
