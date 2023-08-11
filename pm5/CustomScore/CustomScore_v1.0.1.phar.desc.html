@@ -1,0 +1,149 @@
+<h2><a id="user-content--tags" class="anchor" aria-hidden="true" href="#-tags"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="scroll" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dc.png">📜</g-emoji> Tags:</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{player.name}</td>
+<td>show player name</td>
+</tr>
+<tr>
+<td>{player.ping}</td>
+<td>show player ping</td>
+</tr>
+<tr>
+<td>{player.xp.level}</td>
+<td></td>
+</tr>
+<tr>
+<td>{player.xp.progress}</td>
+<td></td>
+</tr>
+<tr>
+<td>{player.xp.remainder}</td>
+<td></td>
+</tr>
+<tr>
+<td>{player.xp.current_total}</td>
+<td></td>
+</tr>
+<tr>
+<td>{time.date}</td>
+<td>shows current date</td>
+</tr>
+<tr>
+<td>{server.online}</td>
+<td>shows the players connected to the server</td>
+</tr>
+<tr>
+<td>{server.online.max}</td>
+<td>shows the maximum number of players</td>
+</tr>
+<tr>
+<td>{server.tps.usage}</td>
+<td>show server tps</td>
+</tr>
+<tr>
+<td>{server.tps.percentage}</td>
+<td>shows the tps percentage of the server</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content--soft-dependencys-tags" class="anchor" aria-hidden="true" href="#-soft-dependencys-tags"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="scroll" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dc.png">📜</g-emoji> Soft Dependencys Tags:</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Plugin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{lunarranks.rank}</td>
+<td>get player's rank</td>
+<td><a href="https://poggit.pmmp.io/p/LunarRanks" rel="nofollow">LunarRanks</a></td>
+</tr>
+<tr>
+<td>{ranksystem.ranks}</td>
+<td>get player's ranks</td>
+<td><a href="https://poggit.pmmp.io/p/RankSystem" rel="nofollow">RankSystem</a></td>
+</tr>
+<tr>
+<td>{ranksystem.highest_rank}</td>
+<td>get the player's highest rank</td>
+<td><a href="https://poggit.pmmp.io/p/RankSystem" rel="nofollow">RankSystem</a></td>
+</tr>
+<tr>
+<td>{ranksystem.nametag}</td>
+<td>get player's nametag</td>
+<td><a href="https://poggit.pmmp.io/p/RankSystem" rel="nofollow">RankSystem</a></td>
+</tr>
+<tr>
+<td>{bedrockeconomy.balance}</td>
+<td>get player's balance</td>
+<td><a href="https://poggit.pmmp.io/p/BedrockEconomy" rel="nofollow">BedrockEconomy</a></td>
+</tr>
+<tr>
+<td>{bedrockeconomy.balance.cap}</td>
+<td>getbalance cap</td>
+<td><a href="https://poggit.pmmp.io/p/BedrockEconomy" rel="nofollow">BedrockEconomy</a></td>
+</tr>
+<tr>
+<td>{bedrockeconomy.currency.symbol}</td>
+<td>get economy symbol</td>
+<td><a href="https://poggit.pmmp.io/p/BedrockEconomy" rel="nofollow">BedrockEconomy</a></td>
+</tr>
+<tr>
+<td>{bedrockeconomy.currency.name}</td>
+<td>get economy name</td>
+<td><a href="https://poggit.pmmp.io/p/BedrockEconomy" rel="nofollow">BedrockEconomy</a></td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content--commands--permissions" class="anchor" aria-hidden="true" href="#-commands--permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>📋 Commands / Permissions:</h2>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>customscore</td>
+<td><code>/scoreboard</code></td>
+</tr>
+<tr>
+<td>customscore.reload</td>
+<td><code>/scoreboard reload</code></td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-texturepack" class="anchor" aria-hidden="true" href="#texturepack"><span aria-hidden="true" class="octicon octicon-link"></span></a>TexturePack:</h2>
+<p>increase the character limit of the scoreboard
+<a href="https://github.com/Joshet18/CustomScore/blob/main/CustomScoreTexturePack.zip">TexturePack</a></p>
+<h2><a id="user-content--api" class="anchor" aria-hidden="true" href="#-api"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="hammer_and_pick" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2692.png">⚒</g-emoji> API:</h2>
+<p>to add custom tags you can use <code>PlayerScoreTagEvent</code>
+Example:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">Joshet18</span>\<span class="pl-v">CustomScoreboard</span>\<span class="pl-v">PlayerScoreTagEvent</span>;
+
+<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onPlayerTags</span>(<span class="pl-smi"><span class="pl-smi">PlayerScoreTagEvent</span></span> <span class="pl-s1"><span class="pl-c1">$</span>ev</span>): <span class="pl-smi">void</span> {
+  <span class="pl-s1"><span class="pl-c1">$</span>ev</span>-&gt;<span class="pl-en">setTags</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">processTags</span>(<span class="pl-s1"><span class="pl-c1">$</span>ev</span>-&gt;<span class="pl-en">getPlayer</span>(), <span class="pl-s1"><span class="pl-c1">$</span>ev</span>-&gt;<span class="pl-en">getTags</span>()));
+}
+
+<span class="pl-k">private</span> <span class="pl-k">function</span> <span class="pl-en">processTags</span>(<span class="pl-smi"><span class="pl-smi">Player</span></span> <span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-smi">array</span> <span class="pl-s1"><span class="pl-c1">$</span>tags</span>):<span class="pl-smi">array</span>{
+  <span class="pl-s1"><span class="pl-c1">$</span>result</span> = [];
+  <span class="pl-k">foreach</span>(<span class="pl-s1"><span class="pl-c1">$</span>tags</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>tag</span>){
+    <span class="pl-s1"><span class="pl-c1">$</span>result</span>[] = str_replace([
+      "<span class="pl-s">{customtag.item.name}</span>"
+    ],[
+      <span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">getInventory</span>()-&gt;<span class="pl-en">getItemInHand</span>()-&gt;<span class="pl-en">getVanillaName</span>()
+    ], <span class="pl-s1"><span class="pl-c1">$</span>tag</span>);
+  }
+  <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>result</span>;
+}</pre></div>

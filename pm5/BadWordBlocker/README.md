@@ -1,11 +1,11 @@
 # BadWordBlocker
-<img src="https://raw.githubusercontent.com/survanetwork/BadWordBlocker/c8d6afd292140864a2614f6c5bafe5989495ca33/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/survanetwork/BadWordBlocker/de638a55bef67e5d8cb13b917284a88f675938e0/icon.png" width="128" height="128" />
 
 ## A chat filter which can block certain things
 ```properties
-Version: 1.2.17
+Version: 2.0.0
     API: 5.0.0
-    Updated: 04-08-2023 00:04:45 UTC
+    Updated: 10-08-2023 20:30:02 UTC
 Repo: https://github.com/survanetwork/BadWordBlocker
 License: MIT
 Categories: Chat-Related,Admin Tools
