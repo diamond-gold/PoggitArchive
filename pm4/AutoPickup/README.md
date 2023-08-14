@@ -6,7 +6,7 @@
 Version: 1.0.6
     API: 4.0.0
     Updated: 12-03-2022 16:09:43 UTC
-Repo: https://github.com/Tobias-2006/AutoPickup
+Repo: https://github.com/tobiaskirchmaier/AutoPickup
 License: gpl-3.0
 Categories: General,Miscellaneous
 Keywords: 
