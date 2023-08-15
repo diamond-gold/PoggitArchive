@@ -1,0 +1,167 @@
+<h1><a id="user-content-playerwarn" class="anchor" aria-hidden="true" href="#playerwarn"><span aria-hidden="true" class="octicon octicon-link"></span></a>PlayerWarn</h1>
+<p>A PocketMine-MP plugin that allows server administrators to issue warnings to players and keep track of their warning history.</p>
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ol>
+<li>
+<strong>Player Warning System</strong>: A comprehensive system for issuing warnings to players who violate server rules or exhibit inappropriate behavior.</li>
+<li>
+<strong>Warning Limits</strong>: Set configurable limits on the number of warnings a player can accumulate, triggering actions when limits are reached.</li>
+<li>
+<strong>Customizable Punishments</strong>: Define various types of punishments for players exceeding the warning limit, including kicking, banning, and IP banning.</li>
+<li>
+<strong>Delayed Punishments</strong>: Schedule punishments to activate after a specified delay, allowing time for players to correct behavior.</li>
+<li>
+<strong>Warning Expiration</strong>: Assign expiration dates to warnings; players are notified when warnings expire.</li>
+<li>
+<strong>Discord Integration</strong>: Integrate with Discord via webhooks to receive notifications for warning-related events, punishments, and more.</li>
+<li>
+<strong>Player Notifications</strong>: Players receive notifications upon joining, indicating their current warning count, new warnings since last login, and active punishments.</li>
+<li>
+<strong>Update Notifications</strong>: Optionally notify administrators of plugin updates to ensure the latest version is being used.</li>
+<li>
+<strong>Configurable Warning Messages</strong>: Customize warning messages sent to players upon receiving a warning or upon warning expiration.</li>
+<li>
+<strong>Configurable Punishment Messages</strong>: Define custom messages for each punishment type, displayed when punishments are applied.</li>
+<li>
+<strong>Pending Punishments</strong>: Queue pending punishments for offline players, ensuring they are applied upon login.</li>
+<li>
+<strong>Ease of Management</strong>: Use commands to issue warnings, remove warnings, clear all warnings for a player, and view warning history.</li>
+<li>
+<strong>Flexible Configuration</strong>: Highly customizable configuration options to adapt the warning and punishment system to specific server needs.</li>
+<li>
+<strong>Event Handling</strong>: Utilize event listeners to track player actions and trigger appropriate responses based on warnings and punishments.</li>
+<li>
+<strong>Comprehensive Logging</strong>: Log errors, warnings, and important events to maintain a record of significant activities related to warnings and punishments.</li>
+</ol>
+<h1><a id="user-content-default-config" class="anchor" aria-hidden="true" href="#default-config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default Config</h1>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> PlayerWarn Configuration</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Do not change this (Only for internal use)!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-c1">1.0</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Enable or disable the auto update checker notifier.</span>
+<span class="pl-ent">update_notifier</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Warning settings</span>
+<span class="pl-ent">warning</span>:
+  <span class="pl-c"><span class="pl-c">#</span> The `limit` option specifies the maximum number of warnings a player can receive before punishment is applied.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Set to a positive integer. Default value: 3</span>
+  <span class="pl-ent">limit</span>: <span class="pl-c1">3</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> The `delay` option specifies the delay time in seconds before applying the punishment.</span>
+  <span class="pl-c"><span class="pl-c">#</span> If the delay is greater than 0, a warning message will be sent to the player.</span>
+  <span class="pl-c"><span class="pl-c">#</span> If the delay is 0 or negative, the punishment will be applied immediately without delay.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Default value: 5</span>
+  <span class="pl-ent">delay</span>: <span class="pl-c1">5</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> The `message` option specifies the warning message template to be sent to the player.</span>
+  <span class="pl-c"><span class="pl-c">#</span> The `{delay}` placeholder will be replaced with the actual delay time in seconds.</span>
+  <span class="pl-c"><span class="pl-c">#</span> You can use color codes by using "§" or "&amp;" before the color code.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Default value: '&amp;cYou have reached the warning limit. You will be punished in {delay} seconds.'</span>
+  <span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">'</span>&amp;cYou have reached the warning limit. You will be punished in {delay} seconds.<span class="pl-pds">'</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Punishment settings</span>
+<span class="pl-ent">punishment</span>:
+  <span class="pl-c"><span class="pl-c">#</span> The `type` option specifies the type of punishment to apply when a player reaches the warning limit.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Valid options are "kick", "ban", "ban-ip", and "none".</span>
+  <span class="pl-c"><span class="pl-c">#</span> - "kick": Kicks the player from the server when the warning limit is reached.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - "ban": Bans the player from the server when the warning limit is reached.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - "ban-ip": Bans the player's IP address from the server when the warning limit is reached.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - "none": No punishment will be applied when the warning limit is reached.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Default value is "none".</span>
+  <span class="pl-ent">type</span>: <span class="pl-s">none</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Custom punishment messages for each type of punishment.</span>
+  <span class="pl-c"><span class="pl-c">#</span> These messages will be shown to the player when the punishment is applied.</span>
+  <span class="pl-c"><span class="pl-c">#</span> You can use color codes by using "§" or "&amp;" before the color code.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Note: Custom messages are only applicable when the `type` is not "none".</span>
+  <span class="pl-ent">messages</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Custom message for the "kick" punishment type.</span>
+    <span class="pl-ent">kick</span>: <span class="pl-s"><span class="pl-pds">'</span>&amp;cYou have been kicked for reaching the warning limit.<span class="pl-pds">'</span></span>
+
+    <span class="pl-c"><span class="pl-c">#</span> Custom message for the "ban" punishment type.</span>
+    <span class="pl-ent">ban</span>: <span class="pl-s"><span class="pl-pds">'</span>&amp;cYou have been banned for reaching the warning limit.<span class="pl-pds">'</span></span>
+    
+    <span class="pl-c"><span class="pl-c">#</span> Custom message for the "ban-ip" punishment type.</span>
+    <span class="pl-ent">ban-ip</span>: <span class="pl-s"><span class="pl-pds">'</span>&amp;cYour IP address has been banned for reaching the warning limit.<span class="pl-pds">'</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Discord integration settings</span>
+<span class="pl-ent">discord</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Enable or disable the Discord integration.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Set to true to enable the integration, or false to disable it.</span>
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">false</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> The Discord webhook URL to send messages to.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Replace 'YOUR_WEBHOOK_URL' with the actual URL of your Discord webhook.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Example: "https://discord.com/api/webhooks/123456789012345678/abcdeFGHiJKLmNOpqRSTUvwxYZ1234567890"</span>
+  <span class="pl-ent">webhook_url</span>: <span class="pl-s"><span class="pl-pds">"</span>YOUR_WEBHOOK_URL<span class="pl-pds">"</span></span></pre></div>
+<h1><a id="user-content-discord-integration" class="anchor" aria-hidden="true" href="#discord-integration"><span aria-hidden="true" class="octicon octicon-link"></span></a>Discord Integration</h1>
+<p>Use this awesome website to generate valid json with built-in preview: <a href="https://discohook.org/" rel="nofollow">Discohook</a>, also you can send webhooks to your server with it if you just wan't fancy embed in your channel without any automatization.</p>
+<ul>
+<li>
+<p>Webhook on Discord</p>
+<ol>
+<li>Go to <strong>Server settings</strong> -&gt; <strong>Webhooks</strong> -&gt; <strong>Create Webhook</strong>
+</li>
+<li>Setup name, avatar and the channel, where it will be posted. Copy <strong>Webhook URL</strong>. <strong>Do not share! Very dangerous!</strong>
+</li>
+<li>Click <strong>Save</strong> and then the <strong>Done</strong> button</li>
+</ol>
+</li>
+<li>
+<p>Enable Discord Integration</p>
+<ol>
+<li>Open the <strong>config.yml</strong> file.</li>
+<li>Find the <strong>discord</strong> section and change <strong>enabled</strong> to <strong>true</strong>.</li>
+<li>Paste the webhook URL under <strong>webhook_url</strong>.</li>
+</ol>
+</li>
+</ul>
+<h1><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<p>The PlayerWarn plugin provides the following commands for chunk clearing:</p>
+<ul>
+<li>
+<code>/warn &lt;player&gt; &lt;reason&gt; [duration]</code>: Command to issue a warning to a player.
+<ul>
+<li>Permission: <code>playerwarn.command.warn</code>
+</li>
+</ul>
+</li>
+<li>
+<code>/clearwarns &lt;player&gt;</code>: Command to clear all warnings for a player.
+<ul>
+<li>Permission: <code>playerwarn.command.warn</code>
+</li>
+</ul>
+</li>
+<li>
+<code>/warns [player]</code>: Command to view all warnings.
+<ul>
+<li>Permission: <code>playerwarn.command.warn</code>
+</li>
+</ul>
+</li>
+</ul>
+<h1><a id="user-content-permissions" class="anchor" aria-hidden="true" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<p>To control access to the commands provided by the PlayerWarn plugin, the following permissions are available:</p>
+<ul>
+<li>
+<code>playerwarn.command.warn</code>: Allows players to use the <code>/warn</code> command.</li>
+<li>
+<code>playerwarn.command.clearwarns</code>: Allows players to use the <code>/clearwarns</code> command.</li>
+<li>
+<code>playerwarn.command.warns</code>: Allows players to use the <code>/warns</code> command.</li>
+</ul>
+<p>Grant these permissions to specific player groups or individuals using a permissions management plugin of your choice.</p>
+<h1><a id="user-content-upcoming-features" class="anchor" aria-hidden="true" href="#upcoming-features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Upcoming Features</h1>
+<ul>
+<li>Currently none planned. You can contribute or suggest for new features.</li>
+</ul>
+<h1><a id="user-content-additional-notes" class="anchor" aria-hidden="true" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h1>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/AIPTU/PlayerWarn/issues">here</a>.</li>
+<li>We accept all contributions! If you want to contribute, please make a pull request in <a href="https://github.com/AIPTU/PlayerWarn/pulls">here</a>.</li>
+<li>Icons made from <a href="https://www.flaticon.com" rel="nofollow">www.flaticon.com</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7f6e43100b4f2d45","version":"2023.8.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>
