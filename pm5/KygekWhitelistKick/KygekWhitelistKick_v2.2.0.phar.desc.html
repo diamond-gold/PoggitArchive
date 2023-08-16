@@ -1,0 +1,78 @@
+<h1 align="center"><a id="user-content-kygekwhitelistkick" class="anchor" aria-hidden="true" href="#kygekwhitelistkick"><span aria-hidden="true" class="octicon octicon-link"></span></a>KygekWhitelistKick</h1>
+<p align="center">
+<a href="https://poggit.pmmp.io/p/KygekWhitelistKick" rel="nofollow"><img src="https://camo.githubusercontent.com/f814ed1abead19aca8ef47bea322dee8fcbb32470be630376973b129977e8640/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f4b7967656b57686974656c6973744b69636b3f7374796c653d666f722d7468652d6261646765" alt="poggit" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/KygekWhitelistKick?style=for-the-badge" style="max-width: 100%;"></a>
+<a href="https://github.com/thebigcrafter/KygekWhitelistKick#GPL-3.0-1"><img src="https://camo.githubusercontent.com/1eb64eadb707ef51895303837be6863fdc100b6021050a70c32c25d9f40e68ff/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f746865626967637261667465722f4b7967656b57686974656c6973744b69636b3f7374796c653d666f722d7468652d6261646765" alt="license" data-canonical-src="https://img.shields.io/github/license/thebigcrafter/KygekWhitelistKick?style=for-the-badge" style="max-width: 100%;"></a>
+<a href="https://discord.gg/PykBfE2TZ9" rel="nofollow"><img src="https://camo.githubusercontent.com/83cecfc329d944bad6e2bce1e644e53a7cabe5c76f47a2ff5e2b0bd75d7e5dbc/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f313038373732393537373030343132323131323f636f6c6f723d373238394441266c6162656c3d646973636f7264266c6f676f3d646973636f7264267374796c653d666f722d7468652d6261646765" alt="discord" data-canonical-src="https://img.shields.io/discord/1087729577004122112?color=7289DA&amp;label=discord&amp;logo=discord&amp;style=for-the-badge" style="max-width: 100%;"></a>
+</p>
+<h1><a id="user-content--about" class="anchor" aria-hidden="true" href="#-about"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="book" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png">📖</g-emoji> About</h1>
+<p>This plugin will kick players that are not OP or whitelisted in white-list.txt when server whitelist turned on (/whitelist on). This plugin will be useful if you often need to whitelist your server and you want all not whitelisted players to be kicked automatically. You can change the kick reason and to enable/disable kick via command or config.</p>
+<h1><a id="user-content--features" class="anchor" aria-hidden="true" href="#-features"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="jigsaw" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f9e9.png">🧩</g-emoji> Features</h1>
+<ul>
+<li>Kicks not whitelisted players automatically</li>
+<li>Config file can be reset</li>
+<li>Supports <code>&amp;</code> as formatting codes</li>
+<li>Enable or disable plugin with command</li>
+<li>Kick reason can be changed using command</li>
+<li>Command and form mode</li>
+<li>Automatic plugin update checker on server startup</li>
+<li>Missing configuration file detection</li>
+</ul>
+<h1><a id="user-content-️-installation" class="anchor" aria-hidden="true" href="#️-installation"><span aria-hidden="true" class="octicon octicon-link"></span></a>⬇️ Installation</h1>
+<ol>
+<li>Download the latest version (It is recommended to always download the latest version for the best experience, except you're having compatibility issues).</li>
+<li>Place the <code>KygekWhitelistKick.phar</code> file into the <code>plugins</code> folder.</li>
+<li>Restart the server.</li>
+<li>Done!</li>
+</ol>
+<h1><a id="user-content--commands--permissions" class="anchor" aria-hidden="true" href="#-commands--permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="scroll" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dc.png">📜</g-emoji> Commands &amp; Permissions</h1>
+<p><strong>Note:</strong> KygekWhitelistKick uses commands by default. To switch to form mode, set <code>mode</code> in <code>config.yml</code> to <code>form</code>. After switching, execute <code>/whitelistkick</code> to open KygekWhitelistKick form.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/whitelistkick help</code></td>
+<td>Display KygekWhitelistKick subcommands</td>
+<td><code>kygekwhitelistkick.cmd.help</code></td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>/whitelistkick off</code></td>
+<td>Disable automatic kick on whitelist enabled</td>
+<td><code>kygekwhitelistkick.cmd.off</code></td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>/whitelistkick on</code></td>
+<td>Enable automatic kick on whitelist enabled</td>
+<td><code>kygekwhitelistkick.cmd.on</code></td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>/whitelistkick set</code></td>
+<td>Change whitelist kick reason</td>
+<td><code>kygekwhitelistkick.cmd.set</code></td>
+<td>op</td>
+</tr>
+</tbody>
+</table>
+<p>💡 Tips:</p>
+<ul>
+<li>Use <code>kygekwhitelistkick.cmd</code> to give players permission to all subcommands. Typing <code>/whitelistkick</code> without args or args other than above will show KygekWhitelistKick help (Player needs to have <code>kygekwhitelistkick.cmd.help</code> permission).</li>
+<li>Command alias: <code>/wlkick</code>
+</li>
+<li>Use <code>-</code> before each permission to blacklist the command(s) permission to groups/users in PurePerms (e.g. adding <code>-kygekwhitelistkick.cmd.set</code> will blacklist the <code>/whitelistkick set</code> command to groups/users).</li>
+</ul>
+<h1><a id="user-content--other-versions" class="anchor" aria-hidden="true" href="#-other-versions"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji class="g-emoji" alias="ship" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f6a2.png">🚢</g-emoji> Other Versions</h1>
+<ul>
+<li><a href="https://github.com/KygekTeam/KygekWhitelistKick-Nukkit">Nukkit</a></li>
+</ul>
+<h1><a id="user-content-️-license" class="anchor" aria-hidden="true" href="#️-license"><span aria-hidden="true" class="octicon octicon-link"></span></a>⚖️ License</h1>
+<p>Licensed under the <a href="https://github.com/thebigcrafter/KygekWhitelistKick#GPL-3.0-1">GNU General Public License v3.0</a> license.</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7f7680e1f8c63ad5","version":"2023.8.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>
