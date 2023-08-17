@@ -1,13 +1,13 @@
 # LevelLimiter
-<img src="https://raw.githubusercontent.com/MCPEAbdu77/LevelLimiter/db3614e65c29e52885dec55762a5d195502da6b7/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/MCPEAbdu77/LevelLimiter/ea22abff4a527be333eef3d97500815bd48fabfa/icon.png" width="128" height="128" />
 
 ## A PocketMine-MP plugin which let's you whitelist/blacklist specific commands on specific worlds.
 ```properties
-Version: 2.1.2
+Version: 2.1.3
     API: 4.0.0
-    Updated: 07-08-2022 17:34:20 UTC
+    Updated: 16-08-2023 11:44:23 UTC
 Repo: https://github.com/MCPEAbdu77/LevelLimiter
-License: apache-2.0
+License: Apache-2.0
 Categories: Chat-Related,Miscellaneous,Mechanics,Admin Tools
 Keywords: Block,Blocker,blocking,cmd,command,CommandLimiter,level,LevelLimiter,limiter,world
 ```

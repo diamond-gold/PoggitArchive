@@ -1,13 +1,13 @@
 # MineParty
-<img src="https://raw.githubusercontent.com/MCPEAbdu77/MineParty/35d382c2bd3ab7aed53aea6cb6a3e4e5c0f6158e/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/MCPEAbdu77/MineParty/45e6c2f5e3a04f76b1c6b8418d16763e816bf2b6/icon.png" width="128" height="128" />
 
 ## Minigame for prison servers.
 ```properties
-Version: 2.1.0
+Version: 2.2.0
     API: 4.0.0
-    Updated: 25-07-2022 17:02:47 UTC
+    Updated: 16-08-2023 11:40:19 UTC
 Repo: https://github.com/MCPEAbdu77/MineParty
-License: apache-2.0
+License: Apache-2.0
 Categories: Minigame,Miscellaneous,Fun,Economy
 Keywords: fun,mine,minigame,mining,party,prison,rewards
 ```

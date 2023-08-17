@@ -1,0 +1,93 @@
+<p><a href="https://poggit.pmmp.io/p/ServerTools" rel="nofollow"><img src="https://camo.githubusercontent.com/24a04f161f8396451c1466e38cd2fa7f4d368ec2553c7afcd0a691e41ac3ba8d/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f536572766572546f6f6c73" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/ServerTools" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/ServerTools" rel="nofollow"><img src="https://camo.githubusercontent.com/85c11fbcaafebc9f68d1c86366ed510abdb32e3fe24fffbdaecf8e18cc4657b2/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f536572766572546f6f6c73" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/ServerTools" style="max-width: 100%;"></a>
+<a href="https://discord.gg/Uf6U78g" rel="nofollow"><img src="https://camo.githubusercontent.com/f6a38492f173efeab9116ad7739fe9aa0cba6424cda6b1919dc5ffb7cb76bb26/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3632303531393031373134383537393834312e7376673f6c6162656c3d266c6f676f3d646973636f7264266c6f676f436f6c6f723d66666666666626636f6c6f723d373338394438266c6162656c436f6c6f723d364137454332" alt="Discord" data-canonical-src="https://img.shields.io/discord/620519017148579841.svg?label=&amp;logo=discord&amp;logoColor=ffffff&amp;color=7389D8&amp;labelColor=6A7EC2" style="max-width: 100%;"></a></p>
+<h1><a id="user-content-servertools" class="anchor" aria-hidden="true" href="#servertools"><span aria-hidden="true" class="octicon octicon-link"></span></a>ServerTools</h1>
+<p>ServerTools is PocketMine-MP plugin containing a set of tools that allows you to manage your server directly from the game!</p>
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>File Explorer</li>
+<li>Cloning</li>
+<li>Plugin Manager</li>
+<li>Poggit Plugin Downloader</li>
+<li>Restart Server</li>
+</ul>
+<p><strong>Menu UI example:</strong></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/matcracker/ServerTools/blob/master/.github/README_IMAGES/Form_Main.png"><img src="https://github.com/matcracker/ServerTools/raw/master/.github/README_IMAGES/Form_Main.png" alt="Main_Menu" style="max-width: 100%;"></a></p>
+<h2><a id="user-content-commands" class="anchor" aria-hidden="true" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<ul>
+<li>
+<strong>/servertools</strong> (or alias: <strong>/st</strong>) - <em>The main command of plugin</em> (<strong>Permission (default OP)</strong> <em>st.command.servertools</em>)</li>
+</ul>
+<h2><a id="user-content-file-explorer" class="anchor" aria-hidden="true" href="#file-explorer"><span aria-hidden="true" class="octicon octicon-link"></span></a>File Explorer</h2>
+<p><strong>Permission (default OP):</strong> <em>st.ui.file-explorer</em><br>
+<strong>Permission to create/edit files and folders (default false):</strong> <em>st.ui.file-explorer.write</em></p>
+<p>It allows to:</p>
+<ul>
+<li>Explore your server files and folder</li>
+<li>Read your files <strong>(max file size is ~10.25 kB)</strong>
+</li>
+<li>Create, rename, delete and edit files and folders <strong>(requires write permission)</strong>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/matcracker/ServerTools/blob/master/.github/README_IMAGES/Form_FileExplorer.png"><img src="https://github.com/matcracker/ServerTools/raw/master/.github/README_IMAGES/Form_FileExplorer.png" alt="FileExplorer" style="max-width: 100%;"></a></p>
+<h3><a id="user-content-reading-file-example" class="anchor" aria-hidden="true" href="#reading-file-example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reading file example</h3>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/matcracker/ImageContainer/blob/master/ServerTools/Form_FE_ReadFile.gif"><img src="https://github.com/matcracker/ImageContainer/raw/master/ServerTools/Form_FE_ReadFile.gif" alt="ReadFile" style="max-width: 100%;"></a></p>
+<h3><a id="user-content-editing-file-example" class="anchor" aria-hidden="true" href="#editing-file-example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Editing file example</h3>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/matcracker/ImageContainer/blob/master/ServerTools/Form_FE_WriteFile.gif"><img src="https://github.com/matcracker/ImageContainer/raw/master/ServerTools/Form_FE_WriteFile.gif" alt="EditFile" style="max-width: 100%;"></a></p>
+<h2><a id="user-content-cloning" class="anchor" aria-hidden="true" href="#cloning"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cloning</h2>
+<p><strong>Permission (default false):</strong> <em>st.ui.clone</em></p>
+<p>It allows to clone your server using <strong>FTP</strong> (also available with SSL) or <strong>SFTP</strong> protocols.</p>
+<h3><a id="user-content-requirements" class="anchor" aria-hidden="true" href="#requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h3>
+<ul>
+<li>
+<strong>FTP</strong>: you need to have installed on your server the <strong><em>"ftp"</em> PHP extension</strong>.</li>
+<li>
+<strong>SFTP</strong>: you need to have installed on your server the <strong><em>"openssl"</em> and <em>"ssh2 (libssh2)"</em> PHP extensions</strong>.</li>
+</ul>
+<h3><a id="user-content-steps" class="anchor" aria-hidden="true" href="#steps"><span aria-hidden="true" class="octicon octicon-link"></span></a>Steps</h3>
+<ol>
+<li>
+<p>Select the transfer mode.<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/matcracker/ServerTools/blob/master/.github/README_IMAGES/Form_Clone_Transfer.png"><img src="https://github.com/matcracker/ServerTools/raw/master/.github/README_IMAGES/Form_Clone_Transfer.png" alt="TransferMode" style="max-width: 100%;"></a></p>
+</li>
+<li>
+<p>Compile the information to login to your FTP/SFTP server.<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/matcracker/ServerTools/blob/master/.github/README_IMAGES/Form_Clone_SFTP.png"><img src="https://github.com/matcracker/ServerTools/raw/master/.github/README_IMAGES/Form_Clone_SFTP.png" alt="FTP_Data" style="max-width: 100%;"></a></p>
+</li>
+<li>
+<p>Choose, if you want, some server folders/files to exclude from your clonation.<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/matcracker/ServerTools/blob/master/.github/README_IMAGES/Form_Clone_ExcludeFiles.png"><img src="https://github.com/matcracker/ServerTools/raw/master/.github/README_IMAGES/Form_Clone_ExcludeFiles.png" alt="ExcludeFiles" style="max-width: 100%;"></a></p>
+</li>
+<li>
+<p>Wait until the process is finished.<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/matcracker/ServerTools/blob/master/.github/README_IMAGES/Form_Clone_Progress.png"><img src="https://github.com/matcracker/ServerTools/raw/master/.github/README_IMAGES/Form_Clone_Progress.png" alt="Progress" style="max-width: 100%;"></a></p>
+</li>
+</ol>
+<h2><a id="user-content-plugin-manager" class="anchor" aria-hidden="true" href="#plugin-manager"><span aria-hidden="true" class="octicon octicon-link"></span></a>Plugin Manager</h2>
+<p><strong>Permission (default false):</strong> <em>st.ui.plugin-manager</em></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/matcracker/ServerTools/blob/master/.github/README_IMAGES/Form_PluginManager.png"><img src="https://github.com/matcracker/ServerTools/raw/master/.github/README_IMAGES/Form_PluginManager.png" alt="PluginManager" style="max-width: 100%;"></a></p>
+<p>It allows to:</p>
+<ul>
+<li>
+<p>Enable/Disable plugins<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/matcracker/ServerTools/blob/master/.github/README_IMAGES/Form_PluginManager_EnDisPlugins.png"><img src="https://github.com/matcracker/ServerTools/raw/master/.github/README_IMAGES/Form_PluginManager_EnDisPlugins.png" alt="EnableDisablePlugin" style="max-width: 100%;"></a></p>
+</li>
+<li>
+<p>Load a plugin from file (.phar) <strong>(Removed from v0.5.0)</strong><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/matcracker/ServerTools/blob/master/.github/README_IMAGES/Form_PluginManager_LoadPlugin.png"><img src="https://github.com/matcracker/ServerTools/raw/master/.github/README_IMAGES/Form_PluginManager_LoadPlugin.png" alt="LoadPharPlugin" style="max-width: 100%;"></a></p>
+</li>
+</ul>
+<h2><a id="user-content-poggit-plugin-downloader" class="anchor" aria-hidden="true" href="#poggit-plugin-downloader"><span aria-hidden="true" class="octicon octicon-link"></span></a>Poggit Plugin Downloader</h2>
+<p><strong>Permission (default false):</strong> <em>st.ui.poggit-downloader</em></p>
+<p>It allows to search and download to your server a plugin from poggit website.</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/matcracker/ImageContainer/blob/master/ServerTools/Form_PoggitDownloader.gif"><img src="https://github.com/matcracker/ImageContainer/raw/master/ServerTools/Form_PoggitDownloader.gif" alt="PoggitDownloader" style="max-width: 100%;"></a></p>
+<h2><a id="user-content-restart-server" class="anchor" aria-hidden="true" href="#restart-server"><span aria-hidden="true" class="octicon octicon-link"></span></a>Restart Server</h2>
+<p><strong>Permission (default OP):</strong> <em>st.ui.restart</em></p>
+<p>It simply restarts your server.</p>
+<h2><a id="user-content-faq" class="anchor" aria-hidden="true" href="#faq"><span aria-hidden="true" class="octicon octicon-link"></span></a>F.A.Q.</h2>
+<ol>
+<li><strong>I get the message "You do not have permission to use this function" or similar, why?</strong></li>
+</ol>
+<ul>
+<li>Some functions of the plugin are very dangerous if given to all the operators of your server, because they could cause irreparable damage. To avoid this, the plugin disables the use of these functions and to be enabled you need to use a third-party plugin for managing permissions (e.g. <a href="https://poggit.pmmp.io/p/PurePerms" rel="nofollow">PurePerms</a> or similar) and add to yourself or whoever you trust the permissions of the various features of you need. The permission of each feature can be found in the respective chapter.</li>
+</ul>

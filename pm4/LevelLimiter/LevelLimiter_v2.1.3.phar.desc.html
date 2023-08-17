@@ -1,0 +1,40 @@
+<h1><a id="user-content-overview" class="anchor" aria-hidden="true" href="#overview"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h1>
+<p>A PocketMine-MP plugin which let's you whitelist/blacklist specific commands on specific worlds.
+This is a very flexible plugin as you can easily give/restrict groups/users via permissions.</p>
+<h1><a id="user-content-configyml" class="anchor" aria-hidden="true" href="#configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config.yml</h1>
+<p>Set up the commands and the whitelisted/blacklisted world(s) on which the specific command will work/blocked on.</p>
+<ul>
+<li>command1:
+<ul>
+<li>"world1"</li>
+<li>"world2"</li>
+</ul>
+</li>
+<li>command2:
+<ul>
+<li>"world3"</li>
+</ul>
+</li>
+</ul>
+<h1><a id="user-content-permissions" class="anchor" aria-hidden="true" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<p>Operators will be able to bypass this restriction by default. Users with <code>levellimiter.bypass</code> can bypass this restriction.
+If you want to grant access to a group/user to bypass the restriction on a specific world, add <code>levellimiter.bypass.&lt;world&gt;</code>.</p>
+<p><code>&lt;world&gt;</code> denotes the world name.</p>
+<p>Example:</p>
+<ul>
+<li>
+<code>levellimiter.bypass.flat</code> grants the user/group to bypass restrictions on <code>flat</code> world.</li>
+</ul>
+<p>If you want to grant access to a group/user a specific command on a specific world, add <code>levellimiter.bypass.&lt;world&gt;.&lt;command&gt;</code>.
+Example:</p>
+<ul>
+<li>
+<code>levellimiter.bypass.flat.pay</code> grants the user/group to use the <code>/pay</code> command on <code>flat</code> world.</li>
+</ul>
+<h1><a id="user-content-contact" class="anchor" aria-hidden="true" href="#contact"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h1>
+<ul>
+<li>Discord: MCA7#1245</li>
+<li>Server: <a href="https://discord.gg/RPSz2RgPPs" rel="nofollow">https://discord.gg/RPSz2RgPPs</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7f7ebdb87961968e","version":"2023.8.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

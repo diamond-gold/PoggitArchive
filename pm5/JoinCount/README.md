@@ -6,7 +6,7 @@
 Version: 2.0.0
     API: 5.0.0
     Updated: 15-08-2023 20:56:20 UTC
-Repo: https://github.com/antbag-dev/JoinCount
+Repo: https://github.com/antbag-pm-pl/JoinCount
 License: GPL-3.0+
 Categories: Fun,Minigame,Mechanics
 Keywords: 
