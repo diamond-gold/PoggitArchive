@@ -6,7 +6,7 @@
 Version: 1.0.1
     API: 5.0.0
     Updated: 09-08-2023 20:10:16 UTC
-Repo: https://github.com/antbag-dev/ChatGames
+Repo: https://github.com/antbag-pm-pl/ChatGames
 License: GPL-3.0-or-later
 Categories: General,Miscellaneous,Fun,Minigame,Economy,Chat-Related
 Keywords: 
