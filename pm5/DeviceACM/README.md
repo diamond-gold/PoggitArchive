@@ -1,11 +1,11 @@
 # DeviceACM
-<img src="https://raw.githubusercontent.com/fernanACM/DeviceACM/0c5bac1e5e2a1cfedae8d359c3ecd68e5b6296bf/icon-deviceacm.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/fernanACM/DeviceACM/449bd6195fff116b24aba289f2371798564d0590/icon-deviceacm.png" width="128" height="128" />
 
-## DeviceACM: Simple tag to see your health, hunger, connection and device you use.
+## Simple tag to see your health, hunger, cps, connection, faction and device you use.
 ```properties
-Version: 3.0.0
-    API: 5.0.0
-    Updated: 04-06-2023 13:14:12 UTC
+Version: 4.0.0
+    API: 5.3.0
+    Updated: 18-08-2023 11:54:34 UTC
 Repo: https://github.com/fernanACM/DeviceACM
 License: GPL-3.0
 Categories: General,Vanilla Mechanics,API plugins,Educational,Fun,Informational

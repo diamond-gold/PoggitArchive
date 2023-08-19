@@ -1,0 +1,86 @@
+<p align="center">
+<a target="_blank" rel="noopener noreferrer" href="./images/KygekTagsShop.png"><img src="./images/KygekTagsShop.png" style="max-width: 100%;"></a>
+</p>
+<p align="center">
+<a href="https://poggit.pmmp.io/p/KygekTagsShop" rel="nofollow"><img src="https://camo.githubusercontent.com/5e19b492aa8b3bcf2a3ec8833a31df7026abb9e0f176c1d207f693f4a152fd3d/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f6f682d6d792d706d6d703f7374796c653d666f722d7468652d6261646765" alt="poggit" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/oh-my-pmmp?style=for-the-badge" style="max-width: 100%;"></a>
+<a href="https://github.com/thebigcrafter/KygekTagsShop#GPL-3.0-1"><img src="https://camo.githubusercontent.com/5b9f14e7ccf3845931d2d286ec0161136c3b88b6a1cb677ee01a5d7611316556/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f746865626967637261667465722f4b7967656b5461677353686f703f7374796c653d666f722d7468652d6261646765" alt="license" data-canonical-src="https://img.shields.io/github/license/thebigcrafter/KygekTagsShop?style=for-the-badge" style="max-width: 100%;"></a>
+<a href="https://discord.gg/PykBfE2TZ9" rel="nofollow"><img src="https://camo.githubusercontent.com/83cecfc329d944bad6e2bce1e644e53a7cabe5c76f47a2ff5e2b0bd75d7e5dbc/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f313038373732393537373030343132323131323f636f6c6f723d373238394441266c6162656c3d646973636f7264266c6f676f3d646973636f7264267374796c653d666f722d7468652d6261646765" alt="discord" data-canonical-src="https://img.shields.io/discord/1087729577004122112?color=7289DA&amp;label=discord&amp;logo=discord&amp;style=for-the-badge" style="max-width: 100%;"></a>
+</p>
+<h1><a id="user-content--about" class="anchor" aria-hidden="true" href="#-about"><span aria-hidden="true" class="octicon octicon-link"></span></a>📖 About</h1>
+<p><strong>KygekTagsShop</strong> allows players to use tags that they can show to other players by using this plugin.</p>
+<h1><a id="user-content--features" class="anchor" aria-hidden="true" href="#-features"><span aria-hidden="true" class="octicon octicon-link"></span></a>🧩 Features</h1>
+<ul>
+<li>EconomyAPI support for tags prices
+<ul>
+<li>Shows warning if EconomyAPI plugin is not installed or enabled (Can be disabled in <code>config.yml</code>)</li>
+</ul>
+</li>
+<li>Compatible with PureChat</li>
+<li>Unlimited tags</li>
+<li>Forms to buy and sell tags</li>
+<li>Highly customizeable forms
+<ul>
+<li>Supports <code>{player}</code> to display the player name in all forms</li>
+<li>Supports <code>&amp;</code> as formatting codes in all forms</li>
+<li>Supports <code>\n</code> to break new line in all forms</li>
+<li>Supports <code>{tagname}</code> to display tag name and <code>{tagprice}</code> to display tag price in some forms</li>
+</ul>
+</li>
+<li>Command descrption can be changed</li>
+<li>Customizeable message prefix</li>
+<li>Supports command aliases</li>
+<li>Enable/disable return to previous form when the (X) button is pressed</li>
+<li>Automatic plugin updates checker</li>
+<li>Missing config file detection</li>
+<li>Empty tags detection</li>
+<li>Configurable player display name format for tag placement</li>
+<li>Multiple languages support (English, Indonesian, Spanish, German, French, Romanian, Turkish, Vietnamese)</li>
+<li>API for developers (see <strong>For Developers</strong> tab)</li>
+<li>Events for developers (<code>TagBuyEvent</code> and <code>TagSellEvent</code>)</li>
+</ul>
+<h1><a id="user-content-️-installation" class="anchor" aria-hidden="true" href="#️-installation"><span aria-hidden="true" class="octicon octicon-link"></span></a>⬇️ Installation</h1>
+<ul>
+<li>Download the latest version from Poggit Releases (It is recommended to always download the latest version for the best experience, except you're having compatibility issues).</li>
+<li>Place the KygekTagsShop.phar file into the plugins folder.</li>
+<li>Restart or start your server.</li>
+<li>Done!</li>
+</ul>
+<blockquote>
+<p>If you want to download the latest development build, which may contain the latest features that are currently in development, head over to Poggit CI and download the latest build. Please note that development builds may be unstable because it may contain untested issues or bugs.</p>
+</blockquote>
+<h1><a id="user-content--commands--permissions" class="anchor" aria-hidden="true" href="#-commands--permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>📜 Commands &amp; Permissions</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Default Description</th>
+<th>Permission</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/tagsshop</code></td>
+<td>Allows player to use KygekTagsShop to buy and sell tags</td>
+<td><code>kygektagsshop.tags</code></td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>💡 Tips:</strong></p>
+<ul>
+<li>Command description can be changed in <code>config.yml</code>. You can also add command aliases in <code>config.yml</code>.</li>
+<li>Use <code>-kygektagsshop.tags</code> to blacklist the <code>/tagsshop</code> command permission to groups/users in PurePerms.</li>
+</ul>
+<h1><a id="user-content-️-for-developers" class="anchor" aria-hidden="true" href="#️-for-developers"><span aria-hidden="true" class="octicon octicon-link"></span></a>⚙️ For Developers</h1>
+<p>We provide API for developers to write addons/plugins that depends with KygekTagsShop.
+To access KygekTagsShop API class, you can use Kygekraqmak\KygekTagsShop\TagsShop::getAPI().</p>
+<p>Example:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>tags</span> = <span class="pl-v">Kygekraqmak</span>\<span class="pl-v">KygekTagsShop</span>\<span class="pl-v">TagsShop</span>::<span class="pl-en">getAPI</span>()-&gt;<span class="pl-en">getAllTags</span>(); <span class="pl-c">// Get all tags from KygekTagsShop</span></pre></div>
+<p>API code can be seen here.
+Please regularly check the changelogs for any changes in the API in future versions.</p>
+<h1><a id="user-content--contributing" class="anchor" aria-hidden="true" href="#-contributing"><span aria-hidden="true" class="octicon octicon-link"></span></a>✨ Contributing</h1>
+<p>Help us by contributing or translating KygekTagsShop plugin. To add translation, fork the KygekTagsShop plugin repo and copy the <code>en.yml</code> file inside <code>resources/lang</code> directory to the language code.</p>
+<p>Don't forget to create a <a href="https://github.com/thebigcrafter/KygekTagsShop/pulls">pull request</a>!</p>
+<h1><a id="user-content-️-license" class="anchor" aria-hidden="true" href="#️-license"><span aria-hidden="true" class="octicon octicon-link"></span></a>⚖️ License</h1>
+<p>Licensed under the <a href="https://github.com/thebigcrafter/KygekTagsShop#GPL-3.0-1">GNU General Public License v3.0</a> license.</p>
