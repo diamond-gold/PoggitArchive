@@ -1,0 +1,191 @@
+<h1><a id="user-content-blockreplacer" class="anchor" aria-hidden="true" href="#blockreplacer"><span aria-hidden="true" class="octicon octicon-link"></span></a>BlockReplacer</h1>
+<p><a href="https://poggit.pmmp.io/p/BlockReplacer" rel="nofollow"><img src="https://camo.githubusercontent.com/553a9e276b48ee153607a9cc025b56e0e35ad40d3973dc638ed38d860cc8bcb2/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f426c6f636b5265706c61636572" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/BlockReplacer" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/BlockReplacer" rel="nofollow"><img src="https://camo.githubusercontent.com/7ac145e935dc271197f0d7ee3023aef36134c4de7cb6c3a11438a825b6c23119/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f426c6f636b5265706c61636572" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/BlockReplacer" style="max-width: 100%;"></a></p>
+<p>A PocketMine-MP plugin that replaces a block with another block at a predetermined time.</p>
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>
+<strong>Automatic Update Checker</strong>: The plugin automatically checks for updates, ensuring that you have the latest version with new features and bug fixes.</li>
+<li>
+<strong>Permission Bypass</strong>: Grant specific users the <code>blockreplacer.bypass</code> permission to allow them to bypass block replacement and interact with blocks without triggering the replacement process.</li>
+<li>
+<strong>Automatic Item Pickup Support</strong>: Enable automatic pickup of items dropped after block replacement, making it convenient for players to collect them.</li>
+<li>
+<strong>Custom Block Replacement</strong>: Define rules for replacing specific blocks, allowing you to create unique environmental transformations and dynamic gameplay scenarios.</li>
+<li>
+<strong>Custom Drop Block</strong>: Specify custom blocks to be dropped when certain blocks are broken, adding variety and alternative interactions. You can even include custom drop experience blocks, providing players with experience orbs upon block destruction.</li>
+<li>
+<strong>World Blacklist and Whitelist Support</strong>: Control block replacement in specific worlds using blacklists and whitelists, providing tailored gameplay experiences.</li>
+<li>
+<strong>Sound Customization Support</strong>: Customize the sounds associated with block replacement, enhancing immersion and creating a unique audio experience.</li>
+<li>
+<strong>Particle Customization Support</strong>: Customize particle effects during block replacement, adding visual flair and enhancing the overall aesthetic appeal.</li>
+<li>
+<strong>Block Replacement during Server Stop</strong>: Block replacement continues when the server is stopped, and changes are applied upon server restart.</li>
+<li>
+<strong>Scheduled Block Replacement</strong>: Schedule block replacement at specific times or intervals, automating changes to the game environment.</li>
+</ul>
+<h1><a id="user-content-permissions" class="anchor" aria-hidden="true" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h1>
+<ul>
+<li>
+<code>blockreplacer.bypass</code>: Grants users the ability to bypass block replacement, allowing them to interact with blocks without triggering the replacement process.</li>
+</ul>
+<h1><a id="user-content-default-config" class="anchor" aria-hidden="true" href="#default-config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default Config</h1>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> BlockReplacer Configuration</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Permission defaults for the "blockreplacer.bypass" permission.</span>
+<span class="pl-c"><span class="pl-c">#</span> This permission allows players to bypass block replacement.</span>
+<span class="pl-c"><span class="pl-c">#</span> Valid values:</span>
+<span class="pl-c"><span class="pl-c">#</span>   - op: All server operators (ops) are assigned this permission by default.</span>
+<span class="pl-c"><span class="pl-c">#</span>   - all: Everyone is assigned this permission by default.</span>
+<span class="pl-c"><span class="pl-c">#</span>   - none: No one is assigned this permission by default.</span>
+<span class="pl-ent">permission</span>:
+  <span class="pl-ent">defaults</span>: <span class="pl-s">op</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Automatic Item Pickup</span>
+<span class="pl-c"><span class="pl-c">#</span> Dropped items will be automatically added to the player's inventory.</span>
+<span class="pl-c"><span class="pl-c">#</span> If the player's inventory is full, the item will be dropped near the player.</span>
+<span class="pl-c"><span class="pl-c">#</span> This also includes experience points.</span>
+<span class="pl-ent">auto-pickup</span>:
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Block Replacement Rules</span>
+<span class="pl-ent">blocks</span>:
+  <span class="pl-c"><span class="pl-c">#</span> The default block used for replacement.</span>
+  <span class="pl-ent">default-replace</span>: <span class="pl-s">air</span>
+  <span class="pl-c"><span class="pl-c">#</span> The default time (in seconds) before a block is replaced with the previous block.</span>
+  <span class="pl-ent">default-time</span>: <span class="pl-c1">60</span>
+  <span class="pl-c"><span class="pl-c">#</span> List of block replacement rules.</span>
+  <span class="pl-c"><span class="pl-c">#</span> This should also always be wrapped in quotes to ensure it is parsed correctly.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Format: "block_from=block_to=time".</span>
+  <span class="pl-c"><span class="pl-c">#</span> If "block_to" is not set, it will be replaced with the default replacement block.</span>
+  <span class="pl-c"><span class="pl-c">#</span> If "time" is not set, it will be replaced with the default replacement time.</span>
+  <span class="pl-ent">list</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Example 1: Replace cobblestone with stone within 5 seconds, with drops and experience.</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">cobblestone=stone=5</span><span class="pl-pds">"</span></span>:
+      <span class="pl-ent">drops</span>:
+        - <span class="pl-ent">item</span>: <span class="pl-s">stone</span>
+          <span class="pl-ent">amount</span>: <span class="pl-c1">1-2</span>  <span class="pl-c"><span class="pl-c">#</span> Amount range: from 1 to 2</span>
+          <span class="pl-ent">chance</span>: <span class="pl-c1">50-100</span>  <span class="pl-c"><span class="pl-c">#</span> Chance range: from 50% to 100%</span>
+      <span class="pl-ent">experience</span>:
+        <span class="pl-ent">amount</span>: <span class="pl-c1">5</span>  <span class="pl-c"><span class="pl-c">#</span> Fixed experience amount</span>
+        <span class="pl-ent">chance</span>: <span class="pl-c1">100</span>  <span class="pl-c"><span class="pl-c">#</span> Fixed chance</span>
+
+    <span class="pl-c"><span class="pl-c">#</span> Example 2: Replace oak log with spruce log within 10 seconds, no drops, and double experience.</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">oak_log=spruce_log=10</span><span class="pl-pds">"</span></span>:
+      <span class="pl-ent">drops</span>: <span class="pl-s">[]</span>
+      <span class="pl-ent">experience</span>:
+        <span class="pl-ent">amount</span>: <span class="pl-c1">2</span>  <span class="pl-c"><span class="pl-c">#</span> Double the default experience amount</span>
+        <span class="pl-ent">chance</span>: <span class="pl-c1">100</span>  <span class="pl-c"><span class="pl-c">#</span> Fixed chance</span>
+
+    <span class="pl-c"><span class="pl-c">#</span> Example 3: Replace diamond ore with emerald ore, follows default replacement time, with drops and experience.</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">diamond_ore=emerald_ore</span><span class="pl-pds">"</span></span>:
+      <span class="pl-ent">drops</span>:
+        - <span class="pl-ent">item</span>: <span class="pl-s">emerald</span>
+          <span class="pl-ent">amount</span>: <span class="pl-c1">1-2</span>  <span class="pl-c"><span class="pl-c">#</span> Amount range: from 1 to 2</span>
+          <span class="pl-ent">chance</span>: <span class="pl-c1">50-100</span>  <span class="pl-c"><span class="pl-c">#</span> Chance range: from 50% to 100%</span>
+      <span class="pl-ent">experience</span>:
+        <span class="pl-ent">amount</span>: <span class="pl-c1">10</span>  <span class="pl-c"><span class="pl-c">#</span> Fixed experience amount</span>
+        <span class="pl-ent">chance</span>: <span class="pl-c1">50</span>  <span class="pl-c"><span class="pl-c">#</span> Fixed chance</span>
+
+    <span class="pl-c"><span class="pl-c">#</span> Example 4: Replace redstone ore with glowstone, within 8 seconds, with drops and quadruple experience.</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">redstone_ore=glowstone=8</span><span class="pl-pds">"</span></span>:
+      <span class="pl-ent">drops</span>:
+        - <span class="pl-ent">item</span>: <span class="pl-s">glowstone_dust</span>
+          <span class="pl-ent">amount</span>: <span class="pl-c1">4-6</span>  <span class="pl-c"><span class="pl-c">#</span> Amount range: from 4 to 6</span>
+          <span class="pl-ent">chance</span>: <span class="pl-c1">80-100</span>  <span class="pl-c"><span class="pl-c">#</span> Chance range: from 80% to 100%</span>
+      <span class="pl-ent">experience</span>:
+        <span class="pl-ent">amount</span>: <span class="pl-c1">4</span>  <span class="pl-c"><span class="pl-c">#</span> Quadruple the default experience amount</span>
+        <span class="pl-ent">chance</span>: <span class="pl-c1">100</span>  <span class="pl-c"><span class="pl-c">#</span> Fixed chance</span>
+
+    <span class="pl-c"><span class="pl-c">#</span> Example 5: Replace oak wood with acacia wood within 15 seconds, no drops, and custom experience.</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">oak_wood=acacia_wood=15</span><span class="pl-pds">"</span></span>:
+     <span class="pl-ent">drops</span>: <span class="pl-s">[]</span>
+     <span class="pl-ent">experience</span>:
+       <span class="pl-ent">amount</span>: <span class="pl-c1">10</span>  <span class="pl-c"><span class="pl-c">#</span> Fixed experience amount</span>
+       <span class="pl-ent">chance</span>: <span class="pl-c1">100</span>  <span class="pl-c"><span class="pl-c">#</span> Fixed chance</span>
+
+    <span class="pl-c"><span class="pl-c">#</span> Example 6: Replace stone with random wool color, follows default replacement time, with drops and experience.</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">stone</span><span class="pl-pds">"</span></span>:
+      <span class="pl-ent">drops</span>:
+        - <span class="pl-ent">item</span>: <span class="pl-s">wool</span>
+          <span class="pl-ent">amount</span>: <span class="pl-c1">1-3</span>  <span class="pl-c"><span class="pl-c">#</span> Amount range: from 1 to 3</span>
+          <span class="pl-ent">chance</span>: <span class="pl-c1">50-100</span>  <span class="pl-c"><span class="pl-c">#</span> Chance range: from 50% to 100%</span>
+      <span class="pl-ent">experience</span>:
+        <span class="pl-ent">amount</span>: <span class="pl-c1">5</span>  <span class="pl-c"><span class="pl-c">#</span> Fixed experience amount</span>
+        <span class="pl-ent">chance</span>: <span class="pl-c1">100</span>  <span class="pl-c"><span class="pl-c">#</span> Fixed chance</span>
+
+    <span class="pl-c"><span class="pl-c">#</span> Example 7: Replace gold ore with default replacement block and time, with drops and a unique item tool.</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">gold_ore</span><span class="pl-pds">"</span></span>:
+      <span class="pl-ent">drops</span>:
+        - <span class="pl-ent">item</span>: <span class="pl-s">diamond_pickaxe</span>
+          <span class="pl-ent">amount</span>: <span class="pl-c1">1</span>  <span class="pl-c"><span class="pl-c">#</span> Fixed amount</span>
+          <span class="pl-ent">chance</span>: <span class="pl-c1">10</span>  <span class="pl-c"><span class="pl-c">#</span> Fixed chance</span>
+          <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>§6Efficiency's Edge<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Custom name for the item</span>
+          <span class="pl-ent">lore</span>:
+            - <span class="pl-s"><span class="pl-pds">"</span>§eHarness the power of swiftness.<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> Custom lore for the item</span>
+            - <span class="pl-s"><span class="pl-pds">"</span>§bWithstands the test of time and labor.<span class="pl-pds">"</span></span>
+            - <span class="pl-s"><span class="pl-pds">"</span>§aEffortlessly carves through any material.<span class="pl-pds">"</span></span>
+          <span class="pl-ent">enchantments</span>:
+            - <span class="pl-ent">name</span>: <span class="pl-s">haste</span>
+              <span class="pl-ent">level</span>: <span class="pl-c1">3</span>
+            - <span class="pl-ent">name</span>: <span class="pl-s">efficiency</span>
+              <span class="pl-ent">level</span>: <span class="pl-c1">5</span>
+            - <span class="pl-ent">name</span>: <span class="pl-s">unbreaking</span>
+              <span class="pl-ent">level</span>: <span class="pl-c1">3</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Particle Effects</span>
+<span class="pl-ent">particles</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Whether to display particles when destroying blocks.</span>
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+  <span class="pl-c"><span class="pl-c">#</span> The name of the particle to be displayed when destroying the previous block.</span>
+  <span class="pl-ent">from</span>: <span class="pl-s">minecraft:villager_happy</span>
+  <span class="pl-c"><span class="pl-c">#</span> The name of the particle to be displayed when replacing the block after it.</span>
+  <span class="pl-ent">to</span>: <span class="pl-s">minecraft:explosion_particle</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Sound Effects</span>
+<span class="pl-ent">sounds</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Whether to play sound effects when destroying blocks.</span>
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+  <span class="pl-c"><span class="pl-c">#</span> The volume of the sound effects.</span>
+  <span class="pl-ent">volume</span>: <span class="pl-c1">1</span>
+  <span class="pl-c"><span class="pl-c">#</span> The pitch of the sound effects.</span>
+  <span class="pl-ent">pitch</span>: <span class="pl-c1">1</span>
+  <span class="pl-c"><span class="pl-c">#</span> The name of the sound to be played when destroying the previous block.</span>
+  <span class="pl-ent">from</span>: <span class="pl-s">random.orb</span>
+  <span class="pl-c"><span class="pl-c">#</span> The name of the sound to be played when replacing the block after it.</span>
+  <span class="pl-ent">to</span>: <span class="pl-s">random.explode</span>
+
+<span class="pl-c"><span class="pl-c">#</span> World Configuration</span>
+<span class="pl-ent">worlds</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Set this to true if you want to use the blacklisted-worlds setting.</span>
+  <span class="pl-c"><span class="pl-c">#</span> If both enabled-world-blacklist and enabled-world-whitelist are set to the same setting,</span>
+  <span class="pl-c"><span class="pl-c">#</span> the block will be replaced for all worlds.</span>
+  <span class="pl-ent">enabled-world-blacklist</span>: <span class="pl-c1">false</span>
+  <span class="pl-c"><span class="pl-c">#</span> If enabled-world-blacklist is set to true, the block will be replaced for all worlds,</span>
+  <span class="pl-c"><span class="pl-c">#</span> except the worlds mentioned here.</span>
+  <span class="pl-ent">blacklisted-worlds</span>:
+    - <span class="pl-s">blacklistedworld1</span>
+    - <span class="pl-s">blacklistedworld2</span>
+  <span class="pl-c"><span class="pl-c">#</span> Set this to true if you want to use the whitelisted-worlds setting.</span>
+  <span class="pl-c"><span class="pl-c">#</span> If both enabled-world-blacklist and enabled-world-whitelist are set to the same setting,</span>
+  <span class="pl-c"><span class="pl-c">#</span> the block will not be replaced for all worlds.</span>
+  <span class="pl-ent">enabled-world-whitelist</span>: <span class="pl-c1">false</span>
+  <span class="pl-c"><span class="pl-c">#</span> If enabled-world-whitelist is set to true, blocks will not be replaced for all worlds,</span>
+  <span class="pl-c"><span class="pl-c">#</span> except the worlds mentioned here.</span>
+  <span class="pl-ent">whitelisted-worlds</span>:
+    - <span class="pl-s">whitelistedworld1</span>
+    - <span class="pl-s">whitelistedworld2</span>
+</pre></div>
+<h1><a id="user-content-upcoming-features" class="anchor" aria-hidden="true" href="#upcoming-features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Upcoming Features</h1>
+<ul>
+<li>Currently none planned. You can contribute or suggest for new features.</li>
+</ul>
+<h1><a id="user-content-additional-notes" class="anchor" aria-hidden="true" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Notes</h1>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/AIPTU/BlockReplacer/issues">here</a>.</li>
+<li>We accept all contributions! If you want to contribute, please make a pull request in <a href="https://github.com/AIPTU/BlockReplacer/pulls">here</a>.</li>
+<li>Icons made from <a href="https://www.flaticon.com" rel="nofollow">www.flaticon.com</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7fa7f0d6bd1f595c","version":"2023.8.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

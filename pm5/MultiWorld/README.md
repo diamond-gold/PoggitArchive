@@ -1,11 +1,11 @@
 # MultiWorld
-<img src="https://raw.githubusercontent.com/CzechPMDevs/MultiWorld/d46c2722abe84152ea037d9ceec226579691c0fa/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/CzechPMDevs/MultiWorld/27a35726962554f59695ca4e718a212259ebe7b9/icon.png" width="128" height="128" />
 
 ## 🌎 An advanced world management PocketMine plugin with custom world generators.
 ```properties
-Version: 2.1.0
+Version: 2.1.1
     API: 5.3.0
-    Updated: 24-07-2023 19:53:21 UTC
+    Updated: 21-08-2023 19:50:07 UTC
 Repo: https://github.com/CzechPMDevs/MultiWorld
 License: GPL-3.0
 Categories: World Generators,API plugins,Developer Tools,World Editing and Management,Mechanics,Teleportation,Anti-Griefing Tools,Admin Tools,General
