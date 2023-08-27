@@ -6,7 +6,7 @@
 Version: 2.1.0
     API: 4.0.0
     Updated: 02-10-2022 22:50:54 UTC
-Repo: https://github.com/Tobias-2006/ClearLag
+Repo: https://github.com/tobiaskirchmaier/ClearLag
 License: gpl-3.0
 Categories: General,Admin Tools
 Keywords: clearlag,clearlagg,lag,lagg
