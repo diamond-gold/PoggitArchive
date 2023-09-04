@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/FRashkar-pm/FRanksPiggyFaction
 License: GPL-3.0
 Categories: General,Chat-Related,Informational
-Keywords: ranksystem,ranks,factions,faction,piggyfaction,piggyfactions,addon,franks,chat
+Keywords: addon,chat,faction,factions,franks,piggyfaction,piggyfactions,ranks,ranksystem
 ```
