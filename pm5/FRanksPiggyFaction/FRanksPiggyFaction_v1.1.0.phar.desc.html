@@ -1,0 +1,27 @@
+<h2><a id="user-content-frankspiggyfaction" class="anchor" aria-hidden="true" tabindex="-1" href="#frankspiggyfaction"><span aria-hidden="true" class="octicon octicon-link"></span></a>FRanksPiggyFaction</h2>
+<p>A simple plugin addon for <a href="https://poggit.pmmp.io/p/RankSystem/" rel="nofollow">RankSystem</a> from IvanCraft623 to support <a href="https://poggit.pmmp.io/p/PiggyFactions/" rel="nofollow">PiggyFactions</a> from DaPigGuy.</p>
+<h2><a id="user-content-customtags" class="anchor" aria-hidden="true" tabindex="-1" href="#customtags"><span aria-hidden="true" class="octicon octicon-link"></span></a>CustomTags</h2>
+<ul>
+<li>Player faction name <code>{fac_name}</code>
+</li>
+<li>Player faction power <code>{fac_power}</code>
+</li>
+</ul>
+<h2><a id="user-content-how-to-use-this-plugin" class="anchor" aria-hidden="true" tabindex="-1" href="#how-to-use-this-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use this plugin</h2>
+<ul>
+<li>Open plugin_data /RankSystem/resources</li>
+<li>Add <code>{fac_name}</code> and <code>{fac_power}</code> in format config.yml</li>
+<li>Restart your server</li>
+</ul>
+<h2><a id="user-content-example" class="anchor" aria-hidden="true" tabindex="-1" href="#example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h2>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span>Configure users's nametag</span>
+<span class="pl-ent">nametag</span>:
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">format</span>: <span class="pl-s"><span class="pl-pds">"</span>{nametag_ranks_prefix}{nametag_name-color}{name}§e[§3{fac_name}§f:§c{fac_power}§e]§r<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span>Configure users's chat</span>
+<span class="pl-ent">chat</span>:
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">format</span>: <span class="pl-s"><span class="pl-pds">"</span>{chat_ranks_prefix}{chat_name-color}{name}§e[§3{fac_name}§f:§c{fac_power}§e]§r{chat_format}{message}<span class="pl-pds">"</span></span></pre></div>
+<h2><a id="user-content-credits" class="anchor" aria-hidden="true" tabindex="-1" href="#credits"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
+<p><a href="https://icons8.com/icon/ujEZSSRjrsMQ/rank" rel="nofollow">Rank</a> icon by <a href="https://icons8.com" rel="nofollow">Icons8</a></p>

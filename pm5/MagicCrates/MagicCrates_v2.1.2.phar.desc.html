@@ -1,0 +1,254 @@
+<h1><a id="user-content-magiccrates-" class="anchor" aria-hidden="true" tabindex="-1" href="#magiccrates-"><span aria-hidden="true" class="octicon octicon-link"></span></a>MagicCrates <a href="https://poggit.pmmp.io/p/MagicCrates" rel="nofollow"><img src="https://camo.githubusercontent.com/896f252b596041d6ccdfb9ea2b8cb58dd35905f8c07e66b6648d12d857e25e26/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f4d61676963437261746573" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/MagicCrates" style="max-width: 100%;"></a>
+</h1>
+<p>Add customizable crates to your server.</p>
+<ul>
+<li>Add as many crate types as you want</li>
+<li>Item and command rewards</li>
+<li>Open crates with a nice animation</li>
+<li>In-game preview menu with the crate contents including the rarity of each item (NEW in v2.1.0)</li>
+<li>
+<a href="https://github.com/CustomiesDevs/Customies">Customies</a> support (NEW in v2.1.0)</li>
+</ul>
+<h2><a id="user-content-downloads" class="anchor" aria-hidden="true" tabindex="-1" href="#downloads"><span aria-hidden="true" class="octicon octicon-link"></span></a>Downloads</h2>
+<ul>
+<li>Stable release: <a href="https://poggit.pmmp.io/p/MagicCrates" rel="nofollow"><img src="https://camo.githubusercontent.com/175406993aa1935aa85a89559681ad7a390a94634ce43c8b85743542c853b81f/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f4d61676963437261746573" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/MagicCrates" style="max-width: 100%;"></a>
+</li>
+<li>Newest release: <a href="https://poggit.pmmp.io/ci/Hebbinkpro/MagicCrates/MagicCrates" rel="nofollow">Poggit CI</a>
+</li>
+</ul>
+<h2><a id="user-content-how-to-use" class="anchor" aria-hidden="true" tabindex="-1" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h2>
+<h3><a id="user-content-commands" class="anchor" aria-hidden="true" tabindex="-1" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h3>
+<p>Command aliases: <code>/magiccrates</code>, <code>/mc</code></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/magiccrates create</code></td>
+<td>Create a crate</td>
+<td>magiccrates.cmd.create</td>
+</tr>
+<tr>
+<td><code>/magiccrates remove</code></td>
+<td>Remove a crate</td>
+<td>magiccrates.cmd.remove</td>
+</tr>
+<tr>
+<td><code>/magiccrates makekey &lt;crate_type&gt; \[amount] \[player]</code></td>
+<td>Make a crate key</td>
+<td>magiccrates.cmd.makekey</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content-permissions" class="anchor" aria-hidden="true" tabindex="-1" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h3>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>magiccrates.cmd</code></td>
+<td>Access to the <code>/magiccrates</code> command</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>magiccrates.cmd.create</code></td>
+<td>Access to the <code>/magiccrates create</code> command</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>magiccrates.cmd.remove</code></td>
+<td>Access to the <code>/magiccrates remove</code> command</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>magiccrates.cmd.makekey</code></td>
+<td>Access to the <code>/magiccrates makekey</code> command</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>magiccrates.break.remove</code></td>
+<td>Permission to remove a crate by breaking it</td>
+<td>OP</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content-create-a-new-crate" class="anchor" aria-hidden="true" tabindex="-1" href="#create-a-new-crate"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create a new crate</h3>
+<ol>
+<li>Use the command <code>/mc create</code>
+</li>
+<li>Click on the chest where you want your crate. (double chests do not work)</li>
+<li>Select the crate type in the dropdown menu and click <em>Submit</em>.</li>
+<li>Click <strong>save crate</strong>
+</li>
+</ol>
+<h3><a id="user-content-remove-an-existing-crate" class="anchor" aria-hidden="true" tabindex="-1" href="#remove-an-existing-crate"><span aria-hidden="true" class="octicon octicon-link"></span></a>Remove an existing crate</h3>
+<p>You can remove crates with a command:</p>
+<ol>
+<li>Use the command <code>/mc remove</code>
+</li>
+<li>Click on the crate you want to delete</li>
+<li>Click <em>Delete crate</em>
+</li>
+</ol>
+<p>You can also remove crates by breaking the crate:</p>
+<ol>
+<li>Destroy a crate</li>
+<li>Click <em>Delete crate</em>
+</li>
+</ol>
+<h3><a id="user-content-create-a-crate-key" class="anchor" aria-hidden="true" tabindex="-1" href="#create-a-crate-key"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create a crate key</h3>
+<p>You can only open crates by using a crate key. Each crate type has its own key.<br>
+You can create keys using the command <code>/mc makekey &lt;crate_type&gt; [amount] [player]</code><br>
+When you have a crate key, you can open the matching crate by clicking on the crate.</p>
+<h2><a id="user-content-options" class="anchor" aria-hidden="true" tabindex="-1" href="#options"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h2>
+<p>Here you can see all options inside the <code>config.yml</code></p>
+<ul>
+<li>
+<code>delay: int</code> Amount of ticks it will take until the opening animation starts after a player opens a crate.</li>
+<li>
+<code>types: type[]</code> A list of all available crate types in your server. You can add as many types as you want.</li>
+</ul>
+<h3><a id="user-content-adding-crate-types" class="anchor" aria-hidden="true" tabindex="-1" href="#adding-crate-types"><span aria-hidden="true" class="octicon octicon-link"></span></a>Adding crate types</h3>
+<p>Each crate type you want to add has its own unique identifier. You can choose this identifier yourself, but make sure
+that it is a valid array key.</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">&lt;id&gt;</span>:
+  <span class="pl-ent">name</span>: <span class="pl-s">string</span>
+  <span class="pl-ent">rewards</span>: <span class="pl-s">reward[]</span>
+  <span class="pl-ent">commands</span>: <span class="pl-s">string[] </span><span class="pl-c"><span class="pl-c">#</span> Optional</span></pre></div>
+<ul>
+<li>
+<code>name: string</code> The name shown above a crate</li>
+<li>
+<code>rewards: reward[]</code> A list of all rewards inside the crate</li>
+<li>
+<code>commands: string[]</code> A list of commands that will always be executed when opening this type of crate</li>
+</ul>
+<h4><a id="user-content-adding-rewards" class="anchor" aria-hidden="true" tabindex="-1" href="#adding-rewards"><span aria-hidden="true" class="octicon octicon-link"></span></a>Adding rewards</h4>
+<p>A crate type can have many rewards, and you can set the rarity of each reward individually.</p>
+<div class="highlight highlight-source-yaml"><pre> - <span class="pl-ent">name</span>: <span class="pl-s">string</span>
+   <span class="pl-ent">item</span>:
+     <span class="pl-ent">id</span>: <span class="pl-s">item_id</span>
+     <span class="pl-ent">name</span>: <span class="pl-s">string          </span><span class="pl-c"><span class="pl-c">#</span> Optional</span>
+     <span class="pl-ent">amount</span>: <span class="pl-s">int           </span><span class="pl-c"><span class="pl-c">#</span> Optional</span>
+     <span class="pl-ent">lore</span>: <span class="pl-s">string|string[] </span><span class="pl-c"><span class="pl-c">#</span> Optional</span>
+     <span class="pl-ent">enchantments</span>: <span class="pl-c"><span class="pl-c">#</span> Optional</span>
+       - <span class="pl-ent">name</span>: <span class="pl-s">string</span>
+         <span class="pl-ent">level</span>: <span class="pl-s">int</span>
+   <span class="pl-ent">commands</span>: <span class="pl-s">string[]</span>
+   <span class="pl-ent">amount</span>: <span class="pl-s">int</span>
+   <span class="pl-ent">icon</span>: <span class="pl-s">string           </span><span class="pl-c"><span class="pl-c">#</span> Optional</span></pre></div>
+<ul>
+<li>
+<code>name: string</code> The name of the reward.</li>
+<li>
+<code>item:</code> The item that will be given to the player as reward.
+<ul>
+<li>
+<code>id: string</code> The minecraft ID of the item (e.g. <code>"diamond"</code> or <code>"ender_pearl"</code>)</li>
+<li>
+<code>name: string</code> The custom name of the item.</li>
+<li>
+<code>amount: int</code> The amount of the item.</li>
+<li>
+<code>lore: string|string[]</code> The item lore.
+<ul>
+<li>You can add a single line by providing a string e.g. <code>"My lore"</code> or multiple lines by providing an array
+e.g. <code>["First", "Second"]</code>.</li>
+</ul>
+</li>
+<li>
+<code>enchantments:</code> A list of all enchantments on the item.
+<ul>
+<li>
+<code>name: string</code> The name of the enchantment.</li>
+<li>
+<code>level: int</code> The level of the enchantment</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<code>commands: string[]</code> A list of commands when the player gets this reward.</li>
+<li>
+<code>amount: int</code> How many times this reward is inside the crate. This makes you able to set rarities to rewards.
+<ul>
+<li>e.g. if you have a reward with amount <code>1</code> and a reward with amount <code>2</code>, there are a total of <code>3</code> items in the
+crate.
+The probability that you win the first item is <code>1/3</code> and for the second item it is <code>2/3</code>.</li>
+</ul>
+</li>
+<li>
+<code>icon: string</code> The path/url to a texture or image. The texture/image will be displayed on the preview menu.
+<ul>
+<li>For minecraft textures you can use <code>textures/items/&lt;name&gt;</code> for items or <code>textures/blocks/&lt;name&gt;</code> for blocks.</li>
+<li>It is also possible to use other images instead of the minecraft textures. This have to be urls that start
+with<code>http://</code> or <code>https://</code> to work.</li>
+<li>When no icon is provided, the icon of the item will be used. When there are only commands in the reward, a command
+block icon is shown.</li>
+<li>Notice that for some blocks, e.g. logs, concrete and wool (Most of the blocks added to later versions of mc don't
+have this problem), there will no icon be found, if you want red wool for example, you have to
+use <code>textures/blocks/wool_colored_red</code>.</li>
+<li>You can find all vanilla resource pack textures under the <code>textures/</code> path. You can see all the textures in
+the <a href="https://github.com/Mojang/bedrock-samples/">bedrock-samples</a> resource pack.</li>
+</ul>
+</li>
+</ul>
+<h4><a id="user-content-command-options" class="anchor" aria-hidden="true" tabindex="-1" href="#command-options"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command options</h4>
+<p>The commands that you can place in the command lists in the type or reward are the same commands as you can execute in
+the console.<br>
+It is also possible to add some parameters to the commands to make them more usable. The options are:</p>
+<ul>
+<li>
+<code>{player}</code> The name of the player</li>
+<li>
+<code>{crate_type}</code> The id of the crate type</li>
+<li>
+<code>{crate}</code> The name of the crate type</li>
+<li>
+<code>{reward}</code> The name of the reward</li>
+</ul>
+<h4><a id="user-content-example-config" class="anchor" aria-hidden="true" tabindex="-1" href="#example-config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example Config</h4>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">delay</span>: <span class="pl-c1">1</span>
+
+<span class="pl-ent">types</span>:
+  <span class="pl-ent">common</span>:
+    <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>§eCommon §6Crate<span class="pl-pds">"</span></span>
+    <span class="pl-ent">rewards</span>:
+      - <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Diamond<span class="pl-pds">"</span></span>
+        <span class="pl-ent">item</span>:
+          <span class="pl-ent">id</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:diamond<span class="pl-pds">"</span></span>
+          <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Diamond<span class="pl-pds">"</span></span>
+          <span class="pl-ent">amount</span>: <span class="pl-c1">1</span>
+          <span class="pl-ent">lore</span>: <span class="pl-s"><span class="pl-pds">"</span>Diamond from a crate<span class="pl-pds">"</span></span>
+          <span class="pl-ent">enchantments</span>:
+            - <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>efficiency<span class="pl-pds">"</span></span>
+              <span class="pl-ent">level</span>: <span class="pl-c1">1</span>
+        <span class="pl-ent">commands</span>:
+          - <span class="pl-s"><span class="pl-pds">"</span>msg {player} be carefull with this diamond!<span class="pl-pds">"</span></span>
+
+        <span class="pl-ent">amount</span>: <span class="pl-c1">1</span>
+      - <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Dirt<span class="pl-pds">"</span></span>
+        <span class="pl-ent">item</span>:
+          <span class="pl-ent">id</span>: <span class="pl-s"><span class="pl-pds">"</span>dirt<span class="pl-pds">"</span></span>
+          <span class="pl-ent">amount</span>: <span class="pl-c1">2</span>
+        <span class="pl-ent">commands</span>: <span class="pl-s">[ ]</span>
+        <span class="pl-ent">amount</span>: <span class="pl-c1">2</span>
+    <span class="pl-ent">commands</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>say {player} won {reward} from a {crate_type} crate<span class="pl-pds">"</span></span>
+</pre></div>
+<h2><a id="user-content-credits" class="anchor" aria-hidden="true" tabindex="-1" href="#credits"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
+<ul>
+<li>This plugin uses <a href="https://github.com/CortexPE/Commando">Commando</a> and <a href="https://github.com/Vecnavium/FormsUI">FormsUI</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"80447e8769f80aa3","version":"2023.8.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>
