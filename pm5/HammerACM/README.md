@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/fernanACM/HammerACM
 License: Apache-2.0
 Categories: General,API plugins,Fun
-Keywords: Hammer,ACM,3x3,pickaxe
+Keywords: 3x3,ACM,Hammer,pickaxe
 ```
