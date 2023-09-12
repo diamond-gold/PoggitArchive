@@ -1,9 +1,9 @@
 # BanSystem
-## The best BanSystem to punish players and moderate the server!
+## The best system to moderate your server and punish players!
 ```properties
-Version: 3.0.0
+Version: 3.0.1
     API: 5.0.0
-    Updated: 08-08-2023 07:54:16 UTC
+    Updated: 11-09-2023 04:14:43 UTC
 Repo: https://github.com/r3pt1s/BanSystem
 License: Apache-2.0
 Categories: General,Miscellaneous,Chat-Related,Admin Tools

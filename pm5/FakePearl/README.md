@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/Joestarfish/FakePearl
 License: MIT
 Categories: Teleportation,Fun,Mechanics
-Keywords: teleportation,ender_pearl,pearl,fake_pearl,fake_ender_pearl
+Keywords: ender_pearl,fake_ender_pearl,fake_pearl,pearl,teleportation
 ```

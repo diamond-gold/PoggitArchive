@@ -1,0 +1,192 @@
+<h1><a id="user-content-bansystem" class="anchor" aria-hidden="true" tabindex="-1" href="#bansystem"><span aria-hidden="true" class="octicon octicon-link"></span></a>BanSystem</h1>
+<p>The best system to moderate your server and punish players!</p>
+<h2><a id="user-content-integrated-systems" class="anchor" aria-hidden="true" tabindex="-1" href="#integrated-systems"><span aria-hidden="true" class="octicon octicon-link"></span></a>Integrated systems</h2>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BanSystem</td>
+<td>Manage bans</td>
+</tr>
+<tr>
+<td>MuteSystem</td>
+<td>Manage mutes</td>
+</tr>
+<tr>
+<td>WarnSystem</td>
+<td>Manage warns</td>
+</tr>
+<tr>
+<td>NotificationSystem</td>
+<td>Receive notifications</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" tabindex="-1" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>Ban or mute players temporarily</li>
+<li>Warn or kick players with a reason</li>
+<li>MySQL Support</li>
+<li>Notifications for team members</li>
+</ul>
+<h2><a id="user-content-commands" class="anchor" aria-hidden="true" tabindex="-1" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ban &lt;player&gt; &lt;banId&gt;</code></td>
+<td>Ban a player</td>
+<td>bansystem.command.ban</td>
+</tr>
+<tr>
+<td><code>/tempban &lt;player&gt; &lt;reason&gt; &lt;time&gt;</code></td>
+<td>Ban a player temporarily</td>
+<td>bansystem.command.tempban</td>
+</tr>
+<tr>
+<td><code>/baninfo &lt;player&gt;</code></td>
+<td>Get information about a player</td>
+<td>bansystem.command.baninfo</td>
+</tr>
+<tr>
+<td><code>/banlog &lt;player&gt;</code></td>
+<td>See a list of every ban from a player</td>
+<td>bansystem.command.banlog</td>
+</tr>
+<tr>
+<td><code>/editban &lt;player&gt; &lt;add OR sub&gt; &lt;time&gt;</code></td>
+<td>Edit a ban</td>
+<td>bansystem.command.editban</td>
+</tr>
+<tr>
+<td><code>/unban &lt;player&gt; [mistake: false]</code></td>
+<td>Unban a player and decide if the ban was a mistake</td>
+<td>bansystem.command.unban</td>
+</tr>
+<tr>
+<td><code>/banids</code></td>
+<td>See a list of all banids</td>
+<td>bansystem.command.banids</td>
+</tr>
+<tr>
+<td><code>/banlist</code></td>
+<td>See a list of all bans</td>
+<td>bansystem.command.banlist</td>
+</tr>
+<tr>
+<td><code>/mute &lt;player&gt; &lt;muteId&gt;</code></td>
+<td>Mute a player</td>
+<td>bansystem.command.mute</td>
+</tr>
+<tr>
+<td><code>/tempmute &lt;player&gt; &lt;reason&gt; &lt;time&gt;</code></td>
+<td>Mute a player temporarily</td>
+<td>bansystem.command.tempmute</td>
+</tr>
+<tr>
+<td><code>/muteinfo &lt;player&gt;</code></td>
+<td>Get information about a player</td>
+<td>bansystem.command.muteinfo</td>
+</tr>
+<tr>
+<td><code>/mutelog &lt;player&gt;</code></td>
+<td>See a list of every mute from a player</td>
+<td>bansystem.command.mutelog</td>
+</tr>
+<tr>
+<td><code>/editmute &lt;player&gt; &lt;add OR sub&gt; &lt;time&gt;</code></td>
+<td>Edit a mute</td>
+<td>bansystem.command.editmute</td>
+</tr>
+<tr>
+<td><code>/unmute &lt;player&gt; [mistake: false]</code></td>
+<td>Unmute a player and decide if the mute was a mistake</td>
+<td>bansystem.command.unmute</td>
+</tr>
+<tr>
+<td><code>/muteids</code></td>
+<td>See a list of all muteids</td>
+<td>bansystem.command.muteids</td>
+</tr>
+<tr>
+<td><code>/mutelist</code></td>
+<td>See a list of all mutes</td>
+<td>bansystem.command.mutelist</td>
+</tr>
+<tr>
+<td><code>/warn &lt;player&gt; [reason]</code></td>
+<td>Warn a player</td>
+<td>bansystem.command.warn</td>
+</tr>
+<tr>
+<td><code>/warns &lt;player&gt;</code></td>
+<td>See a list of all warns from a player</td>
+<td>bansystem.command.warns</td>
+</tr>
+<tr>
+<td><code>/clearwarns &lt;player&gt;</code></td>
+<td>Clear all warns from a player</td>
+<td>bansystem.command.clearwarns</td>
+</tr>
+<tr>
+<td><code>/kick &lt;player&gt; [reason]</code></td>
+<td>Kick a player</td>
+<td>bansystem.command.kick</td>
+</tr>
+<tr>
+<td><code>/notify</code></td>
+<td>Enable or disable notifications</td>
+<td>bansystem.command.notify</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-permissions" class="anchor" aria-hidden="true" tabindex="-1" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h2>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bansystem.bypass.ban</td>
+<td>Bypass a ban</td>
+</tr>
+<tr>
+<td>bansystem.bypass.mute</td>
+<td>Bypass a mute</td>
+</tr>
+<tr>
+<td>bansystem.bypass.kick</td>
+<td>Bypass a kick</td>
+</tr>
+<tr>
+<td>bansystem.receive.notify</td>
+<td>Receive notifications</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-configurable" class="anchor" aria-hidden="true" tabindex="-1" href="#configurable"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configurable</h2>
+<ul>
+<li>Max warnings</li>
+<li>Action when max warnings reached</li>
+<li>Custom action reason and duration when max warnings reached</li>
+<li>Blocked commands for muted players</li>
+<li>Activate or deactivate the creation of banlogs and mutelogs</li>
+<li>Custom banids and muteids</li>
+<li>Custom prefix</li>
+<li>Custom paths</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"8054f9aef82a2cde","version":"2023.8.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>
