@@ -1,0 +1,65 @@
+<h1><a id="user-content-ranksystemvoucher" class="anchor" aria-hidden="true" tabindex="-1" href="#ranksystemvoucher"><span aria-hidden="true" class="octicon octicon-link"></span></a>RankSystemVoucher</h1>
+<p>A simple plugin addon for <a href="https://poggit.pmmp.io/p/RankSystem/" rel="nofollow">RankSystem</a> from IvanCraft623.</p>
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" tabindex="-1" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<table>
+<thead>
+<tr>
+<th>RankSystemVoucher</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Customizable Config</td>
+<td>Commands, Messages, Permissions</td>
+</tr>
+<tr>
+<td>Customizable Item</td>
+<td>Custom Lore, Custom Name</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-commands" class="anchor" aria-hidden="true" tabindex="-1" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+<th>Permissions</th>
+<th>Aliases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ranksystemvoucher &lt;player&gt; &lt;rank&gt; &lt;amount&gt;</code></td>
+<td><code>RankSystemVoucher Commands, default amount = 1</code></td>
+<td><code>ranksystemvoucher.command</code></td>
+<td><code>/ranksgive</code></td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-how-to-use" class="anchor" aria-hidden="true" tabindex="-1" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a>How To Use</h2>
+<ul>
+<li>Create your own RankSystemVoucher item in plugin_data/RankSystemVoucher/rank_voucher.yml</li>
+<li>Get your item with command /ranksystemvoucher YourName RankName</li>
+<li>Hold the item</li>
+<li>Click on block</li>
+</ul>
+<h2><a id="user-content-example-config" class="anchor" aria-hidden="true" tabindex="-1" href="#example-config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example Config</h2>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">example</span>: <span class="pl-c"><span class="pl-c">#</span>ranks_name</span>
+  <span class="pl-ent">item</span>: <span class="pl-s">paper </span><span class="pl-c"><span class="pl-c">#</span>item</span>
+  <span class="pl-ent">customname</span>: <span class="pl-s">§aRankSystemVoucher §eExample </span><span class="pl-c"><span class="pl-c">#</span>custom_name</span>
+  <span class="pl-ent">lore</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span>§aRank §eExample<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>§7(Right-Click) to claim rank<span class="pl-pds">"</span></span>
+  <span class="pl-ent">permission</span>: <span class="pl-s">example </span><span class="pl-c"><span class="pl-c">#</span>permission</span>
+  <span class="pl-ent">commands</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span>ranksystem setrank {player} example<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>ranksystem removerank {player} {old-rank}<span class="pl-pds">"</span></span>
+  <span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>§eCongratulations you just got a Rank {rank} from RankSystemVoucher!<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>message</span></pre></div>
+<h2><a id="user-content-important" class="anchor" aria-hidden="true" tabindex="-1" href="#important"><span aria-hidden="true" class="octicon octicon-link"></span></a>Important</h2>
+<p>You need permission to use the item.
+Set permissions like this, for example: <code>ranksystemvoucher.ranks.example</code></p>
+<h2><a id="user-content-credits" class="anchor" aria-hidden="true" tabindex="-1" href="#credits"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
+<p><a href="https://icons8.com/icon/_UuGPc1g68Z5/ticket" rel="nofollow">Voucher</a> icon by <a href="https://icons8.com" rel="nofollow">Icons8</a></p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"805d37798d9faa64","version":"2023.8.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>

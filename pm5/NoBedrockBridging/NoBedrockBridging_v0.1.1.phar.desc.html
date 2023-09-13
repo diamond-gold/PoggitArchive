@@ -1,0 +1,63 @@
+
+<h1><a id="user-content--no-bedrock-bridging" class="anchor" aria-hidden="true" tabindex="-1" href="#-no-bedrock-bridging"><span aria-hidden="true" class="octicon octicon-link"></span></a>🛑 No Bedrock Bridging</h1>
+<p>🗨 NPC dialogue
+🎞 Animation guide
+🚧 Movement constraint
+🔐 Permission node for customisation
+🌐 Multi-language system</p>
+<p align="center">
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/Endermanbugzjfc/NoBedrockBridging/assets/53002741/dc8f690f-a7d5-4316-8aa7-a6dbd1533e9e"><img alt="Demonstration GIF" src="https://github.com/Endermanbugzjfc/NoBedrockBridging/assets/53002741/dc8f690f-a7d5-4316-8aa7-a6dbd1533e9e" style="max-width: 100%;"></a><br>
+  <a href="https://poggit.pmmp.io/p/NoBedrockBridging" rel="nofollow">  
+    <img alt="Poggit release (latest)" src="https://camo.githubusercontent.com/55bb1cda01f288aed58fe4532b1060af3506372f4a9ef9e5dbc313d5b46df043/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646f776e6c6f6164732f4e6f426564726f636b4272696467696e673f7374796c653d666f722d7468652d6261646765" data-canonical-src="https://poggit.pmmp.io/shield.downloads/NoBedrockBridging?style=for-the-badge" style="max-width: 100%;">  
+  </a>
+  <a href="https://github.com/Endermanbugzjfc/NoBedrockBridging">  
+    <img alt="GitHub release (latest by SemVer including pre-releases)" src="https://camo.githubusercontent.com/6fdd8b6544e04aaae994e48a9769554ff0cadec7e84fc4d71405dd7c4d483214/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f646f776e6c6f6164732d7072652f456e6465726d616e6275677a6a66632f4e6f426564726f636b4272696467696e672f6c61746573742f746f74616c3f7374796c653d666f722d7468652d6261646765" data-canonical-src="https://img.shields.io/github/downloads-pre/Endermanbugzjfc/NoBedrockBridging/latest/total?style=for-the-badge" style="max-width: 100%;">
+  </a>
+</p>
+<p>This plugin pops an NPC dialogue to warn players that they cannot be Bedrock bridging, with a guiding animation.</p>
+<p>At the same time, it also limits the player's movement so the player will be less likely to fall from the height. This movement constraint will turn off upon the dialogue gets closed or upon the player gets hurt.</p>
+<h1><a id="user-content--installation" class="anchor" aria-hidden="true" tabindex="-1" href="#-installation"><span aria-hidden="true" class="octicon octicon-link"></span></a>📥 Installation</h1>
+<p>After you have settled the PHARs for <a href="https://poggit.pmmp.io/p/customies/" rel="nofollow">Customies</a> and <a href="https://poggit.pmmp.io/p/NoBedrockBridging/" rel="nofollow">this plugin,</a> you will still need to set up the resource pack or otherwise, the animation won't be visible to the player!</p>
+<ol>
+<li>If your server is freshly installed, start it for once and quickly turn it off. This allows it to generate the essential files.</li>
+<li>Locate the <code>resources_packs</code> folder and its <code>resource_packs.yml</code> file in your server.</li>
+<li>Download the resource pack <code>NoBedrockBridging_RP.zip</code> file from <a href="https://github.com/Endermanbugzjfc/NoBedrockBridging/releases/latest">here.</a>
+</li>
+<li>Do NOT unzip the file, directly put it in <code>resources_packs</code>.</li>
+<li>Open <code>resource_packs.yml</code> with a text editor.</li>
+<li>Register the file name, which should be <code>NoBedrockBridging_RP.zip</code> if you have not yet changed it.</li>
+<li>It is recommended to also turn on <code>force_resources</code>. That will result in players being kicked if they accidentally or intentionally press the "join without pack" button.</li>
+</ol>
+<p>If your text editor has code highlighting, you may notice that some texts are greyed out. Those are comments. It is recommended to keep that around for future reference. However, if you think that bothers your way, you may choose to remove them.</p>
+<p>At the end, your setup should look similar to this:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span>This configuration file controls global resources used on your PocketMine-MP server.</span>
+
+<span class="pl-c"><span class="pl-c">#</span>Choose whether players must use your chosen resource packs to join the server.</span>
+<span class="pl-c"><span class="pl-c">#</span>NOTE: This will do nothing if there are no resource packs in the stack below.</span>
+<span class="pl-ent">force_resources</span>: <span class="pl-c1">true</span>
+<span class="pl-ent">resource_stack</span>:
+- <span class="pl-s">NoBedrockBridging_RP.zip</span>
+  <span class="pl-c"><span class="pl-c">#</span>Resource packs here are applied from bottom to top. This means that resources in higher packs will override those in lower packs.</span>
+  <span class="pl-c"><span class="pl-c">#</span>Entries here must indicate the filename of the resource pack.</span>
+  <span class="pl-c"><span class="pl-c">#</span>Example</span>
+  <span class="pl-c"><span class="pl-c">#</span> - natural.zip</span>
+  <span class="pl-c"><span class="pl-c">#</span> - vanilla.zip</span>
+  <span class="pl-c"><span class="pl-c">#</span>If you want to force clients to use vanilla resources, you must place a vanilla resource pack in your resources folder and add it to the stack here.</span>
+  <span class="pl-c"><span class="pl-c">#</span>To specify a resource encryption key, put the key in the &lt;resource&gt;.key file alongside the resource pack. Example: vanilla.zip.key</span></pre></div>
+<h1><a id="user-content--permission-node" class="anchor" aria-hidden="true" tabindex="-1" href="#-permission-node"><span aria-hidden="true" class="octicon octicon-link"></span></a>🔐 Permission node</h1>
+<ul>
+<li>
+<code>nobedrockbridging.bypass</code>: One is allowed to Bedrock bridging when attached to this perm. This permission is not attached to nobody by default. <em><strong>(Note: players who can fly can always bypass.)</strong></em>
+</li>
+</ul>
+<p><em>Want to allow Bedrock bridging for certain groups of people? Use <a href="https://poggit.pmmp.io/p/RankSystem/" rel="nofollow">RankSystem</a> achieve it!</em></p>
+<h1><a id="user-content--existing-languages" class="anchor" aria-hidden="true" tabindex="-1" href="#-existing-languages"><span aria-hidden="true" class="octicon octicon-link"></span></a>🌐 Existing languages</h1>
+<ul>
+<li>English</li>
+<li>Chinese Traditional &amp; Simplified</li>
+<li>French <a href="https://github.com/Bqleine">@Bqleine</a>
+</li>
+</ul>
+<h1><a id="user-content--license" class="anchor" aria-hidden="true" tabindex="-1" href="#-license"><span aria-hidden="true" class="octicon octicon-link"></span></a>📜 License</h1>
+<p>The code of both the plugin and resource pack is open-sourced under the <a href="https://github.com/Endermanbugzjfc/NoBedrockBridging/blob/master/LICENSE.md">Apache-2 license.</a></p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"805d377739b90bd9","version":"2023.8.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>
