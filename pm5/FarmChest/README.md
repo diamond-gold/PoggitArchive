@@ -7,5 +7,5 @@ Version: 1.0.0
 Repo: https://github.com/Joestarfish/FarmChest
 License: MIT
 Categories: Mechanics
-Keywords: farm,farming,farmchest,farmingchest,farmer,crop,crops,harvest,harvesting
+Keywords: crop,crops,farm,farmchest,farmer,farming,farmingchest,harvest,harvesting
 ```
