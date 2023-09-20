@@ -7,5 +7,5 @@ Version: 1.0.0
 Repo: https://github.com/GabBiswajit/SkyblockGB
 License: Apache-2.0
 Categories: General,Miscellaneous,Fun,Minigame,Mechanics
-Keywords: Skyblock,Island,Skyblocks,SkyblockGB
+Keywords: Island,Skyblock,SkyblockGB,Skyblocks
 ```
