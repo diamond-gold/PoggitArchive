@@ -1,9 +1,9 @@
 # SkyblockGB
 ## A Ultimate Skyblock Plugin For Pocketmine.
 ```properties
-Version: 1.0.0
+Version: 1.0.1
     API: 5.0.0
-    Updated: 28-08-2023 13:20:05 UTC
+    Updated: 20-09-2023 22:10:18 UTC
 Repo: https://github.com/GabBiswajit/SkyblockGB
 License: Apache-2.0
 Categories: General,Miscellaneous,Fun,Minigame,Mechanics

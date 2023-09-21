@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/Terpz710/TNTBlastRadius
 License: Apache-2.0
 Categories: General,Miscellaneous,Fun,Mechanics,Admin Tools
-Keywords: TNT,TNTBlastRadius,TNTBlast,Blast,Nuke,CustomTNT,Boom
+Keywords: Blast,Boom,CustomTNT,Nuke,TNT,TNTBlast,TNTBlastRadius
 ```
