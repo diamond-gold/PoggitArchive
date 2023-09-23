@@ -8,6 +8,6 @@ Version: 2.0.1
     Updated: 13-07-2023 10:16:55 UTC
 Repo: https://github.com/fernanACM/BetterItemID
 License: GPL-3.0
-Categories: General,API plugins,Educational,Fun,Chat-Related,Informational,Admin Tools
+Categories: General,Vanilla Mechanics,API plugins,Educational,Fun,Chat-Related,Informational,Admin Tools
 Keywords: BetterID,BetterItem,Block,ID,Item,ItemID
 ```
