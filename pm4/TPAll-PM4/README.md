@@ -8,6 +8,6 @@ Version: 1.3
     Updated: 03-06-2022 06:06:34 UTC
 Repo: https://github.com/fernanACM/TPAll
 License: apache-2.0
-Categories: General,API plugins,Fun,Teleportation,Chat-Related,Informational
-Keywords: PM4,Teleport,TP,TPALL,TPALL-PM4
+Categories: General,API plugins,Fun,Teleportation,Chat-Related,Informational,Admin Tools
+Keywords: PM5,Teleport,TP,TPALL,TPALL-PM5
 ```

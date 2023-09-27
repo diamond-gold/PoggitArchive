@@ -6,8 +6,8 @@
 Version: 1.6.1-beta
     API: 4.0.0
     Updated: 12-10-2022 15:31:33 UTC
-Repo: https://github.com/apexiedev/knock
+Repo: https://github.com/MineCube-MC/knock
 License: mit
-Categories: Minigame,Miscellaneous,Fun
+Categories: Minigame,Miscellaneous,Fun,General
 Keywords: ffa,kbffa,kbpvp,knock,knockbackffa,pvp
 ```
