@@ -1,0 +1,59 @@
+<h1 id="user-content-tpall"><a class="heading-link" href="#tpall">TPALL<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<p><a href="https://poggit.pmmp.io/p/TPALL-PM4" rel="nofollow"><img src="https://camo.githubusercontent.com/d963aabc40c77f403ea70a5f048e391763eb6e1b0fd7c41d8ca6e8a63e09f1f2/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f5450414c4c2d504d34" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/TPALL-PM4" style="max-width: 100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/TPALL-PM4" rel="nofollow"><img src="https://camo.githubusercontent.com/5a9a4e3b5bf6690f91a3ad675d86346d3d7b1ce102ffc9c0d25ccf37e7f274b9/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f5450414c4c2d504d34" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/TPALL-PM4" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/83558341/167649960-389dd644-3e52-4aa0-9de2-093313640694.png"><img src="https://user-images.githubusercontent.com/83558341/167649960-389dd644-3e52-4aa0-9de2-093313640694.png" alt="icon-tpall" style="max-width: 100%;"></a></p>
+<p>The TPAll plugin is for teleporting
+all players on the server to you! You can use the plugin completely at events, survival events and everything else. I will be happy if you write something in the comments that will help me for the better plugin. Thank you for your support and listen!</p>
+<p><a href="https://discord.gg/YyE9XFckqb" rel="nofollow"><img src="https://camo.githubusercontent.com/eecc96a3ff0dedc37f275aeeda585ba8d15a316b66809ea2795fdc41b88d5bc9/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833373730313836383634393730393536383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/837701868649709568?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width: 100%;"></a></p>
+<h3 id="user-content--implementations"><a class="heading-link" href="#-implementations">✔ Implementations<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<ul>
+<li>Sounds.</li>
+<li>Message customization.</li>
+<li>Command [/tpall]</li>
+</ul>
+<h3 id="user-content--config"><a class="heading-link" href="#-config">💾 Config<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span>   _____               _      _   _</span>
+<span class="pl-c"><span class="pl-c">#</span>  |_   _|  _ __       / \    | | | |</span>
+<span class="pl-c"><span class="pl-c">#</span>    | |   | '_ \     / _ \   | | | |</span>
+<span class="pl-c"><span class="pl-c">#</span>    | |   | |_) |   / ___ \  | | | |</span>
+<span class="pl-c"><span class="pl-c">#</span>    |_|   | .__/   /_/   \_\ |_| |_|</span>
+<span class="pl-c"><span class="pl-c">#</span>          |_|</span>
+<span class="pl-c"><span class="pl-c">#</span>    by matymare and fernanACM</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Plugin created by matymare, Updated by fernanACM</span>
+<span class="pl-c"><span class="pl-c">#</span> TPAll - It is a PocketMine-MP plugin by which you can port all players to one place</span>
+<span class="pl-c"><span class="pl-c">#</span> The plugin must not be modified without asking the plugin owner</span>
+<span class="pl-c"><span class="pl-c">#</span> You can write to me on Discord: Roospy#1666</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Configure the text and sound of the plugin, through the 'config.yml'. Minecraft sounds page:</span>
+<span class="pl-c"><span class="pl-c">#</span> https://www.digminecraft.com/lists/sound_list_pe.php</span>
+
+<span class="pl-c"><span class="pl-c">#</span> DO NOT TOUCH!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-s"><span class="pl-pds">"</span>1.0.0<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> ======(SETTINGS)======</span>
+<span class="pl-ent">Settings</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Prefix for Tpall message</span>
+  <span class="pl-ent">Prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§f[§eTPAll§f]§8»§r <span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Tpal's message</span>
+  <span class="pl-ent">Message-tpall</span>: <span class="pl-s"><span class="pl-pds">"</span>§aTeleporting...<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to enable/disable sound when using Tpall</span>
+  <span class="pl-ent">Tpall-no-sound</span>: <span class="pl-c1">true</span>
+  <span class="pl-c"><span class="pl-c">#</span> Type of sound when using Tpall</span>
+  <span class="pl-ent">Tpall-sound</span>: <span class="pl-s"><span class="pl-pds">"</span>portal.portal<span class="pl-pds">"</span></span>
+
+  <span class="pl-ent">Form</span>:
+    <span class="pl-ent">content</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;bAre you sure you want to teleport everyone to your position?<span class="pl-pds">"</span></span>
+    <span class="pl-ent">confirm-button</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;2YES<span class="pl-pds">"</span></span>
+    <span class="pl-ent">decline-button</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;cNO<span class="pl-pds">"</span></span>
+...</pre></div>
+<h3 id="user-content--commands"><a class="heading-link" href="#-commands">💬 Commands<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p>/tpall - Teleport all players to you!</p>
+<h3 id="user-content--permissions"><a class="heading-link" href="#-permissions">🚫 Permissions<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<ul>
+<li>Executing the command: <code>tpall.command</code>
+</li>
+</ul>
+<h2 id="user-content--credits"><a class="heading-link" href="#-credits">🔔 Credits:<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p>The plugin icon is created via <a href="www.flaticon.com">flaticon</a></p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"80e94a1a0d142427","version":"2023.8.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>
