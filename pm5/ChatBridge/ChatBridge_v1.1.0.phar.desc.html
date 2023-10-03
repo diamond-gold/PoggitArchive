@@ -1,0 +1,162 @@
+<h1 id="user-content-chatbridge"><a class="heading-link" href="#chatbridge">ChatBridge<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<p>This plugin fully bridges the events from discord to minecraft AND minecraft to discord !</p>
+<p>Currently supported events:</p>
+<ul>
+<li>Minecraft Messages</li>
+<li>Minecraft Command</li>
+<li>Minecraft Player Joined</li>
+<li>Minecraft Player Left</li>
+<li>Minecraft Player Transferred</li>
+<li>Discord Message</li>
+<li>Discord Member Joined</li>
+<li>Discord Member Left</li>
+</ul>
+<p>For each event the plugin can send a message to the opposite platform, to as many Discord channels as you like and to as many worlds in your Minecraft server or all of them !</p>
+<p>(Note we support embeds in all messages to discord too !)</p>
+<p>All events are fully customisable, see the Config Base for options and the relevant help/language.txt file for help on configuring the options.</p>
+<h1 id="user-content-config-base"><a class="heading-link" href="#config-base">Config Base<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">presence</span>:
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">status</span>: <span class="pl-s"><span class="pl-pds">"</span>Idle<span class="pl-pds">"</span></span>
+  <span class="pl-ent">type</span>: <span class="pl-s"><span class="pl-pds">"</span>Playing<span class="pl-pds">"</span></span>
+  <span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>on a PMMP Server!<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">messages</span>:
+  <span class="pl-ent">discord</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">from_channels</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>123456789<span class="pl-pds">"</span></span>
+    <span class="pl-ent">format</span>: <span class="pl-s"><span class="pl-pds">"</span>[Discord] §a{NICKNAME}§r &gt; §c{MESSAGE}<span class="pl-pds">"</span></span>
+    <span class="pl-ent">to_minecraft_worlds</span>: <span class="pl-s"><span class="pl-pds">"</span>*<span class="pl-pds">"</span></span>
+
+  <span class="pl-ent">minecraft</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">from_worlds</span>: <span class="pl-s"><span class="pl-pds">"</span>*<span class="pl-pds">"</span></span>
+    <span class="pl-ent">format</span>:
+      <span class="pl-ent">text</span>: <span class="pl-s"><span class="pl-pds">"</span>New Message<span class="pl-pds">"</span></span>
+      <span class="pl-ent">embed</span>:
+        <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+        <span class="pl-ent">title</span>: <span class="pl-c1">null</span>
+        <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>{USERNAME} ```{MESSAGE}```<span class="pl-pds">"</span></span>
+        <span class="pl-ent">url</span>: <span class="pl-c1">null</span>
+        <span class="pl-ent">author</span>: <span class="pl-c1">null</span>
+        <span class="pl-ent">footer</span>: <span class="pl-s"><span class="pl-pds">"</span>ChatBridge<span class="pl-pds">"</span></span>
+        <span class="pl-ent">colour</span>: <span class="pl-c1">0xEE5959</span>
+        <span class="pl-ent">time</span>: <span class="pl-c1">true</span>
+        <span class="pl-ent">fields</span>: <span class="pl-s">[]</span>
+    <span class="pl-ent">to_discord_channels</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>123456789<span class="pl-pds">"</span></span>
+
+
+<span class="pl-ent">commands</span>:
+  <span class="pl-ent">minecraft</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">from_worlds</span>: <span class="pl-s"><span class="pl-pds">"</span>*<span class="pl-pds">"</span></span>
+    <span class="pl-ent">format</span>:
+      <span class="pl-ent">text</span>: <span class="pl-s"><span class="pl-pds">"</span>Command executed<span class="pl-pds">"</span></span>
+      <span class="pl-ent">embed</span>:
+        <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+        <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>{USERNAME}<span class="pl-pds">"</span></span>
+        <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>/{COMMAND} {ARGS}<span class="pl-pds">"</span></span>
+        <span class="pl-ent">author</span>: <span class="pl-s"><span class="pl-pds">"</span>ChatBridge<span class="pl-pds">"</span></span>
+        <span class="pl-ent">url</span>: <span class="pl-c1">null</span>
+        <span class="pl-ent">footer</span>: <span class="pl-s"><span class="pl-pds">"</span>This is a footer<span class="pl-pds">"</span></span>
+        <span class="pl-ent">time</span>: <span class="pl-c1">true</span>
+        <span class="pl-ent">colour</span>: <span class="pl-c1">0x49F9C1</span>
+        <span class="pl-ent">fields</span>:
+          - <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Field Name<span class="pl-pds">"</span></span>
+            <span class="pl-ent">value</span>: <span class="pl-s"><span class="pl-pds">"</span>Field Value<span class="pl-pds">"</span></span>
+            <span class="pl-ent">inline</span>: <span class="pl-c1">false</span>
+    <span class="pl-ent">to_discord_channels</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>123456789<span class="pl-pds">"</span></span>
+
+
+<span class="pl-ent">leave</span>:
+  <span class="pl-ent">discord</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">servers</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>123456789<span class="pl-pds">"</span></span>
+    <span class="pl-ent">format</span>: <span class="pl-s"><span class="pl-pds">"</span>§a{NICKNAME} §cHas left the discord server :(<span class="pl-pds">"</span></span>
+    <span class="pl-ent">to_minecraft_worlds</span>: <span class="pl-s"><span class="pl-pds">"</span>*<span class="pl-pds">"</span></span>
+
+  <span class="pl-ent">minecraft</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">ignore_transferred</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">format</span>:
+      <span class="pl-ent">text</span>: <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+      <span class="pl-ent">embed</span>:
+        <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+        <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>Player Left<span class="pl-pds">"</span></span>
+        <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>- **{USERNAME}** left, reason: {REASON}<span class="pl-pds">"</span></span>
+        <span class="pl-ent">author</span>: <span class="pl-s"><span class="pl-pds">"</span>ChatBridge<span class="pl-pds">"</span></span>
+        <span class="pl-ent">url</span>: <span class="pl-c1">null</span>
+        <span class="pl-ent">footer</span>: <span class="pl-s"><span class="pl-pds">"</span>This is a footer<span class="pl-pds">"</span></span>
+        <span class="pl-ent">time</span>: <span class="pl-c1">true</span>
+        <span class="pl-ent">colour</span>: <span class="pl-c1">0xEE5959</span>
+        <span class="pl-ent">fields</span>:
+          - <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Field Name<span class="pl-pds">"</span></span>
+            <span class="pl-ent">value</span>: <span class="pl-s"><span class="pl-pds">"</span>Field Value<span class="pl-pds">"</span></span>
+            <span class="pl-ent">inline</span>: <span class="pl-c1">false</span>
+    <span class="pl-ent">to_discord_channels</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>123456789<span class="pl-pds">"</span></span>
+
+
+<span class="pl-ent">join</span>:
+  <span class="pl-ent">discord</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">servers</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>123456789<span class="pl-pds">"</span></span>
+    <span class="pl-ent">format</span>: <span class="pl-s"><span class="pl-pds">"</span>§a{USERNAME} §cHas joined the discord server :)<span class="pl-pds">"</span></span>
+    <span class="pl-ent">to_minecraft_worlds</span>: <span class="pl-s"><span class="pl-pds">"</span>*<span class="pl-pds">"</span></span>
+
+  <span class="pl-ent">minecraft</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">format</span>:
+      <span class="pl-ent">text</span>: <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+      <span class="pl-ent">embed</span>:
+        <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+        <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>Player Joined<span class="pl-pds">"</span></span>
+        <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>+ **{USERNAME}**<span class="pl-pds">"</span></span>
+        <span class="pl-ent">author</span>: <span class="pl-s"><span class="pl-pds">"</span>ChatBridge<span class="pl-pds">"</span></span>
+        <span class="pl-ent">url</span>: <span class="pl-c1">null</span>
+        <span class="pl-ent">footer</span>: <span class="pl-s"><span class="pl-pds">"</span>This is a footer<span class="pl-pds">"</span></span>
+        <span class="pl-ent">time</span>: <span class="pl-c1">true</span>
+        <span class="pl-ent">colour</span>: <span class="pl-c1">0xEE5959</span>
+        <span class="pl-ent">fields</span>:
+          - <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Field Name<span class="pl-pds">"</span></span>
+            <span class="pl-ent">value</span>: <span class="pl-s"><span class="pl-pds">"</span>Field Value<span class="pl-pds">"</span></span>
+            <span class="pl-ent">inline</span>: <span class="pl-c1">false</span>
+    <span class="pl-ent">to_discord_channels</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>123456789<span class="pl-pds">"</span></span>
+
+
+<span class="pl-ent">transferred</span>:
+  <span class="pl-ent">minecraft</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">format</span>:
+      <span class="pl-ent">text</span>: <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+      <span class="pl-ent">embed</span>:
+        <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+        <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>Player Transferred<span class="pl-pds">"</span></span>
+        <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>**{USERNAME}** -&gt; `{SERVER_ADDRESS}:{SERVER_PORT}`<span class="pl-pds">"</span></span>
+        <span class="pl-ent">author</span>: <span class="pl-s"><span class="pl-pds">"</span>ChatBridge<span class="pl-pds">"</span></span>
+        <span class="pl-ent">url</span>: <span class="pl-c1">null</span>
+        <span class="pl-ent">footer</span>: <span class="pl-s"><span class="pl-pds">"</span>This is a footer<span class="pl-pds">"</span></span>
+        <span class="pl-ent">time</span>: <span class="pl-c1">true</span>
+        <span class="pl-ent">colour</span>: <span class="pl-c1">0xEE5959</span>
+        <span class="pl-ent">fields</span>:
+          - <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Field Name<span class="pl-pds">"</span></span>
+            <span class="pl-ent">value</span>: <span class="pl-s"><span class="pl-pds">"</span>Field Value<span class="pl-pds">"</span></span>
+            <span class="pl-ent">inline</span>: <span class="pl-c1">false</span>
+    <span class="pl-ent">to_discord_channels</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>123456789<span class="pl-pds">"</span></span>
+</pre></div>
+<h1 id="user-content-planned-features"><a class="heading-link" href="#planned-features">Planned Features<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<ul>
+<li>Server log to Discord.</li>
+<li>Minecraft Player face (from skin) being shown in Discord embed.</li>
+<li>More Minecraft events (eg Killed, Sleeping etc)
+<em>And many more, add your suggestions in an issue over on GitHub.</em>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"81020399f9dce926","version":"2023.8.0","r":1,"b":1,"token":"508eb1d242ef46b690a0886422106e77","si":100}' crossorigin="anonymous"></script>
