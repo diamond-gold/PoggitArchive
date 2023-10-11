@@ -1,13 +1,13 @@
 # MaskUI
-<img src="https://raw.githubusercontent.com/SkulZOnTheYT/MaskUI/8133b7bf68715ba102b8b5dbadf12fcd9b264397/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/SkulZOnTheYT/MaskUI/9b6fe6f634488a8b1ff6b7882c28684cef476027/icon.gif" width="128" height="128" />
 
 ## Plugin Mask UI For Pmmp 5.x.x
 ```properties
-Version: 1.2
+Version: 1.3
     API: 5.0.0
-    Updated: 18-09-2023 13:56:19 UTC
+    Updated: 10-10-2023 18:27:28 UTC
 Repo: https://github.com/SkulZOnTheYT/MaskUI
 License: Apache-2.0
-Categories: Miscellaneous,Fun,Economy
+Categories: Miscellaneous,Fun,Economy,Chat-Related
 Keywords: maskplugin,maskui,php,php8,plugins,pocketmine-plugins
 ```
