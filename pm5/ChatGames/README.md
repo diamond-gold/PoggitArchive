@@ -9,5 +9,5 @@ Version: 1.0.2
 Repo: https://github.com/antbag-pm-pl/ChatGames
 License: GPL-3.0-or-later
 Categories: General,Miscellaneous,Fun,Minigame,Economy,Chat-Related
-Keywords: 
+Keywords: minecraft,plugin,pmmp,pmmp-plugins,pmmp-servers,pocketmine,pocketmine-mp
 ```
