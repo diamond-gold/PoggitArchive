@@ -1,11 +1,11 @@
 # HypixelBow
-<img src="https://raw.githubusercontent.com/kostamax27/Hypixel-Bow/7a7d837b68ac8cd6bebf3a23607fdacc4c24e714/Hypixel-Bow.gif" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/kostamax27/Hypixel-Bow/f5e853d0c95933f436aeb1cd1d323338e956b7c7/Hypixel-Bow.gif" width="128" height="128" />
 
 ## Sound when hitting a player
 ```properties
-Version: 1.1.9
+Version: 1.2.0
     API: 5.0.0
-    Updated: 21-09-2023 23:39:21 UTC
+    Updated: 27-10-2023 18:16:13 UTC
 Repo: https://github.com/kostamax27/Hypixel-Bow
 License: GPL-3.0-only
 Categories: Fun,Minigame,Chat-Related,Informational,General

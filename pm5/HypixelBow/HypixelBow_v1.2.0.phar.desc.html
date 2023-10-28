@@ -1,0 +1,47 @@
+<h3 id="user-content-hypixelbow"><a class="heading-link" href="#hypixelbow">HypixelBow<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<h1 id="user-content-hypixelbow-1"><a class="heading-link" href="#hypixelbow-1">HypixelBow<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<p><strong>Play sound when hit player with bow</strong></p>
+<p><a href="https://poggit.pmmp.io/p/HypixelBow" rel="nofollow"><img src="https://camo.githubusercontent.com/7f977f72ae5ff0316fec83cb5b948c8d1a4a002b6f8504a3b06ef7022329014c/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2f4879706978656c426f77" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl/HypixelBow" style="max-width: 100%;"></a></p>
+<h3 id="user-content-features"><a class="heading-link" href="#features">Features<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<ul>
+<li>Sound will be played when player hit a player with bow</li>
+</ul>
+<h3 id="user-content-commandpermission"><a class="heading-link" href="#commandpermission">Command/Permission<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">command</span>: <span class="pl-s">hbow</span>
+<span class="pl-ent">permission</span>: <span class="pl-s">hypixelbow.cmd</span>
+<span class="pl-ent">default</span>: <span class="pl-s">op</span></pre></div>
+<h3 id="user-content-settings"><a class="heading-link" href="#settings">Settings<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p>To edit settings, open config.yml in plugin folder</p>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span> HypixelBow Configuration File</span>
+
+<span class="pl-c"><span class="pl-c">#</span> will send to launched player and hit the projectile</span>
+<span class="pl-c"><span class="pl-c">#</span> not to send, set to false.</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Replacement:</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> {hp}      : player's health</span>
+<span class="pl-c"><span class="pl-c">#</span> {max_hp}  : player's max health</span>
+<span class="pl-c"><span class="pl-c">#</span> {damage}  : amount of damage</span>
+<span class="pl-c"><span class="pl-c">#</span> {name}    : player's name</span>
+<span class="pl-c"><span class="pl-c">#</span> {display} : player's display name</span>
+
+<span class="pl-ent">sound</span>:
+  <span class="pl-ent">enable</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">volume</span>: <span class="pl-c1">1</span>
+  <span class="pl-ent">pitch</span>: <span class="pl-c1">1</span>
+  <span class="pl-ent">name</span>: <span class="pl-s">random.orb</span>
+<span class="pl-ent">message</span>:
+  <span class="pl-ent">enable</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">'</span>§c{name} §7(§aHP: §e{hp}§7)<span class="pl-pds">'</span></span>
+<span class="pl-ent">popup</span>:
+  <span class="pl-ent">enable</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">'</span>§c{name} §7(§aHP: §e{hp}§7)<span class="pl-pds">'</span></span>
+<span class="pl-ent">tip</span>:
+  <span class="pl-ent">enable</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">'</span>§c{name} §7(§aHP: §e{hp}§7)<span class="pl-pds">'</span></span>
+...</pre></div>
+<h3 id="user-content-todo"><a class="heading-link" href="#todo">TODO<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<ul>
+<li>Language system</li>
+</ul>
