@@ -1,0 +1,536 @@
+<h1 id="user-content-bedcoreprotect"><a class="heading-link" href="#bedcoreprotect">BedcoreProtect<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<p><a href="https://poggit.pmmp.io/p/BedcoreProtect" rel="nofollow"><img src="https://camo.githubusercontent.com/b7d5c526b7e174c7ae6bb559ec656f2a2414dc72ace15039d7442af8a9bf255f/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f426564636f726550726f74656374" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/BedcoreProtect" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/BedcoreProtect" rel="nofollow"><img src="https://camo.githubusercontent.com/480476a102949ba0af815a5ad8c94f8e75b1c7b6168fbd2d0729af9553f3cdfb/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f426564636f726550726f74656374" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/BedcoreProtect" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/BedcoreProtect" rel="nofollow"><img src="https://camo.githubusercontent.com/fa8a0a33c0a227e4b0e0547ecabac600d120db45840e1e2ae17652d1f82569df/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f426564636f726550726f74656374" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/BedcoreProtect" style="max-width: 100%;"></a>
+<a href="https://discord.gg/Uf6U78g" rel="nofollow"><img src="https://camo.githubusercontent.com/f6a38492f173efeab9116ad7739fe9aa0cba6424cda6b1919dc5ffb7cb76bb26/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3632303531393031373134383537393834312e7376673f6c6162656c3d266c6f676f3d646973636f7264266c6f676f436f6c6f723d66666666666626636f6c6f723d373338394438266c6162656c436f6c6f723d364137454332" alt="Discord" data-canonical-src="https://img.shields.io/discord/620519017148579841.svg?label=&amp;logo=discord&amp;logoColor=ffffff&amp;color=7389D8&amp;labelColor=6A7EC2" style="max-width: 100%;"></a></p>
+<p>BedcoreProtect is a fast, efficient, data logging and anti-griefing tool for PocketMine servers. Rollback and restore any amount of damage.</p>
+<h2 id="user-content-features"><a class="heading-link" href="#features">Features<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<ul>
+<li>Fast efficient data logging.</li>
+<li>Fast rollbacks.</li>
+<li>No configuration required. Put the plugin on your server, and you're good to go.</li>
+<li>Multi-language support.</li>
+<li>User interface (UI) support.</li>
+<li>SQLite based data storage.</li>
+<li>Optional MySQL support.</li>
+<li>Easy to use commands.</li>
+<li>Perform rollbacks AND restores. Undo any rollback, anytime.</li>
+<li>Easy to use block inspector</li>
+<li>Advanced search-based lookup tool.</li>
+<li>Paginated logs.</li>
+<li>Automatic update checker.</li>
+<li>Multi-world support.</li>
+<li>Enable or disable any aspect of logging in the configuration file.</li>
+<li>Rollback per-player all damage around you.</li>
+<li>Specify certain block types to skip in rollbacks/restores.</li>
+<li>Restrict rollbacks/restores to specific block types</li>
+<li>Log basic player actions (such as when a player opens a door)</li>
+<li>Liquid tracking. Associate liquid flow with players</li>
+<li>Restrict rollbacks/restores to a radius area.</li>
+<li>Able to track blocks that fall off of other blocks. If a player breaks a block that had a sign on it, both the block and the sign can be rolled back.</li>
+<li>Easily delete old log data.</li>
+<li>Safe default parameters.
+Rollback or restore multiple players at once.</li>
+<li>Lookup, rollback, or restore by a specific action.</li>
+<li>Exclude multiple blocks.</li>
+</ul>
+<p>...and much more!!</p>
+<h2 id="user-content-what-does-it-log"><a class="heading-link" href="#what-does-it-log">What does it log?<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<ul>
+<li>Log blocks broken by players</li>
+<li>Log blocks placed by players</li>
+<li>Log natural block breakage (ex: if a sign pops off a dirt block that was broken)</li>
+<li>Log bucket usage</li>
+<li>Log liquid flow</li>
+<li>Log explosions</li>
+<li>Log flint &amp; steel</li>
+<li>Log fire igniting blocks</li>
+<li>Log blocks burning up in fires</li>
+<li>Log block movement (Falling sand/gravel)</li>
+<li>Log leaves decay</li>
+<li>Log player interactions</li>
+<li>Log items taken or placed in chests, furnaces, dispensers, etc.</li>
+<li>Log paintings and item frames. (With rollback support!)</li>
+<li>Log entities killed by players (animals/monsters)</li>
+</ul>
+<p>...and the list is still expanding!</p>
+<h1 id="user-content-database-minimum-requirements"><a class="heading-link" href="#database-minimum-requirements">Database Minimum Requirements<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<p>In case of <strong>MySQL</strong> as storage, the minimum required version must be &gt;= <strong>5.6.4</strong></p>
+<h1 id="user-content-commands"><a class="heading-link" href="#commands">Commands<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<p>You can access the following commands by using <strong>/bedcoreprotect</strong>, <strong>/bcp</strong>, <strong>/core</strong> or <strong>/co</strong>.
+Running this command without arguments and with the configuration option <code>enable-ui-menu: true</code>, it will display a graphic interface to simplify the plugin usage.</p>
+<p>The <strong>command permission</strong> is <em>bcp.command.bedcoreprotect</em> (default: operator).</p>
+<h2 id="user-content-command-overview"><a class="heading-link" href="#command-overview">Command overview<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th align="center">Permission default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/bcp help</td>
+<td>Display a list of commands</td>
+<td>bcp.subcommand.help</td>
+<td align="center">Operator</td>
+</tr>
+<tr>
+<td>/bcp lookup</td>
+<td>Lookup block data</td>
+<td>bcp.subcommand.lookup</td>
+<td align="center">Operator</td>
+</tr>
+<tr>
+<td>/bcp purge</td>
+<td>Delete old block data</td>
+<td>bcp.subcommand.purge</td>
+<td align="center">Operator</td>
+</tr>
+<tr>
+<td>/bcp reload</td>
+<td>Reload the configuration file</td>
+<td>bcp.subcommand.reload</td>
+<td align="center">Operator</td>
+</tr>
+<tr>
+<td>/bcp inspect</td>
+<td>Toggle the inspector</td>
+<td>bcp.subcommand.inspect</td>
+<td align="center">Operator</td>
+</tr>
+<tr>
+<td>/bcp restore</td>
+<td>Restore block data</td>
+<td>bcp.subcommand.restore</td>
+<td align="center">Operator</td>
+</tr>
+<tr>
+<td>/bcp rollback</td>
+<td>Rollback block data</td>
+<td>bcp.subcommand.rollback</td>
+<td align="center">Operator</td>
+</tr>
+<tr>
+<td>/bcp show</td>
+<td>View the plugin status</td>
+<td>bcp.subcommand.show</td>
+<td align="center">Operator</td>
+</tr>
+<tr>
+<td>/bcp status</td>
+<td>View the plugin status</td>
+<td>bcp.subcommand.status</td>
+<td align="center">Operator</td>
+</tr>
+</tbody>
+</table>
+<h3 id="user-content-command-shortcuts"><a class="heading-link" href="#command-shortcuts">Command shortcuts<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th align="center">Permission default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/bcp near</td>
+<td>Performs a lookup with radius 5</td>
+<td>bcp.subcommand.near</td>
+<td align="center">Operator</td>
+</tr>
+<tr>
+<td>/bcp undo</td>
+<td>Revert a rollback/restore via the opposite action</td>
+<td>bcp.subcommand.undo</td>
+<td align="center">Operator</td>
+</tr>
+</tbody>
+</table>
+<h2 id="user-content-command-details"><a class="heading-link" href="#command-details">Command details<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><em>Detailed commands information are listed below.</em></p>
+<h3 id="user-content-bcp-help"><a class="heading-link" href="#bcp-help">/bcp help<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p>Display a list of commands available in-game.</p>
+<hr>
+<h3 id="user-content-bcp-lookup-parameters"><a class="heading-link" href="#bcp-lookup-parameters">/bcp lookup &lt;parameters&gt;<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p>Perform a lookup returning a page with all blocks data fetched. If multiple pages are returned, see the command <a href="#bcp-show-pagelines">/bcp show</a> to switch pages.</p>
+<blockquote>
+<p><strong>Alias:</strong> /bcp l &lt;parameters&gt;</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th align="center">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time</td>
+<td align="center">YES</td>
+</tr>
+<tr>
+<td>world</td>
+<td align="center">YES (only console)</td>
+</tr>
+<tr>
+<td>radius</td>
+<td align="center">NO</td>
+</tr>
+<tr>
+<td>users</td>
+<td align="center">NO</td>
+</tr>
+<tr>
+<td>actions</td>
+<td align="center">NO</td>
+</tr>
+<tr>
+<td>include</td>
+<td align="center">NO</td>
+</tr>
+<tr>
+<td>exclude</td>
+<td align="center">NO</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="user-content-bcp-purge-parameters"><a class="heading-link" href="#bcp-purge-parameters">/bcp purge &lt;parameters&gt;<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p>Purge old block data. Useful for freeing up space on your HDD if you don't need the older data.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th align="center">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time</td>
+<td align="center">YES</td>
+</tr>
+<tr>
+<td>world</td>
+<td align="center">NO</td>
+</tr>
+</tbody>
+</table>
+<p>For example, <code>/bcp purge t=30d</code> will delete all data older than one month, and only keep the last 30 days of data.</p>
+<h4 id="user-content-purging-worlds"><a class="heading-link" href="#purging-worlds">Purging Worlds<span aria-hidden="true" class="octicon octicon-link"></span></a></h4>
+<p>You can also optionally specify a world where delete the data.
+For example, <code>/bcp purge t=30d w=faction_world</code> will delete all data older than one month in the Faction world, without deleting data in any other worlds.</p>
+<p>You can also add <code>#optimize</code> to the end of the command (e.g. <code>/bcp purge t=30d #optimize</code>) will also optimize your tables and reclaim disk space.</p>
+<hr>
+<h3 id="user-content-bcp-reload"><a class="heading-link" href="#bcp-reload">/bcp reload<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p>Reloads the configuration file.</p>
+<hr>
+<h3 id="user-content-bcp-inspect"><a class="heading-link" href="#bcp-inspect">/bcp inspect<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p>Enable the inspector. Type the command again to disable it.</p>
+<blockquote>
+<p><strong>Alias:</strong> /bcp i</p>
+</blockquote>
+<hr>
+<h3 id="user-content-bcp-restore-parameters"><a class="heading-link" href="#bcp-restore-parameters">/bcp restore &lt;parameters&gt;<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p>Perform a restore. <em>Restoring can be used to undo rollbacks or to restore player actions.</em></p>
+<blockquote>
+<p><strong>Alias:</strong> /bcp rs &lt;parameters&gt;</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th align="center">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time</td>
+<td align="center">YES</td>
+</tr>
+<tr>
+<td>world</td>
+<td align="center">YES (only console)</td>
+</tr>
+<tr>
+<td>radius</td>
+<td align="center">YES</td>
+</tr>
+<tr>
+<td>users</td>
+<td align="center">NO</td>
+</tr>
+<tr>
+<td>actions</td>
+<td align="center">NO</td>
+</tr>
+<tr>
+<td>include</td>
+<td align="center">NO</td>
+</tr>
+<tr>
+<td>exclude</td>
+<td align="center">NO</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="user-content-bcp-rollback-parameters"><a class="heading-link" href="#bcp-rollback-parameters">/bcp rollback &lt;parameters&gt;<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p>Perform a rollback. <em>Rollbacks can be used to revert player actions.</em></p>
+<blockquote>
+<p><strong>Alias:</strong> /bcp rb &lt;parameters&gt;</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th align="center">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time</td>
+<td align="center">YES</td>
+</tr>
+<tr>
+<td>world</td>
+<td align="center">YES (only console)</td>
+</tr>
+<tr>
+<td>radius</td>
+<td align="center">YES</td>
+</tr>
+<tr>
+<td>users</td>
+<td align="center">NO</td>
+</tr>
+<tr>
+<td>actions</td>
+<td align="center">NO</td>
+</tr>
+<tr>
+<td>include</td>
+<td align="center">NO</td>
+</tr>
+<tr>
+<td>exclude</td>
+<td align="center">NO</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="user-content-bcp-show-pagelines"><a class="heading-link" href="#bcp-show-pagelines">/bcp show &lt;page&gt;:&lt;lines&gt;<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p>Allow switching page when multiple pages are returned from the <a href="#bcp-lookup-parameters">/bcp lookup</a> command.
+To change the number of lines displayed on a page, use the command <code>/bcp show &lt;page&gt;:&lt;lines&gt;</code>.</p>
+<blockquote>
+<p><strong>Alias:</strong> /bcp s</p>
+</blockquote>
+<blockquote>
+<p>For example, <code>/bcp s 2:10</code> will return 10 lines of data, starting from the second page.</p>
+</blockquote>
+<hr>
+<h3 id="user-content-bcp-status"><a class="heading-link" href="#bcp-status">/bcp status<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p>Displays the plugin status and version information.</p>
+<hr>
+<h2 id="user-content-parameters-overview"><a class="heading-link" href="#parameters-overview">Parameters overview<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Aliases</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>users</td>
+<td>user, u</td>
+<td>Specify the user(s).</td>
+</tr>
+<tr>
+<td>time</td>
+<td>t</td>
+<td>Specify the amount of time.</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>r</td>
+<td>Specify a radius area.</td>
+</tr>
+<tr>
+<td>world</td>
+<td>w</td>
+<td>Specify the world.</td>
+</tr>
+<tr>
+<td>actions</td>
+<td>action, a</td>
+<td>Restrict to a certain actions.</td>
+</tr>
+<tr>
+<td>include</td>
+<td>i</td>
+<td>Include specific blocks.</td>
+</tr>
+<tr>
+<td>exclude</td>
+<td>e</td>
+<td>Exclude specific blocks.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="user-content-parameter-details"><a class="heading-link" href="#parameter-details">Parameter details<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><em>Detailed commands parameters information are listed below.</em></p>
+<h3 id="user-content-uusers"><a class="heading-link" href="#uusers">u=&lt;users&gt;<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p><em>You can specify a single or multiple users or entities.</em></p>
+<p>Examples:</p>
+<ul>
+<li><code>u=Notch</code></li>
+<li><code>u=Notch,shoghicp</code></li>
+<li><code>u=matcracker,#Zombie</code></li>
+</ul>
+<hr>
+<h3 id="user-content-ttime"><a class="heading-link" href="#ttime">t=&lt;time&gt;<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p><em>You can specify weeks, days, hours, minutes, and seconds.</em></p>
+<p>Examples:</p>
+<ul>
+<li><code>t=4w5d2h7m20s</code></li>
+<li><code>t=5d2h</code></li>
+<li><code>t=1y</code></li>
+</ul>
+<hr>
+<h3 id="user-content-rradius"><a class="heading-link" href="#rradius">r=&lt;radius&gt;<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p><em>A numeric radius targets within that many blocks of your player location.</em></p>
+<p>Examples:</p>
+<ul>
+<li>
+<code>r=20</code> <em>(target within 20 blocks of your location)</em>
+</li>
+<li>
+<code>r=#global</code> <em>(target the entire world)</em>
+</li>
+</ul>
+<hr>
+<h3 id="user-content-wworld"><a class="heading-link" href="#wworld">w=&lt;world&gt;<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p><em>You can specify a single world.</em></p>
+<p>Examples:</p>
+<ul>
+<li><code>w=faction</code></li>
+<li>
+<code>w="my world"</code> <em>(if your world name has whitespaces use double quotes)</em>
+</li>
+</ul>
+<hr>
+<h3 id="user-content-aactions"><a class="heading-link" href="#aactions">a=&lt;actions&gt;<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p><em>Restrict the command to a specific action.</em></p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>block</td>
+<td>Placed/Broken blocks</td>
+</tr>
+<tr>
+<td>+block</td>
+<td>Placed blocks</td>
+</tr>
+<tr>
+<td>-block</td>
+<td>Broken blocks</td>
+</tr>
+<tr>
+<td>click</td>
+<td>Player interactions</td>
+</tr>
+<tr>
+<td>container</td>
+<td>Items taken from or put in chests</td>
+</tr>
+<tr>
+<td>+container</td>
+<td>Items put in chests</td>
+</tr>
+<tr>
+<td>-container</td>
+<td>Items taken from chests</td>
+</tr>
+<tr>
+<td>kill</td>
+<td>Mobs killed</td>
+</tr>
+<tr>
+<td>session</td>
+<td>Player join/left the server</td>
+</tr>
+<tr>
+<td>+session</td>
+<td>Player join the server</td>
+</tr>
+<tr>
+<td>-session</td>
+<td>Player left the server</td>
+</tr>
+<tr>
+<td>chat</td>
+<td>Player write in chat</td>
+</tr>
+<tr>
+<td>command</td>
+<td>Player executes a command</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>For example, if you want to only rollback blocks placed, you would use <code>a=+block</code></p>
+</blockquote>
+<hr>
+<h3 id="user-content-iinclude"><a class="heading-link" href="#iinclude">i=&lt;include&gt;<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p><em>Can be used to specify a blocks/items.</em></p>
+<p>Examples:</p>
+<ul>
+<li>
+<code>i=stone</code> <em>(only includes stone)</em>
+</li>
+<li>
+<code>w=stone,oak_wood,bedrock</code> <em>(specify multiple blocks)</em>
+</li>
+</ul>
+<blockquote>
+<p>You can find a list of blocks at <a href="https://minecraft.gamepedia.com/Bedrock_Edition_data_values" rel="nofollow">https://minecraft.gamepedia.com/Bedrock_Edition_data_values</a>.</p>
+</blockquote>
+<hr>
+<h3 id="user-content-eexclude"><a class="heading-link" href="#eexclude">e=&lt;exclude&gt;<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<p><em>Can be used to exclude a blocks/items.</em></p>
+<p>Examples:</p>
+<ul>
+<li>
+<code>e=tnt</code> <em>(only excludes TNT)</em>
+</li>
+</ul>
+<hr>
+<h1 id="user-content-faq"><a class="heading-link" href="#faq">FAQ<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<ul>
+<li>
+<strong>I found a bug, where can I report it?</strong>
+<ul>
+<li>You can report <a href="https://github.com/matcracker/BedcoreProtect/issues/new/choose">here</a> by clicking button <strong>"Get Started"</strong> on <strong>Bug report</strong>.</li>
+</ul>
+</li>
+<li>
+<strong>Where can I request a new feature?</strong>
+<ul>
+<li>You can ask a new feature <a href="https://github.com/matcracker/BedcoreProtect/issues/new/choose">here</a> by clicking button <strong>"Get Started"</strong> on <strong>Feature request</strong>.</li>
+</ul>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"81f0f7f1ba6a0668","version":"2023.10.0","r":1,"token":"508eb1d242ef46b690a0886422106e77","b":1}' crossorigin="anonymous"></script>
