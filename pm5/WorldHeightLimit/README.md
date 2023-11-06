@@ -1,13 +1,13 @@
 # WorldHeightLimit
-<img src="https://raw.githubusercontent.com/BeeAZ-pm-pl/WorldHeightLimit/36e1f4371992a6eb7d27e3d5f8fc0a7e04de7d2e/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/BeeAZ-pm-pl/WorldHeightLimit/2458d760cf267b1f0fba907a08d75d28d3426ea4/icon.png" width="128" height="128" />
 
 ## The height limit of the world
 ```properties
-Version: 0.0.2
+Version: 0.0.3
     API: 5.0.0
-    Updated: 01-06-2023 16:41:13 UTC
+    Updated: 05-11-2023 10:36:53 UTC
 Repo: https://github.com/BeeAZ-pm-pl/WorldHeightLimit
-License: gpl-3.0
+License: GPL-3.0-only
 Categories: World Editing and Management
 Keywords: WorldHeightLimit
 ```
