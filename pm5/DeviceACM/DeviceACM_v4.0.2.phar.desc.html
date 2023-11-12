@@ -1,0 +1,261 @@
+<p><a href="https://poggit.pmmp.io/p/DeviceACM" rel="nofollow"><img src="https://camo.githubusercontent.com/6740d34c71cb035ed6ceae1afa55caa01c99bcb7841e8df7d2c1ba3ec4038232/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f44657669636541434d" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/DeviceACM" style="max-width: 100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/DeviceACM" rel="nofollow"><img src="https://camo.githubusercontent.com/fec2b4b82f93cdd5b9d54ea5f2161b0c38d3d513a83a729c526e47bf9cb61dda/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f44657669636541434d" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/DeviceACM" style="max-width: 100%;"></a></p>
+<h1 id="user-content-deviceacm"><a class="heading-link" href="#deviceacm">DeviceACM<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<p><strong>Simple tag to see your health, hunger, cps, connection, faction and device you use. The best DeviceTag for PocketMine-PM 5.0 servers.</strong></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/83558341/195784419-7efde11a-f0f0-4dc2-ad3c-69616cbfb611.png"><img src="https://user-images.githubusercontent.com/83558341/195784419-7efde11a-f0f0-4dc2-ad3c-69616cbfb611.png" alt="1665729976547" style="max-width: 100%;"></a></p>
+<p><a href="https://discord.gg/YyE9XFckqb" rel="nofollow"><img src="https://camo.githubusercontent.com/eecc96a3ff0dedc37f275aeeda585ba8d15a316b66809ea2795fdc41b88d5bc9/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833373730313836383634393730393536383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/837701868649709568?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width: 100%;"></a></p>
+<h3 id="user-content--wiki"><a class="heading-link" href="#-wiki">🌍 Wiki<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<ul>
+<li>Check our plugin <a href="https://github.com/fernanACM/DeviceACM/wiki">wiki</a> for features and secrets in the...</li>
+</ul>
+<h3 id="user-content--implementations"><a class="heading-link" href="#-implementations">💡 Implementations<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<ul>
+<li>[X] Configuration</li>
+<li>[x] Faction support</li>
+<li>[x] ScoreTag customization</li>
+<li>[x] PopupTag customization</li>
+<li>[x] DeviceTag and PopupTag per worlds</li>
+<li>[x] Platform</li>
+<li>[x] Keys in config.yml</li>
+</ul>
+<h3 id="user-content--config"><a class="heading-link" href="#-config">💾 Config<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span>  ____    _____  __     __  ___    ____   _____      _       ____   __  __ </span>
+<span class="pl-c"><span class="pl-c">#</span> |  _ \  | ____| \ \   / / |_ _|  / ___| | ____|    / \     / ___| |  \/  |</span>
+<span class="pl-c"><span class="pl-c">#</span> | | | | |  _|    \ \ / /   | |  | |     |  _|     / _ \   | |     | |\/| |</span>
+<span class="pl-c"><span class="pl-c">#</span> | |_| | | |___    \ V /    | |  | |___  | |___   / ___ \  | |___  | |  | |</span>
+<span class="pl-c"><span class="pl-c">#</span> |____/  |_____|    \_/    |___|  \____| |_____| /_/   \_\  \____| |_|  |_|</span>
+<span class="pl-c"><span class="pl-c">#</span>       by fernanACM</span>
+<span class="pl-c"><span class="pl-c">#</span> A simple and customizable DeviceTag via 'config.yml'. Shows your health, hunger, </span>
+<span class="pl-c"><span class="pl-c">#</span> connection, device, cps, faction (ONLY IF YOU ACTIVATE SUPPORT) and more. </span>
+<span class="pl-c"><span class="pl-c">#</span> The best DeviceTag for Pocketmine 5.0 servers.</span>
+
+<span class="pl-c"><span class="pl-c">#</span> VERSION CONFIG</span>
+<span class="pl-ent">config-version</span>: <span class="pl-s"><span class="pl-pds">"</span>4.0.0<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ======(KEYS)======</span>
+<span class="pl-c"><span class="pl-c">#</span> PLUGIN:</span>
+<span class="pl-c"><span class="pl-c">#</span> {NAME} =&gt; player name</span>
+<span class="pl-c"><span class="pl-c">#</span> {HEALTH} =&gt; player life</span>
+<span class="pl-c"><span class="pl-c">#</span> {MAX_HEALTH} =&gt; player max life</span>
+<span class="pl-c"><span class="pl-c">#</span> {FOOD} =&gt; player hunger</span>
+<span class="pl-c"><span class="pl-c">#</span> {MAX_FOOD} =&gt; player max hunger</span>
+<span class="pl-c"><span class="pl-c">#</span> {PING} =&gt; player connection</span>
+<span class="pl-c"><span class="pl-c">#</span> {DEVICE} =&gt; player device</span>
+<span class="pl-c"><span class="pl-c">#</span> {CPS} =&gt; player cps</span>
+<span class="pl-c"><span class="pl-c">#</span> {WORLD} =&gt; world name</span>
+<span class="pl-c"><span class="pl-c">#</span> {REACH} =&gt; player reach</span>
+
+<span class="pl-c"><span class="pl-c">#</span> POPUP:</span>
+<span class="pl-c"><span class="pl-c">#</span> {VICTIM_NAME} =&gt; victm name</span>
+<span class="pl-c"><span class="pl-c">#</span> {VICTIM_HEALTH} =&gt; victm life</span>
+<span class="pl-c"><span class="pl-c">#</span> {VICTIM_MAX_HEALTH} =&gt; victm max life</span>
+<span class="pl-c"><span class="pl-c">#</span> {VICTIM_FOOD} =&gt; victm hunger</span>
+<span class="pl-c"><span class="pl-c">#</span> {VICTIM_MAX_FOOD} =&gt; victm max hunger</span>
+<span class="pl-c"><span class="pl-c">#</span> {VICTIM_PING} =&gt; victm connection</span>
+<span class="pl-c"><span class="pl-c">#</span> {VICTIM_DEVICE} =&gt; victm device</span>
+<span class="pl-c"><span class="pl-c">#</span> {VICTIM_CPS} =&gt; victm cps</span>
+<span class="pl-c"><span class="pl-c">#</span> {VICTIM_WORLD} =&gt; world name</span>
+<span class="pl-c"><span class="pl-c">#</span> {VICTIM_REACH} =&gt; victm reach</span>
+
+<span class="pl-c"><span class="pl-c">#</span> FACTION SUPPORT:</span>
+<span class="pl-c"><span class="pl-c">#</span> {FACTION} =&gt; faction name</span>
+<span class="pl-c"><span class="pl-c">#</span> {FACTION_RANK} =&gt; faction rank</span>
+<span class="pl-c"><span class="pl-c">#</span> {FACTION_POWER} =&gt; faction power</span>
+
+<span class="pl-c"><span class="pl-c">#</span> EXTRAS:</span>
+<span class="pl-c"><span class="pl-c">#</span> "{LINE}" =&gt; "\n",</span>
+<span class="pl-c"><span class="pl-c">#</span> - COLORS</span>
+<span class="pl-c"><span class="pl-c">#</span>  "&amp;" =&gt; §,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{BLACK}" =&gt; TextFormat::BLACK,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{DARK_BLUE}" =&gt; TextFormat::DARK_BLUE,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{DARK_GREEN}" =&gt; TextFormat::DARK_GREEN,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{CYAN}" =&gt; TextFormat::DARK_AQUA,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{DARK_RED}" =&gt; TextFormat::DARK_RED,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{PURPLE}" =&gt; TextFormat::DARK_PURPLE,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{GOLD}" =&gt; TextFormat::GOLD,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{GRAY}" =&gt; TextFormat::GRAY,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{DARK_GRAY}" =&gt; TextFormat::DARK_GRAY,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{BLUE}" =&gt; TextFormat::BLUE,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{GREEN}" =&gt; TextFormat::GREEN,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{AQUA}" =&gt; TextFormat::AQUA,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{RED}" =&gt; TextFormat::RED,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{PINK}" =&gt; TextFormat::LIGHT_PURPLE,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{YELLOW}" =&gt; TextFormat::YELLOW,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{WHITE}" =&gt; TextFormat::WHITE,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{ORANGE}" =&gt; "§6"</span>
+<span class="pl-c"><span class="pl-c">#</span> "{BOLD}" =&gt; TextFormat::BOLD,</span>
+<span class="pl-c"><span class="pl-c">#</span> "{RESET}" =&gt; TextFormat::RESET</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ==(CONFIGURATION)==</span>
+<span class="pl-ent">Settings</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Always keep the player's name tag visible. Only deactivate </span>
+  <span class="pl-c"><span class="pl-c">#</span> if you think it is necessary</span>
+  <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to enable/disable this option</span>
+  <span class="pl-ent">NametagVisible</span>: <span class="pl-c1">true</span>
+  <span class="pl-c"><span class="pl-c">#</span> ==(WORLD MANAGER)==</span>
+  <span class="pl-c"><span class="pl-c">#</span> Enable and disable DeviceACM or PopupTag for worlds you </span>
+  <span class="pl-c"><span class="pl-c">#</span> add to "whitelist" or "blacklist" modes. Use "false" to disable this option</span>
+  <span class="pl-ent">WorldManager</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Valid modes:</span>
+    <span class="pl-c"><span class="pl-c">#</span> - whitelist</span>
+    <span class="pl-c"><span class="pl-c">#</span> - blacklist</span>
+    <span class="pl-c"><span class="pl-c">#</span> - false</span>
+    <span class="pl-ent">mode</span>: <span class="pl-c1">false</span>
+    <span class="pl-c"><span class="pl-c">#</span> ==(DEVICE TAG)==</span>
+    <span class="pl-ent">Device</span>:
+      <span class="pl-c"><span class="pl-c">#</span> Add the names of worlds that are in the whitelist</span>
+      <span class="pl-ent">worlds-whitelist</span>:
+        - <span class="pl-s"><span class="pl-pds">"</span>world<span class="pl-pds">"</span></span>
+        - <span class="pl-s"><span class="pl-pds">"</span>world-2<span class="pl-pds">"</span></span>
+        - <span class="pl-s"><span class="pl-pds">"</span>ACM<span class="pl-pds">"</span></span>
+      <span class="pl-c"><span class="pl-c">#</span> Add the names of worlds that are in the blacklist</span>
+      <span class="pl-ent">worlds-blacklist</span>:
+        - <span class="pl-s"><span class="pl-pds">"</span>MinePvP<span class="pl-pds">"</span></span>
+        - <span class="pl-s"><span class="pl-pds">"</span>ZonePvP<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span> ==(POUPUP)==</span>
+    <span class="pl-ent">Popup</span>:
+      <span class="pl-c"><span class="pl-c">#</span> Add the names of worlds that are in the whitelist</span>
+      <span class="pl-ent">worlds-whitelist</span>:
+        - <span class="pl-s"><span class="pl-pds">"</span>world<span class="pl-pds">"</span></span>
+        - <span class="pl-s"><span class="pl-pds">"</span>world-2<span class="pl-pds">"</span></span>
+        - <span class="pl-s"><span class="pl-pds">"</span>ACM<span class="pl-pds">"</span></span>
+      <span class="pl-c"><span class="pl-c">#</span> Add the names of worlds that are in the blacklist</span>
+      <span class="pl-ent">worlds-blacklist</span>:
+        - <span class="pl-s"><span class="pl-pds">"</span>MinePvP<span class="pl-pds">"</span></span>
+        - <span class="pl-s"><span class="pl-pds">"</span>ZonePvP<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> ==(FACTION SUPPORT)==</span>
+<span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to enable/disable this option</span>
+<span class="pl-ent">FactionSupport</span>: <span class="pl-c1">true</span>
+
+<span class="pl-ent">Faction</span>:
+  <span class="pl-c"><span class="pl-c">#</span> have no faction</span>
+  <span class="pl-ent">no-faction</span>: <span class="pl-s"><span class="pl-pds">"</span>§5N/A<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Have no faction rank</span>
+  <span class="pl-ent">no-faction-rank</span>: <span class="pl-s"><span class="pl-pds">"</span>§5N/A<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ==(DEVICE TAG)==</span>
+<span class="pl-ent">Devicetag</span>:
+  <span class="pl-ent">line</span>: 
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;c♥ {HEALTH}&amp;f |  {FOOD}<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;aPing: &amp;f{PING} |&amp;6 CPS:&amp;f {CPS} |&amp;b {DEVICE}<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;cFaction: &amp;a{FACTION}&amp;f | &amp;cPower:&amp;a {FACTION_POWER}&amp;f | &amp;cRank:&amp;a {FACTION_RANK}<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> ==(POPUP TAG)==</span>
+<span class="pl-ent">Popuptag</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to enable/disable this option</span>
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+  <span class="pl-c"><span class="pl-c">#</span> Valid modes:</span>
+    <span class="pl-c"><span class="pl-c">#</span> - popup</span>
+    <span class="pl-c"><span class="pl-c">#</span> - actionbar</span>
+    <span class="pl-c"><span class="pl-c">#</span> - tip</span>
+  <span class="pl-ent">mode</span>: <span class="pl-s">popup</span>
+  <span class="pl-ent">line</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;bVictim:&amp;a {VICTIM_NAME}<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;bVictim ping:&amp;e {VICTIM_PING}<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;bYour cps:&amp;6 {CPS}&amp;f |&amp;b Victim cps:&amp;6 {VICTIM_CPS}<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;bYour reach:&amp;e {REACH}&amp;f |&amp;b Victim reach:&amp;e {VICTIM_REACH}<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> ==(PLATAFORM TAG)==</span>
+<span class="pl-ent">Platform</span>:
+  <span class="pl-ent">Android</span>: <span class="pl-s"><span class="pl-pds">"</span>Android<span class="pl-pds">"</span></span>
+  <span class="pl-ent">iOS</span>: <span class="pl-s"><span class="pl-pds">"</span>iOS<span class="pl-pds">"</span></span>
+  <span class="pl-ent">macOS</span>: <span class="pl-s"><span class="pl-pds">"</span>macOS<span class="pl-pds">"</span></span>
+  <span class="pl-ent">FireOS</span>: <span class="pl-s"><span class="pl-pds">"</span>Amazon<span class="pl-pds">"</span></span>
+  <span class="pl-ent">GearVR</span>: <span class="pl-s"><span class="pl-pds">"</span>Gear VR<span class="pl-pds">"</span></span>
+  <span class="pl-ent">Hololens</span>: <span class="pl-s"><span class="pl-pds">"</span>Hololens<span class="pl-pds">"</span></span>
+  <span class="pl-ent">Windows10</span>: <span class="pl-s"><span class="pl-pds">"</span>Windows 10<span class="pl-pds">"</span></span>
+  <span class="pl-ent">Windows7</span>: <span class="pl-s"><span class="pl-pds">"</span>Win32<span class="pl-pds">"</span></span>
+  <span class="pl-ent">Dedicated</span>: <span class="pl-s"><span class="pl-pds">"</span>Dedicated<span class="pl-pds">"</span></span>
+  <span class="pl-ent">TVOS</span>: <span class="pl-s"><span class="pl-pds">"</span>TV OS<span class="pl-pds">"</span></span>
+  <span class="pl-ent">PlayStation</span>: <span class="pl-s"><span class="pl-pds">"</span>PlayStation<span class="pl-pds">"</span></span>
+  <span class="pl-ent">NintendoSwitch</span>: <span class="pl-s"><span class="pl-pds">"</span>Nintendo<span class="pl-pds">"</span></span>
+  <span class="pl-ent">Xbox</span>: <span class="pl-s"><span class="pl-pds">"</span>Xbox<span class="pl-pds">"</span></span>
+  <span class="pl-ent">WindowsPhone</span>: <span class="pl-s"><span class="pl-pds">"</span>Windows Phone<span class="pl-pds">"</span></span>
+  <span class="pl-ent">Linux</span>: <span class="pl-s"><span class="pl-pds">"</span>Linux<span class="pl-pds">"</span></span>
+  <span class="pl-ent">Unknown</span>: <span class="pl-s"><span class="pl-pds">"</span>Unknown<span class="pl-pds">"</span></span></pre></div>
+<h3 id="user-content--faction-support"><a class="heading-link" href="#-faction-support">🛠 Faction support<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<table>
+<thead>
+<tr>
+<th>Author</th>
+<th>Plugin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DaDevPig</td>
+<td><a href="https://github.com/DaPigGuy/PiggyFactions">PiggyFactions</a></td>
+</tr>
+<tr>
+<td>AyzrixYTB</td>
+<td><a href="https://github.com/AyzrixYTB/SimpleFaction">SimpleFaction</a></td>
+</tr>
+<tr>
+<td>Wertzui123</td>
+<td><a href="https://github.com/Wertzui123/BedrockClans/tree/master/">BedrockClans</a></td>
+</tr>
+<tr>
+<td>ShockedPlot7560</td>
+<td><a href="https://github.com/FactionMaster/FactionMaster">FactionMaster</a></td>
+</tr>
+<tr>
+<td>rxduz</td>
+<td>AdvancedFactions</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="user-content--report-bug"><a class="heading-link" href="#-report-bug">📢 Report bug<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<ul>
+<li>If you find any bugs in this plugin, please let me know via: <a href="https://github.com/fernanACM/DeviceACM/issues">issues</a>
+</li>
+</ul>
+<h3 id="user-content--contact"><a class="heading-link" href="#-contact">📞 Contact<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<table>
+<thead>
+<tr>
+<th>Redes</th>
+<th>Tag</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube</td>
+<td>fernanACM</td>
+<td><a href="https://www.youtube.com/channel/UC-M5iTrCItYQBg5GMuX5ySw" rel="nofollow">YouTube</a></td>
+</tr>
+<tr>
+<td>Discord</td>
+<td>fernanACM#5078</td>
+<td><a href="https://discord.gg/YyE9XFckqb" rel="nofollow">Discord</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>fernanACM</td>
+<td><a href="https://github.com/fernanACM">GitHub</a></td>
+</tr>
+<tr>
+<td>Poggit</td>
+<td>fernanACM</td>
+<td><a href="https://poggit.pmmp.io/ci/fernanACM" rel="nofollow">Poggit</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="user-content--credits"><a class="heading-link" href="#-credits">✔ Credits<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
+<table>
+<thead>
+<tr>
+<th>Authors</th>
+<th>Github</th>
+<th>Lib</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DaPigGuy</td>
+<td><a href="https://github.com/DaPigGuy">DaPigGuy</a></td>
+<td><a href="https://github.com/DaPigGuy/libPiggyUpdateChecker">libPiggyUpdateChecker</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
