@@ -1,0 +1,39 @@
+<p><a href="https://discord.gg/AzJ7Uz7wkx" rel="nofollow"><img src="https://camo.githubusercontent.com/a0fce64860c9866f4fa39698afdcf966fb550e0a8984f28482d206f8543da136/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3931353034363830383030393434313332332e7376673f6c6162656c3d266c6f676f3d646973636f7264266c6f676f436f6c6f723d66666666666626636f6c6f723d373338394438266c6162656c436f6c6f723d364137454332" alt="Discord" data-canonical-src="https://img.shields.io/discord/915046808009441323.svg?label=&amp;logo=discord&amp;logoColor=ffffff&amp;color=7389D8&amp;labelColor=6A7EC2" style="max-width: 100%;"></a></p>
+<h1 id="user-content-elevator"><a class="heading-link" href="#elevator">Elevator<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<p>A simple PocketMine-MP plugin that allows to create elevators on your server.</p>
+<h2 id="user-content-how-to-use"><a class="heading-link" href="#how-to-use">How to use<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p>You just have to setup an id in the config.yml. Place 2 blocks aligned, jump to go up and sneak to go down.</p>
+<h2 id="user-content-video"><a class="heading-link" href="#video">Video<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><a href="https://www.youtube.com/watch?v=9rcDk5-vRqc&amp;ab_channel=Ayzrix" rel="nofollow"><img src="https://camo.githubusercontent.com/b79cb3debdd6bbf369a161315651a5eb698d3e4c309a6c065dcca941f95fcb50/68747470733a2f2f696d672e796f75747562652e636f6d2f76692f397263446b352d765271632f302e6a7067" alt="Alt text" data-canonical-src="https://img.youtube.com/vi/9rcDk5-vRqc/0.jpg" style="max-width: 100%;"></a></p>
+<h2 id="user-content-config"><a class="heading-link" href="#config">Config<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>§6[§fElevatorBlock§6]<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Elevator block name</span>
+<span class="pl-ent">block</span>: <span class="pl-s"><span class="pl-pds">"</span>diamond_block<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Enable or disable the distance system (true|false)</span>
+<span class="pl-ent">distance</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Maximum distance between 2 elevators</span>
+<span class="pl-ent">max_distance</span>: <span class="pl-c1">5</span>
+
+<span class="pl-ent">no_elevator_found</span>: <span class="pl-s"><span class="pl-pds">"</span>{prefix} §cNo elevator was found<span class="pl-pds">"</span></span>
+<span class="pl-ent">distance_too_hight</span>: <span class="pl-s"><span class="pl-pds">"</span>{prefix} §cAn elevator has been found, but it's too far<span class="pl-pds">"</span></span>
+
+
+<span class="pl-c"><span class="pl-c">#</span> permission to use elevator</span>
+<span class="pl-ent">permission</span>: <span class="pl-c1">true</span>
+<span class="pl-c"><span class="pl-c">#</span>if you would use distance by a rank and if permission is true</span>
+
+<span class="pl-c"><span class="pl-c">#</span>dist:</span>
+<span class="pl-c"><span class="pl-c">#</span>  permission1:</span>
+<span class="pl-c"><span class="pl-c">#</span>    if distance = true</span>
+<span class="pl-c"><span class="pl-c">#</span>    max_distance: 4</span>
+<span class="pl-c"><span class="pl-c">#</span>  permission2:</span>
+<span class="pl-c"><span class="pl-c">#</span>    if distance = true</span>
+<span class="pl-c"><span class="pl-c">#</span>    max_distance: 4</span>
+<span class="pl-ent">dist</span>:
+  <span class="pl-ent">player_6_block</span>:
+    <span class="pl-ent">max_distance</span>: <span class="pl-c1">5</span>
+  <span class="pl-ent">player_7_block</span>:
+    <span class="pl-ent">max_distance</span>: <span class="pl-c1">7</span></pre></div>
