@@ -8,6 +8,6 @@ Version: 0.0.2
     Updated: 07-11-2023 22:03:59 UTC
 Repo: https://github.com/WeaVerseStudio/VanillaWeather
 License: GPL-3.0
-Categories: Vanilla Mechanics,General
+Categories: Vanilla Mechanics,Mechanics,General
 Keywords: vanilla,weather
 ```

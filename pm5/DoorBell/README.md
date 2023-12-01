@@ -1,11 +1,11 @@
 # DoorBell
-<img src="https://raw.githubusercontent.com/TheDataLioness/Doorbell/f8bdf273d1438b071231f8b80ba7e40166d3f864/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/TheDataLioness/Doorbell/d078374a2ee50554d880e52c00e76239d74fbf04/icon.png" width="128" height="128" />
 
 ## Super Simple Doorbell plugin
 ```properties
-Version: 1.1.1
+Version: 1.1.2
     API: 5.0.0
-    Updated: 29-11-2023 20:49:30 UTC
+    Updated: 30-11-2023 18:02:46 UTC
 Repo: https://github.com/TheDataLioness/Doorbell
 License: MIT
 Categories: Fun,General
