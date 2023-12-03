@@ -1,13 +1,13 @@
 # MagicCrates
-<img src="https://raw.githubusercontent.com/Hebbinkpro/MagicCrates/9a40aeec058c970c0b52069a5fa3ef225c68db90/MagicCrates-icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/Hebbinkpro/MagicCrates/f5de28a1eefd7f572ecbd9d8cfe513dfbfd94563/MagicCrates-icon.png" width="128" height="128" />
 
 ## Add crates to your server
 ```properties
-Version: 2.1.2
+Version: 2.2.0
     API: 5.0.0
-    Updated: 09-09-2023 08:44:19 UTC
+    Updated: 02-12-2023 20:17:41 UTC
 Repo: https://github.com/Hebbinkpro/MagicCrates
-License: MIT
+License: GPL-3.0
 Categories: General,Miscellaneous,Fun
 Keywords: crate,crates,Hebbinkpro,items
 ```

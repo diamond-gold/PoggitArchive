@@ -1,0 +1,39 @@
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" tabindex="-1" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Rank command have auto-completion</li>
+<li>Flexible settings in config.yml</li>
+<li>Local/Global chat</li>
+<li>Rank inheritances</li>
+<li>Rank priorities</li>
+<li>Chat &amp; Nametags included</li>
+<li>Fast &amp; Easy to use</li>
+</ul>
+<h1><a id="user-content-setup" class="anchor" aria-hidden="true" tabindex="-1" href="#setup"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h1>
+<ul>
+<li>Configure your ranks in config.yml</li>
+<li>Example:</li>
+</ul>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">ranks</span>:
+  <span class="pl-ent">player</span>:
+    <span class="pl-ent">priority</span>: <span class="pl-c1">1</span>
+    <span class="pl-ent">color</span>: <span class="pl-s"><span class="pl-pds">"</span>§7<span class="pl-pds">"</span></span>
+    <span class="pl-ent">display-name</span>: <span class="pl-s"><span class="pl-pds">"</span>Player<span class="pl-pds">"</span></span>
+    <span class="pl-ent">chat-format</span>: <span class="pl-s"><span class="pl-pds">"</span>§f{NAME}: §7{MESSAGE}<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> Available tags: {NAME}, {DISPLAY_NAME}, {MESSAGE}</span>
+    <span class="pl-ent">name-tag</span>: <span class="pl-s"><span class="pl-pds">"</span>§7{NAME}<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> Available tags: {NAME}, {DISPLAY_NAME}, {PLATFORM}, {LINE}</span>
+    <span class="pl-ent">alias</span>: <span class="pl-s"><span class="pl-pds">"</span>default<span class="pl-pds">"</span></span>
+    <span class="pl-ent">inheritance</span>: <span class="pl-s">[]</span>
+    <span class="pl-ent">permissions</span>: <span class="pl-s">[]</span></pre></div>
+<ul>
+<li>Use /rank command!</li>
+</ul>
+<h1><a id="user-content-api" class="anchor" aria-hidden="true" tabindex="-1" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h1>
+<ul>
+<li>Example:</li>
+</ul>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">/** @var Ranks $rankManager */</span>
+<span class="pl-s1"><span class="pl-c1">$</span>rankManager</span> = <span class="pl-v">Server</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getPluginManager</span>()-&gt;<span class="pl-en">getPlugin</span>("<span class="pl-s">Ranks</span>");
+
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>rankManager</span> !== <span class="pl-c1">null</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">sendMessage</span>("<span class="pl-s">Your rank: </span>" . <span class="pl-s1"><span class="pl-c1">$</span>rankManager</span>-&gt;<span class="pl-en">getRank</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>)-&gt;<span class="pl-en">getDisplayName</span>());
+}</pre></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"82f8a3df091514f8","version":"2023.10.0","r":1,"token":"508eb1d242ef46b690a0886422106e77","b":1}' crossorigin="anonymous"></script>
