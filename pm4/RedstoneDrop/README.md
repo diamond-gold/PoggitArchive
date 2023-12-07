@@ -9,5 +9,5 @@ Version: 1.1.0
 Repo: https://github.com/usy4/RedstoneDrop
 License: gpl-3.0
 Categories: General,Miscellaneous
-Keywords: 
+Keywords: red,redstone,rs
 ```

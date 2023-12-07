@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/Terpz710/DeathChest
 License: Apache-2.0
 Categories: General,Miscellaneous,Fun,Mechanics
-Keywords: Death,Chest,DeathChest,LootBox,Box,Loot
+Keywords: Box,Chest,Death,DeathChest,Loot,LootBox
 ```

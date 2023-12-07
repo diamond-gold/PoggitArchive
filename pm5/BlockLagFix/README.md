@@ -1,11 +1,11 @@
 # BlockLagFix
-<img src="https://raw.githubusercontent.com/JavierLeon9966/BlockLagFix/1f8a3ad0fdd8c1370623560256f97053aff203e2/icon.gif" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/JavierLeon9966/BlockLagFix/3b8c085b1af256141349ffec39d4aad5b3c1c609/icon.gif" width="128" height="128" />
 
 ## Fixes block lagging
 ```properties
-Version: 1.16.0
+Version: 1.17.0
     API: 5.0.0
-    Updated: 26-10-2023 17:54:34 UTC
+    Updated: 06-12-2023 18:40:35 UTC
 Repo: https://github.com/JavierLeon9966/BlockLagFix
 License: MIT
 Categories: Mechanics,Miscellaneous
