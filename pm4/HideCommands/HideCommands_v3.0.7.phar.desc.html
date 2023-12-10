@@ -1,0 +1,42 @@
+<h2><a id="user-content-description" class="anchor" aria-hidden="true" tabindex="-1" href="#description"><span aria-hidden="true" class="octicon octicon-link"></span></a>Description</h2>
+<p>A <a href="https://github.com/pmmp/PocketMine-MP">PocketMine-MP</a> plugin that removes specific commands from the in-game command suggestions. Supports different settings per world.</p>
+<p>Note: Just because the commands are hidden, doesn't mean they can't be executed. You still need to make sure to have proper permission management in place.</p>
+<h3><a id="user-content-get-help" class="anchor" aria-hidden="true" tabindex="-1" href="#get-help"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get Help</h3>
+<p>GitHub issues: <a href="https://github.com/HimbeersaftLP/HideCommands/issues">https://github.com/HimbeersaftLP/HideCommands/issues</a></p>
+<p>Discord server: <a href="https://www.himbeer.me/discord" rel="nofollow"><img src="https://camo.githubusercontent.com/2ad04fcbdce5e560cc8021598f8202d7cd0a18c0fedd56f57689697addc9079f/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3235323837343838373131333334323937363f6c6f676f3d646973636f7264" alt="Join the Discord Server" data-canonical-src="https://img.shields.io/discord/252874887113342976?logo=discord" style="max-width: 100%;"></a></p>
+<h2><a id="user-content-usage" class="anchor" aria-hidden="true" tabindex="-1" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+<ol>
+<li>Put phar from Poggit into <code>plugins</code> folder</li>
+<li>Start server</li>
+<li>Stop server</li>
+<li>Edit the config.yml file located in <code>plugin_data/HideCommands</code>
+<ul>
+<li>Per-world settings:
+<ul>
+<li>The settings under <code>default:</code> are the default settings for all worlds</li>
+<li>The settings under <code>per-world:</code> overwrite the default settings</li>
+</ul>
+</li>
+<li>Choose whitelist or blacklist mode
+<ul>
+<li>whitelist mode will only show the commands specified below and hide all others</li>
+<li>blacklist mode will hide the commands specified below and show all others</li>
+</ul>
+</li>
+<li>Select the commands to whitelist/blacklist
+<ul>
+<li>Always use the full command names, not aliases!
+<ul>
+<li>Hiding a command also hides all its aliases</li>
+<li>For example: "unban" is an alias of "pardon" in order to hide the "unban" command, add "pardon" to the blacklist</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>The permission <code>hidecommands.unhide</code> allows players to see hidden commands again.
+It has been set to <code>default: false</code>, which means you need to explicitly give it to a player or group using a permission manager like <a href="https://poggit.pmmp.io/p/PurePerms/" rel="nofollow">PurePerms</a>.</p>
+<h2><a id="user-content-additional-information" class="anchor" aria-hidden="true" tabindex="-1" href="#additional-information"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Information</h2>
+<p>Icon credits: <a href="https://pixabay.com/vectors/spy-hat-anony-anonymous-detect-2657484/" rel="nofollow">https://pixabay.com/vectors/spy-hat-anony-anonymous-detect-2657484/</a></p>
