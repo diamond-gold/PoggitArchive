@@ -1,0 +1,27 @@
+<h1><a id="user-content-vanillaweather-by-weaversestudio" class="anchor" aria-hidden="true" tabindex="-1" href="#vanillaweather-by-weaversestudio"><span aria-hidden="true" class="octicon octicon-link"></span></a>VanillaWeather by WeaVerseStudio</h1>
+<blockquote>
+<p>A plugin that adds weather mechanics like in vanilla.</p>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/WeaVerseStudio/VanillaWeather/blob/master/resources/image0.png?raw=true"><img src="https://github.com/WeaVerseStudio/VanillaWeather/raw/master/resources/image0.png?raw=true" alt="image not found" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/WeaVerseStudio/VanillaWeather/blob/master/resources/image1.png?raw=true"><img src="https://github.com/WeaVerseStudio/VanillaWeather/raw/master/resources/image1.png?raw=true" alt="image not found" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/WeaVerseStudio/VanillaWeather/blob/master/resources/image2.png?raw=true"><img src="https://github.com/WeaVerseStudio/VanillaWeather/raw/master/resources/image2.png?raw=true" alt="image not found" style="max-width: 100%;"></a>
+</blockquote>
+<h3><a id="user-content-authors" class="anchor" aria-hidden="true" tabindex="-1" href="#authors"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors:</h3>
+<blockquote>
+<p>PrograMistV1 - made major contributions to the writing of the plugin.</p>
+</blockquote>
+<h3><a id="user-content-commands" class="anchor" aria-hidden="true" tabindex="-1" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands:</h3>
+<blockquote>
+<p><code>/weather &lt;clear|rain|thunder&gt; [duration: int]</code> - Players who have permission can change the current weather if they wish, by entering one of the following commands: /weather rain [<em>duration</em>] or /weather thunder [<em>duration</em>], and /weather clear [<em>duration</em>] to clear the inclement weather. The <strong>time</strong> parameter is the duration of the weather in seconds.
+If you want to prevent weather changes in the world, then set the time value to 0 or less.</p>
+<p>Permission: <code>vanillaweather.weather.command</code></p>
+</blockquote>
+<h3><a id="user-content-for-developers" class="anchor" aria-hidden="true" tabindex="-1" href="#for-developers"><span aria-hidden="true" class="octicon octicon-link"></span></a>For developers:</h3>
+<blockquote>
+<p>Track events using these events:
+<code>PrograMistV1\Weather\events\SnowLayerCreateEvent</code>
+<code>PrograMistV1\Weather\events\ThunderBoltSpawnEvent</code>
+<code>PrograMistV1\Weather\events\WeatherChangeEvent</code></p>
+<p>You can change the weather using:
+<code>PrograMistV1\Weather\Weather::changeWeather(World $world, int $weather, int $time = 6000) : void;</code></p>
+</blockquote>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"8342cdb65d9b2d17","version":"2023.10.0","r":1,"token":"508eb1d242ef46b690a0886422106e77","b":1}' crossorigin="anonymous"></script>
