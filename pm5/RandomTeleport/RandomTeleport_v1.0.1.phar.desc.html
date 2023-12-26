@@ -1,0 +1,25 @@
+<h2><a id="user-content-how-to-use" class="anchor" aria-hidden="true" tabindex="-1" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h2>
+<p>You can customize the command name, aliases, messages, and range in config.yml. The permission for this command is <code>randomteleport.cmd</code>.</p>
+<h2><a id="user-content-config" class="anchor" aria-hidden="true" tabindex="-1" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h2>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">command</span>:
+  <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>randomteleport<span class="pl-pds">"</span></span>
+  <span class="pl-ent">aliases</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span>rtp<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>randomtp<span class="pl-pds">"</span></span>
+  <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Teleport randomly<span class="pl-pds">"</span></span>
+  <span class="pl-ent">usage_message</span>: <span class="pl-s"><span class="pl-pds">"</span>/rtp<span class="pl-pds">"</span></span>
+
+  <span class="pl-c"><span class="pl-c">#</span>permission name is randomteleport.cmd</span>
+
+<span class="pl-ent">messages</span>:
+  <span class="pl-ent">no_permission</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou don't have the permission to use this command !<span class="pl-pds">"</span></span>
+  <span class="pl-ent">success</span>: <span class="pl-s"><span class="pl-pds">"</span>§aSuccesfully teleported to §b{x} §b{y} §b{z}<span class="pl-pds">"</span></span>
+  <span class="pl-ent">not_player</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou have to be a player to use this command !<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">range</span>:
+  <span class="pl-ent">x</span>: <span class="pl-c"><span class="pl-c">#</span>or [0, 100]</span>
+    - <span class="pl-c1">0</span>
+    - <span class="pl-c1">100</span>
+  <span class="pl-ent">z</span>: <span class="pl-c"><span class="pl-c">#</span>or [0, 100]</span>
+    - <span class="pl-c1">0</span>
+    - <span class="pl-c1">100</span></pre></div>
