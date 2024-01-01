@@ -1,0 +1,116 @@
+<h2><a id="user-content-general" class="anchor" aria-hidden="true" tabindex="-1" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a>GENERAL</h2>
+<div align="center">
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/ClickedTran/RankShopGUI/blob/Master/icon.png"><img src="https://github.com/ClickedTran/RankShopGUI/raw/Master/icon.png" width="512x" height="auto" style="max-width: 100%;"></a>
+ <br>
+ This is a plugin that allows admins or staff to create shops to buy rank on the server!
+  <br>
+RankShopGUI is inspired by a java server
+</div>
+<h2><a id="user-content-feature" class="anchor" aria-hidden="true" tabindex="-1" href="#feature"><span aria-hidden="true" class="octicon octicon-link"></span></a>FEATURE</h2>
+<h6><a id="user-content-create-rank" class="anchor" aria-hidden="true" tabindex="-1" href="#create-rank"><span aria-hidden="true" class="octicon octicon-link"></span></a>CREATE RANK</h6>
+<ul>
+<li>[x] minimum rank requirement to advance to the next rank</li>
+<li>[x] rank description</li>
+<li>[x] The amount of money to buy the next rank (edit the currency in config.yml)</li>
+<li>[x] set of items representing rank</li>
+<li>[x] set slot for representative item</li>
+</ul>
+<h6><a id="user-content-remove-rank" class="anchor" aria-hidden="true" tabindex="-1" href="#remove-rank"><span aria-hidden="true" class="octicon octicon-link"></span></a>REMOVE RANK</h6>
+<ul>
+<li>[x] Enter the category name to delete</li>
+</ul>
+<h6><a id="user-content-edit-rank" class="anchor" aria-hidden="true" tabindex="-1" href="#edit-rank"><span aria-hidden="true" class="octicon octicon-link"></span></a>EDIT RANK</h6>
+<ul>
+<li>[x] Edit the category name to represent rank</li>
+<li>[x] Edit request rank</li>
+<li>[x] Edit next rank</li>
+<li>[x] Edit rank descriptions</li>
+<li>[x] Edit rank purchase amount</li>
+<li>[x] Edit items representing rank</li>
+<li>[x] Edit slots for representative items</li>
+</ul>
+<h2><a id="user-content-command" class="anchor" aria-hidden="true" tabindex="-1" href="#command"><span aria-hidden="true" class="octicon octicon-link"></span></a>COMMAND</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Command</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>alias</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/rankshop</code></td>
+<td><code>Open Shop Rank</code></td>
+<td><code>rs</code></td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-subcommand--permission" class="anchor" aria-hidden="true" tabindex="-1" href="#subcommand--permission"><span aria-hidden="true" class="octicon octicon-link"></span></a>SUBCOMMAND &amp; PERMISSION</h2>
+<table>
+<thead>
+<tr>
+<th><strong>SUBCOMMAND</strong></th>
+<th><strong>DESCRIPTION</strong></th>
+<th><strong>PERMISSION</strong></th>
+<th><strong>DEFAULT</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create</code></td>
+<td>Create new category for shop rank</td>
+<td><code>rankshopgui.command.create</code></td>
+<td><code>op</code></td>
+</tr>
+<tr>
+<td><code>delete</code></td>
+<td>Delete category of shop rank</td>
+<td><code>rankshopgui.command.remove</code></td>
+<td><code>op</code></td>
+</tr>
+<tr>
+<td><code>setup</code></td>
+<td>Edit category of shop rank</td>
+<td><code>rankshopgui.command.edit</code></td>
+<td><code>op</code></td>
+</tr>
+<tr>
+<td><code>help</code></td>
+<td>See all command of shop rank</td>
+<td>`rankshopgui.command.help</td>
+<td><code>op</code></td>
+</tr>
+</tbody>
+</table>
+<h2><a id="user-content-tutorial" class="anchor" aria-hidden="true" tabindex="-1" href="#tutorial"><span aria-hidden="true" class="octicon octicon-link"></span></a>TUTORIAL</h2>
+<ul>
+<li><a href="https://youtu.be/csEVH3Ts06U?si=-0NenHjyS7zYIpuZ" rel="nofollow">Click to see tutorial</a></li>
+</ul>
+<br>
+<ul>
+<li><a href="https://youtu.be/bYLQmA3roGI?si=D8OCULHejeSeXrgZ" rel="nofollow">Click to see new update</a></li>
+</ul>
+<h2><a id="user-content-virion-support" class="anchor" aria-hidden="true" tabindex="-1" href="#virion-support"><span aria-hidden="true" class="octicon octicon-link"></span></a>VIRION SUPPORT</h2>
+<ul>
+<li>
+<a href="https://github.com/muqsit/InvMenu">InvMenu</a>(Muqsit)</li>
+<li>
+<a href="https://https://github.com/DaPigGuy/libPiggyEconomy" rel="nofollow">libPiggyEconomy</a>(DaPigGuy)</li>
+<li>
+<a href="https://github.com/jojoe77777/FormAPI">FormAPI</a>(jojoe77777)</li>
+<li>
+<a href="https://github.com/ClickedTran/libRanks">libRanks</a>(ClickedTran)</li>
+</ul>
+<h2><a id="user-content-for-developer" class="anchor" aria-hidden="true" tabindex="-1" href="#for-developer"><span aria-hidden="true" class="octicon octicon-link"></span></a>FOR DEVELOPER</h2>
+<h6><a id="user-content-create-new-category-and-rank" class="anchor" aria-hidden="true" tabindex="-1" href="#create-new-category-and-rank"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create new category and rank</h6>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-v">RankShopGUI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">createShop</span>(string <span class="pl-s1"><span class="pl-c1">$</span>name</span>, string <span class="pl-s1"><span class="pl-c1">$</span>rankRequired</span>, string <span class="pl-s1"><span class="pl-c1">$</span>nextRank</span>, string <span class="pl-s1"><span class="pl-c1">$</span>description</span>, int <span class="pl-s1"><span class="pl-c1">$</span>price</span>, string <span class="pl-s1"><span class="pl-c1">$</span>item</span>, int <span class="pl-s1"><span class="pl-c1">$</span>slot</span>)</pre></div>
+<h6><a id="user-content-remove-category" class="anchor" aria-hidden="true" tabindex="-1" href="#remove-category"><span aria-hidden="true" class="octicon octicon-link"></span></a>Remove Category</h6>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-v">RankShopGUI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">removeShop</span>(string <span class="pl-s1"><span class="pl-c1">$</span>name</span>)</pre></div>
+<h2><a id="user-content-install" class="anchor" aria-hidden="true" tabindex="-1" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a>INSTALL</h2>
+<ul>
+<li>Step 1. Download the latest version</li>
+<li>Step 2. Place the <code>RankShopGUI.phar</code> file into the <code>plugins</code> folder.</li>
+<li>Step 3. Restart the server.</li>
+<li>Step 4. Done!</li>
+</ul>
