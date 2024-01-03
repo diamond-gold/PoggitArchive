@@ -1,0 +1,19 @@
+<h3 dir="auto">Bug Fixes</h3>
+<ul dir="auto">
+<li>Fixed possible server crashes when changing module states during runtime (i.e., <code class="notranslate">/invseemod enable &lt;module&gt;</code> and <code class="notranslate">/invseemod disable &lt;module&gt;</code>)</li>
+</ul>
+<h3 dir="auto">API Changes</h3>
+<ul dir="auto">
+<li>Dropped various getter methods in favor of direct property access
+<ul dir="auto">
+<li><code class="notranslate">InvSeePlayer::getPlayer()</code> -&gt; <code class="notranslate">InvSeePlayer::$player</code></li>
+<li><code class="notranslate">InvSeePlayer::getInventoryMenu()</code> -&gt; <code class="notranslate">InvSeePlayer::$inventory_menu</code></li>
+<li><code class="notranslate">InvSeePlayer::getEnderChestInventoryMenu()</code> -&gt; <code class="notranslate">InvSeePlayer::$ender_inventory_menu</code></li>
+<li><code class="notranslate">InvSeePlayer::getLogger()</code> -&gt; <code class="notranslate">InvSeePlayer::$logger</code></li>
+<li><code class="notranslate">OfflinePlayerInventory::getOfflinePlayerData()</code> -&gt; <code class="notranslate">OfflinePlayerInventory::$data</code></li>
+<li><code class="notranslate">EnderInvSeeCommandExecutor::getViewPermissionChecker()</code> -&gt; <code class="notranslate">EnderInvSeeCommandExecutor::$view_permission_checker</code></li>
+<li><code class="notranslate">InvSeeCommandExecutor::getViewPermissionChecker()</code> -&gt; <code class="notranslate">InvSeeCommandExecutor::$view_permission_checker</code></li>
+<li><code class="notranslate">ModuleCommand::getName()</code> -&gt; <code class="notranslate">ModuleCommand::$name</code></li>
+</ul>
+</li>
+</ul>

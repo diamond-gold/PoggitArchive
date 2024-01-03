@@ -8,6 +8,6 @@ Version: 2.1.2
     Updated: 16-07-2023 10:45:31 UTC
 Repo: https://github.com/cooldogepm/BedrockEconomy
 License: MIT
-Categories: General,API plugins,Fun,Economy
-Keywords: api,economy,php,pmmp,sql
+Categories: Economy,API plugins,Miscellaneous,Fun,Informational,Admin Tools
+Keywords: api,economy,mcbe,minecraft,mysql,php,pmmp,pocketmine,sql,sqlite
 ```

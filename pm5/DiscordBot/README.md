@@ -6,6 +6,6 @@ Version: 3.0.3
     Updated: 19-10-2023 14:33:25 UTC
 Repo: https://github.com/DiscordBot-PMMP/DiscordBot
 License: OSL-3.0
-Categories: API plugins,General
+Categories: Developer Tools,Miscellaneous,General
 Keywords: discord,discordbot,discordphp
 ```
