@@ -1,0 +1,27 @@
+<p><strong>Customizable Lootboxes</strong>: Create and configure lootboxes with unique properties, including name, display name, identifier, and animation type. Supports PiggyCustomEnchants when setting up a lootbox with PiggyCustomEnchant names.</p>
+<p><strong>Varied Reward Types</strong>: Define rewards for your lootboxes in two ways: through items or custom commands. For items, you can specify the item's name, display name, chance, type, custom name, item name, amount, and enchantments. For commands, you can set the name, display item, chance, and specify the command with optional player-specific arguments.</p>
+<p><strong>Stunning Animations</strong>: Choose from various animation types to enhance the opening experience of your lootboxes, including roll, slide, plain, display, and choose.</p>
+<p><strong>How to use?</strong></p>
+<p><strong>1</strong>. Place your lootbox configuration files in the plugin_data/Lootbox/lootboxs folder. These files should be named with the .yml extension and follow the provided sample configuration.</p>
+<p><strong>2</strong>. Customize your lootbox settings by editing the configuration file, specifying the lootbox's name, display name, identifier, animation type, and rewards.</p>
+<p><strong>3</strong>. Start the server and watch as players enjoy the thrill of opening your lootboxes, revealing exciting rewards based on your configuration.</p>
+<p><strong>Test Configuration</strong></p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Test<span class="pl-pds">"</span></span>
+<span class="pl-ent">displayName</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;b&amp;lTest<span class="pl-pds">"</span></span>
+<span class="pl-ent">identifier</span>: <span class="pl-s"><span class="pl-pds">"</span>test<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> Can only contain letters, no spaces</span>
+<span class="pl-ent">animationType</span>: <span class="pl-s"><span class="pl-pds">"</span>roll<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> roll, slide, plain, display, choose</span>
+<span class="pl-ent">itemId</span>: <span class="pl-s">chest </span><span class="pl-c"><span class="pl-c">#</span> Minecraft item name</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Type can only be "command" or "item"</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> For item:</span>
+<span class="pl-c"><span class="pl-c">#</span> "Name:DisplayItemName:Chance (1-100):Type:CustomName (Or "default" for default name):ItemName:Amount:EnchantmentName:EnchantmentLevel:EnchantmentName:EnchantmentLevel..."</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> For command:</span>
+<span class="pl-c"><span class="pl-c">#</span> "Name:DisplayItem:Chance (1-100):Type:Command"</span>
+<span class="pl-c"><span class="pl-c">#</span> Arguments:</span>
+<span class="pl-c"><span class="pl-c">#</span> {player} - Player name</span>
+<span class="pl-ent">rewards</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;l&amp;cx64 Apples:apple:100:item:default:apple:64<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;l&amp;cx64 Apples:apple:100:command:give {player} 260 64<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;l&amp;4Enchanted Sword:diamond_sword:100:item:&amp;r&amp;4&amp;lEnchanted Sword:diamond_sword:1:sharpness:5<span class="pl-pds">"</span></span></pre></div>

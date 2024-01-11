@@ -1,0 +1,238 @@
+<h1><a id="user-content-magiccrates-" class="anchor" aria-hidden="true" tabindex="-1" href="#magiccrates-"><span aria-hidden="true" class="octicon octicon-link"></span></a>MagicCrates <a href="https://poggit.pmmp.io/p/MagicCrates" rel="nofollow"><img src="https://camo.githubusercontent.com/4592592c78dc40943e90c83caf014dc918dfbdc0525bae8203452b57914f9387/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646f776e6c6f6164732f4d61676963437261746573" alt="" data-canonical-src="https://poggit.pmmp.io/shield.downloads/MagicCrates" style="max-width: 100%;"></a>
+</h1>
+<p>Add customizable crates to your server.</p>
+<ul>
+<li>Add as many crate types as you want</li>
+<li>Item and command rewards</li>
+<li>Open crates with a nice animation</li>
+<li>In-game preview menu with the crate contents including the rarity of each item</li>
+<li>
+<a href="https://github.com/CustomiesDevs/Customies">Customies</a> support</li>
+</ul>
+<h2><a id="user-content-downloads" class="anchor" aria-hidden="true" tabindex="-1" href="#downloads"><span aria-hidden="true" class="octicon octicon-link"></span></a>Downloads</h2>
+<ul>
+<li>Stable release: <a href="https://poggit.pmmp.io/p/MagicCrates" rel="nofollow"><img src="https://camo.githubusercontent.com/90f6ad8500ee350839c36d74babeb033b8b8c9bc2ed0b6489009a666bb8dbe41/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f4d61676963437261746573" alt="Poggit" data-canonical-src="https://poggit.pmmp.io/shield.api/MagicCrates" style="max-width: 100%;"></a>
+</li>
+<li>Newest
+release: <a href="https://poggit.pmmp.io/ci/Hebbinkpro/MagicCrates/MagicCrates" rel="nofollow"><img src="https://camo.githubusercontent.com/70cdbed15bf804a929a9b3d9f24fe8590fbf35b9a5520131a84ca553818cd3e7/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4d61676963437261746573" alt="Poggit CI" data-canonical-src="https://poggit.pmmp.io/shield.state/MagicCrates" style="max-width: 100%;"></a>
+</li>
+</ul>
+<h2><a id="user-content-how-to-use" class="anchor" aria-hidden="true" tabindex="-1" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h2>
+<h3><a id="user-content-commands" class="anchor" aria-hidden="true" tabindex="-1" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h3>
+<p>Command aliases: <code>/magiccrates</code>, <code>/mc</code></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/magiccrates create</code></td>
+<td>Create a crate</td>
+<td>magiccrates.cmd.create</td>
+</tr>
+<tr>
+<td><code>/magiccrates remove</code></td>
+<td>Remove a crate</td>
+<td>magiccrates.cmd.remove</td>
+</tr>
+<tr>
+<td><code>/magiccrates key &lt;crate_type&gt; [amount] [player]</code></td>
+<td>Make a crate key</td>
+<td>magiccrates.cmd.key</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content-permissions" class="anchor" aria-hidden="true" tabindex="-1" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h3>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>magiccrates.cmd</code></td>
+<td>Access to the <code>/magiccrates</code> command</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>magiccrates.cmd.create</code></td>
+<td>Access to the <code>/magiccrates create</code> command</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>magiccrates.cmd.remove</code></td>
+<td>Access to the <code>/magiccrates remove</code> command</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>magiccrates.cmd.key</code></td>
+<td>Access to the <code>/magiccrates key</code> command</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>magiccrates.break.remove</code></td>
+<td>Permission to remove a crate by breaking it</td>
+<td>OP</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content-create-a-new-crate" class="anchor" aria-hidden="true" tabindex="-1" href="#create-a-new-crate"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create a new crate</h3>
+<ol>
+<li>Use the command <code>/mc create</code>
+</li>
+<li>Click on the chest where you want your crate. (double chests do not work)</li>
+<li>Select the crate type in the dropdown menu and click <em>Submit</em>.</li>
+<li>Click <strong>save crate</strong>
+</li>
+</ol>
+<h3><a id="user-content-remove-an-existing-crate" class="anchor" aria-hidden="true" tabindex="-1" href="#remove-an-existing-crate"><span aria-hidden="true" class="octicon octicon-link"></span></a>Remove an existing crate</h3>
+<p>You can remove crates with a command:</p>
+<ol>
+<li>Use the command <code>/mc remove</code>
+</li>
+<li>Click on the crate you want to delete</li>
+<li>Click <em>Delete crate</em>
+</li>
+</ol>
+<p>You can also remove crates by breaking the crate:</p>
+<ol>
+<li>Destroy a crate</li>
+<li>Click <em>Delete crate</em>
+</li>
+</ol>
+<h3><a id="user-content-create-a-crate-key" class="anchor" aria-hidden="true" tabindex="-1" href="#create-a-crate-key"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create a crate key</h3>
+<p>You can only open crates by using a crate key. Each crate type has its own key.<br>
+You can create keys using the command <code>/mc key &lt;crate_type&gt; [amount] [player]</code><br>
+When you have a crate key, you can open the matching crate by clicking on the crate.</p>
+<h2><a id="user-content-options" class="anchor" aria-hidden="true" tabindex="-1" href="#options"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h2>
+<h3><a id="user-content-config" class="anchor" aria-hidden="true" tabindex="-1" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h3>
+<p>Here you can see all options inside the <code>config.yml</code></p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> The delay in ticks before the item animation begins</span>
+<span class="pl-ent">delay</span>: <span class="pl-c1">20</span>
+<span class="pl-c"><span class="pl-c">#</span> Prefix for messages send by the plugin</span>
+<span class="pl-ent">prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>§r[§6Magic§cCrates§r]<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Prefix for a crate key item name</span>
+<span class="pl-ent">key-name</span>: <span class="pl-s"><span class="pl-pds">"</span>§r[§6Crate §cKey§r] §e{crate}<span class="pl-pds">"</span></span></pre></div>
+<h3><a id="user-content-adding-crate-types" class="anchor" aria-hidden="true" tabindex="-1" href="#adding-crate-types"><span aria-hidden="true" class="octicon octicon-link"></span></a>Adding crate types</h3>
+<p>You can add your own crate types to the <code>crate_types.json</code> file.<br>
+Each crate type you want to add has its own unique identifier. You can choose this identifier yourself, but make sure
+that it is a valid array key.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-kos">{</span>
+  <span class="pl-s">"&lt;id&gt;"</span>: <span class="pl-kos">{</span>
+    <span class="pl-c">// replace &lt;id&gt; with a custom id</span>
+    <span class="pl-s">"name"</span>: <span class="pl-s1">string</span><span class="pl-kos">,</span>
+    <span class="pl-c">// the name shown above the crate</span>
+    <span class="pl-s">"rewards"</span>: <span class="pl-s1">reward</span><span class="pl-kos">[</span><span class="pl-s1"></span><span class="pl-kos">]</span><span class="pl-kos">,</span>  <span class="pl-c">// the rewards inside the crate</span>
+<span class="pl-s">"commands"</span>: <span class="pl-s1">string</span><span class="pl-kos">[</span><span class="pl-s1"></span><span class="pl-kos">]</span>  <span class="pl-c">// [optional] commands executed after a player opened the crate</span>
+<span class="pl-kos">}</span>
+<span class="pl-kos">}</span></pre></div>
+<p>At least one reward OR command has to be inside the crate type</p>
+<h4><a id="user-content-adding-rewards" class="anchor" aria-hidden="true" tabindex="-1" href="#adding-rewards"><span aria-hidden="true" class="octicon octicon-link"></span></a>Adding rewards</h4>
+<p>A crate type can have many rewards, and you can set the rarity of each reward individually.<br>
+A reward can also only have commands without an item</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-s">"rewards"</span>: <span class="pl-kos">[</span>
+<span class="pl-kos">{</span>
+<span class="pl-s">"name"</span>: <span class="pl-s1">string</span><span class="pl-kos">,</span> <span class="pl-c">// name of the reward</span>
+<span class="pl-s">"amount"</span>: <span class="pl-s1">int</span><span class="pl-kos">,</span> <span class="pl-c">// amount of this reward inside the crate</span>
+<span class="pl-s">"item"</span>: <span class="pl-s1">item</span><span class="pl-c1">|</span><span class="pl-s1">item</span><span class="pl-kos">[</span><span class="pl-s1"></span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-c">// the item(s) the player gets</span>
+<span class="pl-s">"commands"</span>: <span class="pl-s1">string</span><span class="pl-kos">[</span><span class="pl-s1"></span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-c">// commands executed when the player wins this reward</span>
+<span class="pl-s">"icon"</span>: <span class="pl-s1">string</span>         <span class="pl-c">// [optional] path/url to an image that will be displayed in the crate UI</span>
+<span class="pl-kos">}</span><span class="pl-kos">,</span>
+... <span class="pl-c">// more rewards      </span>
+<span class="pl-kos">]</span></pre></div>
+<h4><a id="user-content-reward-item" class="anchor" aria-hidden="true" tabindex="-1" href="#reward-item"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reward item</h4>
+<div class="highlight highlight-source-js"><pre><span class="pl-s">"item"</span>: <span class="pl-kos">{</span>
+<span class="pl-s">"id"</span>: <span class="pl-s1">string</span><span class="pl-kos">,</span> <span class="pl-c">// id of the item (e.g. minecraft:dirt or customies:example)</span>
+<span class="pl-s">"name"</span>: <span class="pl-s1">string</span><span class="pl-kos">,</span> <span class="pl-c">// [optional] custom name of the item</span>
+<span class="pl-s">"amount"</span>: <span class="pl-s1">int</span><span class="pl-kos">,</span> <span class="pl-c">// [optional] amount of the item the player will receive</span>
+<span class="pl-s">"lore"</span>: <span class="pl-s1">string</span><span class="pl-c1">|</span><span class="pl-s1">string</span><span class="pl-kos">[</span><span class="pl-s1"></span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-c">// [optional] add one or more lines of lore to the item</span>
+<span class="pl-s">"enchantments"</span>: <span class="pl-s1">enchantment</span><span class="pl-kos">[</span><span class="pl-s1"></span><span class="pl-kos">]</span>   <span class="pl-c">// [optional] list of enchantments applied to the item</span>
+<span class="pl-kos">}</span></pre></div>
+<h5><a id="user-content-enchantments" class="anchor" aria-hidden="true" tabindex="-1" href="#enchantments"><span aria-hidden="true" class="octicon octicon-link"></span></a>Enchantments</h5>
+<p>You can add multiple enchantments to your crate reward items. You can add multiple enchantments by providing a list of
+the following object:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-s">"enchantments"</span>: <span class="pl-kos">[</span>
+<span class="pl-kos">{</span>
+<span class="pl-s">"name"</span>: <span class="pl-s1">string</span><span class="pl-kos">,</span> <span class="pl-c">// name of the enchantment</span>
+<span class="pl-s">"level"</span>: <span class="pl-s1">int</span>    <span class="pl-c">// level of the enchantment</span>
+<span class="pl-kos">}</span><span class="pl-kos">,</span>
+... <span class="pl-c">// other enchantments</span>
+<span class="pl-kos">]</span></pre></div>
+<h4><a id="user-content-icons" class="anchor" aria-hidden="true" tabindex="-1" href="#icons"><span aria-hidden="true" class="octicon octicon-link"></span></a>Icons</h4>
+<p>Icons are used for the UI when you interact with a crate without a key. In this UI, all items available in the chest are
+displayed with their icon.<br>
+By default, the icon of the rewarded item will be displayed, but you can customize this by providing an url.<br>
+You can use minecraft textures, in this case you only have to provide the path that points to a texture inside
+the <a href="https://github.com/mojang/bedrock-samples">texture pack</a> (e.g. <code>textures/items/diamond</code> or <code>textures/blocks/dirt</code>)</p>
+<h4><a id="user-content-commands-1" class="anchor" aria-hidden="true" tabindex="-1" href="#commands-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h4>
+<p>The commands that you can place in the command lists in the type or reward are the same commands as you can execute in
+the console.<br>
+It is also possible to add some parameters to the commands to make them more usable. The options are:</p>
+<ul>
+<li>
+<code>{player}</code> The name of the player</li>
+<li>
+<code>{crate_type}</code> The id of the crate type</li>
+<li>
+<code>{crate}</code> The name of the crate type</li>
+<li>
+<code>{reward}</code> The name of the reward</li>
+</ul>
+<p>You can use multiple of these options in a command, or none of them.</p>
+<h5><a id="user-content-commands-example" class="anchor" aria-hidden="true" tabindex="-1" href="#commands-example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands example</h5>
+<div class="highlight highlight-source-js"><pre><span class="pl-s">"commands"</span>: <span class="pl-kos">[</span>
+<span class="pl-s">"magiccrates key {crate_type} 5 {player}"</span><span class="pl-kos">,</span> <span class="pl-c">// this gives the player that won the reward 5 crate keys of the crate type the player opened</span>
+<span class="pl-s">"say {player} won {reward} in a {crate}"</span><span class="pl-kos">,</span> <span class="pl-c">// sends a server wide message that the player won a reward from the crate</span>
+... <span class="pl-c">// more commands</span>
+<span class="pl-kos">]</span></pre></div>
+<h4><a id="user-content-example-crate-types" class="anchor" aria-hidden="true" tabindex="-1" href="#example-crate-types"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example Crate Types</h4>
+<div class="highlight highlight-source-json"><pre>{
+  <span class="pl-ent">"common"</span>: {
+    <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>§eCommon §6Crate<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"rewards"</span>: [
+      {
+        <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>Diamond<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"item"</span>: {
+          <span class="pl-ent">"id"</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:diamond<span class="pl-pds">"</span></span>,
+          <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>Common Diamond<span class="pl-pds">"</span></span>,
+          <span class="pl-ent">"amount"</span>: <span class="pl-c1">1</span>,
+          <span class="pl-ent">"lore"</span>: <span class="pl-s"><span class="pl-pds">"</span>Diamond from a crate<span class="pl-pds">"</span></span>,
+          <span class="pl-ent">"enchantments"</span>: [
+            {
+              <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>efficiency<span class="pl-pds">"</span></span>,
+              <span class="pl-ent">"level"</span>: <span class="pl-c1">1</span>
+            }
+          ]
+        },
+        <span class="pl-ent">"commands"</span>: [
+          <span class="pl-s"><span class="pl-pds">"</span>msg {player} be carefully with this diamond!<span class="pl-pds">"</span></span>
+        ],
+        <span class="pl-ent">"amount"</span>: <span class="pl-c1">1</span>
+      },
+      {
+        <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>dirt<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"item"</span>: {
+          <span class="pl-ent">"id"</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:dirt<span class="pl-pds">"</span></span>,
+          <span class="pl-ent">"amount"</span>: <span class="pl-c1">2</span>
+        }
+      }
+    ],
+    <span class="pl-ent">"commands"</span>: [
+      <span class="pl-s"><span class="pl-pds">"</span>say {player} won {reward} from a {crate_type} crate<span class="pl-pds">"</span></span>
+    ]
+  }
+}
+</pre></div>
+<h2><a id="user-content-credits" class="anchor" aria-hidden="true" tabindex="-1" href="#credits"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
+<ul>
+<li>This plugin uses <a href="https://github.com/Paroxity/Commando">Commando</a> and <a href="https://github.com/Vecnavium/FormsUI">FormsUI</a>
+</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"8439fea89cbb5af8","r":1,"version":"2023.10.0","token":"508eb1d242ef46b690a0886422106e77"}' crossorigin="anonymous"></script>
