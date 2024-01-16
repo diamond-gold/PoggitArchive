@@ -1,9 +1,9 @@
 # DiscordBot
-## A central API plugin to bring discord features to pocketmine plugins!
+## A central API to bring discord features to pocketmine plugins!
 ```properties
-Version: 3.0.3
+Version: 3.0.4
     API: 5.0.0
-    Updated: 19-10-2023 14:33:25 UTC
+    Updated: 15-01-2024 15:15:37 UTC
 Repo: https://github.com/DiscordBot-PMMP/DiscordBot
 License: OSL-3.0
 Categories: Developer Tools,Miscellaneous,General
