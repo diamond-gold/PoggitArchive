@@ -1,0 +1,17 @@
+<h2><a id="user-content-how-to-use" class="anchor" aria-hidden="true" tabindex="-1" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h2>
+<p>Configure the item ID, permissions, worlds, blocks, and format in the <code>config.yml</code> file.</p>
+<p>(permission is now starting with <code>unclaimfinder</code> + <code>yourpermissionname</code></p>
+<h2><a id="user-content-config" class="anchor" aria-hidden="true" tabindex="-1" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h2>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">item</span>: <span class="pl-s"><span class="pl-pds">"</span>iron_nugget<span class="pl-pds">"</span></span>
+<span class="pl-ent">permission</span>:
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>unclaimfinder.use<span class="pl-pds">"</span></span>
+<span class="pl-ent">worlds</span>: <span class="pl-c"><span class="pl-c">#</span> Leave empty if you want the unclaimed finder to work on all worlds.</span>
+  - <span class="pl-s"><span class="pl-pds">"</span>world<span class="pl-pds">"</span></span>
+<span class="pl-ent">blocks</span>: <span class="pl-c"><span class="pl-c">#</span> Only tile entities</span>
+  - <span class="pl-s"><span class="pl-pds">"</span>chest<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>barrel<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>furnace<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>shulker_box<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>ender_chest<span class="pl-pds">"</span></span>
+<span class="pl-ent">format</span>: <span class="pl-s"><span class="pl-pds">"</span>§a{count} §b%<span class="pl-pds">"</span></span></pre></div>
