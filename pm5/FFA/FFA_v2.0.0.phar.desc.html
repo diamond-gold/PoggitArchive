@@ -1,0 +1,212 @@
+<div align="center">
+	<h1><a id="user-content-free-for-all" class="anchor" aria-hidden="true" tabindex="-1" href="#free-for-all"><span aria-hidden="true" class="octicon octicon-link"></span></a>Free For All</h1>
+  <h3><a id="user-content-ffa-or-free-for-all-is-a-survival-and-fighting-game-where-the-game-begins-and-you-have-to-fight-to-survive" class="anchor" aria-hidden="true" tabindex="-1" href="#ffa-or-free-for-all-is-a-survival-and-fighting-game-where-the-game-begins-and-you-have-to-fight-to-survive"><span aria-hidden="true" class="octicon octicon-link"></span></a>(FFA, or Free for All) is a survival and fighting game where the game begins and you have to fight to survive.</h3>
+</div>
+<h1><a id="user-content-dependencies" class="anchor" aria-hidden="true" tabindex="-1" href="#dependencies"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h1>
+<ul>
+<li><a href="https://poggit.pmmp.io/p/BanCommands" rel="nofollow">BanCommands</a></li>
+</ul>
+<h1><a id="user-content-how-to-create-an-arena" class="anchor" aria-hidden="true" tabindex="-1" href="#how-to-create-an-arena"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to create an arena</h1>
+<ul>
+<li>Teleport to the world who need to make an arena in it.</li>
+<li>First, type <code>/ffa create "your arena name"</code> to create the arena.</li>
+<li>Now go to the arena lobby and type <code>/ffa setlobby</code> to set it.</li>
+<li>Okay, now go to the respawn position and type <code>/ffa setrespawn</code> that will return to it after death (you can turn it on or off from the config).</li>
+<li>Use <code>/ffa reload</code> to load the arena.</li>
+<li>Great, you are now ready to play. Type <code>/ffa join "your arena name."</code> enjoy. If you want to leave the game, type `/ffa quit'.</li>
+</ul>
+<h1><a id="user-content-the-configure" class="anchor" aria-hidden="true" tabindex="-1" href="#the-configure"><span aria-hidden="true" class="octicon octicon-link"></span></a>the configure</h1>
+<ul>
+<li>
+<h1><a id="user-content-formats" class="anchor" aria-hidden="true" tabindex="-1" href="#formats"><span aria-hidden="true" class="octicon octicon-link"></span></a>Formats</h1> 
+</li>
+<li>
+<code>{PLAYER}</code> : to get the player's name</li>
+<li>
+<code>{ARENA} or {GAME}</code> : to get the arena name</li>
+<li>
+<code>&amp;</code> : same as <code>§</code>
+</li>
+<li>
+<code>{WORLD}</code> : to get the arena's world name</li>
+<li>
+<code>{PLAYERS}</code> : to get arena players count</li>
+<li>
+<code>{TIME}</code> : to get player protected time left</li>
+<li>
+<h1><a id="user-content-general" class="anchor" aria-hidden="true" tabindex="-1" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a>General</h1>
+</li>
+<li>
+<code>scoreboardIp</code> : You can set your server IP to show it on the game scoreboard.</li>
+<li>
+<code>banned-commands</code>: You can add the commands you want banned in the game.</li>
+<li>
+<code>death-respawn-inMap</code> : That will return the player to the respawn position after death; you can set it to <code>true</code> or <code>false</code>.</li>
+<li>
+<code>join-and-respawn-protected</code> : that will protect the player for 3 seconds after joining and respawning.</li>
+<li>
+<code>protected-time</code> : to edit the protected time.</li>
+<li>
+<code>protected-message</code> : to edit protect message.</li>
+<li>
+<code>death-attack-message</code> : Here, you can set the death message when killed by someone.</li>
+<li>
+<code>death-void-message</code> : and here you can set the death message when killed by void.</li>
+<li>
+<code>join-message</code> : to edit player join message.</li>
+<li>
+<code>leave-message</code> : to edit player leave message</li>
+<li>
+<code>kills-messages</code> : To add or remove kill messages, this message will be sent to the player every 5 kills automatically.</li>
+<li>
+<code>scoreboard-title</code> : to edit the scoreboard title name.</li>
+<li>
+<code>provider</code> : Currently, it's supported <code>sqlite3</code> only; do not change it.</li>
+<li>
+<code>database</code> : Do not change anything.</li>
+<li>
+<code>kits</code> : You can edit the default kit right now, for example:</li>
+</ul>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">kits</span>:
+  <span class="pl-ent">default</span>:
+    <span class="pl-ent">slot-0</span>:
+      <span class="pl-ent">id</span>: <span class="pl-s">iron_sword</span>
+      <span class="pl-ent">count</span>: <span class="pl-c1">1</span>
+      <span class="pl-ent">enchants</span>: <span class="pl-s">[]</span>
+    <span class="pl-ent">slot-1</span>:
+      <span class="pl-ent">id</span>: <span class="pl-s">golden_apple</span>
+      <span class="pl-ent">count</span>: <span class="pl-c1">5</span>
+      <span class="pl-ent">enchants</span>: <span class="pl-s">[]</span>
+    <span class="pl-ent">slot-2</span>:
+      <span class="pl-ent">id</span>: <span class="pl-s">bow</span>
+      <span class="pl-ent">count</span>: <span class="pl-c1">1</span>
+      <span class="pl-ent">enchants</span>: <span class="pl-s">[]</span>
+    <span class="pl-ent">slot-3</span>:
+      <span class="pl-ent">id</span>: <span class="pl-s">arrow</span>
+      <span class="pl-ent">count</span>: <span class="pl-c1">15</span>
+      <span class="pl-ent">enchants</span>: <span class="pl-s">[]</span>
+    <span class="pl-ent">helmet</span>:
+      <span class="pl-ent">id</span>: <span class="pl-s">iron_helmet</span>
+      <span class="pl-ent">enchants</span>: <span class="pl-s">[]</span>
+    <span class="pl-ent">chestplate</span>:
+      <span class="pl-ent">id</span>: <span class="pl-s">iron_chestplate</span>
+      <span class="pl-ent">enchants</span>:
+        <span class="pl-ent">id-0</span>:
+          <span class="pl-ent">level</span>: <span class="pl-c1">2</span>
+    <span class="pl-ent">leggings</span>:
+      <span class="pl-ent">id</span>: <span class="pl-s">iron_leggings</span>
+      <span class="pl-ent">enchants</span>: <span class="pl-s">[]</span>
+    <span class="pl-ent">boots</span>:
+      <span class="pl-ent">id</span>: <span class="pl-s">iron_boots</span>
+      <span class="pl-ent">enchants</span>: <span class="pl-s">[]</span></pre></div>
+<h1><a id="user-content-commands" class="anchor" aria-hidden="true" tabindex="-1" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ffa join &lt;ArenaName:optional&gt;</code></td>
+<td><code>To join a specific or random arena</code></td>
+<td><code>No permission</code></td>
+</tr>
+<tr>
+<td><code>/ffa quit</code></td>
+<td><code>To leave the arena</code></td>
+<td><code>No permission</code></td>
+</tr>
+<tr>
+<td><code>/ffa help</code></td>
+<td><code>To see the command list</code></td>
+<td><code>ffa.command.admin</code></td>
+</tr>
+<tr>
+<td><code>/ffa create</code></td>
+<td><code>To create a new arena</code></td>
+<td><code>ffa.command.admin</code></td>
+</tr>
+<tr>
+<td><code>/ffa remove</code></td>
+<td><code>To delete a specific arena</code></td>
+<td><code>ffa.command.admin</code></td>
+</tr>
+<tr>
+<td><code>/ffa setlobby</code></td>
+<td><code>To set the lobby position in the arena</code></td>
+<td><code>ffa.command.admin</code></td>
+</tr>
+<tr>
+<td><code>/ffa setrespawn</code></td>
+<td><code>To set the respawn position in the arena</code></td>
+<td><code>ffa.command.admin</code></td>
+</tr>
+<tr>
+<td><code>/ffa reload</code></td>
+<td><code>re-loaded the kits and arenas</code></td>
+<td><code>ffa.command.admin</code></td>
+</tr>
+<tr>
+<td><code>/ffa list</code></td>
+<td><code>To see the arenas list</code></td>
+<td><code>ffa.command.admin</code></td>
+</tr>
+</tbody>
+</table>
+<h1><a id="user-content-api" class="anchor" aria-hidden="true" tabindex="-1" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h1>
+<p>As of v2.0.0, all the API functions have moved to <a href="https://github.com/Laith98Dev/FFA/blob/main/src/Laith98Dev/FFA/API.php">API</a>.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">Laith98Dev</span>\<span class="pl-c1">FFA</span>\<span class="pl-c1">API</span>;
+<span class="pl-k">use</span> <span class="pl-v">Laith98Dev</span>\<span class="pl-c1">FFA</span>\utils\<span class="pl-v">ClosureResult</span>;
+
+<span class="pl-c">// add kills to the player</span>
+<span class="pl-c1">API</span>::<span class="pl-en">addKill</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-v">PlayerOrPlayerName</span></span>, <span class="pl-s1"><span class="pl-c1">$</span>amount</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ClosureResult</span></span> <span class="pl-s1"><span class="pl-c1">$</span>result</span>){
+    <span class="pl-k">if</span>(<span class="pl-s1"><span class="pl-c1">$</span>result</span>-&gt;<span class="pl-en">getStatus</span>() == <span class="pl-v">ClosureResult</span>::<span class="pl-c1">STATE_SUCCESS</span>){
+        <span class="pl-k">echo</span> "<span class="pl-s">Added `</span><span class="pl-s1"><span class="pl-c1">$</span>amount</span><span class="pl-s">` kills to the player successfully.</span>" . <span class="pl-c1">PHP_EOL</span>;
+    } <span class="pl-k">else</span> {
+        <span class="pl-k">echo</span> "<span class="pl-s">Failed to add kills to the player; reason: </span>" . <span class="pl-s1"><span class="pl-c1">$</span>result</span>-&gt;<span class="pl-en">getValue</span>() . <span class="pl-c1">PHP_EOL</span>;
+    }
+});
+
+<span class="pl-c">// add deaths to player</span>
+<span class="pl-c1">API</span>::<span class="pl-en">addDeath</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-v">PlayerOrPlayerName</span></span>, <span class="pl-s1"><span class="pl-c1">$</span>amount</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ClosureResult</span></span> <span class="pl-s1"><span class="pl-c1">$</span>result</span>){
+    <span class="pl-k">if</span>(<span class="pl-s1"><span class="pl-c1">$</span>result</span>-&gt;<span class="pl-en">getStatus</span>() == <span class="pl-v">ClosureResult</span>::<span class="pl-c1">STATE_SUCCESS</span>){
+        <span class="pl-k">echo</span> "<span class="pl-s">Added `</span><span class="pl-s1"><span class="pl-c1">$</span>amount</span><span class="pl-s">` deaths to the player successfully.</span>" . <span class="pl-c1">PHP_EOL</span>;
+    } <span class="pl-k">else</span> {
+        <span class="pl-k">echo</span> "<span class="pl-s">Failed to add deaths to the player; reason: </span>" . <span class="pl-s1"><span class="pl-c1">$</span>result</span>-&gt;<span class="pl-en">getValue</span>() . <span class="pl-c1">PHP_EOL</span>;
+    }
+});
+
+<span class="pl-c">// get player kills</span>
+<span class="pl-c1">API</span>::<span class="pl-en">getKills</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-v">PlayerOrPlayerName</span></span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ClosureResult</span></span> <span class="pl-s1"><span class="pl-c1">$</span>result</span>){
+    <span class="pl-k">if</span>(<span class="pl-s1"><span class="pl-c1">$</span>result</span>-&gt;<span class="pl-en">getStatus</span>() == <span class="pl-v">ClosureResult</span>::<span class="pl-c1">STATE_SUCCESS</span>){
+        <span class="pl-k">echo</span> "<span class="pl-s">Player kills is </span>" . <span class="pl-s1"><span class="pl-c1">$</span>result</span>-&gt;<span class="pl-en">getValue</span>() . <span class="pl-c1">PHP_EOL</span>;
+    } <span class="pl-k">else</span> {
+        <span class="pl-k">echo</span> "<span class="pl-s">Failed to get player kills; reason: </span>" . <span class="pl-s1"><span class="pl-c1">$</span>result</span>-&gt;<span class="pl-en">getValue</span>() . <span class="pl-c1">PHP_EOL</span>;
+    }
+});
+
+<span class="pl-c">// get player deaths</span>
+<span class="pl-c1">API</span>::<span class="pl-en">getDeaths</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-v">PlayerOrPlayerName</span></span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ClosureResult</span></span> <span class="pl-s1"><span class="pl-c1">$</span>result</span>){
+    <span class="pl-k">if</span>(<span class="pl-s1"><span class="pl-c1">$</span>result</span>-&gt;<span class="pl-en">getStatus</span>() == <span class="pl-v">ClosureResult</span>::<span class="pl-c1">STATE_SUCCESS</span>){
+        <span class="pl-k">echo</span> "<span class="pl-s">Player deaths is </span>" . <span class="pl-s1"><span class="pl-c1">$</span>result</span>-&gt;<span class="pl-en">getValue</span>() . <span class="pl-c1">PHP_EOL</span>;
+    } <span class="pl-k">else</span> {
+        <span class="pl-k">echo</span> "<span class="pl-s">Failed to get player deaths; reason: </span>" . <span class="pl-s1"><span class="pl-c1">$</span>result</span>-&gt;<span class="pl-en">getValue</span>() . <span class="pl-c1">PHP_EOL</span>;
+    }
+});
+
+<span class="pl-c">// Check if an arena exists</span>
+<span class="pl-c1">API</span>::<span class="pl-en">isValidArena</span>(<span class="pl-s1"><span class="pl-c1">$</span>arena_name</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ClosureResult</span></span> <span class="pl-s1"><span class="pl-c1">$</span>result</span>){
+    <span class="pl-k">if</span>(<span class="pl-s1"><span class="pl-c1">$</span>result</span>-&gt;<span class="pl-en">getValue</span>()){
+        <span class="pl-k">echo</span> "<span class="pl-s">Arena exists</span>" . <span class="pl-c1">PHP_EOL</span>;
+    } <span class="pl-k">else</span> {
+        <span class="pl-k">echo</span> "<span class="pl-s">Arena doesn't exist.</span>" . <span class="pl-c1">PHP_EOL</span>;
+    }
+});</pre></div>
+<h1><a id="user-content-other" class="anchor" aria-hidden="true" tabindex="-1" href="#other"><span aria-hidden="true" class="octicon octicon-link"></span></a>Other</h1>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=SwzWwsrGG74&amp;ab_channel=LaithYoutuber" rel="nofollow"><img src="https://camo.githubusercontent.com/92fe9ca74fc7c4cf2275f88de63a9ec0cf5dd8bf1e7527281062f48a147a0820/68747470733a2f2f696d672e736869656c64732e696f2f796f75747562652f76696577732f53777a57777372474737343f6c6162656c3d5475746f7269616c267374796c653d736f6369616c" alt="tutorial" data-canonical-src="https://img.shields.io/youtube/views/SwzWwsrGG74?label=Tutorial&amp;style=social" style="max-width: 100%;"></a></li>
+<li><a href="https://paypal.me/Laith113" rel="nofollow"><img src="https://camo.githubusercontent.com/6f04e8b7280b7605ade2aac3595cf7fe0d78e0949962275e1af47427bc19d30a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f646f6e6174652d50617970616c2d79656c6c6f772e7376673f7374796c653d666c61742d737175617265" alt="Donate" data-canonical-src="https://img.shields.io/badge/donate-Paypal-yellow.svg?style=flat-square" style="max-width: 100%;"></a></li>
+</ul>

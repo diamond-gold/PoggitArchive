@@ -1,0 +1,48 @@
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" tabindex="-1" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>Automatically broadcasts customizable messages at regular intervals to keep your players engaged.</li>
+<li>Supports message prefixes.</li>
+<li>Configurable interval between each message, allowing you to fine-tune the frequency.</li>
+<li>Easy-to-use configuration file for managing messages and settings.</li>
+<li>Sound Effects for each message</li>
+</ul>
+<h2><a id="user-content-configuration" class="anchor" aria-hidden="true" tabindex="-1" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h2>
+<p>The plugin configuration file <code>config.yml</code> allows you to customize various aspects of the AutoAnnouncer plugin:</p>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span> Configuration for AutoAnnouncer plugin</span>
+<span class="pl-c"><span class="pl-c">#</span> (!) DO NOT CHANGE (!)</span>
+<span class="pl-ent">version</span>: <span class="pl-s">1.0.1</span>
+
+<span class="pl-ent">settings</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Sound to play for each announcement.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Use this for a list of available sounds: https://wiki.bedrock.dev/documentation/sound-definitions.html</span>
+  <span class="pl-ent">sound</span>: <span class="pl-s"><span class="pl-pds">'</span>random.levelup<span class="pl-pds">'</span></span>
+
+  <span class="pl-c"><span class="pl-c">#</span> The prefix message</span>
+  <span class="pl-c"><span class="pl-c">#</span> Use '&amp;' for colors</span>
+  <span class="pl-ent">prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;8[&amp;aAA&amp;8] <span class="pl-pds">"</span></span>
+
+  <span class="pl-c"><span class="pl-c">#</span> enable/disable the use of prefixes.</span>
+  <span class="pl-c"><span class="pl-c">#</span> true = on, false = off</span>
+  <span class="pl-ent">use-prefix</span>: <span class="pl-c1">true</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Interval between each message in seconds</span>
+  <span class="pl-ent">interval</span>: <span class="pl-c1">60</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> If the messages should be sent in order they're formatted in</span>
+  <span class="pl-c"><span class="pl-c">#</span> or if they should send at random.</span>
+  <span class="pl-ent">random</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> List of messages to be broadcasted</span>
+<span class="pl-c"><span class="pl-c">#</span> Use '&amp;' for colors.</span>
+<span class="pl-ent">messages</span>:
+  - <span class="pl-ent">message</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;aWelcome to the server!<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;7read /rules!<span class="pl-pds">"</span></span>
+  - <span class="pl-ent">message</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;7Enjoy your stay!<span class="pl-pds">"</span></span>
+  - <span class="pl-ent">message</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;6Visit our website at example.com<span class="pl-pds">"</span></span>
+</pre></div>
+<h2><a id="user-content-icon" class="anchor" aria-hidden="true" tabindex="-1" href="#icon"><span aria-hidden="true" class="octicon octicon-link"></span></a>Icon</h2>
+<p><a href="https://www.flaticon.com/free-icons/bullhorn" title="bullhorn icons" rel="nofollow">Bullhorn icons created by Freepik - Flaticon</a></p>
