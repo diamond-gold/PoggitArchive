@@ -8,6 +8,6 @@ Version: 1.1-beta
     Updated: 31-12-2023 13:46:34 UTC
 Repo: https://github.com/LadySara48/CustomPanels
 License: MIT
-Categories: Mechanics,Miscellaneous,Developer Tools,Fun,Economy,Teleportation,Admin Tools,General
+Categories: Mechanics,API plugins,Miscellaneous,Developer Tools,Fun,Economy,Teleportation,Informational,Admin Tools,General
 Keywords: gui,panels
 ```

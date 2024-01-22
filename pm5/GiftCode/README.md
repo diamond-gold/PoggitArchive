@@ -6,7 +6,7 @@
 Version: 1.0.5
     API: 5.0.0
     Updated: 13-11-2023 19:05:34 UTC
-Repo: https://github.com/Clickedtran/GiftCode
+Repo: https://github.com/ClickedTran/GiftCode
 License: GPL-3.0
 Categories: General,API plugins,Developer Tools,Fun,Admin Tools
 Keywords: code,giftcode
