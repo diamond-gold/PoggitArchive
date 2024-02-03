@@ -1,0 +1,31 @@
+<h1><a id="user-content-rpencrypter" class="anchor" aria-hidden="true" tabindex="-1" href="#rpencrypter"><span aria-hidden="true" class="octicon octicon-link"></span></a>RPEncrypter</h1>
+<p>A PocketMine-MP plugin that automatically encrypts all loaded resource packs.</p>
+<p>Just install the plugin and restart your server. All loaded resource packs (such as ones defined in your <code>resource_packs/resource_packs.yml</code>) will automatically be encrypted. This plugin uses your machine ID as the encryption key.</p>
+<h2><a id="user-content-api" class="anchor" aria-hidden="true" tabindex="-1" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h2>
+<p><a href="https://github.com/Muqsit/RPEncrypter/blob/master/src/muqsit/rpencrypter/ResourcePackEncrypter.php"><code>ResourcePackEncrypter::encrypt()</code></a> encrypts resource packs with the supplied encryption-key.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">/** @var PluginBase $plugin */</span>
+<span class="pl-s1"><span class="pl-c1">$</span>rp_path</span> = <span class="pl-s1"><span class="pl-c1">$</span>plugin</span>-&gt;<span class="pl-en">getDataFolder</span>() . <span class="pl-c1">DIRECTORY_SEPARATOR</span> . "<span class="pl-s">MyResourcePack.zip</span>";
+
+<span class="pl-c">// encrypt MyResourcePack.zip</span>
+<span class="pl-s1"><span class="pl-c1">$</span>encrypter</span> = <span class="pl-k">new</span> <span class="pl-v">ResourcePackEncrypter</span>(<span class="pl-s1"><span class="pl-c1">$</span>plugin</span>-&gt;<span class="pl-en">getDataFolder</span>());
+<span class="pl-s1"><span class="pl-c1">$</span>encryption_key</span> = openssl_random_pseudo_bytes(<span class="pl-c1">32</span>, <span class="pl-s1"><span class="pl-c1">$</span>strong_result</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>file_encryption_keygen</span> = fn(<span class="pl-smi">string</span> <span class="pl-s1"><span class="pl-c1">$</span>path</span>, <span class="pl-smi">string</span> <span class="pl-s1"><span class="pl-c1">$</span>contents</span>) =&gt; md5(<span class="pl-s1"><span class="pl-c1">$</span>path</span> . <span class="pl-s1"><span class="pl-c1">$</span>contents</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>info</span> = <span class="pl-s1"><span class="pl-c1">$</span>encrypter</span>-&gt;<span class="pl-en">encryptZip</span>(<span class="pl-k">new</span> <span class="pl-v">ZipArchive</span>(<span class="pl-s1"><span class="pl-c1">$</span>rp_path</span>), <span class="pl-s1"><span class="pl-c1">$</span>encryption_key</span>, <span class="pl-s1"><span class="pl-c1">$</span>file_encryption_keygen</span>);
+
+<span class="pl-c">// register encrypted resource pack</span>
+<span class="pl-s1"><span class="pl-c1">$</span>manager</span> = <span class="pl-s1"><span class="pl-c1">$</span>plugin</span>-&gt;<span class="pl-en">getServer</span>()-&gt;<span class="pl-en">getResourcePackManager</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>stack</span> = <span class="pl-s1"><span class="pl-c1">$</span>manager</span>-&gt;<span class="pl-en">getResourceStack</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>stack</span>[] = <span class="pl-s1"><span class="pl-c1">$</span>info</span>-&gt;<span class="pl-c1">pack</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>manager</span>-&gt;<span class="pl-en">setResourceStack</span>(<span class="pl-s1"><span class="pl-c1">$</span>stack</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>manager</span>-&gt;<span class="pl-en">setPackEncryptionKey</span>(<span class="pl-s1"><span class="pl-c1">$</span>pack</span>-&gt;<span class="pl-en">getPackId</span>(), <span class="pl-s1"><span class="pl-c1">$</span>encryption_key</span>);
+
+<span class="pl-c">// hold reference to encrypted file's resource throughout server runtime</span>
+<span class="pl-s1"><span class="pl-c1">$</span>plugin</span>-&gt;<span class="pl-c1">encryptedResourcePackResource</span> = <span class="pl-s1"><span class="pl-c1">$</span>info</span>-&gt;<span class="pl-c1">resource</span>;</pre></div>
+<p>To generate static encryption keys (instead of random keys), consider using your machine ID.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> pocketmine\utils\<span class="pl-v">Utils</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>machine_id</span> = <span class="pl-v">Utils</span>::<span class="pl-en">getMachineUniqueId</span>()-&gt;<span class="pl-en">getBytes</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>encryption_key</span> = md5(<span class="pl-s1"><span class="pl-c1">$</span>machine_id</span>); <span class="pl-c">// 32-byte encryption key</span></pre></div>
+<p>Alternatively, generate a 32-length random string via <a href="https://1password.com/password-generator/" rel="nofollow">1Passoword</a> and store it on your server somewhere.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>encryption_key</span> = "<span class="pl-s">6]xFaeMs9b)UnybZ?raH]*)PJ.Jx!3:0</span>";</pre></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"84f78345dcd8ce90","version":"2024.2.0","r":1,"token":"508eb1d242ef46b690a0886422106e77","b":1}' crossorigin="anonymous"></script>
