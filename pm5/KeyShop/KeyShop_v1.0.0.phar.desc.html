@@ -1,0 +1,144 @@
+<p><a href="https://poggit.pmmp.io/p/KeyShop" rel="nofollow"><img src="https://camo.githubusercontent.com/8e9d5cfab5a3243192d878df613c9e479954d0bb143c40f31e4bf429bc317437/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4b657953686f70" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/KeyShop" style="max-width: 100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/KeyShop" rel="nofollow"><img src="https://camo.githubusercontent.com/26c5ee1b89f27aa32b7fcfffd71e7b9da42adeeceaf65decffba1c22608b18c1/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f4b657953686f70" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/KeyShop" style="max-width: 100%;"></a></p>
+<h1><a id="user-content-keyshop" class="anchor" aria-hidden="true" tabindex="-1" href="#keyshop"><span aria-hidden="true" class="octicon octicon-link"></span></a>KeyShop</h1>
+<p>A store plugin to sell keys on your server. Only for PocketMine-MP 5.0</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernanACM/KeyShop/assets/83558341/028f36e8-f19c-487b-a202-edf36cbb61b1"><img src="https://github.com/fernanACM/KeyShop/assets/83558341/028f36e8-f19c-487b-a202-edf36cbb61b1" alt="keyshop-icon" style="max-width: 100%;"></a></p>
+<p><a href="https://discord.gg/YyE9XFckqb" rel="nofollow"><img src="https://camo.githubusercontent.com/0ff1aee69fd420706240c199208181fe41d32c0827480712be8285abc21bb2c9/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833373730313836383634393730393536383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/837701868649709568?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width: 100%;"></a></p>
+<h3><a id="user-content--images" class="anchor" aria-hidden="true" tabindex="-1" href="#-images"><span aria-hidden="true" class="octicon octicon-link"></span></a>📸 Images</h3>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernanACM/KeyShop/assets/83558341/4e94ca04-2c10-4eab-b44a-8161b3b42bd9"><img src="https://github.com/fernanACM/KeyShop/assets/83558341/4e94ca04-2c10-4eab-b44a-8161b3b42bd9" style="max-width: 100%;"></a></p>
+<h3><a id="user-content--wiki" class="anchor" aria-hidden="true" tabindex="-1" href="#-wiki"><span aria-hidden="true" class="octicon octicon-link"></span></a>🌍 Wiki</h3>
+<ul>
+<li>Check our plugin <a href="https://github.com/fernanACM/KeyShop/wiki">wiki</a> for features and secrets in the...</li>
+</ul>
+<h3><a id="user-content--implementations" class="anchor" aria-hidden="true" tabindex="-1" href="#-implementations"><span aria-hidden="true" class="octicon octicon-link"></span></a>💡 Implementations</h3>
+<ul>
+<li>[X] Configuration</li>
+<li>[X] EconomyAPI and BedrockEconomy support</li>
+<li>[X] Multisupport keys</li>
+</ul>
+<h3><a id="user-content--config" class="anchor" aria-hidden="true" tabindex="-1" href="#-config"><span aria-hidden="true" class="octicon octicon-link"></span></a>💾 Config</h3>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span>  _  __                 ____    _                     </span>
+<span class="pl-c"><span class="pl-c">#</span> | |/ /   ___   _   _  / ___|  | |__     ___    _ __  </span>
+<span class="pl-c"><span class="pl-c">#</span> | ' /   / _ \ | | | | \___ \  | '_ \   / _ \  | '_ \ </span>
+<span class="pl-c"><span class="pl-c">#</span> | . \  |  __/ | |_| |  ___) | | | | | | (_) | | |_) |</span>
+<span class="pl-c"><span class="pl-c">#</span> |_|\_\  \___|  \__, | |____/  |_| |_|  \___/  | .__/ </span>
+<span class="pl-c"><span class="pl-c">#</span>                |___/                          |_|    </span>
+<span class="pl-c"><span class="pl-c">#</span>         by fernanACM</span>
+<span class="pl-c"><span class="pl-c">#</span> A store plugin to sell keys on your server. It accepts </span>
+<span class="pl-c"><span class="pl-c">#</span> all types of keys from each plugin, which is why it is unique in its kind.</span>
+
+<span class="pl-c"><span class="pl-c">#</span> DO NOT TOUCH!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-s"><span class="pl-pds">"</span>1.0.0<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Prefix plugin</span>
+<span class="pl-ent">Prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;f[&amp;bKEYSHOP&amp;f]&amp;8»&amp;r <span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Usa economyapi, bedrockeconomy, xp</span>
+<span class="pl-ent">Economy</span>: 
+  <span class="pl-ent">provider</span>: <span class="pl-s">bedrockeconomy</span>
+<span class="pl-c"><span class="pl-c">#</span> Here put the command to give you a key</span>
+<span class="pl-c"><span class="pl-c">#</span> {PLAYER} =&gt; Player name</span>
+<span class="pl-c"><span class="pl-c">#</span> {KEY} =&gt; The key has to be received</span>
+<span class="pl-c"><span class="pl-c">#</span> {AMOUNT} =&gt; The number of keys</span>
+<span class="pl-ent">Key-command</span>: <span class="pl-s">key give "{PLAYER}" {KEY} {AMOUNT}</span>
+<span class="pl-c"><span class="pl-c">#</span> EXAMPLE:</span>
+<span class="pl-c"><span class="pl-c">#</span> KEYS:</span>
+<span class="pl-c"><span class="pl-c">#</span> - {LINE} =&gt; Line break</span>
+<span class="pl-c"><span class="pl-c">#</span> - {AMOUNT} =&gt; Number of keys</span>
+<span class="pl-c"><span class="pl-c">#</span> - {PRICE} =&gt; Price of the key</span>
+<span class="pl-c"><span class="pl-c">#</span> - "&amp;" =&gt; Color</span>
+<span class="pl-c"><span class="pl-c">#</span> KeyShop:</span>
+<span class="pl-c"><span class="pl-c">#</span>   Common: // THE NAME OF THE KEY WILL GO HERE (MUST BE EXACT)</span>
+<span class="pl-c"><span class="pl-c">#</span>     name: "&amp;l&amp;cCOMUN{LINE}&amp;r&amp;0x{AMOUNT} | cost: {PRICE}$" // OPTIONAL</span>
+<span class="pl-c"><span class="pl-c">#</span>     price: 323 // Key price</span>
+<span class="pl-c"><span class="pl-c">#</span>     image: "textures/items/cancel" // OPTIONAL - URL or PATH</span>
+<span class="pl-c"><span class="pl-c">#</span>     amount: 2 // Number of keys to receive</span>
+<span class="pl-ent">KeyShop</span>:
+  <span class="pl-ent">Common</span>:
+    <span class="pl-ent">price</span>: <span class="pl-c1">334</span>
+    <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;cCOMMON{LINE}&amp;r&amp;0x{AMOUNT} | cost: {PRICE}$<span class="pl-pds">"</span></span>
+    <span class="pl-ent">image</span>: <span class="pl-s"><span class="pl-pds">"</span>textures/items/diamond<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> Ruta de la imagen (opcional)</span>
+    <span class="pl-ent">amount</span>: <span class="pl-c1">1</span>
+  <span class="pl-ent">Epic</span>:
+    <span class="pl-ent">price</span>: <span class="pl-c1">323</span>
+    <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;5EPIC{LINE}&amp;r&amp;0x{AMOUNT} | cost: {PRICE}$<span class="pl-pds">"</span></span>
+    <span class="pl-ent">image</span>: <span class="pl-s"><span class="pl-pds">"</span>https://preview.redd.it/you-have-an-ugly-gray-creeper-instead-of-a-minecraft-icon-v0-y83ppc5i6r4b1.png?width=1024&amp;format=png&amp;auto=webp&amp;s=12576cea991cd7c24bd277c1c43800e81ea0e73a<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> Ruta de la imagen (opcional)</span>
+    <span class="pl-ent">amount</span>: <span class="pl-c1">1</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Form =&gt; Keyshop</span>
+<span class="pl-ent">Form</span>:
+  <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;9KEYSHOP<span class="pl-pds">"</span></span>
+  <span class="pl-ent">content</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;eSelect the key of your preference:<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Messages</span>
+<span class="pl-ent">Messages</span>:
+  <span class="pl-ent">error</span>:
+    <span class="pl-ent">no-config</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cApparently there are no keys available...<span class="pl-pds">"</span></span>
+    <span class="pl-ent">no-money</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cYou don't have enough money to make this purchase!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">success</span>:
+    <span class="pl-ent">successful-purchase</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;aYou have purchased &amp;bx{AMOUNT} {KEY}&amp;a keys for only &amp;b{PRICE}$<span class="pl-pds">"</span></span></pre></div>
+<h3><a id="user-content--report-bug" class="anchor" aria-hidden="true" tabindex="-1" href="#-report-bug"><span aria-hidden="true" class="octicon octicon-link"></span></a>📢 Report bug</h3>
+<ul>
+<li>If you find any bugs in this plugin, please let me know via: <a href="https://github.com/fernanACM/KeyShop/issues">issues</a>
+</li>
+</ul>
+<h3><a id="user-content--contact" class="anchor" aria-hidden="true" tabindex="-1" href="#-contact"><span aria-hidden="true" class="octicon octicon-link"></span></a>📞 Contact</h3>
+<table>
+<thead>
+<tr>
+<th>Redes</th>
+<th>Tag</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube</td>
+<td>fernanACM</td>
+<td><a href="https://www.youtube.com/channel/UC-M5iTrCItYQBg5GMuX5ySw" rel="nofollow">YouTube</a></td>
+</tr>
+<tr>
+<td>Discord</td>
+<td>fernanACM#5078</td>
+<td><a href="https://discord.gg/YyE9XFckqb" rel="nofollow">Discord</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>fernanACM</td>
+<td><a href="https://github.com/fernanACM">GitHub</a></td>
+</tr>
+<tr>
+<td>Poggit</td>
+<td>fernanACM</td>
+<td><a href="https://poggit.pmmp.io/ci/fernanACM" rel="nofollow">Poggit</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3><a id="user-content--credits" class="anchor" aria-hidden="true" tabindex="-1" href="#-credits"><span aria-hidden="true" class="octicon octicon-link"></span></a>✔ Credits</h3>
+<table>
+<thead>
+<tr>
+<th>Authors</th>
+<th>Github</th>
+<th>Lib</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vecnavium</td>
+<td><a href="https://github.com/Vecnavium">Vecnavium</a></td>
+<td><a href="https://github.com/Vecnavium/FormsUI/tree/master/">FormsUI</a></td>
+</tr>
+<tr>
+<td>DaPigGuy</td>
+<td><a href="https://github.com/DaPigGuy">DaPigGuy</a></td>
+<td><a href="https://github.com/DaPigGuy/libPiggyEconomy">libPiggyEconomy</a></td>
+</tr>
+<tr>
+<td>DaPigGuy</td>
+<td><a href="https://github.com/DaPigGuy">DaPigGuy</a></td>
+<td><a href="https://github.com/DaPigGuy/libPiggyUpdateChecker">libPiggyUpdateChecker</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2><a id="user-content--icon" class="anchor" aria-hidden="true" tabindex="-1" href="#-icon"><span aria-hidden="true" class="octicon octicon-link"></span></a>🔔 Icon:</h2>
+<p>The plugin icon is created via <a href="www.flaticon.com">flaticon</a></p>

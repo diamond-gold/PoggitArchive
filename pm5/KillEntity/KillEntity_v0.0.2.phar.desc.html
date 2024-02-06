@@ -1,0 +1,28 @@
+<p>KillEntity provides a monetary reward to players who successfully defeat specific types of entities. Moreover, you can set up the percentage of money that players will lose if they die during combat!</p>
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" tabindex="-1" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<p>Earn Money: This means that when a player successfully kills a zombie, they will earn $10.</p>
+<p>animals:</p>
+<ul>
+<li>Zombie: 10</li>
+<li>Villager: 20</li>
+</ul>
+<p>Lost Money Percentage: For example, in the configuration:
+<code>percent: 50</code>
+If a player has $500 and dies, they will retain $250.</p>
+<ul>
+<li>
+<strong>Permissions:</strong> killentity.plugin</li>
+</ul>
+<h2><a id="user-content-configuration-example" class="anchor" aria-hidden="true" tabindex="-1" href="#configuration-example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration Example</h2>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span>format =&gt; name_entity: money</span>
+<span class="pl-ent">animals</span>:
+- <span class="pl-ent">Zombie</span>: <span class="pl-c1">10</span>
+- <span class="pl-ent">Villager</span>: <span class="pl-c1">20</span>
+<span class="pl-c"><span class="pl-c">#</span> 1 for sending pop-ups</span>
+<span class="pl-c"><span class="pl-c">#</span> 2 for sending messages</span>
+<span class="pl-c"><span class="pl-c">#</span> 3 to turn off message notifications</span>
+<span class="pl-ent">message</span>: <span class="pl-c1">1</span>
+<span class="pl-ent">percent</span>: <span class="pl-c1">50</span>
+<span class="pl-c"><span class="pl-c">#</span> enter the name world that you want to be activated</span>
+<span class="pl-ent">worlds</span>:
+- <span class="pl-s">world</span></pre></div>
