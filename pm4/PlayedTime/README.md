@@ -1,11 +1,11 @@
 # PlayedTime
-<img src="https://raw.githubusercontent.com/supercrafter333/PlayedTime/7f4d1dc3a89673787db59addfdafe50b5d05d15f/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/supercrafter333/PlayedTime/d7383b32d79f7ccd14c37046d3df48ac9a2cbe77/icon.png" width="128" height="128" />
 
 ## A PocketMine-MP plugin that counts the played time of players.
 ```properties
-Version: 1.0.2
+Version: 1.0.3
     API: 4.0.0
-    Updated: 10-07-2023 11:44:46 UTC
+    Updated: 07-02-2024 19:20:12 UTC
 Repo: https://github.com/supercrafter333/PlayedTime
 License: Apache-2.0
 Categories: General,Fun,Informational
