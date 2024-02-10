@@ -1,9 +1,9 @@
 # Texter
 ## FloatingText can be added, edited, moved, and deleted in multiple worlds!
 ```properties
-Version: 4.2.3
-    API: 5.3.0
-    Updated: 16-11-2023 15:54:55 UTC
+Version: 4.3.0
+    API: 5.11.0
+    Updated: 09-02-2024 19:07:45 UTC
 Repo: https://github.com/fuyutsuki/Texter
 License: NCSA
 Categories: Informational,Fun,General
