@@ -6,7 +6,7 @@
 Version: 1.0.7
     API: 4.0.0
     Updated: 10-06-2022 02:26:33 UTC
-Repo: https://github.com/ZzKino/EasyWing
+Repo: https://github.com/Fuongaz/EasyWing
 License: gpl-3.0
 Categories: General,Fun
 Keywords: 
