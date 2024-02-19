@@ -1,11 +1,11 @@
 # AntiBadPackets
-<img src="https://raw.githubusercontent.com/Aetheam/AntiBadPackets/39a8f5f52f7bb4d40b6d0705ae5b2f85c08235fa/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/Aetheam/AntiBadPackets/916ef04638e9e26b41b3d3ba3fea6430198700ed/icon.png" width="128" height="128" />
 
-## This is a AntiBadPackets plugin for PocketMine 5.10.0, one of the best!
+## This is a AntiBadPackets plugin for PocketMine 5.8.2, one of the best!
 ```properties
-Version: 1.0.2
-    API: 5.10.0
-    Updated: 02-01-2024 22:12:41 UTC
+Version: 1.0.1
+    API: 5.7.0
+    Updated: 24-12-2023 09:49:07 UTC
 Repo: https://github.com/Aetheam/AntiBadPackets
 License: Apache-2.0
 Categories: General,Developer Tools,Admin Tools
