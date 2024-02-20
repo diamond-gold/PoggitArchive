@@ -1,0 +1,34 @@
+<h1><a id="user-content-obsidianbreakertnt" class="anchor" aria-hidden="true" tabindex="-1" href="#obsidianbreakertnt"><span aria-hidden="true" class="octicon octicon-link"></span></a>ObsidianBreakerTNT</h1>
+<p>ObsidianBreakerTNT is a plugin for PocketMine-MP. The plugin introduces a new mechanic where obsidian blocks can be destroyed by TNT explosions.
+The plugin can be handy in servers featuring game modes like Factions.</p>
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" tabindex="-1" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>
+<strong>TNT Explosions</strong>: TNT explosions can now break obsidian blocks.</li>
+<li>
+<strong>Water Protection</strong>: TNT explosions in water will not break obsidian blocks.</li>
+<li>
+<strong>Hit Count</strong>: Obsidian blocks will only break after a certain number of TNT explosions. The hit count is configurable.</li>
+</ul>
+<h2><a id="user-content-installation" class="anchor" aria-hidden="true" tabindex="-1" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+<ol>
+<li>Download the latest release from the GitHub repository, or download from the latest <a href="https://poggit.pmmp.io/p/ObsidianBreakerTNT/" rel="nofollow">Poggit Release</a>
+</li>
+<li>Place the <code>.phar</code> file into your server's <code>plugins</code> directory.</li>
+<li>Restart your server so that PocketMine-MP can load the plugin.</li>
+</ol>
+<h2><a id="user-content-configuration" class="anchor" aria-hidden="true" tabindex="-1" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h2>
+<p>You can adjust the hit count (the number of TNT explosions an obsidian block can withstand before breaking) in the <code>config.yml</code> file.</p>
+<h2><a id="user-content-events" class="anchor" aria-hidden="true" tabindex="-1" href="#events"><span aria-hidden="true" class="octicon octicon-link"></span></a>Events</h2>
+<p>The plugin registers two event listeners:</p>
+<ul>
+<li>
+<code>EntityExplodeEvent</code>: Checks if the exploding entity is a PrimedTNT. If so, the plugin will check the surrounding blocks and add a hit to the directly hitting obsidian(s).</li>
+<li>
+<code>BlockBreakEvent</code>: If an obsidian block is broken by a player, it is removed from the plugin's internal tracking.</li>
+</ul>
+<h2><a id="user-content-contributing" class="anchor" aria-hidden="true" tabindex="-1" href="#contributing"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+<p>Contributions, issues, and feature requests are welcome! Feel free to check the issues page.</p>
+<h2><a id="user-content-license" class="anchor" aria-hidden="true" tabindex="-1" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<p>This project is GNU licensed.</p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"858394855c8082aa","version":"2024.2.0","r":1,"token":"508eb1d242ef46b690a0886422106e77","b":1}' crossorigin="anonymous"></script>
