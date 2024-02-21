@@ -1,11 +1,11 @@
 # VanillaWeather
-<img src="https://raw.githubusercontent.com/WeaVerseStudio/VanillaWeather/dec4c9ba882dc4b8cfb6a68020fc1c1d63209c3c/image.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/WeaVerseStudio/VanillaWeather/1bbb034db0403f0a7c49be7900ddd129e07959ed/image.png" width="128" height="128" />
 
 ## A plugin that adds weather mechanics like in vanilla.
 ```properties
-Version: 1.0.6
+Version: 1.1.0
     API: 5.0.0
-    Updated: 11-12-2023 22:45:54 UTC
+    Updated: 20-02-2024 19:23:32 UTC
 Repo: https://github.com/WeaVerseStudio/VanillaWeather
 License: GPL-3.0
 Categories: Vanilla Mechanics,Mechanics,General
