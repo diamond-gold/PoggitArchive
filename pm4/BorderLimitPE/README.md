@@ -7,5 +7,5 @@ Version: 1.0.0
 Repo: https://github.com/Terpz710/BorderLimitPE
 License: Apache-2.0
 Categories: General,Miscellaneous,Fun,Anti-Griefing Tools
-Keywords: World,WorldBorder,Border,BorderLimit,WorldLimit
+Keywords: Border,BorderLimit,World,WorldBorder,WorldLimit
 ```
