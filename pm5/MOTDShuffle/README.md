@@ -7,7 +7,7 @@ Version: 1.4.0
     API: 5.0.0
     Updated: 02-06-2023 01:06:08 UTC
 Repo: https://github.com/HBIDamian/MOTDShuffle
-License: apache-2.0
+License: Apache-2.0
 Categories: General,Miscellaneous,Informational
 Keywords: motd,motdshuffle,name,shuffle,title
 ```
