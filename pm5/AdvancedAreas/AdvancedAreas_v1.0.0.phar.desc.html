@@ -1,0 +1,100 @@
+<h2><a id="user-content-general" class="anchor" aria-hidden="true" tabindex="-1" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a>General</h2>
+<p>This is a PocketMine-MP plugin which lets you make and control areas!</p>
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" tabindex="-1" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<h3><a id="user-content-priority" class="anchor" aria-hidden="true" tabindex="-1" href="#priority"><span aria-hidden="true" class="octicon octicon-link"></span></a>Priority</h3>
+<p>Every area has its own priority.</p>
+<h3><a id="user-content-control-events" class="anchor" aria-hidden="true" tabindex="-1" href="#control-events"><span aria-hidden="true" class="octicon octicon-link"></span></a>Control Events</h3>
+<p>You can disable/enable events for each area!</p>
+<ul>
+<li>Block Breaking</li>
+<li>Block Placing</li>
+<li>Item Drop</li>
+<li>Item Pickup</li>
+<li>Entity Damage</li>
+<li>Entity Regain Health</li>
+<li>Much more events...!</li>
+</ul>
+<h3><a id="user-content-effects" class="anchor" aria-hidden="true" tabindex="-1" href="#effects"><span aria-hidden="true" class="octicon octicon-link"></span></a>Effects</h3>
+<p>Effects are given when entering the area and cleared when they leave! You can also set it so it applies to the whitelisted player's!</p>
+<h3><a id="user-content-banned-items" class="anchor" aria-hidden="true" tabindex="-1" href="#banned-items"><span aria-hidden="true" class="octicon octicon-link"></span></a>Banned Items</h3>
+<p>If an item is banned in the area, they can not be used! You can also set it so it applies to the whitelisted player's!</p>
+<h3><a id="user-content-whitelist" class="anchor" aria-hidden="true" tabindex="-1" href="#whitelist"><span aria-hidden="true" class="octicon octicon-link"></span></a>Whitelist</h3>
+<p>Every area has its own whitelist!</p>
+<h2><a id="user-content-config" class="anchor" aria-hidden="true" tabindex="-1" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h2>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Configuration file for AdvancedAreas by Its123Miguel321</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Config file version (Do not edit this!)</span>
+<span class="pl-ent">config-version</span>: <span class="pl-c1">1.0</span>
+
+
+<span class="pl-c"><span class="pl-c">#</span> The data provider is where the area data is stored.</span>
+<span class="pl-c"><span class="pl-c">#</span> Accepted types of data providers: yaml, json, and sqlite</span>
+<span class="pl-ent">data-provider</span>: <span class="pl-s">json</span>
+
+
+<span class="pl-c"><span class="pl-c">#</span> The AdvancedAreas wand item.</span>
+<span class="pl-c"><span class="pl-c">#</span> Default wand item: feather</span>
+<span class="pl-ent">wand-item</span>: <span class="pl-s">feather</span>
+
+
+<span class="pl-c"><span class="pl-c">#</span> When entering an area, the name will be shown</span>
+<span class="pl-ent">show-area-name</span>: <span class="pl-c1">true</span>
+<span class="pl-c"><span class="pl-c">#</span> How the area name will be shown</span>
+<span class="pl-c"><span class="pl-c">#</span> Accepted types: title, popup, message</span>
+<span class="pl-ent">area-name-type</span>: <span class="pl-s">popup</span>
+
+
+<span class="pl-c"><span class="pl-c">#</span> These are the default settings for areas!</span>
+<span class="pl-c"><span class="pl-c">#</span> DO NOT remove any of the events!</span>
+<span class="pl-ent">default-area-settings</span>:
+ <span class="pl-ent">priority</span>: <span class="pl-c1">5</span>
+ <span class="pl-ent">banned-items</span>: <span class="pl-s">[]</span>
+ <span class="pl-ent">events</span>:
+  <span class="pl-ent">block.break</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">block.decay</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">block.grow</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">block.place</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">block.update</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">entity.damage</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">entity.explosion</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">entity.regain-health</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">entity.teleport</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">player.craft</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">player.flight</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">player.interact</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">player.item-drop</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">player.item-pickup</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">player.sprint</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">player.hunger</span>: <span class="pl-c1">true</span>
+ <span class="pl-ent">effects</span>: <span class="pl-s">[]</span>
+ <span class="pl-ent">whitelist</span>: <span class="pl-s">[]</span></pre></div>
+<h2><a id="user-content-for-developers" class="anchor" aria-hidden="true" tabindex="-1" href="#for-developers"><span aria-hidden="true" class="octicon octicon-link"></span></a>For Developers</h2>
+<p>These are the most used parts of the API!</p>
+<p>Checks if a position is inside an area!</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-v">AreasAPI</span>::<span class="pl-en">isInside</span>(<span class="pl-v">Position</span> <span class="pl-s1"><span class="pl-c1">$</span>pos</span>);</pre></div>
+<p>Checks if a position is in an area by name!</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-v">AreasAPI</span>::<span class="pl-en">inAreaByName</span>(<span class="pl-v">Position</span> <span class="pl-s1"><span class="pl-c1">$</span>pos</span>, string <span class="pl-s1"><span class="pl-c1">$</span>name</span>);</pre></div>
+<p>Checks if the current position is still in the same area!</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-v">AreasAPI</span>::<span class="pl-en">inSameArea</span>(<span class="pl-v">Position</span> <span class="pl-s1"><span class="pl-c1">$</span>current</span>, <span class="pl-v">Area</span> <span class="pl-s1"><span class="pl-c1">$</span>previous</span>);</pre></div>
+<p>Get the areas the position is in!</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>areas</span> = <span class="pl-v">AreasAPI</span>::<span class="pl-en">getAreasIn</span>(<span class="pl-v">Position</span> <span class="pl-s1"><span class="pl-c1">$</span>pos</span>);</pre></div>
+<p>How to create areas!</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-v">AdvancedAreas</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getProvider</span>()-&gt;<span class="pl-en">create</span>(
+	string <span class="pl-s1"><span class="pl-c1">$</span>displayName</span>, 
+	<span class="pl-v">Selections</span> <span class="pl-s1"><span class="pl-c1">$</span>selections</span>, 
+	int <span class="pl-s1"><span class="pl-c1">$</span>priority</span> = -<span class="pl-c1">100</span>, 
+	array <span class="pl-s1"><span class="pl-c1">$</span>whitelist</span> = [], 
+	array <span class="pl-s1"><span class="pl-c1">$</span>events</span> = [], 
+	array <span class="pl-s1"><span class="pl-c1">$</span>effects</span> = [], 
+	array <span class="pl-s1"><span class="pl-c1">$</span>items</span> = [], 
+	bool <span class="pl-s1"><span class="pl-c1">$</span>itemsForWhitelist</span> = <span class="pl-c1">false</span>, 
+	bool <span class="pl-s1"><span class="pl-c1">$</span>effectsForWhitelist</span> = <span class="pl-c1">false</span>
+);</pre></div>
+<p>How to delete areas!</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-v">AdvancedAreas</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getProvider</span>()-&gt;<span class="pl-en">delete</span>(<span class="pl-v">Area</span> <span class="pl-s1"><span class="pl-c1">$</span>area</span>);</pre></div>
+<p>How to get all areas!</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-v">AdvancedAreas</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getProvider</span>()-&gt;<span class="pl-en">getAll</span>();</pre></div>
+<h2><a id="user-content-suggestions" class="anchor" aria-hidden="true" tabindex="-1" href="#suggestions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Suggestions</h2>
+<p>If you have any suggestions, contact me on discord! <strong>(Its123Miguel321)</strong></p>
+<h2><a id="user-content-bug-report" class="anchor" aria-hidden="true" tabindex="-1" href="#bug-report"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bug Report</h2>
+<p>If you have found a bug, please create an <a href="https://github.com/Its123Miguel321/AdvancedAreas/issues/new">Issue</a>!</p>

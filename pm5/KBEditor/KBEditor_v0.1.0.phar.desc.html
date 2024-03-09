@@ -1,0 +1,47 @@
+<h1><a id="user-content-kb-editor" class="anchor" aria-hidden="true" tabindex="-1" href="#kb-editor"><span aria-hidden="true" class="octicon octicon-link"></span></a>KB EDITOR</h1>
+<p>Change the Knoback values of world or the entire server to your liking!</p>
+<h1><a id="user-content-config--settings" class="anchor" aria-hidden="true" tabindex="-1" href="#config--settings"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config / Settings</h1>
+<pre><code>---
+---
+# if this is true the Knockback will only be applied to players but if it's false it will also apply to other entities
+only-players: true
+ 
+# this Knockback values will be applied to all the worlds that is not specified in "world-kb"
+general-kb:
+  horizontal: 0.4
+  vertical: 0.4
+  attack-speed: 10
+
+# NOTE: "attack-speed" must be a whole number and must not include a decimal point
+# FORMAT:
+# 
+# world-kb
+#   worldname:
+#     horizontal: 0.4
+#     vertical: 0.4
+#     attack-speed: 10
+world-kb:
+  worldNameExample:
+    horizontal: 0.37
+    vertical: 0.37
+    attack-speed: 10
+  anotherExample:
+    horizontal: 0.25
+    vertical: 0.25
+    attack-speed: 2
+...
+...
+</code></pre>
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" tabindex="-1" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Can change the values of each world</li>
+<li>Can change the attack cooldown/attack speed</li>
+<li>Can work on other entities if you want to (set the "only-players" value in the config to false)</li>
+</ul>
+<h1><a id="user-content-todo-011" class="anchor" aria-hidden="true" tabindex="-1" href="#todo-011"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO (0.1.1)</h1>
+<ul>
+<li>[ ] Add in-game GUI for better customization</li>
+<li>[ ] Add per player KB</li>
+<li>[ ] Think of more ideas (feel free to suggest your ideas!)</li>
+</ul>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"8617ea07dcc2db7e","version":"2024.2.4","r":1,"token":"508eb1d242ef46b690a0886422106e77","b":1}' crossorigin="anonymous"></script>

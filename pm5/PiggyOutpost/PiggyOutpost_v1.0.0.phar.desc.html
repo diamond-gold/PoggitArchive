@@ -1,0 +1,45 @@
+<p align="center">
+    <a href="https://github.com/Terpz710/PiggyOutpost/blob/main/icon.png"><img src="https://github.com/Terpz710/PiggyOutpost/raw/main/icon.png" style="max-width: 100%;"></a><br>
+    <b>PiggyOutpost</b>
+</p><h1><a id="user-content-description" class="anchor" aria-hidden="true" tabindex="-1" href="#description"><span aria-hidden="true" class="octicon octicon-link"></span></a>Description</h1>
+<p>With this plugin you can now use <a href="https://github.com/DaPigGuy/PiggyFactions">PiggyFactions</a> to add in outpost for players to capture, Players can go against eachother to get money and power!</p>
+<h1><a id="user-content-whats-an-outpost-plugin" class="anchor" aria-hidden="true" tabindex="-1" href="#whats-an-outpost-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a>Whats an outpost plugin?</h1>
+<p>This plugin utilizes <a href="https://github.com/DaPigGuy/PiggyFactions">PiggyFactions</a> to set up outpost in a specific world.</p>
+<p>Factions can go against each other to claim the outpost and claim rewards!</p>
+<p>In order to claim the outpost your faction must be inside the specifed coordinates and you must wait the duration specifed in the config.yml("time"). After the countdown ends there is another countdown to give the rewards called ("timeWin"). This helps other factions to intervene to cancel the claim and constest the opposing faction.</p>
+<h1><a id="user-content-how-to-set-up" class="anchor" aria-hidden="true" tabindex="-1" href="#how-to-set-up"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to set up</h1>
+<ul>
+<li>First drop the PiggyOutpost.phar into the plugin folder</li>
+<li>Load the server so all the configurations gets loaded</li>
+<li>Stop the server, go into a folder called ("plugin_data") search for a folder called ("PiggyOutpost")</li>
+<li>Edit the config.yml to your prefrence, Coords, World ect</li>
+<li>Reload the server and battle on!</li>
+</ul>
+<p><strong>config.yml</strong></p>
+<pre><code># Created by Terpz710 :p
+
+# Specify where the outpost will be set at
+area:
+  - [100, 90, 90] # Use a coordinates plugin for better results!
+  - [90, 100, 100]
+
+# Specify in which world this will occur
+world: world
+
+# Specify the time that will be required for the area to be captured
+time: 100
+
+# Specify how long it takes before that factions claims after the first intial time runs out
+timeWin: 10
+
+# Rewards section
+money: 500
+power: 100
+</code></pre>
+<h1><a id="user-content-features" class="anchor" aria-hidden="true" tabindex="-1" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+<ul>
+<li>Easy to use config.yml</li>
+<li>Reward system</li>
+</ul>
+<h1><a id="user-content-note-this-requires-piggyfactions-to-work" class="anchor" aria-hidden="true" tabindex="-1" href="#note-this-requires-piggyfactions-to-work"><span aria-hidden="true" class="octicon octicon-link"></span></a>Note this requires PiggyFactions to Work</h1>
+<p><a href="https://github.com/DaPigGuy/PiggyFactions">https://github.com/DaPigGuy/PiggyFactions</a></p>
