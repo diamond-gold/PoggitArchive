@@ -9,5 +9,5 @@ Version: 2.2.2
 Repo: https://github.com/Hebbinkpro/MagicCrates
 License: GPL-3.0
 Categories: General,Miscellaneous,Fun
-Keywords: crate,crates,items,rewards,commands,chest
+Keywords: chest,commands,crate,crates,items,rewards
 ```
