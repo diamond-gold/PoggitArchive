@@ -1,0 +1,20 @@
+<div class="markdown-heading"><h1 class="heading-element">Overview</h1><a id="user-content-overview" class="anchor" aria-label="Permalink: Overview" href="#overview"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin is very simple that the only thing you need is one command:</p>
+<p><code>/monitor entity [ticking: bool]</code>
+<code>/monitor tile [ticking: bool]</code></p>
+<p>It returns every world with a chunk XY and the amount of entities/tiles and if they are ticking. This could be used as an anti-grief plugin so you can see where players are making lag machines or summoning too many entities to save your server performance.</p>
+<div class="markdown-heading"><h1 class="heading-element">API</h1><a id="user-content-api" class="anchor" aria-label="Permalink: API" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you want to access this plugin api you can do the following:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">JavierLeon9966</span>\<span class="pl-v">EntityMonitor</span>\<span class="pl-v">EntityMonitor</span>;
+<span class="pl-k">use</span> pocketmine\world\<span class="pl-v">World</span>;
+<span class="pl-c">/**</span>
+<span class="pl-c"> * @var ?int $chunkHash</span>
+<span class="pl-c"> * @var int $count</span>
+<span class="pl-c"> */</span>
+[<span class="pl-s1"><span class="pl-c1">$</span>chunkHash</span>, <span class="pl-s1"><span class="pl-c1">$</span>count</span>] = <span class="pl-v">EntityMonitor</span>::<span class="pl-en">getChunkWithEntities</span>(<span class="pl-v">World</span> <span class="pl-s1"><span class="pl-c1">$</span>world</span>, bool <span class="pl-s1"><span class="pl-c1">$</span>ticking</span>): array;
+
+<span class="pl-c">/**</span>
+<span class="pl-c"> * @var ?int $chunkHash</span>
+<span class="pl-c"> * @var int $count</span>
+<span class="pl-c"> */</span>
+[<span class="pl-s1"><span class="pl-c1">$</span>chunkHash</span>, <span class="pl-s1"><span class="pl-c1">$</span>count</span>] = <span class="pl-v">EntityMonitor</span>::<span class="pl-en">getChunkWithTiles</span>(<span class="pl-v">World</span> <span class="pl-s1"><span class="pl-c1">$</span>world</span>, bool <span class="pl-s1"><span class="pl-c1">$</span>ticking</span>): array;</pre></div>
