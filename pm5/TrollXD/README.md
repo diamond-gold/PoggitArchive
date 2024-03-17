@@ -7,5 +7,5 @@ Version: 1.2.0
 Repo: https://github.com/nxpinhum5326/TrollXD
 License: MIT
 Categories: Fun,Teleportation,Chat-Related,Admin Tools
-Keywords: fun,troll,trollxd
+Keywords: fun,troll,trollxd,toxic
 ```
