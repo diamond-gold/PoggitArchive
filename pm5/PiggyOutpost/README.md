@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/Terpz710/PiggyOutpost
 License: Apache-2.0
 Categories: General,Fun,Minigame,Economy
-Keywords: Outpost,Factions,Faction,PiggyFaction,SimpleFaction,FactionOutpost,PiggyOutpost,Simple
+Keywords: Faction,FactionOutpost,Factions,Outpost,PiggyFaction,PiggyOutpost,Simple,SimpleFaction
 ```
