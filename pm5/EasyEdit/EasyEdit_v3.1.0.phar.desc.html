@@ -1,0 +1,490 @@
+<h1 dir="auto">Features</h1>
+<ul dir="auto">
+<li>large variety of commands</li>
+<li>High performance:
+<ul dir="auto">
+<li>async editing, allowing the server to run normally while editing in the background</li>
+<li>low memory consumption by splitting your actions into multiple smaller ones</li>
+<li>read more about performance <a href="#Performance">here</a></li>
+</ul>
+</li>
+<li>flicker-free editing</li>
+<li>support for unique Patterns
+<ul dir="auto">
+<li>set blocks in effectively infinite ways</li>
+<li>see <a href="#Patterns">Pattern Documentation</a></li>
+</ul>
+</li>
+<li>selection axe &amp; brushes</li>
+<li>undo &amp; redo your actions</li>
+<li>tile support</li>
+<li>load &amp; save java selections (load McStructure, MCEdit &amp; Sponge format, save to Sponge)</li>
+<li>rotate &amp; flip support</li>
+<li>Translation support
+<ul dir="auto">
+<li><a href="https://github.com/platz1de/EasyEdit/blob/dev/resources/lang/TRANSLATE.md">help translate EasyEdit</a></li>
+</ul>
+</li>
+</ul>
+<h1 dir="auto">Commands</h1>
+<p dir="auto">&lt;argument&gt; - required Argument<br><br>
+[argument] - optional Argument</p>
+<p dir="auto">Selection:</p>
+<table role="table">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases/Notice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//pos1 [x] [y] [z]</td>
+<td>Set the first position</td>
+<td>easyedit.select</td>
+<td>//1<br>left click a block in creative with a wooden axe</td>
+</tr>
+<tr>
+<td>//pos2 [x] [y] [z]</td>
+<td>Set the first position</td>
+<td>easyedit.select</td>
+<td>//2<br>break a block in creative with a wooden axe</td>
+</tr>
+<tr>
+<td>//extend [direction] [count]<br>//extend vertical</td>
+<td>Extend the selected area</td>
+<td>easyedit.select</td>
+<td>//expand<br>Look into the direction you want to extend to</td>
+</tr>
+<tr>
+<td>//extend --min ,, --max ,,</td>
+<td>Modify the selected area by the given vectors</td>
+<td>easyedit.select</td>
+<td>"Min" and "Max" refer to the corners of the selection</td>
+</tr>
+<tr>
+<td>//set &lt;pattern&gt;</td>
+<td>Set blocks in the selected area</td>
+<td>easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//replace &lt;block&gt; &lt;pattern&gt;</td>
+<td>Replace blocks in the selected area</td>
+<td>easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//replace &lt;pattern&gt;</td>
+<td>Replace all solid blocks in the selected area</td>
+<td>easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//overlay &lt;pattern&gt;</td>
+<td>Overlay blocks in the selected area</td>
+<td>easyedit.edit</td>
+<td>Set blocks above existing blocks</td>
+</tr>
+<tr>
+<td>//naturalize [pattern] [pattern] [pattern]</td>
+<td>Naturalize the selected area</td>
+<td>easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//smooth</td>
+<td>Smooth the selected area</td>
+<td>easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//center [pattern]</td>
+<td>Set the center blocks of the selected area</td>
+<td>easyedit.edit</td>
+<td>//middle</td>
+</tr>
+<tr>
+<td>//walls [pattern]</td>
+<td>Set the walls of the selected area</td>
+<td>easyedit.edit</td>
+<td>//wall</td>
+</tr>
+<tr>
+<td>//sides [pattern]</td>
+<td>Set the sides of the selected area</td>
+<td>easyedit.edit</td>
+<td>//side</td>
+</tr>
+<tr>
+<td>//move [direction] [count]</td>
+<td>Move the selected area</td>
+<td>easyedit.edit</td>
+<td>Look into the direction you want the selected blocks to move into</td>
+</tr>
+<tr>
+<td>//stack [direction] [count]</td>
+<td>Stack the selected area</td>
+<td>easyedit.edit</td>
+<td>Look into the direction you want the selected blocks to stack into</td>
+</tr>
+<tr>
+<td>//istack [direction] [count]</td>
+<td>Stack the selected area without overwriting existing terrain</td>
+<td>easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//count [radius] [-d]</td>
+<td>Count blocks in the selected area</td>
+<td>easyedit.select</td>
+<td></td>
+</tr>
+<tr>
+<td>//extinguish [radius]</td>
+<td>Extinguish fire in the selected area</td>
+<td>easyedit.edit</td>
+<td>//ext</td>
+</tr>
+<tr>
+<td>//view</td>
+<td>View the selected area</td>
+<td>easyedit.select</td>
+<td>//show<br>also allows exporting as a 3d model (thank mojang for buggy textures)</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">History:</p>
+<table role="table">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases/Notice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//undo [count]</td>
+<td>Revert your latest change</td>
+<td>easyedit.history easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//undo &lt;target&gt; [count]</td>
+<td>Revert targets latest change</td>
+<td>easyedit.history easyedit.edit easyedit.edit.other</td>
+<td>Can be disabled via config</td>
+</tr>
+<tr>
+<td>//redo [count]</td>
+<td>Revert your latest undo</td>
+<td>easyedit.history easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//redo &lt;target&gt; [count]</td>
+<td>Revert targets latest undo</td>
+<td>easyedit.history easyedit.edit easyedit.edit.other</td>
+<td>Can be disabled via config</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">Clipboard:</p>
+<table role="table">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases/Notice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//copy [--center]</td>
+<td>Copy the selected area</td>
+<td>easyedit.clipboard</td>
+<td></td>
+</tr>
+<tr>
+<td>//cut [--center]</td>
+<td>Cut the selected area and copy it to your clipboard</td>
+<td>easyedit.clipboard easyedit.edit</td>
+<td>Copies and replaces with air</td>
+</tr>
+<tr>
+<td>//paste</td>
+<td>Paste the clipboard</td>
+<td>easyedit.clipboard easyedit.edit</td>
+<td></td>
+</tr>
+<tr>
+<td>//insert</td>
+<td>Insert the clipboard</td>
+<td>easyedit.clipboard easyedit.edit</td>
+<td>Paste only into air blocks</td>
+</tr>
+<tr>
+<td>//merge</td>
+<td>Merge current terrain with the clipboard</td>
+<td>easyedit.clipboard easyedit.edit</td>
+<td>Paste only non-air blocks</td>
+</tr>
+<tr>
+<td>//rpaste</td>
+<td>Replace current terrain with the clipboard</td>
+<td>easyedit.clipboard easyedit.edit</td>
+<td>Replace non-air blocks with non-air blocks from the selection</td>
+</tr>
+<tr>
+<td>//rotate</td>
+<td>Rotate the clipboard</td>
+<td>easyedit.clipboard</td>
+<td>Rotates by 90 Degrees</td>
+</tr>
+<tr>
+<td>//flip [direction]</td>
+<td>Flip the clipboard, mirroring at copied position</td>
+<td>easyedit.clipboard</td>
+<td>Flips on axis you look on, always uses selected point as "mirror"</td>
+</tr>
+<tr>
+<td>//load &lt;schematicName&gt;</td>
+<td>Load a saved schematic from disk</td>
+<td>easyedit.readdisk easyedit.clipboard</td>
+<td>//loadschematic</td>
+</tr>
+<tr>
+<td>//save &lt;schematicName&gt;</td>
+<td>Save your clipboard as a schematic to disk</td>
+<td>easyedit.writedisk easyedit.clipboard</td>
+<td>//saveschematic</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">Generation:</p>
+<table role="table">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases/Notice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//cube &lt;size&gt; &lt;pattern&gt;</td>
+<td>Generate a cube</td>
+<td>easyedit.generate easyedit.edit</td>
+<td>//cb</td>
+</tr>
+<tr>
+<td>//hcube &lt;size&gt; &lt;pattern&gt; [thickness]</td>
+<td>Generate a hollow cube</td>
+<td>easyedit.generate easyedit.edit</td>
+<td>//hcb //hollowcube</td>
+</tr>
+<tr>
+<td>//sphere &lt;radius&gt; &lt;pattern&gt;</td>
+<td>Generate a sphere</td>
+<td>easyedit.generate easyedit.edit</td>
+<td>//sph</td>
+</tr>
+<tr>
+<td>//hsphere &lt;radius&gt; &lt;pattern&gt; [thickness]</td>
+<td>Generate a hollow sphere</td>
+<td>easyedit.generate easyedit.edit</td>
+<td>//hsph //hollowsphere</td>
+</tr>
+<tr>
+<td>//cylinder &lt;radius&gt; &lt;height&gt; &lt;pattern&gt;</td>
+<td>Generate a cylinder</td>
+<td>easyedit.generate easyedit.edit</td>
+<td>//cy</td>
+</tr>
+<tr>
+<td>//hcylinder &lt;radius&gt; &lt;height&gt; &lt;pattern&gt; [thickness]</td>
+<td>Generate a hollow cylinder</td>
+<td>easyedit.generate easyedit.edit</td>
+<td>//hcy //hollowcylinder</td>
+</tr>
+<tr>
+<td>//noise</td>
+<td>Generate using a simple noise function</td>
+<td>easyedit.generate easyedit.edit</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">Utility:</p>
+<table role="table">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases/Notice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//commands [page]</td>
+<td>List all EasyEdit commands</td>
+<td>-</td>
+<td>//h //cmd</td>
+</tr>
+<tr>
+<td>//brush sphere [radius] [pattern] [gravity]</td>
+<td>Create a spherical Brush</td>
+<td>easyedit.brush <br> (To use: easyedit.edit)</td>
+<td>//br sph</td>
+</tr>
+<tr>
+<td>//brush smooth [radius]</td>
+<td>Create a smoothing Brush</td>
+<td>easyedit.brush <br> (To use: easyedit.edit)</td>
+<td>//br smooth</td>
+</tr>
+<tr>
+<td>//brush naturalize [radius] [topBlock] [middleBlock] [bottomBlock]</td>
+<td>Create a naturalize Brush</td>
+<td>easyedit.brush <br> (To use: easyedit.edit)</td>
+<td>//br nat</td>
+</tr>
+<tr>
+<td>//brush cylinder [radius] [height] [pattern] [gravity]</td>
+<td>Create a cylindrical Brush</td>
+<td>easyedit.brush <br> (To use: easyedit.edit)</td>
+<td>//br cy</td>
+</tr>
+<tr>
+<td>//brush paste [insert]</td>
+<td>Create a pasting Brush</td>
+<td>easyedit.brush <br> (To use: easyedit.edit)</td>
+<td>//br paste</td>
+</tr>
+<tr>
+<td>//fill &lt;Block&gt; [direction]</td>
+<td>Fill an area</td>
+<td>easyedit.edit easyedit.generate</td>
+<td>Fills into looking direction</td>
+</tr>
+<tr>
+<td>//drain</td>
+<td>Drain an area</td>
+<td>easyedit.edit easyedit.generate</td>
+<td></td>
+</tr>
+<tr>
+<td>//line &lt;x&gt; &lt;y&gt; &lt;z&gt; [pattern]</td>
+<td>Draw a line</td>
+<td>easyedit.edit easyedit.generate</td>
+<td></td>
+</tr>
+<tr>
+<td>//line [find|solid] &lt;x&gt; &lt;y&gt; &lt;z&gt; [pattern]</td>
+<td>Find a valid path to the destination (slow)</td>
+<td>easyedit.edit easyedit.generate</td>
+<td>"find" allows diagonals</td>
+</tr>
+<tr>
+<td>//blockinfo</td>
+<td>Get a blockinfo stick</td>
+<td>easyedit.util</td>
+<td>//bi</td>
+</tr>
+<tr>
+<td>//builderrod</td>
+<td>Get a builder rod</td>
+<td>easyedit.rod</td>
+<td>//rod<br>Expands the clicked blockface</td>
+</tr>
+<tr>
+<td>//status</td>
+<td>Check on the EditThread</td>
+<td>easyedit.manage</td>
+<td></td>
+</tr>
+<tr>
+<td>//cancel</td>
+<td>Cancel the current task</td>
+<td>easyedit.manage</td>
+<td></td>
+</tr>
+<tr>
+<td>//benchmark</td>
+<td>Start a benchmark</td>
+<td>easyedit.manage</td>
+<td>This will create a temporary world and edit a few preset actions</td>
+</tr>
+<tr>
+<td>//pastestates</td>
+<td>Paste all known blockstates</td>
+<td>easyedit.edit easyedit.generate easyedit.manage</td>
+<td>Mainly for debugging (can be used as an oversight of all existing blocks though)</td>
+</tr>
+<tr>
+<td>//wand</td>
+<td>Get a wooden Axe</td>
+<td>easyedit.util</td>
+<td>Every normal axe works as well (as long as you have permissions and are in creative mode)</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">Movement:</p>
+<table role="table">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases/Notice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//thru</td>
+<td>Teleport through blocks</td>
+<td>easyedit.util</td>
+<td>//t</td>
+</tr>
+<tr>
+<td>//unstuck</td>
+<td>Teleport to a safe location</td>
+<td>easyedit.util</td>
+<td>//u</td>
+</tr>
+<tr>
+<td>//up</td>
+<td>Teleport up</td>
+<td>easyedit.util easyedit.edit</td>
+<td>Places a glass block below you for simplified selecting</td>
+</tr>
+</tbody>
+</table>
+<h1 dir="auto">Patterns</h1>
+<p dir="auto">Visit the <a href="https://github.com/platz1de/EasyEdit/wiki/Patterns">wiki</a> for information on patterns.</p>
+<p dir="auto">All variants of bedrock and java states are supported.</p>
+<h1 dir="auto">Schematics</h1>
+<p dir="auto">To load external schematic files, place them in the "schematics" folder inside the EasyEdit plugin data folder. <br><br>
+Just execute <code class="notranslate">//load &lt;schematicName&gt;</code> to load them and then use <code class="notranslate">//paste</code> to paste them. Omitting the name (<code class="notranslate">//load</code>) will list all available schematics.</p>
+<p dir="auto">To save a schematic, use <code class="notranslate">//save</code> . This will save the current clipboard (which was previous copied using <code class="notranslate">//copy</code>) to the schematics folder.</p>
+<p dir="auto">Schematics are fully compatible with the java edition. When loading or saving a schematic, the file will be automatically converted to the java format.<br><br>
+This includes blocks and tile entities.</p>
+<p dir="auto">Supported Formats:</p>
+<ul dir="auto">
+<li>Sponge</li>
+<li>McEdit (reading only)</li>
+<li>McStructure (reading only)</li>
+</ul>
+<h1 dir="auto">Performance</h1>
+<p dir="auto">EasyEdit aims to be as fast as possible while still allowing for a ton of features. <br><br>
+All operations are executed asynchronously, meaning that the server will not lag while editing. You can always check the status of the current operation using <code class="notranslate">//status</code>.</p>
+<p dir="auto">Other world editors usually load the entirety of the selection into memory, which makes your server run out of memory very quickly. <br><br>
+EasyEdit counteracts this by loading chunks on the fly, only loading the blocks that are actually being edited at the moment. <br><br>
+This means that you can edit huge areas without having to worry about your server crashing. There is practically no limit to how many blocks you can edit at once.</p>

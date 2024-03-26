@@ -1,11 +1,11 @@
 # VisibleAutoPickup
-<img src="https://raw.githubusercontent.com/presentkim-pm/VisibleAutoPickup/b3f7a5d3fa2967735aaff3054cd9907c1c67f1be/assets/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/presentkim-pm/VisibleAutoPickup/ca0e6a3f4811c12032dfd947b754602d32006bde/assets/icon.png" width="128" height="128" />
 
 ## Automatically picks up items and xp orbs before others pick them up!
 ```properties
-Version: 1.1.1
+Version: 1.1.2
     API: 5.0.0
-    Updated: 05-02-2024 15:29:27 UTC
+    Updated: 25-03-2024 22:23:24 UTC
 Repo: https://github.com/presentkim-pm/VisibleAutoPickup
 License: LGPL-3.0
 Categories: General

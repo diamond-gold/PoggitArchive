@@ -1,0 +1,44 @@
+<p dir="auto">Compatibility with API 5.12.0</p>
+<p dir="auto">Feature Changes:</p>
+<ul dir="auto">
+<li>Larger tasks now render a lot faster on the client</li>
+<li>Faster response times for small tasks (e.g. brush execution)</li>
+<li>Added support for reading McStructure format</li>
+<li>//merge no longer replaces foliage blocks with air</li>
+<li>Added a //desel command to remove the current selection</li>
+<li>Block parser no longer implicitly ignores broken state data</li>
+<li>Improved block parser error messages</li>
+<li>Added support for enchanting tables and ender chests in schematics</li>
+<li>terrain ignored block setting now allows to use block tags</li>
+</ul>
+<p dir="auto">Bug Fixes:</p>
+<ul dir="auto">
+<li>Fixed fast-set crashing on api 5.12+ ~matsuyuki</li>
+<li>Fixed rotating and flipping ~Matze</li>
+<li>Fixed custom blocks not being displayed correctly after editing</li>
+<li>Fixed tool cooldown allowing to interact with the world</li>
+<li>Fixed McEdit schematics missing their top 64 blocks</li>
+<li>Fixed schematics pasting one extra layer of air into each direction</li>
+<li>Fixed schematics with detailed tile data crashing on load</li>
+<li>Fixed schematics with a high amount of tile entities running into open file limits</li>
+<li>Fixed containers in schematics failing to load their contents</li>
+<li>Fixed enchantments not being properly converted</li>
+<li>Fixed furnaces in schematics failing to load their contents</li>
+<li>Fixed pathfinding max setting not working correctly</li>
+<li>Fixed first task after server start not properly loading height map</li>
+<li>Fixed replace command crashing when not specifying any arguments</li>
+<li>Fixed setting block tags (e.g. //set #glass) setting update blocks</li>
+<li>Fixed //fill and //drain tasks crashing when reaching world limitations</li>
+<li>Fixed benchmarks saving their undo data</li>
+</ul>
+<p dir="auto">Internal Changes:</p>
+<ul dir="auto">
+<li>Tasks can now run on the main thread directly
+<ul dir="auto">
+<li>This makes small edits a lot faster as no thread switch is needed</li>
+<li>The thread will be chosen dynamically based on the size of the task</li>
+</ul>
+</li>
+<li>Selections from copy / undoing are now properly passed between threads</li>
+<li>Large internal cleanups to chunk splitting</li>
+</ul>
