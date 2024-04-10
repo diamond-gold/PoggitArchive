@@ -1,0 +1,19 @@
+<div class="markdown-heading"><h1 class="heading-element">AutoMod</h1><a id="user-content-automod" class="anchor" aria-label="Permalink: AutoMod" href="#automod"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A simple plugin to automatically mute people who say the words selected in the config</p>
+<p>If you have any problems please create an issue I will try to answer them as soon as possible. And feel free to star the project</p>
+<p>Finally, if you are looking for private plugins at a good price, I can make some on my discord: yakuuuuuuuuuuuuuuu_</p>
+<div class="markdown-heading"><h3 class="heading-element">Config</h3><a id="user-content-config" class="anchor" aria-label="Permalink: Config" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">insult</span>:
+  <span class="pl-ent">on</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">words</span>: <span class="pl-s">["shut up", "stfu"]</span>
+  <span class="pl-ent">mute-time</span>: <span class="pl-c1">30</span>
+  <span class="pl-ent">mute-broadcastmessage</span>: <span class="pl-s"><span class="pl-pds">"</span>{player} was muted by automod for {time} for insult<span class="pl-pds">"</span></span>
+  <span class="pl-ent">mute-message</span>: <span class="pl-s"><span class="pl-pds">"</span>u have been muted for insult for {time}<span class="pl-pds">"</span></span>
+<span class="pl-ent">provoc</span>:
+  <span class="pl-ent">on</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">words</span>: <span class="pl-s">["ez", "easy"]</span>
+  <span class="pl-ent">mute-time</span>: <span class="pl-c1">30</span>
+  <span class="pl-ent">mute-broadcastmessage</span>: <span class="pl-s"><span class="pl-pds">"</span>{player} was muted by automod for {time} for provoc<span class="pl-pds">"</span></span>
+  <span class="pl-ent">mute-message</span>: <span class="pl-s"><span class="pl-pds">"</span>u have been muted for provoc for {time}<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">always-mute</span>: <span class="pl-s"><span class="pl-pds">"</span>You are still muted for {time} for {reason}<span class="pl-pds">"</span></span></pre></div>
