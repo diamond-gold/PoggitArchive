@@ -1,0 +1,195 @@
+<div class="markdown-heading"><h2 class="heading-element">General</h2><a id="user-content-general" class="anchor" aria-label="Permalink: General" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A ban system for pocketmine servers!
+If you are new to the version <strong>3.1.0</strong> of the BanSystem, please delete your <strong>config.yml</strong> file in the <strong>plugin_data/BanSystem</strong> folder.</p>
+<div class="markdown-heading"><h2 class="heading-element">Integrated systems</h2><a id="user-content-integrated-systems" class="anchor" aria-label="Permalink: Integrated systems" href="#integrated-systems"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BanSystem</td>
+<td>Manage bans</td>
+</tr>
+<tr>
+<td>MuteSystem</td>
+<td>Manage mutes</td>
+</tr>
+<tr>
+<td>WarnSystem</td>
+<td>Manage warns</td>
+</tr>
+<tr>
+<td>NotificationSystem</td>
+<td>Receive notifications</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Ban or mute players temporarily</li>
+<li>Warn or kick players with a reason</li>
+<li>MySQL Support</li>
+<li>Proxy support</li>
+<li>Notifications for team members</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Proxy Support</h2><a id="user-content-proxy-support" class="anchor" aria-label="Permalink: Proxy Support" href="#proxy-support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you are using WaterdogPE for your network, please check the <a href="https://github.com/r3pt1s/BanSystem#if-you-are-using-waterdogpe">README</a> on GitHub.</p>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ban &lt;player&gt; &lt;banId&gt;</code></td>
+<td>Ban a player</td>
+<td>bansystem.command.ban</td>
+</tr>
+<tr>
+<td><code>/tempban &lt;player&gt; &lt;reason&gt; &lt;time&gt;</code></td>
+<td>Ban a player temporarily</td>
+<td>bansystem.command.tempban</td>
+</tr>
+<tr>
+<td><code>/baninfo &lt;player&gt;</code></td>
+<td>Get information about a player</td>
+<td>bansystem.command.baninfo</td>
+</tr>
+<tr>
+<td><code>/banlog &lt;player&gt;</code></td>
+<td>See a list of every ban from a player</td>
+<td>bansystem.command.banlog</td>
+</tr>
+<tr>
+<td><code>/editban &lt;player&gt; &lt;add OR sub&gt; &lt;time&gt;</code></td>
+<td>Edit a ban</td>
+<td>bansystem.command.editban</td>
+</tr>
+<tr>
+<td><code>/unban &lt;player&gt; [mistake: false]</code></td>
+<td>Unban a player and decide if the ban was a mistake</td>
+<td>bansystem.command.unban</td>
+</tr>
+<tr>
+<td><code>/banids</code></td>
+<td>See a list of all banids</td>
+<td>bansystem.command.banids</td>
+</tr>
+<tr>
+<td><code>/banlist</code></td>
+<td>See a list of all bans</td>
+<td>bansystem.command.banlist</td>
+</tr>
+<tr>
+<td><code>/mute &lt;player&gt; &lt;muteId&gt;</code></td>
+<td>Mute a player</td>
+<td>bansystem.command.mute</td>
+</tr>
+<tr>
+<td><code>/tempmute &lt;player&gt; &lt;reason&gt; &lt;time&gt;</code></td>
+<td>Mute a player temporarily</td>
+<td>bansystem.command.tempmute</td>
+</tr>
+<tr>
+<td><code>/muteinfo &lt;player&gt;</code></td>
+<td>Get information about a player</td>
+<td>bansystem.command.muteinfo</td>
+</tr>
+<tr>
+<td><code>/mutelog &lt;player&gt;</code></td>
+<td>See a list of every mute from a player</td>
+<td>bansystem.command.mutelog</td>
+</tr>
+<tr>
+<td><code>/editmute &lt;player&gt; &lt;add OR sub&gt; &lt;time&gt;</code></td>
+<td>Edit a mute</td>
+<td>bansystem.command.editmute</td>
+</tr>
+<tr>
+<td><code>/unmute &lt;player&gt; [mistake: false]</code></td>
+<td>Unmute a player and decide if the mute was a mistake</td>
+<td>bansystem.command.unmute</td>
+</tr>
+<tr>
+<td><code>/muteids</code></td>
+<td>See a list of all muteids</td>
+<td>bansystem.command.muteids</td>
+</tr>
+<tr>
+<td><code>/mutelist</code></td>
+<td>See a list of all mutes</td>
+<td>bansystem.command.mutelist</td>
+</tr>
+<tr>
+<td><code>/warn &lt;player&gt; [reason]</code></td>
+<td>Warn a player</td>
+<td>bansystem.command.warn</td>
+</tr>
+<tr>
+<td><code>/warns &lt;player&gt;</code></td>
+<td>See a list of all warns from a player</td>
+<td>bansystem.command.warns</td>
+</tr>
+<tr>
+<td><code>/clearwarns &lt;player&gt;</code></td>
+<td>Clear all warns from a player</td>
+<td>bansystem.command.clearwarns</td>
+</tr>
+<tr>
+<td><code>/kick &lt;player&gt; [reason]</code></td>
+<td>Kick a player</td>
+<td>bansystem.command.kick</td>
+</tr>
+<tr>
+<td><code>/notify</code></td>
+<td>Enable or disable notifications</td>
+<td>bansystem.command.notify</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bansystem.bypass.ban</td>
+<td>Bypass a ban</td>
+</tr>
+<tr>
+<td>bansystem.bypass.mute</td>
+<td>Bypass a mute</td>
+</tr>
+<tr>
+<td>bansystem.bypass.kick</td>
+<td>Bypass a kick</td>
+</tr>
+<tr>
+<td>bansystem.receive.notify</td>
+<td>Receive notifications</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Configurable</h2><a id="user-content-configurable" class="anchor" aria-label="Permalink: Configurable" href="#configurable"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Max warnings</li>
+<li>Action when max warnings reached</li>
+<li>Custom action reason and duration when max warnings reached</li>
+<li>Blocked commands for muted players</li>
+<li>Enable or disable banlogs and mutelogs</li>
+<li>Custom banids and muteids</li>
+<li>Custom prefix</li>
+<li>Custom paths</li>
+</ul>
