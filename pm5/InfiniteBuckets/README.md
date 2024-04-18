@@ -6,7 +6,7 @@
 Version: 3.0.0
     API: 5.0.0
     Updated: 06-08-2023 19:35:29 UTC
-Repo: https://github.com/ElectroGamesYT/InfiniteBuckets
+Repo: https://github.com/ElectroGamesDev/InfiniteBuckets
 License: GPL-3.0
 Categories: General,Miscellaneous
 Keywords: bucket,buckets,infinite,infinitebucket,infinitebuckets,lava,water

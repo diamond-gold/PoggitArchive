@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/Terpz710/DeathSigns
 License: Apache-2.0
 Categories: General,Fun,Informational
-Keywords: Signs,Death,DeathSigns
+Keywords: Death,DeathSigns,Signs
 ```

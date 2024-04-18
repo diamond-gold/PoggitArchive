@@ -6,7 +6,7 @@
 Version: 5.0.0
     API: 5.0.0
     Updated: 06-08-2023 19:34:19 UTC
-Repo: https://github.com/ElectroGamesYT/BankUI
+Repo: https://github.com/ElectroGamesDev/BankUI
 License: GPL-3.0
 Categories: General,API plugins,Miscellaneous,Fun,Economy
 Keywords: Bank,BankUI,Economy,Money,UI
