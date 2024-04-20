@@ -6,7 +6,7 @@
 Version: 2.0.2
     API: 4.0.0
     Updated: 25-07-2022 17:02:18 UTC
-Repo: https://github.com/Diduhless/Parties
+Repo: https://github.com/didacdelolmo/Parties
 License: gpl-3.0
 Categories: General,Miscellaneous,Fun,Teleportation,Chat-Related
 Keywords: fiesta,friends,parties,party
