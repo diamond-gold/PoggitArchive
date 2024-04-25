@@ -1,0 +1,18 @@
+<div class="markdown-heading"><h1 class="heading-element">ConsumableCooldowns</h1><a id="user-content-consumablecooldowns" class="anchor" aria-label="Permalink: ConsumableCooldowns" href="#consumablecooldowns"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Set cooldowns to ender pearls and enchanted golden apples</p>
+<div class="markdown-heading"><h1 class="heading-element">Setup</h1><a id="user-content-setup" class="anchor" aria-label="Permalink: Setup" href="#setup"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download and place the .phar in your <code>plugins</code> folder.</li>
+<li>Restart your server.</li>
+</ol>
+<div class="markdown-heading"><h1 class="heading-element">Permissions</h1><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><code>consumablecooldowns.bypass</code> Bypass the cooldowns of the consumable items.</p>
+<div class="markdown-heading"><h1 class="heading-element">Config</h1><a id="user-content-config" class="anchor" aria-label="Permalink: Config" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> The message to send to the player who is on cooldown. Use {TIME} to display the time left in seconds.</span>
+<span class="pl-ent">cooldown-message</span>: <span class="pl-s">§cThis item is on cooldown, wait {TIME} seconds to use it again!</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Here you can set the cooldown of the enchanted golden apple, in seconds. Set to 0 to disable.</span>
+<span class="pl-ent">enchanted-gapple-cooldown</span>: <span class="pl-c1">180</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Here you can set the cooldown of the ender pearl, in seconds. Set to 0 to disable.</span>
+<span class="pl-ent">ender-pearl-cooldown</span>: <span class="pl-c1">15</span></pre></div>
