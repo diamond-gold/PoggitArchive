@@ -1,0 +1,83 @@
+<h1 dir="auto">DummyItemsBlocks</h1>
+<blockquote>
+<p dir="auto">Items and blocks added are not functional, they are just for decoration purposes.</p>
+<ul dir="auto">
+<li>Except for lingering potions which are functional as normal splash potions.</li>
+</ul>
+<p dir="auto">Supports all items and blocks up to Minecraft 1.20</p>
+<p dir="auto">Allows worlds with such items or blocks to be loaded</p>
+<p dir="auto">Freedom to control items and blocks added via <code class="notranslate">config.yml</code></p>
+</blockquote>
+<p dir="auto"><a href="https://poggit.pmmp.io/p/DummyItemsBlocks" rel="nofollow"><img src="https://camo.githubusercontent.com/565c19b27866bc4cfbfc6398d5efee57828318d3dbe08c99ef2ac4df0b2e385d/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f44756d6d794974656d73426c6f636b733f7374796c653d666f722d7468652d6261646765" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/DummyItemsBlocks?style=for-the-badge" style="max-width: 100%;"></a><br>
+<a href="https://github.com/diamond-gold/DummyItemsBlocks/issues"><img src="https://camo.githubusercontent.com/92321404c1af68391d3e31f89d83e229af6aadadc852db58d0ca8e7799f34c5d/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732d7261772f6469616d6f6e642d676f6c642f44756d6d794974656d73426c6f636b732f466561747572652b526571756573743f6c6162656c3d466561747572652b5265717565737473266c6f676f3d676974687562267374796c653d666f722d7468652d6261646765" alt="Feature Requests" data-canonical-src="https://img.shields.io/github/issues-raw/diamond-gold/DummyItemsBlocks/Feature+Request?label=Feature+Requests&amp;logo=github&amp;style=for-the-badge" style="max-width: 100%;"></a><br>
+<a href="https://github.com/diamond-gold/DummyItemsBlocks/issues"><img src="https://camo.githubusercontent.com/b4e99dfc6dab9951db66c2e61075615b137a8d5f0580998286807ce2da31156f/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732d7261772f6469616d6f6e642d676f6c642f44756d6d794974656d73426c6f636b732f6275673f6c6162656c3d4275672b5265706f727473266c6f676f3d676974687562267374796c653d666f722d7468652d6261646765" alt="Bug Reports" data-canonical-src="https://img.shields.io/github/issues-raw/diamond-gold/DummyItemsBlocks/bug?label=Bug+Reports&amp;logo=github&amp;style=for-the-badge" style="max-width: 100%;"></a></p>
+<p dir="auto">Encountered a bug? Want something added? Create an <a href="https://github.com/diamond-gold/DummyItemsBlocks/issues">issue</a> (＃°Д°)</p>
+<p dir="auto">Have questions? Start a <a href="https://github.com/diamond-gold/DummyItemsBlocks/discussions">discussion</a> ✍(◔◡◔)</p>
+<p dir="auto">Starring the <a href="https://github.com/diamond-gold/DummyItemsBlocks">GitHub repository</a> is like sprinkling stardust—help me create magic! (。・∀・)ノ</p>
+<p dir="auto">Feeling generous? Buy me some <a href="https://ko-fi.com/diamondgold" rel="nofollow">snacks</a>! (❤´艸｀❤)</p>
+<p dir="auto">Reviews section will not be monitored!</p>
+<p dir="auto">[<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/beac4bd17c78739f73ee3cbe9264b1a688a70ff95e7abdc52a3bcad23fcc0e63/68747470733a2f2f636f756e7465722e73656b752e73752f636d6f653f6e616d653d64756d6d796974656d73626c6f636b73267468656d653d723334"><img src="https://camo.githubusercontent.com/beac4bd17c78739f73ee3cbe9264b1a688a70ff95e7abdc52a3bcad23fcc0e63/68747470733a2f2f636f756e7465722e73656b752e73752f636d6f653f6e616d653d64756d6d796974656d73626c6f636b73267468656d653d723334" alt="Counter" data-canonical-src="https://counter.seku.su/cmoe?name=dummyitemsblocks&amp;theme=r34" style="max-width: 100%;"></a>]</p>
+<h2 dir="auto">Known issue when another plugin that add vanilla items or blocks is installed</h2>
+<p dir="auto"><code class="notranslate">[Server thread/CRITICAL]: InvalidArgumentException: "Deserializer is already assigned for "minecraft:shield"" (EXCEPTION) in "pmsrc/src/data/bedrock/item/ItemDeserializer" at line 55</code></p>
+<blockquote>
+<p dir="auto">If you encounter similar error in another plugin, please delete <code class="notranslate">minecraft:shield</code> in <code class="notranslate">config.yml</code></p>
+<p dir="auto">Replace <code class="notranslate">minecraft:shield</code> with the item or block specified in the error message.</p>
+</blockquote>
+<h1 dir="auto">Special behavior</h1>
+<p dir="auto">By default, the following is required to change block states by right-clicking</p>
+<ul dir="auto">
+<li>Player is in creative mode</li>
+<li>Have <code class="notranslate">dummyitemsblocks.changestate</code> permission, default: op</li>
+<li>Holding an arrow named <code class="notranslate">Change State</code> in either main hand or offhand
+<ul dir="auto">
+<li>Can be obtained by: <code class="notranslate">/give player arrow 1 {display:{Name:"Change State"}}</code></li>
+</ul>
+</li>
+</ul>
+<p dir="auto">Customizable using the <code class="notranslate">Main::setCanChangeStatesClosure()</code> method</p>
+<h3 dir="auto">Examples of block state changes by right-clicking:</h3>
+<table role="table">
+<thead>
+<tr>
+<th align="center">Block</th>
+<th align="center">Sneak-right-click</th>
+<th align="center">Right-click</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">(Soul) Campfire</td>
+<td align="center">Toggle fire</td>
+<td align="center">Place item</td>
+</tr>
+<tr>
+<td align="center">Crafter</td>
+<td align="center">Toggle triggered</td>
+<td align="center">Toggle crafting</td>
+</tr>
+<tr>
+<td align="center">Decorated Pot</td>
+<td align="center">Toggle animation</td>
+<td align="center">Place sherd pattern</td>
+</tr>
+<tr>
+<td align="center">(Sticky) Piston</td>
+<td align="center">-</td>
+<td align="center">Toggle extended</td>
+</tr>
+<tr>
+<td align="center">Turtle Egg</td>
+<td align="center">Increase cracks</td>
+<td align="center">Increase egg Count</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">There are many other blocks that can change state by right-clicking.</p>
+<h1 dir="auto">Acknowledgements</h1>
+<p dir="auto">Referenced from various PRs on the PocketMine-MP repo</p>
+<p dir="auto">Contains code adapted from</p>
+<ul dir="auto">
+<li>#5232 Goat Horn</li>
+<li>#5455 Firework Star/Rocket</li>
+</ul>
+<p dir="auto">Icon created using textures from: <a href="https://modrinth.com/resourcepack/vanillaxbr" rel="nofollow">https://modrinth.com/resourcepack/vanillaxbr</a></p>

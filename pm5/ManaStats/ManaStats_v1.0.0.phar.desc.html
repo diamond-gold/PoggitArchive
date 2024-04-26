@@ -1,0 +1,108 @@
+<div class="markdown-heading"><h2 class="heading-element">About This Plugin</h2><a id="user-content-about-this-plugin" class="anchor" aria-label="Permalink: About This Plugin" href="#about-this-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>ManaStats is a plugin that will add mana on your server.</p>
+<p>Every time you're sprint or jump, The mana will decrease.</p>
+<p>When the mana reach 0, You will get blindness effect.</p>
+<p>If you want mana to be regenerated, You have to stay at a place and didn't moving an inch.</p>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/mana</td>
+<td>View player's mana stats</td>
+<td>/mana [string:player]</td>
+</tr>
+<tr>
+<td>/managemana [FORM TYPE]</td>
+<td>Manage player's mana stats</td>
+<td>/managemana [string:player]</td>
+</tr>
+<tr>
+<td>/managemana [MANUAL TYPE]</td>
+<td>Manage player's mana stats</td>
+<td>/managemana [string:player] [add/reduce/set] [float:amount]</td>
+</tr>
+<tr>
+<td>/managemanaregen [FORM TYPE]</td>
+<td>Manage player's mana regen</td>
+<td>/managemanaregen [string:player]</td>
+</tr>
+<tr>
+<td>/managemanaregen [MANUAL TYPE]</td>
+<td>Manage player's mana regen</td>
+<td>/managemanaregen [string:player] [add/reduce/set] [float:amount]</td>
+</tr>
+<tr>
+<td>/managemaxmana [FORM TYPE]</td>
+<td>Manage player's max mana</td>
+<td>/managemaxmana [string:player]</td>
+</tr>
+<tr>
+<td>/managemaxmana [MANUAL TYPE]</td>
+<td>Manage player's max mana</td>
+<td>/managemaxmana [string:player] [add/reduce/set] [float:amount]</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Permissions</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/mana</td>
+<td>manastats.mana.cmd</td>
+<td>True</td>
+<td>View Your Own Stats</td>
+</tr>
+<tr>
+<td>/mana</td>
+<td>manastats.mana.cmd.others</td>
+<td>OP</td>
+<td>View Other's Stats</td>
+</tr>
+<tr>
+<td>/managemana</td>
+<td>manastats.managemana.cmd</td>
+<td>OP</td>
+<td>Manage Player's Mana</td>
+</tr>
+<tr>
+<td>/managemanaregen</td>
+<td>manastats.managemanaregen.cmd</td>
+<td>OP</td>
+<td>Manage Player's Mana Regen</td>
+</tr>
+<tr>
+<td>/managemaxmana</td>
+<td>manastats.managemaxmana.cmd</td>
+<td>OP</td>
+<td>Manage Player's Max Mana</td>
+</tr>
+<tr>
+<td>-</td>
+<td>manastats.mana.bypass</td>
+<td>False</td>
+<td>Bypass Mana System</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Config</h2><a id="user-content-config" class="anchor" aria-label="Permalink: Config" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>You could view about the config here
+<a href="https://github.com/FresherGAMING/ManaStats/blob/main/resources/config.yml">https://github.com/FresherGAMING/ManaStats/blob/main/resources/config.yml</a></p>
+<div class="markdown-heading"><h2 class="heading-element">For Developers</h2><a id="user-content-for-developers" class="anchor" aria-label="Permalink: For Developers" href="#for-developers"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The Mana won't be saved on Database, so every time player join the server, their mana will be reset from 0</p>
+<p>You can visit here for more information
+<a href="https://github.com/FresherGAMING/ManaStats/blob/main/README.md#For-Developers">https://github.com/FresherGAMING/ManaStats/blob/main/README.md#For-Developers</a></p>
