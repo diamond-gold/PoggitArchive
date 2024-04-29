@@ -1,0 +1,290 @@
+<div class="markdown-heading"><h1 class="heading-element">Zuri Pocketmine-MP Anticheat</h1><a id="user-content-zuri-pocketmine-mp-anticheat" class="anchor" aria-label="Permalink: Zuri Pocketmine-MP Anticheat" href="#zuri-pocketmine-mp-anticheat"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Zuri</strong> is an anticheat made to protect the server from any may unfair advantages from the players. A powerful anticheat made to destroy hackers from your server for PocketMine-MP.</p>
+<blockquote>
+<p><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> <strong>Spoon or Fork of Pocketmine-MP are not supported.</strong> Do not try to create an issue, they will be closed automatically.</p>
+</blockquote>
+<p>😁 If you are interested with our projects, you may help us by:</p>
+<ul>
+<li><a href="https://ko-fi.com/xqwtxon" rel="nofollow">Donate via Ko-Fi</a></li>
+<li><a href="https://patreon.com/xwertxy" rel="nofollow">Become a Patreon</a></li>
+</ul>
+<p>Also, adding ⭐ a <strong>Star</strong> is also appreciated. ✨</p>
+<p>🤔 Do you struggling with <strong>bugs and issues?</strong> Don't hesitate to tell us about it by <a href="https://github.com/ReinfyTeam/Zuri-Rewrite/issues">creating an issue</a> or you may join us on our official <a href="https://discord.com/invite/7u7qKsvSxg" rel="nofollow">discord server</a>!</p>
+<div class="markdown-heading"><h1 class="heading-element">Plugin Developers</h1><a id="user-content-plugin-developers" class="anchor" aria-label="Permalink: Plugin Developers" href="#plugin-developers"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This is module using a special method that requires an API: If the server you are using a method intended for the digging of special players. ☢</p>
+<p>The full documentation can be found in the <a href="https://github.com/ReinfyTeam/Zuri-Rewrite/wiki">wiki</a>.</p>
+<p>Example:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// $player must instance of Player from PMMP //</span>
+<span class="pl-s1"><span class="pl-c1">$</span>player</span> = <span class="pl-c1">API</span>::<span class="pl-en">getPlayer</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>api</span>-&gt;<span class="pl-c1">setAttackSpecial</span>(&lt; <span class="pl-c1">true</span> or <span class="pl-c1">false</span> &gt;);
+<span class="pl-s1"><span class="pl-c1">$</span>api</span>-&gt;<span class="pl-c1">setBlocksBrokeASec</span>(&lt; it must is number &gt;);</pre></div>
+<div class="markdown-heading"><h1 class="heading-element">Why?</h1><a id="user-content-why" class="anchor" aria-label="Permalink: Why?" href="#why"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>This plugin has total of 40+ checks that can catch hacker more efficient and no more false-positive! 😏</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/ReinfyTeam/Zuri-Rewrite/assets/143252455/223ce4ad-8dbe-4f87-9900-3af95135afe3"><img src="https://github.com/ReinfyTeam/Zuri-Rewrite/assets/143252455/223ce4ad-8dbe-4f87-9900-3af95135afe3" alt="Zuri Anticheat Meme" style="max-width: 100%;"></a></p>
+<p>Zuri can catch hacker efficiently, with over <strong>40+ check modules</strong>. Unlike other <strong>$100 Anticheat</strong>, it is more systematic, lightweight, and easy to configure. It's too bad right? 🤦</p>
+</blockquote>
+<div class="markdown-heading"><h1 class="heading-element">Features</h1><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>You can easily configure everything in the config. ✅
+<ul>
+<li>Configure easily the max violations and checks and more! ⚙️</li>
+</ul>
+</li>
+<li>It is more <strong>lightweight</strong> compared to paid anticheat. You don't have to struggle about the performance, with this anticheat, it can possible block them all easily! 💰</li>
+<li>✨ It is easy to use when it comes at the game, you can easily debug things, manage them all at the game, and <strong>disable checks</strong> according to your command.</li>
+<li>❌ Limit players joining by their ip limit, you can change and configure on how many players can join with same ip address.</li>
+<li>🌟 It also checks the player if they are using a <strong>Proxy or VPN</strong> <em>(optional)</em>
+</li>
+<li>💥 You can manage plugin at in-game using <strong>UI</strong> by using command! <code>/zuri ui</code>
+</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Checks</h1><a id="user-content-checks" class="anchor" aria-label="Permalink: Checks" href="#checks"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Module Name</strong></th>
+<th><strong>Punishment Type</strong></th>
+<th><strong>Percentage of Accuracy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AntiBot</td>
+<td>Kick Immediately</td>
+<td>100% detect</td>
+</tr>
+<tr>
+<td>EditionFaker</td>
+<td>Kick Immediately</td>
+<td>100% detect</td>
+</tr>
+<tr>
+<td>ProxyBot</td>
+<td>Kick Immediately</td>
+<td>100% detect</td>
+</tr>
+<tr>
+<td>AntiImmobile</td>
+<td>Kick</td>
+<td>100% detect</td>
+</tr>
+<tr>
+<td>AutoClick</td>
+<td>Kick</td>
+<td>90% detect</td>
+</tr>
+<tr>
+<td>RapidHit</td>
+<td>Kick</td>
+<td>95% detect</td>
+</tr>
+<tr>
+<td>KillAura</td>
+<td>Kick</td>
+<td>90% detect</td>
+</tr>
+<tr>
+<td>HitBox</td>
+<td>Kick</td>
+<td>70% detect</td>
+</tr>
+<tr>
+<td>Reach</td>
+<td>Kick</td>
+<td>97% detect</td>
+</tr>
+<tr>
+<td>Fly</td>
+<td>Kick</td>
+<td>98% detect</td>
+</tr>
+<tr>
+<td>NoClip</td>
+<td>Kick</td>
+<td>80% detect</td>
+</tr>
+<tr>
+<td>NoWeb</td>
+<td>Kick</td>
+<td>70% detect</td>
+</tr>
+<tr>
+<td>JetPack</td>
+<td>Kick</td>
+<td>97% detect</td>
+</tr>
+<tr>
+<td>AirJump</td>
+<td>Kick</td>
+<td>90% detect</td>
+</tr>
+<tr>
+<td>HighJump</td>
+<td>Kick</td>
+<td>99% detect</td>
+</tr>
+<tr>
+<td>Glide</td>
+<td>Kick</td>
+<td>80% detect</td>
+</tr>
+<tr>
+<td>AntiVoid</td>
+<td>Kick</td>
+<td>60% detect</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Kick</td>
+<td>99% detect</td>
+</tr>
+<tr>
+<td>Jesus</td>
+<td>Kick</td>
+<td>99% detect</td>
+</tr>
+<tr>
+<td>AutoMidTP</td>
+<td>Kick</td>
+<td>70% detect</td>
+</tr>
+<tr>
+<td>ClickTP</td>
+<td>Kick</td>
+<td>74% detect</td>
+</tr>
+<tr>
+<td>Step</td>
+<td>Kick</td>
+<td>78% detect</td>
+</tr>
+<tr>
+<td>AimAssist</td>
+<td>Kick</td>
+<td>85% detect</td>
+</tr>
+<tr>
+<td>AutoArmor</td>
+<td>Kick</td>
+<td>92% detect</td>
+</tr>
+<tr>
+<td>FastLadder</td>
+<td>Kick</td>
+<td>89% detect</td>
+</tr>
+<tr>
+<td>Spider</td>
+<td>Kick</td>
+<td>89% detect</td>
+</tr>
+<tr>
+<td>TriggerBot</td>
+<td>Kick</td>
+<td>90% detect</td>
+</tr>
+<tr>
+<td>NoPacket</td>
+<td>Kick</td>
+<td>86% detect</td>
+</tr>
+<tr>
+<td>Velocity/NoKB</td>
+<td>Kick</td>
+<td>99% detect</td>
+</tr>
+<tr>
+<td>ChestAura/ChestStealer</td>
+<td>Kick</td>
+<td>70% detect</td>
+</tr>
+<tr>
+<td>InventoryCleaner</td>
+<td>Kick</td>
+<td>70% detect</td>
+</tr>
+<tr>
+<td>InventoryMove</td>
+<td>Kick</td>
+<td>90% detect</td>
+</tr>
+<tr>
+<td>Timer</td>
+<td>Flag/Kick</td>
+<td>70% detect</td>
+</tr>
+<tr>
+<td>Phase</td>
+<td>Flag</td>
+<td>90% detect</td>
+</tr>
+<tr>
+<td>VClip</td>
+<td>Flag</td>
+<td>94% detect</td>
+</tr>
+<tr>
+<td>ImpossiblePitch</td>
+<td>Flag</td>
+<td>93% detect</td>
+</tr>
+<tr>
+<td>MessageSpoof</td>
+<td>Flag</td>
+<td>100% detect</td>
+</tr>
+<tr>
+<td>InvalidPackets</td>
+<td>Flag</td>
+<td>90% detect</td>
+</tr>
+<tr>
+<td>InstaBreak</td>
+<td>Flag/Kick</td>
+<td>100% detect</td>
+</tr>
+<tr>
+<td>Spam</td>
+<td>CAPTCHA</td>
+<td>100% detect</td>
+</tr>
+<tr>
+<td>Tower</td>
+<td>Ban Immediately</td>
+<td>74% detect</td>
+</tr>
+<tr>
+<td>Scaffold</td>
+<td>Kick/Ban Immediately</td>
+<td>70% detect</td>
+</tr>
+<tr>
+<td>Nuker</td>
+<td>Ban Immediately</td>
+<td>90% detect</td>
+</tr>
+<tr>
+<td>FastBreak</td>
+<td>Ban Immediately</td>
+<td>100% detect</td>
+</tr>
+<tr>
+<td>FillBlock</td>
+<td>Ban Immediately</td>
+<td>98% detect</td>
+</tr>
+<tr>
+<td>WrongMining</td>
+<td>Ban Immediately</td>
+<td>90% detect</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total Checks:</strong> 64</p>
+<hr>
+<blockquote>
+<p><strong>This program is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser <em>General Public License</em> as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</strong></p>
+</blockquote>

@@ -1,0 +1,89 @@
+<div class="markdown-heading"><h2 class="heading-element">General</h2><a id="user-content-general" class="anchor" aria-label="Permalink: General" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/ClickedTran/BankGUI/blob/Master/line.gif"><img src="https://github.com/ClickedTran/BankGUI/raw/Master/line.gif" alt="gif" style="max-width: 100%;"></a>
+<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/ClickedTran/BankGUI/blob/Master/bank_icon.png"><img src="https://github.com/ClickedTran/BankGUI/raw/Master/bank_icon.png" alt="image" style="max-width: 100%;"></a>
+<br>
+BankGUI for PocketMine-MP
+<br>
+The plugin is inspired by a minecraft java server
+<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/ClickedTran/BankGUI/blob/Master/line.gif"><img src="https://github.com/ClickedTran/BankGUI/raw/Master/line.gif" alt="gif" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>[x] Multi Language</li>
+<li>[x] Transfer money to other player's bank</li>
+<li>[x] Interest rate per day</li>
+<li>[x] Deposit / Withdraw money</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Command</h2><a id="user-content-command" class="anchor" aria-label="Permalink: Command" href="#command"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>COMMAND</strong></th>
+<th><strong>DESCRIPTION</strong></th>
+<th><strong>PERMISSION</strong></th>
+<th><strong>ALIASES</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/bankgui</code></td>
+<td><code>Open Bank Menu</code></td>
+<td><em><code>bankgui.command</code></em></td>
+<td><code>/bank</code></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Config</h2><a id="user-content-config" class="anchor" aria-label="Permalink: Config" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span>language list:</span>
+<span class="pl-c"><span class="pl-c">#</span>vi-VN =&gt; Vietnamese</span>
+<span class="pl-c"><span class="pl-c">#</span>en-US =&gt; English</span>
+<span class="pl-c"><span class="pl-c">#</span>hi-IN =&gt; Hindi</span>
+
+<span class="pl-ent">language</span>: <span class="pl-s">en-US</span>
+<span class="pl-ent">economy-type</span>:
+ <span class="pl-ent">provider</span>: <span class="pl-s">economyapi </span><span class="pl-c"><span class="pl-c">#</span>change it to `bedrockeconomy` if you want use BedrockEconomy!</span>
+
+
+<span class="pl-ent">timezone</span>: <span class="pl-s"><span class="pl-pds">"</span>Asia/Ho_Chi_Minh<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span>See time-zone in website `https://www.php.net/manual/en/timezones.php`</span>
+<span class="pl-ent">time-to-add-interest</span>: <span class="pl-s"><span class="pl-pds">"</span>00:00<span class="pl-pds">"</span></span>
+<span class="pl-ent">interest</span>: <span class="pl-c1">0.1</span> <span class="pl-c"><span class="pl-c">#</span>cannot be less than 0, example: `0.1`</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Language Supported</h2><a id="user-content-language-supported" class="anchor" aria-label="Permalink: Language Supported" href="#language-supported"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>[x] Vietnamese (vi-VN)</li>
+<li>[x] English (en-US)</li>
+<li>[x] Hindi (hi-IN)</li>
+</ul>
+<br>
+If you want a language of your country in this plugin please translate file `English.php` into your country's language
+<div class="markdown-heading"><h2 class="heading-element">Virions</h2><a id="user-content-virions" class="anchor" aria-label="Permalink: Virions" href="#virions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<a href="https://github.com/muqsit/InvMenu">InvMenu</a>(Muqsit)</li>
+<li>
+<a href="https://github.com/DaPigGuy/libPiggyEconomy">libPiggyEconomy</a>(DaPigGuy)</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">For Developer</h2><a id="user-content-for-developer" class="anchor" aria-label="Permalink: For Developer" href="#for-developer"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">API</h3><a id="user-content-api" class="anchor" aria-label="Permalink: API" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>api</span> = <span class="pl-v">BankGUI</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getBankManager</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Get Player Money In Bank</h3><a id="user-content-get-player-money-in-bank" class="anchor" aria-label="Permalink: Get Player Money In Bank" href="#get-player-money-in-bank"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>api</span>-&gt;<span class="pl-en">getMoney</span>();</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Reduce Player Money In Bank</h3><a id="user-content-reduce-player-money-in-bank" class="anchor" aria-label="Permalink: Reduce Player Money In Bank" href="#reduce-player-money-in-bank"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>api</span>-&gt;<span class="pl-en">reduceMoney</span>(int|float <span class="pl-s1"><span class="pl-c1">$</span>amount</span>);</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Add Player Money In Bank</h3><a id="user-content-add-player-money-in-bank" class="anchor" aria-label="Permalink: Add Player Money In Bank" href="#add-player-money-in-bank"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>api</span>-&gt;<span class="pl-en">addMoney</span>(int|float <span class="pl-s1"><span class="pl-c1">$</span>amount</span>);</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Get All Transaction</h3><a id="user-content-get-all-transaction" class="anchor" aria-label="Permalink: Get All Transaction" href="#get-all-transaction"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>api</span>-&gt;<span class="pl-en">getTransaction</span>() : array{
+
+<span class="pl-c1">EXAMPLE</span>:
+<span class="pl-k">foreach</span>(<span class="pl-s1"><span class="pl-c1">$</span>api</span>-&gt;<span class="pl-en">getTransaction</span>() <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>list</span> =&gt; <span class="pl-s1"><span class="pl-c1">$</span>transaction</span>){
+    <span class="pl-c">//@params $form instanceof FormAPI</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>form</span>-&gt;setContent("<span class="pl-s">All your transactions:, </span><span class="pl-s1"><span class="pl-c1">$</span>list</span>);
+}</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Add New Transaction</h3><a id="user-content-add-new-transaction" class="anchor" aria-label="Permalink: Add New Transaction" href="#add-new-transaction"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>api</span>-&gt;<span class="pl-en">addTransaction</span>(string <span class="pl-s1"><span class="pl-c1">$</span>text</span>);</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Contact</h2><a id="user-content-contact" class="anchor" aria-label="Permalink: Contact" href="#contact"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://discord.com/invite/ZgWveaFH" rel="nofollow"><img src="https://camo.githubusercontent.com/14691d9cc150537a76d80c878a57db4fbeac982b5b9d9f7b6b03369d02e67542/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f436c69636b65645472616e5f564e2d77686974653f6c6f676f3d646973636f7264266c6f676f436f6c6f723d7768697465266c6162656c3d446973636f7264266c6162656c436f6c6f723d626c756526636f6c6f723d79656c6c6f77" alt="DISCORD" data-canonical-src="https://img.shields.io/badge/ClickedTran_VN-white?logo=discord&amp;logoColor=white&amp;label=Discord&amp;labelColor=blue&amp;color=yellow" style="max-width: 100%;"></a>
+<a href="https://youtube.com/@clickedtran_vn" rel="nofollow"><img src="https://camo.githubusercontent.com/0d62af85f6af51cd628d71971d5fa5882346286eaab047d416a900ec87eb85a6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f436c69636b65645472616e5f564e2d77686974653f6c6f676f3d796f7574756265266c6f676f436f6c6f723d726564266c6162656c3d596f7574756265266c6162656c436f6c6f723d776869746526636f6c6f723d626c7565" alt="YOUTUBE" data-canonical-src="https://img.shields.io/badge/ClickedTran_VN-white?logo=youtube&amp;logoColor=red&amp;label=Youtube&amp;labelColor=white&amp;color=blue" style="max-width: 100%;"></a></p>
+<p><a href="https://t.me/clickedtran1" rel="nofollow"><img src="https://camo.githubusercontent.com/267b83ea4878dd1204be0a65d1fd70e524d404465f9724bf15635503d30405df/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f436c69636b65645472616e2d77686974653f6c6f676f3d74656c656772616d266c6f676f436f6c6f723d626c7565266c6162656c3d54656c656772616d266c6162656c436f6c6f723d776869746526636f6c6f723d303030304646266c696e6b" alt="TELEGRAM" data-canonical-src="https://img.shields.io/badge/ClickedTran-white?logo=telegram&amp;logoColor=blue&amp;label=Telegram&amp;labelColor=white&amp;color=0000FF&amp;link" style="max-width: 100%;"></a>
+<a href="https://facebook.com/clicked.tran.01" rel="nofollow"><img src="https://camo.githubusercontent.com/b4192777424b79e40041b34ab986273ed73445a32d58e43f5fee831099411ccf/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5068254333254131745f54722545312542412541376e2d626c75653f6c6f676f3d66616365626f6f6b266c6f676f436f6c6f723d7768697465266c6162656c3d46616365626f6f6b266c6162656c436f6c6f723d626c756526636f6c6f723d67" alt="FACEBOOK" data-canonical-src="https://img.shields.io/badge/Ph%C3%A1t_Tr%E1%BA%A7n-blue?logo=facebook&amp;logoColor=white&amp;label=Facebook&amp;labelColor=blue&amp;color=g" style="max-width: 100%;"></a></p>

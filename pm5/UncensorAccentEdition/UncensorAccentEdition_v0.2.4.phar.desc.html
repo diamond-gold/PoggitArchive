@@ -1,0 +1,25 @@
+<div class="markdown-heading"><h1 class="heading-element">Uncensor - Accent Edition</h1><a id="user-content-uncensor---accent-edition" class="anchor" aria-label="Permalink: Uncensor - Accent Edition" href="#uncensor---accent-edition"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A plugin for PocketMine-MP to automatically bypass client-sided profanity filtering.</p>
+<div class="markdown-heading"><h2 class="heading-element">How to use</h2><a id="user-content-how-to-use" class="anchor" aria-label="Permalink: How to use" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Drop the plugin into your plugins folder</li>
+<li>Acquire the game's current <code>profanity_filter.wlist</code> and place it in the plugin's data folder</li>
+<li>Profit!</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Where do I get <code>profanity_filter.wlist</code> from?</h2><a id="user-content-where-do-i-get-profanity_filterwlist-from" class="anchor" aria-label="Permalink: Where do I get profanity_filter.wlist from?" href="#where-do-i-get-profanity_filterwlist-from"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>You can extract it from any current version of the game. It is not included with the files for this plugin due to potential licensing issues.</p>
+<div class="markdown-heading"><h2 class="heading-element">How does it work?</h2><a id="user-content-how-does-it-work" class="anchor" aria-label="Permalink: How does it work?" href="#how-does-it-work"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Very simple. It simply replaces vowels with accented vowels. This ensures that it does not match client-sided filtering.</p>
+<div class="markdown-heading"><h2 class="heading-element">Will it interfere with any swear-filter plugins I already have?</h2><a id="user-content-will-it-interfere-with-any-swear-filter-plugins-i-already-have" class="anchor" aria-label="Permalink: Will it interfere with any swear-filter plugins I already have?" href="#will-it-interfere-with-any-swear-filter-plugins-i-already-have"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin operates directly on TextPacket as it is sent. Most swear-filter plugins will already have redacted bad words by the time the message reaches this plugin. It is therefore unlikely to interfere with existing plugins, however, this has not been tested.</p>
+<div class="markdown-heading"><h2 class="heading-element">Afternote:</h2><a id="user-content-afternote" class="anchor" aria-label="Permalink: Afternote:" href="#afternote"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>You can bypass the profanity filter without resource packs or plugins. All you need is to replace letters with its accented alternative.</li>
+</ul>
+<p>For example, "Hélló Wórld"</p>
+<pre><code>- On Windows, Hold "Alt Gr" key, and press a vowel. 
+- On Mobile devices, hold the vowel, and press the one you want. 
+</code></pre>
+<ul>
+<li>Why did I reuse Dylan's code? Because I'm lazy and I don't want to write my own code. So it's a fork (or Spoon, if you will) of <a href="https://github.com/dktapps-pm-pl/Uncensor">Dylan's Uncensor plugin</a>.</li>
+</ul>
