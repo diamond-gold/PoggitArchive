@@ -1,11 +1,11 @@
 # BlockReplacer
-<img src="https://raw.githubusercontent.com/AIPTU/BlockReplacer/03ebaa78b4b76c6cea86944cea05cd7ce4b5d4aa/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/AIPTU/BlockReplacer/c3eb26a37adcc0c1d415ab931e6d3fc5aee474ac/icon.png" width="128" height="128" />
 
 ## PocketMine-MP plugin that replaces a block with another block at a predetermined time.
 ```properties
-Version: 3.0.1
-    API: 5.0.0
-    Updated: 21-08-2023 09:22:51 UTC
+Version: 3.0.2
+    API: 5.5.0
+    Updated: 04-05-2024 15:44:22 UTC
 Repo: https://github.com/AIPTU/BlockReplacer
 License: MIT
 Categories: General,Miscellaneous,Fun,Mechanics

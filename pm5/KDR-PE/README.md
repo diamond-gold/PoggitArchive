@@ -1,11 +1,11 @@
 # KDR-PE
-<img src="https://raw.githubusercontent.com/Terpz710/KDR-PE/05a6789f8bcb9495d4c58c78183cb5a7c85ceea5/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/Terpz710/KDR-PE/832fb216d9b37b06c4119efd38b6a10f382dabaf/icon.png" width="128" height="128" />
 
 ## A KDR system.
 ```properties
-Version: 1.0.2
+Version: 1.0.3
     API: 5.0.0
-    Updated: 03-04-2024 14:05:48 UTC
+    Updated: 04-05-2024 15:47:41 UTC
 Repo: https://github.com/Terpz710/KDR-PE
 License: Apache-2.0
 Categories: General,Vanilla Mechanics,Fun,Chat-Related,Informational
