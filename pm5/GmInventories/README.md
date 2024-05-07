@@ -6,7 +6,7 @@
 Version: 0.1
     API: 5.0.0
     Updated: 10-04-2024 01:04:58 UTC
-Repo: https://github.com/TynaevCode/GmInventories
+Repo: https://github.com/Taskov1ch/GmInventories
 License: MIT
 Categories: Mechanics,General
 Keywords: pmmp,pmmp-plugin,pmmp5,pocketmine-mp
