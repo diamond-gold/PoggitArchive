@@ -6,7 +6,7 @@
 Version: 1.0.0
     API: 5.0.0
     Updated: 13-07-2023 12:36:11 UTC
-Repo: https://github.com/iLVOEWOCK/ItemRenameTag
+Repo: https://github.com/ecstsylove/ItemRenameTag
 License: GPL-3.0
 Categories: General,Miscellaneous,Fun,Mechanics,Chat-Related
 Keywords: item,itemrename,itemrenametag,rename,renameitem,tag,tags

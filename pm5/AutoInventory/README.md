@@ -6,7 +6,7 @@
 Version: 1.1.2
     API: 5.0.0
     Updated: 03-07-2023 10:55:24 UTC
-Repo: https://github.com/iLVOEWOCK/AutoInventory
+Repo: https://github.com/ecstsylove/AutoInventory
 License: GPL-3.0
 Categories: General,Miscellaneous,World Editing and Management,Mechanics,Admin Tools
 Keywords: 

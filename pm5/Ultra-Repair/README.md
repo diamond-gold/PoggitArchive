@@ -6,7 +6,7 @@
 Version: 1.0.0
     API: 5.0.0
     Updated: 27-06-2023 08:27:05 UTC
-Repo: https://github.com/iLVOEWOCK/UltraRepair
+Repo: https://github.com/ecstsylove/UltraRepair
 License: GPL-3.0
 Categories: General
 Keywords: 

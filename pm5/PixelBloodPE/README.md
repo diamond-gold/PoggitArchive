@@ -6,7 +6,7 @@
 Version: 1.0.0
     API: 5.0.0
     Updated: 27-06-2023 22:03:01 UTC
-Repo: https://github.com/iLVOEWOCK/PixelBloodPE
+Repo: https://github.com/ecstsylove/PixelBloodPE
 License: GPL-3.0
 Categories: General
 Keywords: blood,bloodfx,effects,fakeblood,fx,pixel,pixelblood

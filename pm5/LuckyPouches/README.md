@@ -6,7 +6,7 @@
 Version: 1.0.1
     API: 5.0.0
     Updated: 30-11-2023 18:03:17 UTC
-Repo: https://github.com/iLVOEWOCK/LuckyPouches
+Repo: https://github.com/ecstsylove/LuckyPouches
 License: Apache-2.0
 Categories: General,Miscellaneous,Developer Tools,Fun,Economy
 Keywords: lucky,luckypouch,luckypouches,pouch,pouches

@@ -6,7 +6,7 @@
 Version: 1.0.1
     API: 5.0.0
     Updated: 04-01-2024 15:33:37 UTC
-Repo: https://github.com/iLVOEWOCK/AdvancedBounty
+Repo: https://github.com/ecstsylove/AdvancedBounty
 License: GPL-3.0
 Categories: General,Fun,Economy,Mechanics
 Keywords: 

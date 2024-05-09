@@ -6,7 +6,7 @@
 Version: 2.0.0
     API: 5.0.0
     Updated: 20-01-2024 15:06:29 UTC
-Repo: https://github.com/iLVOEWOCK/AutoAnnouncer
+Repo: https://github.com/ecstsylove/AutoAnnouncer
 License: GPL-3.0
 Categories: General,Miscellaneous,Educational,Chat-Related,Admin Tools
 Keywords: 
