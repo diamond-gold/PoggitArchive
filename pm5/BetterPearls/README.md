@@ -1,11 +1,11 @@
 # BetterPearls
-<img src="https://raw.githubusercontent.com/ItsMax123/BetterPearls/477d72f91674e0ac44a2eacf8d12d82438646018/BetterPearls.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/ItsMax123/BetterPearls/9d95e1065ef21658c5955d3374c306e95901f3e3/BetterPearls.png" width="128" height="128" />
 
-## A Pocketmine-MP Plugin that enhances vanilla Enderpearls.
+## Enhances vanilla Enderpearls with cooldown and anti-glitching mechanics.
 ```properties
-Version: 1.1.0
+Version: 1.2.0
     API: 5.0.0
-    Updated: 10-05-2024 14:55:37 UTC
+    Updated: 20-05-2024 20:24:53 UTC
 Repo: https://github.com/ItsMax123/BetterPearls
 License: Apache-2.0
 Categories: Mechanics,Miscellaneous,Teleportation,General
