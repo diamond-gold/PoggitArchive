@@ -1,11 +1,11 @@
 # BetterPearls
-<img src="https://raw.githubusercontent.com/ItsMax123/BetterPearls/9d95e1065ef21658c5955d3374c306e95901f3e3/BetterPearls.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/ItsMax123/BetterPearls/23170d6c0a71904b7731075894b7fafac9174531/BetterPearls.png" width="128" height="128" />
 
 ## Enhances vanilla Enderpearls with cooldown and anti-glitching mechanics.
 ```properties
-Version: 1.2.0
+Version: 1.2.1
     API: 5.0.0
-    Updated: 20-05-2024 20:24:53 UTC
+    Updated: 21-05-2024 12:10:14 UTC
 Repo: https://github.com/ItsMax123/BetterPearls
 License: Apache-2.0
 Categories: Mechanics,Miscellaneous,Teleportation,General
