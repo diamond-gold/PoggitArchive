@@ -9,5 +9,5 @@ Version: 2.0.0
 Repo: https://github.com/fernanACM/RepairUI
 License: Apache-2.0
 Categories: General,Vanilla Mechanics,API plugins,Educational,Fun,Economy,Mechanics
-Keywords: Economy,Repair,RepairUI,UI,Xp,Rp,experience
+Keywords: Economy,experience,Repair,RepairUI,Rp,UI,Xp
 ```
