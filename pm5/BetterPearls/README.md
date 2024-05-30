@@ -9,5 +9,5 @@ Version: 1.2.1
 Repo: https://github.com/ItsMax123/BetterPearls
 License: Apache-2.0
 Categories: Mechanics,Miscellaneous,Teleportation,General
-Keywords: AntiGlitch,cooldown,ender,enderpearl,enderpearls,glitch,ItsMax123,pearl,phase,timer
+Keywords: AntiGlitch,cooldown,ender,enderpearl,enderpearls,glitch,pearl,phase,timer
 ```
