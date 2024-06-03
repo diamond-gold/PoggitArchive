@@ -1,0 +1,118 @@
+<div class="markdown-heading"><h1 class="heading-element"><g-emoji class="g-emoji" alias="airplane">✈️</g-emoji> WarpCore</h1><a id="user-content-️-warpcore" class="anchor" aria-label="Permalink: ✈️ WarpCore" href="#️-warpcore"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<blockquote>
+<p>Warp System. (plugin for PocketMine-MP 5)</p>
+</blockquote>
+<div class="markdown-heading"><h2 class="heading-element">Feature</h2><a id="user-content-feature" class="anchor" aria-label="Permalink: Feature" href="#feature"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>You can add custom warps and players can use those warps!</li>
+<li>If you created a warp named 'lobby', players can use it through a short command '/lobby'.</li>
+<li>available two languages (english, korean) - Please correct any errors through contributions!</li>
+<li>developer API (<a href="https://github.com/RICHMCBE/NewbieWarp">Use cases</a>)</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">How to Use:</h2><a id="user-content-how-to-use" class="anchor" aria-label="Permalink: How to Use:" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Put WarpCore in your plugin folder.</li>
+<li>Turn on PocketMine-MP and turn off.</li>
+<li>Open <code>config.yml</code> file in plugin data folder.</li>
+<li>Start the server.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Command</h2><a id="user-content-command" class="anchor" aria-label="Permalink: Command" href="#command"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>description</th>
+<th>usage</th>
+<th>permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>warp</td>
+<td>use a warp named (name)</td>
+<td>/warp (name)</td>
+<td>warpcore.use.warp</td>
+</tr>
+<tr>
+<td>(warp's name)</td>
+<td>use a warp (short command)</td>
+<td>/(warp's name)</td>
+<td>warpcore.use.warp</td>
+</tr>
+<tr>
+<td>warpmanager</td>
+<td>manage warps(create, remove, edit)</td>
+<td>/warpmanager</td>
+<td>warpcore.manage.warp</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>warpcore.use.warp</td>
+<td>All players</td>
+</tr>
+<tr>
+<td>warpcore.manage.warp</td>
+<td>operators</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">API</h2><a id="user-content-api" class="anchor" aria-label="Permalink: API" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Get a warp</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">RoMo</span>\<span class="pl-v">WarpCore</span>\warp\<span class="pl-v">WarpFactory</span>;
+
+<span class="pl-c">//get a one warp</span>
+<span class="pl-v">WarpFactory</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getWarp</span>(string <span class="pl-s1"><span class="pl-c1">$</span>name</span>);
+
+<span class="pl-c">//get all warps</span>
+<span class="pl-v">WarpFactory</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getAllWarp</span>();</pre></div>
+<p>Warp method</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">RoMo</span>\<span class="pl-v">WarpCore</span>\warp\<span class="pl-v">WarpFactory</span>;
+<span class="pl-k">use</span> pocketmine\math\<span class="pl-v">Vector3</span>;
+<span class="pl-k">use</span> pocketmine\player\<span class="pl-v">Player</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span> = <span class="pl-v">WarpFactory</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getWarp</span>(string <span class="pl-s1"><span class="pl-c1">$</span>name</span>);
+
+<span class="pl-c">//Getter &amp; Setter</span>
+<span class="pl-c">//warp name</span>
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;<span class="pl-en">getName</span>() : string;
+
+<span class="pl-c">//warp location information</span>
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;<span class="pl-en">getWorldName</span>() : string;
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;getPosition() : <span class="pl-v">Vector3</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;<span class="pl-en">getYaw</span>() : float;
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;<span class="pl-en">getPitch</span>() : float;
+
+<span class="pl-c">//is a warp send title</span>
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;<span class="pl-en">isTitle</span>() : bool;
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;<span class="pl-en">setIsTitle</span>(bool <span class="pl-s1"><span class="pl-c1">$</span>isTitle</span>) : void;
+
+<span class="pl-c">//is a warp send particle</span>
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;<span class="pl-en">isParticle</span>() : bool;
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;<span class="pl-en">setIsParticle</span>(bool <span class="pl-s1"><span class="pl-c1">$</span>isParticle</span>) : void;
+
+<span class="pl-c">//is a warp send sound</span>
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;<span class="pl-en">isSound</span>() : bool;
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;<span class="pl-en">setIsSound</span>(bool <span class="pl-s1"><span class="pl-c1">$</span>isSound</span>) : void;
+
+<span class="pl-c">//is a warp able to be used by users</span>
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;<span class="pl-en">isPermit</span>() : bool;
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;<span class="pl-en">setIsPermit</span>(bool <span class="pl-s1"><span class="pl-c1">$</span>isPermit</span>) : void;
+
+<span class="pl-c">//does a warp register a command(warp command, short command)</span>
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;<span class="pl-en">isCommandRegister</span>() : bool;
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;<span class="pl-en">setIsCommandRegister</span>(bool <span class="pl-s1"><span class="pl-c1">$</span>isCommandRegister</span>) : void;
+
+<span class="pl-c">//Teleport a player to this warp</span>
+<span class="pl-c">//$targetVisual is targets that receive particle packet</span>
+<span class="pl-c">//$targetSound is targets that receive sound packet</span>
+<span class="pl-s1"><span class="pl-c1">$</span>warp</span>-&gt;<span class="pl-en">teleport</span>(<span class="pl-v">Player</span> <span class="pl-s1"><span class="pl-c1">$</span>player</span>, array <span class="pl-s1"><span class="pl-c1">$</span>targetVisual</span> = <span class="pl-c1">null</span>, array <span class="pl-s1"><span class="pl-c1">$</span>targetSound</span> = <span class="pl-c1">null</span>) : void;</pre></div>

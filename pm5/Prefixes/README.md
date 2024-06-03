@@ -1,9 +1,9 @@
 # Prefixes
-## Plugin de prefixes para tus usuarios
+## Crea prefixes para mostrarlos en el chat del jugador
 ```properties
-Version: 1.1.0
+Version: 1.2.0
     API: 5.0.0
-    Updated: 04-05-2024 15:56:49 UTC
+    Updated: 02-06-2024 19:39:22 UTC
 Repo: https://github.com/FrostCheatMC/Prefixes
 License: Apache-2.0
 Categories: Chat-Related,Mechanics,Informational,General

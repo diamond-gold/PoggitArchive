@@ -1,0 +1,70 @@
+<div class="markdown-heading"><h2 class="heading-element">AntiVPN</h2><a id="user-content-antivpn" class="anchor" aria-label="Permalink: AntiVPN" href="#antivpn"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This is a plugin that blocks players who use <strong>VPN/Proxy</strong> on their PocketMine <strong>API 5</strong> (PMMP 5) server</p>
+<div class="markdown-heading"><h2 class="heading-element">How to use?</h2><a id="user-content-how-to-use" class="anchor" aria-label="Permalink: How to use?" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>To start using, you need to create an account <strong>(Free/Premium)</strong> at: <a href="https://vpnapi.io/" rel="nofollow"><strong>https://vpnapi.io/</strong></a></p>
+<p>After creating the account, copy the generated key in the dashboard</p>
+<p>After copying this key, install the plugin on your server and use the command below:</p>
+<ul>
+<li>
+<code>/antivpn setkey &lt;key&gt;</code> - the <code>&lt;key&gt;</code> value, must be your account key generated in the <strong>Dashboard</strong> of <strong><a href="https://vpnapi.io/" rel="nofollow">https://vpnapi.io/</a></strong>
+</li>
+</ul>
+<p>After that your plugin will be working to expel players who try to use VPN</p>
+<div class="markdown-heading"><h2 class="heading-element">Features:</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features:" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">config.yml:</h3><a id="user-content-configyml" class="anchor" aria-label="Permalink: config.yml:" href="#configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>enable-cache</code> - If true, the system will save all IP addresses with and without proxy that enter the server, for faster checking (without connecting to the API) <strong>RECOMENDED</strong>
+</li>
+<li>
+<code>alert-admins</code> - If true, it will <strong>alert</strong> all players with the permission: <code>antivpn.alert.receive</code>
+</li>
+<li>
+<code>alert-admin-message</code> - The message that will be sent</li>
+<li>
+<code>kick-screen-message</code> - The message that will be sent on the screen of the player expelled due to suspected VPN/Proxy</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Command <code>/antivpn</code>
+</h3><a id="user-content-command-antivpn" class="anchor" aria-label="Permalink: Command /antivpn" href="#command-antivpn"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/antivpn</code>
+<ul>
+<li>
+<code>setkey &lt;key&gt;</code>: Set your account key (from <a href="https://vpnapi.io/" rel="nofollow">https://vpnapi.io/</a>)</li>
+<li>
+<code>whitelist</code>
+<ul>
+<li>
+<code>add</code>: Add players who will be ignored by the system</li>
+<li>
+<code>remove</code>: Remove players who are being ignored</li>
+<li>
+<code>list</code>: View the list of players who are being ignored</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">UI</h3><a id="user-content-ui" class="anchor" aria-label="Permalink: UI" href="#ui"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The whitelist system is configurable via the <strong>UI</strong> (when you execute the command from the game and not from the console)</p>
+<p>To access the <strong>UI</strong> just use: <code>/antivpn whitelist</code></p>
+<div class="markdown-heading"><h3 class="heading-element">Bypass</h3><a id="user-content-bypass" class="anchor" aria-label="Permalink: Bypass" href="#bypass"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> Players who have permission: <code>antivpn.bypass</code> will be ignored just like the <strong>whitelist</strong>
+</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Author:</h2><a id="user-content-author" class="anchor" aria-label="Permalink: Author:" href="#author"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Rajador</strong>:
+<ul>
+<li>✉ <strong>Discord</strong>: <a href="https://discord.gg/DV5DgDSq7W" rel="nofollow"><strong>My Group</strong></a>
+</li>
+<li>📷 <strong>Instagram</strong>: <a href="https://www.instagram.com/rajadortv/" rel="nofollow"><strong>My Instagram</strong></a>
+</li>
+<li>📽 <strong>YouTube</strong>: <a href="https://www.youtube.com/channel/UC1UJFxth-YRkNuLBqBYyqbA" rel="nofollow"><strong>Channel</strong></a>
+</li>
+</ul>
+</li>
+</ul>
