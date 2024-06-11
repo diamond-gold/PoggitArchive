@@ -1,0 +1,57 @@
+<p>A Kahoot-based game for your PocketMineMP server.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Create your own</strong> game templates to play with</li>
+<li>
+<strong>Public and private</strong> lobbies to play with the whole server</li>
+<li>
+<strong>Play with others</strong>, even as the host of the game</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Usage</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/kahoot</td>
+<td>The main Kahoot command</td>
+<td>pmmpkahoot.command.main (default: true)</td>
+</tr>
+<tr>
+<td>/kahootleave</td>
+<td>Leave your current game</td>
+<td>pmmpkahoot.command.leave (default: true)</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create public lobbies</td>
+<td>pmmpkahoot.publiclobby.create</td>
+</tr>
+<tr>
+<td>Create templates</td>
+<td>pmmpkahoot.template.create</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">public-lobbies</span>:
+  <span class="pl-ent">needPermToCreate</span>: <span class="pl-s">true </span><span class="pl-c"><span class="pl-c">#</span> Type "false" if your players don't need a permission to create public Kahoot games.</span>
+
+<span class="pl-ent">create-templates</span>:
+  <span class="pl-ent">needPermToCreate</span>: <span class="pl-s">true </span><span class="pl-c"><span class="pl-c">#</span> Type "false" if your players don't need a permission to create templates.</span></pre></div>
