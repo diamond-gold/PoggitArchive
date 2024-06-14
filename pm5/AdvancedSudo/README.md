@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/imLuckii/AdvancedSudo
 License: GPL-3.0
 Categories: General,Fun,Chat-Related,Admin Tools
-Keywords: sudo,sudoall,imLuckii
+Keywords: imLuckii,sudo,sudoall
 ```

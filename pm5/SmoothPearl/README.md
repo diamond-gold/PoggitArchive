@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/imLuckii/SmoothPearl
 License: GPL-3.0
 Categories: General,Fun,Teleportation
-Keywords: animation,enderpearl,pearl,teleport,imLuckii
+Keywords: animation,enderpearl,imLuckii,pearl,teleport
 ```
