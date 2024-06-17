@@ -1,11 +1,11 @@
 # AdvancedSudo
-<img src="https://raw.githubusercontent.com/imLuckii/AdvancedSudo/39b7675524cb26d36a080977c2489f30e6bc6fac/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/imLuckii/AdvancedSudo/af7744b8f78633f66aee52d8ab4703d38b136867/icon.png" width="128" height="128" />
 
 ## Adds "/sudo" and "/sudoall" to your PocketMine server.
 ```properties
-Version: 1.0.0
-    API: 5.15.0
-    Updated: 04-05-2024 16:00:15 UTC
+Version: 2.0.0
+    API: 5.16.0
+    Updated: 16-06-2024 18:12:47 UTC
 Repo: https://github.com/imLuckii/AdvancedSudo
 License: GPL-3.0
 Categories: General,Fun,Chat-Related,Admin Tools
