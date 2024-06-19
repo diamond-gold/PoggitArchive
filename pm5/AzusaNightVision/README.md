@@ -1,13 +1,13 @@
 # AzusaNightVision
-<img src="https://raw.githubusercontent.com/KumaaDeveloper/AzusaNightVision/e3b317520585ce740a4000e17c0d913b4eb97a2b/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/KumaaDeveloper/AzusaNightVision/937667d92aee5a66a10b23c4f8ece7bcea0a4056/icon.png" width="128" height="128" />
 
 ## Gives you unlimited night vision
 ```properties
-Version: 1.0.0
+Version: 1.0.1
     API: 5.0.0
-    Updated: 17-06-2024 19:32:03 UTC
+    Updated: 18-06-2024 16:19:17 UTC
 Repo: https://github.com/KumaaDeveloper/AzusaNightVision
 License: Apache-2.0
 Categories: General,Admin Tools
-Keywords: NightVision,Night,Vision,Effect
+Keywords: Effect,Night,NightVision,Vision
 ```
