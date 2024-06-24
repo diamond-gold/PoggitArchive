@@ -1,0 +1,77 @@
+<div class="markdown-heading"><h1 class="heading-element">ClearLagg</h1><a id="user-content-clearlagg" class="anchor" aria-label="Permalink: ClearLagg" href="#clearlagg"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3107b64125a8fe578d19d7aa2eef7ab6ee893756d055acaf44862e46497dc7ed/68747470733a2f2f692e6962622e636f2e636f6d2f6757324e32487a2f4f4947312d72656d6f766562672d707265766965772e706e67"><img src="https://camo.githubusercontent.com/3107b64125a8fe578d19d7aa2eef7ab6ee893756d055acaf44862e46497dc7ed/68747470733a2f2f692e6962622e636f2e636f6d2f6757324e32487a2f4f4947312d72656d6f766562672d707265766965772e706e67" data-canonical-src="https://i.ibb.co.com/gW2N2Hz/OIG1-removebg-preview.png" style="max-width: 100%;"></a></p>
+<hr>
+<p>ClearLagg is a plugin for PocketMine-MP designed to reduce lag by periodically clearing dropped items in the world. It provides configurable options and commands to manage item clearing, player notifications, and detailed statistics.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Automatic item clearing at configurable intervals</li>
+<li>World-specific configurations</li>
+<li>Player notifications before item clearing</li>
+<li>Command to manually clear items</li>
+<li>Detailed statistics of cleared items</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the latest release of ClearLagg from <a href="https://poggit.pmmp.io/p/clearlagg" rel="nofollow">Poggit</a>.</li>
+<li>Place the downloaded <code>.phar</code> file into the <code>plugins</code> directory of your PocketMine-MP server.</li>
+<li>Restart your server to load the plugin.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>After installing the plugin, a configuration file <code>config.yml</code> will be generated in the <code>plugin_data/ClearLagg</code> directory. You can customize the settings as needed.</p>
+<div class="markdown-heading"><h3 class="heading-element">Default Configuration</h3><a id="user-content-default-configuration" class="anchor" aria-label="Permalink: Default Configuration" href="#default-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> ClearLagg configuration file</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Please Don't Edit configuration ver</span>
+<span class="pl-ent">config-version</span>: <span class="pl-c1">2</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Time in seconds between automatic clears</span>
+<span class="pl-ent">auto-clear-interval</span>: <span class="pl-c1">300</span>
+
+<span class="pl-c"><span class="pl-c">#</span> World-specific settings</span>
+<span class="pl-ent">worlds</span>:
+  <span class="pl-ent">world</span>:
+    <span class="pl-ent">enable-auto-clear</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">world_nether</span>:
+    <span class="pl-ent">enable-auto-clear</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">world_the_end</span>:
+    <span class="pl-ent">enable-auto-clear</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Player notifications</span>
+<span class="pl-ent">notify-players</span>:
+  <span class="pl-ent">enable</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>All dropped items will be cleared in 60 seconds!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">countdown</span>: <span class="pl-c1">60</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/clearlagg</code> - Clears all dropped items in the configured worlds.</li>
+<li>
+<code>/clearlagg stats</code> - Displays statistics about the cleared items.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>clearlagg.use</code> - Allows the player to use the <code>/clearlagg</code> command.</li>
+<li>
+<code>clearlagg.stats</code> - Allows the player to view clearlagg statistics.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Manually Clear Items</h3><a id="user-content-manually-clear-items" class="anchor" aria-label="Permalink: Manually Clear Items" href="#manually-clear-items"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Use the <code>/clearlagg</code> command to manually clear all dropped items in the configured worlds.</p>
+<pre lang="plaintext"><code>/clearlagg
+</code></pre>
+<div class="markdown-heading"><h3 class="heading-element">View Statistics</h3><a id="user-content-view-statistics" class="anchor" aria-label="Permalink: View Statistics" href="#view-statistics"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Use the <code>/clearlagg stats</code> command to view the statistics of cleared items.</p>
+<pre lang="plaintext"><code>/clearlagg stats
+</code></pre>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This project is licensed under the GNU General Public License v3.0 - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+<div class="markdown-heading"><h2 class="heading-element">Contributing</h2><a id="user-content-contributing" class="anchor" aria-label="Permalink: Contributing" href="#contributing"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Contributions are welcome! Please open an issue or submit a pull request on <a href="https://github.com/XPocketMC/clearlagg">GitHub</a> if you have any improvements or bug fixes.</p>
+<div class="markdown-heading"><h2 class="heading-element">Acknowledgements</h2><a id="user-content-acknowledgements" class="anchor" aria-label="Permalink: Acknowledgements" href="#acknowledgements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>PocketMine-MP for providing the API and platform to develop this plugin.</li>
+<li>All contributors and users for their support and feedback.</li>
+</ul>
+<hr>
+<p>Created by <em>XPocketMC</em> and <em>NurAzliYT</em></p>
