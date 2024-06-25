@@ -7,5 +7,5 @@ Version: 1.0.0-Beta
 Repo: https://github.com/NurAzliYT/ClearLagg
 License: GPL-3.0-only
 Categories: General,World Editing and Management,Admin Tools
-Keywords: ClearLag,ClearLagg,Lagg,Lag,Clear
+Keywords: ClearLag,ClearLagg,NurAzli,NurAzliYT
 ```
