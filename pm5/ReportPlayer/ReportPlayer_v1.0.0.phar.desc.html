@@ -1,0 +1,89 @@
+<div class="markdown-heading"><h1 class="heading-element">ReportPlayer</h1><a id="user-content-reportplayer" class="anchor" aria-label="Permalink: ReportPlayer" href="#reportplayer"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>ReportPlayer is a Minecraft plugin that facilitates reporting of player misconduct directly within the game environment. It provides players with a straightforward way to report rule violations, and administrators with tools to manage these reports effectively.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Player Reporting</strong>: Allows players to report others for misconduct using an in-game form.</li>
+<li>
+<strong>Admin Tools</strong>: Provides administrators with commands to view, manage, and clear reported incidents.</li>
+<li>
+<strong>Customizable</strong>: Configurable exempt players list and customizable messages through the <code>playerreport.yml</code> configuration file.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>To install the ReportPlayer plugin, follow these steps:</p>
+<ol>
+<li>Download the plugin <code>.phar</code> file from <a href="#">GitHub releases</a>.</li>
+<li>Place the downloaded <code>.phar</code> file into your server's <code>plugins</code> folder.</li>
+<li>Start or reload your server. ReportPlayer should be loaded automatically.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Reporting a Player</h3><a id="user-content-reporting-a-player" class="anchor" aria-label="Permalink: Reporting a Player" href="#reporting-a-player"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Players can report another player using the <code>/report &lt;player&gt;</code> command:</p>
+<pre><code>/report &lt;player&gt;
+</code></pre>
+<p>This command opens a form where the reporting player can enter additional details about the incident.</p>
+<div class="markdown-heading"><h3 class="heading-element">Managing Reports</h3><a id="user-content-managing-reports" class="anchor" aria-label="Permalink: Managing Reports" href="#managing-reports"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Administrators can manage reports using the following commands:</p>
+<ul>
+<li>
+<p><strong>View Pending Reports</strong>: <code>/reportlist</code></p>
+<ul>
+<li>Lists all pending reports, showing details of each reported incident.</li>
+</ul>
+</li>
+<li>
+<p><strong>Clear Reports</strong>: <code>/clearreports</code></p>
+<ul>
+<li>Clears all pending reports from the system.</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Configuration</h3><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin uses the <code>playerreport.yml</code> file for configuration. Here are the configurable options:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> playerreport.yml</span>
+
+<span class="pl-c"><span class="pl-c">#</span> List of players who cannot be reported (e.g., admins or VIPs)</span>
+<span class="pl-ent">exemptPlayers</span>:
+  - <span class="pl-s">Admin</span>
+  - <span class="pl-s">VIPPlayer1</span>
+  - <span class="pl-s">VIPPlayer2</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Messages sent to players and admins</span>
+<span class="pl-ent">messages</span>:
+  <span class="pl-ent">reportSuccess</span>: <span class="pl-s"><span class="pl-pds">"</span>Your report has been successfully submitted.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">reportFail</span>: <span class="pl-s"><span class="pl-pds">"</span>Unable to report this player at this time.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">reportListHeader</span>: <span class="pl-s"><span class="pl-pds">"</span>Pending Reports:<span class="pl-pds">"</span></span>
+  <span class="pl-ent">noReports</span>: <span class="pl-s"><span class="pl-pds">"</span>There are no pending reports at this time.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">noPermission</span>: <span class="pl-s"><span class="pl-pds">"</span>You do not have permission to use this command.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">playerNotFound</span>: <span class="pl-s"><span class="pl-pds">"</span>Player not found or not online.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">usageReport</span>: <span class="pl-s"><span class="pl-pds">"</span>Usage: /report &lt;player&gt;<span class="pl-pds">"</span></span>
+  <span class="pl-ent">usageReportList</span>: <span class="pl-s"><span class="pl-pds">"</span>Usage: /reportlist<span class="pl-pds">"</span></span>
+  <span class="pl-ent">allReportsCleared</span>: <span class="pl-s"><span class="pl-pds">"</span>All reports have been cleared.<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Other settings</span>
+<span class="pl-ent">settings</span>:
+  <span class="pl-ent">saveReportsToFile</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">reportFileName</span>: <span class="pl-s"><span class="pl-pds">"</span>reports.json<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Permissions</h3><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<p><code>reportplayer.report</code>:</p>
+<ul>
+<li>Allows players to report other players.</li>
+<li>Default: All players.</li>
+</ul>
+</li>
+<li>
+<p><code>reportplayer.viewlist</code>:</p>
+<ul>
+<li>Allows players to view pending reports using <code>/reportlist</code>.</li>
+<li>Default: Operators (OPs).</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Support</h3><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>For issues or feature requests, please visit our <a href="https://github.com/NurAzliYT/ReportPlayer">GitHub repository</a> and create an issue. We welcome community contributions and feedback!</p>
+<div class="markdown-heading"><h3 class="heading-element">License</h3><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for details.</p>
+<hr>
+<p>Created by NurAzliYT</p>

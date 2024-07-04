@@ -1,0 +1,64 @@
+<div class="markdown-heading"><h2 class="heading-element">General</h2><a id="user-content-general" class="anchor" aria-label="Permalink: General" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>AzusaBanItem is a Pocketmine plug-in that works to block the use of items / blocks in the world</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Block banned blocks from being placed by players</li>
+<li>Block banned blocks for interaction by players.</li>
+<li>Block banned items/tools from dealing damage to entities or players</li>
+<li>Block items/tools that are banned for use by players</li>
+<li>Block banned foods to increase hunger bar</li>
+<li>OP player is not affected, can be set in config</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Command</h2><a id="user-content-command" class="anchor" aria-label="Permalink: Command" href="#command"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Default</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/banitem</code></td>
+<td>Op</td>
+<td>azusabanitem.command.banitem</td>
+</tr>
+<tr>
+<td><code>/unbanbanitem</code></td>
+<td>Op</td>
+<td>azusabanitem.command.unbanitem</td>
+</tr>
+<tr>
+<td><code>/banitemlist</code></td>
+<td>Op</td>
+<td>azusabanitem.command.banitemlist</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> AzusaBanItem Configuration</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Allows op players to not be affected by banned items</span>
+<span class="pl-ent">allow-op</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message when successfully ban and unban items</span>
+<span class="pl-ent">ban_success_message</span>: <span class="pl-s"><span class="pl-pds">"</span>§aItem has been successfully banned<span class="pl-pds">"</span></span>
+<span class="pl-ent">unban_success_message</span>: <span class="pl-s"><span class="pl-pds">"</span>§aItem has been successfully unbanned<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message when an item has been previously banned</span>
+<span class="pl-ent">already_banned_message</span>: <span class="pl-s"><span class="pl-pds">"</span>§cThe item is already on the banned<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message when the item you want to ban is not in the player's hand</span>
+<span class="pl-ent">no_item_message</span>: <span class="pl-s"><span class="pl-pds">"</span>§cNo blocks/items detected in your hand<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message when unbanned item but item is not banned</span>
+<span class="pl-ent">not_banned_message</span>: <span class="pl-s"><span class="pl-pds">"</span>§cThe item is not banned<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message when a banned item is used by a player</span>
+<span class="pl-ent">banned_usage_message</span>: <span class="pl-s"><span class="pl-pds">"</span>§cThis item/block is banned from the world<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Does not support items</h2><a id="user-content-does-not-support-items" class="anchor" aria-label="Permalink: Does not support items" href="#does-not-support-items"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>[🗙] Totem of undying</li>
+<li>[🗙] Spyglass</li>
+</ul>

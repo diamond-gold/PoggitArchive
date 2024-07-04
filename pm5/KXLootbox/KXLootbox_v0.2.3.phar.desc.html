@@ -1,0 +1,171 @@
+<div align="center">
+  <a href="https://github.com/kxle0801/KXLootbox"><img src="https://github.com/kxle0801/KXLootbox/raw/main/kxlootbox_icon.png" height="128" width="128" align="center" style="max-width: 100%;"></a>
+  <br><br>
+  <div class="markdown-heading"><h1 class="heading-element"> 📦 KXLootbox 📦 </h1><a id="user-content---kxlootbox--" class="anchor" aria-label="Permalink:  📦 KXLootbox 📦 " href="#--kxlootbox--"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+  <p>
+    KXLootbox plugin for PocketMine-MP, Inspired on our Community Plugin Suggestions.
+  </p>
+</div>
+<div class="markdown-heading"><h2 class="heading-element">Description</h2><a id="user-content-description" class="anchor" aria-label="Permalink: Description" href="#description"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This allows you to make your own Lootbox in-game, Configurable and more.</p>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Need help or Report Bugs and Errors? <a href="https://github.com/kxle0801/KXLootbox/issues">Make an Issue</a>.</p>
+<div class="markdown-heading"><h1 class="heading-element">Features</h1><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>🟢 Fully Configurable</li>
+<li>🟢 Manages Lootbox In-Game</li>
+<li>🟢 Togglable Contents Preview</li>
+<li>🟢 Awesome Configurable sounds</li>
+<li>🟢 Custom Command</li>
+<li>🟢 And many more!</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Config</h1><a id="user-content-config" class="anchor" aria-label="Permalink: Config" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Do not change the version. RECOMMENDED!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-s">0.1.1</span>
+
+<span class="pl-c"><span class="pl-c">#</span> https://www.digminecraft.com/lists/color_list_pc.php</span>
+<span class="pl-c"><span class="pl-c">#</span> Go to that site to get the preview of colors avaible in Minecraft.</span>
+<span class="pl-c"><span class="pl-c">#</span> Use this '§' to declare a color.</span>
+<span class="pl-c"><span class="pl-c">#</span> You can change this prefix as you want. Leave "" if don't want it.</span>
+<span class="pl-ent">prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>cr§8[§4KXL§coot§fbox§8]§r<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Base command for executing the plugin command.</span>
+<span class="pl-ent">base-cmd</span>: <span class="pl-s"><span class="pl-pds">"</span>lootbox<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Base Command Description of your provided Base Command.</span>
+<span class="pl-ent">base-cmd-desc</span>: <span class="pl-s"><span class="pl-pds">"</span>Creates a lootbox that stores your inventory items in it.<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Base Command Aliases instead of executing Base Command use this as shortcut.</span>
+<span class="pl-c"><span class="pl-c">#</span> You can add more aliases as you want.</span>
+<span class="pl-ent">base-cmd-alias</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>lootbox<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>box<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>lb<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Base Command Usage which sends to sender when command is incorrect.</span>
+<span class="pl-c"><span class="pl-c">#</span> {base-cmd} stands for your Base Command above. RECOMMENDED FORMAT!</span>
+<span class="pl-ent">base-cmd-usage</span>: <span class="pl-s"><span class="pl-pds">"</span>§r§7Usage: §r§c/{base-cmd} §7[action:create|delete|give|list]<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Notifies when "create" action with Base Command is improperly executed.</span>
+<span class="pl-ent">sub-cmd-create-usage</span>: <span class="pl-s"><span class="pl-pds">"</span>§r§7Usage: §r§c/{base-cmd} §7[action:create] [string:lootbox-name] [string:identifier]<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Notifies when "delete" action with Base Command is improperly executed.</span>
+<span class="pl-ent">sub-cmd-delete-usage</span>: <span class="pl-s"><span class="pl-pds">"</span>§r§7Usage: §r§c/{base-cmd} §7[action:delete] [string:identifier]<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Sends when the "give" action with Base Command is improperly executed.</span>
+<span class="pl-ent">sub-cmd-give-usage</span>: <span class="pl-s"><span class="pl-pds">"</span>§r§7Usage: §r§c/{base-cmd} §7[action:give] [string:player-name] [string:identifier] [int:amount]<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Sends when Base Command List executed by player with this format. RECOMMEND FORMAT!</span>
+<span class="pl-ent">sub-cmd-list-format</span>: <span class="pl-s"><span class="pl-pds">"</span>§r§c{count}. §7Name: §c{name}<span class="pl-cce">\n</span>§7- Identifier: §c{identifier}§r<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Max rewards that can player get in your lootbox.</span>
+<span class="pl-c"><span class="pl-c">#</span> Ex.: Lootbox contains 8 items in it so then 3 items will be given by default.</span>
+<span class="pl-c"><span class="pl-c">#</span> Note: Rewards are random.</span>
+<span class="pl-ent">lootbox-max-rewards</span>: <span class="pl-c1">3</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Item type of lootbox when giving it to player, TWO types are currently avaible. More SOON!</span>
+<span class="pl-c"><span class="pl-c">#</span> Types:</span>
+<span class="pl-c"><span class="pl-c">#</span> "chest.type" for Chest</span>
+<span class="pl-c"><span class="pl-c">#</span> "enderchest.type" for Ender Chest</span>
+<span class="pl-ent">type</span>: <span class="pl-s"><span class="pl-pds">"</span>chest.type<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> This accepts boolean only or TRUE|FALSE</span>
+<span class="pl-c"><span class="pl-c">#</span> Adds display enchant that glint to Lootbox Item Type</span>
+<span class="pl-ent">glint</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> This option sets what to show in your lootbox lore.</span>
+<span class="pl-c"><span class="pl-c">#</span> "custom.type" set custom lore as you want on lootbox-lore below.</span>
+<span class="pl-c"><span class="pl-c">#</span> "items.type" sets as lore for every item name on the lootbox rewards.</span>
+<span class="pl-ent">lore-type</span>: <span class="pl-s"><span class="pl-pds">"</span>custom.type<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Allows to preview contents of lootbox by Tap-Holding or Right-Clicking it.</span>
+<span class="pl-ent">preview</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Custom lore info for your lootbox.</span>
+<span class="pl-c"><span class="pl-c">#</span> tag:</span>
+<span class="pl-c"><span class="pl-c">#</span> {name} lootbox name</span>
+<span class="pl-c"><span class="pl-c">#</span> {rewards} shows all possible rewards of lootbox</span>
+<span class="pl-c"><span class="pl-c">#</span> {identifier} shows what's lootbox identifier</span>
+<span class="pl-ent">lore</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>§r{identifier}<span class="pl-pds">"</span></span>
+  - <span class="pl-s">§r§7Place this anywhere to claim {name} Lootbox§7.</span>
+  - <span class="pl-s"><span class="pl-pds">"</span>§r<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>§r§l§c** POSSIBLE REWARDS **<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>§r{rewards}<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>§r<span class="pl-pds">"</span></span>
+  - <span class="pl-s">§r§8(§7Left-Click to §cclaim§8)</span>
+  - <span class="pl-s">§r§8(§7Right-Click to §cpreview§8)</span>
+  - <span class="pl-s">§r§7---</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Setting this to true enables to add a sound along with their action.</span>
+<span class="pl-c"><span class="pl-c">#</span> You can modify sounds at sounds.yml</span>
+<span class="pl-ent">allow-sounds</span>: <span class="pl-c1">true</span></pre></div>
+<p>REMEMBER: You can customize command name, description, aliases and usage information on your <code>plugin_data/KXLootbox/config.yml</code> file, Use it wisely!</p>
+<div class="markdown-heading"><h1 class="heading-element">Commands</h1><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Command</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Permission</strong></th>
+<th><strong>Aliases</strong></th>
+<th><strong>Usage</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/lootbox</code></td>
+<td>This executes KXLootbox plugin command.</td>
+<td><em><code>permission.lootbox.command</code></em></td>
+<td><code>[lootbox, box, lb]</code></td>
+<td><code>[create, give, delete, list]</code></td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>/lootbox create</code></td>
+<td>Creates a lootbox that stores your inventory items in it.</td>
+<td><em><code>N/A</code></em></td>
+<td><em><code>N/A</code></em></td>
+<td><code>[lootbox_name:identifier]</code></td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>/lootbox give</code></td>
+<td>Gives player a lootbox with specified lootbox identifier</td>
+<td><em><code>N/A</code></em></td>
+<td><em><code>N/A</code></em></td>
+<td><code>[player_name:identifier:amount]</code></td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>/lootbox delete</code></td>
+<td>Deletes existing lootbox with specified lootbox identifier`</td>
+<td><em><code>N/A</code></em></td>
+<td><em><code>N/A</code></em></td>
+<td><code>[identifier]</code></td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>/lootbox list</code></td>
+<td>Lists all created lootbox with name and identifier.</td>
+<td><em><code>N/A</code></em></td>
+<td><em><code>N/A</code></em></td>
+<td><em><code>N/A</code></em></td>
+<td>op</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h1 class="heading-element">Demo</h1><a id="user-content-demo" class="anchor" aria-label="Permalink: Demo" href="#demo"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Check Here: <a href="https://youtu.be/9ydqS1pMYpk" rel="nofollow">Demo</a> (KxlePH)</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">TODO</h1><a id="user-content-todo" class="anchor" aria-label="Permalink: TODO" href="#todo"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>🔴 Animations per lootbox</li>
+<li>🔴 Titles or Popups</li>
+<li>🔴 Remove specific item on lootbox</li>
+<li>🔴 Add Chances for each items</li>
+<li>🔴 Editable lootbox contents</li>
+<li>🟢 Add Sounds</li>
+</ul>

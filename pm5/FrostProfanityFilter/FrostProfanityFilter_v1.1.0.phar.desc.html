@@ -1,0 +1,43 @@
+<div class="markdown-heading"><h2 class="heading-element">General</h2><a id="user-content-general" class="anchor" aria-label="Permalink: General" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>FrostProfanityFilter</strong> is a plugin designed for PocketMine-MP that enhances your server's chat environment by blocking profanities and unwanted words. This ensures a positive and respectful communication space for all players. Administrators can easily configure a list of banned words, making it adaptable to different community standards and preferences.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Customizable Word List</strong>: Easily configure and update the list of words to be blocked in the chat.</li>
+<li>
+<strong>Real-time Filtering</strong>: Automatically filters out unwanted words in real-time, maintaining a clean chat environment.</li>
+<li>
+<strong>User-Friendly</strong>: Simple to install and configure, with minimal setup required to start filtering profanities.</li>
+<li>
+<strong>Disable /me command</strong>: Plugin will automatically disable me command.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>To get started with FrostProfanityFilter:</p>
+<ol>
+<li>Download the plugin from Poggit or the provided link.</li>
+<li>Place the <code>FrostProfanityFilter.phar</code> file in your PocketMine-MP server's <code>plugins</code> directory.</li>
+<li>Restart your server to activate the plugin.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>FrostProfanityFilter's configuration is straightforward:</p>
+<ol>
+<li>When you first run the plugin, it will generate a <code>config.yml</code> file in the <code>plugin_data/FrostProfanityFilter</code> directory.</li>
+<li>Open <code>config.yml</code> in a text editor to customize the list of blocked profanities.</li>
+<li>Each word or phrase to be blocked should be listed under the <code>profanities</code> key, with each entry on a new line.</li>
+</ol>
+<p>Example <code>config.yml</code>:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">profanities</span>:
+  - <span class="pl-s">abortion</span>
+  - <span class="pl-s">abuser</span>
+  - <span class="pl-s">ahole</span>
+  - <span class="pl-s">alabama hotpocket</span>
+  - <span class="pl-s">alligatorbait</span></pre></div>
+<ol start="4">
+<li>After editing the <code>config.yml</code> file, save your changes and restart your server for the new settings to take effect.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>For support, bug reports, and feature requests, please Join Our Discord Server the <a href="https://discord.gg/YfcDdK5mSF" rel="nofollow">discord</a>.
+or Email me at <a href="mailto:support@frostnetwork.xyz">support@frostnetwork.xyz</a></p>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Once configured, the plugin will automatically filter messages in the chat. Players attempting to send messages containing words from the blocked list will not be able to send them, thereby maintaining a positive chat environment.</p>
+<p>This plugin is ideal for server administrators who want to enforce community standards and provide a friendly environment for all players.</p>
