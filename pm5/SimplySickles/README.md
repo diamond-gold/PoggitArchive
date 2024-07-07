@@ -6,7 +6,7 @@
 Version: 2.0.0
     API: 5.0.0
     Updated: 02-06-2023 12:21:12 UTC
-Repo: https://github.com/Taylor-pm-pl/SimplySickles
+Repo: https://github.com/AuraTeamAZ/SimplySickles
 License: MIT
 Categories: General,Vanilla Mechanics,Miscellaneous,Fun,Mechanics
 Keywords: plugin,pmmp,sickles,simplysickles
