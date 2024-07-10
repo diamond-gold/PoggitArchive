@@ -1,11 +1,11 @@
 # SimplySickles
-<img src="https://raw.githubusercontent.com/Taylor-pm-pl/SimplySickles/cb0c3fc72a4fbbd6229a8dae4b91f2525ee281e9/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/AuraTeamAZ/SimplySickles/bc937b2b14b741ce0ce3db39a4e34b5227b41dd2/icon.png" width="128" height="128" />
 
 ## a plugin for PMMP that simply adds sickles
 ```properties
-Version: 2.0.0
+Version: 2.1.0
     API: 5.0.0
-    Updated: 02-06-2023 12:21:12 UTC
+    Updated: 09-07-2024 13:20:26 UTC
 Repo: https://github.com/AuraTeamAZ/SimplySickles
 License: MIT
 Categories: General,Vanilla Mechanics,Miscellaneous,Fun,Mechanics
