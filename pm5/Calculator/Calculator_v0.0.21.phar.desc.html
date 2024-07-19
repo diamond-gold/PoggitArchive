@@ -1,0 +1,73 @@
+<div class="markdown-heading"><h1 class="heading-element">General</h1><a id="user-content-general" class="anchor" aria-label="Permalink: General" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Execute math expressions in the server or console on PocketMine-MP servers with <code>/calculator</code> command</strong></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/60387689/199899361-3511a439-e121-42e6-bb65-0d96f7d63196.png"><img src="https://user-images.githubusercontent.com/60387689/199899361-3511a439-e121-42e6-bb65-0d96f7d63196.png" alt="EgImg" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h1 class="heading-element">Arithmetic Operators</h1><a id="user-content-arithmetic-operators" class="anchor" aria-label="Permalink: Arithmetic Operators" href="#arithmetic-operators"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>List of supported arithmetic operators: <code>/</code>, <code>*</code>, <code>+</code>, <code>-</code>, <code>**</code>, <code>%</code>.</li>
+<li>Description of arithmetic operators: <a href="https://github.com/Muqsit/arithmexp/wiki/Operator">https://github.com/Muqsit/arithmexp/wiki/Operator</a>
+</li>
+<li>Eg: <code>/calculator 1 + (2 - 3) * 4 / 5</code> &gt; Result: <code>0.2</code>
+</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Constants</h1><a id="user-content-constants" class="anchor" aria-label="Permalink: Constants" href="#constants"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>List of supported constants: <code>e</code>, <code>euler</code>, <code>false</code>, <code>inf</code>, <code>log2e</code>, <code>log10e</code>, <code>ln2</code>, <code>ln10</code>, <code>lnpi</code>, <code>pi</code>, <code>nan</code>, <code>pi2</code>, <code>pi4</code>, <code>m_1pi</code>, <code>m_2pi</code>, <code>m_2sqrtpi</code>, <code>sqrtpi</code>, <code>sqrt2</code>, <code>sqrt3</code>, <code>sqrt12</code>, <code>true</code>.</li>
+<li>Description of constants: <a href="https://github.com/Muqsit/arithmexp/wiki/Constant">https://github.com/Muqsit/arithmexp/wiki/Constant</a>
+</li>
+<li>Eg: <code>/calculator 3**2 * pi</code> &gt; Result: <code>28.2</code>
+</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Math functions</h1><a id="user-content-math-functions" class="anchor" aria-label="Permalink: Math functions" href="#math-functions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>List of supported math functions: <code>abs()</code>, <code>acos()</code>, <code>acosh()</code>, <code>asin()</code>, <code>asinh()</code>, <code>atan2()</code>, <code>atan()</code>, <code>atanh()</code>, <code>boolval()</code>, <code>ceil()</code>, <code>cos()</code>, <code>cosh()</code>, <code>deg2rad()</code>, <code>exp()</code>, <code>expm1()</code>, <code>fdiv()</code>, <code>floatval()</code>, <code>floor()</code>, <code>fmod()</code>, <code>hypot()</code>, <code>intdiv()</code>, <code>intval()</code>, <code>is_bool()</code>, <code>is_float()</code>, <code>is_finite()</code>, <code>is_infinite()</code>, <code>is_nan()</code>, <code>lcg_value()</code>, <code>log10()</code>, <code>log1p()</code>, <code>log()</code>, <code>max()</code>, <code>min()</code>, <code>mt_getrandmax()</code>, <code>mt_rand()</code>, <code>pi()</code>, <code>pow()</code>, <code>rad2deg()</code>, <code>round()</code>, <code>sin()</code>, <code>sinh()</code>, <code>sqrt()</code>, <code>tan()</code>, <code>tanh()</code>.</li>
+<li>Description of math functions: <a href="https://github.com/Muqsit/arithmexp/wiki/Function">https://github.com/Muqsit/arithmexp/wiki/Function</a>
+</li>
+<li>Eg: <code>/calculator sqrt(369)</code> &gt; Result: <code>19.2</code>
+</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Operator</h1><a id="user-content-operator" class="anchor" aria-label="Permalink: Operator" href="#operator"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>List of supported operator: <code>+</code>, <code>/</code>, <code>==</code>, <code>**</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>===</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&amp;&amp;</code>, <code>||</code>, <code>and</code>, <code>or</code>, <code>xor</code>, <code>%</code>, <code>*</code>, <code>!=</code>, <code>!==</code>, <code>&lt;=&gt;</code>, <code>-</code>, <code>!</code>, <code>-</code>, <code>+</code>.</li>
+<li>Description of operator: <a href="https://github.com/Muqsit/arithmexp/wiki/Operator">https://github.com/Muqsit/arithmexp/wiki/Operator</a>
+</li>
+<li>Eg: <code>/calculator 1 + 2 == 3</code> &gt; Result: <code>true</code>
+</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Commands &amp; Permissions</h1><a id="user-content-commands--permissions" class="anchor" aria-label="Permalink: Commands &amp; Permissions" href="#commands--permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">commands</span>:
+  <span class="pl-ent">calculator</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Perform a math operation<span class="pl-pds">"</span></span>
+    <span class="pl-ent">usage</span>: <span class="pl-s"><span class="pl-pds">"</span>/calculator &lt;expression&gt;<span class="pl-pds">"</span></span>
+    <span class="pl-ent">permission</span>: <span class="pl-s">calculator.command</span>
+    <span class="pl-ent">aliases</span>: <span class="pl-s">["calc"]</span>
+<span class="pl-ent">permissions</span>:
+  <span class="pl-ent">calculator.command</span>:
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows the use of /calculator<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h1 class="heading-element">Config</h1><a id="user-content-config" class="anchor" aria-label="Permalink: Config" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span> Prefix of messages.</span>
+<span class="pl-ent">prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;f[&amp;6Calculator&amp;f]&amp;r<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> {prefix} : Prefix.</span>
+<span class="pl-c"><span class="pl-c">#</span> {result} : The result of the math.</span>
+<span class="pl-ent">result</span>: <span class="pl-s"><span class="pl-pds">"</span>{prefix} &amp;aResult: &amp;b{result}<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> {prefix} : Prefix.</span>
+<span class="pl-c"><span class="pl-c">#</span> {error} : Error information.</span>
+<span class="pl-ent">error</span>: <span class="pl-s"><span class="pl-pds">"</span>{prefix} &amp;cError: {error}<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> playSound: true &gt; A sound will be sent to the player when a math expressions is performed.</span>
+<span class="pl-ent">playSound</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> showDataType: true &gt; The data type will be displayed with the result.</span>
+<span class="pl-ent">showDataType</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Config version</span>
+<span class="pl-ent">configVersion</span>: <span class="pl-s"><span class="pl-pds">"</span>0.0.15<span class="pl-pds">"</span></span>
+...
+
+</pre></div>
+<div class="markdown-heading"><h1 class="heading-element">Contact</h1><a id="user-content-contact" class="anchor" aria-label="Permalink: Contact" href="#contact"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://discord.gg/j2X83ujT6c" rel="nofollow"><img src="https://camo.githubusercontent.com/a92b16723aa057c51ecccb1a732bd7363b3e24bebb7e5087cc5b59bebe1edf99/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3938363535333231343838393531373038383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/986553214889517088?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width: 100%;"></a><br>
+<strong>You can contact me directly via Discord <code>NhanAZ</code></strong></p>
