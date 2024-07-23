@@ -7,5 +7,5 @@ Version: 1.2.0
 Repo: https://github.com/FrostCheatMC/Prefixes
 License: Apache-2.0
 Categories: Chat-Related,Mechanics,Informational,General
-Keywords: chat,plugin,plugins,prefix,prefixes,ranksystem,multilanguage,languages
+Keywords: chat,languages,multilanguage,plugin,plugins,prefix,prefixes,ranksystem
 ```
