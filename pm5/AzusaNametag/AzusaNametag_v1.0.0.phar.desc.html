@@ -1,0 +1,46 @@
+<div class="markdown-heading"><h2 class="heading-element">General</h2><a id="user-content-general" class="anchor" aria-label="Permalink: General" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>AzusaNametag is a Pocketmine plug-in that works to remove the nametags of all players on the server</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Can remove player nametags when online, and vice virsa</li>
+<li>Can delete the nametags of newly joined players, and vice versa</li>
+<li>Custom message in config</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Command</h2><a id="user-content-command" class="anchor" aria-label="Permalink: Command" href="#command"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Default</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hidenametag</code></td>
+<td>Op</td>
+<td>azusanametag.command.hidenametag</td>
+</tr>
+<tr>
+<td><code>shownametag</code></td>
+<td>Op</td>
+<td>azusanametag.command.shownametag</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> AzusaNametag Configuration</span>
+
+<span class="pl-ent">messages</span>:
+<span class="pl-c"><span class="pl-c">#</span> Message when show/hide is successful</span>
+  <span class="pl-ent">hide_nametag_success</span>: <span class="pl-s"><span class="pl-pds">"</span>§aSuccessfully hidden all players nametags.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">remove_nametag_success</span>: <span class="pl-s"><span class="pl-pds">"</span>§aSuccessfully restored all players nametags.<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message when show/hide has been used before</span>
+  <span class="pl-ent">already_hidden_nametag</span>: <span class="pl-s"><span class="pl-pds">"</span>§cAll players nametags are already hidden.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">already_visible_nametag</span>: <span class="pl-s"><span class="pl-pds">"</span>§cAll players nametags are already visible.<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Broadcast message to all players</span>
+<span class="pl-ent">broadcast</span>:
+  <span class="pl-ent">hide_nametag</span>: <span class="pl-s"><span class="pl-pds">"</span>§eAll players §fnametags have been hidden by an admin.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">show_nametag</span>: <span class="pl-s"><span class="pl-pds">"</span>§eAll players §fnametags have been restored by an admin.<span class="pl-pds">"</span></span></pre></div>

@@ -1,0 +1,28 @@
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Automatic Garbage Collection</strong>: Monitors and manages garbage collection automatically based on server conditions.</li>
+<li>
+<strong>Dynamic Configuration</strong>: Adjustable settings for fine-tuning GC behavior.</li>
+<li>
+<strong>Performance Optimization</strong>: Aims to optimize server performance by moving GC to a sweet spot.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin supports the following configuration options in <code>config.yml</code>:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span>Will only run gc when tick used percentage is lower or equal to given value (default 10).</span>
+<span class="pl-ent">trigger-percentage</span>: <span class="pl-c1">10</span>
+<span class="pl-c"><span class="pl-c">#</span>Will cancel gc if gc may exceed server tick time.</span>
+<span class="pl-ent">avoid-time-exceed</span>: <span class="pl-c1">true</span>
+<span class="pl-c"><span class="pl-c">#</span>Will only run gc when player count is 0 (default true).</span>
+<span class="pl-ent">trigger-no-player</span>: <span class="pl-c1">true</span>
+<span class="pl-c"><span class="pl-c">#</span>Will run gc unconditionally if root count exceeds the given value (default 500000).</span>
+<span class="pl-ent">force-root-count</span>: <span class="pl-c1">500000</span>
+<span class="pl-c"><span class="pl-c">#</span>Will skip gc if root count increment is lower than the given ratio.</span>
+<span class="pl-ent">gc-skip-threshold-ratio</span>: <span class="pl-c1">0.01</span>
+<span class="pl-c"><span class="pl-c">#</span>Prediction EMA(Exponential Moving Average) smoothing factor (default 0.3).</span>
+<span class="pl-c"><span class="pl-c">#</span>The smoothing factor determines the weight given to the most recent data points.</span>
+<span class="pl-c"><span class="pl-c">#</span>It controls how sensitive the EMA is to recent changes in the data.</span>
+<span class="pl-ent">smoothing-factor</span>: <span class="pl-c1">0.5</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>AdaptiveGC runs automatically once installed and enabled. It monitors server tick timing and garbage collection metrics
+to make informed decisions about when to perform GC operations.</p>

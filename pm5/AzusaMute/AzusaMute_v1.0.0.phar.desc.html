@@ -1,0 +1,86 @@
+<div class="markdown-heading"><h2 class="heading-element">General</h2><a id="user-content-general" class="anchor" aria-label="Permalink: General" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>AzusaMute is a Pocketmine plug-in that works to mute players on the server, either one player or all players</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Can mute one player for a certain duration</li>
+<li>Can free the player's punishment from mute</li>
+<li>Can mute all players on the server</li>
+<li>Can free the mute for all players on the server</li>
+<li>Can check the player's mute status</li>
+<li>Custom message in config</li>
+<li>Every time a message appears, there will be a sound</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Command</h2><a id="user-content-command" class="anchor" aria-label="Permalink: Command" href="#command"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Default</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/mute</code></td>
+<td>Op</td>
+<td>azusamute.command.mute</td>
+</tr>
+<tr>
+<td><code>/unmute</code></td>
+<td>Op</td>
+<td>azusamute.command.unmute</td>
+</tr>
+<tr>
+<td><code>/muteall</code></td>
+<td>Op</td>
+<td>azusamute.command.muteall</td>
+</tr>
+<tr>
+<td><code>/unmuteall</code></td>
+<td>Op</td>
+<td>azusamute.command.unmuteall</td>
+</tr>
+<tr>
+<td><code>/mutecheck</code></td>
+<td>Op</td>
+<td>azusamute.command.mutecheck</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> AzusaMute Configuration</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Enable/disable the op function on mute</span>
+<span class="pl-c"><span class="pl-c">#</span> If "true", the player op will not be affected by the mute function.</span>
+<span class="pl-c"><span class="pl-c">#</span> If "false", the player op will be affected by the mute function.</span>
+<span class="pl-ent">allow-op</span>: <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message on the server</span>
+<span class="pl-ent">messages</span>:
+  <span class="pl-ent">already_muted</span>: <span class="pl-s"><span class="pl-pds">"</span>§cThe player is already on mute<span class="pl-pds">"</span></span>
+  <span class="pl-ent">not_muted</span>: <span class="pl-s"><span class="pl-pds">"</span>§cThe player is not on mute<span class="pl-pds">"</span></span>
+  <span class="pl-ent">unmute_success</span>: <span class="pl-s"><span class="pl-pds">"</span>You are free from the §emute penalty<span class="pl-pds">"</span></span>
+  <span class="pl-ent">already_muted_all</span>: <span class="pl-s"><span class="pl-pds">"</span>§cThe server is already on mute<span class="pl-pds">"</span></span>
+  <span class="pl-ent">not_muted_all</span>: <span class="pl-s"><span class="pl-pds">"</span>§cThe server is not in mute state<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message when player is mute by admin/player op</span>
+  <span class="pl-ent">player_mute</span>: <span class="pl-s"><span class="pl-pds">"</span>You have been mute for §c{time} §fby §b{punisher}<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message when successfully checking mute player</span>
+  <span class="pl-ent">mute_check</span>: <span class="pl-s"><span class="pl-pds">"</span>§e{player} §fwas mute within §c{time} §fby §b{punisher}<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message when the player tries to send a message on mute</span>
+  <span class="pl-ent">mute_all</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou cannot send messages because the server is on mute<span class="pl-pds">"</span></span>
+  <span class="pl-ent">player_muted</span>: <span class="pl-s"><span class="pl-pds">"</span>You cannot send messages because you are on mute for §c{time}<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message when a mute player is unmuted</span>
+  <span class="pl-ent">mute_ended</span>: <span class="pl-s"><span class="pl-pds">"</span>You are free from the §emute penalty<span class="pl-pds">"</span></span>
+  <span class="pl-ent">unmute_success</span>: <span class="pl-s"><span class="pl-pds">"</span>You are free from the §emute penalty<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message if allow-op = true, then player op cannot be muted</span>
+  <span class="pl-ent">op_mute</span>: <span class="pl-s"><span class="pl-pds">"</span>§cOP players cannot be muted<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Broadcast on the server</span>
+  <span class="pl-ent">broadcast_mute</span>: <span class="pl-s"><span class="pl-pds">"</span>§e{player} §fgets a mute penalty for §c{time}<span class="pl-pds">"</span></span>
+  <span class="pl-ent">broadcast_mute_all</span>: <span class="pl-s"><span class="pl-pds">"</span>§cAll players on the server are mute<span class="pl-pds">"</span></span>
+  <span class="pl-ent">broadcast_unmute_all</span>: <span class="pl-s"><span class="pl-pds">"</span>§eAll players on the server are free from mute<span class="pl-pds">"</span></span></pre></div>

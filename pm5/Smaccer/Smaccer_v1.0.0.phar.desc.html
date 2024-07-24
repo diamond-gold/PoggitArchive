@@ -1,0 +1,214 @@
+<div class="markdown-heading"><h1 class="heading-element">Smaccer</h1><a id="user-content-smaccer" class="anchor" aria-label="Permalink: Smaccer" href="#smaccer"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Smaccer is a powerful and easy-to-use PocketMine-MP plugin designed for managing NPCs (Non-Player Characters) in your Minecraft world. Whether you want to create interactive characters, organize your NPCs, or automate tasks, Smaccer provides all the necessary tools to bring your world to life.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Create NPCs</strong>: Easily create new NPCs to populate your world.</li>
+<li>
+<strong>Edit NPCs</strong>: Modify existing NPCs to update their appearance, behavior, or properties.</li>
+<li>
+<strong>Delete NPCs</strong>: Remove unwanted NPCs from your world with simple commands.</li>
+<li>
+<strong>Move NPCs</strong>: Effortlessly move NPCs to different locations or players.</li>
+<li>
+<strong>List NPCs</strong>: View a comprehensive list of all NPCs in your world.</li>
+<li>
+<strong>Teleport</strong>: Quickly teleport to NPCs or move other players to NPCs.</li>
+<li>
+<strong>Customizable Configuration</strong>: Tailor the plugin's settings to fit your needs without restarting the server.</li>
+<li>
+<strong>Manage Permissions</strong>: Fine-tune permissions to control who can interact with and manage NPCs.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong><code>/smaccer about</code></strong>: Displays information about the plugin.</li>
+<li>
+<strong><code>/smaccer create</code></strong>: Creates a new NPC entity.</li>
+<li>
+<strong><code>/smaccer delete</code></strong>: Deletes an NPC entity.</li>
+<li>
+<strong><code>/smaccer edit</code></strong>: Edits an NPC entity.</li>
+<li>
+<strong><code>/smaccer id</code></strong>: Retrieves the ID of an NPC entity.</li>
+<li>
+<strong><code>/smaccer list</code></strong>: Lists all NPC entities in the world.</li>
+<li>
+<strong><code>/smaccer move</code></strong>: Moves an NPC entity to a specified player or location.</li>
+<li>
+<strong><code>/smaccer reload</code></strong>: Reloads the plugin configuration or emotes.</li>
+<li>
+<strong><code>/smaccer teleport</code></strong>: Teleports a player to an NPC entity or vice versa.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Grant these permissions to specific player groups or individuals using a permissions management plugin of your choice.</p>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>smaccer.bypass.cooldown</code></td>
+<td>Allows players to bypass cooldown.</td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>smaccer.command.about</code></td>
+<td>Allows players to display information about the plugin (<code>/smaccer about</code>).</td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>smaccer.command.create.self</code></td>
+<td>Allows players to create their own entities (<code>/smaccer create</code>).</td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>smaccer.command.create.others</code></td>
+<td>Allows players to create entities owned by others (<code>/smaccer create</code>).</td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>smaccer.command.delete.self</code></td>
+<td>Allows players to delete their own entities (<code>/smaccer delete</code>).</td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>smaccer.command.delete.others</code></td>
+<td>Allows players to delete entities owned by others (<code>/smaccer delete</code>).</td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>smaccer.command.edit.self</code></td>
+<td>Allows players to edit their own entities (<code>/smaccer edit</code>).</td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>smaccer.command.edit.others</code></td>
+<td>Allows players to edit entities owned by others (<code>/smaccer edit</code>).</td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>smaccer.command.id</code></td>
+<td>Allows players to retrieve entity IDs (<code>/smaccer id</code>).</td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>smaccer.command.list</code></td>
+<td>Allows players to list all entities in the worlds (<code>/smaccer list</code>).</td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>smaccer.command.move.self</code></td>
+<td>Allows players to move an entity to themselves (<code>/smaccer move</code>).</td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>smaccer.command.move.others</code></td>
+<td>Allows players to move an entity to another player (<code>/smaccer move</code>).</td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>smaccer.command.reload.config</code></td>
+<td>Allows players to reload the configuration (<code>/smaccer reload</code>).</td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>smaccer.command.reload.emotes</code></td>
+<td>Allows players to reload the emotes (<code>/smaccer reload</code>).</td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>smaccer.command.teleport.self</code></td>
+<td>Allows players to teleport to an entity (<code>/smaccer teleport</code>).</td>
+<td>op</td>
+</tr>
+<tr>
+<td><code>smaccer.command.teleport.others</code></td>
+<td>Allows players to teleport other players to an entity (<code>/smaccer teleport</code>).</td>
+<td>op</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Smaccer offers a customizable configuration to tailor the NPC settings to your preferences. Below is an example of the configuration file:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Smaccer Configuration</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Do not change this (Only for internal use)!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-c1">1.0</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Default settings for NPCs.</span>
+<span class="pl-ent">npc-default-settings</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Cooldown settings for NPC commands.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - enabled: Whether command cooldown is enabled or not.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - value: Cooldown duration in seconds.</span>
+  <span class="pl-ent">commandCooldown</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">value</span>: <span class="pl-c1">3</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Rotation settings for NPC behavior.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - enabled: Whether rotation is enabled or not.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - maxDistance: Maximum distance for NPC rotation.</span>
+  <span class="pl-ent">rotation</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">maxDistance</span>: <span class="pl-c1">8</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Nametag visibility settings for NPCs.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - enabled: Whether nametag visibility is enabled or not.</span>
+  <span class="pl-ent">nametagVisible</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Default entity visibility settings.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - value: Integer representing visibility level.</span>
+  <span class="pl-c"><span class="pl-c">#</span>     0: Visible to everyone.</span>
+  <span class="pl-c"><span class="pl-c">#</span>     1: Visible only to the creator.</span>
+  <span class="pl-c"><span class="pl-c">#</span>     2: Invisible to everyone.</span>
+  <span class="pl-ent">entityVisibility</span>:
+    <span class="pl-ent">value</span>: <span class="pl-c1">0</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Slap settings for NPCs.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - enabled: Whether slap-back action is enabled or not.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Note: Set to true if slap action is intended for human NPCs.</span>
+  <span class="pl-ent">slapBack</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Cooldown settings for NPC emotes.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - enabled: Whether emote cooldown is enabled or not.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - value: Cooldown duration in seconds.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Note: Emotes are non-interactive gestures or expressions performed by NPCs.</span>
+  <span class="pl-ent">emoteCooldown</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">value</span>: <span class="pl-c1">5</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Cooldown settings for NPC action emotes.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - enabled: Whether action emote cooldown is enabled or not.</span>
+  <span class="pl-c"><span class="pl-c">#</span> - value: Cooldown duration in seconds.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Note: Action emotes are interactive gestures or expressions that trigger specific actions when performed by NPCs.</span>
+  <span class="pl-ent">actionEmoteCooldown</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">value</span>: <span class="pl-c1">5</span>
+</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Images</h2><a id="user-content-images" class="anchor" aria-label="Permalink: Images" href="#images"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/AIPTU/Smaccer/assets/image1.jpg"><img src="https://raw.githubusercontent.com/AIPTU/Smaccer/assets/image1.jpg" alt="" width="400" height="200" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/AIPTU/Smaccer/assets/image2.jpg"><img src="https://raw.githubusercontent.com/AIPTU/Smaccer/assets/image2.jpg" alt="" width="400" height="200" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/AIPTU/Smaccer/assets/image3.jpg"><img src="https://raw.githubusercontent.com/AIPTU/Smaccer/assets/image3.jpg" alt="" width="350" height="250" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/AIPTU/Smaccer/assets/image4.jpg"><img src="https://raw.githubusercontent.com/AIPTU/Smaccer/assets/image4.jpg" alt="" width="350" height="250" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h2 class="heading-element">Upcoming Features</h2><a id="user-content-upcoming-features" class="anchor" aria-label="Permalink: Upcoming Features" href="#upcoming-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Currently none planned. You can contribute or suggest for new features.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Credits</h2><a id="user-content-credits" class="anchor" aria-label="Permalink: Credits" href="#credits"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<a href="https://github.com/TwistedAsylumMC/Bedrock-Emotes">Bedrock-Emotes by TwistedAsylumMC</a> for providing the emotes.</li>
+<li>
+<a href="https://github.com/ColinHDev/CPlot">CPlot by ColinHDev</a> for implementing promises.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Additional Notes</h2><a id="user-content-additional-notes" class="anchor" aria-label="Permalink: Additional Notes" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/AIPTU/Smaccer/issues">here</a>.</li>
+<li>We accept all contributions! If you want to contribute, please make a pull request in <a href="https://github.com/AIPTU/Smaccer/pulls">here</a>.</li>
+</ul>

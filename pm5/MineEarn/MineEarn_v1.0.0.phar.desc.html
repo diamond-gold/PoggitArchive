@@ -1,0 +1,81 @@
+<div class="markdown-heading"><h1 class="heading-element">MineEarn</h1><a id="user-content-mineearn" class="anchor" aria-label="Permalink: MineEarn" href="#mineearn"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A PocketMine-MP plugin that can earn by mining</p>
+<div class="markdown-heading"><h1 class="heading-element">Features</h1><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Custom items.</li>
+<li>Support enchantment silk touch and fortune.</li>
+<li>Per world support with permission.</li>
+<li>Supports <code>&amp;</code> as formatting codes.</li>
+<li>Lightweight and open source ❤️</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Supported Economy Providers</h1><a id="user-content-supported-economy-providers" class="anchor" aria-label="Permalink: Supported Economy Providers" href="#supported-economy-providers"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<a href="https://poggit.pmmp.io/p/BedrockEconomy" rel="nofollow">BedrockEconomy</a> by cooldogedev</li>
+<li>Experience (PocketMine-MP)</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Permissions</h1><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Notes: Global earnings does not require any permission and {WORLD} is the name of your world folder listed in the config</strong></p>
+<ul>
+<li>Permission <code>mineearn.world.{WORLD}</code>: Allow users to earn in the world {WORLD}, (Default is <code>OP</code>).</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Default Config</h1><a id="user-content-default-config" class="anchor" aria-label="Permalink: Default Config" href="#default-config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> MineEarn Configuration</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Do not change this (Only for internal use)!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-c1">1.0</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Messages settings.</span>
+<span class="pl-c"><span class="pl-c">#</span> Use "&amp;" as formatting codes.</span>
+<span class="pl-ent">messages</span>:
+  <span class="pl-ent">generic-error</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cAn unexpected error has occurred.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">received</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;eYou have received &amp;6{MONETARY_UNIT}{MONEY} &amp;efor &amp;6{BLOCK}<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Economy settings.</span>
+<span class="pl-c"><span class="pl-c">#</span> Possible providers: bedrockeconomy, xp</span>
+<span class="pl-ent">economy</span>:
+  <span class="pl-ent">provider</span>: <span class="pl-s">BedrockEconomy</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Earnings settings.</span>
+<span class="pl-c"><span class="pl-c">#</span> If you are using the "xp" provider, 1 unit = 1 level of experience.</span>
+<span class="pl-ent">earnings</span>:
+  <span class="pl-ent">settings</span>:
+    <span class="pl-ent">enable_fortune_bonus</span>: <span class="pl-s">true  </span><span class="pl-c"><span class="pl-c">#</span> Enable or disable bonus for Fortune enchantment</span>
+    <span class="pl-ent">fortune_bonus_percentage</span>: <span class="pl-c1">10</span>  <span class="pl-c"><span class="pl-c">#</span> The percentage bonus per Fortune level</span>
+    <span class="pl-ent">fortune_bonus_chance</span>: <span class="pl-c1">0.5</span>  <span class="pl-c"><span class="pl-c">#</span> Chance (0.0 to 1.0) of applying the Fortune bonus</span>
+    <span class="pl-ent">enable_silk_touch_check</span>: <span class="pl-s">true  </span><span class="pl-c"><span class="pl-c">#</span> Enable or disable check for Silk Touch enchantment</span>
+    <span class="pl-ent">ignored_worlds</span>: <span class="pl-s">[]  </span><span class="pl-c"><span class="pl-c">#</span> List of worlds to ignore for earnings</span>
+    
+  <span class="pl-c"><span class="pl-c">#</span> Global earnings.</span>
+  <span class="pl-c"><span class="pl-c">#</span> These apply to all worlds unless overridden by per-world earnings.</span>
+  <span class="pl-ent">global</span>:
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">coal_ore</span><span class="pl-pds">"</span></span>: <span class="pl-c1">80</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">gold_ore</span><span class="pl-pds">"</span></span>: <span class="pl-c1">150</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">iron_ore</span><span class="pl-pds">"</span></span>: <span class="pl-c1">100</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">diamond_ore</span><span class="pl-pds">"</span></span>: <span class="pl-c1">300</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">emerald_ore</span><span class="pl-pds">"</span></span>: <span class="pl-c1">350</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">lapis_ore</span><span class="pl-pds">"</span></span>: <span class="pl-c1">200</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">redstone_ore</span><span class="pl-pds">"</span></span>: <span class="pl-c1">250</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">quartz_ore</span><span class="pl-pds">"</span></span>: <span class="pl-c1">180</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Per-world earnings.</span>
+  <span class="pl-c"><span class="pl-c">#</span> These override global earnings for specific worlds.</span>
+  <span class="pl-ent">worlds</span>:
+    <span class="pl-ent">world</span>: <span class="pl-c"><span class="pl-c">#</span> World folder name</span>
+      <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">diamond_ore</span><span class="pl-pds">"</span></span>: <span class="pl-c1">350</span>
+      <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">emerald_ore</span><span class="pl-pds">"</span></span>: <span class="pl-c1">300</span>
+      <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">lapis_ore</span><span class="pl-pds">"</span></span>: <span class="pl-c1">280</span>
+      <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">quartz_ore</span><span class="pl-pds">"</span></span>: <span class="pl-c1">200</span>
+      <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">redstone_ore</span><span class="pl-pds">"</span></span>: <span class="pl-c1">250</span>
+</pre></div>
+<div class="markdown-heading"><h1 class="heading-element">Upcoming Features</h1><a id="user-content-upcoming-features" class="anchor" aria-label="Permalink: Upcoming Features" href="#upcoming-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Currently none planned. You can contribute or suggest for new features.</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Additional Notes</h1><a id="user-content-additional-notes" class="anchor" aria-label="Permalink: Additional Notes" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/AIPTU/MineEarn/issues">here</a>.</li>
+<li>We accept all contributions! If you want to contribute, please make a pull request in <a href="https://github.com/AIPTU/MineEarn/pulls">here</a>.</li>
+<li>Icons made from <a href="https://www.flaticon.com" rel="nofollow">www.flaticon.com</a>
+</li>
+</ul>
