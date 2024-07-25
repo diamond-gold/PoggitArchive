@@ -1,0 +1,35 @@
+<div class="markdown-heading"><h2 class="heading-element">General</h2><a id="user-content-general" class="anchor" aria-label="Permalink: General" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>AlwaysTime is a Pocketmine plug-in that works to always lock the time on your server</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Lock time on your server</li>
+<li>Can manage time as desired</li>
+<li>Can set the world you want to time-lock</li>
+<li>Can change modes ranging from “whitelist”, “blacklist” and “allworlds”</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Configuration for AlwaysTime plugin</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Change the mode you want, set “whitelist” or “blacklist” or "allworlds"</span>
+<span class="pl-c"><span class="pl-c">#</span> If the mode is “whitelist”, then only the world in the config is affected by the alwaystime function.</span>
+<span class="pl-c"><span class="pl-c">#</span> If the mode is “blacklist”, then only the world in the config is not affected by the alwaystime function.</span>
+<span class="pl-c"><span class="pl-c">#</span> If the mode is “allworlds”, then all worlds will be affected by the alwaystime function.</span>
+<span class="pl-ent">mode</span>: <span class="pl-s">whitelist</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Set up the world you want to organize</span>
+<span class="pl-ent">worlds</span>:
+  - <span class="pl-s">lobby</span>
+  - <span class="pl-s">world</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Set a time for your world, time will be locked with your set time</span>
+<span class="pl-c"><span class="pl-c">#</span> Set the time according to the time you add</span>
+<span class="pl-ent">set-time</span>: <span class="pl-s">day</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Add the time you want</span>
+<span class="pl-ent">add-time</span>:
+  <span class="pl-ent">day</span>: <span class="pl-c1">1000</span>
+  <span class="pl-ent">sunrise</span>: <span class="pl-c1">23000</span>
+  <span class="pl-ent">noon</span>: <span class="pl-c1">6000</span>
+  <span class="pl-ent">sunset</span>: <span class="pl-c1">12000</span>
+  <span class="pl-ent">night</span>: <span class="pl-c1">13000</span>
+  <span class="pl-ent">midnight</span>: <span class="pl-c1">18000</span></pre></div>
