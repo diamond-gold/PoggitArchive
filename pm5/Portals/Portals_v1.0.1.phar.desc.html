@@ -1,0 +1,84 @@
+<div class="markdown-heading"><h1 class="heading-element">Portals Plugin</h1><a id="user-content-portals-plugin" class="anchor" aria-label="Permalink: Portals Plugin" href="#portals-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Welcome to the <strong>Portals</strong> plugin for PocketMine-MP! This plugin allows players to create and manage portals that execute commands or display messages when players enter them.</p>
+<p><a href="https://poggit.pmmp.io/p/Portals" rel="nofollow"><img src="https://camo.githubusercontent.com/d0fe86ddcc867d48bd6fa8979b0c5b4339cb882003c3550d38c62a1b3b29a5d7/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f506f7274616c73" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/Portals" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/Portals" rel="nofollow"><img src="https://camo.githubusercontent.com/1bfd0970d9c25a33fef870e8bffed1993b16c766ad0da1d10e4feaac663e9358/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f506f7274616c73" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/Portals" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/Portals" rel="nofollow"><img src="https://camo.githubusercontent.com/349e3da600b9aff262b1ed11ce7891ac551dbb140abc7455c2f233b7a463c051/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f506f7274616c73" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/Portals" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Create portals with custom names</li>
+<li>Set positions for portals</li>
+<li>Add commands to be executed when players enter a portal</li>
+<li>Set messages to be displayed when players enter a portal</li>
+<li>Delete existing portals</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<p><strong>/portal create portalname</strong>: Create a new portal with the specified name.</p>
+</li>
+<li>
+<p><strong>/portal pos1</strong>: Set the first position of the portal by tapping a block.</p>
+</li>
+<li>
+<p><strong>/portal pos2</strong>: Set the second position of the portal by tapping a block.</p>
+</li>
+<li>
+<p><strong>/portal addcommand portalname &lt;player/server&gt; command</strong>: Add a command to be executed when a player enters the specified portal.</p>
+</li>
+<li>
+<p><strong>/portal msg portalname message</strong>: Set a message to be displayed when a player enters the specified portal.</p>
+</li>
+<li>
+<p><strong>/portal delete portalname</strong>: Delete the specified portal.</p>
+</li>
+<li>
+<p><strong>Note</strong> : /portal addcommand portalname player command : The command will be executed as the player who entered the portal.</p>
+</li>
+<li>
+<p><strong>Note</strong> : /portal addcommand portalname server command : The command will be executed as the server console.</p>
+</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>portals.command</strong>: Allows the player to use the portal commands (default: op).</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The configuration file (<code>config.yml</code>) is used to store portal data, including positions, commands, and messages. The plugin will automatically save the configuration file when portals are created or modified.</p>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<strong>Create a Portal</strong>: Use <code>/portal create &lt;portalname&gt;</code> to create a new portal with the specified name.</li>
+<li>
+<strong>Set Positions</strong>: Use <code>/portal pos1</code> and <code>/portal pos2</code> to set the two opposite corners of the portal by tapping blocks.</li>
+<li>
+<strong>Add Commands</strong>: Use <code>/portal addcommand &lt;portalname&gt; &lt;player/server&gt; &lt;command&gt;</code> to add a command that will be executed when a player enters the portal.</li>
+<li>
+<strong>Set Message</strong>: Use <code>/portal msg &lt;portalname&gt; &lt;message&gt;</code> to set a message that will be displayed when a player enters the portal.</li>
+<li>
+<strong>Delete a Portal</strong>: Use <code>/portal delete &lt;portalname&gt;</code> to delete the specified portal.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Example</h2><a id="user-content-example" class="anchor" aria-label="Permalink: Example" href="#example"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>To create a portal named "example", set its positions, add a command, and set a message, follow these steps:</p>
+<ol>
+<li><code>/portal create example</code></li>
+<li>
+<code>/portal pos1</code> (tap a block)</li>
+<li>
+<code>/portal pos2</code> (tap another block)</li>
+<li><code>/portal addcommand example player say Welcome to the portal!</code></li>
+<li><code>/portal msg example You have entered the example portal.</code></li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the plugin.</li>
+<li>Place the plugin's <code>.phar</code> file in the <code>plugins</code> folder of your PocketMine-MP server.</li>
+<li>Start or restart the server to load the plugin.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you encounter any issues or have any questions, please open an issue on the <a href="https://github.com/BrahmjotSingh0/Portals">GitHub repository</a>.</p>
+<hr>
+<p><strong>Author</strong>: BrahmjotSingh0
+<strong>Version</strong>: 1.0.0<br>
+<strong>API</strong>: 5.0.0<br>
+<strong>License</strong>: MIT</p>
