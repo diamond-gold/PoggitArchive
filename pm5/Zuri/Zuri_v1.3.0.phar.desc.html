@@ -1,0 +1,400 @@
+<div class="markdown-heading"><h1 class="heading-element">Zuri Pocketmine-MP Anticheat 🛡️</h1><a id="user-content-zuri-pocketmine-mp-anticheat-️" class="anchor" aria-label="Permalink: Zuri Pocketmine-MP Anticheat 🛡️" href="#zuri-pocketmine-mp-anticheat-️"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Zuri</strong> is an anticheat made to protect the server from any may unfair advantages from the players. A powerful anticheat made to destroy hackers from your server for PocketMine-MP.</p>
+<p><strong>Zuri</strong> attempts to enforce "vanilla Minecraft" mechanics, as well as preventing players from abusing weaknesses in Minecraft or its protocol, making your server more safe. Organized in different sections, various checks are performed to test players doing, covering a wide range including flying and speeding, fighting hacks, fast block breaking and nukers, inventory hacks, chat spam and other types of malicious behaviour.</p>
+<blockquote>
+<p><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> <strong>Spoon or Fork of Pocketmine-MP are not supported.</strong> Do not try to create an issue, they will be closed automatically.</p>
+</blockquote>
+<p>😁 If you are interested with our projects, you may help us by:</p>
+<ul>
+<li><a href="https://ko-fi.com/xqwtxon" rel="nofollow">Donate via Ko-Fi</a></li>
+<li><a href="https://patreon.com/xwertxy" rel="nofollow">Become a Patreon</a></li>
+</ul>
+<p>Also, adding ⭐ a <strong>Star</strong> is also appreciated. ✨</p>
+<p>🤔 Do you struggling with <strong>bugs and issues?</strong> Don't hesitate to tell us about it by <a href="https://github.com/ReinfyTeam/Zuri-Rewrite/issues">creating an issue</a> or you may join us on our official <a href="https://discord.com/invite/7u7qKsvSxg" rel="nofollow">discord server</a>!</p>
+<blockquote>
+<p>☢ For Plugin Developers:
+The full documentation about API and it's usage is can be found in the <a href="https://github.com/ReinfyTeam/Zuri/wiki">github wiki</a>.</p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener noreferrer" href="/meme.jpg"><img src="/meme.jpg" alt="Zuri Anticheat Meme" style="max-width: 100%;"></a></p>
+<p>Zuri can catch hacker efficiently, with over <strong>40+ check modules</strong>. Unlike other <strong>$100 Anticheat</strong>, it is more systematic, lightweight, and easy to configure. It's too good right? 🤦</p>
+</blockquote>
+<div class="markdown-heading"><h1 class="heading-element">Features</h1><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>This plugin has total of 40+ checks that can catch hacker more efficient! 😏</li>
+<li>You can easily configure everything in the config. ✅
+<ul>
+<li>Configure easily the max violations and checks and more! ⚙️</li>
+</ul>
+</li>
+<li>It is more <strong>lightweight</strong> compared to paid anticheat. You don't have to struggle about the performance, with this anticheat, it can possible block them all easily! 💰</li>
+<li>✨ It is easy to use when it comes at the game, you can easily debug things, manage them all at the game, and <strong>disable checks</strong> according to your command.</li>
+<li>❌ Limit players joining by their ip limit, you can change and configure on how many players can join with same ip address. <em>(optional)</em>
+</li>
+<li>🌟 It also checks the player if they are using a <strong>Proxy or VPN</strong> <em>(optional)</em>
+</li>
+<li>💥 You can manage plugin at the in-game using <strong>Interactive UI</strong> by using command! <code>/zuri ui</code>
+</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Current Modules</h1><a id="user-content-current-modules" class="anchor" aria-label="Permalink: Current Modules" href="#current-modules"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>BETA</strong> - means to be in testing, and to be optimize in the next version. <br>
+<strong>DISABLED</strong> - means the code is not working or has a false-positive in certain methods. <br>
+<strong>OPTIONAL</strong> - means this is optional optimization checks for certain purposes. <br></p>
+<ul>
+<li>
+<strong>AimAssist</strong> (BETA)
+<ul>
+<li>
+<strong>A:</strong> Check if the player yaw is normalized and valid on the auth input.</li>
+<li>
+<strong>B:</strong> Check if the player pitch is normalized and valid on the auth input.</li>
+<li>
+<strong>C:</strong> Check if the player exceeds the pitch and yaw limit.</li>
+<li>
+<strong>D:</strong> Calculate the possible yaw and pitch limit.</li>
+</ul>
+</li>
+<li>
+<strong>Crasher</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if the player is on impossible y-axis.</li>
+</ul>
+</li>
+<li>
+<strong>FastDrop</strong>
+<ul>
+<li>
+<strong>A:</strong> Check the time difference every drops.</li>
+</ul>
+</li>
+<li>
+<strong>FastEat</strong>
+<ul>
+<li>
+<strong>A:</strong> Check the animation time difference when the item is consumed.</li>
+</ul>
+</li>
+<li>
+<strong>FastThrow</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if the player is throwing so fast, just like java edition but different in bedrock edition.</li>
+</ul>
+</li>
+<li>
+<strong>ImpossiblePitch</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if the player pitch is valid.</li>
+</ul>
+</li>
+<li>
+<strong>InvalidPackets</strong>
+<ul>
+<li>
+<strong>A:</strong> Check the packet consistency is balance against the auth input and move event.</li>
+</ul>
+</li>
+<li>
+<strong>MessageSpoof</strong>
+<ul>
+<li>
+<strong>A:</strong> Checks if the message exceeds the minecraft chat limit.</li>
+</ul>
+</li>
+<li>
+<strong>SelfHit</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if the entity id are same with damager id.</li>
+</ul>
+</li>
+<li>
+<strong>Regen</strong> (BETA)
+<ul>
+<li>
+<strong>A:</strong> Check the heal rate is valid for the damage.</li>
+<li>
+<strong>B:</strong> Check the consistency and tolerance of heal rate is valid when player regenerated hearts.</li>
+</ul>
+</li>
+<li>
+<strong>Timer</strong> (DISABLED)
+<ul>
+<li>
+<strong>A:</strong> Check the packet time consistency if it is balanced.</li>
+<li>
+<strong>B:</strong> Check the ticks between packet is balanced.</li>
+</ul>
+</li>
+<li>
+<strong>Instabreak</strong>
+<ul>
+<li>
+<strong>A:</strong> Check the block break information and calculate the possible expected time to break the block.</li>
+</ul>
+</li>
+<li>
+<strong>WrongMining</strong>
+<ul>
+<li>
+<strong>A:</strong> Check the block break per seconds is valid for their gamemode.</li>
+</ul>
+</li>
+<li>
+<strong>BlockReach</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if the player is interacting block that is not currently interactable.</li>
+</ul>
+</li>
+<li>
+<strong>FillBlock</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if the player is placing many blocks in one instance.</li>
+</ul>
+</li>
+<li>
+<strong>Tower</strong> (BETA)
+<ul>
+<li>
+<strong>A:</strong> Check if the player is actually placing blocks upwards.</li>
+</ul>
+</li>
+<li>
+<strong>Spam</strong>
+<ul>
+<li>
+<strong>A:</strong> Check time consistency sending to many messages per seconds.</li>
+<li>
+<strong>B:</strong> Check characters that are repeated on the last message.</li>
+</ul>
+</li>
+<li>
+<strong>FastBow</strong> (BETA)
+<ul>
+<li>
+<strong>A:</strong> Check ticks consistency of the bow and calculate the time difference of the last shoot.</li>
+</ul>
+</li>
+<li>
+<strong>ImpossibleHit</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if the player has any opening chest or eating a food while hitting the entity.</li>
+</ul>
+</li>
+<li>
+<strong>Autoclick</strong>
+<ul>
+<li>
+<strong>A:</strong> Check the average speed of ticks clicked and calculate the average deviation.</li>
+<li>
+<strong>B:</strong> Check the last ticks clicked per hit.</li>
+<li>
+<strong>C:</strong> Check if the animation swing time difference are balanced.</li>
+</ul>
+</li>
+<li>
+<strong>Killaura</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if the player is breaking block while attacking.</li>
+<li>
+<strong>B:</strong> Calculate the delta pitch and yaw is valid.</li>
+<li>
+<strong>C:</strong> Check multiple entities were in combat by player has a valid distance to attack the another entity.</li>
+<li>
+<strong>D:</strong> Check player if it is actually hand has swingging animation or not.</li>
+<li>
+<strong>E:</strong> Checks the range of the entities if it is valid.</li>
+</ul>
+</li>
+<li>
+<strong>Reach</strong>
+<ul>
+<li>
+<strong>A:</strong> Check distance between the player, check also if the player is in top.</li>
+<li>
+<strong>B:</strong> Check distance squared between the player. Check also gamemode for possible reach distance.</li>
+<li>
+<strong>C:</strong> Check eye height and cuboid if it is actually hitting the player legitable.</li>
+</ul>
+</li>
+<li>
+<strong>Fly</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if the player is moving the air upwards.</li>
+<li>
+<strong>B:</strong> Check bad packet flags exploit affects the fly ability.</li>
+<li>
+<strong>C:</strong> Check block surroundings and air ticks if the player is legitable to fly.</li>
+</ul>
+</li>
+<li>
+<strong>AutoArmor</strong> (BETA)
+<ul>
+<li>
+<strong>A:</strong> Check if they opened actually the inventory.</li>
+</ul>
+</li>
+<li>
+<strong>ChestAura</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if player is opening so fast the inventory and too many transactions in one 1 seconds.</li>
+</ul>
+</li>
+<li>
+<strong>Cheststealer</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if the player is legitably getting items not so fast.</li>
+</ul>
+</li>
+<li>
+<strong>InventoryCleaner</strong> (BETA)
+<ul>
+<li>
+<strong>A:</strong> Check if the player is dropping many items once.</li>
+</ul>
+</li>
+<li>
+<strong>InventoryMove</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if the player is moving when inventory is open.</li>
+</ul>
+</li>
+<li>
+<strong>AirMovement</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if the player is moving air upwards legitably.</li>
+</ul>
+</li>
+<li>
+<strong>AntiImmobile</strong> (BETA)
+<ul>
+<li>
+<strong>A:</strong> Check the player if has a immobile flags and moving.</li>
+</ul>
+</li>
+<li>
+<strong>AntiVoid</strong> (BETA)
+<ul>
+<li>
+<strong>A:</strong> Check y is getting back to last y impossibly.</li>
+</ul>
+</li>
+<li>
+<strong>ClickTP</strong> (BETA)
+<ul>
+<li>
+<strong>A:</strong> Check if the player is teleporting without actually use of teleportation.</li>
+</ul>
+</li>
+<li>
+<strong>FastLadder</strong> (BETA)
+<ul>
+<li>
+<strong>A:</strong> Check if the player is climbing fast in ladders.</li>
+</ul>
+</li>
+<li>
+<strong>Jesus</strong> (DISABLED)
+<ul>
+<li>
+<strong>A:</strong> Check the player is walking through water.</li>
+</ul>
+</li>
+<li>
+<strong>Omnisprint</strong> (DISABLED)
+<ul>
+<li>
+<strong>A:</strong> Check keys input by the player.</li>
+</ul>
+</li>
+<li>
+<strong>Phase</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if the player stucks at the block, teleport when to a safe place.</li>
+</ul>
+</li>
+<li>
+<strong>Speed</strong>
+<ul>
+<li>
+<strong>A:</strong> Calculates the possible speed of the player.</li>
+</ul>
+</li>
+<li>
+<strong>Spider</strong> (DISABLED)
+<ul>
+<li>
+<strong>A:</strong> Check if the player is climbing or abnormally moving upwards to non-climbable blocks.</li>
+</ul>
+</li>
+<li>
+<strong>Step</strong> (DISABLED)
+<ul>
+<li>
+<strong>A:</strong> Check if the player is moving upwards so fast.</li>
+</ul>
+</li>
+<li>
+<strong>AntiBot</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if the player has a valid device os.</li>
+<li>
+<strong>B:</strong> Check if the player is using hack client a.k.a. toolbox.</li>
+</ul>
+</li>
+<li>
+<strong>EditionFaker</strong>
+<ul>
+<li>
+<strong>A:</strong> Check if the player has a valid platform.</li>
+</ul>
+</li>
+<li>
+<strong>ProxyBot</strong> (OPTIONAL)
+<ul>
+<li>
+<strong>A:</strong> Check player if it is using proxy, tor or other internet exploit ip services.</li>
+</ul>
+</li>
+<li>
+<strong>Scaffold</strong> (BETA)
+<ul>
+<li>
+<strong>A:</strong> Check if the hand item is null while placing multiple blocks in 1 instance.</li>
+<li>
+<strong>B:</strong> Check pitch if it is valid when placing blocks.</li>
+<li>
+<strong>C:</strong> Check pitch if it is valid and the block distance is valid.</li>
+<li>
+<strong>D:</strong> Check if the hand item is null while placing blocks.</li>
+</ul>
+</li>
+<li>
+<strong>Tower</strong> (BETA)
+<ul>
+<li>
+<strong>A:</strong> Check if the player moving upwards straight while placing blocks check if the player is actually placing the block downwards.</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Feedbacks and Issue's</h1><a id="user-content-feedbacks-and-issues" class="anchor" aria-label="Permalink: Feedbacks and Issue's" href="#feedbacks-and-issues"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>😁 Your feedback and reviews are highly appriciated, if you ever find a bug or false-positive in certain modules, you can create an issue in our <a href="https://github.com/ReinfyTeam/Zuri/issues">github repository</a>!</li>
+<li>👍 You can also view <a href="https://github.com/ReinfyTeam/Zuri/wiki/Well-Known-Issues">Frequently asked questions article</a> about common encountered issues to our plugin, be sure to read that before creating an issue!</li>
+</ul>
+<blockquote>
+<p>Please wait for the developer response to the issue since we have high amount of task and issue that we to do fix also ;)</p>
+</blockquote>

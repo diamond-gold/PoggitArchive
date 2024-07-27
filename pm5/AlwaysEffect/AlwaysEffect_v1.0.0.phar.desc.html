@@ -1,0 +1,53 @@
+<div class="markdown-heading"><h2 class="heading-element">General</h2><a id="user-content-general" class="anchor" aria-label="Permalink: General" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>AlwaysEffect is a Pocketmine plugin that works to forever apply effects in a set world</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Applying the effect forever</li>
+<li>Can adjust the selected effect as well as the amplifier</li>
+<li>Can set the world you want to add effects to forever</li>
+<li>Can change modes ranging from “whitelist”, “blacklist” and “allworlds”</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Configuration for AlwaysEffect plugin</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Change the mode you want, set “whitelist” or “blacklist” or "allworlds"</span>
+<span class="pl-c"><span class="pl-c">#</span> If the mode is “whitelist”, then only the world in the config is affected by the AlwaysEffect function.</span>
+<span class="pl-c"><span class="pl-c">#</span> If the mode is “blacklist”, then only the world in the config is not affected by the AlwaysEffect function.</span>
+<span class="pl-c"><span class="pl-c">#</span> If the mode is “allworlds”, then all worlds will be affected by the AlwaysEffect function.</span>
+<span class="pl-ent">mode</span>: <span class="pl-s">whitelist</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Define the worlds you want to affect or exclude based on the mode</span>
+<span class="pl-ent">worlds</span>:
+  - <span class="pl-s">lobby</span>
+  - <span class="pl-s">world</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Set a time for your world, time will be locked with your set effect</span>
+<span class="pl-c"><span class="pl-c">#</span> Set the effect according to the effect you add</span>
+<span class="pl-ent">set-effect</span>: <span class="pl-s">night_vision, speed</span>
+<span class="pl-ent">set-amplifier</span>: <span class="pl-c1">1</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Add the time you want</span>
+<span class="pl-c"><span class="pl-c">#</span> effect-list:</span>
+<span class="pl-c"><span class="pl-c">#</span> - absorption</span>
+<span class="pl-c"><span class="pl-c">#</span> - blindness</span>
+<span class="pl-c"><span class="pl-c">#</span> - fire_resistance</span>
+<span class="pl-c"><span class="pl-c">#</span> - haste</span>
+<span class="pl-c"><span class="pl-c">#</span> - health_boost</span>
+<span class="pl-c"><span class="pl-c">#</span> - hunger</span>
+<span class="pl-c"><span class="pl-c">#</span> - instant_damage</span>
+<span class="pl-c"><span class="pl-c">#</span> - instant_health</span>
+<span class="pl-c"><span class="pl-c">#</span> - invisibility</span>
+<span class="pl-c"><span class="pl-c">#</span> - jump_boost</span>
+<span class="pl-c"><span class="pl-c">#</span> - mining_fatigue</span>
+<span class="pl-c"><span class="pl-c">#</span> - nausea</span>
+<span class="pl-c"><span class="pl-c">#</span> - night_vision</span>
+<span class="pl-c"><span class="pl-c">#</span> - poison</span>
+<span class="pl-c"><span class="pl-c">#</span> - regeneration</span>
+<span class="pl-c"><span class="pl-c">#</span> - resistance</span>
+<span class="pl-c"><span class="pl-c">#</span> - saturation</span>
+<span class="pl-c"><span class="pl-c">#</span> - slowness</span>
+<span class="pl-c"><span class="pl-c">#</span> - speed</span>
+<span class="pl-c"><span class="pl-c">#</span> - strength</span>
+<span class="pl-c"><span class="pl-c">#</span> - water_breathing</span>
+<span class="pl-c"><span class="pl-c">#</span> - weakness</span>
+<span class="pl-c"><span class="pl-c">#</span> - wither</span></pre></div>
