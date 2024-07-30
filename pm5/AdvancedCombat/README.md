@@ -6,8 +6,8 @@
 Version: 1.0.1
     API: 5.0.0
     Updated: 24-07-2024 01:13:44 UTC
-Repo: https://github.com/AEDXDEV/Combat
+Repo: https://github.com/AEDXDEV/AdvancedCombat
 License: GPL-3.0
 Categories: General,API plugins,Fun
-Keywords: Combat,AdvancedCombat
+Keywords: AdvancedCombat,Combat
 ```
