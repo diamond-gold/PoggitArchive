@@ -1,0 +1,52 @@
+<div class="markdown-heading"><h1 class="heading-element">Combat Plugin</h1><a id="user-content-combat-plugin" class="anchor" aria-label="Permalink: Combat Plugin" href="#combat-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin prevents players from escaping during combat and allows you to check if a player is currently engaged in combat.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Prevent players from escaping during combat.</li>
+<li>Check if a player is in combat.</li>
+<li>Manage combat status programmatically.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">API</h2><a id="user-content-api" class="anchor" aria-label="Permalink: API" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Checking Combat Status</h3><a id="user-content-checking-combat-status" class="anchor" aria-label="Permalink: Checking Combat Status" href="#checking-combat-status"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-c1">AEDXDEV</span>\<span class="pl-v">Combat</span>\<span class="pl-v">Main</span> <span class="pl-k">as</span> <span class="pl-v">Combat</span>;
+
+<span class="pl-c">// Check if a player is in combat</span>
+<span class="pl-c">// Returns true if the player is in combat, false otherwise</span>
+<span class="pl-v">Combat</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">isInCombat</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Managing Combat Status</h3><a id="user-content-managing-combat-status" class="anchor" aria-label="Permalink: Managing Combat Status" href="#managing-combat-status"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-c1">AEDXDEV</span>\<span class="pl-v">Combat</span>\<span class="pl-v">Main</span> <span class="pl-k">as</span> <span class="pl-v">Combat</span>;
+
+<span class="pl-c">// Add two players to combat</span>
+<span class="pl-v">Combat</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">addCombat</span>(<span class="pl-s1"><span class="pl-c1">$</span>player1</span>, <span class="pl-s1"><span class="pl-c1">$</span>player2</span>);</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Retrieving Combat Information</h3><a id="user-content-retrieving-combat-information" class="anchor" aria-label="Permalink: Retrieving Combat Information" href="#retrieving-combat-information"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-c1">AEDXDEV</span>\<span class="pl-v">Combat</span>\<span class="pl-v">Main</span> <span class="pl-k">as</span> <span class="pl-v">Combat</span>;
+
+<span class="pl-c">// Get the player who is in combat with the specified player</span>
+<span class="pl-c">// Returns the other player or null if not found</span>
+<span class="pl-v">Combat</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getPlayerCombat</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Checking If Two Players Are in the Same Combat</h3><a id="user-content-checking-if-two-players-are-in-the-same-combat" class="anchor" aria-label="Permalink: Checking If Two Players Are in the Same Combat" href="#checking-if-two-players-are-in-the-same-combat"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-c1">AEDXDEV</span>\<span class="pl-v">Combat</span>\<span class="pl-v">Main</span> <span class="pl-k">as</span> <span class="pl-v">Combat</span>;
+
+<span class="pl-c">// Check if two players are in the same combat</span>
+<span class="pl-c">// Returns true if the players are in combat with each other, false otherwise</span>
+<span class="pl-v">Combat</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">isInSameCombat</span>(<span class="pl-s1"><span class="pl-c1">$</span>player1</span>, <span class="pl-s1"><span class="pl-c1">$</span>player2</span>);</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Removing Combat Status</h3><a id="user-content-removing-combat-status" class="anchor" aria-label="Permalink: Removing Combat Status" href="#removing-combat-status"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-c1">AEDXDEV</span>\<span class="pl-v">Combat</span>\<span class="pl-v">Main</span> <span class="pl-k">as</span> <span class="pl-v">Combat</span>;
+
+<span class="pl-c">// Remove a player from combat</span>
+<span class="pl-c">// Returns false if the player was not in combat</span>
+<span class="pl-v">Combat</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">removeCombat</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Configure the plugin through <code>config.yml</code>:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">Enable</span>: <span class="pl-s">true </span><span class="pl-c"><span class="pl-c">#</span> To enable/disable the plugin.</span>
+<span class="pl-ent">CancelIfNotInSameCombat</span>: <span class="pl-s">false </span><span class="pl-c"><span class="pl-c">#</span> To cancel actions if players are not in the same combat.</span>
+<span class="pl-ent">sendMessages</span>: <span class="pl-s">true </span><span class="pl-c"><span class="pl-c">#</span> To send messages during combat events.</span>
+<span class="pl-ent">Messages</span>:
+  <span class="pl-ent">Start</span>: <span class="pl-s"><span class="pl-pds">"</span>§eYou are now in combat with {PLAYER}<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> When a player enters combat with another player</span>
+  <span class="pl-ent">InSameCombat</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou cannot proceed because you are not fighting the same opponent. Please focus on your current combat!<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> When a player tries to engage a different opponent while in combat</span>
+  <span class="pl-ent">End</span>: <span class="pl-s"><span class="pl-pds">"</span>§eYou are no longer in combat.<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> When a player's combat status ends</span>
+<span class="pl-ent">Time</span>: <span class="pl-c1">10</span> <span class="pl-c"><span class="pl-c">#</span> the combat duration (in secons)</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Other</h2><a id="user-content-other" class="anchor" aria-label="Permalink: Other" href="#other"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li><a href="https://youtube.com/@AEDXDEV" rel="nofollow">YouTube Channel</a></li>
+</ul>
