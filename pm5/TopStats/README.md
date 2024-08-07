@@ -8,6 +8,6 @@ Version: 0.3.0
     Updated: 24-07-2024 00:15:26 UTC
 Repo: https://github.com/nicholass003/TopStats
 License: LGPL-3.0
-Categories: General,Fun,Teleportation,Informational
-Keywords: leaderboard,playerstats,statisctic,stats,top,topleaderboard,topstats
+Categories: General,Fun,Economy,Teleportation,Informational
+Keywords: leaderboard,playerstats,statisctic,stats,top,topleaderboard,topstats,topstat,topkill,topmoney,topplayer
 ```
