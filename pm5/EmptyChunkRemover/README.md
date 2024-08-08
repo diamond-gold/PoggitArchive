@@ -9,5 +9,5 @@ Version: 1.0
 Repo: https://github.com/HGRgamer/EmptyChunkRemover
 License: GPL-3.0
 Categories: World Editing and Management,Developer Tools,World Generators
-Keywords: HGRgamer,World,Chunks,EmptyChunks,EmptyChunkRemover,Storage
+Keywords: bedrock,bedwars,chunk,empty,emptychunks,importing,in-memory,java,memory,porting,remote,size,skyblock,storage,void,world
 ```
