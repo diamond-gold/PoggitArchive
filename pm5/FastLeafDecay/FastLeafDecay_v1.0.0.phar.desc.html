@@ -1,0 +1,39 @@
+<div class="markdown-heading"><h1 class="heading-element">FastLeafDecay</h1><a id="user-content-fastleafdecay" class="anchor" aria-label="Permalink: FastLeafDecay" href="#fastleafdecay"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A Pocketmine-MP plugin that accelerates leaf decay when trees are felled, enhancing gameplay by speeding up the visual impact of tree felling.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Accelerated Leaf Decay</strong>: When a tree is cut down, nearby leaves will begin to decay faster, simulating the natural process of leaf fall.</li>
+<li>
+<strong>Configurable Decay Delay</strong>: Customize the leaf decay delay with configurable minimum and maximum values.</li>
+<li>
+<strong>Search Radius Configuration</strong>: Customize the radius at which leaves will be affected by tree felling.</li>
+<li>
+<strong>Efficient Processing</strong>: Uses a queuing system to handle leaf decay efficiently, ensuring smooth performance even with large trees.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Default Config</h2><a id="user-content-default-config" class="anchor" aria-label="Permalink: Default Config" href="#default-config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> FastLeafDecay Configuration</span>
+
+<span class="pl-c"><span class="pl-c">#</span> The minimum delay (in seconds) before a leaf block decays after a nearby wood block is broken.</span>
+<span class="pl-c"><span class="pl-c">#</span> Must be a positive integer (&gt;= 1).</span>
+<span class="pl-ent">min_leaf_decay_delay</span>: <span class="pl-c1">1</span>
+
+<span class="pl-c"><span class="pl-c">#</span> The maximum delay (in seconds) before a leaf block decays after a nearby wood block is broken.</span>
+<span class="pl-c"><span class="pl-c">#</span> Must be a positive integer (&gt;= min_leaf_decay_delay).</span>
+<span class="pl-ent">max_leaf_decay_delay</span>: <span class="pl-c1">5</span>
+
+<span class="pl-c"><span class="pl-c">#</span> The maximum radius (in blocks) around the broken wood block within which leaves will be checked for decay.</span>
+<span class="pl-c"><span class="pl-c">#</span> Must be a positive integer (&gt;= 1).</span>
+<span class="pl-ent">max_search_radius</span>: <span class="pl-c1">6</span>
+</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Upcoming Features</h2><a id="user-content-upcoming-features" class="anchor" aria-label="Permalink: Upcoming Features" href="#upcoming-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Currently none planned. You can contribute or suggest for new features.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Additional Notes</h2><a id="user-content-additional-notes" class="anchor" aria-label="Permalink: Additional Notes" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/AIPTU/FastLeafDecay/issues">here</a>.</li>
+<li>We accept all contributions! If you want to contribute, please make a pull request in <a href="https://github.com/AIPTU/FastLeafDecay/pulls">here</a>.</li>
+<li>Icons made from <a href="https://www.flaticon.com" rel="nofollow">www.flaticon.com</a>
+</li>
+</ul>
