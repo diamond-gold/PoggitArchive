@@ -1,0 +1,104 @@
+<div class="markdown-heading"><h1 class="heading-element">Combat Plugin</h1><a id="user-content-combat-plugin" class="anchor" aria-label="Permalink: Combat Plugin" href="#combat-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin prevents players from escaping during combat, manages combat interactions, and handles penalties for leaving combat.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Combat Management</strong>: Automatically adds players to combat when they attack each other and removes them after a certain time.</li>
+<li>
+<strong>Combat Penalty</strong>: Penalties for players leaving combat include health reduction or item loss.</li>
+<li>
+<strong>Same Combat Enforcement</strong>: Optionally cancel interactions if players aren't engaged with the same opponent.</li>
+<li>
+<strong>Messages</strong>: Sends customizable messages during combat events.</li>
+<li>
+<strong>Combat Events</strong>: Custom events for when combat starts, attacks happen during combat, and when combat ends.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">API</h2><a id="user-content-api" class="anchor" aria-label="Permalink: API" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Checking Combat Status</h3><a id="user-content-checking-combat-status" class="anchor" aria-label="Permalink: Checking Combat Status" href="#checking-combat-status"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-c1">AEDXDEV</span>\<span class="pl-v">Combat</span>\<span class="pl-v">Main</span> <span class="pl-k">as</span> <span class="pl-v">Combat</span>;
+
+<span class="pl-c">// Check if a player is in combat</span>
+<span class="pl-c">// Returns true if the player is in combat, false otherwise</span>
+<span class="pl-v">Combat</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">isInCombat</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Adding Players to Combat</h3><a id="user-content-adding-players-to-combat" class="anchor" aria-label="Permalink: Adding Players to Combat" href="#adding-players-to-combat"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-c1">AEDXDEV</span>\<span class="pl-v">Combat</span>\<span class="pl-v">Main</span> <span class="pl-k">as</span> <span class="pl-v">Combat</span>;
+
+<span class="pl-c">// Add two players to combat</span>
+<span class="pl-v">Combat</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">addCombat</span>(<span class="pl-s1"><span class="pl-c1">$</span>player1</span>, <span class="pl-s1"><span class="pl-c1">$</span>player2</span>);</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Retrieving Combat Information</h3><a id="user-content-retrieving-combat-information" class="anchor" aria-label="Permalink: Retrieving Combat Information" href="#retrieving-combat-information"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-c1">AEDXDEV</span>\<span class="pl-v">Combat</span>\<span class="pl-v">Main</span> <span class="pl-k">as</span> <span class="pl-v">Combat</span>;
+
+<span class="pl-c">// Get the player who is in combat with the specified player</span>
+<span class="pl-c">// Returns the opponent player or null if not found</span>
+<span class="pl-v">Combat</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getPlayerCombat</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Removing Players from Combat</h3><a id="user-content-removing-players-from-combat" class="anchor" aria-label="Permalink: Removing Players from Combat" href="#removing-players-from-combat"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-c1">AEDXDEV</span>\<span class="pl-v">Combat</span>\<span class="pl-v">Main</span> <span class="pl-k">as</span> <span class="pl-v">Combat</span>;
+
+<span class="pl-c">// Remove a player from combat</span>
+<span class="pl-v">Combat</span>::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">removeCombat</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Handling Combat Events</h3><a id="user-content-handling-combat-events" class="anchor" aria-label="Permalink: Handling Combat Events" href="#handling-combat-events"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Custom combat events are fired during combat interactions:</p>
+<ul>
+<li>CombatStartEvent: When combat begins between two players.</li>
+<li>CombatAttackEvent: When one player attacks another during combat.</li>
+<li>CombatEndEvent: When combat ends between two players.</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Penalty System</h3><a id="user-content-penalty-system" class="anchor" aria-label="Permalink: Penalty System" href="#penalty-system"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If a player leaves combat, they may be penalized based on the configuration:</p>
+<ul>
+<li>Health Reduction: Reduces player health by a specified amount.</li>
+<li>Item Loss: Clears the player's inventory if enabled.</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">How to use Events</h3><a id="user-content-how-to-use-events" class="anchor" aria-label="Permalink: How to use Events" href="#how-to-use-events"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-c1">AEDXDEV</span>\<span class="pl-v">Combat</span>\<span class="pl-v">Main</span> <span class="pl-k">as</span> <span class="pl-v">Combat</span>;
+<span class="pl-k">use</span> <span class="pl-c1">AEDXDEV</span>\<span class="pl-v">Combat</span>\event\<span class="pl-v">CombatStartEvent</span>;
+<span class="pl-k">use</span> <span class="pl-c1">AEDXDEV</span>\<span class="pl-v">Combat</span>\event\<span class="pl-v">CombatAttackEvent</span>;
+<span class="pl-k">use</span> <span class="pl-c1">AEDXDEV</span>\<span class="pl-v">Combat</span>\event\<span class="pl-v">CombatEndEvent</span>;
+<span class="pl-c">// Called a player attack a player</span>
+<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onCombatStart</span>(<span class="pl-smi"><span class="pl-smi">CombatStartEvent</span></span> <span class="pl-s1"><span class="pl-c1">$</span>event</span>): <span class="pl-smi">void</span>{
+  <span class="pl-s1"><span class="pl-c1">$</span>player1</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getPlayer1</span>(); <span class="pl-c">// damager</span>
+  <span class="pl-s1"><span class="pl-c1">$</span>player2</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getPlayer2</span>(); <span class="pl-c">// victim</span>
+  <span class="pl-s1"><span class="pl-c1">$</span>time</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getTime</span>();
+  <span class="pl-c">// change the time</span>
+  <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">setTime</span>(<span class="pl-c1">10</span>); <span class="pl-c">// 10 seconds</span>
+  <span class="pl-c">// use penalty</span>
+  <span class="pl-k">if</span> (!<span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getPenalty</span>()){
+    <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">setPenalty</span>(<span class="pl-c1">true</span>);
+  }
+  <span class="pl-c">// for 1vs1</span>
+  <span class="pl-k">if</span> (!<span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getHidePlayers</span>()){
+    <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">setHidePlayers</span>(<span class="pl-c1">true</span>);
+  }
+}
+<span class="pl-c">// Called when a player is in combat attacked</span>
+<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onCombatAttack</span>(<span class="pl-smi"><span class="pl-smi">CombatAttackEvent</span></span> <span class="pl-s1"><span class="pl-c1">$</span>event</span>): <span class="pl-smi">void</span>{
+  <span class="pl-s1"><span class="pl-c1">$</span>damager</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getDamager</span>();
+  <span class="pl-s1"><span class="pl-c1">$</span>entity</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getEntity</span>(); <span class="pl-c">// victim</span>
+  <span class="pl-k">if</span> (!<span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">inInSameCombat</span>()){ <span class="pl-c">// attack a player not </span>
+    <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">cancel</span>();
+  }
+}
+<span class="pl-c">// Called when the combat time ends</span>
+<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onCombatEnd</span>(<span class="pl-smi"><span class="pl-smi">CombatEndEvent</span></span> <span class="pl-s1"><span class="pl-c1">$</span>event</span>): <span class="pl-smi">void</span>{
+  <span class="pl-s1"><span class="pl-c1">$</span>player1</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getPlayer1</span>();
+  <span class="pl-s1"><span class="pl-c1">$</span>player2</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getPlayer2</span>();
+}</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Configure the plugin through <code>config.yml</code>:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">Enable</span>: <span class="pl-s">true </span><span class="pl-c"><span class="pl-c">#</span> Enables or disables the plugin.</span>
+<span class="pl-ent">CancelIfNotInSameCombat</span>: <span class="pl-s">false </span><span class="pl-c"><span class="pl-c">#</span> Cancels actions if players are not engaged in the same combat.</span>
+<span class="pl-ent">Penalty</span>: <span class="pl-s">false </span><span class="pl-c"><span class="pl-c">#</span> Enables or disables penalties for leaving combat.</span>
+<span class="pl-ent">Penalties</span>:
+  <span class="pl-ent">Health</span>: <span class="pl-c1">5</span> <span class="pl-c"><span class="pl-c">#</span> The amount of health to reduce when penalizing a player.</span>
+  <span class="pl-ent">ItemLoss</span>: <span class="pl-s">true </span><span class="pl-c"><span class="pl-c">#</span> Whether the player will lose their items upon leaving combat.</span>
+<span class="pl-ent">sendMessages</span>: <span class="pl-s">true </span><span class="pl-c"><span class="pl-c">#</span> Enables or disables messages during combat events.</span>
+<span class="pl-ent">Messages</span>:
+  <span class="pl-ent">Start</span>: <span class="pl-s"><span class="pl-pds">"</span>§eYou are now in combat with {PLAYER}<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> When combat begins.</span>
+  <span class="pl-ent">InSameCombat</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou cannot proceed because you are not fighting the same opponent!<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> When a player tries to attack a different opponent.</span>
+  <span class="pl-ent">End</span>: <span class="pl-s"><span class="pl-pds">"</span>§eYou are no longer in combat.<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> When combat ends.</span>
+  <span class="pl-ent">QuitPenalty</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou have been penalized for leaving combat.<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> When a player is penalized for leaving combat.</span>
+<span class="pl-ent">Time</span>: <span class="pl-c1">10</span> <span class="pl-c"><span class="pl-c">#</span> Duration of the combat period (in seconds).</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Other</h2><a id="user-content-other" class="anchor" aria-label="Permalink: Other" href="#other"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li><a href="https://youtube.com/@AEDXDEV" rel="nofollow">YouTube Channel</a></li>
+</ul>

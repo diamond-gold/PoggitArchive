@@ -1,13 +1,13 @@
 # AdvancedCombat
-<img src="https://raw.githubusercontent.com/AEDXDEV/AdvancedCombat/5c52a8b1733105c4fba8705bd1445ec3f616aff5/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/AEDXDEV/AdvancedCombat/9b4707ca6100e689a4de23bb819edc6d26472159/icon.png" width="128" height="128" />
 
-## This plugin prevents players from escaping during combat and allows you to check if a player is currently engaged in combat.
+## This plugin prevents players from escaping during combat, manages combat interactions, and handles penalties for leaving combat.
 ```properties
-Version: 1.0.2
+Version: 1.1.1
     API: 5.0.0
-    Updated: 02-08-2024 23:37:33 UTC
+    Updated: 20-08-2024 13:39:40 UTC
 Repo: https://github.com/AEDXDEV/AdvancedCombat
 License: GPL-3.0
 Categories: General,API plugins,Fun
-Keywords: AdvancedCombat,Combat
+Keywords: AdvancedCombat,Combat,1vs1
 ```

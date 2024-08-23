@@ -1,0 +1,63 @@
+<div class="markdown-heading"><h1 class="heading-element">BetterBrag</h1><a id="user-content-betterbrag" class="anchor" aria-label="Permalink: BetterBrag" href="#betterbrag"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Advanced bragging plugin for Pocketmine-MP.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>GUI Based bragging system.</li>
+<li>Commands for commencing and ending brags.</li>
+<li>Ability to list all other ongoing brags.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/brag</td>
+<td>Brag management command.</td>
+<td>betterbrag.brag.command</td>
+</tr>
+<tr>
+<td>/brag start</td>
+<td>Start bragging about the item within your hand.</td>
+<td>betterbrag.command.start</td>
+</tr>
+<tr>
+<td>/brag stop</td>
+<td>Stop bragging about the item you are currently bragging about.</td>
+<td>betterbrag.command.stop</td>
+</tr>
+<tr>
+<td>/brag list</td>
+<td>List all current bragging players &amp; corresponding items.</td>
+<td>betterbrag.command.list</td>
+</tr>
+<tr>
+<td>/brag view 
+</td>
+<td>View the item a player is bragging about.</td>
+<td>betterbrag.command.view</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">API</h2><a id="user-content-api" class="anchor" aria-label="Permalink: API" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>To obtain an instance of this plugin's main class:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> snare\<span class="pl-v">BetterBrag</span>\<span class="pl-v">BetterBrag</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>instance</span> = <span class="pl-v">BetterBrag</span>::<span class="pl-en">getBetterBrag</span>();</pre></div>
+<p>Various methods can be found below:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>instance</span>-&gt;<span class="pl-en">getBragItems</span>(); <span class="pl-c">// returns an array with player name as key, Item instance as value.</span>
+
+<span class="pl-s1"><span class="pl-c1">$</span>instance</span>-&gt;<span class="pl-en">isBragging</span>(<span class="pl-v">Player</span> <span class="pl-s1"><span class="pl-c1">$</span>player</span>); <span class="pl-c">// returns true or false depending on whether or not the specified player is bragging.</span>
+
+<span class="pl-s1"><span class="pl-c1">$</span>instance</span>-&gt;<span class="pl-en">startBragging</span>(<span class="pl-v">Player</span> <span class="pl-s1"><span class="pl-c1">$</span>player</span>); <span class="pl-c">// causes the specified player to brag about the item in their hand.</span>
+
+<span class="pl-s1"><span class="pl-c1">$</span>instance</span>-&gt;<span class="pl-en">stopBragging</span>(<span class="pl-v">Player</span> <span class="pl-s1"><span class="pl-c1">$</span>player</span>); <span class="pl-c">// returns true if able to stop playing bragging, false if not.</span>
+
+<span class="pl-s1"><span class="pl-c1">$</span>instance</span>-&gt;<span class="pl-en">getBraggingItem</span>(<span class="pl-v">Player</span> <span class="pl-s1"><span class="pl-c1">$</span>player</span>); <span class="pl-c">// returns Item instance if player is bragging, null if not.</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Reach out on discord <code>snare_gale</code> if having any issues or if you need help with configuration.</p>
