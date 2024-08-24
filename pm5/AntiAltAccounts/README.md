@@ -7,5 +7,5 @@ Version: 1.0.0
 Repo: https://github.com/Terpz710/AntiAltAccounts
 License: Apache-2.0
 Categories: General,Anti-Griefing Tools,Admin Tools
-Keywords: Alt,Anti,AntiAlt,Account,AntiAccount
+Keywords: Account,Alt,Anti,AntiAccount,AntiAlt
 ```
