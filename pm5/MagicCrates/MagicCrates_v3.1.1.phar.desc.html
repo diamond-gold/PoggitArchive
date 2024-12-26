@@ -1,0 +1,127 @@
+<div class="markdown-heading"><h1 class="heading-element">MagicCrates <a href="https://poggit.pmmp.io/p/MagicCrates" rel="nofollow"><img src="https://camo.githubusercontent.com/4cb3067eecb416f5d1b9066e27dd6c0c1637cc1d2d478fded500de856c2928f2/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646f776e6c6f6164732f4d61676963437261746573" alt="" data-canonical-src="https://poggit.pmmp.io/shield.downloads/MagicCrates" style="max-width: 100%;"></a>
+</h1><a id="user-content-magiccrates-" class="anchor" aria-label="Permalink: MagicCrates " href="#magiccrates-"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Add customizable crates to your server.</p>
+<ul>
+<li>Add as many crate types as you want</li>
+<li>Item and command rewards</li>
+<li>Open crates with a nice animation</li>
+<li>In-game preview menu with the crate contents including the rarity of each item</li>
+<li>Dynamic rewards</li>
+<li>
+<a href="https://github.com/CustomiesDevs/Customies">Customies</a> support</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">How to use</h2><a id="user-content-how-to-use" class="anchor" aria-label="Permalink: How to use" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Commands and permissions</h3><a id="user-content-commands-and-permissions" class="anchor" aria-label="Permalink: Commands and permissions" href="#commands-and-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Command aliases: <code>/magiccrates</code>, <code>/mc</code></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/magiccrates</code></td>
+<td>MagicCrates Command</td>
+<td>magiccrates.cmd</td>
+<td>True</td>
+</tr>
+<tr>
+<td><code>/magiccrates receive</code></td>
+<td>Receive all your unreceived rewards</td>
+<td>magiccrates.cmd.receive</td>
+<td>True</td>
+</tr>
+<tr>
+<td><code>/magiccrates receive show</code></td>
+<td>Show all rewards you have not yet received</td>
+<td>magiccrates.cmd.receive.show</td>
+<td>True</td>
+</tr>
+<tr>
+<td><code>/magiccrates create</code></td>
+<td>Toggle crate Create mode</td>
+<td>magiccrates.cmd.create</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>/magiccrates remove</code></td>
+<td>Toggle crate Remove mode</td>
+<td>magiccrates.cmd.remove</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>/magiccrates key &lt;crate_type&gt; [amount] [player]</code></td>
+<td>Give a crate key to a player</td>
+<td>magiccrates.cmd.key</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>/magiccrates key all &lt;crate_type&gt; [amount]</code></td>
+<td>Give a crate key to all the online players</td>
+<td>magiccrates.cmd.key.all</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>/magiccrates reward set &lt;crate_type&gt; &lt;player&gt; &lt;reward&gt; &lt;amount&gt;</code></td>
+<td>Set the amount of times a reward is received</td>
+<td>magiccrates.cmd.reward.set</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>/magiccrates reward reset crate &lt;crate_type&gt;</code></td>
+<td>Reset the amount of times all rewards from the crate are received</td>
+<td>magiccrates.cmd.reward.reset</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>/magiccrates reward reset reward &lt;crate_type&gt; &lt;reward&gt;</code></td>
+<td>Reset the amount of times a reward is received from a crate type</td>
+<td>magiccrates.cmd.reward.reset</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>/magiccrates reward reset player &lt;player&gt; [crate_type] [reward]</code></td>
+<td>Reset the amount of times a player has received rewards from crates</td>
+<td>magiccrates.cmd.reward.reset</td>
+<td>OP</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">Create a new crate</h3><a id="user-content-create-a-new-crate" class="anchor" aria-label="Permalink: Create a new crate" href="#create-a-new-crate"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Use the command <code>/mc create</code>
+</li>
+<li>Click on the chest where you want your crate. (double chests do not work)</li>
+<li>Select the crate type in the dropdown menu and click <em>Submit</em>.</li>
+<li>Click <strong>save crate</strong>
+</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element">Remove an existing crate</h3><a id="user-content-remove-an-existing-crate" class="anchor" aria-label="Permalink: Remove an existing crate" href="#remove-an-existing-crate"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>You can remove crates with a command:</p>
+<ol>
+<li>Use the command <code>/mc remove</code>
+</li>
+<li>Click on the crate you want to remove</li>
+<li>Click <em>Remove</em>
+</li>
+</ol>
+<p>You can also remove crates by breaking the chest:</p>
+<ol>
+<li>Destroy a crate chest</li>
+<li>Click <em>Remove</em>
+</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element">Create a crate key</h3><a id="user-content-create-a-crate-key" class="anchor" aria-label="Permalink: Create a crate key" href="#create-a-crate-key"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>You can only open crates by using a crate key. Each crate type has its own key.<br>
+You can create keys using the command <code>/mc key &lt;crate_type&gt; [amount] [player]</code><br>
+When you have a crate key, you can open the matching crate by clicking on the crate.</p>
+<div class="markdown-heading"><h2 class="heading-element">Crates</h2><a id="user-content-crates" class="anchor" aria-label="Permalink: Crates" href="#crates"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>All crates from the same Crate Type have the exact same content,
+and when opening a crate of a certain type, a random reward will be given to the player.</p>
+<div class="markdown-heading"><h3 class="heading-element">Crate Types</h3><a id="user-content-crate-types" class="anchor" aria-label="Permalink: Crate Types" href="#crate-types"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>You can customize or add your own crates in <code>crate_types.json</code>.</p>
+<p>More info about crate types can be found <a href="https://github.com/Hebbinkpro/MagicCrates">on Github</a>.</p>

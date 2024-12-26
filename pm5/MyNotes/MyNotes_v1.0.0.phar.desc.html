@@ -1,0 +1,126 @@
+<div class="markdown-heading"><h1 class="heading-element">MyNotes Plugin</h1><a id="user-content-mynotes-plugin" class="anchor" aria-label="Permalink: MyNotes Plugin" href="#mynotes-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A Pocketmine-MP plugin that allows players to create, manage, and share personal notes in-game.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Create Notes</strong>: Players can create new notes with a title and content.</li>
+<li>
+<strong>Edit Notes</strong>: Players can edit the content of existing notes.</li>
+<li>
+<strong>Delete Notes</strong>: Players can delete their notes.</li>
+<li>
+<strong>Share Notes</strong>: Players can share their notes with other players.</li>
+<li>
+<strong>Database Integration</strong>: Notes are stored in a database, ensuring persistence across server restarts.</li>
+<li>
+<strong>User Interface</strong>: Interactive forms for creating, viewing, editing, and deleting notes.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/notes</code>: Main command for managing notes.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>mynotes.command</code>: Allows the player to use the <code>/notes</code> command.
+<ul>
+<li>Default: <code>true</code>
+</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Default Config</h2><a id="user-content-default-config" class="anchor" aria-label="Permalink: Default Config" href="#default-config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Database settings</span>
+<span class="pl-ent">database</span>:
+  <span class="pl-c"><span class="pl-c">#</span> The database type. "sqlite" and "mysql" are supported.</span>
+  <span class="pl-ent">type</span>: <span class="pl-s">sqlite</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Edit these settings only if you choose "sqlite".</span>
+  <span class="pl-ent">sqlite</span>:
+    <span class="pl-c"><span class="pl-c">#</span> The file name of the database in the plugin data folder.</span>
+    <span class="pl-c"><span class="pl-c">#</span> You can also put an absolute path here.</span>
+    <span class="pl-ent">file</span>: <span class="pl-s">data.sqlite</span>
+  <span class="pl-c"><span class="pl-c">#</span> Edit these settings only if you choose "mysql".</span>
+  <span class="pl-ent">mysql</span>:
+    <span class="pl-ent">host</span>: <span class="pl-s">127.0.0.1</span>
+    <span class="pl-c"><span class="pl-c">#</span> Avoid using the "root" user for security reasons.</span>
+    <span class="pl-ent">username</span>: <span class="pl-s">root</span>
+    <span class="pl-ent">password</span>: <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+    <span class="pl-ent">schema</span>: <span class="pl-s">your_schema</span>
+  <span class="pl-c"><span class="pl-c">#</span> The maximum number of simultaneous SQL queries</span>
+  <span class="pl-c"><span class="pl-c">#</span> Recommended: 1 for sqlite, 2 for MySQL. You may want to further increase this value if your MySQL connection is very slow.</span>
+  <span class="pl-ent">worker-limit</span>: <span class="pl-c1">1</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Titles used in various parts of the MyNotes plugin</span>
+<span class="pl-ent">titles</span>:
+  <span class="pl-ent">main_menu</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§bMyNotes<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Title for the main menu</span>
+  <span class="pl-ent">create_note</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§aCreate New Note<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Title for creating a new note</span>
+  <span class="pl-ent">view_notes</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§bYour Notes<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Title for viewing your notes</span>
+  <span class="pl-ent">delete_note</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§cDelete Note<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Title for deleting a note</span>
+  <span class="pl-ent">confirm_delete_note</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§cConfirm Deletion<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Title for confirming the deletion of a note</span>
+  <span class="pl-ent">edit_note</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§eEdit Note<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Title for editing a note</span>
+  <span class="pl-ent">note_content</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§aNote Content<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Title for viewing note content</span>
+  <span class="pl-ent">share_note</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§dShare a Note<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Title for sharing a note</span>
+  <span class="pl-ent">confirm_share_note</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§cConfirm Share<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Title for confirming the sharing of a note</span>
+  <span class="pl-ent">select_player</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§dSelect Player<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Title for selecting a player to share a note with</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Messages displayed to users during various interactions</span>
+<span class="pl-ent">messages</span>:
+  <span class="pl-ent">no_notes</span>: <span class="pl-s"><span class="pl-pds">"</span>§eYou don't have any notes yet.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Message when the user has no notes</span>
+  <span class="pl-ent">select_action</span>: <span class="pl-s"><span class="pl-pds">"</span>§eChoose what you want to do:<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Prompt to select an action</span>
+  <span class="pl-ent">select_note</span>: <span class="pl-s"><span class="pl-pds">"</span>§eSelect a note to view:<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Prompt to select a note to view</span>
+  <span class="pl-ent">select_note_delete</span>: <span class="pl-s"><span class="pl-pds">"</span>§eSelect a note to delete:<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Prompt to select a note to delete</span>
+  <span class="pl-ent">select_note_edit</span>: <span class="pl-s"><span class="pl-pds">"</span>§eSelect a note to edit:<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Prompt to select a note to edit</span>
+  <span class="pl-ent">select_note_share</span>: <span class="pl-s"><span class="pl-pds">"</span>§eSelect a note to share:<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Prompt to select a note to share</span>
+  <span class="pl-ent">select_player</span>: <span class="pl-s"><span class="pl-pds">"</span>§eSelect a player to share with:<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Prompt to select a player to share with</span>
+  <span class="pl-ent">note_created</span>: <span class="pl-s"><span class="pl-pds">"</span>§aNote '%s' has been created successfully.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Confirmation when a note is created</span>
+  <span class="pl-ent">note_updated</span>: <span class="pl-s"><span class="pl-pds">"</span>§eNote '%s' has been updated successfully.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Confirmation when a note is updated</span>
+  <span class="pl-ent">note_deleted</span>: <span class="pl-s"><span class="pl-pds">"</span>§cNote '%s' has been deleted.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Confirmation when a note is deleted</span>
+  <span class="pl-ent">note_renamed</span>: <span class="pl-s"><span class="pl-pds">"</span>§eNote '%s' has been renamed to '%s' and updated successfully.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Confirmation when a note is renamed and updated</span>
+  <span class="pl-ent">note_shared</span>: <span class="pl-s"><span class="pl-pds">"</span>§aNote '%s' has been shared with %s.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Confirmation when a note is shared</span>
+  <span class="pl-ent">note_received</span>: <span class="pl-s"><span class="pl-pds">"</span>§aYou have received a note '%s' from %s.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Notification when a note is received</span>
+  <span class="pl-ent">no_changes</span>: <span class="pl-s"><span class="pl-pds">"</span>§eNo changes were made to the note.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Message when no changes are made to a note</span>
+  <span class="pl-ent">note_pinned</span>: <span class="pl-s"><span class="pl-pds">"</span>§aNote '%s' has been pinned.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Confirmation when a note is pinned</span>
+  <span class="pl-ent">note_unpinned</span>: <span class="pl-s"><span class="pl-pds">"</span>§aNote '%s' has been unpinned.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Confirmation when a note is unpinned</span>
+  <span class="pl-ent">note_not_found</span>: <span class="pl-s"><span class="pl-pds">"</span>§cNote not found or data is invalid.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Error when a note is not found</span>
+  <span class="pl-ent">player_not_found</span>: <span class="pl-s"><span class="pl-pds">"</span>§cPlayer %s not found.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Error when a player is not found</span>
+  <span class="pl-ent">no_players_online</span>: <span class="pl-s"><span class="pl-pds">"</span>§cThere are no other players online to share your note with.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Message when no players are online to share with</span>
+  <span class="pl-ent">command_only_ingame</span>: <span class="pl-s"><span class="pl-pds">"</span>§cThis command can only be used in-game.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Error when a command is used outside of the game</span>
+  <span class="pl-ent">confirm_delete_note</span>: <span class="pl-s"><span class="pl-pds">"</span>§eAre you sure you want to delete the note: §c%s?<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Confirmation prompt for deleting a note</span>
+  <span class="pl-ent">confirm_share_note</span>: <span class="pl-s"><span class="pl-pds">"</span>§eAre you sure you want to share the note: §c%s §eto §6%s?<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Confirmation prompt for sharing a note</span>
+  <span class="pl-ent">note_title_empty</span>: <span class="pl-s"><span class="pl-pds">"</span>§cNote title cannot be empty.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Error when a note title is empty</span>
+  <span class="pl-ent">note_title_exists</span>: <span class="pl-s"><span class="pl-pds">"</span>§cA note with the title '%s' already exists.<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Error when a note title already exists</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Button labels for various actions</span>
+<span class="pl-ent">buttons</span>:
+  <span class="pl-ent">create_note</span>: <span class="pl-s"><span class="pl-pds">"</span>§2Create Note<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Button text for creating a note</span>
+  <span class="pl-ent">delete_note</span>: <span class="pl-s"><span class="pl-pds">"</span>§cDelete Note<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Button text for deleting a note</span>
+  <span class="pl-ent">view_notes</span>: <span class="pl-s"><span class="pl-pds">"</span>§bView Notes<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Button text for viewing notes</span>
+  <span class="pl-ent">edit_note</span>: <span class="pl-s"><span class="pl-pds">"</span>§eEdit Note<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Button text for editing a note</span>
+  <span class="pl-ent">share_note</span>: <span class="pl-s"><span class="pl-pds">"</span>§dShare Note<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Button text for sharing a note</span>
+  <span class="pl-ent">back</span>: <span class="pl-s"><span class="pl-pds">"</span>§cBack<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Button text for going back</span>
+  <span class="pl-ent">text_yes</span>: <span class="pl-s"><span class="pl-pds">"</span>§aYes<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Button text for confirming an action</span>
+  <span class="pl-ent">text_no</span>: <span class="pl-s"><span class="pl-pds">"</span>§cNo<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Button text for denying an action</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Icons used for various actions (only paths from Minecraft are supported)</span>
+<span class="pl-ent">icons</span>:
+  <span class="pl-ent">create</span>: <span class="pl-s"><span class="pl-pds">"</span>textures/ui/recipe_book_icon<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Icon for creating a note</span>
+  <span class="pl-ent">delete</span>: <span class="pl-s"><span class="pl-pds">"</span>textures/ui/book_trash_default<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Icon for deleting a note</span>
+  <span class="pl-ent">view</span>: <span class="pl-s"><span class="pl-pds">"</span>textures/items/paper<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Icon for viewing notes</span>
+  <span class="pl-ent">edit</span>: <span class="pl-s"><span class="pl-pds">"</span>textures/items/book_enchanted<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Icon for editing a note</span>
+  <span class="pl-ent">share</span>: <span class="pl-s"><span class="pl-pds">"</span>textures/ui/share_google<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Icon for sharing a note</span>
+  <span class="pl-ent">back</span>: <span class="pl-s"><span class="pl-pds">"</span>textures/ui/arrowLeft<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Icon for going back</span>
+  <span class="pl-ent">player</span>: <span class="pl-s"><span class="pl-pds">"</span>textures/ui/icon_steve<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Icon for a player</span>
+</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Upcoming Features</h2><a id="user-content-upcoming-features" class="anchor" aria-label="Permalink: Upcoming Features" href="#upcoming-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Currently none planned. You can contribute or suggest for new features.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Additional Notes</h2><a id="user-content-additional-notes" class="anchor" aria-label="Permalink: Additional Notes" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/AIPTU/MyNotes/issues">here</a>.</li>
+<li>We accept all contributions! If you want to contribute, please make a pull request in <a href="https://github.com/AIPTU/MyNotes/pulls">here</a>.</li>
+<li>Icons made from <a href="https://www.flaticon.com" rel="nofollow">www.flaticon.com</a>
+</li>
+</ul>

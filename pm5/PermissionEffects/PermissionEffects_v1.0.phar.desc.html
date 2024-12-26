@@ -1,0 +1,32 @@
+<div class="markdown-heading"><h1 class="heading-element">Plugin offers</h1><a id="user-content-plugin-offers" class="anchor" aria-label="Permalink: Plugin offers" href="#plugin-offers"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Give players potion effects based on their permissions <br>
+</li>
+<li>Per world customization<br>
+</li>
+<li>Global permission: permissionEffects.*<br>
+</li>
+<li>Effects will not be removed when player: Respawns, drink milk or change world</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Config file</h1><a id="user-content-config-file" class="anchor" aria-label="Permalink: Config file" href="#config-file"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<blockquote>
+<p>You can add/edit or remove effects on <a href="resources/config.json">config.json</a><br></p>
+</blockquote>
+<div class="highlight highlight-source-json"><pre>{
+    <span class="pl-ent">"messages"</span>: {
+        <span class="pl-ent">"playerEffectsGiven"</span>: <span class="pl-s"><span class="pl-pds">"</span>§aYou have obtained your effects!<span class="pl-pds">"</span></span>
+    },
+    <span class="pl-ent">"effects"</span>: [
+        {
+            <span class="pl-ent">"effectName"</span>: <span class="pl-s"><span class="pl-pds">"</span>speed<span class="pl-pds">"</span></span>,
+            <span class="pl-ent">"amplifier"</span>: <span class="pl-c1">1</span>,
+            <span class="pl-ent">"visibleBubbles"</span>: <span class="pl-c1">true</span>,
+            <span class="pl-ent">"ambient"</span>: <span class="pl-c1">false</span>,
+            <span class="pl-ent">"overrideColor"</span>: [<span class="pl-c1">147</span>, <span class="pl-c1">36</span>, <span class="pl-c1">35</span>],
+            <span class="pl-ent">"allowedWorlds"</span>: [
+                <span class="pl-s"><span class="pl-pds">"</span>world<span class="pl-pds">"</span></span>
+            ]
+        }
+
+    ]
+}</pre></div>

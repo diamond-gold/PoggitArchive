@@ -1,0 +1,17 @@
+<div class="markdown-heading"><h1 class="heading-element">SystemCps</h1><a id="user-content-systemcps" class="anchor" aria-label="Permalink: SystemCps" href="#systemcps"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>SystemCps is a user click per second counter system, which also includes a cps limiter, meaning you can configure the cps limit and maximum alerts.</p>
+<div class="markdown-heading"><h1 class="heading-element">Config</h1><a id="user-content-config" class="anchor" aria-label="Permalink: Config" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> CPS Limit Configuration</span>
+<span class="pl-ent">cps_limit</span>: <span class="pl-c1">20</span> <span class="pl-c"><span class="pl-c">#</span> The maximum CPS allowed before a warning is issued</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Warning Settings</span>
+<span class="pl-ent">max_warnings</span>: <span class="pl-c1">4</span> <span class="pl-c"><span class="pl-c">#</span> The maximum number of warnings a player can receive before being banned</span></pre></div>
+<div class="markdown-heading"><h1 class="heading-element">Form</h1><a id="user-content-form" class="anchor" aria-label="Permalink: Form" href="#form"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Form to be sent when the CPS limit is exceeded #</span>
+<span class="pl-ent">title_warning</span>: <span class="pl-s"><span class="pl-pds">"</span>Warning<span class="pl-pds">"</span></span>
+<span class="pl-ent">content_warning</span>: <span class="pl-s"><span class="pl-pds">"</span>It is forbidden to exceed the CPS limit, avoid doing so to avoid being expelled<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h1 class="heading-element">Messages</h1><a id="user-content-messages" class="anchor" aria-label="Permalink: Messages" href="#messages"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">msg_kick</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou have been expelled for exceeding the cps limit<span class="pl-pds">"</span></span>
+<span class="pl-ent">broadcast_msg_kick</span>: <span class="pl-s"><span class="pl-pds">"</span>§e{NAME} §cWas expelled for exceeding the cps limit<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Contact</h2><a id="user-content-contact" class="anchor" aria-label="Permalink: Contact" href="#contact"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://discord.com/users/1165097093480853634" rel="nofollow"><img src="https://camo.githubusercontent.com/34c35ccdcba5dd7fe50a405e73d7eeb87a54c9fd913123dae4337d017a935e73/68747470733a2f2f6c616e796172642e636e7261642e6465762f6170692f313136353039373039333438303835333633343f7468656d653d6461726b2662673d30303563666626616e696d617465643d66616c736526686964654469736372696d3d7472756526626f726465725261646975733d333070782669646c654d6573736167653d48656c6c6f" alt="Discord Presence" data-canonical-src="https://lanyard.cnrad.dev/api/1165097093480853634?theme=dark&amp;bg=005cff&amp;animated=false&amp;hideDiscrim=true&amp;borderRadius=30px&amp;idleMessage=Hello" style="max-width: 100%;"></a></p>

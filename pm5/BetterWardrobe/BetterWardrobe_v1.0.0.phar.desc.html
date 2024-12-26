@@ -1,0 +1,53 @@
+<div class="markdown-heading"><h1 class="heading-element">BetterWardrobe</h1><a id="user-content-betterwardrobe" class="anchor" aria-label="Permalink: BetterWardrobe" href="#betterwardrobe"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Advanced wardrobe plugin for Pocketmine-MP.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Ability to store up to 9 full or partial armor sets.</li>
+<li>Ability to manipulate and equip sets via a GUI or command.</li>
+<li>Option to view the wardrobe of other players.</li>
+<li>Customisable messages and permissions for each armor slot.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/wardrobe manage</td>
+<td>Access your wardrobe.</td>
+<td>betterwardrobe.manage.command</td>
+</tr>
+<tr>
+<td>/wardrobe equip</td>
+<td>Equip a set.</td>
+<td>betterwardrobe.equip.command</td>
+</tr>
+<tr>
+<td>/wardrobe view</td>
+<td>View another players wardrobe.</td>
+<td>betterwardrobe.view.command</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Set permissions</h2><a id="user-content-set-permissions" class="anchor" aria-label="Permalink: Set permissions" href="#set-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>There are 9 sets, use betterwardrobe.slot.{setnumber}, so if I wanted a player to have access to the 5th slot, I'd
+grant the player the betterwardrobe.slot.5 permission, all players defaultly have access to the first slot.</p>
+<div class="markdown-heading"><h2 class="heading-element">API</h2><a id="user-content-api" class="anchor" aria-label="Permalink: API" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> snare\<span class="pl-v">BetterWardrobe</span>\<span class="pl-v">BetterWardrobe</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>instance</span> = <span class="pl-v">BetterWardrobe</span>::<span class="pl-en">getInstance</span>();</pre></div>
+<p>Various methods can be found below:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>manager</span> = <span class="pl-s1"><span class="pl-c1">$</span>instance</span>-&gt;<span class="pl-en">getSessionManager</span>();
+
+<span class="pl-s1"><span class="pl-c1">$</span>session</span> = <span class="pl-s1"><span class="pl-c1">$</span>manager</span>-&gt;<span class="pl-en">getSession</span>(string <span class="pl-s1"><span class="pl-c1">$</span>name</span>);
+
+<span class="pl-s1"><span class="pl-c1">$</span>wardrobe</span> = <span class="pl-s1"><span class="pl-c1">$</span>session</span>-&gt;<span class="pl-en">getUsableWardrobe</span>(); <span class="pl-c">// returns a complex array, see code for details.</span>
+
+<span class="pl-s1"><span class="pl-c1">$</span>wardrobe</span>-&gt;<span class="pl-en">addItem</span>(int <span class="pl-s1"><span class="pl-c1">$</span>setId</span>, int <span class="pl-s1"><span class="pl-c1">$</span>slot</span>, <span class="pl-v">Item</span> <span class="pl-s1"><span class="pl-c1">$</span>item</span>, bool <span class="pl-s1"><span class="pl-c1">$</span>swap</span> = <span class="pl-c1">false</span>); <span class="pl-c">// again, confusing function, check session class.</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Reach out on discord <code>snare_gale</code> if having any issues or if you need help with configuration.</p>

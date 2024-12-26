@@ -1,0 +1,65 @@
+<div class="markdown-heading"><h2 class="heading-element">Overview</h2><a id="user-content-overview" class="anchor" aria-label="Permalink: Overview" href="#overview"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The PlayerTitles plugin for PocketMine-MP allows players to view and manage their titles through a user-friendly UI. Server admins can create new titles either through the configuration file or by using in-game commands. Each player's currently equipped title is stored in an SQLite database, ensuring persistent title management.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>UI for Title Management</strong>: Players can view their unlocked and locked titles via an intuitive UI.</li>
+<li>
+<strong>Title Creation</strong>: Admins can create new titles through the configuration file or by using in-game commands.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the PlayerTitles plugin.</li>
+<li>Place the plugin <code>.phar</code> file into the <code>plugins</code> directory of your PocketMine-MP server.</li>
+<li>Restart your server to load the plugin.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin uses a <code>config.yml</code> file for configuration. You can define titles and their display formats in this file. Example configuration:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> (!) DO NOT CHANGE (!)</span>
+<span class="pl-ent">version</span>: <span class="pl-c1">1</span>
+
+<span class="pl-c"><span class="pl-c">#</span> (!) NOTICE (!)</span>
+<span class="pl-c"><span class="pl-c">#</span> You can use '&amp;' for color codes.</span>
+<span class="pl-c"><span class="pl-c">#</span> use {title} in RankSystems config.yml to replace it with player's title</span>
+<span class="pl-c"><span class="pl-c">#</span> e.g: "{chat_ranks_prefix}{chat_name-color}{display_name}{title}{chat_format}{message}"</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Permissions will be automatically applied. e.g:</span>
+<span class="pl-c"><span class="pl-c">#</span> playertitles.title.example</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Configurable information for the plugin.</span>
+<span class="pl-ent">settings</span>:
+  <span class="pl-ent">titles-per-page</span>: <span class="pl-c1">5</span> <span class="pl-c"><span class="pl-c">#</span> How many titles to show per page</span>
+  <span class="pl-ent">message</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;aSelected Title: '{title}&amp;a'<span class="pl-pds">"</span></span>
+  <span class="pl-ent">no-title-perm</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;cYou don't have access to this title!<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">titles</span>:
+  <span class="pl-ent">example</span>: <span class="pl-c"><span class="pl-c">#</span> Identifier </span>
+    <span class="pl-ent">display</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;8[&amp;cExample&amp;8]&amp;r<span class="pl-pds">"</span></span>
+  <span class="pl-ent">test</span>:
+    <span class="pl-ent">display</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;5Test&amp;r<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> If the command exists, e.g "titles", the plugin will automatically unregister the vanilla command.</span>
+<span class="pl-c"><span class="pl-c">#</span> IF renaming it to a vanilla command, make sure you wont need to use the command as it will no longer be available unless the</span>
+<span class="pl-c"><span class="pl-c">#</span> command name is changed.</span>
+<span class="pl-ent">commands</span>:
+  <span class="pl-ent">titles</span>:
+    <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> Main command</span>
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Open titles menu<span class="pl-pds">"</span></span>
+    <span class="pl-ent">aliases</span>:
+      - <span class="pl-s">titles</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Configurable information for the forms available by the plugin.</span>
+<span class="pl-ent">forms</span>:
+  <span class="pl-ent">titles</span>:
+    <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;8Titles<span class="pl-pds">"</span></span>
+    <span class="pl-ent">back</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;8Previous Page<span class="pl-pds">"</span></span>
+    <span class="pl-ent">next</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;8Next Page<span class="pl-pds">"</span></span>
+    
+
+<span class="pl-c"><span class="pl-c">#</span> Forms</span>
+<span class="pl-ent">forms</span>:
+  <span class="pl-ent">titles</span>:
+    <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;8Titles<span class="pl-pds">"</span></span>
+    <span class="pl-ent">back</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;8Previous Page<span class="pl-pds">"</span></span>
+    <span class="pl-ent">next</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;r&amp;8Next Page<span class="pl-pds">"</span></span></pre></div>

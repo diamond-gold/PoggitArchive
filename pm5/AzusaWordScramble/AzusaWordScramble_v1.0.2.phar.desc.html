@@ -1,0 +1,71 @@
+<div class="markdown-heading"><h2 class="heading-element">General</h2><a id="user-content-general" class="anchor" aria-label="Permalink: General" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>AzusaWordScramble is a Pocketmine plug-in that works to provide word stacking questions and if players answer, they will get random money.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>The question will be broadcast and the player must correctly answer the word stacking question</li>
+<li>There are already 250+ words about minecraft, can be set in word.yml</li>
+<li>Custom message</li>
+<li>Custom prize</li>
+<li>Custom economy</li>
+<li>Added a sound when a question appears, answers the question, and no one answers the question.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Command</h2><a id="user-content-command" class="anchor" aria-label="Permalink: Command" href="#command"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Default</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/wordscramble</code></td>
+<td>Op</td>
+<td>azusawordscramble.command</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Configuration for AzusaWordScramble plugin</span>
+
+<span class="pl-ent">scramble_interval</span>: <span class="pl-c1">60</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message when the player successfully answers the wordscramble</span>
+<span class="pl-ent">scramble_completion_message</span>: <span class="pl-s"><span class="pl-pds">"</span>§aCongratulations! §e{player} §agot the wordscramble right §6{money} §aMoney<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message when no one answers the wordscramble</span>
+<span class="pl-ent">no_answer_message</span>: <span class="pl-s"><span class="pl-pds">"</span>§cNo one answered wordscramble, move on to the next wordscramble...<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Delay when scramble is missed or answered</span>
+<span class="pl-ent">scramble_delay_solved</span>: <span class="pl-c1">5</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Rewards when players successfully answer wordscramble</span>
+<span class="pl-ent">prize_min</span>: <span class="pl-c1">1000</span>
+<span class="pl-ent">prize_max</span>: <span class="pl-c1">10000</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Economy you are using (Must use LibPiggyEconomy)</span>
+<span class="pl-ent">Economy</span>:
+  <span class="pl-ent">type</span>: <span class="pl-s"><span class="pl-pds">"</span>bedrockeconomy<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> Change this to your specific economy provider if needed (bedrockeconomy/economyapi)</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Depend</h2><a id="user-content-depend" class="anchor" aria-label="Permalink: Depend" href="#depend"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Authors</th>
+<th>Github</th>
+<th>Lib</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cooldogepm</td>
+<td><a href="https://github.com/cooldogepm">Cooldogepm</a></td>
+<td><a href="https://github.com/cooldogepm/BedrockEconomy">BedrockEconomy</a></td>
+</tr>
+<tr>
+<td>Mathchat900</td>
+<td><a href="https://github.com/mathchat900">Mathchat900</a></td>
+<td><a href="https://github.com/mathchat900/EconomyAPI-PM5">EconomyAPI</a></td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,115 @@
+<div class="markdown-heading"><h1 class="heading-element">BetterPrisons</h1><a id="user-content-betterprisons" class="anchor" aria-label="Permalink: BetterPrisons" href="#betterprisons"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Advanced prisons plugin for Pocketmine-MP.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Ranking up and prestiging system.</li>
+<li>Customisable command executing and permission giving system per rank up/prestige.</li>
+<li>Optional rank system and scorehud addons.</li>
+<li>Compatibility with bedrock economy.</li>
+<li>Customisable messages and multipliers.</li>
+<li>Optional requirement for players to mine a specified number of blocks before prestiging.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download plugin phar from <a href="https://poggit.pmmp.io/ci/snarerectify/BetterPrisons/~" rel="nofollow">here</a>
+</li>
+<li>Add to your servers' plugin folder.</li>
+<li>Restart server.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/rankup</td>
+<td>Rankup command.</td>
+<td>betterprisons.rankup.command</td>
+</tr>
+<tr>
+<td>/prestige</td>
+<td>Prestige Command</td>
+<td>betterprisons.prestige.command</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">ScoreHud Addon</h2><a id="user-content-scorehud-addon" class="anchor" aria-label="Permalink: ScoreHud Addon" href="#scorehud-addon"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Use the following in your scorehud.yml (<a href="https://poggit.pmmp.io/p/ScoreHud" rel="nofollow">ScoreHud</a> must be downloaded for this feature).</p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{scorehudx.prisonrank}</td>
+<td>Displays the players current prison rank.</td>
+</tr>
+<tr>
+<td>{scorehudx.prisonprestige}</td>
+<td>Displays the players current prestige.</td>
+</tr>
+<tr>
+<td>{scorehudx.prisonrequiredblocks}</td>
+<td>Displays the number of blocks players need to mine to be able to prestige.</td>
+</tr>
+<tr>
+<td>{scorehudx.prisonrequiredrank}</td>
+<td>Displays the amount of money the player requires to rank up.</td>
+</tr>
+<tr>
+<td>{scorehudx.prisonrequiredprestige}</td>
+<td>Displays the amount of money the player requires to prestige.</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">RankSystem Addon</h2><a id="user-content-ranksystem-addon" class="anchor" aria-label="Permalink: RankSystem Addon" href="#ranksystem-addon"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Use the following in your config.yml's nametag and chat format (<a href="https://poggit.pmmp.io/p/RankSystem" rel="nofollow">RankSystem</a> must be downloaded for this feature).</p>
+<table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{prison_rank}</td>
+<td>Displays the players current prison rank.</td>
+</tr>
+<tr>
+<td>{prison_prestige}</td>
+<td>Displays the players current prestige.</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">API</h2><a id="user-content-api" class="anchor" aria-label="Permalink: API" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>To obtain an instance of this plugin's main class:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> snare\<span class="pl-v">BetterPrisons</span>\<span class="pl-v">BetterPrisons</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>instance</span> = <span class="pl-v">BetterPrisons</span>::<span class="pl-en">getBetterPrisons</span>();</pre></div>
+<p>Various methods can be found below:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>manager</span> = <span class="pl-s1"><span class="pl-c1">$</span>instance</span>-&gt;<span class="pl-en">getDataSessionManager</span>();
+
+<span class="pl-s1"><span class="pl-c1">$</span>session</span> = <span class="pl-s1"><span class="pl-c1">$</span>manager</span>-&gt;<span class="pl-en">getDataSession</span>(string <span class="pl-s1"><span class="pl-c1">$</span>name</span>);
+
+<span class="pl-s1"><span class="pl-c1">$</span>rank</span> = <span class="pl-s1"><span class="pl-c1">$</span>session</span>-&gt;<span class="pl-en">getRank</span>();
+
+<span class="pl-s1"><span class="pl-c1">$</span>prestige</span> = <span class="pl-s1"><span class="pl-c1">$</span>session</span>-&gt;<span class="pl-en">getPrestige</span>();
+
+<span class="pl-s1"><span class="pl-c1">$</span>blocksBroken</span> = <span class="pl-s1"><span class="pl-c1">$</span>session</span>-&gt;<span class="pl-en">getBlocksBroken</span>();</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Setup</h2><a id="user-content-setup" class="anchor" aria-label="Permalink: Setup" href="#setup"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>If you wish to use the block requirement per prestige feature, ensure all world names which you wish block breaking to count towards the target
+are named solely as a single letter, I.E: Mine E is in the world 'e'.</li>
+<li>If the ScoreHud bugs out, restart your server, currently I do not understand why this occurs.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Reach out on discord <code>snare_gale</code> if having any issues or if you need help with configuration.</p>

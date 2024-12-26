@@ -1,13 +1,13 @@
 # WelcomeMessage
-<img src="https://raw.githubusercontent.com/skyss0fly/WelcomeMessage/d0e153f8881fa771ba7e77701123b7773f6d84f2/Icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/skyss0fly/WelcomeMessage/b68f67f3f01cf6d6c61c52129b2cdf8ca1751673/Icon.png" width="128" height="128" />
 
-## Simple but customisable message
+## A simple welcome message plugin thats customizable
 ```properties
-Version: 1.9
+Version: 2.1
     API: 5.0.0
-    Updated: 06-06-2023 01:01:16 UTC
+    Updated: 25-12-2024 09:01:04 UTC
 Repo: https://github.com/skyss0fly/WelcomeMessage
 License: GPL-3.0
 Categories: General,Miscellaneous,Chat-Related
-Keywords: JoinMessage,Welcome,WelcomeMessage,Welcomer
+Keywords: Greeter,JoinMessage,LeaveMessage,Welcome,WelcomeMessage,Welcomer
 ```

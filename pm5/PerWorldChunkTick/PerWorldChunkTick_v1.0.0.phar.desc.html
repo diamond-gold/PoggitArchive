@@ -1,0 +1,41 @@
+<div class="markdown-heading"><h2 class="heading-element">About</h2><a id="user-content-about" class="anchor" aria-label="Permalink: About" href="#about"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This Pocketmine-MP plugin gives the ability to set chunk tick radius per world. Allowing you to disable or set chunk ticking radius to a custom value per-world for better performance.</p>
+<p>Note: This is same as chunk-ticking.tick-radius given in pocketmine.yml with the ability to customize it per world. Disabling chunk-ticking(by setting value 0) may lead to your plugins or server to show weird/unexpected results.</p>
+<p>Chunk ticking includes tree/plants/crop growth, light calculations etc. This is similar to simulation distance in Minecraft.</p>
+<div class="markdown-heading"><h2 class="heading-element">Why use it ?</h2><a id="user-content-why-use-it-" class="anchor" aria-label="Permalink: Why use it ?" href="#why-use-it-"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>You may not know that but chunk ticking is a very expensive operation, specially with many online players spread over large distance.</p>
+<p>Even without many online players , disabling chunk ticking also massively reduce cpu spike/server load while loading chunks as light calculations, etc need not to be done (talking upto 50% improvement in many cases)</p>
+<div class="markdown-heading"><h2 class="heading-element">How to use?</h2><a id="user-content-how-to-use" class="anchor" aria-label="Permalink: How to use?" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Just download the <code>.phar</code> file.</li>
+<li>Upload it to your <code>plugins</code> folder.</li>
+<li>Edit config.yml to your needs</li>
+<li>Restart the server.</li>
+<li>Done!</li>
+</ul>
+<p>Worlds like server lobby, gamemodes like bedwars, skywars, etc that do not need chunk-ticking should set it to 0 whereas worlds like faction , survival where player count is high and chunk ticking is required should reduce the value as desired (default 3)</p>
+<div class="markdown-heading"><h2 class="heading-element">Config</h2><a id="user-content-config" class="anchor" aria-label="Permalink: Config" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Set value to 0 to disable the chunk-ticking</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Default tick radius for worlds that are not listed in the world-tick-radius section</span>
+<span class="pl-ent">default-tick-radius</span>: <span class="pl-c1">3</span>
+
+<span class="pl-ent">world-tick-radius</span>:
+  <span class="pl-ent">world</span>: <span class="pl-c1">3</span>
+  <span class="pl-ent">world2</span>: <span class="pl-c1">2</span>
+  <span class="pl-ent">world3</span>: <span class="pl-c1">0</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Todo</h2><a id="user-content-todo" class="anchor" aria-label="Permalink: Todo" href="#todo"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>[] Allow to set block ids not to tick (same as disable-block-ticking) per world</li>
+<li>[] Make commands to modify it in-game</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Additional Notes</h2><a id="user-content-additional-notes" class="anchor" aria-label="Permalink: Additional Notes" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you encounter any bugs or glitches, please create an issue <a href="https://github.com/HGRgamer/PerWorldChunkTick/issues/new">here</a>.</p>
+<p>Any suggestions you may have to improve PerWorldChunkTick are welcome. Feel free to create an issue <a href="https://github.com/HGRgamer/PerWorldChunkTick/issues/new">here</a>.</p>
+<p>If you want to contribute to this project, create a pull request <a href="https://github.com/HGRgamer/PerWorldChunkTick/pulls">here</a>.</p>
+<div class="markdown-heading"><h2 class="heading-element">Credits</h2><a id="user-content-credits" class="anchor" aria-label="Permalink: Credits" href="#credits"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Logo by <a href="https://www.123rf.com/profile_lineartestpilot" rel="nofollow">lineartestpilot</a>
+</li>
+<li>Plugin by HGRgamer</li>
+</ul>

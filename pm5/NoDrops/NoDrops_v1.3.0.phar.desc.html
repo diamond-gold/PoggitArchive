@@ -1,0 +1,69 @@
+<div class="markdown-heading"><h1 class="heading-element">NoDrops</h1><a id="user-content-nodrops" class="anchor" aria-label="Permalink: NoDrops" href="#nodrops"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://poggit.pmmp.io/p/NoDrops" rel="nofollow"><img src="https://camo.githubusercontent.com/19015f12bb7926ea2c9e6b0b035456302718d94c99f558a6beb26080f0dac88e/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4e6f44726f7073" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/NoDrops" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/NoDrops" rel="nofollow"><img src="https://camo.githubusercontent.com/115635650a315dd9594be12baa75e3141d486912ba3bfdbbca8327023953dff1/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f4e6f44726f7073" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/NoDrops" style="max-width: 100%;"></a></p>
+<p>A PocketMine-MP plugin to prohibit players from dropping their items.</p>
+<div class="markdown-heading"><h1 class="heading-element">Features</h1><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Auto update checker.</li>
+<li>Permission bypass.</li>
+<li>World blacklist and whitelist support.</li>
+<li>Option to enable or disable messages.</li>
+<li>Supports <code>&amp;</code> as formatting codes.</li>
+<li>Option to enable or disable all item drops.</li>
+<li>Custom item that can't be dropped.</li>
+<li>Lightweight and open source ❤️</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Default Config</h1><a id="user-content-default-config" class="anchor" aria-label="Permalink: Default Config" href="#default-config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span> Do not change this (Only for internal use)!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-c1">1.2</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Set this to true if you want to use the blacklisted-worlds settings.</span>
+<span class="pl-c"><span class="pl-c">#</span> If both enable-world-blacklist and disable-world-blacklist are set to the same setting,</span>
+<span class="pl-c"><span class="pl-c">#</span> dropped items will be enabled for all worlds.</span>
+<span class="pl-ent">enable-world-blacklist</span>: <span class="pl-c1">false</span>
+<span class="pl-c"><span class="pl-c">#</span> If enable-world-blacklist is set to true, dropped items will be enabled for all worlds,</span>
+<span class="pl-c"><span class="pl-c">#</span> except the worlds mentioned here.</span>
+<span class="pl-ent">blacklisted-worlds</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>blacklistedworld1<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>blacklistedworld2<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Set this to true if you want to use the whitelisted-worlds settings.</span>
+<span class="pl-c"><span class="pl-c">#</span> If both enable-world-blacklist and disable-world-blacklist are set to the same setting,</span>
+<span class="pl-c"><span class="pl-c">#</span> dropped items will be disabled for all worlds.</span>
+<span class="pl-ent">enable-world-whitelist</span>: <span class="pl-c1">false</span>
+<span class="pl-c"><span class="pl-c">#</span> If enable-world-whitelist is set to true, dropped items will be disabled for all worlds,</span>
+<span class="pl-c"><span class="pl-c">#</span> except the worlds mentioned here.</span>
+<span class="pl-ent">whitelisted-worlds</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>whitelistedworld1<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>whitelistecworld2<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> If this is set to true, players who try to drop items will be sent a message telling them they cannot do so.</span>
+<span class="pl-ent">enable-message</span>: <span class="pl-c1">true</span>
+<span class="pl-c"><span class="pl-c">#</span> Message used when canceling a player dropping an item.</span>
+<span class="pl-c"><span class="pl-c">#</span> Use "&amp;" to color the message.</span>
+<span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cYou can't drop your items here<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> If this is set to true, all items can't be dropped.</span>
+<span class="pl-ent">enable-all-items</span>: <span class="pl-c1">false</span>
+<span class="pl-c"><span class="pl-c">#</span> List of items that can't be dropped.</span>
+<span class="pl-c"><span class="pl-c">#</span> If the item has meta, you can use the format "id:meta".</span>
+<span class="pl-ent">list-items</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>oak_log<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>diamond_ore<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>apple<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>diamond_pickaxe<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>oak_sapling<span class="pl-pds">"</span></span>
+...
+</pre></div>
+<div class="markdown-heading"><h1 class="heading-element">Upcoming Features</h1><a id="user-content-upcoming-features" class="anchor" aria-label="Permalink: Upcoming Features" href="#upcoming-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Currently none planned. You can contribute or suggest for new features.</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Additional Notes</h1><a id="user-content-additional-notes" class="anchor" aria-label="Permalink: Additional Notes" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/AIPTU/NoDrops/issues">here</a>.</li>
+<li>We accept all contributions! If you want to contribute, please make a pull request in <a href="https://github.com/AIPTU/NoDrops/pulls">here</a>.</li>
+<li>Icons made from <a href="https://www.flaticon.com" rel="nofollow">www.flaticon.com</a>
+</li>
+</ul>
