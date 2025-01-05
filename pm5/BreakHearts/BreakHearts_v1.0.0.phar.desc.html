@@ -1,0 +1,93 @@
+<div class="markdown-heading"><h1 class="heading-element">BreakHearts Plugin</h1><a id="user-content-breakhearts-plugin" class="anchor" aria-label="Permalink: BreakHearts Plugin" href="#breakhearts-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>BreakHearts</strong> is a PocketMine-MP plugin that enhances the experience of breaking certain blocks, granting players hearts and applying special abilities. When players break designated blocks, they gain health and unique effects based on the type of block broken.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Players gain extra health when breaking specific blocks.</li>
+<li>Special effects are applied depending on the type of block broken.</li>
+<li>Configurable blocks and effects through a YAML configuration file.</li>
+<li>The ability to reward players with bonus items such as diamonds.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the plugin and place it in your <code>plugins/</code> folder.</li>
+<li>Restart the server to load the plugin.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin uses a configuration file <code>config.yml</code> to define which blocks grant hearts and the corresponding effects. Below is the structure and an example configuration.</p>
+<div class="markdown-heading"><h3 class="heading-element">Example <code>config.yml</code>:</h3><a id="user-content-example-configyml" class="anchor" aria-label="Permalink: Example config.yml:" href="#example-configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+<span class="pl-ent">heart-gained-message</span>: <span class="pl-s"><span class="pl-pds">"</span>You gained a {heart} heart!<span class="pl-pds">"</span></span>
+<span class="pl-ent">blocks</span>:
+  <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">Diamond Ore</span><span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Diamond<span class="pl-pds">"</span></span>
+  <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">Gold Ore</span><span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Gold<span class="pl-pds">"</span></span>
+  <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">Iron Ore</span><span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Iron<span class="pl-pds">"</span></span>
+  <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">Coal Ore</span><span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Coal<span class="pl-pds">"</span></span>
+<span class="pl-ent">effects</span>:
+  <span class="pl-ent">Diamond</span>:
+    <span class="pl-ent">LEVITATION</span>:
+      <span class="pl-ent">duration</span>: <span class="pl-c1">600</span>
+      <span class="pl-ent">amplifier</span>: <span class="pl-c1">2</span>
+  <span class="pl-ent">Gold</span>:
+    <span class="pl-ent">REGENERATION</span>:
+      <span class="pl-ent">duration</span>: <span class="pl-c1">600</span>
+      <span class="pl-ent">amplifier</span>: <span class="pl-c1">2</span>
+  <span class="pl-ent">Iron</span>:
+    <span class="pl-ent">RESISTANCE</span>:
+      <span class="pl-ent">duration</span>: <span class="pl-c1">600</span>
+      <span class="pl-ent">amplifier</span>: <span class="pl-c1">2</span>
+    <span class="pl-ent">STRENGTH</span>:
+      <span class="pl-ent">duration</span>: <span class="pl-c1">600</span>
+      <span class="pl-ent">amplifier</span>: <span class="pl-c1">1</span>
+  <span class="pl-ent">Coal</span>:
+    <span class="pl-ent">NIGHT_VISION</span>:
+      <span class="pl-ent">duration</span>: <span class="pl-c1">1200</span>
+      <span class="pl-ent">amplifier</span>: <span class="pl-c1">1</span>
+    <span class="pl-ent">SPEED</span>:
+      <span class="pl-ent">duration</span>: <span class="pl-c1">600</span>
+      <span class="pl-ent">amplifier</span>: <span class="pl-c1">2</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Configuration Breakdown:</h3><a id="user-content-configuration-breakdown" class="anchor" aria-label="Permalink: Configuration Breakdown:" href="#configuration-breakdown"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>enabled</code>: Whether the plugin is enabled (default: true).</li>
+<li>
+<code>heart-gained-message</code>: Message sent to the player when they gain a heart. The <code>{heart}</code> placeholder is replaced with the block type.</li>
+<li>
+<code>blocks</code>: A mapping of block names to heart types. When a block is broken, the corresponding heart type is granted.</li>
+<li>
+<code>effects</code>: A list of effects that will be applied based on the heart type. Effects are specified by name, with <code>duration</code> and <code>amplifier</code> options.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">How It Works</h2><a id="user-content-how-it-works" class="anchor" aria-label="Permalink: How It Works" href="#how-it-works"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>The plugin listens for <code>BlockBreakEvent</code>.</li>
+<li>When a player breaks a block listed in the configuration, the plugin grants the player a heart and applies the relevant effects.</li>
+<li>Special items (e.g., diamonds) are also given if defined.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Supported Blocks and Effects</h2><a id="user-content-supported-blocks-and-effects" class="anchor" aria-label="Permalink: Supported Blocks and Effects" href="#supported-blocks-and-effects"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin allows customization of which blocks grant which hearts and the associated effects. Below are the default effects tied to each heart type:</p>
+<ul>
+<li>
+<strong>Diamond Heart</strong>: Grants <strong>Levitation</strong> for 600 ticks with an amplifier of 2.</li>
+<li>
+<strong>Gold Heart</strong>: Grants <strong>Regeneration</strong> for 600 ticks with an amplifier of 2.</li>
+<li>
+<strong>Iron Heart</strong>: Grants <strong>Resistance</strong> for 600 ticks with an amplifier of 2, and <strong>Strength</strong> for 600 ticks with an amplifier of 1.</li>
+<li>
+<strong>Coal Heart</strong>: Grants <strong>Night Vision</strong> for 1200 ticks with an amplifier of 1, and <strong>Speed</strong> for 600 ticks with an amplifier of 2.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Currently, there are no commands for this plugin. All functionality is based on block breaking.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>No permissions are required for basic functionality.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Troubleshooting</h2><a id="user-content-troubleshooting" class="anchor" aria-label="Permalink: Troubleshooting" href="#troubleshooting"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Plugin not working</strong>: Ensure that the plugin is enabled in <code>config.yml</code> and that the blocks listed in <code>blocks:</code> are correct.</li>
+<li>
+<strong>Effects not applying</strong>: Double-check that the effects are properly defined in <code>config.yml</code> under <code>effects:</code>, and ensure that the player is breaking the correct type of block.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin is licensed under <a href="https://opensource.org/licenses/MIT" rel="nofollow">MIT License</a>.</p>

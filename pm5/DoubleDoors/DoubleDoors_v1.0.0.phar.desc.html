@@ -1,0 +1,60 @@
+<div class="markdown-heading"><h1 class="heading-element">DoubleDoors Plugin</h1><a id="user-content-doubledoors-plugin" class="anchor" aria-label="Permalink: DoubleDoors Plugin" href="#doubledoors-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>DoubleDoors is a PocketMine-MP plugin that enhances the behavior of interactive blocks like doors, trapdoors, and fence gates. With this plugin, players can seamlessly open or close connected blocks of the same type, mimicking double-door mechanics and recursive opening for nearby structures.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Automatically open or close connected blocks of the same type.</li>
+<li>Supports recursive opening for blocks within a configurable distance.</li>
+<li>Works with:
+<ul>
+<li>Doors</li>
+<li>Fence Gates</li>
+<li>Trapdoors</li>
+</ul>
+</li>
+<li>Configurable options to enable or disable specific block types and recursive behavior.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the latest release of the plugin.</li>
+<li>Place the <code>.phar</code> file in the <code>plugins</code> folder of your PocketMine-MP server.</li>
+<li>Start or restart your server.</li>
+<li>A default configuration file will be generated automatically.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin generates a <code>config.yml</code> file with the following options:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">enableRecursiveOpening</span>: <span class="pl-c1">true</span>
+<span class="pl-ent">recursiveOpeningMaxBlocksDistance</span>: <span class="pl-c1">10</span>
+<span class="pl-ent">enableDoors</span>: <span class="pl-c1">true</span>
+<span class="pl-ent">enableFenceGates</span>: <span class="pl-c1">true</span>
+<span class="pl-ent">enableTrapdoors</span>: <span class="pl-c1">true</span></pre></div>
+<ul>
+<li>
+<strong>enableRecursiveOpening</strong>: Enable or disable recursive opening for nearby blocks.</li>
+<li>
+<strong>recursiveOpeningMaxBlocksDistance</strong>: Maximum distance (in blocks) for recursive opening.</li>
+<li>
+<strong>enableDoors</strong>: Enable or disable double-door functionality for doors.</li>
+<li>
+<strong>enableFenceGates</strong>: Enable or disable functionality for fence gates.</li>
+<li>
+<strong>enableTrapdoors</strong>: Enable or disable functionality for trapdoors.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Interact with a block (door, trapdoor, or fence gate) to open or close it.</li>
+<li>If recursive opening is enabled, nearby connected blocks of the same type will also open or close.</li>
+<li>Sneaking while interacting will bypass the plugin's functionality, allowing you to interact with a single block.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Developer Notes</h2><a id="user-content-developer-notes" class="anchor" aria-label="Permalink: Developer Notes" href="#developer-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin listens to the <code>PlayerInteractEvent</code> to detect interactions with supported blocks. It processes connected blocks recursively, ensuring only the allowed distance and block types are affected.</p>
+<div class="markdown-heading"><h3 class="heading-element">Supported Block Types</h3><a id="user-content-supported-block-types" class="anchor" aria-label="Permalink: Supported Block Types" href="#supported-block-types"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li><code>Door</code></li>
+<li><code>FenceGate</code></li>
+<li><code>TrapDoor</code></li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Recursive Opening Logic</h3><a id="user-content-recursive-opening-logic" class="anchor" aria-label="Permalink: Recursive Opening Logic" href="#recursive-opening-logic"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin checks for nearby blocks of the same type in a 3x3x3 area around the interacted block. If recursive opening is enabled, it will continue to process connected blocks within the configured distance limit.</p>
+<div class="markdown-heading"><h2 class="heading-element">Contributing</h2><a id="user-content-contributing" class="anchor" aria-label="Permalink: Contributing" href="#contributing"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>We welcome contributions! If you encounter bugs or have suggestions, feel free to open an issue or submit a pull request on GitHub.</p>
+<h2></h2>

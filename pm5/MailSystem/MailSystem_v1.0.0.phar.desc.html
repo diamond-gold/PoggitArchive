@@ -1,0 +1,121 @@
+<div class="markdown-heading"><h1 class="heading-element">MailSystem Plugin for PocketMine</h1><a id="user-content-mailsystem-plugin-for-pocketmine" class="anchor" aria-label="Permalink: MailSystem Plugin for PocketMine" href="#mailsystem-plugin-for-pocketmine"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>MailSystem is a feature-rich PocketMine plugin that allows players to create and manage a virtual mail system in-game. Players can register custom email-like addresses, send messages to other players, and manage their inboxes.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Custom Email Registration:</strong> Players can register unique email-like addresses with a customizable suffix.</li>
+<li>
+<strong>Mail Sending:</strong> Send messages to other players via their registered email addresses.</li>
+<li>
+<strong>Inbox Management:</strong> Players can view their inbox, read messages, and see notifications for unread mail.</li>
+<li>
+<strong>Persistent Storage:</strong> Mails and user data are stored in YAML files.</li>
+<li>
+<strong>Localization Support:</strong> Easily customizable messages using <code>languages.yml</code>.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element"><code>/mail</code></h3><a id="user-content-mail" class="anchor" aria-label="Permalink: /mail" href="#mail"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Usage:</strong> <code>/mail &lt;signup|send|inbox&gt;</code>
+</li>
+<li>
+<strong>Description:</strong> Main command to interact with the mail system.</li>
+</ul>
+<div class="markdown-heading"><h4 class="heading-element">Subcommands:</h4><a id="user-content-subcommands" class="anchor" aria-label="Permalink: Subcommands:" href="#subcommands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<p><strong><code>signup</code></strong></p>
+<ul>
+<li>
+<strong>Usage:</strong> <code>/mail signup &lt;username&gt;</code>
+</li>
+<li>
+<strong>Description:</strong> Register a unique email-like address.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>send</code></strong></p>
+<ul>
+<li>
+<strong>Usage:</strong> <code>/mail send &lt;recipient&gt; &lt;message&gt;</code>
+</li>
+<li>
+<strong>Description:</strong> Send a message to another registered player.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>inbox</code></strong></p>
+<ul>
+<li>
+<strong>Usage:</strong> <code>/mail inbox</code>
+</li>
+<li>
+<strong>Description:</strong> View your inbox and read messages.</li>
+</ul>
+</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element"><code>config.yml</code></h3><a id="user-content-configyml" class="anchor" aria-label="Permalink: config.yml" href="#configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Customize the plugin's behavior by modifying the configuration file:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Mail System Configuration</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Suffix that will be appended to all mail addresses</span>
+<span class="pl-ent">mail-suffix</span>: <span class="pl-s"><span class="pl-pds">"</span>mcpe@server<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Maximum number of mails in inbox</span>
+<span class="pl-ent">max-inbox-size</span>: <span class="pl-c1">50</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Maximum number of mails in sent folder</span>
+<span class="pl-ent">max-sent-size</span>: <span class="pl-c1">30</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Maximum number of drafts</span>
+<span class="pl-ent">max-drafts</span>: <span class="pl-c1">10</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Time in seconds before marking a mail as "old" (for cleanup purposes)</span>
+<span class="pl-ent">mail-expiry</span>: <span class="pl-c1">604800</span>  <span class="pl-c"><span class="pl-c">#</span> 7 days</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element"><code>mailsystem.command.mail</code></h3><a id="user-content-mailsystemcommandmail" class="anchor" aria-label="Permalink: mailsystem.command.mail" href="#mailsystemcommandmail"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Default:</strong> <code>true</code>
+</li>
+<li>
+<strong>Description:</strong> Allows players to use mail system commands.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Place the plugin <code>.phar</code> file into your PocketMine <code>plugins</code> folder.</li>
+<li>Start your server to generate the configuration and language files.</li>
+<li>Edit <code>config.yml</code> and <code>languages.yml</code> as needed.</li>
+<li>Restart your server.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">TODO</h2><a id="user-content-todo" class="anchor" aria-label="Permalink: TODO" href="#todo"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Implement UI</strong></td>
+<td>Add an interactive menu-based UI for easier mail management.</td>
+</tr>
+<tr>
+<td></td>
+<td>Integrate PocketMine's forms API to provide graphical interfaces.</td>
+</tr>
+<tr>
+<td><strong>Add SQL Support</strong></td>
+<td>Migrate data storage from YAML to SQL for improved scalability and speed.</td>
+</tr>
+<tr>
+<td></td>
+<td>Ensure compatibility with both MySQL and SQLite.</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Contributing</h2><a id="user-content-contributing" class="anchor" aria-label="Permalink: Contributing" href="#contributing"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Feel free to submit issues or pull requests to improve the plugin. Contributions to implement features from the TODO list are especially welcome!</p>

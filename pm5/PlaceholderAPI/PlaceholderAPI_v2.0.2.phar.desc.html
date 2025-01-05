@@ -1,0 +1,69 @@
+<div class="markdown-heading"><h1 class="heading-element">What is PlaceholderAPI</h1><a id="user-content-what-is-placeholderapi" class="anchor" aria-label="Permalink: What is PlaceholderAPI" href="#what-is-placeholderapi"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>PlaceholderAPI is a powerful and flexible placeholder system for PocketMine-MP. It allows you to easily manage placeholders and dynamically replace them in messages. Whether you're creating a server with custom features or just want to improve the player experience, PlaceholderAPI has you covered!</p>
+<div class="markdown-heading"><h3 class="heading-element">Features</h3><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Dynamic Placeholder Replacement</strong>: Easily replace placeholders with values in messages.</li>
+<li>
+<strong>Custom Placeholder Support</strong>: Create and register your own placeholders.</li>
+<li>
+<strong>Cache Management</strong>: Efficient caching system to improve performance and reduce redundant processing.</li>
+<li>
+<strong>Advanced API</strong>: Provides a clean and simple API to integrate placeholders into your PocketMine-MP plugins.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">General Placeholders</h2><a id="user-content-general-placeholders" class="anchor" aria-label="Permalink: General Placeholders" href="#general-placeholders"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Generals:</p>
+<ul>
+<li>
+<code>%online_players%</code>: Shows the current number of online players (<code>count(Server::getInstance()-&gt;getOnlinePlayers())</code>).</li>
+<li>
+<code>%max_players%</code>: Shows the maximum number of players allowed on the server (<code>Server::getInstance()-&gt;getMaxPlayers()</code>).</li>
+<li>
+<code>%server_motd%</code>: Displays the server's Message of the Day (<code>Server::getInstance()-&gt;getMotd()</code>).</li>
+<li>
+<code>%server_version%</code>: Displays the version of the server (<code>Server::getInstance()-&gt;getVersion()</code>).</li>
+<li>
+<code>%server_ip%</code>: Shows the IP address of the server (<code>Server::getInstance()-&gt;getIp()</code>).</li>
+<li>
+<code>%server_port%</code>: Displays the port the server is running on (<code>Server::getInstance()-&gt;getPort()</code>).</li>
+<li>
+<code>%player_name%</code>: Shows the name of the player (<code>$player-&gt;getName()</code>).</li>
+<li>
+<code>%player_display_name%</code>: Displays the display name of the player (<code>$player-&gt;getDisplayName()</code>).</li>
+<li>
+<code>%player_ping%</code>: Shows the player's ping in milliseconds (<code>$player-&gt;getNetworkSession()-&gt;getPing()</code>).</li>
+<li>
+<code>%player_ip%</code>: Displays the player's IP address (<code>$player-&gt;getNetworkSession()-&gt;getIp()</code>).</li>
+<li>
+<code>%player_health%</code>: Shows the player's current health (<code>$player-&gt;getHealth()</code>).</li>
+<li>
+<code>%player_max_health%</code>: Displays the player's maximum health (<code>$player-&gt;getMaxHealth()</code>).</li>
+<li>
+<code>%player_x%</code>: Displays the player's X-coordinate (<code>$player-&gt;getPosition()-&gt;getX()</code>).</li>
+<li>
+<code>%player_y%</code>: Displays the player's Y-coordinate (<code>$player-&gt;getPosition()-&gt;getY()</code>).</li>
+<li>
+<code>%player_z%</code>: Displays the player's Z-coordinate (<code>$player-&gt;getPosition()-&gt;getZ()</code>).</li>
+<li>
+<code>%player_world%</code>: Shows the name of the world the player is in (<code>$player-&gt;getWorld()-&gt;getDisplayName()</code>).</li>
+<li>
+<code>%server_time%</code>: Displays the current server time in <code>H:i:s</code> format (<code>date("H:i:s")</code>).</li>
+<li>
+<code>%server_date%</code>: Displays the current server date in <code>Y-m-d</code> format (<code>date("Y-m-d")</code>).</li>
+<li>
+<code>%random_number%</code>: Generates and shows a random number between 1 and 100 (<code>mt_rand(1, 100)</code>).</li>
+<li>
+<code>%total_worlds%</code>: Displays the total number of worlds loaded on the server (<code>count(Server::getInstance()-&gt;getWorldManager()-&gt;getWorlds())</code>).</li>
+<li>
+<code>%tps%</code>: Shows the server's ticks per second rounded to two decimal places (<code>round(Server::getInstance()-&gt;getTicksPerSecond(), 2)</code>).</li>
+<li>
+<code>%uptime%</code>: Displays the server's uptime in seconds since it started (<code>round(microtime(true) - Server::getInstance()-&gt;getStartTime(), 2) . " seconds"</code>).</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Wiki</h2><a id="user-content-wiki" class="anchor" aria-label="Permalink: Wiki" href="#wiki"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>For more detailed documentation and guides, please visit our <a href="https://github.com/MohamadRZ4/Placeholder/wiki">wiki</a>.</p>
+<div class="markdown-heading"><h2 class="heading-element">Placeholder Replacements</h2><a id="user-content-placeholder-replacements" class="anchor" aria-label="Permalink: Placeholder Replacements" href="#placeholder-replacements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>In your plugin or messages, you can use placeholders such as <code>%online_players%</code> and <code>%max_players%</code>. PlaceholderAPI will automatically replace them with the corresponding values.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>text</span> = <span class="pl-s">"<span class="pl-s">%online_players%/%max_players%</span>"</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>player</span> = <span class="pl-s1"><span class="pl-c1">$</span>player</span>;<span class="pl-c">// If the player is not needed: $player = null;</span>
+<span class="pl-s1"><span class="pl-c1">$</span>processedText</span> = PlaceholderAPI::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">processPlaceholders</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s1"><span class="pl-c1">$</span>text</span>);
+<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">getLogger</span>()-&gt;<span class="pl-en">info</span>(processedText); <span class="pl-c">// Output: 5/100 (Example output)</span></pre></div>

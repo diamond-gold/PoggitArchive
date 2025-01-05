@@ -1,0 +1,56 @@
+<div class="markdown-heading"><h1 class="heading-element">Milestones Plugin</h1><a id="user-content-milestones-plugin" class="anchor" aria-label="Permalink: Milestones Plugin" href="#milestones-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/SoyDavs/Milestones/blob/main/icon.png"><img src="https://github.com/SoyDavs/Milestones/raw/main/icon.png" alt="Milestones Plugin Icon" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h2 class="heading-element">Overview</h2><a id="user-content-overview" class="anchor" aria-label="Permalink: Overview" href="#overview"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Milestones Plugin</strong> is a feature-rich Minecraft PocketMine plugin that rewards players upon reaching predefined financial Milestoness. It integrates seamlessly with the <a href="https://github.com/cooldogedev/BedrockEconomy">BedrockEconomy</a> API, allowing server owners to create engaging, event-driven gameplay experiences.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Automatic Milestones Detection</strong>: Tracks player balances in real-time.</li>
+<li>
+<strong>Customizable Rewards</strong>: Configure rewards through commands and broadcast messages.</li>
+<li>
+<strong>Player-Specific Milestoness</strong>: Each player has their unique progress tracking.</li>
+<li>
+<strong>Lightweight and Efficient</strong>: Designed to run smoothly without impacting server performance.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the plugin's <code>.phar</code> file from the <a href="https://github.com/SoyDavs/Milestones/releases">Releases</a> section.</li>
+<li>Place the <code>.phar</code> file in your server's <code>plugins</code> directory.</li>
+<li>Restart your server to load the plugin.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin uses a YAML configuration file (<code>config.yml</code>) to define Milestoness. Example structure:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">Milestoness</span>:
+  - <span class="pl-ent">amount</span>: <span class="pl-c1">1000</span>
+    <span class="pl-ent">commands</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>give {player} diamond 5<span class="pl-pds">"</span></span>
+    <span class="pl-ent">broadcast</span>: <span class="pl-s"><span class="pl-pds">"</span>{player} has reached a balance Milestones of {amount}!<span class="pl-pds">"</span></span>
+  - <span class="pl-ent">amount</span>: <span class="pl-c1">5000</span>
+    <span class="pl-ent">commands</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>give {player} emerald 10<span class="pl-pds">"</span></span>
+    <span class="pl-ent">broadcast</span>: <span class="pl-s"><span class="pl-pds">"</span>{player} is now a financial wizard with {amount} coins!<span class="pl-pds">"</span></span></pre></div>
+<ul>
+<li>
+<code>amount</code>: The balance a player must reach to unlock this Milestones.</li>
+<li>
+<code>commands</code>: A list of server commands executed upon Milestones completion.</li>
+<li>
+<code>broadcast</code>: (Optional) A message broadcasted to all players.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Requirements</h2><a id="user-content-requirements" class="anchor" aria-label="Permalink: Requirements" href="#requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>PocketMine-MP server</li>
+<li>
+<a href="https://github.com/cooldogedev/BedrockEconomy">BedrockEconomy</a> plugin</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Edit the <code>config.yml</code> file to define Milestoness and rewards.</li>
+<li>Reload the plugin using <code>/reload</code>.</li>
+<li>Players will automatically receive rewards when they meet the Milestones conditions.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This project is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for details.</p>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>For questions, issues, or feature requests, open an issue on the <a href="https://github.com/SoyDavs/Milestones/issues">GitHub Issue Tracker</a>.</p>

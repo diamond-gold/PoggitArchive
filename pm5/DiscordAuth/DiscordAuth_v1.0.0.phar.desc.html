@@ -1,0 +1,60 @@
+<div class="markdown-heading"><h1 class="heading-element">DiscordAuth Plugin for PocketMine-MP</h1><a id="user-content-discordauth-plugin-for-pocketmine-mp" class="anchor" aria-label="Permalink: DiscordAuth Plugin for PocketMine-MP" href="#discordauth-plugin-for-pocketmine-mp"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A PocketMine-MP plugin that allows players to register their Discord accounts and link them with in-game usernames. The plugin sends a verification code to a configured Discord webhook, which can then be used by players to verify their accounts in-game.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Players can link their Discord accounts to their Minecraft usernames.</li>
+<li>Sends a verification message to a Discord channel with a unique verification code.</li>
+<li>Players can use the verification code to complete registration.</li>
+<li>Supports a role command that can be executed in Discord upon successful registration.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the plugin files.</li>
+<li>Place the <code>DiscordAuth</code> folder inside the <code>plugins</code> directory of your PocketMine-MP server.</li>
+<li>Restart the server to allow the plugin to generate its configuration files.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin uses two configuration files:</p>
+<ul>
+<li>
+<code>config.yml</code>: Stores general configuration settings like messages and webhook URL.</li>
+<li>
+<code>users.yml</code>: Stores the registered user data, including their Minecraft usernames and associated Discord IDs.</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Example <code>config.yml</code>:</h3><a id="user-content-example-configyml" class="anchor" aria-label="Permalink: Example config.yml:" href="#example-configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Webhook URL for sending verification messages.</span>
+<span class="pl-ent">webhook-url</span>: <span class="pl-s"><span class="pl-pds">"</span>https://discord.com/api/webhooks/your-webhook-url<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Messages used throughout the plugin.</span>
+<span class="pl-ent">verification-title</span>: <span class="pl-s"><span class="pl-pds">"</span>Discord Verification<span class="pl-pds">"</span></span>
+<span class="pl-ent">verification-message</span>: <span class="pl-s"><span class="pl-pds">"</span>Player {player_name} is trying to verify their Discord account. Verification code: {verification_code}<span class="pl-pds">"</span></span>
+<span class="pl-ent">discord-verification-message</span>: <span class="pl-s"><span class="pl-pds">"</span>Player {discord_id} is requesting verification with code {verification_code}<span class="pl-pds">"</span></span>
+<span class="pl-ent">verification-sent</span>: <span class="pl-s"><span class="pl-pds">"</span>A verification message has been sent to Discord. Please check your channel.<span class="pl-pds">"</span></span>
+<span class="pl-ent">register-usage</span>: <span class="pl-s"><span class="pl-pds">"</span>Usage: /register &lt;verification_code&gt;<span class="pl-pds">"</span></span>
+<span class="pl-ent">invalid-code</span>: <span class="pl-s"><span class="pl-pds">"</span>Invalid verification code.<span class="pl-pds">"</span></span>
+<span class="pl-ent">registration-success</span>: <span class="pl-s"><span class="pl-pds">"</span>Your Discord account has been successfully linked!<span class="pl-pds">"</span></span>
+<span class="pl-ent">already-registered</span>: <span class="pl-s"><span class="pl-pds">"</span>This Discord account is already linked to a player.<span class="pl-pds">"</span></span>
+<span class="pl-ent">invalid-discord-id</span>: <span class="pl-s"><span class="pl-pds">"</span>Please provide a valid Discord ID.<span class="pl-pds">"</span></span>
+<span class="pl-ent">discord-usage</span>: <span class="pl-s"><span class="pl-pds">"</span>Usage: /discord &lt;discord_id&gt;<span class="pl-pds">"</span></span>
+<span class="pl-ent">code-not-for-player</span>: <span class="pl-s"><span class="pl-pds">"</span>The verification code is not for you.<span class="pl-pds">"</span></span>
+<span class="pl-ent">role-command</span>: <span class="pl-s"><span class="pl-pds">"</span>/give {player} discord_role<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Example <code>users.yml</code>:</h3><a id="user-content-example-usersyml" class="anchor" aria-label="Permalink: Example users.yml:" href="#example-usersyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">123456789012345678</span>:
+  <span class="pl-ent">player</span>: <span class="pl-s"><span class="pl-pds">"</span>player_name<span class="pl-pds">"</span></span>
+  <span class="pl-ent">discord_id</span>: <span class="pl-s"><span class="pl-pds">"</span>123456789012345678<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/discord &lt;discord_id&gt;</code>: Starts the registration process by sending a verification message to the configured Discord webhook.</li>
+<li>
+<code>/register &lt;verification_code&gt;</code>: Completes the registration using the verification code received in Discord.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">How it Works</h2><a id="user-content-how-it-works" class="anchor" aria-label="Permalink: How it Works" href="#how-it-works"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>The player uses <code>/discord &lt;discord_id&gt;</code> to start the registration process.</li>
+<li>The plugin generates a random 6-digit verification code and sends it to the Discord webhook.</li>
+<li>The player receives the code in Discord and uses <code>/register &lt;verification_code&gt;</code> to link their Discord account to their Minecraft username.</li>
+<li>Upon successful registration, the plugin executes a role command (if configured) and stores the Discord ID and player name in the <code>users.yml</code> file.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin is released under the MIT License. See the LICENSE file for more details.</p>

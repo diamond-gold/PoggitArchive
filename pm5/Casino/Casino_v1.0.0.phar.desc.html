@@ -1,0 +1,62 @@
+<div class="markdown-heading"><h1 class="heading-element">Casino Plugin for PocketMine-MP</h1><a id="user-content-casino-plugin-for-pocketmine-mp" class="anchor" aria-label="Permalink: Casino Plugin for PocketMine-MP" href="#casino-plugin-for-pocketmine-mp"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A fully-featured casino plugin for PocketMine-MP, allowing players to engage in exciting games like Blackjack, Coin Flip, and Number Guess! The plugin integrates with BedrockEconomy for handling bets and winnings, offering a seamless experience for your Minecraft server.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Blackjack</strong>: Challenge the dealer and try to get closer to 21 without going over.</li>
+<li>
+<strong>Coin Flip</strong>: Bet on heads or tails and test your luck!</li>
+<li>
+<strong>Number Guess</strong>: Guess a number between 1 and 10 and see if you're lucky.</li>
+<li>
+<strong>Configurable Messages</strong>: Customize all messages displayed to players via <code>config.yml</code>.</li>
+<li>
+<strong>UI Integration</strong>: Uses <code>Vecnavium\FormsUI</code> for smooth and interactive menus.</li>
+<li>
+<strong>Economy Support</strong>: Fully compatible with BedrockEconomy for handling virtual currency.</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Requirements</h2><a id="user-content-requirements" class="anchor" aria-label="Permalink: Requirements" href="#requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>PocketMine-MP</strong>: Latest version.</li>
+<li>
+<strong>BedrockEconomy</strong>: Economy plugin for PocketMine-MP.</li>
+<li>
+<strong>Vecnavium\FormsUI</strong>: For user interface forms.</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the plugin's <code>.phar</code> file or compile it from source.</li>
+<li>Place the <code>.phar</code> file into your <code>plugins/</code> folder.</li>
+<li>Restart your server.</li>
+<li>Ensure that both BedrockEconomy and FormsUI are installed and configured properly.</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin generates a <code>config.yml</code> file on the first run. Here's an example of the default configuration:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">messages</span>:
+  <span class="pl-ent">main_menu_title</span>: <span class="pl-s"><span class="pl-pds">"</span>Casino<span class="pl-pds">"</span></span>
+  <span class="pl-ent">blackjack_button</span>: <span class="pl-s"><span class="pl-pds">"</span>Blackjack<span class="pl-pds">"</span></span>
+  <span class="pl-ent">coin_flip_button</span>: <span class="pl-s"><span class="pl-pds">"</span>Coin Flip<span class="pl-pds">"</span></span>
+  <span class="pl-ent">number_guess_button</span>: <span class="pl-s"><span class="pl-pds">"</span>Number Guess<span class="pl-pds">"</span></span>
+  <span class="pl-ent">blackjack_minimum_bet</span>: <span class="pl-s"><span class="pl-pds">"</span>Minimum bet is 1!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">blackjack_win</span>: <span class="pl-s"><span class="pl-pds">"</span>You won $$amount!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">blackjack_lose</span>: <span class="pl-s"><span class="pl-pds">"</span>You lost $$amount!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">coin_flip_win</span>: <span class="pl-s"><span class="pl-pds">"</span>Flip: $flip - You won $$amount!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">coin_flip_lose</span>: <span class="pl-s"><span class="pl-pds">"</span>Flip: $flip - You lost $$amount!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">number_guess_win</span>: <span class="pl-s"><span class="pl-pds">"</span>Number was $number - You won $$amount!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">number_guess_lose</span>: <span class="pl-s"><span class="pl-pds">"</span>Number was $number - You lost $$amount!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">insufficient_funds</span>: <span class="pl-s"><span class="pl-pds">"</span>Insufficient funds!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">account_not_found</span>: <span class="pl-s"><span class="pl-pds">"</span>Account not found!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">config_error</span>: <span class="pl-s"><span class="pl-pds">"</span>Configuration error: 'messages' is missing or invalid.<span class="pl-pds">"</span></span></pre></div>
+<p>You can customize these messages to fit your server's theme.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Commands</h3><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/casino</code>: Opens the casino main menu.</li>
+</ul>
