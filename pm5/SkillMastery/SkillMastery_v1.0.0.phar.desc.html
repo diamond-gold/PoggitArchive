@@ -1,0 +1,50 @@
+<div class="markdown-heading"><h1 class="heading-element">SkillMastery</h1><a id="user-content-skillmastery" class="anchor" aria-label="Permalink: SkillMastery" href="#skillmastery"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin that introduces a skill system, allowing players to level up and improve their abilities in areas like <strong>Mining</strong>, <strong>Combat</strong>, and <strong>Athletics</strong>. This plugin enhances gameplay by adding an RPG-like progression system.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Skill Leveling</strong>: Players can level up their skills and unlock bonuses.</li>
+<li>
+<strong>XP System</strong>: Gain XP through activities such as breaking blocks, combat, and movement.</li>
+<li>
+<strong>Dynamic Effects</strong>:
+<ul>
+<li>
+<strong>Mining</strong>: Earn extra XP based on skill level when breaking blocks.</li>
+<li>
+<strong>Combat</strong>: Increased damage multiplier as skill level increases.</li>
+<li>
+<strong>Athletics</strong>: Enhanced movement speed with higher skill levels.</li>
+</ul>
+</li>
+<li>
+<strong>Interactive Skill Menu</strong>: View skill progress and upgrade levels via a user-friendly UI.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/skills</code>: Open the skill menu to view or upgrade skills (player-only command).</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>skills.yml</code>: Define skills, levels, and XP requirements.<br>
+Example format:
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">skills</span>:
+  <span class="pl-ent">mining</span>:
+    <span class="pl-ent">levels</span>:
+      <span class="pl-ent">1</span>: <span class="pl-c1">100</span>
+      <span class="pl-ent">2</span>: <span class="pl-c1">250</span>
+      <span class="pl-ent">3</span>: <span class="pl-c1">500</span>
+  <span class="pl-ent">combat</span>:
+    <span class="pl-ent">levels</span>:
+      <span class="pl-ent">1</span>: <span class="pl-c1">200</span>
+      <span class="pl-ent">2</span>: <span class="pl-c1">400</span>
+      <span class="pl-ent">3</span>: <span class="pl-c1">800</span>
+  <span class="pl-ent">athletics</span>:
+    <span class="pl-ent">levels</span>:
+      <span class="pl-ent">1</span>: <span class="pl-c1">150</span>
+      <span class="pl-ent">2</span>: <span class="pl-c1">300</span>
+      <span class="pl-ent">3</span>: <span class="pl-c1">600</span></pre></div>
+</li>
+</ul>

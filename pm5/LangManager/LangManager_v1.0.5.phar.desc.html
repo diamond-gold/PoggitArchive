@@ -1,0 +1,261 @@
+<div class="markdown-heading"><h1 class="heading-element">LangManager</h1><a id="user-content-langmanager" class="anchor" aria-label="Permalink: LangManager" href="#langmanager"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>LangManager is a powerful plugin that adds multilingual support to your Minecraft server, enabling seamless language management and translation for players. With this plugin, server owners can easily provide a personalized experience by allowing players to select their preferred language.</p>
+<div class="markdown-heading"><h2 class="heading-element">Key Features</h2><a id="user-content-key-features" class="anchor" aria-label="Permalink: Key Features" href="#key-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Automatic Language Detection</h3><a id="user-content-automatic-language-detection" class="anchor" aria-label="Permalink: Automatic Language Detection" href="#automatic-language-detection"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin automatically detects the user’s language and localizes the server based on the player’s location. Players always have the option to choose another language using the command /setlang</p>
+<div class="markdown-heading"><h3 class="heading-element">Language Switching</h3><a id="user-content-language-switching" class="anchor" aria-label="Permalink: Language Switching" href="#language-switching"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Players can effortlessly switch between available languages using /setlang, allowing them to enjoy the game in their preferred language.</p>
+<div class="markdown-heading"><h3 class="heading-element">Centralized Message Management</h3><a id="user-content-centralized-message-management" class="anchor" aria-label="Permalink: Centralized Message Management" href="#centralized-message-management"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>With LangManager, managing in-game messages, greetings, command responses, and error messages becomes easy. All messages are stored in easily manageable language files, allowing for straightforward translations tailored to the server owner’s preferences.</p>
+<div class="markdown-heading"><h2 class="heading-element">Using LangManager as a user</h2><a id="user-content-using-langmanager-as-a-user" class="anchor" aria-label="Permalink: Using LangManager as a user" href="#using-langmanager-as-a-user"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The language files are stored in lang/ within your server folder. Make sure the server is turned off before editing any language files.</p>
+<p>Language files supported:</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>File</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>English</td>
+<td>en.yml</td>
+</tr>
+<tr>
+<td>Spanish</td>
+<td>es.yml</td>
+</tr>
+<tr>
+<td>Hindi</td>
+<td>hi.yml</td>
+</tr>
+<tr>
+<td>Portuguese</td>
+<td>pt.yml</td>
+</tr>
+<tr>
+<td>Chinese</td>
+<td>zh.yml</td>
+</tr>
+<tr>
+<td>Russian</td>
+<td>ru.yml</td>
+</tr>
+<tr>
+<td>French</td>
+<td>fr.yml</td>
+</tr>
+<tr>
+<td>German</td>
+<td>de.yml</td>
+</tr>
+<tr>
+<td>Arabic</td>
+<td>ar.yml</td>
+</tr>
+<tr>
+<td>Japanese</td>
+<td>ja.yml</td>
+</tr>
+</tbody>
+</table>
+<p>To add or remove a language to the language list in /lang, simply modify the <code>config.yml</code> file.</p>
+<pre><code>language-list:
+- en
+- es
+</code></pre>
+<div class="markdown-heading"><h2 class="heading-element">Using LangManager as a developer</h2><a id="user-content-using-langmanager-as-a-developer" class="anchor" aria-label="Permalink: Using LangManager as a developer" href="#using-langmanager-as-a-developer"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin is equipped with built-in functions to send messages directly to players and translate strings, eliminating the need for hardcoded messages in your code.
+This section will guide you on how to use the following methods:</p>
+<ul>
+<li><code>LangManager::addKey()</code></li>
+<li><code>LangManager::send()</code></li>
+<li><code>LangManager::translate()</code></li>
+</ul>
+<p>First, make sure you import the LangManager class in your plugin.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">matiasdamian</span>\<span class="pl-v">LangManager</span>\<span class="pl-smi">LangManager</span>;</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Adding a new language key with <code>LangManager::addKey()</code>
+</h3><a id="user-content-adding-a-new-language-key-with-langmanageraddkey" class="anchor" aria-label="Permalink: Adding a new language key with LangManager::addKey()" href="#adding-a-new-language-key-with-langmanageraddkey"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you are a plugin developer and want to use LangManager, it is very easy to do so.</p>
+<p><strong>Syntax:</strong></p>
+<div class="highlight highlight-text-html-php"><pre>LangManager::<span class="pl-en">addKey</span>(string <span class="pl-s1"><span class="pl-c1">$</span>key</span>, string <span class="pl-s1"><span class="pl-c1">$</span>message</span>) : bool;</pre></div>
+<p>Make sure you add LangManager as a dependency in your plugin.yml:</p>
+<pre><code>depend: [LangManager]
+</code></pre>
+<p><strong>Paramaters:</strong></p>
+<ul>
+<li>string $key: The key you want to add in the language file.</li>
+<li>string $message: The default message for the key you want to add (in English)</li>
+</ul>
+<p>To avoid conflicts with other plugins, it's recommended to add a prefix to your key. For example, use a prefix like <code>MyPlugin-</code>, so your key might look like <code>MyPlugin-key</code>. This ensures that the key is unique across all plugins.</p>
+<div class="markdown-heading"><h3 class="heading-element">Sending Messages with <code>LangManager::send()</code>
+</h3><a id="user-content-sending-messages-with-langmanagersend" class="anchor" aria-label="Permalink: Sending Messages with LangManager::send()" href="#sending-messages-with-langmanagersend"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This method is designed to send messages to players in their preferred language.</p>
+<p><strong>Syntax:</strong></p>
+<div class="highlight highlight-text-html-php"><pre>LangManager::<span class="pl-en">send</span>(string <span class="pl-s1"><span class="pl-c1">$</span>messageKey</span>, Player <span class="pl-s1"><span class="pl-c1">$</span>player</span>, ...<span class="pl-s1"><span class="pl-c1">$</span>params</span>);</pre></div>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>string $messageKey: The key corresponding to the message you want to send (defined in your language files).</li>
+<li>Player $player: The player object to whom the message will be sent.</li>
+<li>
+<ul>
+<li>...$params: Optional parameters for message formatting.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example Usage</strong></p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// Assuming you have a Player object $player</span>
+<span class="pl-s1"><span class="pl-c1">$</span>messageKey</span> = <span class="pl-s">"<span class="pl-s">welcome_message</span>"</span>; <span class="pl-c">// The message key from your language file</span>
+
+LangManager::<span class="pl-en">send</span>(<span class="pl-s1"><span class="pl-c1">$</span>messageKey</span>, <span class="pl-s1"><span class="pl-c1">$</span>player</span>);</pre></div>
+<p>In this example, if the player’s language is set to English, they will receive the message defined by the <code>welcome_message</code> key in the <code>en.yml</code> file.</p>
+<div class="markdown-heading"><h3 class="heading-element">Translating Messages with <code>LangManager::translate()</code>
+</h3><a id="user-content-translating-messages-with-langmanagertranslate" class="anchor" aria-label="Permalink: Translating Messages with LangManager::translate()" href="#translating-messages-with-langmanagertranslate"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This method is useful for translating strings that are not directly sent to the player, such as pop-ups.</p>
+<p><strong>Syntax:</strong></p>
+<div class="highlight highlight-text-html-php"><pre>LangManager::<span class="pl-en">translate</span>(string <span class="pl-s1"><span class="pl-c1">$</span>messageKey</span>, Player <span class="pl-s1"><span class="pl-c1">$</span>player</span>, ...<span class="pl-s1"><span class="pl-c1">$</span>params</span>);</pre></div>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>string $messageKey: The key corresponding to the message you want to translate.</li>
+<li>Player $player: The player object to whom the translated message is intended.</li>
+<li>...$params: Optional parameters for dynamic content within the translated message.</li>
+</ul>
+<p><strong>Example Usage</strong></p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// Assuming you have a Player object $player</span>
+<span class="pl-s1"><span class="pl-c1">$</span>messageKey</span> = <span class="pl-s">"<span class="pl-s">language_choose</span>"</span>; <span class="pl-c">// The message key from your language file</span>
+
+<span class="pl-c">// Sending a translated message as a popup or embed</span>
+<span class="pl-s1"><span class="pl-c1">$</span>translatedMessage</span> = LangManager::<span class="pl-en">translate</span>(<span class="pl-s1"><span class="pl-c1">$</span>messageKey</span>, <span class="pl-s1"><span class="pl-c1">$</span>player</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">sendMessage</span>(<span class="pl-s1"><span class="pl-c1">$</span>translatedMessage</span>); <span class="pl-c">// Sending the translated message to the player</span></pre></div>
+<p>In this example, the player will receive the message defined by the <code>language_choose</code> key in the <code>en.yml</code> file.</p>
+<div class="markdown-heading"><h2 class="heading-element">Using parameters in translations</h2><a id="user-content-using-parameters-in-translations" class="anchor" aria-label="Permalink: Using parameters in translations" href="#using-parameters-in-translations"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>When using the LangManager plugin, you can enhance your messages by utilizing parameters in your translation strings. Each parameter is denoted by an indexed placeholder such as <code>{%0}</code>, <code>{%1}</code>, and so on, which allows you to pass dynamic data into your messages. The number corresponds to the order in which you provide the parameters in the <code>LangManager::translate()</code> method.</p>
+<p><strong>Example of Parameter Usage</strong></p>
+<p>For instance, if you have a message in your language file like:</p>
+<pre><code>welcome_message = "Welcome, {%0}! You are currently at {X}, {Y}, {Z}."
+</code></pre>
+<p>You can send this message with parameters by using:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>playerName</span> = <span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">getName</span>();
+LangManager::<span class="pl-en">send</span>(<span class="pl-s">"<span class="pl-s">welcome_message</span>"</span>, <span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s1"><span class="pl-c1">$</span>playerName</span>);</pre></div>
+<p>This would result in a message like:</p>
+<blockquote>
+<p>"Welcome, PlayerName! You are currently at X, Y, Z."</p>
+</blockquote>
+<p>You can pass as much parameters as needed.</p>
+<div class="markdown-heading"><h3 class="heading-element">Available Server and Player Variables</h3><a id="user-content-available-server-and-player-variables" class="anchor" aria-label="Permalink: Available Server and Player Variables" href="#available-server-and-player-variables"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>In addition to using parameters, the plugin provides several server and player variables that you can utilize in your messages.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+<th>Example Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Server Vars</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>{ONLINE}</code></td>
+<td>The number of players currently online</td>
+<td><code>5</code></td>
+</tr>
+<tr>
+<td><code>{MAX}</code></td>
+<td>The maximum number of players allowed</td>
+<td><code>20</code></td>
+</tr>
+<tr>
+<td><code>{AVERAGE_TPS}</code></td>
+<td>The average ticks per second</td>
+<td><code>19.8</code></td>
+</tr>
+<tr>
+<td><strong>Player Vars</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>{X}</code></td>
+<td>Player's current X coordinate</td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><code>{Y}</code></td>
+<td>Player's current Y coordinate</td>
+<td><code>64</code></td>
+</tr>
+<tr>
+<td><code>{Z}</code></td>
+<td>Player's current Z coordinate</td>
+<td><code>200</code></td>
+</tr>
+<tr>
+<td><code>{WORLD}</code></td>
+<td>The name of the world the player is in</td>
+<td><code>survival</code></td>
+</tr>
+<tr>
+<td><code>{LEVEL}</code></td>
+<td>The level name of the player's current world</td>
+<td><code>survival</code></td>
+</tr>
+<tr>
+<td><code>{HEALTH}</code></td>
+<td>The player's current health</td>
+<td><code>20</code></td>
+</tr>
+<tr>
+<td><code>{MAX_HEALTH}</code></td>
+<td>The player's maximum health</td>
+<td><code>20</code></td>
+</tr>
+<tr>
+<td><code>{PING}</code></td>
+<td>The player's ping to the server</td>
+<td><code>50</code></td>
+</tr>
+<tr>
+<td><code>{NAME}</code></td>
+<td>The player's username</td>
+<td><code>PlayerName</code></td>
+</tr>
+<tr>
+<td><code>{DISPLAY_NAME}</code></td>
+<td>The player's display name</td>
+<td><code>PlayerName</code></td>
+</tr>
+<tr>
+<td><strong>Formatting Tags</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&lt;rainbow&gt;Message≤/rainbow&gt;</code></td>
+<td>Wrap a message in these tags to rainbowize it</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<code>&amp;0</code> to <code>&amp;f</code>
+</td>
+<td>Color codes for text formatting</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example of Using Server and Player Variables</strong></p>
+<p>Here’s how you can use server and player variables in a message:</p>
+<div class="highlight highlight-text-html-php"><pre>LangManager::<span class="pl-en">send</span>(<span class="pl-s">"<span class="pl-s">welcome_message</span>"</span>, <span class="pl-s1"><span class="pl-c1">$</span>player</span>);</pre></div>
+<p>If your message in the <code>.ini</code> file is</p>
+<pre><code>welcome_message = "There are currently {ONLINE} players online."
+</code></pre>
+<p>The output would be:</p>
+<pre><code>"There are currently 5 players online."
+</code></pre>
+<div class="markdown-heading"><h2 class="heading-element">Licensing information</h2><a id="user-content-licensing-information" class="anchor" aria-label="Permalink: Licensing information" href="#licensing-information"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This project is licensed under LGPL-3.0. Please see the LICENSE file for details.</p>

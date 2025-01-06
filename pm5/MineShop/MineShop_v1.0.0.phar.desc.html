@@ -1,0 +1,154 @@
+<div class="markdown-heading"><h1 class="heading-element">MineShop</h1><a id="user-content-mineshop" class="anchor" aria-label="Permalink: MineShop" href="#mineshop"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>MineShop plugin for Pocketmine, this plugin functions to sell rare items in MineShop, and can be purchased with ore</p>
+<p><strong>Custom Ore Economies:</strong>
+You can freely add economy by ore in MineShop<br>
+<strong>SellItems Tutorial:</strong>
+Just hold items in your hand and then run the command <code>/mineshop sell</code> to sell them.<br></p>
+<div class="markdown-heading"><h2 class="heading-element"><g-emoji class="g-emoji" alias="airplane">✈️</g-emoji> Commands</h2><a id="user-content-️-commands" class="anchor" aria-label="Permalink: ✈️ Commands" href="#️-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/mineshop</code></td>
+<td>Open MineShop GUI</td>
+<td><code>mineshop.command</code></td>
+</tr>
+<tr>
+<td><code>/mineshop add</code></td>
+<td>Open Sell UI</td>
+<td>
+<code>mineshop.command.add</code> (OP)</td>
+</tr>
+<tr>
+<td><code>/mineshop delete</code></td>
+<td>Open Unsell GUI</td>
+<td>
+<code>mineshop.command.delete</code> (OP)</td>
+</tr>
+<tr>
+<td><code>/mineshop edit</code></td>
+<td>Open Edit GUI</td>
+<td>
+<code>mineshop.command.edit</code> (OP)</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">⚙️ Config</h2><a id="user-content-️-config" class="anchor" aria-label="Permalink: ⚙️ Config" href="#️-config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>custom your config.yml</p>
+<pre lang="plaintext"><code>prefix: "&amp;7[&amp;aMineShop&amp;7]"
+
+# you can create new gui schema in folder gui/
+gui-schema: "default" # input filename without extension
+
+# Ore economy supported
+economies:
+  - "minecraft:emerald"
+  - "minecraft:diamond"
+  - "minecraft:gold_ingot"
+
+config-version: 1.0
+</code></pre>
+<div class="markdown-heading"><h2 class="heading-element">🖼️ Preview</h2><a id="user-content-️-preview" class="anchor" aria-label="Permalink: 🖼️ Preview" href="#️-preview"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>MineShop</strong></p>
+<p align="left">
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/angga7togk/MineShop/blob/main/img/gui.png?raw=true"><img src="https://github.com/angga7togk/MineShop/raw/main/img/gui.png?raw=true" width="30%" style="max-width: 100%;"></a>
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/angga7togk/MineShop/blob/main/img/gui_with.png?raw=true"><img src="https://github.com/angga7togk/MineShop/raw/main/img/gui_with.png?raw=true" width="30%" style="max-width: 100%;"></a>
+</p>
+<p><strong>Deleting Mode Menu</strong></p>
+<p align="left">
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/angga7togk/MineShop/blob/main/img/gui_unsell.png?raw=true"><img src="https://github.com/angga7togk/MineShop/raw/main/img/gui_unsell.png?raw=true" width="30%" style="max-width: 100%;"></a>
+</p>
+<p><strong>Editing Mode Menu</strong></p>
+<p align="left">
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/angga7togk/MineShop/blob/main/img/edit_ui.png?raw=true"><img src="https://github.com/angga7togk/MineShop/raw/main/img/edit_ui.png?raw=true" width="30%" style="max-width: 100%;"></a>
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/angga7togk/MineShop/blob/main/img/edit_gui.png?raw=true"><img src="https://github.com/angga7togk/MineShop/raw/main/img/edit_gui.png?raw=true" width="30%" style="max-width: 100%;"></a>
+</p>
+<p><strong>Sell Item UI</strong></p>
+<p align="left">
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/angga7togk/MineShop/blob/main/img/ui_sell.png?raw=true"><img src="https://github.com/angga7togk/MineShop/raw/main/img/ui_sell.png?raw=true" width="70%" style="max-width: 100%;"></a>
+</p>
+<div class="markdown-heading"><h2 class="heading-element">💻 Custom GUI</h2><a id="user-content--custom-gui" class="anchor" aria-label="Permalink: 💻 Custom GUI" href="#-custom-gui"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Here I have provided an example json for the custom GUI<br></p>
+<p><strong>1. Find Folder GUI:</strong>
+look for the gui folder in the MineShop plugin data plugin.<br>
+<strong>2. Create your GUI:</strong>
+create your gui schema with the following example <code>custom.json</code>, free file name!<br>
+<strong>3. Please look at the title <code>Default GUI</code></strong><br>
+<strong>4. Change GUI Schema:</strong> open config.yml, then change the gui schema you have created.</p>
+<pre lang="plaintext"><code># you can create new gui schema in folder gui/
+gui-schema: "default" # input filename without extension
+</code></pre>
+<br>
+<br>
+<p>The following is an example for the <code>custom.json</code> that you created earlier</p>
+<p><strong>Default GUI</strong></p>
+<pre lang="plaintext"><code>{
+  "name": "&amp;lMine Shop",
+  "type": "DOUBLE_CHEST",
+  "max_slot": 13, // max slot for item selling
+  "slots": [
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "mineshop:slot",
+    "mineshop:slot",
+    "mineshop:slot",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "mineshop:slot",
+    "mineshop:slot",
+    "mineshop:slot",
+    "mineshop:slot",
+    "mineshop:slot",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "mineshop:slot",
+    "mineshop:slot",
+    "mineshop:slot",
+    "mineshop:slot",
+    "mineshop:slot",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "minecraft:vines",
+    "mineshop:previous",
+    "minecraft:vines",
+    "mineshop:info",
+    "minecraft:vines",
+    "mineshop:next",
+    "minecraft:vines",
+    "minecraft:vines"
+  ]
+}
+</code></pre>
+<div class="markdown-heading"><h2 class="heading-element">📜 Credits</h2><a id="user-content--credits" class="anchor" aria-label="Permalink: 📜 Credits" href="#-credits"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Icon by <a href="https://www.flaticon.com/" rel="nofollow">Flaticon</a></p>
