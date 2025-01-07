@@ -1,0 +1,428 @@
+<div class="markdown-heading"><h1 class="heading-element">CustomAreas Plugin</h1><a id="user-content-customareas-plugin" class="anchor" aria-label="Permalink: CustomAreas Plugin" href="#customareas-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>CustomAreas</strong> is a powerful PocketMine-MP plugin designed to help server administrators create and manage protected regions within their Minecraft worlds. With <strong>CustomAreas</strong>, you can define specific areas where only players with the appropriate permissions can enter, ensuring better control and organization of your server environments.</p>
+<div class="markdown-heading"><h2 class="heading-element">Table of Contents</h2><a id="user-content-table-of-contents" class="anchor" aria-label="Permalink: Table of Contents" href="#table-of-contents"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#commands">Commands</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#examples">Examples</a></li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Region Creation and Management:</strong> Easily create, edit, and remove protected areas within your worlds.</li>
+<li>
+<strong>Custom Entry Messages:</strong> Display personalized messages to players when they enter a region.</li>
+<li>
+<strong>Permission-Based Access:</strong> Control access to regions using a robust permission system integrated with ChatPerms.</li>
+<li>
+<strong>Multi-World Support:</strong> Define regions across multiple worlds on your server.</li>
+<li>
+<strong>User-Friendly GUI:</strong> Utilize intuitive forms for managing regions without the need for complex commands.</li>
+<li>
+<strong>Startup ASCII Art:</strong> Display a stylish ASCII art message in the server logs upon startup.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<p><strong>Download the Plugin:</strong></p>
+<ul>
+<li>Obtain the latest version of the <strong>CustomAreas</strong> plugin from the <a href="#">official repository</a> or <a href="#">PocketMine Resource Page</a>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Upload to Plugins Directory:</strong></p>
+<ul>
+<li>Place the downloaded <code>CustomAreas.phar</code> (or <code>.zip</code> if provided) into the <code>plugins/</code> directory of your PocketMine-MP server.</li>
+</ul>
+</li>
+<li>
+<p><strong>Restart the Server:</strong></p>
+<ul>
+<li>Restart your PocketMine-MP server to load the plugin. Upon startup, the plugin will generate a default <code>config.yml</code> file if it doesn't already exist.</li>
+</ul>
+</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The <code>config.yml</code> file allows you to customize messages, define regions, and set permissions. Below is an overview of the configuration options:</p>
+<div class="markdown-heading"><h3 class="heading-element"><code>config.yml</code></h3><a id="user-content-configyml" class="anchor" aria-label="Permalink: config.yml" href="#configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> =============================================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> CustomAreas Plugin Configuration File</span>
+<span class="pl-c"><span class="pl-c">#</span> =============================================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> Configures messages and regions for the CustomAreas plugin.</span>
+<span class="pl-c"><span class="pl-c">#</span> Customize messages and add or modify regions as needed.</span>
+<span class="pl-c"><span class="pl-c">#</span> =============================================================================</span>
+
+<span class="pl-c"><span class="pl-c">#</span> =============================================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> Messages Section</span>
+<span class="pl-c"><span class="pl-c">#</span> =============================================================================</span>
+<span class="pl-ent">messages</span>:
+  <span class="pl-ent">gui_title</span>: <span class="pl-s"><span class="pl-pds">"</span>Custom Areas<span class="pl-pds">"</span></span>
+  <span class="pl-ent">gui_content</span>: <span class="pl-s"><span class="pl-pds">"</span>Choose an action:<span class="pl-pds">"</span></span>
+  <span class="pl-ent">gui_buttons</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span>Create Area<span class="pl-pds">"</span></span>    <span class="pl-c"><span class="pl-c">#</span> Index 0</span>
+    - <span class="pl-s"><span class="pl-pds">"</span>Edit Area<span class="pl-pds">"</span></span>      <span class="pl-c"><span class="pl-c">#</span> Index 1</span>
+    - <span class="pl-s"><span class="pl-pds">"</span>Remove Area<span class="pl-pds">"</span></span>    <span class="pl-c"><span class="pl-c">#</span> Index 2</span>
+    - <span class="pl-s"><span class="pl-pds">"</span>List Areas<span class="pl-pds">"</span></span>     <span class="pl-c"><span class="pl-c">#</span> Index 3</span>
+    - <span class="pl-s"><span class="pl-pds">"</span>Cancel<span class="pl-pds">"</span></span>         <span class="pl-c"><span class="pl-c">#</span> Index 4</span>
+
+  <span class="pl-ent">confirm_remove_title</span>: <span class="pl-s"><span class="pl-pds">"</span>Confirm Removal<span class="pl-pds">"</span></span>
+  <span class="pl-ent">confirm_remove_content</span>: <span class="pl-s"><span class="pl-pds">"</span>Are you sure you want to remove the area '{name}'?<span class="pl-pds">"</span></span>
+  
+  <span class="pl-ent">no_permission</span>: <span class="pl-s"><span class="pl-pds">"</span>You do not have permission to use this command.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">usage</span>: <span class="pl-s"><span class="pl-pds">"</span>/ca &lt;create|edit|remove|list|gui|pos1|pos2&gt;<span class="pl-pds">"</span></span>
+  
+  <span class="pl-ent">pos1_prompt</span>: <span class="pl-s"><span class="pl-pds">"</span>Please set position 1 using /ca pos1.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">pos2_prompt</span>: <span class="pl-s"><span class="pl-pds">"</span>Please set position 2 using /ca pos2.<span class="pl-pds">"</span></span>
+  
+  <span class="pl-ent">region_exists</span>: <span class="pl-s"><span class="pl-pds">"</span>The region '{name}' already exists.<span class="pl-pds">"</span></span>
+  
+  <span class="pl-ent">create_success</span>: <span class="pl-s"><span class="pl-pds">"</span>Region '{name}' has been created successfully.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">remove_success</span>: <span class="pl-s"><span class="pl-pds">"</span>Region '{name}' has been removed successfully.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">edit_success</span>: <span class="pl-s"><span class="pl-pds">"</span>Region '{name}' has been updated successfully.<span class="pl-pds">"</span></span>
+  
+  <span class="pl-ent">edit_pos1_success</span>: <span class="pl-s"><span class="pl-pds">"</span>Position 1 for region '{name}' has been updated.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">edit_pos2_success</span>: <span class="pl-s"><span class="pl-pds">"</span>Position 2 for region '{name}' has been updated.<span class="pl-pds">"</span></span>
+  
+  <span class="pl-ent">entering_region_denied</span>: <span class="pl-s"><span class="pl-pds">"</span>You do not have permission to enter the region '{name}'.<span class="pl-pds">"</span></span>
+  
+  <span class="pl-ent">list_areas</span>: <span class="pl-s"><span class="pl-pds">"</span>List of defined areas:<span class="pl-pds">"</span></span>
+  <span class="pl-ent">list_areas_empty</span>: <span class="pl-s"><span class="pl-pds">"</span>No areas defined.<span class="pl-pds">"</span></span>
+  
+  <span class="pl-ent">edit_area_title</span>: <span class="pl-s"><span class="pl-pds">"</span>Edit Area<span class="pl-pds">"</span></span>
+  <span class="pl-ent">edit_area_content</span>: <span class="pl-s"><span class="pl-pds">"</span>Modify the area details below:<span class="pl-pds">"</span></span>
+  
+  <span class="pl-ent">edit_area_name_prompt</span>: <span class="pl-s"><span class="pl-pds">"</span>New Area Name<span class="pl-pds">"</span></span>
+  <span class="pl-ent">edit_area_change_pos1_prompt</span>: <span class="pl-s"><span class="pl-pds">"</span>Change Position 1?<span class="pl-pds">"</span></span>
+  <span class="pl-ent">edit_area_change_pos2_prompt</span>: <span class="pl-s"><span class="pl-pds">"</span>Change Position 2?<span class="pl-pds">"</span></span>
+  
+  <span class="pl-ent">region_message_prompt</span>: <span class="pl-s"><span class="pl-pds">"</span>Enter the custom entry message for this region:<span class="pl-pds">"</span></span>
+  <span class="pl-ent">region_message_default</span>: <span class="pl-s"><span class="pl-pds">"</span>Welcome to {name}!<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> =============================================================================</span>
+<span class="pl-c"><span class="pl-c">#</span> Regions Section</span>
+<span class="pl-c"><span class="pl-c">#</span> =============================================================================</span>
+<span class="pl-ent">regions</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Example Region: Spawn</span>
+  <span class="pl-ent">spawn</span>:
+    <span class="pl-ent">min</span>:
+      <span class="pl-ent">x</span>: <span class="pl-c1">100</span>      <span class="pl-c"><span class="pl-c">#</span> Minimum X coordinate</span>
+      <span class="pl-ent">y</span>: <span class="pl-c1">64</span>       <span class="pl-c"><span class="pl-c">#</span> Minimum Y coordinate</span>
+      <span class="pl-ent">z</span>: <span class="pl-c1">100</span>      <span class="pl-c"><span class="pl-c">#</span> Minimum Z coordinate</span>
+    <span class="pl-ent">max</span>:
+      <span class="pl-ent">x</span>: <span class="pl-c1">200</span>      <span class="pl-c"><span class="pl-c">#</span> Maximum X coordinate</span>
+      <span class="pl-ent">y</span>: <span class="pl-c1">80</span>       <span class="pl-c"><span class="pl-c">#</span> Maximum Y coordinate</span>
+      <span class="pl-ent">z</span>: <span class="pl-c1">200</span>      <span class="pl-c"><span class="pl-c">#</span> Maximum Z coordinate</span>
+    <span class="pl-ent">world</span>: <span class="pl-s">world       </span><span class="pl-c"><span class="pl-c">#</span> World name where the region is located</span>
+    <span class="pl-ent">permission</span>: <span class="pl-s">customareas.entry.spawn  </span><span class="pl-c"><span class="pl-c">#</span> Permission required to enter</span>
+    <span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>Welcome to Spawn!<span class="pl-pds">"</span></span>         <span class="pl-c"><span class="pl-c">#</span> Custom entry message</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Example Region: Arena</span>
+  <span class="pl-ent">arena</span>:
+    <span class="pl-ent">min</span>:
+      <span class="pl-ent">x</span>: <span class="pl-c1">-50</span>      <span class="pl-c"><span class="pl-c">#</span> Minimum X coordinate</span>
+      <span class="pl-ent">y</span>: <span class="pl-c1">70</span>       <span class="pl-c"><span class="pl-c">#</span> Minimum Y coordinate</span>
+      <span class="pl-ent">z</span>: <span class="pl-c1">-50</span>      <span class="pl-c"><span class="pl-c">#</span> Minimum Z coordinate</span>
+    <span class="pl-ent">max</span>:
+      <span class="pl-ent">x</span>: <span class="pl-c1">50</span>       <span class="pl-c"><span class="pl-c">#</span> Maximum X coordinate</span>
+      <span class="pl-ent">y</span>: <span class="pl-c1">90</span>       <span class="pl-c"><span class="pl-c">#</span> Maximum Y coordinate</span>
+      <span class="pl-ent">z</span>: <span class="pl-c1">50</span>       <span class="pl-c"><span class="pl-c">#</span> Maximum Z coordinate</span>
+    <span class="pl-ent">world</span>: <span class="pl-s">arena_world  </span><span class="pl-c"><span class="pl-c">#</span> World name where the region is located</span>
+    <span class="pl-ent">permission</span>: <span class="pl-s">customareas.entry.arena  </span><span class="pl-c"><span class="pl-c">#</span> Permission required to enter</span>
+    <span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>Welcome to the Arena!<span class="pl-pds">"</span></span>       <span class="pl-c"><span class="pl-c">#</span> Custom entry message</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Add more regions following the same format:</span>
+  <span class="pl-c"><span class="pl-c">#</span> my_custom_region:</span>
+  <span class="pl-c"><span class="pl-c">#</span>   min:</span>
+  <span class="pl-c"><span class="pl-c">#</span>     x: 300</span>
+  <span class="pl-c"><span class="pl-c">#</span>     y: 70</span>
+  <span class="pl-c"><span class="pl-c">#</span>     z: 300</span>
+  <span class="pl-c"><span class="pl-c">#</span>   max:</span>
+  <span class="pl-c"><span class="pl-c">#</span>     x: 400</span>
+  <span class="pl-c"><span class="pl-c">#</span>     y: 90</span>
+  <span class="pl-c"><span class="pl-c">#</span>     z: 400</span>
+  <span class="pl-c"><span class="pl-c">#</span>   world: my_world</span>
+  <span class="pl-c"><span class="pl-c">#</span>   permission: customareas.entry.my_custom_region</span>
+  <span class="pl-c"><span class="pl-c">#</span>   message: "Welcome to My Custom Region!"</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Key Configuration Options</h3><a id="user-content-key-configuration-options" class="anchor" aria-label="Permalink: Key Configuration Options" href="#key-configuration-options"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<p><strong><code>messages</code> Section:</strong></p>
+<ul>
+<li>Customize all the messages displayed by the plugin, including GUI titles, prompts, success messages, and error messages.</li>
+<li>Use <code>{name}</code> as a placeholder to dynamically insert the region name into messages.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>regions</code> Section:</strong></p>
+<ul>
+<li>Define each protected region with its minimum and maximum coordinates, world name, required permission, and custom entry message.</li>
+<li>Ensure that the world specified is loaded on your server.</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Adding New Regions</h3><a id="user-content-adding-new-regions" class="anchor" aria-label="Permalink: Adding New Regions" href="#adding-new-regions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>To add a new region, follow the existing structure under the <code>regions</code> section. For example:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">my_custom_region</span>:
+  <span class="pl-ent">min</span>:
+    <span class="pl-ent">x</span>: <span class="pl-c1">300</span>
+    <span class="pl-ent">y</span>: <span class="pl-c1">70</span>
+    <span class="pl-ent">z</span>: <span class="pl-c1">300</span>
+  <span class="pl-ent">max</span>:
+    <span class="pl-ent">x</span>: <span class="pl-c1">400</span>
+    <span class="pl-ent">y</span>: <span class="pl-c1">90</span>
+    <span class="pl-ent">z</span>: <span class="pl-c1">400</span>
+  <span class="pl-ent">world</span>: <span class="pl-s">my_world</span>
+  <span class="pl-ent">permission</span>: <span class="pl-s">customareas.entry.my_custom_region</span>
+  <span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>Welcome to My Custom Region!<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The <strong>CustomAreas</strong> plugin provides several commands to manage regions. Below are the available commands and their descriptions:</p>
+<ul>
+<li>
+<p><strong><code>/ca</code></strong></p>
+<ul>
+<li>Opens the main GUI for managing regions.</li>
+<li>
+<strong>Usage:</strong> <code>/ca</code>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>/ca create</code></strong></p>
+<ul>
+<li>Initiates the process to create a new region.</li>
+<li>
+<strong>Usage:</strong> <code>/ca create</code>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>/ca edit</code></strong></p>
+<ul>
+<li>Opens the GUI to edit an existing region.</li>
+<li>
+<strong>Usage:</strong> <code>/ca edit</code>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>/ca remove</code></strong></p>
+<ul>
+<li>Opens the GUI to remove an existing region.</li>
+<li>
+<strong>Usage:</strong> <code>/ca remove</code>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>/ca list</code></strong></p>
+<ul>
+<li>Lists all defined regions.</li>
+<li>
+<strong>Usage:</strong> <code>/ca list</code>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>/ca gui</code></strong></p>
+<ul>
+<li>Opens the main GUI for managing regions.</li>
+<li>
+<strong>Usage:</strong> <code>/ca gui</code>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>/ca pos1</code></strong></p>
+<ul>
+<li>Sets Position 1 for creating or editing a region.</li>
+<li>
+<strong>Usage:</strong> <code>/ca pos1</code>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>/ca pos2</code></strong></p>
+<ul>
+<li>Sets Position 2 for creating or editing a region.</li>
+<li>
+<strong>Usage:</strong> <code>/ca pos2</code>
+</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Permissions control access to various commands and regions. Integrate <strong>CustomAreas</strong> with your permission management plugin (e.g., ChatPerms) to assign these permissions to players or groups.</p>
+<div class="markdown-heading"><h3 class="heading-element">Command Permissions</h3><a id="user-content-command-permissions" class="anchor" aria-label="Permalink: Command Permissions" href="#command-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong><code>customareas.command</code></strong>
+<ul>
+<li>
+<strong>Description:</strong> Allows the use of all <strong>CustomAreas</strong> commands.</li>
+<li>
+<strong>Usage:</strong> Assign this permission to players or groups that should have access to manage regions.</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Region Entry Permissions</h3><a id="user-content-region-entry-permissions" class="anchor" aria-label="Permalink: Region Entry Permissions" href="#region-entry-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Each region has a unique permission node that controls who can enter it. These permissions are defined in the <code>config.yml</code> under each region.</p>
+<ul>
+<li>
+<strong><code>customareas.entry.&lt;region_name&gt;</code></strong>
+<ul>
+<li>
+<strong>Description:</strong> Allows entry into the specified region.</li>
+<li>
+<strong>Usage:</strong> Assign this permission to players or groups that should have access to the region.</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<p><strong>Accessing the GUI:</strong></p>
+<ul>
+<li>Use the <code>/ca</code> or <code>/ca gui</code> command to open the main <strong>CustomAreas</strong> GUI.</li>
+</ul>
+</li>
+<li>
+<p><strong>Creating a New Region:</strong></p>
+<ul>
+<li>Click on the "Create Area" button in the GUI.</li>
+<li>Enter the region name and a custom entry message.</li>
+<li>Follow the prompts to set Position 1 and Position 2 by using <code>/ca pos1</code> and <code>/ca pos2</code> while standing in the desired locations.</li>
+</ul>
+</li>
+<li>
+<p><strong>Editing an Existing Region:</strong></p>
+<ul>
+<li>Click on the "Edit Area" button in the GUI.</li>
+<li>Select the region you want to edit.</li>
+<li>Modify the region name, entry message, and choose whether to change Position 1 or Position 2.</li>
+</ul>
+</li>
+<li>
+<p><strong>Removing a Region:</strong></p>
+<ul>
+<li>Click on the "Remove Area" button in the GUI.</li>
+<li>Select the region you wish to remove and confirm the deletion.</li>
+</ul>
+</li>
+<li>
+<p><strong>Listing All Regions:</strong></p>
+<ul>
+<li>Use the <code>/ca list</code> command to view all defined regions along with their details.</li>
+</ul>
+</li>
+<li>
+<p><strong>Entering a Region:</strong></p>
+<ul>
+<li>When a player enters a defined region, the plugin checks if they have the necessary permission.</li>
+<li>If permitted, the player sees the custom entry message.</li>
+<li>If not, their movement is canceled, and they receive a denial message.</li>
+</ul>
+</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Examples</h2><a id="user-content-examples" class="anchor" aria-label="Permalink: Examples" href="#examples"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Creating a Region Named "Market"</h3><a id="user-content-creating-a-region-named-market" class="anchor" aria-label="Permalink: Creating a Region Named &quot;Market&quot;" href="#creating-a-region-named-market"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<p><strong>Open the GUI:</strong></p>
+<div class="highlight highlight-source-shell"><pre>/ca</pre></div>
+</li>
+<li>
+<p><strong>Select "Create Area":</strong></p>
+<ul>
+<li>Click on "Create Area".</li>
+</ul>
+</li>
+<li>
+<p><strong>Enter Details:</strong></p>
+<ul>
+<li>
+<strong>Area Name:</strong> <code>market</code>
+</li>
+<li>
+<strong>Entry Message:</strong> <code>Welcome to the Market!</code>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Set Positions:</strong></p>
+<ul>
+<li>Stand in the desired Position 1 and use:
+<div class="highlight highlight-source-shell"><pre>/ca pos1</pre></div>
+</li>
+<li>Stand in the desired Position 2 and use:
+<div class="highlight highlight-source-shell"><pre>/ca pos2</pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Assign Permissions:</strong></p>
+<div class="highlight highlight-source-shell"><pre>/cp addgroupperm vip customareas.entry.market</pre></div>
+</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element">Editing the "Market" Region</h3><a id="user-content-editing-the-market-region" class="anchor" aria-label="Permalink: Editing the &quot;Market&quot; Region" href="#editing-the-market-region"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<p><strong>Open the GUI:</strong></p>
+<div class="highlight highlight-source-shell"><pre>/ca</pre></div>
+</li>
+<li>
+<p><strong>Select "Edit Area":</strong></p>
+<ul>
+<li>Click on "Edit Area".</li>
+</ul>
+</li>
+<li>
+<p><strong>Choose "market":</strong></p>
+<ul>
+<li>Select the "market" region.</li>
+</ul>
+</li>
+<li>
+<p><strong>Modify Details:</strong></p>
+<ul>
+<li>
+<strong>New Area Name:</strong> <code>central_market</code> (or leave blank to keep the same)</li>
+<li>
+<strong>Entry Message:</strong> <code>Welcome to the Central Market!</code>
+</li>
+<li>
+<strong>Change Position 1:</strong> Yes/No</li>
+<li>
+<strong>Change Position 2:</strong> Yes/No</li>
+</ul>
+</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element">Removing the "Central Market" Region</h3><a id="user-content-removing-the-central-market-region" class="anchor" aria-label="Permalink: Removing the &quot;Central Market&quot; Region" href="#removing-the-central-market-region"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<p><strong>Open the GUI:</strong></p>
+<div class="highlight highlight-source-shell"><pre>/ca</pre></div>
+</li>
+<li>
+<p><strong>Select "Remove Area":</strong></p>
+<ul>
+<li>Click on "Remove Area".</li>
+</ul>
+</li>
+<li>
+<p><strong>Choose "central_market":</strong></p>
+<ul>
+<li>Select the "central_market" region.</li>
+</ul>
+</li>
+<li>
+<p><strong>Confirm Removal:</strong></p>
+<ul>
+<li>Confirm the deletion when prompted.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><strong>CustomAreas</strong> enhances your PocketMine-MP server by providing a flexible and secure way to manage protected regions. Empower your server administration with precise control and personalized player experiences. Happy crafting!</p>

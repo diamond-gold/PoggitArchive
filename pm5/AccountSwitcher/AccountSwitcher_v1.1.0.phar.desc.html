@@ -1,0 +1,58 @@
+<div class="markdown-heading"><h1 class="heading-element">AccountSwitcher</h1><a id="user-content-accountswitcher" class="anchor" aria-label="Permalink: AccountSwitcher" href="#accountswitcher"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/matiasdamiandelsolar/AccountSwitcher/blob/main/icon.png"><img src="https://github.com/matiasdamiandelsolar/AccountSwitcher/raw/main/icon.png" alt="" style="max-width: 100%;"></a></p>
+<p>AccountSwitcher is a powerful plugin for PocketMine-MP that allows you to switch between multiple accounts without having to log out and back in.</p>
+<div class="markdown-heading"><h2 class="heading-element">Key Features</h2><a id="user-content-key-features" class="anchor" aria-label="Permalink: Key Features" href="#key-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Account Grouping</h3><a id="user-content-account-grouping" class="anchor" aria-label="Permalink: Account Grouping" href="#account-grouping"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Group multiple accounts together, so players can switch between them easily without logging out.</p>
+<div class="markdown-heading"><h3 class="heading-element">Unified Account Banning</h3><a id="user-content-unified-account-banning" class="anchor" aria-label="Permalink: Unified Account Banning" href="#unified-account-banning"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin detects when one account is banned and automatically prevents all alts from entering the server.</p>
+<div class="markdown-heading"><h3 class="heading-element">Extensive Configuration</h3><a id="user-content-extensive-configuration" class="anchor" aria-label="Permalink: Extensive Configuration" href="#extensive-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Offers a wide range of configurable options such as transfer server and alt limits.</p>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/account</code>: Displays a form where you can manage your accounts or group a new account.</li>
+<li>
+<code>/account manage</code>: Allows you to manage grouped accounts, including switching or ungrouping accounts.</li>
+<li>
+<code>/account group &lt;account&gt;</code>: Group the specified account with your current account.</li>
+<li>
+<code>/account ungroup &lt;account&gt;</code>: Ungroup the specified account from your group.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">How to use</h2><a id="user-content-how-to-use" class="anchor" aria-label="Permalink: How to use" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Group an account: To group an account, simply use /account group . The other account must also type <code>/account group &lt;your_account&gt;</code> to complete the grouping process.
+</li>
+<li>Manage accounts: Use <code>/account manage</code> to manage your grouped accounts. This will allow you to either switch between accounts or ungroup an account.</li>
+<li>Switch accounts: If you have multiple accounts grouped, simply use <code>/account</code> to bring up the account form. From there, you can choose which account to switch to.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Configuration file</h2><a id="user-content-configuration-file" class="anchor" aria-label="Permalink: Configuration file" href="#configuration-file"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Configuration file for AccountSwitcher</span>
+<span class="pl-ent">account-switch</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Should players be transferred to a server when they switch accounts? (true/false)</span>
+  <span class="pl-ent">transfer-on-switch</span>: <span class="pl-c1">true</span>
+  <span class="pl-c"><span class="pl-c">#</span> The IP address of the server players will be transferred to upon account switch.</span>
+  <span class="pl-ent">server-ip</span>: <span class="pl-s"><span class="pl-pds">"</span>127.0.0.1<span class="pl-pds">"</span></span>
+
+  <span class="pl-c"><span class="pl-c">#</span> The port number of the server players will be transferred to.</span>
+  <span class="pl-ent">server-port</span>: <span class="pl-c1">19132</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Should all accounts in a group be banned if any account in the group is banned? (true/false)</span>
+  <span class="pl-c"><span class="pl-c">#</span> If set to true, banning any account in the group will result in all accounts being banned.</span>
+  <span class="pl-ent">ban-alts</span>: <span class="pl-c1">true</span>
+
+<span class="pl-ent">groups</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Allow players to ungroup their accounts? (true/false)</span>
+  <span class="pl-ent">allow-ungroup</span>: <span class="pl-c1">true</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> The maximum number of accounts allowed in a single group</span>
+  <span class="pl-c"><span class="pl-c">#</span> 2 means 1 alt account</span>
+  <span class="pl-c"><span class="pl-c">#</span> 3 means 2 alt accounts and so on.</span>
+  <span class="pl-ent">max-group-size</span>: <span class="pl-c1">2</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Dependencies</h2><a id="user-content-dependencies" class="anchor" aria-label="Permalink: Dependencies" href="#dependencies"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li><a href="https://github.com/matiasdamiandelsolar/LangManager">LangManager</a></li>
+<li><a href="https://github.com/jojoe77777/FormAPI">FormAPI</a></li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Licensing information</h2><a id="user-content-licensing-information" class="anchor" aria-label="Permalink: Licensing information" href="#licensing-information"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This project is licensed under LGPL-3.0. Please see the LICENSE file for details.</p>

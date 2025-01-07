@@ -1,0 +1,105 @@
+<div class="markdown-heading"><h1 class="heading-element">UltimateCaptcha Plugin for PocketMine-MP</h1><a id="user-content-ultimatecaptcha-plugin-for-pocketmine-mp" class="anchor" aria-label="Permalink: UltimateCaptcha Plugin for PocketMine-MP" href="#ultimatecaptcha-plugin-for-pocketmine-mp"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/SoyDavs/UltimateCaptcha/raw/main/icon.png"><img src="https://github.com/SoyDavs/UltimateCaptcha/raw/main/icon.png" alt="UltimateCaptcha Icon" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h2 class="heading-element">Introduction</h2><a id="user-content-introduction" class="anchor" aria-label="Permalink: Introduction" href="#introduction"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>UltimateCaptcha is a highly secure and customizable captcha plugin designed for PocketMine-MP 5.x. This plugin helps protect your server by requiring players to complete a captcha before they can interact with the world. It ensures that only legitimate players gain access while preventing automated bots from causing trouble.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Customizable Captcha</strong>: Configure captcha type, text length, and case sensitivity.</li>
+<li>
+<strong>UI Integration</strong>: Uses Vecnavium FormsUI for a sleek and intuitive user interface.</li>
+<li>
+<strong>Player Verification Persistence</strong>: Once a player successfully completes the captcha, they won’t need to do it again unless specified in the config.</li>
+<li>
+<strong>Discord Notifications</strong>: Sends alerts to a Discord webhook when a player fails the captcha multiple times.</li>
+<li>
+<strong>Fully Configurable</strong>: All settings, including messages, colors, and webhook URLs, are customizable via <code>config.yml</code>.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Requirements</h2><a id="user-content-requirements" class="anchor" aria-label="Permalink: Requirements" href="#requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>PocketMine-MP 5.x</li>
+<li>Vecnavium FormsUI</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the latest release of UltimateCaptcha from <a href="#">GitHub Releases</a>.</li>
+<li>Place the <code>UltimateCaptcha</code> folder in the <code>plugins</code> directory of your PocketMine-MP server.</li>
+<li>Ensure that Vecnavium FormsUI is installed and loaded.</li>
+<li>Start your server and modify the <code>config.yml</code> file located in <code>plugins/UltimateCaptcha/resources/</code> to suit your needs.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Here is an example <code>config.yml</code> file:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">Captcha</span>:
+  <span class="pl-ent">ShowOnEveryJoin</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">MaxAttempts</span>: <span class="pl-c1">3</span>
+  <span class="pl-ent">NotifyOnSuspicious</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">CaptchaType</span>: <span class="pl-s"><span class="pl-pds">"</span>TEXT<span class="pl-pds">"</span></span>
+  <span class="pl-ent">RandomTextLength</span>: <span class="pl-c1">6</span>
+  <span class="pl-ent">UseCaseSensitive</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">ResendFormDelay</span>: <span class="pl-c1">0</span>
+  <span class="pl-ent">BlockMovement</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">BlockInteract</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">BlockCommands</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">BlockChat</span>: <span class="pl-c1">true</span>
+
+<span class="pl-ent">Messages</span>:
+  <span class="pl-ent">Title</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§bUltimateCaptcha<span class="pl-pds">"</span></span>
+  <span class="pl-ent">Description</span>: <span class="pl-s"><span class="pl-pds">"</span>Please complete this captcha to unlock!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">WrongAnswer</span>: <span class="pl-s"><span class="pl-pds">"</span>§cIncorrect captcha. Try again!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">CorrectAnswer</span>: <span class="pl-s"><span class="pl-pds">"</span>§aYou have passed the captcha!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">SuspiciousAlert</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou have exceeded the maximum attempts!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">BlockedInteract</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou must complete the captcha first!<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">Discord</span>:
+  <span class="pl-ent">WebhookURL</span>: <span class="pl-s"><span class="pl-pds">"</span>https://discord.com/api/webhooks/XXXXX/XXXXX<span class="pl-pds">"</span></span>
+  <span class="pl-ent">SuspiciousMessage</span>: <span class="pl-s"><span class="pl-pds">"</span>Player {player} might be a bot! Too many captcha failures.<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ultimatecaptcha.command.captcha</code></td>
+<td>Allows players to use the <code>/captcha</code> command</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>ultimatecaptcha.bypass</code></td>
+<td>Allows players to bypass the captcha</td>
+<td>op</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong><code>/captcha</code></strong>: Forces the captcha form to appear again for the player using the command.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">How It Works</h2><a id="user-content-how-it-works" class="anchor" aria-label="Permalink: How It Works" href="#how-it-works"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>When a player joins the server, they will be prompted with a captcha if:
+<ul>
+<li>They haven’t completed the captcha before.</li>
+<li>
+<code>ShowOnEveryJoin</code> is set to <code>true</code> in <code>config.yml</code>.</li>
+</ul>
+</li>
+<li>Players must correctly type the random text displayed in the captcha form.</li>
+<li>If a player fails the captcha multiple times (based on <code>MaxAttempts</code>), a Discord alert will be sent if <code>NotifyOnSuspicious</code> is enabled.</li>
+<li>Once a player successfully completes the captcha, they are added to <code>verifiedPlayers.yml</code>, ensuring they won’t see the captcha again unless <code>ShowOnEveryJoin</code> is enabled.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Contributing</h2><a id="user-content-contributing" class="anchor" aria-label="Permalink: Contributing" href="#contributing"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Contributions are welcome! Feel free to fork this repository and submit a pull request with your changes.</p>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This project is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for more details.</p>
+<div class="markdown-heading"><h2 class="heading-element">Issues</h2><a id="user-content-issues" class="anchor" aria-label="Permalink: Issues" href="#issues"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you encounter any issues or have feature requests, please open an issue in the <a href="#">GitHub Issues</a> section.</p>
+<div class="markdown-heading"><h2 class="heading-element">Contact</h2><a id="user-content-contact" class="anchor" aria-label="Permalink: Contact" href="#contact"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>For further inquiries or support, please contact the plugin developer via GitHub.</p>
+<hr>
+<p>Thank you for using UltimateCaptcha! Protect your server and enjoy a bot-free environment!</p>

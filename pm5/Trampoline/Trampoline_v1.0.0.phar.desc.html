@@ -1,0 +1,167 @@
+<div class="markdown-heading"><h1 class="heading-element">Trampoline Plugin for PocketMine-MP</h1><a id="user-content-trampoline-plugin-for-pocketmine-mp" class="anchor" aria-label="Permalink: Trampoline Plugin for PocketMine-MP" href="#trampoline-plugin-for-pocketmine-mp"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Trampoline</strong> is a customizable PocketMine-MP plugin that allows players to create trampolines in their worlds. Players can be launched into the air when they walk over blocks configured as trampolines. The plugin includes features such as adjustable launch power, particle effects, and multi-world support.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Customizable trampolines</strong>: Players can set specific blocks as trampolines.</li>
+<li>
+<strong>Adjustable launch power</strong>: Configure how high players are launched when stepping on a trampoline.</li>
+<li>
+<strong>Slime-like particle effects</strong>: Enable or disable particles when players jump on trampolines.</li>
+<li>
+<strong>Multi-world support</strong>: Create trampolines in different worlds.</li>
+<li>
+<strong>Commands</strong>: Set, remove, and list trampolines using simple commands.</li>
+<li>
+<strong>Configuration files</strong>: Customize messages, launch power, and particles through config files.</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Usage Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/trampoline set &lt;count&gt;</code></td>
+<td>Enter set mode to create a trampoline.</td>
+<td><code>/trampoline set 4</code></td>
+</tr>
+<tr>
+<td><code>/trampoline remove &lt;ID&gt;</code></td>
+<td>Remove a trampoline by its ID.</td>
+<td><code>/trampoline remove 1</code></td>
+</tr>
+<tr>
+<td><code>/trampoline edit &lt;ID&gt;</code></td>
+<td>Edit trampoline settings by ID.</td>
+<td><code>/trampoline edit 1</code></td>
+</tr>
+<tr>
+<td><code>/trampoline list</code></td>
+<td>List all created trampolines.</td>
+<td><code>/trampoline list</code></td>
+</tr>
+<tr>
+<td><code>/trampoline cancel</code></td>
+<td>Cancel the current set mode.</td>
+<td><code>/trampoline cancel</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>trampoline.cmd</code></td>
+<td>Allows use of all trampoline commands.</td>
+<td><code>op</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Configuration Files</h2><a id="user-content-configuration-files" class="anchor" aria-label="Permalink: Configuration Files" href="#configuration-files"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element"><code>config.yml</code></h3><a id="user-content-configyml" class="anchor" aria-label="Permalink: config.yml" href="#configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This file allows you to customize the global settings for the plugin.</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> The throw power applied to players when they step on the trampoline</span>
+<span class="pl-ent">throwPower</span>: <span class="pl-c1">2.0</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Enable or disable slime particles when the player jumps</span>
+<span class="pl-ent">enableSlimeParticles</span>: <span class="pl-c1">true</span></pre></div>
+<hr>
+<div class="markdown-heading"><h3 class="heading-element"><code>lang.yml</code></h3><a id="user-content-langyml" class="anchor" aria-label="Permalink: lang.yml" href="#langyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This file allows you to customize all the messages displayed by the plugin.</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>§a[Trampoline] §r<span class="pl-pds">"</span></span>
+<span class="pl-ent">no-permission</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou don't have permission to use this command.<span class="pl-pds">"</span></span>
+<span class="pl-ent">only-in-game</span>: <span class="pl-s"><span class="pl-pds">"</span>§cThis command can only be used in-game.<span class="pl-pds">"</span></span>
+<span class="pl-ent">usage</span>: <span class="pl-s"><span class="pl-pds">"</span>§cUsage: /trampoline &lt;set|remove|edit|list&gt; [params]<span class="pl-pds">"</span></span>
+<span class="pl-ent">set-start</span>: <span class="pl-s"><span class="pl-pds">"</span>You are now in set mode. Break %count% block(s) to define your trampoline.<span class="pl-pds">"</span></span>
+<span class="pl-ent">set-done</span>: <span class="pl-s"><span class="pl-pds">"</span>Trampoline #%id% has been created with %count% block(s).<span class="pl-pds">"</span></span>
+<span class="pl-ent">exit-set-mode</span>: <span class="pl-s"><span class="pl-pds">"</span>You are no longer in set mode.<span class="pl-pds">"</span></span>
+<span class="pl-ent">already-in-set-mode</span>: <span class="pl-s"><span class="pl-pds">"</span>You are already in set mode. Use /trampoline cancel to exit.<span class="pl-pds">"</span></span>
+<span class="pl-ent">no-trampolines</span>: <span class="pl-s"><span class="pl-pds">"</span>There are no trampolines created yet.<span class="pl-pds">"</span></span>
+<span class="pl-ent">list-format</span>: <span class="pl-s"><span class="pl-pds">"</span>§eTrampoline §f#%id%§e has §f%count% block(s)§e in world: §f%world%.<span class="pl-pds">"</span></span>
+<span class="pl-ent">remove-success</span>: <span class="pl-s"><span class="pl-pds">"</span>Trampoline #%id% was successfully removed.<span class="pl-pds">"</span></span>
+<span class="pl-ent">remove-fail</span>: <span class="pl-s"><span class="pl-pds">"</span>No trampoline found with ID: #%id%.<span class="pl-pds">"</span></span>
+<span class="pl-ent">edit-success</span>: <span class="pl-s"><span class="pl-pds">"</span>Trampoline #%id% has been updated.<span class="pl-pds">"</span></span>
+<span class="pl-ent">edit-fail</span>: <span class="pl-s"><span class="pl-pds">"</span>Failed to edit. Make sure the ID is correct and the parameters are valid.<span class="pl-pds">"</span></span>
+<span class="pl-ent">cancel-success</span>: <span class="pl-s"><span class="pl-pds">"</span>Set mode canceled.<span class="pl-pds">"</span></span></pre></div>
+<hr>
+<div class="markdown-heading"><h3 class="heading-element"><code>trampolines.yml</code></h3><a id="user-content-trampolinesyml" class="anchor" aria-label="Permalink: trampolines.yml" href="#trampolinesyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This file stores all the trampolines created by players. It is automatically managed by the plugin and should not be edited manually unless necessary.</p>
+<p>Example:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">trampolines</span>:
+  <span class="pl-ent">1</span>:
+    <span class="pl-ent">blocks</span>:
+      - <span class="pl-ent">world</span>: <span class="pl-s"><span class="pl-pds">"</span>world<span class="pl-pds">"</span></span>
+        <span class="pl-ent">x</span>: <span class="pl-c1">100</span>
+        <span class="pl-ent">y</span>: <span class="pl-c1">65</span>
+        <span class="pl-ent">z</span>: <span class="pl-c1">200</span>
+      - <span class="pl-ent">world</span>: <span class="pl-s"><span class="pl-pds">"</span>world<span class="pl-pds">"</span></span>
+        <span class="pl-ent">x</span>: <span class="pl-c1">101</span>
+        <span class="pl-ent">y</span>: <span class="pl-c1">65</span>
+        <span class="pl-ent">z</span>: <span class="pl-c1">200</span></pre></div>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">How to Use</h2><a id="user-content-how-to-use" class="anchor" aria-label="Permalink: How to Use" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<p><strong>Set a trampoline</strong>:<br>
+Use <code>/trampoline set &lt;count&gt;</code> to enter set mode. Once in set mode, break the specified number of blocks you want to act as trampolines.<br>
+Example:</p>
+<div class="highlight highlight-source-shell"><pre>/trampoline <span class="pl-c1">set</span> 4</pre></div>
+<p>Then, break 4 blocks. These blocks will now function as trampolines.</p>
+</li>
+<li>
+<p><strong>Remove a trampoline</strong>:<br>
+Use <code>/trampoline remove &lt;ID&gt;</code> to remove a trampoline by its ID.<br>
+Example:</p>
+<div class="highlight highlight-source-shell"><pre>/trampoline remove 1</pre></div>
+</li>
+<li>
+<p><strong>Edit a trampoline</strong>:<br>
+Use <code>/trampoline edit &lt;ID&gt;</code> to modify a trampoline’s settings.</p>
+</li>
+<li>
+<p><strong>List trampolines</strong>:<br>
+Use <code>/trampoline list</code> to see all the trampolines that have been created.</p>
+</li>
+<li>
+<p><strong>Cancel set mode</strong>:<br>
+Use <code>/trampoline cancel</code> to exit set mode without creating a trampoline.</p>
+</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the plugin (<code>Trampoline.zip</code>) and extract it.</li>
+<li>Place the extracted <code>Trampoline</code> folder inside your <code>plugins</code> directory.</li>
+<li>Start or restart your PocketMine-MP server.</li>
+<li>Modify the configuration files (<code>config.yml</code>, <code>lang.yml</code>) to your liking.</li>
+<li>Use the commands to create and manage trampolines in your world.</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Requirements</h2><a id="user-content-requirements" class="anchor" aria-label="Permalink: Requirements" href="#requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>PocketMine-MP</strong>: Version 5.0.0 or higher</li>
+<li>No external dependencies are required.</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you encounter any issues or have feature requests, feel free to contact the author (<strong>SoyDavs</strong>) or open an issue on the plugin’s repository.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin is provided under the <strong>MIT License</strong>. You are free to use, modify, and distribute it as long as proper credit is given.</p>
