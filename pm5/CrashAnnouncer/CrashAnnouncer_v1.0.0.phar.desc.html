@@ -1,0 +1,102 @@
+<div class="markdown-heading"><h1 class="heading-element">Crash Announcer Plugin</h1><a id="user-content-crash-announcer-plugin" class="anchor" aria-label="Permalink: Crash Announcer Plugin" href="#crash-announcer-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Crash Announcer</strong> is a PocketMine-MP plugin that automatically sends detailed crash reports to a specified Discord channel through a webhook when an error or crash occurs on your server. This helps server administrators quickly identify and resolve issues.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Automatic crash detection</strong>: Detects and reports both runtime errors and fatal errors.</li>
+<li>
+<strong>Detailed crash reports</strong>: Reports include error message, file, line number, and server information.</li>
+<li>
+<strong>Customizable Discord embed</strong>: You can fully customize the appearance of the embed message sent to your Discord webhook.</li>
+<li>
+<strong>Lightweight and easy to use</strong>: Minimal setup required, designed for efficient performance.</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the plugin's <code>.phar</code> file and place it in the <code>plugins</code> folder of your PocketMine-MP server.</li>
+<li>Start the server to generate the configuration file.</li>
+<li>Open the <code>config.yml</code> file located in the <code>plugins/CrashAnnouncer</code> folder and configure it according to your preferences.</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Configuration (<code>config.yml</code>)</h2><a id="user-content-configuration-configyml" class="anchor" aria-label="Permalink: Configuration (config.yml)" href="#configuration-configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Discord webhook URL where crash reports will be sent</span>
+<span class="pl-ent">webhook-url</span>: <span class="pl-s"><span class="pl-pds">"</span>YOUR_DISCORD_WEBHOOK_URL<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Embed message customization</span>
+<span class="pl-ent">embed-title</span>: <span class="pl-s"><span class="pl-pds">"</span>Server Crash Report<span class="pl-pds">"</span></span>
+<span class="pl-ent">embed-description</span>: <span class="pl-s"><span class="pl-pds">"</span>A crash occurred on your server. Details are provided below.<span class="pl-pds">"</span></span>
+<span class="pl-ent">embed-color</span>: <span class="pl-s"><span class="pl-pds">"</span>#FF0000<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Hexadecimal color code for embed</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Plugin messages</span>
+<span class="pl-ent">messages</span>:
+  <span class="pl-ent">plugin-enabled</span>: <span class="pl-s"><span class="pl-pds">"</span>Crash Announcer enabled.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">error-webhook</span>: <span class="pl-s"><span class="pl-pds">"</span>Failed to send crash report to the webhook.<span class="pl-pds">"</span></span></pre></div>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">How It Works</h2><a id="user-content-how-it-works" class="anchor" aria-label="Permalink: How It Works" href="#how-it-works"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<p><strong>Error Handling</strong><br>
+The plugin uses <code>set_error_handler</code> and <code>register_shutdown_function</code> to detect errors and crashes:</p>
+<ul>
+<li>
+<code>handleCrash</code>: Captures non-fatal errors and sends a report.</li>
+<li>
+<code>handleFatalError</code>: Captures fatal errors and sends a report before the server shuts down.</li>
+</ul>
+</li>
+<li>
+<p><strong>Sending Reports</strong><br>
+When an error or crash is detected, the plugin sends a detailed report to the configured Discord webhook. The report includes:</p>
+<ul>
+<li>Error message, file, and line number</li>
+<li>Server information (OS, PocketMine version, and number of online players)</li>
+<li>Timestamp of the crash</li>
+</ul>
+</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Example Crash Report</h2><a id="user-content-example-crash-report" class="anchor" aria-label="Permalink: Example Crash Report" href="#example-crash-report"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Embed Title:</strong><br>
+<code>Server Crash Report</code></p>
+<p><strong>Embed Description:</strong><br>
+<code>A crash occurred on your server. Details are provided below.</code></p>
+<p><strong>Fields:</strong></p>
+<ul>
+<li>
+<strong>Error:</strong>
+<pre><code>Example error message
+</code></pre>
+</li>
+<li>
+<strong>File:</strong><br>
+<code>plugins/MyPlugin/Main.php</code>
+</li>
+<li>
+<strong>Line:</strong><br>
+<code>42</code>
+</li>
+<li>
+<strong>Server Info:</strong><br>
+<code>OS: Linux</code><br>
+<code>PM Version: 5.0.0</code><br>
+<code>Players Online: 3</code>
+</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Requirements</h2><a id="user-content-requirements" class="anchor" aria-label="Permalink: Requirements" href="#requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>PocketMine-MP version <strong>5.0.0</strong> or higher</li>
+<li>PHP <strong>8.0</strong> or higher</li>
+<li>A valid Discord webhook URL</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin is released under the <strong>MIT License</strong>. Feel free to use, modify, and distribute it as long as you include the original license.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you encounter any issues or have suggestions, feel free to open an issue or contribute to the plugin’s development.</p>
+<hr>
+<p><strong>Author:</strong> SoyDavs<br>
+<strong>Version:</strong> 1.0.0</p>
