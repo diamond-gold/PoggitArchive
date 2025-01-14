@@ -1,11 +1,11 @@
 # LumberJack
-<img src="https://raw.githubusercontent.com/Terpz710/LumberJack/6651a6f42c5aaa3ba39aa5d8eae924894f10f5bc/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/Terpz710/LumberJack/870aad8d20176e344cfce165685057a8b14399a8/icon.png" width="128" height="128" />
 
 ## Add in Lumberjack features to your server!
 ```properties
-Version: 1.0.0
+Version: 1.0.1
     API: 5.0.0
-    Updated: 10-04-2024 01:57:43 UTC
+    Updated: 13-01-2025 13:36:56 UTC
 Repo: https://github.com/Terpz710/LumberJack
 License: Apache-2.0
 Categories: General,Fun,Minigame
