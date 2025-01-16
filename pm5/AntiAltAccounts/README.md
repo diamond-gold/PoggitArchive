@@ -1,9 +1,9 @@
 # AntiAltAccounts
 ## Ban users alt accounts
 ```properties
-Version: 1.0.3
+Version: 1.0.4
     API: 5.0.0
-    Updated: 06-11-2024 16:52:48 UTC
+    Updated: 15-01-2025 13:18:14 UTC
 Repo: https://github.com/Terpz710/AntiAltAccounts
 License: Apache-2.0
 Categories: General,Anti-Griefing Tools,Admin Tools
