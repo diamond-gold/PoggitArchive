@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/ItsMax123/KingOfTheHill
 License: Apache-2.0
 Categories: Minigame,Fun,General
-Keywords: king,hill,koth,kingofthehill,ScoreHud,BossBar,event
+Keywords: BossBar,event,hill,king,kingofthehill,koth,ScoreHud
 ```
