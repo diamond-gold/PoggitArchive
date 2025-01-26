@@ -1,0 +1,281 @@
+<div class="markdown-heading"><h1 class="heading-element">PlayerSize Plugin for PocketMine-MP</h1><a id="user-content-playersize-plugin-for-pocketmine-mp" class="anchor" aria-label="Permalink: PlayerSize Plugin for PocketMine-MP" href="#playersize-plugin-for-pocketmine-mp"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>PlayerSize</strong> is a customizable PocketMine-MP plugin that allows players to adjust their own size or become invisible using simple commands. Whether you want to be larger, smaller, or hidden, PlayerSize provides an easy and flexible way to modify your in-game appearance.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Adjust Player Size:</strong> Set your size to normal, small, or giant.</li>
+<li>
+<strong>Toggle Invisibility:</strong> Become invisible or visible at will.</li>
+<li>
+<strong>Permission-Based Access:</strong> Control who can use specific commands.</li>
+<li>
+<strong>Configurable Settings:</strong> Easily customize scales and messages via <code>config.yml</code>.</li>
+<li>
+<strong>Command Aliases:</strong> Use short aliases for quicker command access.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Alias</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/playersize</code></td>
+<td><code>/ps</code></td>
+<td>Main command to manage player size.</td>
+</tr>
+<tr>
+<td><code>/playersize help</code></td>
+<td><code>/ps help</code></td>
+<td>Display help information.</td>
+</tr>
+<tr>
+<td><code>/playersize normal</code></td>
+<td><code>/ps normal</code></td>
+<td>Set your size to normal.</td>
+</tr>
+<tr>
+<td><code>/playersize small</code></td>
+<td><code>/ps small</code></td>
+<td>Set your size to small.</td>
+</tr>
+<tr>
+<td><code>/playersize giant</code></td>
+<td><code>/ps giant</code></td>
+<td>Set your size to giant.</td>
+</tr>
+<tr>
+<td><code>/playersize hide</code></td>
+<td><code>/ps hide</code></td>
+<td>Toggle your invisibility.</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<p><strong>Download the Plugin:</strong></p>
+<ul>
+<li>Clone or download the repository</li>
+</ul>
+</li>
+<li>
+<p><strong>Place in Plugins Directory:</strong></p>
+<ul>
+<li>Extract the downloaded files.</li>
+<li>Place the <code>PlayerSize</code> folder into your PocketMine-MP <code>plugins</code> directory.</li>
+</ul>
+</li>
+<li>
+<p><strong>Restart the Server:</strong></p>
+<ul>
+<li>Restart your PocketMine-MP server to load the plugin.</li>
+<li>Upon first run, a default <code>config.yml</code> will be generated.</li>
+</ul>
+</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Customize the plugin settings by editing the <code>config.yml</code> file located in the <code>plugins/PlayerSize</code> directory.</p>
+<div class="markdown-heading"><h3 class="heading-element">
+<code>config.yml</code> Structure</h3><a id="user-content-configyml-structure" class="anchor" aria-label="Permalink: config.yml Structure" href="#configyml-structure"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> PlayerSize Configuration</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Scale settings for different sizes</span>
+<span class="pl-ent">scales</span>:
+  <span class="pl-ent">normal</span>: <span class="pl-c1">1.0</span>
+  <span class="pl-ent">small</span>: <span class="pl-c1">0.5</span>
+  <span class="pl-ent">giant</span>: <span class="pl-c1">2.0</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Command aliases</span>
+<span class="pl-ent">aliases</span>:
+  <span class="pl-ent">playersize</span>: <span class="pl-s">[ps]</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Messages sent to players</span>
+<span class="pl-ent">messages</span>:
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>§e[PlayerSize] §f<span class="pl-pds">"</span></span>
+  <span class="pl-ent">help</span>:
+    <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>§a--- PlayerSize Help ---<span class="pl-pds">"</span></span>
+    <span class="pl-ent">commands</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>§6/playersize help §f- Show this help message.<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>§6/playersize normal §f- Set your size to normal.<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>§6/playersize small §f- Set your size to small.<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>§6/playersize giant §f- Set your size to giant.<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>§6/playersize hide §f- Toggle your invisibility.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">no_permission</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou do not have permission to use this command.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">size_set</span>:
+    <span class="pl-ent">normal</span>: <span class="pl-s"><span class="pl-pds">"</span>§aYour size has been set to normal.<span class="pl-pds">"</span></span>
+    <span class="pl-ent">small</span>: <span class="pl-s"><span class="pl-pds">"</span>§aYour size has been set to small.<span class="pl-pds">"</span></span>
+    <span class="pl-ent">giant</span>: <span class="pl-s"><span class="pl-pds">"</span>§aYour size has been set to giant.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">hidden</span>: <span class="pl-s"><span class="pl-pds">"</span>§aYou are now hidden.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">unhidden</span>: <span class="pl-s"><span class="pl-pds">"</span>§aYou are now visible.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">unknown_command</span>: <span class="pl-s"><span class="pl-pds">"</span>§cUnknown command. Use /ps help for a list of commands.<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Permissions</span>
+<span class="pl-ent">permissions</span>:
+  <span class="pl-ent">playersize.use</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using the PlayerSize commands.<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">playersize.help</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows viewing help information for PlayerSize.<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">playersize.normal</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows setting player size to normal.<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">playersize.small</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows setting player size to small.<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">playersize.giant</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows setting player size to giant.<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">playersize.hide</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows toggling invisibility.<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Configuration Options</h3><a id="user-content-configuration-options" class="anchor" aria-label="Permalink: Configuration Options" href="#configuration-options"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<p><strong>Scales:</strong></p>
+<ul>
+<li>
+<code>normal</code>: Default player size (<code>1.0</code>).</li>
+<li>
+<code>small</code>: Reduced player size (<code>0.5</code>).</li>
+<li>
+<code>giant</code>: Increased player size (<code>2.0</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Aliases:</strong></p>
+<ul>
+<li>Define alternate command names for easier access. By default, <code>/playersize</code> can be accessed via <code>/ps</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Messages:</strong></p>
+<ul>
+<li>Customize the messages displayed to players. Change colors and text as desired using Minecraft color codes (e.g., <code>§a</code> for green).</li>
+</ul>
+</li>
+<li>
+<p><strong>Permissions:</strong></p>
+<ul>
+<li>Define permission nodes to control access to commands. Adjust the default settings as needed.</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Manage who can use the PlayerSize commands using a permissions plugin like <strong>LuckPerms</strong>. Below are the default permission nodes:</p>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>playersize.use</code></td>
+<td>Allows using the PlayerSize commands.</td>
+<td><code>op</code></td>
+</tr>
+<tr>
+<td><code>playersize.help</code></td>
+<td>Allows viewing help information.</td>
+<td><code>op</code></td>
+</tr>
+<tr>
+<td><code>playersize.normal</code></td>
+<td>Allows setting player size to normal.</td>
+<td><code>op</code></td>
+</tr>
+<tr>
+<td><code>playersize.small</code></td>
+<td>Allows setting player size to small.</td>
+<td><code>op</code></td>
+</tr>
+<tr>
+<td><code>playersize.giant</code></td>
+<td>Allows setting player size to giant.</td>
+<td><code>op</code></td>
+</tr>
+<tr>
+<td><code>playersize.hide</code></td>
+<td>Allows toggling invisibility.</td>
+<td><code>op</code></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Adjusting Player Size</h3><a id="user-content-adjusting-player-size" class="anchor" aria-label="Permalink: Adjusting Player Size" href="#adjusting-player-size"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<p><strong>Set to Normal:</strong></p>
+<div class="highlight highlight-source-shell"><pre>/playersize normal
+<span class="pl-c"><span class="pl-c">#</span> or</span>
+/ps normal</pre></div>
+</li>
+<li>
+<p><strong>Set to Small:</strong></p>
+<div class="highlight highlight-source-shell"><pre>/playersize small
+<span class="pl-c"><span class="pl-c">#</span> or</span>
+/ps small</pre></div>
+</li>
+<li>
+<p><strong>Set to Giant:</strong></p>
+<div class="highlight highlight-source-shell"><pre>/playersize giant
+<span class="pl-c"><span class="pl-c">#</span> or</span>
+/ps giant</pre></div>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Toggling Invisibility</h3><a id="user-content-toggling-invisibility" class="anchor" aria-label="Permalink: Toggling Invisibility" href="#toggling-invisibility"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Hide Yourself:</strong>
+<div class="highlight highlight-source-shell"><pre>/playersize hide
+<span class="pl-c"><span class="pl-c">#</span> or</span>
+/ps hide</pre></div>
+<em>This command toggles your invisibility. Running it once will make you invisible; running it again will make you visible.</em>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Viewing Help</h3><a id="user-content-viewing-help" class="anchor" aria-label="Permalink: Viewing Help" href="#viewing-help"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Display Help Information:</strong>
+<div class="highlight highlight-source-shell"><pre>/playersize <span class="pl-c1">help</span>
+<span class="pl-c"><span class="pl-c">#</span> or</span>
+/ps <span class="pl-c1">help</span></pre></div>
+</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Contributing</h2><a id="user-content-contributing" class="anchor" aria-label="Permalink: Contributing" href="#contributing"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Contributions are welcome! If you'd like to contribute to PlayerSize, please follow these steps:</p>
+<ol>
+<li>
+<p><strong>Fork the Repository:</strong></p>
+<ul>
+<li>Click the "Fork" button at the top of the repository page.</li>
+</ul>
+</li>
+<li>
+<p><strong>Create a Feature Branch:</strong></p>
+<div class="highlight highlight-source-shell"><pre>git checkout -b feature/YourFeatureName</pre></div>
+</li>
+<li>
+<p><strong>Commit Your Changes:</strong></p>
+<div class="highlight highlight-source-shell"><pre>git commit -m <span class="pl-s"><span class="pl-pds">"</span>Add your message here<span class="pl-pds">"</span></span></pre></div>
+</li>
+<li>
+<p><strong>Push to Your Fork:</strong></p>
+<div class="highlight highlight-source-shell"><pre>git push origin feature/YourFeatureName</pre></div>
+</li>
+<li>
+<p><strong>Create a Pull Request:</strong></p>
+<ul>
+<li>Go to the original repository and click "New pull request."</li>
+</ul>
+</li>
+</ol>

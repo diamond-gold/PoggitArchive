@@ -1,0 +1,37 @@
+<p><strong>CustomRankJoinMessage</strong> is a plugin designed to display personalized messages when players join your server, based on their rank. This plugin allows server administrators to customize the welcome messages based on player ranks, enhancing the player experience by showing unique, rank-specific greetings. It seamlessly integrates with the <strong>RankSystem</strong> plugin for automatic rank detection.</p>
+<div class="markdown-heading"><h2 class="heading-element"><strong>Features</strong></h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Rank-Specific Join Messages</strong>: Display different join messages for players based on their rank (e.g., VIP, Admin, Default).</li>
+<li>
+<strong>Full Customization</strong>: Edit join messages with custom text, colors, and formats to suit your server’s style.</li>
+<li>
+<strong>RankSystem Integration</strong>: Manually add ranks and their corresponding custom join messages to the <code>config.yml</code>. If a player's rank matches one in the configuration, the custom join message will be displayed. Otherwise, the default join message will be shown.</li>
+<li>
+<strong>Lightweight and Fast</strong>: Optimized for performance, this plugin will not put a strain on your server.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element"><strong>Installation</strong></h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the <code>.phar</code> file for <strong>CustomRankJoinMessage</strong> from this page.</li>
+<li>Upload the file to your <strong>plugins/</strong> directory on your PocketMine-MP server.</li>
+<li>Open the <code>config.yml</code> file and adjust the messages as needed.</li>
+<li>Reload or restart the server for the changes to take effect.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element"><strong>Configuration Example</strong></h2><a id="user-content-configuration-example" class="anchor" aria-label="Permalink: Configuration Example" href="#configuration-example"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Below is an example of a <code>config.yml</code> file that you can use to customize your join messages:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">join-messages</span>:
+  <span class="pl-ent">FirstRankName</span>: <span class="pl-s"><span class="pl-pds">"</span>Custom first join message!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">SecondRankName</span>: <span class="pl-s"><span class="pl-pds">"</span>Custom second join message!<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">leave-messages</span>:
+  <span class="pl-ent">FirstRankName</span>: <span class="pl-s"><span class="pl-pds">"</span>Custom first leave message.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">SecondRankName</span>: <span class="pl-s"><span class="pl-pds">"</span>Custom second leave message.<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element"><strong>New Update in 3.1.0</strong></h2><a id="user-content-new-update-in-310" class="anchor" aria-label="Permalink: New Update in 3.1.0" href="#new-update-in-310"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The latest version, <strong>3.1.0</strong>, introduces key optimizations and improvements:</p>
+<ul>
+<li>
+<strong>Plugin Optimization</strong>: Improved overall performance, ensuring smoother operation even on larger servers.</li>
+<li>
+<strong>Code Cleanup</strong>: Removed unnecessary and redundant code, resulting in a more lightweight and efficient plugin.</li>
+</ul>
+<p>These updates aim to enhance the plugin's functionality while maintaining its simplicity and reliability.</p>
