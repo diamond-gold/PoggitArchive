@@ -1,0 +1,70 @@
+<div class="markdown-heading"><h1 class="heading-element">Development Tools for PocketMine-MP</h1><a id="user-content-development-tools-for-pocketmine-mp" class="anchor" aria-label="Permalink: Development Tools for PocketMine-MP" href="#development-tools-for-pocketmine-mp"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>DevTools is a collection of utilities used for developing PocketMine-MP plugins.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Generate skeleton files to bootstrap a new plugin</li>
+<li>Build plugin phars from source code</li>
+<li>Load plugins directly from source code (folder plugins), useful for rapid development</li>
+<li>Check player permissions using commands</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/genplugin &lt;pluginName&gt; &lt;authorName&gt;</code>: Generates skeleton files for a new plugin</li>
+<li>
+<code>/extractplugin &lt;pluginName&gt;</code>: Extracts the source of a loaded plugin from its Phar file</li>
+<li>
+<code>/makeplugin &lt;pluginName&gt;</code>: Creates a Phar plugin archive for its distribution</li>
+<li>
+<code>/makeplugin *</code>: Creates Phar plugin archives for all loaded plugins</li>
+<li>
+<code>/checkperm &lt;node&gt; [playerName]</code>: Checks a permission node</li>
+<li>
+<code>/listperms [playerName]</code>: Lists permissions assigned to the command sender, or the target player</li>
+<li>
+<code>/handlers [partialEventName]</code>: Lists event handlers registered to event classes matching the input</li>
+<li>
+<code>/handlersbyplugin &lt;pluginName&gt;</code>: Lists event handlers registered by the given plugin</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Using ConsoleScript to build a DevTools phar from source code</h2><a id="user-content-using-consolescript-to-build-a-devtools-phar-from-source-code" class="anchor" aria-label="Permalink: Using ConsoleScript to build a DevTools phar from source code" href="#using-consolescript-to-build-a-devtools-phar-from-source-code"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Contrary to popular belief, this is very simple. Assuming you have a php executable in your PATH variable, cd into the DevTools directory (the folder where plugin.yml is located) and simply run the following:</p>
+<pre><code>php -dphar.readonly=0 path/to/ConsoleScript.php --make path/to/DevTools --relative path/to/DevTools --out path/to/put/devtools/phar/in/DevTools.phar
+</code></pre>
+<p>You can then load the phar onto a PocketMine-MP server. A correctly-built DevTools phar can also be executed directly from the command line as if it was the ConsoleScript.</p>
+<div class="markdown-heading"><h2 class="heading-element">Build plugin phars from the command line</h2><a id="user-content-build-plugin-phars-from-the-command-line" class="anchor" aria-label="Permalink: Build plugin phars from the command line" href="#build-plugin-phars-from-the-command-line"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>You can also use the ConsoleScript or a DevTools phar from the command-line to build PocketMine-MP phars or plugin phars.</p>
+<p>The script currently takes the following arguments:</p>
+<table>
+<thead>
+<tr>
+<th align="center">argument</th>
+<th align="center">required</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>--make</code></td>
+<td align="center">yes</td>
+<td align="left">The comma-separated path(s) to the files you want to bundle into a phar</td>
+</tr>
+<tr>
+<td align="center"><code>--relative</code></td>
+<td align="center">no</td>
+<td align="left">Make DevTools resolve paths relative to the given path. If not specified, defaults to the current working directory.</td>
+</tr>
+<tr>
+<td align="center"><code>--stub</code></td>
+<td align="center">no</td>
+<td align="left">PHP file to use as a custom phar stub. The stub will be executed when the phar is run from the command line.</td>
+</tr>
+<tr>
+<td align="center"><code>--out</code></td>
+<td align="center">yes</td>
+<td align="left">Path and filename of the output phar file.</td>
+</tr>
+</tbody>
+</table>
+<p>Example command line for building a plugin:</p>
+<pre><code>php -dphar.readonly=0 path/to/ConsoleScript.php --make path/to/your/plugin/sourcecode --out path/to/put/your/plugin.phar
+</code></pre>
