@@ -1,0 +1,41 @@
+<div class="markdown-heading"><h1 class="heading-element">ProBan Plugin</h1><a id="user-content-proban-plugin" class="anchor" aria-label="Permalink: ProBan Plugin" href="#proban-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p align="center">
+  <a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/RajadorDev/ProBan/c1fe4f9bc6a26a530a213abdb6ca85ef8479def5/img/balance.png"><img src="https://raw.githubusercontent.com/RajadorDev/ProBan/c1fe4f9bc6a26a530a213abdb6ca85ef8479def5/img/balance.png" style="max-width: 100%;"></a>
+</p>
+<div class="markdown-heading"><h2 class="heading-element">About:</h2><a id="user-content-about" class="anchor" aria-label="Permalink: About:" href="#about"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin can <strong>ban</strong> and <strong>expel</strong> players, with personalized texts and <strong>discord webhook and UI support</strong>.</p>
+<div class="markdown-heading"><h2 class="heading-element">How to use?</h2><a id="user-content-how-to-use" class="anchor" aria-label="Permalink: How to use?" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Just add the plugin and it will replace PocketMine's standard ban and expulsion commands.</p>
+<p>To configure the webhook for your desired <strong>Discord</strong> channel, simply use:</p>
+<ul>
+<li><code>/pb webhook &lt;url: string&gt;</code></li>
+</ul>
+<p>Where <code>url</code> should be the url of your webhook.</p>
+<p>You can Edit the messages in the file <code>config.yml</code> and use <code>/pb realod</code>after or restarting after too.</p>
+<div class="markdown-heading"><h2 class="heading-element">Commands:</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands:" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/pb</code>:
+<ul>
+<li>
+<code>info</code>: Show information about the plugin</li>
+<li>
+<code>webhook &lt;url: string&gt;</code>: Set your discord webhook link.</li>
+<li>
+<code>reload</code>: Reload your plugin settings (the <strong>config.yml</strong>)</li>
+<li>
+<code>deletehook</code>: Will delete the current webhook saved</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul>
+<li>
+<code>/ban &lt;player: string&gt; &lt;reason: string&gt;</code>: Will ban the player by his username</li>
+</ul>
+<br>
+<ul>
+<li>
+<code>/kick &lt;player: string&gt; &lt;reason: string&gt;</code>: Will look for a player with the prefix given and kick him.</li>
+</ul>
+<p>If you are using the command in game, and you is not give none args to these commands: <code>/kick</code>, <code>/ban</code>, <code>/unban</code> will open a <strong>UI</strong></p>
