@@ -1,0 +1,63 @@
+<div class="markdown-heading"><h1 class="heading-element">AfkSystem</h1><a id="user-content-afksystem" class="anchor" aria-label="Permalink: AfkSystem" href="#afksystem"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>AFKSystem is a lightweight and customizable plugin designed to manage and handle players who are AFK (Away From Keyboard) on your server. With various configurable options, it ensures a smooth gaming experience while addressing AFK-related issues effectively.</p>
+<div class="markdown-heading"><h2 class="heading-element">Feature</h2><a id="user-content-feature" class="anchor" aria-label="Permalink: Feature" href="#feature"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>AFK Timer:</strong> <code>Automatically detects</code> players who are AFK after a configurable duration.</li>
+<li>
+<strong>Floating Text:</strong> Displays a <code>custom tag</code> above the player’s head when they are AFK, including the reason and
+duration.</li>
+<li>
+<strong>Broadcast Messages:</strong> Notifies other players when someone goes AFK or returns from being AFK.</li>
+<li>
+<strong>Auto-Kick:</strong> Optionally removes players who are AFK for too long.</li>
+<li>
+<strong>Custom Notifications:</strong> Supports <code>multiple notification</code> types such as titles, tips, action bars, and popups.</li>
+<li>
+<strong>Reason Limitation:</strong> Allows players to provide a reason for being AFK with <code>character limits</code> to prevent abuse.</li>
+<li>
+<strong>Form UI Support:</strong> Includes an intuitive <code>UI Form</code> for setting AFK reasons.</li>
+<li>
+<strong>History</strong> add player afk history to <code>history.log</code> file</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands &amp; Permission</h2><a id="user-content-commands--permission" class="anchor" aria-label="Permalink: Commands &amp; Permission" href="#commands--permission"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Argument</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/afk or /afksystem</td>
+<td>&lt;string;reason&gt;</td>
+<td>afksystem.command.afk</td>
+</tr>
+</tbody>
+</table>
+<p>Example: /afk 'have lunch'</p>
+<p><strong>Note:</strong> If no argument is provided, the plugin will automatically open the UI Form for the player to set their AFK
+reason.</p>
+<div class="markdown-heading"><h2 class="heading-element">Requirements</h2><a id="user-content-requirements" class="anchor" aria-label="Permalink: Requirements" href="#requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Commando:</strong> <a href="https://github.com/ACM-PocketMine-MP/Commando/tree/PM5">Download</a> this version</li>
+<li>
+<strong>Forms UI</strong> <a href="https://github.com/Vecnavium/FormsUI">Download</a> this version</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you encounter any errors or have suggestions, please feel free to submit an <a href="https://github.com/Jasson44/AfkSystem/issues">Issues</a>. We’re
+happy to assist and improve the plugin based on your feedback!</p>
+<div class="markdown-heading"><h2 class="heading-element">Licence</h2><a id="user-content-licence" class="anchor" aria-label="Permalink: Licence" href="#licence"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This project is licensed under the <code>MIT License</code> - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+<div class="markdown-heading"><h2 class="heading-element">TODO</h2><a id="user-content-todo" class="anchor" aria-label="Permalink: TODO" href="#todo"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you have any feature suggestions, open issues</p>
+<ul>
+<li>[X] History player</li>
+<li>[ ] Discord Webhook Support</li>
+<li>[ ] Leaderboard?</li>
+<li>[ ] Afk warn?</li>
+<li>[ ] Afk Zone</li>
+</ul>
