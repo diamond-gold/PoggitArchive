@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/Jasson44/ClaimAndProtect
 License: MIT
 Categories: General,World Editing and Management,Economy,Teleportation,Anti-Griefing Tools
-Keywords: Protect,LandProtect,ProtectLand,Land,EconomyLand,LandEconomy
+Keywords: EconomyLand,Land,LandEconomy,LandProtect,Protect,ProtectLand
 ```
