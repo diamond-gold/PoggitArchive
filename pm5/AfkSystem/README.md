@@ -1,11 +1,11 @@
 # AfkSystem
-<img src="https://raw.githubusercontent.com/Jasson44/AfkSystem/6c5b84547be0520c95f6eff48f0d6275f965b21e/assets/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/Jasson44/AfkSystem/80991dfef000a576c271f5ad9b1487cceb171e93/assets/icon.png" width="128" height="128" />
 
 ## Afk system plugin for PocketMine
 ```properties
-Version: 1.0.0
+Version: 1.5.0
     API: 5.0.0
-    Updated: 09-02-2025 16:12:45 UTC
+    Updated: 13-02-2025 14:36:03 UTC
 Repo: https://github.com/Jasson44/AfkSystem
 License: MIT
 Categories: General,Fun,Mechanics
