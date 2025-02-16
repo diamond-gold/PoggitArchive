@@ -8,6 +8,6 @@ Version: 1.1.0
     Updated: 09-02-2025 16:12:18 UTC
 Repo: https://github.com/VsrStudio/SimpleClothes
 License: MIT
-Categories: General,Miscellaneous,Fun,Informational
+Categories: General,Miscellaneous,Educational,Fun,Economy,Informational
 Keywords: clothes,hats,pocketmine-plugins,skins,wings
 ```
