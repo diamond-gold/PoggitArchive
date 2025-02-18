@@ -6,7 +6,7 @@
 Version: 0.0.1
     API: 5.7.0
     Updated: 21-11-2023 20:06:13 UTC
-Repo: https://github.com/Xeww/BuTils
+Repo: https://github.com/xeww/BuTils
 License: MIT
 Categories: Admin Tools,Miscellaneous,General
 Keywords: 
