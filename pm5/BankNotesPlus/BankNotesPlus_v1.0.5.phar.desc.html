@@ -1,0 +1,32 @@
+<div class="markdown-heading"><h1 class="heading-element">BankNotesPlus</h1><a id="user-content-banknotesplus" class="anchor" aria-label="Permalink: BankNotesPlus" href="#banknotesplus"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Allows the creation of bank notes using either Mineconomy, BedrockEcomony or EcomonyAPI. This plugin is mostly designed so other plugins can use this as a dependency to add bank notes to your specifed plugin of choice.
+Of course this plugin works as a normal bank notes plugin so do as you will.</p>
+<div class="markdown-heading"><h1 class="heading-element">Features</h1><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Configurable messages</li>
+<li>Customizable BankNote item</li>
+<li>Not broken unlike other banknote plugins ;)</li>
+</ul>
+<p><strong>Plugins that support BankNotesPlus</strong></p>
+<ul>
+<li>EnderKits</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">API</h1><a id="user-content-api" class="anchor" aria-label="Permalink: API" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Get the banknote instance</strong></p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">/* Import this class **/</span>
+<span class="pl-k">use</span> <span class="pl-v">terpz710</span>\<span class="pl-v">banknotesplus</span>\<span class="pl-smi">BankNotesPlus</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>bankNotesPlus</span> = BankNotesPlus::<span class="pl-en">getInstance</span>();</pre></div>
+<p><strong>How to get the bank note</strong></p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>player is an instance of Player</span>::class
+
+<span class="pl-s1"><span class="pl-c1">$</span>amount</span> = <span class="pl-c1">100</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>bankNoteItem</span> = <span class="pl-s1"><span class="pl-c1">$</span>bankNotesPlus</span>-&gt;<span class="pl-en">convertToBankNote</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s1"><span class="pl-c1">$</span>amount</span>);</pre></div>
+<div class="markdown-heading"><h1 class="heading-element">Report a bug</h1><a id="user-content-report-a-bug" class="anchor" aria-label="Permalink: Report a bug" href="#report-a-bug"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Need to report a bug?</p>
+<p>Please provide any error logs from the crash dump or console or type a clear way to reproduce it.</p>
+<p><a href="https://github.com/Terpz710/AntiAltAccounts/issues/new">Click me!</a></p>
+<div class="markdown-heading"><h1 class="heading-element">Want to contribute?</h1><a id="user-content-want-to-contribute" class="anchor" aria-label="Permalink: Want to contribute?" href="#want-to-contribute"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Note: I will not be merging any request! If the change is too small then it wont be accepted, dm me the issue instead.</p>
+<p><a href="https://github.com/Terpz710/AntiAltAccounts/pulls">click me!</a></p>
