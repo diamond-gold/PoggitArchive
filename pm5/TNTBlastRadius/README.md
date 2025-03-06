@@ -1,11 +1,11 @@
 # TNTBlastRadius
-<img src="https://raw.githubusercontent.com/Terpz710/TNTBlastRadius/5cd18617758c3d101c8a156cc3e9160cb7921a23/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/Terpz710/TNTBlastRadius/d81143920a45e64a3a84de05cf2da597737a0236/icon.png" width="128" height="128" />
 
 ## Edit the TNT blast radius.
 ```properties
-Version: 1.0.4
-    API: 5.0.0
-    Updated: 24-08-2024 16:08:07 UTC
+Version: 1.0.5
+    API: 5.3.0
+    Updated: 05-03-2025 13:53:56 UTC
 Repo: https://github.com/Terpz710/TNTBlastRadius
 License: Apache-2.0
 Categories: General,Miscellaneous,Fun,Mechanics,Admin Tools
