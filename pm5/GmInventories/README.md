@@ -8,6 +8,6 @@ Version: 0.7
     Updated: 10-05-2024 14:40:06 UTC
 Repo: https://github.com/Taskov1ch/GmInventories
 License: MIT
-Categories: Mechanics,General
+Categories: Mechanics
 Keywords: pmmp,pmmp-plugin,pmmp5,pocketmine-mp
 ```
