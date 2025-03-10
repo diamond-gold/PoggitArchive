@@ -1,0 +1,106 @@
+<div class="markdown-heading"><h3 class="heading-element">SimpleClothes 1.2.0</h3><a id="user-content-simpleclothes-120" class="anchor" aria-label="Permalink: SimpleClothes 1.2.0" href="#simpleclothes-120"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin is a clothing plugin like cosmetics, you could say it's more perfect.</p>
+<ul>
+<li>This plugin will continue to be developed.</li>
+<li>New Update 1.2.0</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Feature</h3><a id="user-content-feature" class="anchor" aria-label="Permalink: Feature" href="#feature"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<p>Add Shop</p>
+</li>
+<li>
+<p>Add Mystery Crate</p>
+</li>
+<li>
+<p>Add Scorehud Score <code>{simpleclothes.crate}</code> Show Key</p>
+</li>
+<li>
+<p>Add Command rca and permission simpleclothes</p>
+</li>
+<li>
+<p><strong>ClothesForm</strong></p>
+</li>
+<li>
+<p>Wings Form - Have 8 Skin</p>
+</li>
+<li>
+<p>Combo Wings Form - Have 3 Skin</p>
+</li>
+<li>
+<p>Genshin Impact Skin Form - Have 2 Skin</p>
+</li>
+<li>
+<p>Capes Form - Have 25 Skin</p>
+</li>
+<li>
+<p>Hats Form - Have 3 Skin</p>
+</li>
+<li>
+<p>Particle Form - Have 10 Particle</p>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Commands</h3><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li><strong>/sccrate help</strong></li>
+<li>-----[ SimpleClothes ]-----</li>
+<li>/simpleclothes - Open the clothes menu</li>
+<li>/clothes - Alias command clothes menu</li>
+<li>/sc - Alias command clothes menu</li>
+<li>-----[ More Command ]-----</li>
+<li>/scmenu - Show basic menu</li>
+<li>/scshop - Open shop menu simpleclothes</li>
+<li>/sccrate - Open crate menu simpleclothes</li>
+<li>/scrca - Rca Simpleclothes</li>
+<li>/permission - Permission Simpleclothes</li>
+<li>-----[ Crate ]-----</li>
+<li>/sccrate help - show help command simpleclothes</li>
+<li>/sccrate setkey - setkey crate simpleclothes</li>
+<li>/sccrate givekey - givekey crate simpleclothes</li>
+<li>/sccrate takekey - takekey crate simpleclothes</li>
+<li>/sccrate spawncrate - spawn crate simpleclothes</li>
+<li>/sccrate removecrate - remove crate simpleclothes</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Configuration</h3><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://github.com/VsrStudio/SimpleClothes/wiki">List Permission</a></p>
+<ul>
+<li><strong>Crate</strong></li>
+</ul>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> to add clothes gift</span>
+<span class="pl-c"><span class="pl-c">#</span> permission add {player} kagune.wing</span>
+<span class="pl-c"><span class="pl-c">#</span> or</span>
+<span class="pl-c"><span class="pl-c">#</span> scrca {player} permission add {player} kagune.wing</span>
+<span class="pl-ent">reward</span>:
+  - <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§e1000 Money<span class="pl-pds">"</span></span>
+    <span class="pl-ent">commands</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>givemoney {player} 1000<span class="pl-pds">"</span></span>
+  - <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§e20 Diamonds<span class="pl-pds">"</span></span>
+    <span class="pl-ent">commands</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>give {player} diamond 20<span class="pl-pds">"</span></span>
+  - <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§e32 Iron Ingot<span class="pl-pds">"</span></span>
+    <span class="pl-ent">commands</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>give {player} iron_ingot 32<span class="pl-pds">"</span></span>
+  - <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§e10 Emerald<span class="pl-pds">"</span></span>
+    <span class="pl-ent">commands</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>give {player} emerald 10<span class="pl-pds">"</span></span></pre></div>
+<ul>
+<li><strong>Shop</strong></li>
+</ul>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Paste Permission Here And The Price</span>
+<span class="pl-c"><span class="pl-c">#</span> Customize Format</span>
+<span class="pl-c"><span class="pl-c">#</span> Shop</span>
+<span class="pl-ent">shop</span>:
+  <span class="pl-ent">wings</span>:
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">demon.wing</span><span class="pl-pds">"</span></span>: <span class="pl-c1">1000</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">kagune.wing</span><span class="pl-pds">"</span></span>: <span class="pl-c1">1500</span>
+  <span class="pl-ent">capes</span>:
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">Aceee.cape</span><span class="pl-pds">"</span></span>: <span class="pl-c1">5000</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">CawPe.cape</span><span class="pl-pds">"</span></span>: <span class="pl-c1">10000</span>
+  <span class="pl-ent">hats</span>:
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">tv.hats</span><span class="pl-pds">"</span></span>: <span class="pl-c1">2000</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">frog.hats</span><span class="pl-pds">"</span></span>: <span class="pl-c1">2500</span>
+  <span class="pl-ent">particles</span>:
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">particle.flame</span><span class="pl-pds">"</span></span>: <span class="pl-c1">1200</span>
+    <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">particle.lava</span><span class="pl-pds">"</span></span>: <span class="pl-c1">1800</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Video Review</h3><a id="user-content-video-review" class="anchor" aria-label="Permalink: Video Review" href="#video-review"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://youtu.be/VhpFutHtjFI?si=klDZlk9MRQF5Jk_d" rel="nofollow">Watch the video on YouTube</a></p>
