@@ -1,0 +1,149 @@
+<div class="markdown-heading"><h1 class="heading-element">Description</h1><a id="user-content-description" class="anchor" aria-label="Permalink: Description" href="#description"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A simple kits plugin for Pocketmine-MP. This plugin will allow you to create unlimited kits with easy to use permission and cool down sytsem. Very easy configurable kits.yml.</p>
+<ul>
+<li>
+<p>Custom permission support</p>
+</li>
+<li>
+<p>Added bank notes to the kit(MUST USE MY BANK NOTES PLUGIN CALLED "BankNotesPlus")</p>
+</li>
+<li>
+<p>Configurable messages</p>
+</li>
+<li>
+<p>BankNotesPlus: <a href="https://poggit.pmmp.io/p/BankNotesPlus/1.0.5" rel="nofollow">BankNotesPlus</a></p>
+</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Permissions</h1><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<pre><code>permissions:
+  enderkits.kit:
+    description: "Enderkits Perm"
+    default: tru
+</code></pre>
+<div class="markdown-heading"><h1 class="heading-element">CONFIG</h1><a id="user-content-config" class="anchor" aria-label="Permalink: CONFIG" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>kits.yml</strong></p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c"># Made by Terpz710 :p</span>
+
+<span class="pl-c"># To create a kit follow the preset kit down below!</span>
+<span class="pl-c"># Name, enchantment and banknotes are optional!</span>
+
+<span class="pl-c"># You may use '&amp;' for color coding in the 'name' key</span>
+
+kits:
+  test:
+    kit_name: <span class="pl-s">"<span class="pl-s">Test</span>"</span>
+    permissions: <span class="pl-s">"<span class="pl-s">enderkits.kit.test</span>"</span>
+    armor:
+      helmet:
+        item: <span class="pl-s">"<span class="pl-s">diamond_helmet</span>"</span>
+        name: <span class="pl-s">"<span class="pl-s">Test Helmet</span>"</span>
+        enchantments:
+          protection: <span class="pl-c1">2</span>
+      chestplate:
+        item: <span class="pl-s">"<span class="pl-s">diamond_chestplate</span>"</span>
+        name: <span class="pl-s">"<span class="pl-s">Test Chestplate</span>"</span>
+        enchantments:
+          protection: <span class="pl-c1">2</span>
+      leggings:
+        item: <span class="pl-s">"<span class="pl-s">diamond_leggings</span>"</span>
+        name: <span class="pl-s">"<span class="pl-s">Test Leggings</span>"</span>
+        enchantments:
+          protection: <span class="pl-c1">2</span>
+      boots:
+        item: <span class="pl-s">"<span class="pl-s">diamond_boots</span>"</span>
+        name: <span class="pl-s">"<span class="pl-s">Test Boots</span>"</span>
+        enchantments:
+          protection: <span class="pl-c1">2</span>
+    items:
+      - item: <span class="pl-s">"<span class="pl-s">diamond_sword</span>"</span>
+        name: "&amp;<span class="pl-c1">4</span>Test Sword"
+        enchantments:
+          sharpness: <span class="pl-c1">2</span>
+        quantity: <span class="pl-c1">1</span>
+      - item: <span class="pl-s">"<span class="pl-s">diamond_pickaxe</span>"</span>
+        name: "Test Pickaxe"
+        enchantments:
+          efficiency: <span class="pl-c1">5</span>
+        quantity: <span class="pl-c1">1</span>
+      - item: <span class="pl-s">"<span class="pl-s">golden_apple</span>"</span>
+        quantity: <span class="pl-c1">5</span>
+      - item: <span class="pl-s">"<span class="pl-s">steak</span>"</span>
+        quantity: <span class="pl-c1">32</span>
+    cooldown: <span class="pl-c1">60</span>
+    banknotes:
+      - <span class="pl-c1">1000</span>
+      - <span class="pl-c1">5000</span>
+      - <span class="pl-c1">20000</span>
+
+  starter:
+    kit_name: <span class="pl-s">"<span class="pl-s">Starter</span>"</span>
+    permissions: <span class="pl-s">"<span class="pl-s">enderkits.kit.starter</span>"</span>
+    armor:
+      helmet:
+        item: <span class="pl-s">"<span class="pl-s">iron_helmet</span>"</span>
+        enchantments:
+          protection: <span class="pl-c1">1</span>
+      chestplate:
+        item: <span class="pl-s">"<span class="pl-s">iron_chestplate</span>"</span>
+        enchantments:
+          protection: <span class="pl-c1">1</span>
+      leggings:
+        item: <span class="pl-s">"<span class="pl-s">iron_leggings</span>"</span>
+        enchantments:
+          protection: <span class="pl-c1">1</span>
+      boots:
+        item: <span class="pl-s">"<span class="pl-s">iron_boots</span>"</span>
+        enchantments:
+          protection: <span class="pl-c1">1</span>
+    items:
+      - item: <span class="pl-s">"<span class="pl-s">stone_sword</span>"</span>
+        enchantments:
+          sharpness: <span class="pl-c1">1</span>
+        quantity: <span class="pl-c1">1</span>
+      - item: <span class="pl-s">"<span class="pl-s">stone_pickaxe</span>"</span>
+        quantity: <span class="pl-c1">1</span>
+      - item: <span class="pl-s">"<span class="pl-s">bread</span>"</span>
+        quantity: <span class="pl-c1">32</span>
+      - item: <span class="pl-s">"<span class="pl-s">apple</span>"</span>
+        quantity: <span class="pl-c1">10</span>
+    cooldown: <span class="pl-c1">10</span>
+
+  vip:
+    kit_name: <span class="pl-s">"<span class="pl-s">VIP</span>"</span>
+    permissions: <span class="pl-s">"<span class="pl-s">enderkits.kit.vip</span>"</span>
+    armor:
+      helmet:
+        item: <span class="pl-s">"<span class="pl-s">chainmail_helmet</span>"</span>
+        enchantments:
+          protection: <span class="pl-c1">3</span>
+      chestplate:
+        item: <span class="pl-s">"<span class="pl-s">chainmail_chestplate</span>"</span>
+        enchantments:
+          protection: <span class="pl-c1">3</span>
+      leggings:
+        item: <span class="pl-s">"<span class="pl-s">chainmail_leggings</span>"</span>
+        enchantments:
+          protection: <span class="pl-c1">3</span>
+      boots:
+        item: <span class="pl-s">"<span class="pl-s">chainmail_boots</span>"</span>
+        enchantments:
+          protection: <span class="pl-c1">3</span>
+    items:
+      - item: <span class="pl-s">"<span class="pl-s">iron_sword</span>"</span>
+        enchantments:
+          sharpness: <span class="pl-c1">3</span>
+        quantity: <span class="pl-c1">1</span>
+      - item: <span class="pl-s">"<span class="pl-s">carrot</span>"</span>
+        quantity: <span class="pl-c1">8</span>
+      - item: <span class="pl-s">"<span class="pl-s">cooked_chicken</span>"</span>
+        quantity: <span class="pl-c1">16</span>
+      - item: <span class="pl-s">"<span class="pl-s">potion</span>"</span>
+        name: "Swiftness Potion"
+        quantity: <span class="pl-c1">2</span>
+    cooldown: <span class="pl-c1">10</span></pre></div>
+<div class="markdown-heading"><h1 class="heading-element">TODO</h1><a id="user-content-todo" class="anchor" aria-label="Permalink: TODO" href="#todo"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>[x] Make a messages.yml to handle messages</li>
+<li>[ ] Add an ecomony system</li>
+<li>[x] Add UI support(Will make it an off/on)</li>
+</ul>
