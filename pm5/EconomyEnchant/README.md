@@ -6,7 +6,7 @@
 Version: 1.0.4
     API: 5.0.0
     Updated: 14-07-2023 08:19:37 UTC
-Repo: https://github.com/XanderID/EconomyEnchant
+Repo: https://github.com/XanderID-MC/EconomyEnchant
 License: MIT
 Categories: General,Vanilla Mechanics,Miscellaneous,Fun,Economy,Mechanics
 Keywords: enchant,enchant-shop,pocketmine-mp,shop
