@@ -1,0 +1,81 @@
+<div class="markdown-heading"><h1 class="heading-element">KitSystem</h1><a id="user-content-kitsystem" class="anchor" aria-label="Permalink: KitSystem" href="#kitsystem"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin makes it easy for you to manage kits as it has a form system for easier kit creation (This plugin is inspired by the EasyKits Plugin)</p>
+<div class="markdown-heading"><h1 class="heading-element">Features</h1><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Easy to understand forms</li>
+<li>SQLite3 Provider Support</li>
+<li>MySQL Provider Support</li>
+<li>Separation of kits by categories</li>
+<li>Improved kit and category editing system</li>
+<li>Multi-Language support</li>
+<li>Starter Kit</li>
+<li>Supports multiple economies</li>
+<li>Custom messages</li>
+<li>PHPStan level max compliance for improved code quality and robustness</li>
+<li>More features coming soon</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Commands</h1><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/kit</code> Opens a form with the available kits</li>
+<li>
+<code>/kit create</code> Opens a form to create the kits</li>
+<li>
+<code>/kit delete</code> Opens a form to delete kits</li>
+<li>
+<code>/kit give</code> Open a form with the name of the kits and players, so we can send you the kits</li>
+<li>
+<code>/kit giveall</code> Open a form with kit names to give to all players</li>
+<li>
+<code>/kit createcategory</code> Opens a form to create a category for the kits (this helps to sort the kits)</li>
+<li>
+<code>/kit deletecategory</code> Opens a form with all categories to delete a category</li>
+<li>
+<code>/kit edit</code> Opens a subform for you to choose what to edit from the kit</li>
+<li>
+<code>/kit editcategory</code> Opens a subform for you to choose what to edit from the category</li>
+<li>
+<code>/kit preview</code> Opens a form to select a kit and view its items</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Libs:</h1><a id="user-content-libs" class="anchor" aria-label="Permalink: Libs:" href="#libs"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Command: <a href="https://github.com/LatamPMDevs/Commando">Commando</a>
+</li>
+<li>Forms: <a href="https://github.com/Jorgebyte/easyui">EasyUI</a>
+</li>
+<li>Items: <a href="https://github.com/presentkim-pm/item-serialize-utils.git">item-serialize-utils</a>
+</li>
+<li>Economy: <a href="https://github.com/DaPigGuy/libPiggyEconomy.git">libPiggyEconomy</a>
+</li>
+<li>InvMenu: <a href="https://github.com/Muqsit/InvMenu.git">InvMenu</a>
+</li>
+<li>libasynql: <a href="https://github.com/poggit/libasynql.git">libasynql</a>
+</li>
+<li>Languages: <a href="https://github.com/IvanCraft623/languages.git">Languages</a>
+</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Review:</h1><a id="user-content-review" class="anchor" aria-label="Permalink: Review:" href="#review"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://www.youtube.com/watch?v=f-7IVLkiZFQ" rel="nofollow"><img src="https://camo.githubusercontent.com/023619ae16b1c2bc0ec444f252b459cd573d4bc194d92095d3f3c9fce8694419/68747470733a2f2f696d672e796f75747562652e636f6d2f76692f662d3749564c6b695a46512f302e6a7067" alt="Alt text" data-canonical-src="https://img.youtube.com/vi/f-7IVLkiZFQ/0.jpg" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h1 class="heading-element">Permissions</h1><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre>      <span class="pl-ent">kitsystem.command</span>:
+      <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+      <span class="pl-ent">kitsystem.command.create</span>:
+        <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+      <span class="pl-ent">kitsystem.command.delete</span>:
+        <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+      <span class="pl-ent">kitsystem.command.give</span>:
+        <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+      <span class="pl-ent">kitsystem.command.giveall</span>:
+        <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+      <span class="pl-ent">kitsystem.command.createcategory</span>:
+        <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+      <span class="pl-ent">kitsystem.command.deletecategory</span>:
+        <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+      <span class="pl-ent">kitsystem.command.editkit</span>:
+        <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+      <span class="pl-ent">kitsystem.command.editcategory</span>:
+        <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+      <span class="pl-ent">kitsystem.command.previewkit</span>:
+        <span class="pl-ent">default</span>: <span class="pl-c1">true</span></pre></div>
+<div class="markdown-heading"><h1 class="heading-element">Contact</h1><a id="user-content-contact" class="anchor" aria-label="Permalink: Contact" href="#contact"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://discord.com/users/1165097093480853634" rel="nofollow"><img src="https://camo.githubusercontent.com/34c35ccdcba5dd7fe50a405e73d7eeb87a54c9fd913123dae4337d017a935e73/68747470733a2f2f6c616e796172642e636e7261642e6465762f6170692f313136353039373039333438303835333633343f7468656d653d6461726b2662673d30303563666626616e696d617465643d66616c736526686964654469736372696d3d7472756526626f726465725261646975733d333070782669646c654d6573736167653d48656c6c6f" alt="Discord Presence" data-canonical-src="https://lanyard.cnrad.dev/api/1165097093480853634?theme=dark&amp;bg=005cff&amp;animated=false&amp;hideDiscrim=true&amp;borderRadius=30px&amp;idleMessage=Hello" style="max-width: 100%;"></a></p>

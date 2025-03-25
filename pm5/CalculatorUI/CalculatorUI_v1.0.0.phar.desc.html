@@ -1,0 +1,68 @@
+<div class="markdown-heading"><h2 class="heading-element">General</h2><a id="user-content-general" class="anchor" aria-label="Permalink: General" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>CalculatorUI is a Pocketmine plugin that works to calculate simple math operating systems</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Using UI form view</li>
+<li>Can edit forms and messages in <code>config.yml</code>
+</li>
+<li>Adding addition calculation operation</li>
+<li>Adding subtraction calculation operations</li>
+<li>Adding multiplication calculation operation</li>
+<li>Added division calculation operation</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Configuration for CalculatorUI Plugin</span>
+
+<span class="pl-ent">form</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Title for input number forms</span>
+  <span class="pl-ent">input_title</span>: <span class="pl-s"><span class="pl-pds">"</span>CalculatorUI<span class="pl-pds">"</span></span>
+  
+  <span class="pl-c"><span class="pl-c">#</span> Prompt for entering a number</span>
+  <span class="pl-ent">input_content</span>: <span class="pl-s"><span class="pl-pds">"</span>Enter a number:<span class="pl-pds">"</span></span>
+  
+  <span class="pl-ent">operation</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Title for operation selection form</span>
+    <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>CalculatorUI<span class="pl-pds">"</span></span>
+    
+    <span class="pl-c"><span class="pl-c">#</span> Instructions for selecting an operation</span>
+    <span class="pl-ent">content</span>: <span class="pl-s"><span class="pl-pds">"</span>Select a mathematical operation:<span class="pl-pds">"</span></span>
+    
+    <span class="pl-c"><span class="pl-c">#</span> Buttons for mathematical operations</span>
+    <span class="pl-ent">button_increase</span>: <span class="pl-s"><span class="pl-pds">"</span>[+] Increase<span class="pl-pds">"</span></span>
+    <span class="pl-ent">button_reduction</span>: <span class="pl-s"><span class="pl-pds">"</span>[-] Reduction<span class="pl-pds">"</span></span>
+    <span class="pl-ent">button_multiplication</span>: <span class="pl-s"><span class="pl-pds">"</span>[x] Multiplication<span class="pl-pds">"</span></span>
+    <span class="pl-ent">button_distribution</span>: <span class="pl-s"><span class="pl-pds">"</span>[÷] Distribution<span class="pl-pds">"</span></span>
+
+  <span class="pl-ent">result</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Title for the result form</span>
+    <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>CalculatorUI<span class="pl-pds">"</span></span>
+    
+    <span class="pl-c"><span class="pl-c">#</span> Content showing the detailed calculation result</span>
+    <span class="pl-ent">content</span>: <span class="pl-s">|</span>
+<span class="pl-s">      First Number: {number1}</span>
+<span class="pl-s">      Math Operation: {operation}</span>
+<span class="pl-s">      Second Number: {number2}</span>
+<span class="pl-s">      </span>
+<span class="pl-s">      Result of mathematical operations = {result}</span>
+<span class="pl-s">    </span>
+<span class="pl-s"></span>    <span class="pl-c"><span class="pl-c">#</span> Example:</span>
+    <span class="pl-c"><span class="pl-c">#</span> If number1 = 10, operation = +, number2 = 5, and result = 15</span>
+    <span class="pl-c"><span class="pl-c">#</span> This will display:</span>
+    <span class="pl-c"><span class="pl-c">#</span> First Number: 10</span>
+    <span class="pl-c"><span class="pl-c">#</span> Math Operation: +</span>
+    <span class="pl-c"><span class="pl-c">#</span> Second Number: 5</span>
+    <span class="pl-c"><span class="pl-c">#</span> </span>
+    <span class="pl-c"><span class="pl-c">#</span> Result of mathematical operations = 15</span>
+    
+    <span class="pl-c"><span class="pl-c">#</span> Exit button text</span>
+    <span class="pl-ent">exit_button</span>: <span class="pl-s"><span class="pl-pds">"</span>Exit<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">messages</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Error message for invalid input</span>
+  <span class="pl-ent">invalid_input</span>: <span class="pl-s"><span class="pl-pds">"</span>§cPlease input a valid number only.<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the plugin.</li>
+<li>Place the plugin's <code>.phar</code> file in the <code>plugins</code> folder of your PocketMine-MP server.</li>
+<li>Start or restart the server to load the plugin.</li>
+</ol>
