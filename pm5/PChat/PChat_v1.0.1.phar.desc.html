@@ -1,0 +1,95 @@
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Multiple chat channels (Global, Ranked, Staff)</li>
+<li>16 customizable chat colors</li>
+<li>Configurable chat cooldown</li>
+<li>Form-based settings</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/chat</code> (alias: <code>/c</code>) - Chat settings</li>
+<li>
+<code>/pchat cooldown</code> - Cooldown settings (admin)</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">Commands and other perms</span>: 
+
+  <span class="pl-ent">pchat.admin.cooldown</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows changing the chat cooldown<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+
+  <span class="pl-ent">pchat.command.chat</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using the chat command<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+    
+  <span class="pl-ent">pchat.channel.ranked</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using ranked chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+    
+  <span class="pl-ent">pchat.channel.staff</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using staff chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+
+  <span class="pl-ent">pchat.channel.ranked.view</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows viewing ranked chat messages<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+    
+  <span class="pl-ent">pchat.channel.staff.view</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows viewing staff chat messages<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Color Perms:</span>
+
+  <span class="pl-ent">pchat.color.white</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using white color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">pchat.color.black</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using black color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">pchat.color.darkblue</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using dark blue color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">pchat.color.darkgreen</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using dark green color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">pchat.color.darkaqua</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using dark aqua color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">pchat.color.darkred</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using dark red color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">pchat.color.darkpurple</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using dark purple color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">pchat.color.gold</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using gold color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">pchat.color.gray</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using gray color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">pchat.color.darkgray</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using dark gray color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">pchat.color.blue</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using blue color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">pchat.color.green</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using green color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">pchat.color.aqua</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using aqua color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">pchat.color.red</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using red color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">pchat.color.lightpurple</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using light purple color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">pchat.color.yellow</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows using yellow color in chat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">false</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you encounter any issues or have suggestions, please create an issue.</p>
+<div class="markdown-heading"><h2 class="heading-element">Library Used</h2><a id="user-content-library-used" class="anchor" aria-label="Permalink: Library Used" href="#library-used"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>FormAPI</p>

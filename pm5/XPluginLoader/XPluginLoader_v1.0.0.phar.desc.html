@@ -1,0 +1,53 @@
+<div class="markdown-heading"><h1 class="heading-element">XPluginLoader<a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/XanderID-MC/XPluginLoader/refs/heads/main/icon.png"><img src="https://raw.githubusercontent.com/XanderID-MC/XPluginLoader/refs/heads/main/icon.png" height="64" width="64" align="left" style="max-width: 100%;"></a>
+</h1><a id="user-content-xpluginloader" class="anchor" aria-label="Permalink: XPluginLoader" href="#xpluginloader"><span aria-hidden="true" class="octicon octicon-link"></span></a></div><br>
+XPluginLoader is a powerful and versatile plugin loader designed for PocketMine-MP servers. It enables seamless organization and efficient loading of plugins by categorizing them into structured folders (e.g., Main, Economy, Games). With its dynamic loading capabilities, XPluginLoader simplifies plugin management, making server maintenance and deployment more streamlined and hassle-free.
+<div class="markdown-heading"><h1 class="heading-element">Features</h1><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Category-based Plugin Management:
+Organize plugins into distinct categories for better structure and easier maintenance.</li>
+<li>Multiple Loader Support:
+Supports various plugin packaging formats including PHAR, ZIP, and folder-based plugins.</li>
+<li>Dynamic Loading:
+Automatically scans categories directories for valid plugins and loads them during server startup.</li>
+<li>Dependency Resolution:
+Ensures that plugin dependencies are checked and resolved before a plugin is activated.</li>
+<li>Customizable Configuration:
+Easily configure which loaders to use and define your category paths through a simple configuration file.</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Config</h1><a id="user-content-config" class="anchor" aria-label="Permalink: Config" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-c"><span class="pl-c">#</span> Don't edit this, if you don't know what you're doing</span>
+<span class="pl-ent">config-version</span>: <span class="pl-c1">1.0</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Loader Options</span>
+<span class="pl-ent">loader</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Load Plugin with a Folder?</span>
+  <span class="pl-ent">folder</span>: <span class="pl-c1">true</span>
+  <span class="pl-c"><span class="pl-c">#</span> Load Plugin with a Zip?</span>
+  <span class="pl-c"><span class="pl-c">#</span> Note:</span>
+  <span class="pl-c"><span class="pl-c">#</span> - Please don't Password the Zip File!</span>
+  <span class="pl-c"><span class="pl-c">#</span> - Not recommended, Please Use Phar if you want to Archive Plugin</span>
+  <span class="pl-c"><span class="pl-c">#</span> - Set allow_url_include=1 in php.ini</span>
+  <span class="pl-ent">zip</span>: <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Add your Category Folder Name Here</span>
+<span class="pl-c"><span class="pl-c">#</span> Please be reminded that the Root Category Folder should not have plugin.yml and src folders.</span>
+<span class="pl-ent">categories</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>Main<span class="pl-pds">"</span></span>
+...</pre></div>
+<div class="markdown-heading"><h1 class="heading-element">Screenshot</h1><a id="user-content-screenshot" class="anchor" aria-label="Permalink: Screenshot" href="#screenshot"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>My structure Plugins folder<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/XanderID-MC/XPluginLoader/refs/heads/main/.assets/Screenshot-1.png"><img src="https://raw.githubusercontent.com/XanderID-MC/XPluginLoader/refs/heads/main/.assets/Screenshot-1.png" alt="Screenshot-1" style="max-width: 100%;"></a>
+</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Todo List</h1><a id="user-content-todo-list" class="anchor" aria-label="Permalink: Todo List" href="#todo-list"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Auto Categories:
+Automatically Organize Plugins in Root Folder to Folder Categories ( Poggit Categories ) automatically.</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Additional Notes</h1><a id="user-content-additional-notes" class="anchor" aria-label="Permalink: Additional Notes" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/XanderID-MC/XPluginLoader/issues">here</a>
+</li>
+</ul>
