@@ -1,0 +1,224 @@
+<div class="markdown-heading"><h1 class="heading-element">CustomSetting Plugin</h1><a id="user-content-customsetting-plugin" class="anchor" aria-label="Permalink: CustomSetting Plugin" href="#customsetting-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>CustomSetting is a PocketMine-MP plugin that provides a persistent custom form for server settings, allowing you to create a customizable information page for your Minecraft Bedrock server.
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/995930e09ec85c577ec8499d4e3cb9aa84c6d8a8e1cfb36ff113824ce63acafb/68747470733a2f2f692e696d6775722e636f6d2f63456b7a7835682e706e67"><img src="https://camo.githubusercontent.com/995930e09ec85c577ec8499d4e3cb9aa84c6d8a8e1cfb36ff113824ce63acafb/68747470733a2f2f692e696d6775722e636f6d2f63456b7a7835682e706e67" alt="image" data-canonical-src="https://i.imgur.com/cEkzx5h.png" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Settings form for all players</li>
+<li>Customizable form content via <code>form.json</code>
+</li>
+<li>Rich text formatting support</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">How It Works:</h3><a id="user-content-how-it-works" class="anchor" aria-label="Permalink: How It Works:" href="#how-it-works"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<p><strong>Player Opens Settings</strong>:</p>
+<ul>
+<li>The player accesses the settings menu on their device.</li>
+</ul>
+</li>
+<li>
+<p><strong>Plugin Detects and Sends Forms</strong>:</p>
+<ul>
+<li>The plugin detects when the player opens the settings and immediately sends a series of <strong>5 forms</strong> (pre-configured settings pages) to the player.</li>
+<li>This ensures the player receives the forms, even if the initial form was sent before they opened the settings.</li>
+</ul>
+</li>
+<li>
+<p><strong>Handling Early Closure</strong>:</p>
+<ul>
+<li>If the player closes the settings before all 5 forms are sent, the plugin detects this and <strong>automatically stops sending forms</strong>.</li>
+</ul>
+</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element">Key Points:</h3><a id="user-content-key-points" class="anchor" aria-label="Permalink: Key Points:" href="#key-points"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Guaranteed Delivery</strong>: Sending multiple forms ensures the player receives the settings, even if they experience a delay in opening the settings menu.</li>
+<li>
+<strong>Efficient Handling</strong>: The plugin stops sending forms if the player closes the settings early, avoiding unnecessary actions.</li>
+<li>
+<strong>Fast Detection</strong>: The plugin actively monitors the player's actions to ensure timely and efficient form delivery.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the plugin</li>
+<li>Place in your server's <code>plugins/</code> directory</li>
+<li>Restart the server</li>
+</ol>
+<p>To edit the settings page, check the rest of my documentation. You can use color codes and set custom icons (such as your server logo).
+If you encounter any issues, feel free to post them on the GitHub repository.</p>
+<p>(!) If you want to create your own plugin or use another plugin that displays settings pages to clients (players), they may interfere with CustomSetting.</p>
+<div class="markdown-heading"><h2 class="heading-element">Form Customization</h2><a id="user-content-form-customization" class="anchor" aria-label="Permalink: Form Customization" href="#form-customization"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Text Formatting Codes</h3><a id="user-content-text-formatting-codes" class="anchor" aria-label="Permalink: Text Formatting Codes" href="#text-formatting-codes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h4 class="heading-element">Color Codes</h4><a id="user-content-color-codes" class="anchor" aria-label="Permalink: Color Codes" href="#color-codes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Color</th>
+<th>Code</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>§0</code></td>
+<td>Black</td>
+<td><code>§1</code></td>
+<td>Dark Blue</td>
+</tr>
+<tr>
+<td><code>§2</code></td>
+<td>Dark Green</td>
+<td><code>§3</code></td>
+<td>Dark Aqua</td>
+</tr>
+<tr>
+<td><code>§4</code></td>
+<td>Dark Red</td>
+<td><code>§5</code></td>
+<td>Dark Purple</td>
+</tr>
+<tr>
+<td><code>§6</code></td>
+<td>Gold</td>
+<td><code>§7</code></td>
+<td>Gray</td>
+</tr>
+<tr>
+<td><code>§8</code></td>
+<td>Dark Gray</td>
+<td><code>§9</code></td>
+<td>Blue</td>
+</tr>
+<tr>
+<td><code>§a</code></td>
+<td>Green</td>
+<td><code>§b</code></td>
+<td>Aqua</td>
+</tr>
+<tr>
+<td><code>§c</code></td>
+<td>Red</td>
+<td><code>§d</code></td>
+<td>Light Purple</td>
+</tr>
+<tr>
+<td><code>§e</code></td>
+<td>Yellow</td>
+<td><code>§f</code></td>
+<td>White</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h4 class="heading-element">Formatting Styles</h4><a id="user-content-formatting-styles" class="anchor" aria-label="Permalink: Formatting Styles" href="#formatting-styles"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>§l</code></td>
+<td>Bold</td>
+</tr>
+<tr>
+<td><code>§o</code></td>
+<td>Italic</td>
+</tr>
+<tr>
+<td><code>§k</code></td>
+<td>Obfuscated (random characters)</td>
+</tr>
+<tr>
+<td><code>§r</code></td>
+<td>Reset formatting</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h4 class="heading-element">Combining Formatting</h4><a id="user-content-combining-formatting" class="anchor" aria-label="Permalink: Combining Formatting" href="#combining-formatting"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>You can combine multiple formatting codes for creative text styling:</p>
+<ul>
+<li><code>§l§9Bold Blue Text</code></li>
+<li><code>§c§oRed Italic Text</code></li>
+<li><code>§6Gold Text</code></li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Icon Configuration</h2><a id="user-content-icon-configuration" class="anchor" aria-label="Permalink: Icon Configuration" href="#icon-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Icon Types</h3><a id="user-content-icon-types" class="anchor" aria-label="Permalink: Icon Types" href="#icon-types"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin supports three ways to set the form icon:</p>
+<ol>
+<li><strong>Minecraft Default Textures</strong></li>
+</ol>
+<div class="highlight highlight-source-json"><pre><span class="pl-ent">"icon"</span>: {
+  <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>path<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"data"</span>: <span class="pl-s"><span class="pl-pds">"</span>textures/items/cookie<span class="pl-pds">"</span></span>
+}</pre></div>
+<p>Some popular texture paths:</p>
+<ul>
+<li><code>textures/items/cookie</code></li>
+<li><code>textures/items/diamond</code></li>
+<li><code>textures/items/book_written</code></li>
+<li><code>textures/items/paper</code></li>
+<li><code>textures/items/compass</code></li>
+</ul>
+<ol start="2">
+<li><strong>Base64 Encoded Image</strong></li>
+</ol>
+<div class="highlight highlight-source-json"><pre><span class="pl-ent">"icon"</span>: {
+  <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>url<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"data"</span>: <span class="pl-s"><span class="pl-pds">"</span>data:image/png;base64,iVBORw0KGgoAAAANSUhEUg...<span class="pl-pds">"</span></span>
+}</pre></div>
+<p>To create a base64 icon:</p>
+<ul>
+<li>Use an image editing tool</li>
+<li>Resize to 64x64 pixels</li>
+<li>Convert to PNG</li>
+<li>Use an online base64 encoder</li>
+</ul>
+<ol start="3">
+<li>
+<strong>URL Image</strong> (not recommended due to potential loading issues)</li>
+</ol>
+<div class="highlight highlight-source-json"><pre><span class="pl-ent">"icon"</span>: {
+  <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>url<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"data"</span>: <span class="pl-s"><span class="pl-pds">"</span>https://example.com/icon.png<span class="pl-pds">"</span></span>
+}</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Example form.json</h2><a id="user-content-example-formjson" class="anchor" aria-label="Permalink: Example form.json" href="#example-formjson"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-json"><pre>{
+  <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>custom_form<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"title"</span>: <span class="pl-s"><span class="pl-pds">"</span>§eServer Info<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"icon"</span>: {
+    <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>path<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"data"</span>: <span class="pl-s"><span class="pl-pds">"</span>textures/items/diamond<span class="pl-pds">"</span></span>
+  },
+  <span class="pl-ent">"content"</span>: [
+    {
+      <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>label<span class="pl-pds">"</span></span>,
+      <span class="pl-ent">"text"</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§6Welcome to Our Server!§r<span class="pl-pds">"</span></span>
+    },
+    {
+      <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>label<span class="pl-pds">"</span></span>,
+      <span class="pl-ent">"text"</span>: <span class="pl-s"><span class="pl-pds">"</span>§bRules:§r<span class="pl-cce">\n</span>§a1.§f Be respectful<span class="pl-cce">\n</span>§a2.§f No griefing<span class="pl-pds">"</span></span>
+    }
+  ]
+}</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Configuration Location</h2><a id="user-content-configuration-location" class="anchor" aria-label="Permalink: Configuration Location" href="#configuration-location"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin configuration is stored at:
+<code>plugin_data/CustomSetting/form.json</code></p>
+<div class="markdown-heading"><h2 class="heading-element">Troubleshooting</h2><a id="user-content-troubleshooting" class="anchor" aria-label="Permalink: Troubleshooting" href="#troubleshooting"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Ensure <code>form.json</code> is valid JSON</li>
+<li>Check server logs for any error messages</li>
+<li>Verify file permissions</li>
+<li>The plugin will generate a default form if <code>form.json</code> is missing or invalid</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Contributing</h3><a id="user-content-contributing" class="anchor" aria-label="Permalink: Contributing" href="#contributing"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Contributions are welcome! Open an issue or submit a pull request.</p>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Copyright 2025 @nikipuh</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<p>MIT License: <a href="https://opensource.org/license/mit" rel="nofollow">https://opensource.org/license/mit</a></p>
