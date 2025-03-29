@@ -1,11 +1,11 @@
 # ItemStacker
-<img src="https://raw.githubusercontent.com/Terpz710/ItemStacker/69b0756e6a139c171f65e6bb1be95f10767eec46/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/Terpz710/ItemStacker/aef4226b634054e5f840f476336e95cb57e71072/icon.png" width="128" height="128" />
 
 ## Stack item entities
 ```properties
-Version: 1.0.2
+Version: 1.0.3
     API: 5.0.0
-    Updated: 24-12-2023 09:49:30 UTC
+    Updated: 28-03-2025 13:21:53 UTC
 Repo: https://github.com/Terpz710/ItemStacker
 License: Apache-2.0
 Categories: General,Miscellaneous,Anti-Griefing Tools

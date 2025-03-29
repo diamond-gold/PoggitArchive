@@ -1,0 +1,150 @@
+<hr>
+<div class="markdown-heading"><h1 class="heading-element">NightPVP</h1><a id="user-content-nightpvp" class="anchor" aria-label="Permalink: NightPVP" href="#nightpvp"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>🌌 <strong>NightPVP</strong> is a PocketMine-MP plugin that restricts PvP (player versus player) to nighttime only, adding a strategic and immersive twist to your Minecraft server!</p>
+<p><a href="https://poggit.pmmp.io/p/NightPVP" rel="nofollow"><img src="https://camo.githubusercontent.com/a08f23c303c6e7dda15440cbf9151b683c06669b71d301367c557da06c0af427/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4e69676874505650" alt="Poggit" data-canonical-src="https://poggit.pmmp.io/shield.state/NightPVP" style="max-width: 100%;"></a> <a href="https://poggit.pmmp.io/p/NightPVP" rel="nofollow"><img src="https://camo.githubusercontent.com/3ff1f5773171260812c1da08bd7f2f7629a2241c61403281e25db1b2123b7ba8/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f4e69676874505650" alt="Download" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/NightPVP" style="max-width: 100%;"></a></p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">❗ Requirements</h2><a id="user-content--requirements" class="anchor" aria-label="Permalink: ❗ Requirements" href="#-requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>PocketMine-MP API</strong>: 5.0.0 or higher</li>
+<li>
+<strong>PHP</strong>: 8.0 or higher</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">❓ How to Install</h2><a id="user-content--how-to-install" class="anchor" aria-label="Permalink: ❓ How to Install" href="#-how-to-install"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the latest <code>.phar</code> from the <a href="https://github.com/Estem01/NightPvP/releases">Releases</a> page or <a href="https://poggit.pmmp.io/p/NightPVP" rel="nofollow">Poggit</a>.</li>
+<li>Place the <code>.phar</code> file in your server's <code>plugins</code> folder.</li>
+<li>Start or restart your server to generate the <code>config.yml</code>.</li>
+<li>Edit <code>config.yml</code> in <code>plugins/NightPVP</code> to configure worlds, messages, and time settings.</li>
+<li>Enjoy! PvP is now restricted to nighttime in the specified worlds.</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">✨ Features</h2><a id="user-content--features" class="anchor" aria-label="Permalink: ✨ Features" href="#-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Nighttime PvP</strong>: Limits player combat to nighttime (or custom time periods).</li>
+<li>
+<strong>World-Specific Rules</strong>: Apply PvP restrictions only to selected worlds.</li>
+<li>
+<strong>Customizable Messages</strong>: Choose between pop-ups or chat messages with editable text.</li>
+<li>
+<strong>Flexible Time Settings</strong>: Adjust when PvP starts and ends using in-game ticks.</li>
+<li>
+<strong>Bypass Permissions</strong>: Allow specific players to ignore restrictions.</li>
+<li>
+<strong>Optional Logging</strong>: Track blocked PvP attempts in the server console.</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📜 Versions</h2><a id="user-content--versions" class="anchor" aria-label="Permalink: 📜 Versions" href="#-versions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<p><strong>Version 1.3.2</strong> (March 28, 2025)</p>
+<ul>
+<li>Updated to PocketMine-MP API 5.0.0.</li>
+<li>Added <code>nightpvp.always.on</code> permission.</li>
+<li>Enhanced stability and compatibility.</li>
+</ul>
+</li>
+<li>
+<p><strong>Version 1.2</strong></p>
+<ul>
+<li>Fixed bugs with PvP restriction enforcement.</li>
+</ul>
+</li>
+<li>
+<p><strong>Version 1.1</strong></p>
+<ul>
+<li>Fixed daytime PvP bugs.</li>
+<li>Added customizable PvP enabled message.</li>
+</ul>
+</li>
+<li>
+<p><strong>Version 1.0</strong></p>
+<ul>
+<li>Initial release with nighttime PvP restriction.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">⚙️ Configuration</h2><a id="user-content-️-configuration" class="anchor" aria-label="Permalink: ⚙️ Configuration" href="#️-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The default <code>config.yml</code> is generated in <code>plugins/NightPVP</code>. Customize it to fit your server:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Worlds where NightPVP is active</span>
+<span class="pl-ent">allowed-worlds</span>: 
+  - <span class="pl-s"><span class="pl-pds">"</span>world<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>arena<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Error message type (popup or message)</span>
+<span class="pl-ent">error-message-type</span>: <span class="pl-s"><span class="pl-pds">"</span>popup<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> PvP restriction message</span>
+<span class="pl-ent">day-no-pvp</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou can only fight during the night!<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Custom world time settings</span>
+<span class="pl-ent">night-start-time</span>: <span class="pl-c1">13000</span>  <span class="pl-c"><span class="pl-c">#</span> Minecraft night start time</span>
+<span class="pl-ent">night-end-time</span>: <span class="pl-c1">23000</span>    <span class="pl-c"><span class="pl-c">#</span> Minecraft night end time</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Enable/disable world time check</span>
+<span class="pl-ent">enable-world-time-check</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Enable plugin logger</span>
+<span class="pl-ent">enable-logger</span>: <span class="pl-c1">false</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Options Explained</h3><a id="user-content-options-explained" class="anchor" aria-label="Permalink: Options Explained" href="#options-explained"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>allowed-worlds</code>: Worlds where PvP is restricted to nighttime.</li>
+<li>
+<code>error-message-type</code>: "popup" or "message" for PvP block notifications.</li>
+<li>
+<code>day-no-pvp</code>: Message displayed when PvP is blocked (supports <code>§</code> color codes).</li>
+<li>
+<code>night-start-time</code> / <code>night-end-time</code>: PvP time range in ticks (0-23999).</li>
+<li>
+<code>enable-world-time-check</code>: Set to <code>false</code> to disable time-based restrictions.</li>
+<li>
+<code>enable-logger</code>: Set to <code>true</code> to log blocked PvP attempts.</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🔒 Permissions</h2><a id="user-content--permissions" class="anchor" aria-label="Permalink: 🔒 Permissions" href="#-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<p><code>nightpvp.bypass</code></p>
+<ul>
+<li>
+<strong>Description</strong>: Allows players to bypass PvP time restrictions and fight anytime.</li>
+<li>
+<strong>Default</strong>: <code>op</code> (operators only)</li>
+</ul>
+</li>
+<li>
+<p><code>nightpvp.always.on</code></p>
+<ul>
+<li>
+<strong>Description</strong>: Enables PvP at all times, ignoring night restrictions.</li>
+<li>
+<strong>Default</strong>: <code>false</code> (disabled for all)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">⭐ Join Our Community</h2><a id="user-content--join-our-community" class="anchor" aria-label="Permalink: ⭐ Join Our Community" href="#-join-our-community"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Get support, updates, and share your ideas on our Discord server!<br>
+👉 <strong><a href="https://discord.gg/pyHvRwkJC2" rel="nofollow">Discord</a></strong></p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🛠️ Contributing</h2><a id="user-content-️-contributing" class="anchor" aria-label="Permalink: 🛠️ Contributing" href="#️-contributing"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Want to improve NightPVP?</p>
+<ul>
+<li>Report bugs or suggest features in the <a href="https://github.com/Estem01/NightPvP/issues">Issues</a> tab.</li>
+<li>Submit code enhancements via <a href="https://github.com/Estem01/NightPvP/pulls">Pull Requests</a>.</li>
+</ul>
+<p>Check the <a href="https://github.com/Estem01/NightPvP/commits/main">commits</a> for the latest changes!</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📝 License</h2><a id="user-content--license" class="anchor" aria-label="Permalink: 📝 License" href="#-license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This project is licensed under the <a href="https://github.com/Estem01/NightPvP/blob/main/LICENSE">Apache License</a>.</p>
+<div class="markdown-heading"><h2 class="heading-element">👥 Authors</h2><a id="user-content--authors" class="anchor" aria-label="Permalink: 👥 Authors" href="#-authors"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li><a href="https://github.com/Estem01">Estem01</a></li>
+<li><a href="https://github.com/henrythierrydev">henrythierrydev</a></li>
+<li><a href="https://github.com/UnknownNull">UnknownNull</a></li>
+</ul>
+<hr>
