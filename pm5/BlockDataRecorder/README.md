@@ -6,7 +6,7 @@
 Version: 0.0.7
     API: 5.0.0
     Updated: 17-06-2023 17:44:31 UTC
-Repo: https://github.com/nhanaz-pm-pl/BlockDataRecorder
+Repo: https://github.com/NhanAZ/BlockDataRecorder
 License: GPL-3.0
 Categories: General
 Keywords: blockdata,blockdatarecorder,php,plugin,pocketmine
