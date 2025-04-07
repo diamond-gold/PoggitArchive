@@ -1,11 +1,11 @@
 # Zuri
-<img src="https://raw.githubusercontent.com/ReinfyTeam/Zuri/2cadfbb5fb2b54d4fcecfe2b4b5074ffd2db3c05/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/ReinfyTeam/Zuri/b45f6ef15fad25fb61a2fdf8f30a868a60bbc06b/icon.png" width="128" height="128" />
 
 ## A powerful anticheat made to destroy hackers from your server for PocketMine-MP.
 ```properties
-Version: 1.3.2
+Version: 1.3.3
     API: 5.0.0
-    Updated: 02-01-2025 15:32:06 UTC
+    Updated: 07-04-2025 02:38:55 UTC
 Repo: https://github.com/ReinfyTeam/Zuri
 License: LGPL-2.1
 Categories: Admin Tools,API plugins,Miscellaneous,Developer Tools,World Editing and Management,Mechanics,Teleportation,Chat-Related,Anti-Griefing Tools,Informational,General
