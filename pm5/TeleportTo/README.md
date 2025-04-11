@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/AEDXDEV/TeleportTo
 License: GPL-3.0
 Categories: General,Fun
-Keywords: TeleportTo,Teleport
+Keywords: Teleport,TeleportTo
 ```
