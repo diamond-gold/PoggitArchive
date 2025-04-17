@@ -9,5 +9,5 @@ Version: 3.1.0
 Repo: https://github.com/r3pt1s/BanSystem
 License: Apache-2.0
 Categories: General,Miscellaneous,Chat-Related,Admin Tools
-Keywords: ban,bansystem,BanUI,tempban,TempBanUI
+Keywords: ban,bansystem,BanUI,cheats,hacker,punish,punishment,tempban,TempBanUI
 ```
