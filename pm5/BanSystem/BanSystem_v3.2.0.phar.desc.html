@@ -1,0 +1,232 @@
+<div class="markdown-heading"><h2 class="heading-element">Integrated systems</h2><a id="user-content-integrated-systems" class="anchor" aria-label="Permalink: Integrated systems" href="#integrated-systems"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BanSystem</td>
+<td>Manage bans</td>
+</tr>
+<tr>
+<td>MuteSystem</td>
+<td>Manage mutes</td>
+</tr>
+<tr>
+<td>WarnSystem</td>
+<td>Manage warns</td>
+</tr>
+<tr>
+<td>NotificationSystem</td>
+<td>Receive notifications</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Ban or mute players temporarily</li>
+<li>Warn or kick players with a reason</li>
+<li>MySQL Support</li>
+<li>MultiServer support (WaterdogPE)</li>
+<li>Notifications for team members</li>
+<li>Multi language support (english &amp; german, can add custom ones by creating a corresponding file in plugin_data/BanSystem/lang/ and putting only the file name as a language in the config.yml)</li>
+<li>StaffTools (/vanish, /freeze, /spectate, /chatmute)</li>
+<li>Enable or disable integrated systems (except NotificationSystem)</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">If you are using WaterdogPE</h2><a id="user-content-if-you-are-using-waterdogpe" class="anchor" aria-label="Permalink: If you are using WaterdogPE" href="#if-you-are-using-waterdogpe"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you use WaterdogPE, you need to install 3 plugins to sync the bans and mutes on the different servers.</p>
+<ol>
+<li>
+<a href="https://github.com/r3pt1s/BanSystem-Proxy/releases/tag/1.0">BanSystem-Proxy</a> (WaterdogPE Plugin)</li>
+<li>
+<a href="https://github.com/Alemiz112/StarGate-Atlantis">StarGate-Atlantis</a> (PocketMine-Plugin / On every PocketMine sub server)</li>
+<li>
+<a href="https://github.com/Alemiz112/StarGate/releases/tag/latest">StarGate</a> (WaterdogPE Plugin)</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ban &lt;player&gt; &lt;banId&gt;</code></td>
+<td>Ban a player</td>
+<td>bansystem.command.ban</td>
+</tr>
+<tr>
+<td><code>/tempban &lt;player&gt; &lt;reason&gt; &lt;time&gt;</code></td>
+<td>Ban a player temporarily</td>
+<td>bansystem.command.tempban</td>
+</tr>
+<tr>
+<td><code>/baninfo &lt;player&gt;</code></td>
+<td>Get information about a player</td>
+<td>bansystem.command.baninfo</td>
+</tr>
+<tr>
+<td><code>/banlog &lt;player&gt;</code></td>
+<td>See a list of every ban from a player</td>
+<td>bansystem.command.banlog</td>
+</tr>
+<tr>
+<td><code>/editban &lt;player&gt; &lt;add OR sub&gt; &lt;time&gt;</code></td>
+<td>Edit a ban</td>
+<td>bansystem.command.editban</td>
+</tr>
+<tr>
+<td><code>/unban &lt;player&gt; [mistake: false]</code></td>
+<td>Unban a player and decide if the ban was a mistake</td>
+<td>bansystem.command.unban</td>
+</tr>
+<tr>
+<td><code>/banids</code></td>
+<td>See a list of all banids</td>
+<td>bansystem.command.banids</td>
+</tr>
+<tr>
+<td><code>/banlist</code></td>
+<td>See a list of all bans</td>
+<td>bansystem.command.banlist</td>
+</tr>
+<tr>
+<td><code>/mute &lt;player&gt; &lt;muteId&gt;</code></td>
+<td>Mute a player</td>
+<td>bansystem.command.mute</td>
+</tr>
+<tr>
+<td><code>/tempmute &lt;player&gt; &lt;reason&gt; &lt;time&gt;</code></td>
+<td>Mute a player temporarily</td>
+<td>bansystem.command.tempmute</td>
+</tr>
+<tr>
+<td><code>/muteinfo &lt;player&gt;</code></td>
+<td>Get information about a player</td>
+<td>bansystem.command.muteinfo</td>
+</tr>
+<tr>
+<td><code>/mutelog &lt;player&gt;</code></td>
+<td>See a list of every mute from a player</td>
+<td>bansystem.command.mutelog</td>
+</tr>
+<tr>
+<td><code>/editmute &lt;player&gt; &lt;add OR sub&gt; &lt;time&gt;</code></td>
+<td>Edit a mute</td>
+<td>bansystem.command.editmute</td>
+</tr>
+<tr>
+<td><code>/unmute &lt;player&gt; [mistake: false]</code></td>
+<td>Unmute a player and decide if the mute was a mistake</td>
+<td>bansystem.command.unmute</td>
+</tr>
+<tr>
+<td><code>/muteids</code></td>
+<td>See a list of all muteids</td>
+<td>bansystem.command.muteids</td>
+</tr>
+<tr>
+<td><code>/mutelist</code></td>
+<td>See a list of all mutes</td>
+<td>bansystem.command.mutelist</td>
+</tr>
+<tr>
+<td><code>/warn &lt;player&gt; [reason]</code></td>
+<td>Warn a player</td>
+<td>bansystem.command.warn</td>
+</tr>
+<tr>
+<td><code>/warns &lt;player&gt;</code></td>
+<td>See a list of all warns from a player</td>
+<td>bansystem.command.warns</td>
+</tr>
+<tr>
+<td><code>/clearwarns &lt;player&gt;</code></td>
+<td>Clear all warns from a player</td>
+<td>bansystem.command.clearwarns</td>
+</tr>
+<tr>
+<td><code>/kick &lt;player&gt; [reason]</code></td>
+<td>Kick a player</td>
+<td>bansystem.command.kick</td>
+</tr>
+<tr>
+<td><code>/freeze &lt;player&gt;</code></td>
+<td>Freeze or unfreeze a player</td>
+<td>bansystem.command.freeze</td>
+</tr>
+<tr>
+<td><code>/spectate &lt;player&gt;</code></td>
+<td>Spectate a player</td>
+<td>bansystem.command.spectate</td>
+</tr>
+<tr>
+<td><code>/chatmute</code></td>
+<td>Mute the entire chat</td>
+<td>bansystem.command.chat_mute</td>
+</tr>
+<tr>
+<td><code>/vanish</code></td>
+<td>Vanish yourself</td>
+<td>bansystem.command.vanish</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bansystem.bypass.ban</td>
+<td>Bypass a ban</td>
+</tr>
+<tr>
+<td>bansystem.bypass.mute</td>
+<td>Bypass a mute</td>
+</tr>
+<tr>
+<td>bansystem.bypass.kick</td>
+<td>Bypass a kick</td>
+</tr>
+<tr>
+<td>bansystem.bypass.freeze</td>
+<td>Bypass the freeze</td>
+</tr>
+<tr>
+<td>bansystem.bypass.chat_mute</td>
+<td>Bypass the mute of the chat</td>
+</tr>
+<tr>
+<td>bansystem.vanish.see</td>
+<td>See other vanished people</td>
+</tr>
+<tr>
+<td>bansystem.receive.notify</td>
+<td>Receive notifications</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Configurable</h2><a id="user-content-configurable" class="anchor" aria-label="Permalink: Configurable" href="#configurable"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Max warnings</li>
+<li>Action when max warnings reached</li>
+<li>Custom action reason and duration when max warnings reached</li>
+<li>Blocked commands for muted players</li>
+<li>Enable or disable banlogs and mutelogs</li>
+<li>Custom banids and muteids</li>
+<li>Custom prefix</li>
+<li>Custom paths</li>
+<li>Which features to use</li>
+</ul>
+<p><strong>Made with 💓 by r3pt1s</strong></p>

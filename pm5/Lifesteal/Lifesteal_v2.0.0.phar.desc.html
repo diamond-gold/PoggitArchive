@@ -1,0 +1,38 @@
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<pre><code>**Heart System**  
+Players gain or lose hearts based on PvP encounters.
+
+**Database Integration**  
+Utilizes libasynql for SQLite/MySQL database support.
+
+**Heart Items &amp; Recipes**  
+Players can withdraw hearts as physical items and use custom recipes for heart and revival items.
+
+**Revival System**  
+Special "Revival Bacon" items allow unbanning of eliminated players.
+
+**Ban Management &amp; Time Display**  
+Configurable timed bans when players lose all hearts with a display of remaining ban time.
+</code></pre>
+<div class="markdown-heading"><h2 class="heading-element">General</h2><a id="user-content-general" class="anchor" aria-label="Permalink: General" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<pre><code>This comprehensive plugin is designed for PocketMine-MP API 5, providing a robust lifesteal experience while supporting a wide range of configurations including default, minimum, and maximum heart values, as well as ban durations and custom messages.
+
+## Commands
+
+| Command                              | Description                                    | Permission                     |
+|--------------------------------------|------------------------------------------------|--------------------------------|
+| `/lifesteal help`                    | Show the help menu                             | lifesteal.command              |
+| `/lifesteal sethearts &lt;player&gt; &lt;hearts&gt;` | Set a player's hearts                          | lifesteal.command.sethearts    |
+| `/lifesteal gethearts [player]`        | Get a player's hearts                          | lifesteal.command.gethearts    |
+| `/lifesteal resethearts &lt;player&gt;`      | Reset a player's hearts                        | lifesteal.command.resethearts  |
+| `/lifesteal withdraw [amount]`         | Withdraw hearts as items                       | lifesteal.command.withdraw     |
+| `/lifesteal revive`                    | Obtain a revival item                          | lifesteal.command.revive       |
+| `/lifesteal unban &lt;player&gt;`            | Unban a player                                 | lifesteal.admin                |
+| `/lifesteal reload`                    | Reload configuration                           | lifesteal.command.reload       |
+</code></pre>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<pre><code>1. Place the plugin in your server's plugins folder.
+2. Start the server to generate configuration files.
+3. Edit `plugins/Lifesteal/config.yml` to customize settings.
+4. Restart the server.
+</code></pre>

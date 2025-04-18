@@ -1,11 +1,11 @@
 # Lifesteal
-<img src="https://raw.githubusercontent.com/GabBiswajit/Lifesteal/415d2245e38f008ae36e0c42d115ce627de674b1/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/GabBiswajit/Lifesteal/70737432eb8e3555681892ab455581772d4ba8bf/icon.png" width="128" height="128" />
 
 ## You can steal hearts from the players you kill!
 ```properties
-Version: 1.2.1
+Version: 2.0.0
     API: 5.0.0
-    Updated: 18-03-2024 20:46:06 UTC
+    Updated: 17-04-2025 04:16:33 UTC
 Repo: https://github.com/GabBiswajit/Lifesteal
 License: Apache-2.0
 Categories: General,Fun,Minigame

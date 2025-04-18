@@ -1,0 +1,12 @@
+<div class="markdown-heading"><h1 class="heading-element">Description</h1><a id="user-content-description" class="anchor" aria-label="Permalink: Description" href="#description"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>WDInventories is a PocketMine-MP plugin that separates player inventories per world. This ensures that players have different inventories in different worlds, making it ideal for multi-world servers.</p>
+<div class="markdown-heading"><h2 class="heading-element">API</h2><a id="user-content-api" class="anchor" aria-label="Permalink: API" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you're a developer, you can interact with WDInventories using:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">/** @var InventoryManager */</span>
+<span class="pl-s1"><span class="pl-c1">$</span>inventoryManager</span> = <span class="pl-s1"><span class="pl-c1">$</span>plugin</span>-&gt;<span class="pl-en">getInventoryManager</span>();
+
+<span class="pl-c">// Save a player's inventory manually</span>
+<span class="pl-s1"><span class="pl-c1">$</span>inventoryManager</span>-&gt;<span class="pl-en">saveInventory</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s1"><span class="pl-c1">$</span>worldName</span>);
+
+<span class="pl-c">// Load a player's inventory manually</span>
+<span class="pl-s1"><span class="pl-c1">$</span>inventoryManager</span>-&gt;<span class="pl-en">loadInventory</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s1"><span class="pl-c1">$</span>worldName</span>);</pre></div>
