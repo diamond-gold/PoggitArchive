@@ -9,5 +9,5 @@ Version: 0.3.3
 Repo: https://github.com/nicholass003/TopStats
 License: LGPL-3.0
 Categories: General,Fun,Economy,Teleportation,Informational
-Keywords: leaderboard,playerstats,statisctic,stats,top,topkill,topleaderboard,topmoney,topplayer,topstat,topstats
+Keywords: leaderboard,playerstats,score,statisctic,stats,top,topdeath,topkill,topleaderboard,topmine,topmoney,topplayer,topscore,topstat,topstats
 ```
