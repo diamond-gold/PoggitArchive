@@ -9,5 +9,5 @@ Version: 1.3.1
 Repo: https://github.com/ClousClouds/ClearLagg
 License: GPL-3.0
 Categories: General,World Editing and Management,Admin Tools
-Keywords: ClearLag,ClearLagg,KnosTx
+Keywords: ClearLag,ClearLagg
 ```
