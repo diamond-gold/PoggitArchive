@@ -1,0 +1,100 @@
+<div class="markdown-heading"><h1 class="heading-element">WelcomeMessages<a target="_blank" rel="noopener noreferrer" href="icon.png"><img src="icon.png" height="64" width="64" align="left" style="max-width: 100%;"></a>
+</h1><a id="user-content-welcomemessages" class="anchor" aria-label="Permalink: WelcomeMessages" href="#welcomemessages"><span aria-hidden="true" class="octicon octicon-link"></span></a></div><br>
+<table border="1">
+  <tbody><tr>
+    <th>Description</th>
+    <th>Link</th>
+  </tr>
+  <tr>
+    <td>API</td>
+    <td><a href="https://poggit.pmmp.io/p/WelcomeMessages" rel="nofollow"><img src="https://camo.githubusercontent.com/6df3a55a5f13a56519a80db9e08b97b2ecf46e9b064ac554fb92056919b657d2/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f57656c636f6d654d65737361676573" alt="Version" data-canonical-src="https://poggit.pmmp.io/shield.api/WelcomeMessages" style="max-width: 100%;"></a></td>
+  </tr>
+  <tr>
+    <td>Version</td>
+    <td><a href="https://poggit.pmmp.io/p/WelcomeMessages" rel="nofollow"><img src="https://camo.githubusercontent.com/5c3189ef6065796215f7fe9f5c3e2ac6bcbff337bf704830b0792599f3d01c6e/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f57656c636f6d654d65737361676573" alt="API" data-canonical-src="https://poggit.pmmp.io/shield.state/WelcomeMessages" style="max-width: 100%;"></a></td>
+  </tr>
+  <tr>
+    <td>Downloads</td>
+    <td><a href="https://poggit.pmmp.io/p/WelcomeMessages" rel="nofollow"><img src="https://camo.githubusercontent.com/5b3d7434f01aacf28ea4f7c9fe09f6098e0767e4f0c94b03eeac54fd901faa1f/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f57656c636f6d654d65737361676573" alt="Downloads" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/WelcomeMessages" style="max-width: 100%;"></a></td>
+  </tr>
+</tbody></table>
+<p>Welcome to <strong>WelcomeMessages</strong>, a PocketMine-MP plugin that enhances the player experience by displaying customizable messages when they join the server, change worlds, die, or are killed.</p>
+<div class="markdown-heading"><h2 class="heading-element"><strong>Features</strong></h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Welcome Message</strong>: Displays a customizable message when a player joins the server.</li>
+<li>
+<strong>ActionBar Messages</strong>: Shows a message in the ActionBar when a player teleports to a specific world.</li>
+<li>
+<strong>Death Messages</strong>: Notifies the cause of a player's death (falling, drowning, starvation, etc.).</li>
+<li>
+<strong>Kill Messages</strong>: Displays a message when a player is killed by another, including the weapon used.</li>
+<li>
+<strong>Customizable Configuration</strong>: All messages can be modified in the <code>config.yml</code> file.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element"><strong>Installation</strong></h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the <code>.phar</code> file from <a href="https://poggit.pmmp.io" rel="nofollow">Poggit</a> or compile the plugin yourself.</li>
+<li>Place the <code>.phar</code> file in your PocketMine-MP server's <code>plugins</code> folder.</li>
+<li>Restart the server.</li>
+<li>Done! The plugin will be enabled automatically.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element"><strong>Configuration</strong></h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin automatically generates a <code>config.yml</code> file in the <code>plugins/WelcomeMessages/</code> folder. You can customize the messages by editing this file.</p>
+<div class="markdown-heading"><h3 class="heading-element"><strong>Example <code>config.yml</code></strong></h3><a id="user-content-example-configyml" class="anchor" aria-label="Permalink: Example config.yml" href="#example-configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Welcome message when a player joins the server</span>
+<span class="pl-ent">welcome_message</span>: <span class="pl-s"><span class="pl-pds">"</span>§aWelcome, {player}, to the server!<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> World messages</span>
+<span class="pl-ent">world_messages</span>:
+  <span class="pl-ent">parcels</span>: <span class="pl-s"><span class="pl-pds">"</span>§eYou are in §bParcels<span class="pl-pds">"</span></span>
+  <span class="pl-ent">mines</span>: <span class="pl-s"><span class="pl-pds">"</span>§eYou are in §bMines<span class="pl-pds">"</span></span>
+  <span class="pl-ent">pvp</span>: <span class="pl-s"><span class="pl-pds">"</span>§eYou are in §bPvP<span class="pl-pds">"</span></span>
+  <span class="pl-ent">survival</span>: <span class="pl-s"><span class="pl-pds">"</span>§eYou are in §bSurvival<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Death messages</span>
+<span class="pl-ent">death_messages</span>:
+  <span class="pl-ent">fall</span>: <span class="pl-s"><span class="pl-pds">"</span>§c{player} died from falling.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">drowning</span>: <span class="pl-s"><span class="pl-pds">"</span>§c{player} drowned.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">hunger</span>: <span class="pl-s"><span class="pl-pds">"</span>§c{player} died of hunger.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">default</span>: <span class="pl-s"><span class="pl-pds">"</span>§c{player} died.<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Kill messages</span>
+<span class="pl-ent">kill_messages</span>:
+  <span class="pl-ent">default</span>: <span class="pl-s"><span class="pl-pds">"</span>§c{player} was killed by {killer} using {weapon}.<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element"><strong>Available Variables</strong></h3><a id="user-content-available-variables" class="anchor" aria-label="Permalink: Available Variables" href="#available-variables"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>{player}</code>: Player's name.</li>
+<li>
+<code>{killer}</code>: Killer's name.</li>
+<li>
+<code>{weapon}</code>: Weapon used for the kill.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element"><strong>Commands</strong></h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>/wmreload</strong>: Reloads the plugin configuration without restarting the server.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element"><strong>Permissions</strong></h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>welcomemessages.reload</code>: Allows the use of the <code>/wmreload</code> command.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element"><strong>Contributions</strong></h2><a id="user-content-contributions" class="anchor" aria-label="Permalink: Contributions" href="#contributions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Contributions are welcome! If you find a bug or have an idea to improve the plugin, open an <strong>issue</strong> or submit a <strong>pull request</strong> on <a href="https://github.com/t-starks/WelcomeMessages">GitHub</a>.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element"><strong>Credits</strong></h2><a id="user-content-credits" class="anchor" aria-label="Permalink: Credits" href="#credits"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Developer</strong>: <a href="https://github.com/t-starks">T. Stark</a>
+</li>
+<li>
+<strong>Version</strong>: 1.0.0</li>
+<li>
+<strong>PocketMine-MP API</strong>: 5.0.0</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">💰 Donations</h2><a id="user-content--donations" class="anchor" aria-label="Permalink: 💰 Donations" href="#-donations"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://buymeacoffee.com/tstark" rel="nofollow"><img src="https://camo.githubusercontent.com/75e9e069784bf5343da9a4d49ebf2992293dd43e10a0a0849bd0e713d0a322d0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4275792b4d652b612b436f666665652d6666646430303f7374796c653d666f722d7468652d6261646765266c6f676f3d6275792d6d652d612d636f66666565266c6f676f436f6c6f723d626c61636b" alt="BuyMeACoffee" data-canonical-src="https://img.shields.io/badge/Buy+Me+a+Coffee-ffdd00?style=for-the-badge&amp;logo=buy-me-a-coffee&amp;logoColor=black" style="max-width: 100%;"></a><br>
+<a href="https://ko-fi.com/tstark" rel="nofollow"><img src="https://camo.githubusercontent.com/995da4609b8d603cb4e15f7a2153cc45aeef196e4586384cb3cd7ddcb86971d7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4b6f2d2d66692d4631363036313f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465" alt="Ko-Fi" data-canonical-src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&amp;logo=ko-fi&amp;logoColor=white" style="max-width: 100%;"></a></p>
+<p>Thank you for using <strong>WelcomeMessages</strong>! If you have any questions or need help, feel free to contact me. 😊</p>
