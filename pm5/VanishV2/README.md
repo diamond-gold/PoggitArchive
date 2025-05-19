@@ -9,5 +9,5 @@ Version: 4.0.3
 Repo: https://github.com/sqrrrrl/VanishV2
 License: MIT
 Categories: Admin Tools,Miscellaneous,General
-Keywords: Admin,Moderation,Vanish
+Keywords: Admin,Moderation,Staff,Vanish
 ```
