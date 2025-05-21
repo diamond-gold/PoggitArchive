@@ -1,0 +1,71 @@
+<p>SimpleGift is a lightweight plugin that allows players to gift items to other players using a simple command. Perfect for survival and economy servers, this plugin enhances player interaction and community building through item sharing.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>SimpleGift comes with a variety of features to enhance your server experience:</p>
+<ul>
+<li>
+<strong>Simple Command</strong>: Gift items to online players with the easy-to-use <code>/simplegift &lt;player&gt; or /gift &lt;player&gt;</code> command</li>
+<li>
+<strong>Security</strong>: Blacklist specific items from being gifted to prevent abuse</li>
+<li>
+<strong>Custom Messages</strong>: Fully customizable messages with color codes and placeholders</li>
+<li>
+<strong>Permission-based</strong>: Control who can use the gift command</li>
+<li>
+<strong>Inventory Protection</strong>: Prevents gifting when the recipient's inventory is full</li>
+<li>
+<strong>User Feedback</strong>: Clear messages inform both sender and recipient about gift status</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Using SimpleGift is incredibly easy:</p>
+<ol>
+<li>Hold the item you want to gift in your hand</li>
+<li>Type <code>/simplegift &lt;playername&gt;</code> or <code>/give &lt;playername&gt;</code>
+</li>
+<li>The item will be transferred to the other player with confirmation messages</li>
+</ol>
+<p>All commands require the <code>simplegift.command</code> permission.</p>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>SimpleGift offers extensive configuration options:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> PREFIX MESSAGE</span>
+<span class="pl-ent">prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;7[&amp;aGIFT&amp;7] &amp;8»&amp;r <span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> BLACKLIST ITEM CONFIGURATION</span>
+<span class="pl-c"><span class="pl-c">#</span> Items in this list cannot be gifted to other players</span>
+<span class="pl-ent">blacklist-item</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>tnt<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>bedrock<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>end_portal_frame<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>command_block<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>barrier<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>structure_block<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>structure_void<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> MESSAGE CONFIGURATION</span>
+<span class="pl-c"><span class="pl-c">#</span> Use these placeholders: @TARGET@, @SENDER@</span>
+<span class="pl-ent">item</span>:
+  <span class="pl-ent">invalid</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cYou need to hold an item in your hand to gift it.<span class="pl-pds">"</span></span>
+  <span class="pl-ent">blacklist</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cThis item is blacklisted and cannot be given as a gift.<span class="pl-pds">"</span></span>
+<span class="pl-ent">target</span>:
+  <span class="pl-ent">not_found</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cPlayer &amp;e@TARGET@&amp;c could not be found.<span class="pl-pds">"</span></span>
+<span class="pl-ent">inventory</span>:
+  <span class="pl-ent">target_full</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cCannot give item to &amp;e@TARGET@&amp;c because their inventory is full.<span class="pl-pds">"</span></span>
+<span class="pl-ent">gift</span>:
+  <span class="pl-ent">sender_success</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;aYou have successfully gifted an item to &amp;e@TARGET@&amp;a!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">target_received</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;aYou received a gift from &amp;e@SENDER@&amp;a!<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you encounter any issues or have suggestions:</p>
+<ol>
+<li>Check the configuration for any syntax errors</li>
+<li>Ensure all dependencies are properly installed</li>
+<li>Check server console for error messages</li>
+<li>Open an issue on the GitHub repository</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Future Plans</h2><a id="user-content-future-plans" class="anchor" aria-label="Permalink: Future Plans" href="#future-plans"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Features planned for future updates:</p>
+<ul>
+<li>Gift confirmation system</li>
+<li>Gift cooldown system</li>
+<li>Multiple item gifting</li>
+<li>Gift logging for admins</li>
+<li>Gift notifications</li>
+</ul>
