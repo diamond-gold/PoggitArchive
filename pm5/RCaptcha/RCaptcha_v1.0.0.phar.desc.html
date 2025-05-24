@@ -1,0 +1,39 @@
+<div class="markdown-heading"><h1 class="heading-element">🛡️ RCaptcha - PocketMine Map Captcha Verification Plugin</h1><a id="user-content-️-rcaptcha---pocketmine-map-captcha-verification-plugin" class="anchor" aria-label="Permalink: 🛡️ RCaptcha - PocketMine Map Captcha Verification Plugin" href="#️-rcaptcha---pocketmine-map-captcha-verification-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/bfbe800150323e07d9cc54934030d83b528f3c94b738f45c3f68f8c4c35ac168/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f506f636b65744d696e652d2d4d502d4150492b352d626c7565"><img src="https://camo.githubusercontent.com/bfbe800150323e07d9cc54934030d83b528f3c94b738f45c3f68f8c4c35ac168/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f506f636b65744d696e652d2d4d502d4150492b352d626c7565" alt="PocketMine-MP API 5" data-canonical-src="https://img.shields.io/badge/PocketMine--MP-API+5-blue" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/12d11d995f4bc06a2ccf89a7bf3720161d10c8bbbada49297d3b7cf8f42dfff8/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f436170746368612d456e61626c65642d677265656e"><img src="https://camo.githubusercontent.com/12d11d995f4bc06a2ccf89a7bf3720161d10c8bbbada49297d3b7cf8f42dfff8/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f436170746368612d456e61626c65642d677265656e" alt="Captcha Protection" data-canonical-src="https://img.shields.io/badge/Captcha-Enabled-green" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/8aee898e1a8027f7b8d70ead3bf11030b695d447fa6026daa5e498bcf4fd8ea2/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374617475732d537461626c652d627269676874677265656e"><img src="https://camo.githubusercontent.com/8aee898e1a8027f7b8d70ead3bf11030b695d447fa6026daa5e498bcf4fd8ea2/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374617475732d537461626c652d627269676874677265656e" alt="Status" data-canonical-src="https://img.shields.io/badge/Status-Stable-brightgreen" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h2 class="heading-element">📌 Overview</h2><a id="user-content--overview" class="anchor" aria-label="Permalink: 📌 Overview" href="#-overview"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>RCaptcha</strong> is a plugin for PocketMine-MP (API 5) that enhances server security by requiring players to complete a <strong>map captcha</strong> when joining the server. It’s especially useful for preventing bots by ensuring only human players can interact or use protected commands.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">⚙️ Installation</h2><a id="user-content-️-installation" class="anchor" aria-label="Permalink: ⚙️ Installation" href="#️-installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download and place the plugin <code>.phar</code> file into your <code>plugins/</code> directory from <a href="https://github.com/xRookieFight/RCaptcha/releases">releases</a>.</li>
+<li>Restart your server.</li>
+<li>The plugin will automatically generate <code>config.yml</code> and <code>messages.yml</code>.</li>
+<li>Customize the configuration as needed and restart the server again.</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">⚙️ Dependencies</h2><a id="user-content-️-dependencies" class="anchor" aria-label="Permalink: ⚙️ Dependencies" href="#️-dependencies"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<a href="https://github.com/CzechPMDevs/ImageOnMap/tree/main">ImageOnMap</a> by <a href="https://github.com/CzechPMDevs">CzechPMDevs</a>
+</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🛠️ Configuration Files</h2><a id="user-content-️-configuration-files" class="anchor" aria-label="Permalink: 🛠️ Configuration Files" href="#️-configuration-files"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element"><code>config.yml</code></h3><a id="user-content-configyml" class="anchor" aria-label="Permalink: config.yml" href="#configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">captcha-settings</span>:
+  <span class="pl-ent">captcha-protected-commands</span>:
+    - <span class="pl-s"><span class="pl-pds">'</span>op<span class="pl-pds">'</span></span>
+  <span class="pl-ent">held-slot</span>: <span class="pl-c1">1</span> <span class="pl-c"><span class="pl-c">#</span> 1 = first hotbar slot, -1 = offhand</span>
+  <span class="pl-ent">mode</span>: <span class="pl-s">FIRSTJOIN </span><span class="pl-c"><span class="pl-c">#</span> FIRSTJOIN, ALL, NONE</span>
+  <span class="pl-ent">op-override</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">permission-override</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">disable-damage</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">disable-interact</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">blindness-effect</span>: <span class="pl-c1">true</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element"><code>messages.yml</code></h3><a id="user-content-messagesyml" class="anchor" aria-label="Permalink: messages.yml" href="#messagesyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">fail</span>: <span class="pl-s"><span class="pl-pds">'</span>§7You failed the Captcha<span class="pl-pds">'</span></span>
+<span class="pl-ent">join</span>: <span class="pl-s"><span class="pl-pds">'</span>§7Please type the text on the map in order to verify you<span class="pl-cce">''</span>re a human being<span class="pl-pds">'</span></span>
+<span class="pl-ent">success</span>: <span class="pl-s"><span class="pl-pds">'</span>§7You completed the Captcha<span class="pl-pds">'</span></span>
+<span class="pl-ent">blocked</span>: <span class="pl-s"><span class="pl-pds">'</span>§cYou cannot do that operation.<span class="pl-pds">'</span></span></pre></div>
