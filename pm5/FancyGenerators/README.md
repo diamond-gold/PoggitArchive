@@ -1,11 +1,11 @@
 # FancyGenerators
-<img src="https://raw.githubusercontent.com/survanetwork/FancyGenerators/ed75d166955fb54231ae3734d0b86f65a8268d02/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/survanetwork/FancyGenerators/a7d3ef75b9656687ae213c1814fc25c39c5ff8b3/icon.png" width="128" height="128" />
 
 ## A collection of new level Generators
 ```properties
-Version: 1.1.1
+Version: 1.2.0
     API: 5.0.0
-    Updated: 10-08-2023 20:19:07 UTC
+    Updated: 26-05-2025 02:22:27 UTC
 Repo: https://github.com/survanetwork/FancyGenerators
 License: MIT
 Categories: World Generators,Fun
