@@ -1,0 +1,29 @@
+<div class="markdown-heading"><h1 class="heading-element">ChatTags Plugin</h1><a id="user-content-chattags-plugin" class="anchor" aria-label="Permalink: ChatTags Plugin" href="#chattags-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A lightweight PocketMine plugin that allows players to use customizable chat tags with color formatting.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Customizable tags with color formatting</li>
+<li>In-game commands and JSON file editing</li>
+<li>Full support for all TextFormat colors using <code>{colorcode}</code> syntax</li>
+<li>Menu interface for tag selection</li>
+<li>SQLite database support</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>(Admin commands, require permission "chattags.command.admin")</p>
+<ul>
+<li>
+<code>/tag add {name}</code> - Add a new tag (OP)</li>
+<li>
+<code>/tag remove {name}</code> - Remove a tag (OP)</li>
+<li>
+<code>/tag give {player} {tag|all}</code> - Give tag(s) to player (OP)</li>
+</ul>
+<p>(Player command, require permission "chattags.command.use")</p>
+<ul>
+<li>
+<code>/mytags</code> - Open tag selection menu</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Tag Formatting</h2><a id="user-content-tag-formatting" class="anchor" aria-label="Permalink: Tag Formatting" href="#tag-formatting"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Use any TextFormat color in tags:</p>
+<div class="highlight highlight-source-json"><pre>[<span class="pl-s"><span class="pl-pds">"</span>{red}VIP<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>{gold}M{bold}EMBER<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>{obfuscated}!!{reset}{blue}MYSTIC<span class="pl-pds">"</span></span>]
+</pre></div>
