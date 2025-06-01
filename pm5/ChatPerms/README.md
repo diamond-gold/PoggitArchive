@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/MilkAndCookiz/ChatPerms
 License: LGPL-3.0
 Categories: Admin Tools,Chat-Related,General
-Keywords: PureChat,ChatManager,Perms,Permissions,Perm,NameTag,Nickname,ChatPerms,Manager,Chat
+Keywords: Chat,ChatManager,ChatPerms,Manager,NameTag,Nickname,Perm,Permissions,Perms,PureChat
 ```
