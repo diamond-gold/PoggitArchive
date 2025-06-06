@@ -1,0 +1,163 @@
+<div class="markdown-heading"><h1 class="heading-element">Cerberus</h1><a id="user-content-cerberus" class="anchor" aria-label="Permalink: Cerberus" href="#cerberus"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<br>
+An advanced land protection plugin for PocketMine-MP 5 
+<p>Built By Server Owners for Server Owners!</p>
+<div class="markdown-heading"><h1 class="heading-element">DEPENDENCIES:</h1><a id="user-content-dependencies" class="anchor" aria-label="Permalink: DEPENDENCIES:" href="#dependencies"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Cerberus uses <a href="https://www.github.com/CerberusPM/Commando">Commando</a> (the Link is a Forked Version of Commando which remains UP TO DATE with CerberusPM.
+Cerberus Also Utilises <a href="https://www.github.com/Muqsit/SimplePacketHandler">Muqsit/SimplePacketHandler</a> and [DeVirion](<a href="https://www.github.com/CerberusPM/DeVirion%5D">https://www.github.com/CerberusPM/DeVirion]</a> and will not work without these dependencies</p>
+<div class="markdown-heading"><h2 class="heading-element">Description</h2><a id="user-content-description" class="anchor" aria-label="Permalink: Description" href="#description"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Cerberus</strong> is an essential tool for protecting server structures. It allows server administrators and players to easily protect their builds.</p>
+<div class="markdown-heading"><h2 class="heading-element">The Basics:</h2><a id="user-content-the-basics" class="anchor" aria-label="Permalink: The Basics:" href="#the-basics"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>**This Plugin Aims to Implement features that allow server administrators and players to protect their builds from griefers and even allow players to build with set flags and permissions.</p>
+<div class="markdown-heading"><h3 class="heading-element">How to claim land:</h3><a id="user-content-how-to-claim-land" class="anchor" aria-label="Permalink: How to claim land:" href="#how-to-claim-land"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>First go to top corner of your claim and type <code>/cerberus pos1</code> , then proceed to go to the opposite side of your claim and go to the bottom corner of it and type <code>/cerberus pos2</code>. then proceed with <code>/cerberus claim &lt;land name&gt;</code></p>
+<p>Video Tutorial:
+<code>Coming in V1.0.0</code></p>
+<div class="markdown-heading"><h2 class="heading-element">Permissions &amp; Commands</h2><a id="user-content-permissions--commands" class="anchor" aria-label="Permalink: Permissions &amp; Commands" href="#permissions--commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Permission</strong></th>
+<th><strong>Command</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cerberus.command</code></td>
+<td><code>/cerberus</code></td>
+<td>Base permission for the main command.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.claim</code></td>
+<td><code>/cerberus claim</code></td>
+<td>Allows claiming land.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.claim.bypass_intersect</code></td>
+<td><em>N/A</em></td>
+<td>Allows intersecting land claims created by other players.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.claim.count_limit.unlimited</code></td>
+<td><code>/cerberus claim</code></td>
+<td>Bypasses land claim count limit if enabled.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.claim.area_limit.unlimited</code></td>
+<td><code>/cerberus claim</code></td>
+<td>Bypasses land claim area limit if enabled.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.flag</code></td>
+<td><code>/cerberus flag</code></td>
+<td>Base permission for setting flags.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.help</code></td>
+<td><code>/cerberus help</code></td>
+<td>Allows access to help documentation.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.here</code></td>
+<td><code>/cerberus here</code></td>
+<td>Displays land claim information at the player's location.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.info</code></td>
+<td><code>/cerberus info</code></td>
+<td>Provides information about a specific land claim.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.list</code></td>
+<td><code>/cerberus list</code></td>
+<td>Lists owned land claims.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.list.other</code></td>
+<td><code>/cerberus list &lt;player&gt;</code></td>
+<td>Allows listing land claims of other players.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.move</code></td>
+<td><code>/cerberus move</code></td>
+<td>Moves an existing land claim.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.remove</code></td>
+<td><code>/cerberus remove</code></td>
+<td>Removes an owned land claim.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.remove.other</code></td>
+<td><code>/cerberus remove &lt;name&gt;</code></td>
+<td>Allows removing land claims owned by other players.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.selection</code></td>
+<td>
+<code>/cerberus pos1</code>, <code>/pos2</code>, <code>/cerberus move</code>, <code>/cerberus expand</code>
+</td>
+<td>Allows position selection, wand selection, movement, and expansion.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.setspawn</code></td>
+<td><code>/cerberus setspawn</code></td>
+<td>Sets a spawn point for a land claim.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.setspawn.other</code></td>
+<td><code>/cerberus setspawn &lt;name&gt;</code></td>
+<td>Allows setting spawn points for land claims owned by others.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.teleport</code></td>
+<td><code>/cerberus teleport</code></td>
+<td>Teleports to a claim's spawn point.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.teleport.other</code></td>
+<td><code>/cerberus teleport &lt;player&gt;</code></td>
+<td>Allows teleporting other players to spawn points.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.teleport.to.other</code></td>
+<td><code>/cerberus teleport to &lt;player&gt;</code></td>
+<td>Allows teleporting to another player's land claim spawn point.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.unsetspawn</code></td>
+<td><code>/cerberus unsetspawn</code></td>
+<td>Removes a spawn point from a land claim.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.unsetspawn.other</code></td>
+<td><code>/cerberus unsetspawn &lt;name&gt;</code></td>
+<td>Allows removing spawn points from land claims owned by others.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.wand</code></td>
+<td><code>/cerberus wand</code></td>
+<td>Grants access to selection wand tools.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.whitelist</code></td>
+<td><code>/cerberus whitelist</code></td>
+<td>Grants access to land whitelist management.</td>
+</tr>
+<tr>
+<td><code>cerberus.command.reload</code></td>
+<td><code>/cerberus reload</code></td>
+<td>Reloads the plugin configuration.</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Default Permissions</h2><a id="user-content-default-permissions" class="anchor" aria-label="Permalink: Default Permissions" href="#default-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>By default, all permissions are set to <code>op</code>. This means only server operators have access to these commands unless explicitly assigned to players.</p>
+<div class="markdown-heading"><h1 class="heading-element"><strong>Work in progress:</strong></h1><a id="user-content-work-in-progress" class="anchor" aria-label="Permalink: Work in progress:" href="#work-in-progress"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h2 class="heading-element">Features to Implement</h2><a id="user-content-features-to-implement" class="anchor" aria-label="Permalink: Features to Implement" href="#features-to-implement"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>flag subcommand,
+extend subcommand,
+move subcommand</p>
+<div class="markdown-heading"><h2 class="heading-element">Authors</h2><a id="user-content-authors" class="anchor" aria-label="Permalink: Authors" href="#authors"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This Plugin was Jointly Founded by Levonzie and skyss0fly. This plugin is Actively Being Maintained by skyss0fly</p>

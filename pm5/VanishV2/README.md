@@ -1,11 +1,11 @@
 # VanishV2
-<img src="https://raw.githubusercontent.com/sqrrrrl/VanishV2/8680ba28dc3237f310bacfa7489229d50cf4e6a9/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/sqrrrrl/VanishV2/85499a050307e90bd5109326f5aaeb18856650b7/icon.png" width="128" height="128" />
 
-## Advanced vanish plugin with a lot of features
+## Advanced, configurable vanish plugin for staff
 ```properties
-Version: 4.0.3
+Version: 4.0.4
     API: 5.0.0
-    Updated: 04-07-2023 23:03:39 UTC
+    Updated: 05-06-2025 21:49:14 UTC
 Repo: https://github.com/sqrrrrl/VanishV2
 License: MIT
 Categories: Admin Tools,Miscellaneous,General

@@ -1,0 +1,374 @@
+<div class="markdown-heading"><h1 class="heading-element">⛏️ MineCreator 1.2.0</h1><a id="user-content-️-minecreator-120" class="anchor" aria-label="Permalink: ⛏️ MineCreator 1.2.0" href="#️-minecreator-120"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A user-friendly and performance-focused mine management plugin for PocketMine-MP servers.
+Create, edit, and reset mines with region selection, percentage-based block filling, XP control, automatic resets, and a new Lucky Block feature — all through an intuitive FormAPI interface!</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>📐 <strong>Region Selection</strong>: Select two positions by breaking blocks to define the mine area.</li>
+<li>📋 <strong>GUI-Based Mine Setup</strong>: Manage mines easily using interactive forms.</li>
+<li>🧱 <strong>Block Fill by Percentage</strong>: Fill mines using custom block weights (e.g., <code>stone 50%, coal_ore 30%</code>).</li>
+<li>🕒 <strong>Auto-Reset Timer</strong>: Automatically resets mines after a configurable delay.</li>
+<li><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> <strong>Reset Warnings</strong>: Sends a reset warning to players 5 seconds before a mine resets.</li>
+<li>🔁 <strong>Manual or Automatic Reset</strong>: Reset mines manually or on a timer.</li>
+<li>🧼 <strong>Empty Resets</strong>: Auto resets when a mine is empty.</li>
+<li>💥 <strong>Block-Based XP System</strong>: Assign custom XP values per block using a simple command.</li>
+<li>🚫 <strong>XP Drop Prevention</strong>: Cancels XP orb drops inside mines on blocks with custom XP values to avoid duplicates.</li>
+<li>🍀 <strong>Lucky Blocks</strong>: Spawn special Lucky Blocks that trigger random drops, particle effects, and sounds when broken.</li>
+<li>🎆 <strong>Visual and Sound Effects</strong>: Particle and sound effects during Lucky Block activation and mine resets.</li>
+<li>⚙️ <strong>Configurable Lucky Block Settings</strong>: Define Lucky Block item, drops, particles, sounds, and cooldowns via <code>luckyblock.yml</code>.</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/mine</code></td>
+<td>Opens the main mine command help</td>
+<td><code>minecreator.command.mine</code></td>
+</tr>
+<tr>
+<td><code>/mine position</code></td>
+<td>Select region by breaking 2 blocks</td>
+<td><code>minecreator.command.mine</code></td>
+</tr>
+<tr>
+<td><code>/mine create</code></td>
+<td>Create a new mine using a form</td>
+<td><code>minecreator.command.mine</code></td>
+</tr>
+<tr>
+<td><code>/mine list</code></td>
+<td>Shows a list of available mines</td>
+<td><code>minecreator.command.mine</code></td>
+</tr>
+<tr>
+<td><code>/mine edit</code></td>
+<td>Edit an existing mine</td>
+<td><code>minecreator.command.mine</code></td>
+</tr>
+<tr>
+<td><code>/mine delete</code></td>
+<td>Delete a mine</td>
+<td><code>minecreator.command.mine</code></td>
+</tr>
+<tr>
+<td><code>/mine reset</code></td>
+<td>Manually reset a mine</td>
+<td><code>minecreator.command.mine</code></td>
+</tr>
+<tr>
+<td><code>/mine reload</code></td>
+<td>Reloads the plugin</td>
+<td><code>minecreator.command.reload</code></td>
+</tr>
+<tr>
+<td><code>/mine setblockxp</code></td>
+<td>Set XP for a specific block in a mine</td>
+<td><code>minecreator.command.mine</code></td>
+</tr>
+<tr>
+<td><code>/mine blockdrop</code></td>
+<td>Enable/disable block drops in mine</td>
+<td><code>minecreator.command.mine</code></td>
+</tr>
+<tr>
+<td><code>/minewarn</code></td>
+<td>Toggle reset warnings on/off</td>
+<td><code>minecreator.command.minewarn</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">How to Use</h2><a id="user-content-how-to-use" class="anchor" aria-label="Permalink: How to Use" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<p>Place the plugin <code>.phar</code> or folder into your <code>plugins/</code> directory.</p>
+</li>
+<li>
+<p>Start your server.</p>
+</li>
+<li>
+<p>Use <code>/mine position</code> and break 2 blocks to define a region.</p>
+</li>
+<li>
+<p>Use <code>/mine create</code> to open the setup form:</p>
+<ul>
+<li><strong>Mine Name</strong></li>
+<li>
+<strong>Blocks &amp; Percentages</strong> (e.g., <code>stone,50,coal_ore,30,iron_ore,20</code>)</li>
+<li>
+<strong>Auto-Reset Time</strong> (in seconds)</li>
+</ul>
+</li>
+<li>
+<p>Assign XP to specific blocks:</p>
+<pre><code>/mine setblockxp &lt;mine&gt; &lt;block_id&gt; &lt;xp&gt;
+</code></pre>
+<p>Example: <code>/mine setblockxp mine1 iron_ore 10</code></p>
+</li>
+<li>
+<p>Enable or disable block drops for specific blocks in a mine:</p>
+<p>Example: <code>/mine blockdrop mine1 stone false</code></p>
+</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Lucky Block Feature</h2><a id="user-content-lucky-block-feature" class="anchor" aria-label="Permalink: Lucky Block Feature" href="#lucky-block-feature"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Use the Lucky Block item (defined in <code>luckyblock.yml</code>) to place Lucky Blocks inside mines.</li>
+<li>When broken, Lucky Blocks:</li>
+</ul>
+<ul>
+<li>Spawn random item drops based on weighted chances.</li>
+<li>Can execute console commands with dynamic placeholders.</li>
+<li>Trigger particle and sound effects.</li>
+</ul>
+<ul>
+<li>Lucky Block data is persistent and tied to the mine.</li>
+</ul>
+<hr>
+<blockquote>
+<p>You can cancel or redo the region selection if you make a mistake before creating the mine.</p>
+</blockquote>
+<div class="markdown-heading"><h2 class="heading-element">Reset Warnings</h2><a id="user-content-reset-warnings" class="anchor" aria-label="Permalink: Reset Warnings" href="#reset-warnings"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Players in the same world as the mine will receive a warning 5 seconds before it resets.
+Use <code>/minewarn on</code> or <code>/minewarn off</code> to enable or disable this feature.</p>
+<div class="markdown-heading"><h2 class="heading-element">XP Drop Handling</h2><a id="user-content-xp-drop-handling" class="anchor" aria-label="Permalink: XP Drop Handling" href="#xp-drop-handling"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>XP orbs are disabled when breaking mine-assigned blocks inside mines to avoid XP theft.</li>
+<li>XP for blocks is custom-defined, allowing XP assignment even to blocks that normally don’t drop XP.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Lucky Block Configuration</h2><a id="user-content-lucky-block-configuration" class="anchor" aria-label="Permalink: Lucky Block Configuration" href="#lucky-block-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Customize the Lucky Block item ID and meta.</li>
+<li>Define possible drops with custom chances and quantities.</li>
+<li>Configure particle and sound effects for Lucky Block activation.</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">File Structure</h2><a id="user-content-file-structure" class="anchor" aria-label="Permalink: File Structure" href="#file-structure"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<p><code>mines.json</code>: Stores all mines and their settings.</p>
+<div class="highlight highlight-source-json"><pre>{
+  <span class="pl-ent">"mine_name"</span>: {
+    <span class="pl-ent">"world"</span>: <span class="pl-s"><span class="pl-pds">"</span>world<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"pos1"</span>: [<span class="pl-c1">100</span>, <span class="pl-c1">60</span>, <span class="pl-c1">100</span>],
+    <span class="pl-ent">"pos2"</span>: [<span class="pl-c1">110</span>, <span class="pl-c1">65</span>, <span class="pl-c1">110</span>],
+    <span class="pl-ent">"blocks"</span>: {
+      <span class="pl-ent">"stone"</span>: <span class="pl-c1">50</span>,
+      <span class="pl-ent">"coal_ore"</span>: <span class="pl-c1">30</span>,
+      <span class="pl-ent">"iron_ore"</span>: <span class="pl-c1">20</span>
+    },
+    <span class="pl-ent">"blockXp"</span>: {
+      <span class="pl-ent">"iron_ore"</span>: <span class="pl-c1">10</span>,
+      <span class="pl-ent">"coal_ore"</span>: <span class="pl-c1">5</span>
+    },
+    <span class="pl-ent">"autoResetTime"</span>: <span class="pl-c1">600</span>
+  }
+}</pre></div>
+</li>
+<li>
+<p><code>luckyblock.yml</code>: stores all luckyblock configurations.</p>
+</li>
+</ul>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Enable or disable the lucky blocks feature globally.</span>
+<span class="pl-c"><span class="pl-c">#</span> (Do not disable if you use lucky blocks in any mines, or they will become air.)</span>
+<span class="pl-ent">lucky_blocks_enabled</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> List of active lucky block types on the server.</span>
+<span class="pl-c"><span class="pl-c">#</span> Only these block types trigger lucky block effects when broken.</span>
+<span class="pl-ent">lucky_block_types</span>:
+  - <span class="pl-s">gold_lucky_block</span>
+  - <span class="pl-s">diamond_lucky_block</span>
+
+<span class="pl-c"><span class="pl-c">#</span> --------------------------------------#</span>
+<span class="pl-c"><span class="pl-c">#</span> Configuration for diamond_lucky_block #</span>
+<span class="pl-c"><span class="pl-c">#</span> --------------------------------------#</span>
+<span class="pl-ent">diamond_lucky_block</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Block ID for this lucky block</span>
+  <span class="pl-ent">block_id</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:diamond_block<span class="pl-pds">"</span></span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Number of items to drop (random between these values)</span>
+  <span class="pl-ent">min_drop_count</span>: <span class="pl-c1">2</span>
+  <span class="pl-ent">max_drop_count</span>: <span class="pl-c1">5</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Number of commands to execute (random between these values)</span>
+  <span class="pl-ent">min_cmd_count</span>: <span class="pl-c1">1</span>
+  <span class="pl-ent">max_cmd_count</span>: <span class="pl-c1">5</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Weighted item drop list using array format (supports multiple entries)</span>
+  <span class="pl-ent">drop_list</span>:
+    - <span class="pl-ent">iron_ingot</span>: <span class="pl-c1">25</span>
+    - <span class="pl-ent">gold_ingot</span>: <span class="pl-c1">25</span>
+    - <span class="pl-ent">diamond</span>: <span class="pl-c1">40</span>
+    - <span class="pl-ent">emerald</span>: <span class="pl-c1">10</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> List of commands to run when the lucky block is broken.</span>
+  <span class="pl-c"><span class="pl-c">#</span> {player} will be replaced with the breaking player’s name.</span>
+  <span class="pl-ent">commands</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">give {player} netherite_sword</span><span class="pl-pds">"</span></span>: <span class="pl-c1">25</span>
+    - <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">give {player} diamond 1</span><span class="pl-pds">"</span></span>: <span class="pl-c1">25</span>
+    - <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">give {player} dirt 1</span><span class="pl-pds">"</span></span>: <span class="pl-c1">40</span>
+    - <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ent">xp 1000 {player}</span><span class="pl-pds">"</span></span>: <span class="pl-c1">10</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Effects to play on lucky block activation</span>
+  <span class="pl-ent">effects</span>:
+    <span class="pl-ent">particles</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">sound</span>: <span class="pl-c1">true</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Custom Messages</h2><a id="user-content-custom-messages" class="anchor" aria-label="Permalink: Custom Messages" href="#custom-messages"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>(supports any language)</li>
+</ul>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> ┌─────────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="pl-c"><span class="pl-c">#</span> │                               Placeholders                                      │</span>
+<span class="pl-c"><span class="pl-c">#</span> ├─────────────────────────────────────────────────────────────────────────────────┤</span>
+<span class="pl-c"><span class="pl-c">#</span> │   {mine}     – replaced with the mine’s name (e.g., "stone_mine")               │</span>
+<span class="pl-c"><span class="pl-c">#</span> │   {block}    – replaced with a block’s alias or ID (e.g., "stone")              │</span>
+<span class="pl-c"><span class="pl-c">#</span> │   {alias}    – same as {block}, normalized alias for consistency                │</span>
+<span class="pl-c"><span class="pl-c">#</span> │   {xp}       – replaced with an XP value (integer)                              │</span>
+<span class="pl-c"><span class="pl-c">#</span> │   {item}     – replaced with an item ID (e.g., "diamond_sword")                 │</span>
+<span class="pl-c"><span class="pl-c">#</span> │   {pos}      – replaced with a Vector3 position string (e.g., "Vector3(x,y,z)") │</span>
+<span class="pl-c"><span class="pl-c">#</span> │   {new}      – replaced with a new mine name when renaming                      │</span>
+<span class="pl-c"><span class="pl-c">#</span> │   {old}      – replaced with the old mine name when renaming                    │</span>
+<span class="pl-c"><span class="pl-c">#</span> │                                                                                 │</span>
+<span class="pl-c"><span class="pl-c">#</span> │   additional:                                                                   │</span>
+<span class="pl-c"><span class="pl-c">#</span> │       {status} {name}                                                           │</span>
+<span class="pl-c"><span class="pl-c">#</span> │                                                                                 │</span>
+<span class="pl-c"><span class="pl-c">#</span> │   - Do not add additional placeholders inside a msg which does not use it.      │</span>
+<span class="pl-c"><span class="pl-c">#</span> └─────────────────────────────────────────────────────────────────────────────────┘</span>
+
+<span class="pl-c"><span class="pl-c">#</span> When you try to use a command on console, it will send this.</span>
+<span class="pl-ent">use_in_game</span>: <span class="pl-s"><span class="pl-pds">"</span>Use in-game!<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ┌────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="pl-c"><span class="pl-c">#</span> │                               /minewarn                                    │</span>
+<span class="pl-c"><span class="pl-c">#</span> └────────────────────────────────────────────────────────────────────────────┘</span>
+<span class="pl-ent">no_permission_minewarn</span>: <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §cYou don't have permission to toggle mine warnings.<span class="pl-pds">"</span></span>
+<span class="pl-ent">usage_minewarn</span>:         <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §eUsage: §b/minewarn &lt;on|off&gt;<span class="pl-pds">"</span></span>
+<span class="pl-ent">minewarn_enabled</span>:       <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §aMine reset warnings §benabled§a.<span class="pl-pds">"</span></span>
+<span class="pl-ent">minewarn_disabled</span>:      <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §cMine reset warnings §bdisabled§c.<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ┌────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="pl-c"><span class="pl-c">#</span> │                             /mine Help Menu                                │</span>
+<span class="pl-c"><span class="pl-c">#</span> └────────────────────────────────────────────────────────────────────────────┘</span>
+<span class="pl-ent">mine_help_header</span>:        <span class="pl-s"><span class="pl-pds">"</span>§6§l===== §eMineCreator Help §6§l=====<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_item1</span>:         <span class="pl-s"><span class="pl-pds">"</span>§e/mine help §7– Show this help menu.<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_list</span>:          <span class="pl-s"><span class="pl-pds">"</span>§e/mine list §7– List all existing mines.<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_list_desc</span>:     <span class="pl-s"><span class="pl-pds">"</span>   §8Shows you every mine by name．<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_pos</span>:           <span class="pl-s"><span class="pl-pds">"</span>§e/mine position §7– Start defining a new mine region.<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_pos_desc</span>:      <span class="pl-s"><span class="pl-pds">"</span>   §8Break one block for the §bfirst corner§8, then another for the §bsecond corner§8．<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_create</span>:        <span class="pl-s"><span class="pl-pds">"</span>§e/mine create §7– Open the Create Mine form.<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_create_desc</span>:   <span class="pl-s"><span class="pl-pds">"</span>   §8After selecting positions， this lets you:<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_create_bullets</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>   §8 • Name your mine (e.g. §bstone_mine§8)<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>   §8 • Choose blocks &amp; percentages (e.g. §cstone,50,iron_ore,30§8)<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>   §8 • Set auto-reset interval in seconds (e.g. §b600§8)<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_edit</span>:          <span class="pl-s"><span class="pl-pds">"</span>§e/mine edit &lt;name&gt; §7– Edit an existing mine via form.<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_edit_desc</span>:     <span class="pl-s"><span class="pl-pds">"</span>   §8Change its name, blocks, or auto-reset time．<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_reset</span>:         <span class="pl-s"><span class="pl-pds">"</span>§e/mine reset &lt;name&gt; §7– Immediately reset a mine.<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_reset_desc</span>:    <span class="pl-s"><span class="pl-pds">"</span>   §8Teleports anyone inside up above, refills the region．<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_delete</span>:        <span class="pl-s"><span class="pl-pds">"</span>§e/mine delete &lt;name&gt; §7– Permanently delete a mine.<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_delete_desc</span>:   <span class="pl-s"><span class="pl-pds">"</span>   §8Removes it from config and cancels auto-resets．<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_setblockxp</span>:    <span class="pl-s"><span class="pl-pds">"</span>§e/mine setblockxp &lt;mine&gt; &lt;block&gt; &lt;xp&gt; §7– Set XP drop for a specific block in a mine.<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_setblockxp_desc</span>: <span class="pl-s"><span class="pl-pds">"</span>   §8Updates the mine’s config and applies immediately.<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_blockdrop</span>: <span class="pl-s"><span class="pl-pds">"</span>§e/mine blockdrop &lt;mine&gt; &lt;block&gt; &lt;true|false&gt; §7– Enable or disable drops for specific blocks in a mine<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_blockdrop_desc</span>: <span class="pl-s"><span class="pl-pds">"</span>    §8Toggle whether breaking a specific block in the mine drops items or not．<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_minewarn</span>: <span class="pl-s"><span class="pl-pds">"</span>§e/mine minewarn &lt;mine&gt; &lt;true|false&gt; §7– Enable or disable warning messages before a mine reset<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_minewarn_desc</span>: <span class="pl-s"><span class="pl-pds">"</span>   §8Control if players receive warnings when the mine is about to reset．<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_reload</span>:        <span class="pl-s"><span class="pl-pds">"</span>§e/mine reload §7– Reload this plugin.<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_reload_desc</span>:   <span class="pl-s"><span class="pl-pds">"</span>   §8Disables and re-enables MineCreator， reloading all settings.<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_help_footer</span>:        <span class="pl-s"><span class="pl-pds">"</span>§6§l===============================<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ┌────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="pl-c"><span class="pl-c">#</span> │                       /mine setblockxp &amp; blockdrops                        │</span>
+<span class="pl-c"><span class="pl-c">#</span> └────────────────────────────────────────────────────────────────────────────┘</span>
+<span class="pl-ent">usage_setblockxp</span>:        <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §eUsage: §b/mine setblockxp &lt;mine&gt; &lt;block&gt; &lt;xp&gt;<span class="pl-pds">"</span></span>
+<span class="pl-ent">unknown_block</span>:           <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §cUnknown block: {block}<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_not_found</span>:          <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §cMine '{mine}' not found!<span class="pl-pds">"</span></span>
+<span class="pl-ent">xp_set_success</span>:          <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §aSet XP of {xp} for block '{alias}' in mine '{mine}'.<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">usage_blockdrop</span>: <span class="pl-s"><span class="pl-pds">"</span>§cUsage: /mine blockdrop &lt;mine&gt; &lt;block&gt; &lt;true/false&gt;<span class="pl-pds">"</span></span>
+<span class="pl-ent">block_drop_toggle_success</span>: <span class="pl-s"><span class="pl-pds">"</span>§aBlock drop for '{block}' in mine '{mine}' set to '{status}'.<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ┌────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="pl-c"><span class="pl-c">#</span> │                             /mine position                                 │</span>
+<span class="pl-c"><span class="pl-c">#</span> └────────────────────────────────────────────────────────────────────────────┘</span>
+<span class="pl-ent">prompt_select_first</span>:     <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §aBreak one block for §bFirst§a pos, then break another for §bSecond§a pos.<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ┌────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="pl-c"><span class="pl-c">#</span> │                            /mine create logic                              │</span>
+<span class="pl-c"><span class="pl-c">#</span> └────────────────────────────────────────────────────────────────────────────┘</span>
+<span class="pl-ent">need_two_positions</span>:      <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §cSelect two positions first with §e/mine position§c!<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_already_exists_on_create</span>: <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §cA mine named '{mine}' already exists. Please choose another.<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ┌────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="pl-c"><span class="pl-c">#</span> │                            Selection Control                               │</span>
+<span class="pl-c"><span class="pl-c">#</span> └────────────────────────────────────────────────────────────────────────────┘</span>
+<span class="pl-ent">selection_cancelled</span>:     <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §6Selection cancelled. You can start again.<span class="pl-pds">"</span></span>
+<span class="pl-ent">first_position_set</span>:      <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §aFirst position set at {pos}<span class="pl-pds">"</span></span>
+<span class="pl-ent">second_position_set</span>:     <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §aSecond position set at {pos}<span class="pl-pds">"</span></span>
+<span class="pl-ent">prompt_next_create</span>:      <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §bType §l§cCancel §r§bTo Start Over Or §l§e/mine create §r§bTo Create The Mine<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ┌────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="pl-c"><span class="pl-c">#</span> │                              Lucky Blocks                                  │</span>
+<span class="pl-c"><span class="pl-c">#</span> └────────────────────────────────────────────────────────────────────────────┘</span>
+<span class="pl-ent">luckyblock_found</span>:        <span class="pl-s"><span class="pl-pds">"</span>§a[LuckyBlock] §6You mined a lucky block!<span class="pl-pds">"</span></span>
+<span class="pl-ent">luckyblock_zero_weight</span>:  <span class="pl-s"><span class="pl-pds">"</span>§c[LuckyBlock] total weight is zero, no drops will occur. Report to an admin!<span class="pl-pds">"</span></span>
+<span class="pl-ent">luckyblock_no_item</span>:      <span class="pl-s"><span class="pl-pds">"</span>§c[LuckyBlock] no item selected (unexpected). Report to an admin!<span class="pl-pds">"</span></span>
+<span class="pl-ent">luckyblock_parse_fail</span>:   <span class="pl-s"><span class="pl-pds">"</span>§c[LuckyBlock] failed to parse item '{item}'. Report to an admin!<span class="pl-pds">"</span></span>
+<span class="pl-ent">luckyblock_invalid_cmd</span>:  <span class="pl-s"><span class="pl-pds">"</span>§c[LuckyBlock] Invalid 'commands' format in luckyblock.yml. Must be an array. Report to an admin!<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ┌────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="pl-c"><span class="pl-c">#</span> │                          Mine Reset &amp; Warnings                             │</span>
+<span class="pl-c"><span class="pl-c">#</span> └────────────────────────────────────────────────────────────────────────────┘</span>
+<span class="pl-ent">mine_will_reset_in</span>:      <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §6Mine '{mine}' will reset in 5 seconds!<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_reset_warning</span>:      <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §6Mine '{mine}' will reset in 5 seconds!<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> alias for consistency</span>
+<span class="pl-ent">mine_reset_teleport</span>:     <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §eYou have been teleported above the mine due to a reset.<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_reset_complete</span>:     <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §aMine '{mine}' has been reset!<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_reset_success</span>:      <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §aMine '{mine}' reset.<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ┌────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="pl-c"><span class="pl-c">#</span> │                          /mine list &amp; delete                               │</span>
+<span class="pl-c"><span class="pl-c">#</span> └────────────────────────────────────────────────────────────────────────────┘</span>
+<span class="pl-ent">no_mines_exist</span>:         <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §eNo mines have been created yet.<span class="pl-pds">"</span></span>
+<span class="pl-ent">available_mines</span>:        <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §aAvailable Mines:<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_list_entry</span>:        <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §b- {mine}<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_deleted_success</span>:   <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §aMine '{mine}' deleted successfully.<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ┌────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="pl-c"><span class="pl-c">#</span> │                            /mine reload                                    │</span>
+<span class="pl-c"><span class="pl-c">#</span> └────────────────────────────────────────────────────────────────────────────┘</span>
+<span class="pl-ent">no_permission_reload</span>:   <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §cYou don't have permission to reload.<span class="pl-pds">"</span></span>
+<span class="pl-ent">reload_success</span>:         <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §aMineCreator has been reloaded!<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ┌────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="pl-c"><span class="pl-c">#</span> │                           Mine updates &amp; errors                            │</span>
+<span class="pl-c"><span class="pl-c">#</span> └────────────────────────────────────────────────────────────────────────────┘</span>
+<span class="pl-ent">mine_updated_success</span>:   <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §aMine '{old}' updated to '{new}'!<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_already_exists</span>:    <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §cA mine with the name '{name}' already exists!<span class="pl-pds">"</span></span>
+<span class="pl-ent">invalid_name_or_blocklist</span>: <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §cInvalid name or block list!<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_created</span>:           <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §aMine '{mine}' created!<span class="pl-pds">"</span></span>
+<span class="pl-ent">must_select_positions</span>:  <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §cYou must select two positions first with /mine position!<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ┌────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="pl-c"><span class="pl-c">#</span> │                           Fallback / Unknown                               │</span>
+<span class="pl-c"><span class="pl-c">#</span> └────────────────────────────────────────────────────────────────────────────┘</span>
+<span class="pl-ent">generic_unknown</span>:        <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §cUnknown subcommand. Type §e/mine help §cfor a list of commands.<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ┌────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="pl-c"><span class="pl-c">#</span> │                      Additional Optional Messages                          │</span>
+<span class="pl-c"><span class="pl-c">#</span> └────────────────────────────────────────────────────────────────────────────┘</span>
+<span class="pl-ent">xp_gained</span>:              <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §aYou gained {xp} XP from mining '{block}'<span class="pl-pds">"</span></span>
+<span class="pl-ent">mine_rename_success</span>:    <span class="pl-s"><span class="pl-pds">"</span>§7[§l§dMine§r§7] §c&gt;&gt; §aMine '{old}' renamed to '{new}'!<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Admin Permissions</h2><a id="user-content-admin-permissions" class="anchor" aria-label="Permalink: Admin Permissions" href="#admin-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>minecreator.command.mine</code> – Full access to mine commands and forms</li>
+<li>
+<code>minecreator.command.reload</code> – Access to reload the plugin</li>
+</ul>
+<hr>

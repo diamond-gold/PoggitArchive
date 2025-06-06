@@ -1,0 +1,180 @@
+<div class="markdown-heading"><h1 class="heading-element">ChatPerms <a href="https://poggit.pmmp.io/p/ChatPerms" rel="nofollow"><img src="https://camo.githubusercontent.com/3940c584d8d11e2fc657bd4f12cc959bf08ffb6a7efc24c485581eabd026a762/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f436861745065726d73" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/ChatPerms" style="max-width: 100%;"></a>
+</h1><a id="user-content-chatperms-" class="anchor" aria-label="Permalink: ChatPerms " href="#chatperms-"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A comprehensive chat and permissions management plugin for PocketMine-MP servers with advanced moderation tools, analytics, and faction support.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Custom chat formats for different groups</li>
+<li>Customizable nametags with health display and faction tags</li>
+<li>Dynamic permission management with group inheritance</li>
+<li>Faction integration (supports FactionsPro, PiggyFactions, SimpleFaction, and Factions)</li>
+<li>Automatic detection of compatible faction plugins</li>
+<li>Real-time nametag updates reflecting health changes</li>
+<li>Mute system with temporary and permanent muting</li>
+<li>Chat cooldowns per group</li>
+<li>Chat statistics and analytics</li>
+<li>Temporary group assignments</li>
+<li>Permission debugging tools</li>
+<li>Easy-to-use commands for group and permission management</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Group Management</h3><a id="user-content-group-management" class="anchor" aria-label="Permalink: Group Management" href="#group-management"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/cp setgroup &lt;player&gt; &lt;group&gt;</code> - Assign a player to a group</li>
+<li>
+<code>/cp creategroup &lt;group&gt; &lt;chat_format&gt; &lt;nametag_format&gt; [permissions...]</code> - Create a new group</li>
+<li>
+<code>/cp removegroup &lt;group&gt;</code> - Delete a group</li>
+<li>
+<code>/cp listgroups</code> - List all groups with details</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Permission Management</h3><a id="user-content-permission-management" class="anchor" aria-label="Permalink: Permission Management" href="#permission-management"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/cp addgroupperm &lt;group&gt; &lt;permission&gt;</code> - Add a permission to a group</li>
+<li>
+<code>/cp removegroupperm &lt;group&gt; &lt;permission&gt;</code> - Remove a permission from a group</li>
+<li>
+<code>/cp checkplayer &lt;player&gt;</code> - Check player permissions and group info</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Moderation</h3><a id="user-content-moderation" class="anchor" aria-label="Permalink: Moderation" href="#moderation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/cp mute &lt;player&gt; [duration] [reason]</code> - Mute a player</li>
+<li>
+<code>/cp unmute &lt;player&gt;</code> - Unmute a player</li>
+<li>
+<code>/cp mutelist</code> - List all muted players</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Temporary Groups</h3><a id="user-content-temporary-groups" class="anchor" aria-label="Permalink: Temporary Groups" href="#temporary-groups"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/cp tempgroup &lt;player&gt; &lt;group&gt; &lt;duration&gt; [reason]</code> - Assign temporary group</li>
+<li>
+<code>/cp tempgroupcheck &lt;player&gt;</code> - Check temporary group status</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Statistics</h3><a id="user-content-statistics" class="anchor" aria-label="Permalink: Statistics" href="#statistics"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/cp stats</code> - Show server chat statistics</li>
+<li>
+<code>/cp stats &lt;player&gt;</code> - Show player chat statistics</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Utility</h3><a id="user-content-utility" class="anchor" aria-label="Permalink: Utility" href="#utility"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/cp help</code> - Display all available commands</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Placeholders</h2><a id="user-content-placeholders" class="anchor" aria-label="Permalink: Placeholders" href="#placeholders"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Chat Format</h3><a id="user-content-chat-format" class="anchor" aria-label="Permalink: Chat Format" href="#chat-format"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>{PLAYER}</code> - Player's username</li>
+<li>
+<code>{MESSAGE}</code> - Chat message</li>
+<li>
+<code>{WORLD}</code> - Current world name</li>
+<li>
+<code>{FACTION}</code> - Player's faction (if detected)</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Nametag Format</h3><a id="user-content-nametag-format" class="anchor" aria-label="Permalink: Nametag Format" href="#nametag-format"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>{PLAYER}</code> - Player's username</li>
+<li>
+<code>{HEALTH}</code> - Color-coded health display</li>
+<li>
+<code>{WORLD}</code> - Current world name</li>
+<li>
+<code>{FACTION}</code> - Player's faction (if detected)</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Duration Formats</h2><a id="user-content-duration-formats" class="anchor" aria-label="Permalink: Duration Formats" href="#duration-formats"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>s</code> = seconds (30s = 30 seconds)</li>
+<li>
+<code>m</code> = minutes (15m = 15 minutes)</li>
+<li>
+<code>h</code> = hours (2h = 2 hours)</li>
+<li>
+<code>d</code> = days (1d = 1 day)</li>
+<li>
+<code>w</code> = weeks (1w = 1 week)</li>
+<li>
+<code>permanent</code> = never expires</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Group Inheritance</h2><a id="user-content-group-inheritance" class="anchor" aria-label="Permalink: Group Inheritance" href="#group-inheritance"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Groups can inherit permissions from parent groups using the <code>inherits</code> property in config.yml:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">groups</span>:
+  <span class="pl-ent">default</span>:
+    <span class="pl-ent">permissions</span>:
+      - <span class="pl-s">chatperms.basic</span>
+  <span class="pl-ent">vip</span>:
+    <span class="pl-ent">inherits</span>: <span class="pl-s">default</span>
+    <span class="pl-ent">permissions</span>:
+      - <span class="pl-s">chatperms.vip</span>
+  <span class="pl-ent">admin</span>:
+    <span class="pl-ent">inherits</span>: <span class="pl-s">vip</span>
+    <span class="pl-ent">permissions</span>:
+      - <span class="pl-s">chatperms.admin</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the plugin from Poggit</li>
+<li>Place the plugin file in your server's <code>plugins</code> folder</li>
+<li>Restart your server</li>
+<li>Configure the plugin in <code>plugins/ChatPerms/config.yml</code>
+</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Configuration Files</h2><a id="user-content-configuration-files" class="anchor" aria-label="Permalink: Configuration Files" href="#configuration-files"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>config.yml</code> - Main configuration</li>
+<li>
+<code>players.yml</code> - Player group assignments</li>
+<li>
+<code>mutes.yml</code> - Mute data</li>
+<li>
+<code>chat_stats.yml</code> - Chat statistics</li>
+<li>
+<code>temp_groups.yml</code> - Temporary group assignments</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>chatperms.command.*</code> - All command access</li>
+<li>
+<code>chatperms.command.setgroup</code> - Set player groups</li>
+<li>
+<code>chatperms.command.creategroup</code> - Create groups</li>
+<li>
+<code>chatperms.command.removegroup</code> - Remove groups</li>
+<li>
+<code>chatperms.command.addgroupperm</code> - Add group permissions</li>
+<li>
+<code>chatperms.command.removegroupperm</code> - Remove group permissions</li>
+<li>
+<code>chatperms.command.listgroups</code> - List groups</li>
+<li>
+<code>chatperms.command.checkplayer</code> - Check player info</li>
+<li>
+<code>chatperms.command.mute</code> - Mute players</li>
+<li>
+<code>chatperms.command.unmute</code> - Unmute players</li>
+<li>
+<code>chatperms.command.mutelist</code> - List muted players</li>
+<li>
+<code>chatperms.command.stats</code> - View statistics</li>
+<li>
+<code>chatperms.command.tempgroup</code> - Assign temporary groups</li>
+<li>
+<code>chatperms.command.tempgroupcheck</code> - Check temp group status</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Supported Faction Plugins</h2><a id="user-content-supported-faction-plugins" class="anchor" aria-label="Permalink: Supported Faction Plugins" href="#supported-faction-plugins"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>FactionsPro</li>
+<li>PiggyFactions</li>
+<li>SimpleFaction</li>
+<li>Factions</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>For issues, feature requests, or contributions, please visit the GitHub repository.</p>
