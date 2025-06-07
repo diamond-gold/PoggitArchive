@@ -1,0 +1,279 @@
+<div class="markdown-heading"><h1 class="heading-element">StreakAPI Plugin</h1><a id="user-content-streakapi-plugin" class="anchor" aria-label="Permalink: StreakAPI Plugin" href="#streakapi-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A comprehensive PocketMine-MP plugin that provides a flexible API for tracking player streaks across multiple instances. Perfect for gamemodes like KitPvP, SkyWars, or any plugin that needs to track consecutive achievements.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Multiple Streak Instances</strong>: Create separate streak trackers for different activities</li>
+<li>
+<strong>Dual Storage Options</strong>: Choose between JSON files or MySQL database storage</li>
+<li>
+<strong>Milestone System</strong>: Configure rewards and announcements for streak milestones</li>
+<li>
+<strong>Comprehensive Commands</strong>: Full set of commands for players and administrators</li>
+<li>
+<strong>Developer API</strong>: Easy-to-use API for other plugins to integrate streak tracking</li>
+<li>
+<strong>Automatic Data Management</strong>: Handles player data initialization and cleanup</li>
+<li>
+<strong>Flexible Configuration</strong>: Customizable display names, messages, and behaviors</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Basic Configuration (<code>config.yml</code>)</h3><a id="user-content-basic-configuration-configyml" class="anchor" aria-label="Permalink: Basic Configuration (config.yml)" href="#basic-configuration-configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Storage configuration</span>
+<span class="pl-ent">use-database</span>: <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Database settings (only used if use-database is true)</span>
+<span class="pl-ent">database</span>:
+  <span class="pl-ent">host</span>: <span class="pl-s"><span class="pl-pds">"</span>localhost<span class="pl-pds">"</span></span>
+  <span class="pl-ent">port</span>: <span class="pl-c1">3306</span>
+  <span class="pl-ent">username</span>: <span class="pl-s"><span class="pl-pds">"</span>root<span class="pl-pds">"</span></span>
+  <span class="pl-ent">password</span>: <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-ent">database</span>: <span class="pl-s"><span class="pl-pds">"</span>streakapi<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Default instance settings</span>
+<span class="pl-ent">default-settings</span>:
+  <span class="pl-ent">milestone-message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;6{player} &amp;ereached &amp;c{streak} &amp;e{instance}!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">reset-on-death</span>: <span class="pl-c1">false</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Database Setup (Optional)</h3><a id="user-content-database-setup-optional" class="anchor" aria-label="Permalink: Database Setup (Optional)" href="#database-setup-optional"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you prefer database storage over JSON files:</p>
+<ol>
+<li>Set <code>use-database: true</code> in <code>config.yml</code>
+</li>
+<li>Configure your database credentials</li>
+<li>Create a MySQL database for the plugin</li>
+<li>The plugin will automatically create required tables</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Player Commands</h3><a id="user-content-player-commands" class="anchor" aria-label="Permalink: Player Commands" href="#player-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/streak [instance] [player]</code></td>
+<td>None</td>
+<td>View streak information</td>
+</tr>
+<tr>
+<td><code>/topstreaks [instance]</code></td>
+<td>None</td>
+<td>View top streaks leaderboard</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">Administrator Commands</h3><a id="user-content-administrator-commands" class="anchor" aria-label="Permalink: Administrator Commands" href="#administrator-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/createstreak &lt;name&gt; [display_name]</code></td>
+<td>streakapi.admin</td>
+<td>Create a new streak instance</td>
+</tr>
+<tr>
+<td><code>/deletestreak &lt;name&gt;</code></td>
+<td>streakapi.admin</td>
+<td>Delete a streak instance</td>
+</tr>
+<tr>
+<td><code>/liststreaks</code></td>
+<td>None</td>
+<td>List all streak instances</td>
+</tr>
+<tr>
+<td><code>/resetstreak &lt;instance&gt; &lt;player&gt;</code></td>
+<td>streakapi.reset</td>
+<td>Reset a player's streak</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">permissions</span>:
+  <span class="pl-ent">streakapi.admin</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Access to administrative commands<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-s">op</span>
+  <span class="pl-ent">streakapi.reset</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Reset player streaks<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-s">op</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Developer API</h2><a id="user-content-developer-api" class="anchor" aria-label="Permalink: Developer API" href="#developer-api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Getting Started</h3><a id="user-content-getting-started" class="anchor" aria-label="Permalink: Getting Started" href="#getting-started"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span> = <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">getServer</span>()-&gt;<span class="pl-en">getPluginManager</span>()-&gt;<span class="pl-en">getPlugin</span>(<span class="pl-s">"<span class="pl-s">StreakAPI</span>"</span>)-&gt;<span class="pl-en">getStreakAPI</span>();</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Creating Streak Instances</h3><a id="user-content-creating-streak-instances" class="anchor" aria-label="Permalink: Creating Streak Instances" href="#creating-streak-instances"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span>-&gt;<span class="pl-en">createInstance</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>, <span class="pl-s">"<span class="pl-s">Kill Streak</span>"</span>);
+
+<span class="pl-s1"><span class="pl-c1">$</span>config</span> = [
+    <span class="pl-s">"<span class="pl-s">display_name</span>"</span> =&gt; <span class="pl-s">"<span class="pl-s">Win Streak</span>"</span>,
+    <span class="pl-s">"<span class="pl-s">milestones</span>"</span> =&gt; [<span class="pl-c1">5</span>, <span class="pl-c1">10</span>, <span class="pl-c1">25</span>, <span class="pl-c1">50</span>, <span class="pl-c1">100</span>],
+    <span class="pl-s">"<span class="pl-s">milestone_message</span>"</span> =&gt; <span class="pl-s">"<span class="pl-s">&amp;6{player} &amp;eachieved a &amp;c{streak} &amp;e{instance}!</span>"</span>,
+    <span class="pl-s">"<span class="pl-s">milestone_commands</span>"</span> =&gt; [
+        <span class="pl-s">"<span class="pl-s">give {player} diamond 1</span>"</span>,
+        <span class="pl-s">"<span class="pl-s">broadcast {player} is on fire with {streak} wins!</span>"</span>
+    ],
+    <span class="pl-s">"<span class="pl-s">reset_on_death</span>"</span> =&gt; <span class="pl-c1">false</span>
+];
+<span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span>-&gt;<span class="pl-en">createInstance</span>(<span class="pl-s">"<span class="pl-s">wins</span>"</span>, <span class="pl-s">"<span class="pl-s">Win Streak</span>"</span>, <span class="pl-s1"><span class="pl-c1">$</span>config</span>);</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Managing Streaks</h3><a id="user-content-managing-streaks" class="anchor" aria-label="Permalink: Managing Streaks" href="#managing-streaks"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span>-&gt;<span class="pl-en">addStreak</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>, <span class="pl-s">"<span class="pl-s">PlayerName</span>"</span>, <span class="pl-c1">1</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span>-&gt;<span class="pl-en">setStreak</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>, <span class="pl-s">"<span class="pl-s">PlayerName</span>"</span>, <span class="pl-c1">10</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span>-&gt;<span class="pl-en">resetStreak</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>, <span class="pl-s">"<span class="pl-s">PlayerName</span>"</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>currentStreak</span> = <span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span>-&gt;<span class="pl-en">getStreak</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>, <span class="pl-s">"<span class="pl-s">PlayerName</span>"</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>highestStreak</span> = <span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span>-&gt;<span class="pl-en">getHighestStreak</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>, <span class="pl-s">"<span class="pl-s">PlayerName</span>"</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>totalCount</span> = <span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span>-&gt;<span class="pl-en">getTotalCount</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>, <span class="pl-s">"<span class="pl-s">PlayerName</span>"</span>);</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Retrieving Data</h3><a id="user-content-retrieving-data" class="anchor" aria-label="Permalink: Retrieving Data" href="#retrieving-data"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>playerData</span> = <span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span>-&gt;<span class="pl-en">getPlayerData</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>, <span class="pl-s">"<span class="pl-s">PlayerName</span>"</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>allStreaks</span> = <span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span>-&gt;<span class="pl-en">getAllStreaks</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>instances</span> = <span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span>-&gt;<span class="pl-en">getInstances</span>();
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span>-&gt;<span class="pl-en">instanceExists</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>)) {
+    <span class="pl-c">// Instance exists</span>
+}</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Instance Management</h3><a id="user-content-instance-management" class="anchor" aria-label="Permalink: Instance Management" href="#instance-management"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span>-&gt;<span class="pl-en">getInstanceConfig</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>newConfig</span> = [
+    <span class="pl-s">"<span class="pl-s">display_name</span>"</span> =&gt; <span class="pl-s">"<span class="pl-s">Updated Kill Streak</span>"</span>,
+    <span class="pl-s">"<span class="pl-s">milestones</span>"</span> =&gt; [<span class="pl-c1">3</span>, <span class="pl-c1">7</span>, <span class="pl-c1">15</span>, <span class="pl-c1">30</span>]
+];
+<span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span>-&gt;<span class="pl-en">updateInstanceConfig</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>, <span class="pl-s1"><span class="pl-c1">$</span>newConfig</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>streakAPI</span>-&gt;<span class="pl-en">deleteInstance</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>);</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Example Usage</h2><a id="user-content-example-usage" class="anchor" aria-label="Permalink: Example Usage" href="#example-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Basic Kill Streak Implementation</h3><a id="user-content-basic-kill-streak-implementation" class="anchor" aria-label="Permalink: Basic Kill Streak Implementation" href="#basic-kill-streak-implementation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">pocketmine</span>\<span class="pl-v">event</span>\<span class="pl-smi">Listener</span>;
+<span class="pl-k">use</span> <span class="pl-v">pocketmine</span>\<span class="pl-v">event</span>\<span class="pl-v">entity</span>\<span class="pl-smi">EntityDamageByEntityEvent</span>;
+<span class="pl-k">use</span> <span class="pl-v">pocketmine</span>\<span class="pl-v">event</span>\<span class="pl-v">player</span>\<span class="pl-smi">PlayerDeathEvent</span>;
+<span class="pl-k">use</span> <span class="pl-v">pocketmine</span>\<span class="pl-v">player</span>\<span class="pl-smi">Player</span>;
+
+<span class="pl-k">class</span> KillStreakHandler <span class="pl-k">implements</span> Listener {
+    <span class="pl-k">private</span> <span class="pl-c1"><span class="pl-c1">$</span>streakAPI</span>;
+
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">__construct</span>(<span class="pl-s1"><span class="pl-c1">$</span>plugin</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">streakAPI</span> = <span class="pl-s1"><span class="pl-c1">$</span>plugin</span>-&gt;<span class="pl-en">getServer</span>()-&gt;<span class="pl-en">getPluginManager</span>()-&gt;<span class="pl-en">getPlugin</span>(<span class="pl-s">"<span class="pl-s">StreakAPI</span>"</span>)-&gt;<span class="pl-en">getStreakAPI</span>();
+
+        <span class="pl-k">if</span> (!<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">streakAPI</span>-&gt;<span class="pl-en">instanceExists</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>)) {
+            <span class="pl-s1"><span class="pl-c1">$</span>config</span> = [
+                <span class="pl-s">"<span class="pl-s">display_name</span>"</span> =&gt; <span class="pl-s">"<span class="pl-s">Kill Streak</span>"</span>,
+                <span class="pl-s">"<span class="pl-s">milestones</span>"</span> =&gt; [<span class="pl-c1">5</span>, <span class="pl-c1">10</span>, <span class="pl-c1">15</span>, <span class="pl-c1">20</span>, <span class="pl-c1">25</span>],
+                <span class="pl-s">"<span class="pl-s">milestone_message</span>"</span> =&gt; <span class="pl-s">"<span class="pl-s">&amp;6{player} &amp;eis on a &amp;c{streak} &amp;ekill streak!</span>"</span>,
+                <span class="pl-s">"<span class="pl-s">milestone_commands</span>"</span> =&gt; [<span class="pl-s">"<span class="pl-s">give {player} golden_apple 1</span>"</span>],
+                <span class="pl-s">"<span class="pl-s">reset_on_death</span>"</span> =&gt; <span class="pl-c1">true</span>
+            ];
+            <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">streakAPI</span>-&gt;<span class="pl-en">createInstance</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>, <span class="pl-s">"<span class="pl-s">Kill Streak</span>"</span>, <span class="pl-s1"><span class="pl-c1">$</span>config</span>);
+        }
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onPlayerDeath</span>(<span class="pl-smi"><span class="pl-smi">PlayerDeathEvent</span></span> <span class="pl-s1"><span class="pl-c1">$</span>event</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>player</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getPlayer</span>();
+        <span class="pl-s1"><span class="pl-c1">$</span>cause</span> = <span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">getLastDamageCause</span>();
+
+        <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>cause</span> <span class="pl-k">instanceof</span> EntityDamageByEntityEvent) {
+            <span class="pl-s1"><span class="pl-c1">$</span>killer</span> = <span class="pl-s1"><span class="pl-c1">$</span>cause</span>-&gt;<span class="pl-en">getDamager</span>();
+
+            <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>killer</span> <span class="pl-k">instanceof</span> Player) {
+                <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">streakAPI</span>-&gt;<span class="pl-en">addStreak</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>, <span class="pl-s1"><span class="pl-c1">$</span>killer</span>-&gt;<span class="pl-en">getName</span>());
+                <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">streakAPI</span>-&gt;<span class="pl-en">resetStreak</span>(<span class="pl-s">"<span class="pl-s">kills</span>"</span>, <span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">getName</span>());
+            }
+        }
+    }
+}</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Win Streak for Minigames</h3><a id="user-content-win-streak-for-minigames" class="anchor" aria-label="Permalink: Win Streak for Minigames" href="#win-streak-for-minigames"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">class</span> GameWinHandler {
+    <span class="pl-k">private</span> <span class="pl-c1"><span class="pl-c1">$</span>streakAPI</span>;
+
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">__construct</span>(<span class="pl-s1"><span class="pl-c1">$</span>plugin</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">streakAPI</span> = <span class="pl-s1"><span class="pl-c1">$</span>plugin</span>-&gt;<span class="pl-en">getServer</span>()-&gt;<span class="pl-en">getPluginManager</span>()-&gt;<span class="pl-en">getPlugin</span>(<span class="pl-s">"<span class="pl-s">StreakAPI</span>"</span>)-&gt;<span class="pl-en">getStreakAPI</span>();
+
+        <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">streakAPI</span>-&gt;<span class="pl-en">createInstance</span>(<span class="pl-s">"<span class="pl-s">wins</span>"</span>, <span class="pl-s">"<span class="pl-s">Win Streak</span>"</span>, [
+            <span class="pl-s">"<span class="pl-s">milestones</span>"</span> =&gt; [<span class="pl-c1">3</span>, <span class="pl-c1">5</span>, <span class="pl-c1">10</span>, <span class="pl-c1">15</span>, <span class="pl-c1">25</span>],
+            <span class="pl-s">"<span class="pl-s">milestone_message</span>"</span> =&gt; <span class="pl-s">"<span class="pl-s">&amp;6{player} &amp;ewon &amp;c{streak} &amp;egames in a row!</span>"</span>,
+            <span class="pl-s">"<span class="pl-s">reset_on_death</span>"</span> =&gt; <span class="pl-c1">false</span>
+        ]);
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onGameWin</span>(<span class="pl-smi"><span class="pl-smi">Player</span></span> <span class="pl-s1"><span class="pl-c1">$</span>winner</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">streakAPI</span>-&gt;<span class="pl-en">addStreak</span>(<span class="pl-s">"<span class="pl-s">wins</span>"</span>, <span class="pl-s1"><span class="pl-c1">$</span>winner</span>-&gt;<span class="pl-en">getName</span>());
+        <span class="pl-s1"><span class="pl-c1">$</span>streak</span> = <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">streakAPI</span>-&gt;<span class="pl-en">getStreak</span>(<span class="pl-s">"<span class="pl-s">wins</span>"</span>, <span class="pl-s1"><span class="pl-c1">$</span>winner</span>-&gt;<span class="pl-en">getName</span>());
+        <span class="pl-s1"><span class="pl-c1">$</span>winner</span>-&gt;<span class="pl-en">sendMessage</span>(<span class="pl-s">"<span class="pl-s">§aYou won! Current win streak: §c</span><span class="pl-s1"><span class="pl-c1">$</span>streak</span>"</span>);
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onGameLose</span>(<span class="pl-smi"><span class="pl-smi">Player</span></span> <span class="pl-s1"><span class="pl-c1">$</span>loser</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>streak</span> = <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">streakAPI</span>-&gt;<span class="pl-en">getStreak</span>(<span class="pl-s">"<span class="pl-s">wins</span>"</span>, <span class="pl-s1"><span class="pl-c1">$</span>loser</span>-&gt;<span class="pl-en">getName</span>());
+        <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>streak</span> &gt; <span class="pl-c1">0</span>) {
+            <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">streakAPI</span>-&gt;<span class="pl-en">resetStreak</span>(<span class="pl-s">"<span class="pl-s">wins</span>"</span>, <span class="pl-s1"><span class="pl-c1">$</span>loser</span>-&gt;<span class="pl-en">getName</span>());
+            <span class="pl-s1"><span class="pl-c1">$</span>loser</span>-&gt;<span class="pl-en">sendMessage</span>(<span class="pl-s">"<span class="pl-s">§cYou lost your win streak of </span><span class="pl-s1"><span class="pl-c1">$</span>streak</span><span class="pl-s">!</span>"</span>);
+        }
+    }
+}</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Milestone System</h2><a id="user-content-milestone-system" class="anchor" aria-label="Permalink: Milestone System" href="#milestone-system"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The milestone system allows you to configure automatic rewards and announcements when players reach certain streak values.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>config</span> = [
+    <span class="pl-s">"<span class="pl-s">display_name</span>"</span> =&gt; <span class="pl-s">"<span class="pl-s">Kill Streak</span>"</span>,
+    <span class="pl-s">"<span class="pl-s">milestones</span>"</span> =&gt; [<span class="pl-c1">5</span>, <span class="pl-c1">10</span>, <span class="pl-c1">25</span>, <span class="pl-c1">50</span>, <span class="pl-c1">100</span>],
+    <span class="pl-s">"<span class="pl-s">milestone_message</span>"</span> =&gt; <span class="pl-s">"<span class="pl-s">&amp;6{player} &amp;eachieved a &amp;c{streak} &amp;e{instance}!</span>"</span>,
+    <span class="pl-s">"<span class="pl-s">milestone_commands</span>"</span> =&gt; [
+        <span class="pl-s">"<span class="pl-s">give {player} diamond_sword 1</span>"</span>,
+        <span class="pl-s">"<span class="pl-s">give {player} golden_apple 3</span>"</span>,
+        <span class="pl-s">"<span class="pl-s">eco give {player} 1000</span>"</span>
+    ]
+];</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Available Placeholders</h3><a id="user-content-available-placeholders" class="anchor" aria-label="Permalink: Available Placeholders" href="#available-placeholders"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>{player}</code> - Player's name</li>
+<li>
+<code>{streak}</code> - Current streak value</li>
+<li>
+<code>{instance}</code> - Instance display name</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Storage Options</h2><a id="user-content-storage-options" class="anchor" aria-label="Permalink: Storage Options" href="#storage-options"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">JSON Files (Default)</h3><a id="user-content-json-files-default" class="anchor" aria-label="Permalink: JSON Files (Default)" href="#json-files-default"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Stored in <code>plugins/StreakAPI/streaks.json</code> and <code>instances.json</code>
+</li>
+<li>No additional setup required</li>
+<li>Good for smaller servers</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">MySQL Database</h3><a id="user-content-mysql-database" class="anchor" aria-label="Permalink: MySQL Database" href="#mysql-database"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Better performance for larger servers</li>
+<li>Supports advanced queries</li>
+<li>Automatic table creation</li>
+<li>Data persistence and reliability</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">API Events</h2><a id="user-content-api-events" class="anchor" aria-label="Permalink: API Events" href="#api-events"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// TODO: Custom events in future updates</span>
+<span class="pl-c">// - StreakIncrementEvent</span>
+<span class="pl-c">// - StreakResetEvent</span>
+<span class="pl-c">// - StreakMilestoneEvent</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Troubleshooting</h2><a id="user-content-troubleshooting" class="anchor" aria-label="Permalink: Troubleshooting" href="#troubleshooting"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Database Connection Failed</strong></p>
+<ul>
+<li>Check your database credentials in <code>config.yml</code>
+</li>
+<li>Ensure MySQL server is running</li>
+<li>Verify database exists</li>
+</ul>
+<p><strong>Permission Denied</strong></p>
+<ul>
+<li>Check permissions in your permissions plugin</li>
+<li>Ensure players have required permissions</li>
+</ul>
+<p><strong>Instance Not Found</strong></p>
+<ul>
+<li>Use <code>/liststreaks</code> to see available instances</li>
+<li>Create instances using <code>/createstreak</code> or the API</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Create an issue on the GitHub repository</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin is released under the MIT License. See LICENSE file for details.</p>
