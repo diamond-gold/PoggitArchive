@@ -1,0 +1,41 @@
+<div class="markdown-heading"><h1 class="heading-element">ChatTags Plugin</h1><a id="user-content-chattags-plugin" class="anchor" aria-label="Permalink: ChatTags Plugin" href="#chattags-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A lightweight PocketMine plugin that allows players to use customizable chat tags with color formatting.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Customizable tags with color formatting</li>
+<li>In-game commands and JSON file editing</li>
+<li>Full support for all TextFormat colors using <code>{colorcode}</code> syntax</li>
+<li>Menu interface for tag selection</li>
+<li>SQLite database support</li>
+<li>MYSQL database support</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/tags add {name}</code> - Add a new tag (OP)</li>
+<li>
+<code>/tags remove {name}</code> - Remove a tag (OP)</li>
+<li>
+<code>/tags menu</code> - Open tag selection menu</li>
+<li>
+<code>/tags give {player} [tag]</code> - Give tag(s) to player (OP)</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Tag Formatting</h2><a id="user-content-tag-formatting" class="anchor" aria-label="Permalink: Tag Formatting" href="#tag-formatting"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Use any TextFormat color in tags:</p>
+<div class="highlight highlight-source-json"><pre>[<span class="pl-s"><span class="pl-pds">"</span>{red}VIP<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>{gold}M{bold}EMBER<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>{obfuscated}!!{reset}{blue}MYSTIC<span class="pl-pds">"</span></span>]</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>'chattags.command.use' - Default /tags command permission</li>
+<li>'chattags.command.menu' - Permission to open chattags tags menu</li>
+<li>'chattags.admin.add' - Permission to add a new chattag</li>
+<li>'chattags.admin.remove' - Permission to remove a chattag</li>
+<li>'chattags.admin.give' - Permission to give players chattags</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">TODO:</h2><a id="user-content-todo" class="anchor" aria-label="Permalink: TODO:" href="#todo"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>[ ] Add UI for tag removal</li>
+<li>[ ] Add UI for tag addition</li>
+<li>[ ] Add UI for tag edits</li>
+<li>[ ] Add tag items for better access</li>
+<li>[ ] Add RankSystem chat format support (IDK?)</li>
+</ul>

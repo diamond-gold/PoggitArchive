@@ -1,0 +1,271 @@
+<div class="markdown-heading"><h1 class="heading-element">ItemDurability Plugin</h1><a id="user-content-itemdurability-plugin" class="anchor" aria-label="Permalink: ItemDurability Plugin" href="#itemdurability-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p align="center">
+  <a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/ImmoDevs/ItemDurability/main/icon.png"><img src="https://raw.githubusercontent.com/ImmoDevs/ItemDurability/main/icon.png" width="200" alt="Icon" style="max-width: 100%;"></a>
+</p>
+<p><a href="https://opensource.org/licenses/MIT" rel="nofollow"><img src="https://camo.githubusercontent.com/cce5a2a14b0faab422e0bfcdc074afb46089831a0bf5930a7d8af3f31b98f847/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d626c75652e737667" alt="License: MIT" data-canonical-src="https://img.shields.io/badge/License-MIT-blue.svg" style="max-width: 100%;"></a>
+<a href="https://github.com/pmmp/PocketMine-MP"><img src="https://camo.githubusercontent.com/8155e9c2921332fa9cd4938f9b59b9c4a4c4f252f6d8c394035323b1e6e53815/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f506f636b65744d696e652d2d4d502d352e302b2d6f72616e67652e737667" alt="PocketMine-MP" data-canonical-src="https://img.shields.io/badge/PocketMine--MP-5.0+-orange.svg" style="max-width: 100%;"></a></p>
+<p><strong>ItemDurability</strong> is a high-performance PocketMine-MP plugin that displays item durability information in real-time within the item's lore (description). This plugin helps players see the remaining durability of weapons, tools, and armor, allowing them to know when to repair or replace them before they break.</p>
+<div class="markdown-heading"><h2 class="heading-element">Preview</h2><a id="user-content-preview" class="anchor" aria-label="Permalink: Preview" href="#preview"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/ImmoDevs/ItemDurability/blob/main/images/preview.jpg"><img src="https://github.com/ImmoDevs/ItemDurability/raw/main/images/preview.jpg" alt="preview" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h3 class="heading-element">Example Durability Color System</h3><a id="user-content-example-durability-color-system" class="anchor" aria-label="Permalink: Example Durability Color System" href="#example-durability-color-system"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>In-game, the durability text will automatically change colors based on the item's condition:</p>
+<table>
+<thead>
+<tr>
+<th>Color</th>
+<th>Sample</th>
+<th>Durability Example</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/37cae93530cc259d92083c2745e50fbac2ef33b6cc184a690614605471ddef12/68747470733a2f2f706c616365686f6c642e636f2f31352f3535464635352f3535464635352e706e67"><img src="https://camo.githubusercontent.com/37cae93530cc259d92083c2745e50fbac2ef33b6cc184a690614605471ddef12/68747470733a2f2f706c616365686f6c642e636f2f31352f3535464635352f3535464635352e706e67" alt="#55FF55" data-canonical-src="https://placehold.co/15/55FF55/55FF55.png" style="max-width: 100%;"></a></td>
+<td>Green</td>
+<td><strong>Durability: [180/200] (90%)</strong></td>
+<td>Very Good Condition</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e8507647fb581dad62a91ac075b982b98652078071dc625d0cf9d06e273dcbe8/68747470733a2f2f706c616365686f6c642e636f2f31352f3030414130302f3030414130302e706e67"><img src="https://camo.githubusercontent.com/e8507647fb581dad62a91ac075b982b98652078071dc625d0cf9d06e273dcbe8/68747470733a2f2f706c616365686f6c642e636f2f31352f3030414130302f3030414130302e706e67" alt="#00AA00" data-canonical-src="https://placehold.co/15/00AA00/00AA00.png" style="max-width: 100%;"></a></td>
+<td>Dark Green</td>
+<td><strong>Durability: [140/200] (70%)</strong></td>
+<td>Good Condition</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/fd718d747edb31017f07c52dbfb83149c4c0b3d818b92d327317a64b8fcdf53a/68747470733a2f2f706c616365686f6c642e636f2f31352f4646464635352f4646464635352e706e67"><img src="https://camo.githubusercontent.com/fd718d747edb31017f07c52dbfb83149c4c0b3d818b92d327317a64b8fcdf53a/68747470733a2f2f706c616365686f6c642e636f2f31352f4646464635352f4646464635352e706e67" alt="#FFFF55" data-canonical-src="https://placehold.co/15/FFFF55/FFFF55.png" style="max-width: 100%;"></a></td>
+<td>Yellow</td>
+<td><strong>Durability: [100/200] (50%)</strong></td>
+<td>Medium Condition</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/20684862d3e6b9c5336e452617ca55ef5881e4a2e68727450780855766ee5307/68747470733a2f2f706c616365686f6c642e636f2f31352f4646414130302f4646414130302e706e67"><img src="https://camo.githubusercontent.com/20684862d3e6b9c5336e452617ca55ef5881e4a2e68727450780855766ee5307/68747470733a2f2f706c616365686f6c642e636f2f31352f4646414130302f4646414130302e706e67" alt="#FFAA00" data-canonical-src="https://placehold.co/15/FFAA00/FFAA00.png" style="max-width: 100%;"></a></td>
+<td>Gold</td>
+<td><strong>Durability: [60/200] (30%)</strong></td>
+<td>Low Condition</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/b867bf0652e9a9830a7865205cd7fc43bc82cbae604703ed99688f753bd09c22/68747470733a2f2f706c616365686f6c642e636f2f31352f4646353535352f4646353535352e706e67"><img src="https://camo.githubusercontent.com/b867bf0652e9a9830a7865205cd7fc43bc82cbae604703ed99688f753bd09c22/68747470733a2f2f706c616365686f6c642e636f2f31352f4646353535352f4646353535352e706e67" alt="#FF5555" data-canonical-src="https://placehold.co/15/FF5555/FF5555.png" style="max-width: 100%;"></a></td>
+<td>Red</td>
+<td><strong>Durability: [30/200] (15%)</strong></td>
+<td>Very Low Condition</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/0235277ca89c13b2a738265a0f7e40752714f14537cf09f6a6f532beded68b17/68747470733a2f2f706c616365686f6c642e636f2f31352f4141303030302f4141303030302e706e67"><img src="https://camo.githubusercontent.com/0235277ca89c13b2a738265a0f7e40752714f14537cf09f6a6f532beded68b17/68747470733a2f2f706c616365686f6c642e636f2f31352f4141303030302f4141303030302e706e67" alt="#AA0000" data-canonical-src="https://placehold.co/15/AA0000/AA0000.png" style="max-width: 100%;"></a></td>
+<td>Dark Red</td>
+<td><strong>Durability: [10/200] (5%)</strong></td>
+<td>Critical Condition</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Core Features</h3><a id="user-content-core-features" class="anchor" aria-label="Permalink: Core Features" href="#core-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>✅ <strong>Real-time Durability Display</strong>: Shows durability in customizable format within item lore</li>
+<li>✅ <strong>Automatic Color Gradation</strong>: Color changes based on condition (Green → Red scale)</li>
+<li>✅ <strong>Universal Compatibility</strong>: Supports all PocketMine-MP items with durability</li>
+<li>✅ <strong>Smart Update System</strong>: Only updates when necessary to prevent spam</li>
+<li>✅ <strong>No Duplicate Lore</strong>: Automatically removes old durability lines</li>
+<li>✅ <strong>Low Durability Warnings</strong>: Configurable alerts for items needing attention</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Performance Optimizations</h3><a id="user-content-performance-optimizations" class="anchor" aria-label="Permalink: Performance Optimizations" href="#performance-optimizations"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>🚀 <strong>Batch Processing</strong>: Efficient batch update system for large servers</li>
+<li>🚀 <strong>Smart Throttling</strong>: Per-player throttling prevents unnecessary updates</li>
+<li>🚀 <strong>Memory Management</strong>: Automatic cleanup of offline player data</li>
+<li>🚀 <strong>Configurable Performance</strong>: Tunable settings for different server sizes</li>
+<li>🚀 <strong>Exception Handling</strong>: Robust error handling prevents crashes</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Advanced Features</h3><a id="user-content-advanced-features" class="anchor" aria-label="Permalink: Advanced Features" href="#advanced-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>⚙️ <strong>Comprehensive Config Validation</strong>: Automatic validation and correction of settings</li>
+<li>⚙️ <strong>Flexible Format System</strong>: Support for current, max, and percentage placeholders</li>
+<li>⚙️ <strong>Plugin Compatibility</strong>: Works seamlessly with enchantment and repair plugins</li>
+<li>⚙️ <strong>Server Scalability</strong>: Optimized for servers from 1 to 1000+ players</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the latest version from <a href="https://github.com/ImmoDevs/ItemDurability/releases">GitHub Releases</a>
+</li>
+<li>Place the <code>.phar</code> file in the <code>plugins</code> folder of your PocketMine-MP server</li>
+<li>Restart the server</li>
+<li>Edit the configuration file in <code>plugins/ItemDurability/config.yml</code> as needed</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> ItemDurability Configuration</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Durability display format</span>
+<span class="pl-c"><span class="pl-c">#</span> %current% = current durability</span>
+<span class="pl-c"><span class="pl-c">#</span> %max% = maximum durability</span>
+<span class="pl-c"><span class="pl-c">#</span> %percent% = durability percentage</span>
+<span class="pl-ent">durability_format</span>: <span class="pl-s"><span class="pl-pds">"</span>Durability: [%current%/%max%] (%percent%%)<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Durability text color (default value: GREEN)</span>
+<span class="pl-c"><span class="pl-c">#</span> Note: This color is only used as fallback if not using automatic color gradation</span>
+<span class="pl-c"><span class="pl-c">#</span> The durability text color will automatically change based on durability percentage:</span>
+<span class="pl-c"><span class="pl-c">#</span> 80-100% = GREEN (very good)</span>
+<span class="pl-c"><span class="pl-c">#</span> 60-79% = DARK_GREEN (good)</span>
+<span class="pl-c"><span class="pl-c">#</span> 40-59% = YELLOW (medium)</span>
+<span class="pl-c"><span class="pl-c">#</span> 20-39% = GOLD (low)</span>
+<span class="pl-c"><span class="pl-c">#</span> 10-19% = RED (very low)</span>
+<span class="pl-c"><span class="pl-c">#</span> 0-9% = DARK_RED (critical)</span>
+<span class="pl-ent">durability_color</span>: <span class="pl-s"><span class="pl-pds">"</span>GREEN<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Show warning when durability is low</span>
+<span class="pl-c"><span class="pl-c">#</span> Enable/disable low durability notifications</span>
+<span class="pl-ent">enable_low_durability_warning</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Percentage of durability considered low (%)</span>
+<span class="pl-ent">low_durability_percentage</span>: <span class="pl-c1">10</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Low durability warning color</span>
+<span class="pl-ent">low_durability_color</span>: <span class="pl-s"><span class="pl-pds">"</span>RED<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Performance Settings</span>
+<span class="pl-c"><span class="pl-c">#</span> How often to process durability updates (in server ticks, 20 ticks = 1 second)</span>
+<span class="pl-c"><span class="pl-c">#</span> Lower values = more responsive but higher CPU usage</span>
+<span class="pl-c"><span class="pl-c">#</span> Higher values = less responsive but better performance</span>
+<span class="pl-ent">update_interval_ticks</span>: <span class="pl-c1">10</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Minimum time between durability updates for the same player (in seconds)</span>
+<span class="pl-c"><span class="pl-c">#</span> This prevents spam updates when players rapidly interact with items</span>
+<span class="pl-ent">throttle_seconds</span>: <span class="pl-c1">0.2</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Maximum number of players to process durability updates for per batch</span>
+<span class="pl-c"><span class="pl-c">#</span> Adjust based on your server's performance and player count</span>
+<span class="pl-ent">max_batch_size</span>: <span class="pl-c1">50</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Performance Tuning</h3><a id="user-content-performance-tuning" class="anchor" aria-label="Permalink: Performance Tuning" href="#performance-tuning"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Configure the plugin based on your server size:</p>
+<div class="markdown-heading"><h4 class="heading-element">Small Servers (1-50 players)</h4><a id="user-content-small-servers-1-50-players" class="anchor" aria-label="Permalink: Small Servers (1-50 players)" href="#small-servers-1-50-players"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">update_interval_ticks</span>: <span class="pl-c1">5</span>
+<span class="pl-ent">throttle_seconds</span>: <span class="pl-c1">0.1</span>
+<span class="pl-ent">max_batch_size</span>: <span class="pl-c1">20</span></pre></div>
+<div class="markdown-heading"><h4 class="heading-element">Medium Servers (50-200 players)</h4><a id="user-content-medium-servers-50-200-players" class="anchor" aria-label="Permalink: Medium Servers (50-200 players)" href="#medium-servers-50-200-players"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">update_interval_ticks</span>: <span class="pl-c1">10</span>
+<span class="pl-ent">throttle_seconds</span>: <span class="pl-c1">0.2</span>
+<span class="pl-ent">max_batch_size</span>: <span class="pl-c1">50</span></pre></div>
+<div class="markdown-heading"><h4 class="heading-element">Large Servers (200+ players)</h4><a id="user-content-large-servers-200-players" class="anchor" aria-label="Permalink: Large Servers (200+ players)" href="#large-servers-200-players"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">update_interval_ticks</span>: <span class="pl-c1">20</span>
+<span class="pl-ent">throttle_seconds</span>: <span class="pl-c1">0.5</span>
+<span class="pl-ent">max_batch_size</span>: <span class="pl-c1">100</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Technical Details</h2><a id="user-content-technical-details" class="anchor" aria-label="Permalink: Technical Details" href="#technical-details"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Batch Processing System</h3><a id="user-content-batch-processing-system" class="anchor" aria-label="Permalink: Batch Processing System" href="#batch-processing-system"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin uses an advanced batch processing system that:</p>
+<ul>
+<li>Queues durability updates instead of processing them immediately</li>
+<li>Processes updates in configurable batches to maintain performance</li>
+<li>Uses smart throttling to prevent spam updates</li>
+<li>Automatically cleans up data for offline players</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Config Validation</h3><a id="user-content-config-validation" class="anchor" aria-label="Permalink: Config Validation" href="#config-validation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin automatically validates all configuration values:</p>
+<ul>
+<li>
+<strong>Format Strings</strong>: Ensures durability format is not empty</li>
+<li>
+<strong>Color Names</strong>: Validates against supported TextFormat colors</li>
+<li>
+<strong>Numeric Ranges</strong>: Checks percentages (0-100) and positive integers</li>
+<li>
+<strong>Performance Settings</strong>: Validates update intervals and batch sizes</li>
+<li>
+<strong>Auto-Correction</strong>: Invalid values are replaced with defaults and logged</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Supported Colors</h3><a id="user-content-supported-colors" class="anchor" aria-label="Permalink: Supported Colors" href="#supported-colors"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Valid color names for configuration:
+<code>BLACK</code>, <code>DARK_BLUE</code>, <code>DARK_GREEN</code>, <code>DARK_AQUA</code>, <code>DARK_RED</code>, <code>DARK_PURPLE</code>, <code>GOLD</code>, <code>GRAY</code>, <code>DARK_GRAY</code>, <code>BLUE</code>, <code>GREEN</code>, <code>AQUA</code>, <code>RED</code>, <code>LIGHT_PURPLE</code>, <code>YELLOW</code>, <code>WHITE</code></p>
+<div class="markdown-heading"><h2 class="heading-element">Compatibility</h2><a id="user-content-compatibility" class="anchor" aria-label="Permalink: Compatibility" href="#compatibility"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>PocketMine-MP</strong>: 5.0 or newer</li>
+<li>
+<strong>Plugin Compatibility</strong>: Works with enchantment, repair, and custom item plugins</li>
+<li>
+<strong>Server Types</strong>: Compatible with survival, creative, and custom game modes</li>
+<li>
+<strong>Performance</strong>: Optimized for servers of all sizes (1-1000+ players)</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">FAQ</h2><a id="user-content-faq" class="anchor" aria-label="Permalink: FAQ" href="#faq"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Q: How does the new batch system improve performance?</strong><br>
+A: Instead of creating individual tasks for each update, the plugin queues updates and processes them in batches. This reduces CPU overhead and prevents lag spikes on busy servers.</p>
+<p><strong>Q: What happens if I have invalid configuration values?</strong><br>
+A: The plugin automatically validates your config on startup. Invalid values are replaced with defaults and warnings are logged to help you fix them.</p>
+<p><strong>Q: Can I customize the update frequency?</strong><br>
+A: Yes! Use <code>update_interval_ticks</code> to control how often updates are processed, and <code>throttle_seconds</code> to control per-player update frequency.</p>
+<p><strong>Q: Does this plugin affect server performance?</strong><br>
+A: The plugin is heavily optimized for performance with batch processing, smart throttling, and configurable settings. It's designed to handle large servers efficiently.</p>
+<p><strong>Q: Is this plugin compatible with other plugins?</strong><br>
+A: Yes, it's designed to work seamlessly with other plugins without conflicts, especially enchantment and repair plugins.</p>
+<p><strong>Q: How can I request new features?</strong><br>
+A: Submit a feature request on <a href="https://github.com/ImmoDevs/ItemDurability/issues">GitHub Issues</a> or contact us through the links below.</p>
+<div class="markdown-heading"><h2 class="heading-element">Changelog</h2><a id="user-content-changelog" class="anchor" aria-label="Permalink: Changelog" href="#changelog"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Version 2.0.0 (Latest)</h3><a id="user-content-version-200-latest" class="anchor" aria-label="Permalink: Version 2.0.0 (Latest)" href="#version-200-latest"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>🚀 <strong>New</strong>: Batch processing system for improved performance</li>
+<li>🚀 <strong>New</strong>: Comprehensive configuration validation</li>
+<li>🚀 <strong>New</strong>: Configurable performance settings</li>
+<li>🚀 <strong>New</strong>: Smart per-player throttling</li>
+<li>🚀 <strong>New</strong>: Automatic memory cleanup</li>
+<li>🛠️ <strong>Fixed</strong>: Constructor parameter mismatch in UpdateDurabilityTask</li>
+<li>🛠️ <strong>Improved</strong>: Better error handling and logging</li>
+<li>🛠️ <strong>Improved</strong>: Code organization and documentation</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Version 1.0.0</h3><a id="user-content-version-100" class="anchor" aria-label="Permalink: Version 1.0.0" href="#version-100"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Initial release with basic durability display functionality</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin is licensed under the <a href="https://opensource.org/licenses/MIT" rel="nofollow">MIT License</a>.</p>
+<div class="markdown-heading"><h2 class="heading-element">Contact &amp; Support</h2><a id="user-content-contact--support" class="anchor" aria-label="Permalink: Contact &amp; Support" href="#contact--support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>GitHub</strong>: <a href="https://github.com/ImmoDevs/ItemDurability">ImmoDevs/ItemDurability</a>
+</li>
+<li>
+<strong>Discord</strong>: <a href="https://discord.gg/immodevs" rel="nofollow">ImmoDevs Discord Server</a>
+</li>
+<li>
+<strong>Issues</strong>: <a href="https://github.com/ImmoDevs/ItemDurability/issues">Report bugs or request features</a>
+</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Tips and Best Practices</h2><a id="user-content-tips-and-best-practices" class="anchor" aria-label="Permalink: Tips and Best Practices" href="#tips-and-best-practices"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Customization Tips</h3><a id="user-content-customization-tips" class="anchor" aria-label="Permalink: Customization Tips" href="#customization-tips"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Custom Format</strong>: You can customize the format to show only what you need. For example, if you only want to show percentage: <code>durability_format: "Durability: %percent%%"</code>
+</li>
+<li>
+<strong>Color Customization</strong>: The automatic color gradation provides visual feedback, but you can override it with custom warning colors</li>
+<li>
+<strong>Format Placeholders</strong>: Use <code>%current%</code>, <code>%max%</code>, and <code>%percent%</code> in any combination to create your ideal display format</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Performance Tips</h3><a id="user-content-performance-tips" class="anchor" aria-label="Permalink: Performance Tips" href="#performance-tips"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Large Servers</strong>: Increase <code>update_interval_ticks</code> and <code>throttle_seconds</code> for better performance</li>
+<li>
+<strong>Small Servers</strong>: Decrease these values for more responsive updates</li>
+<li>
+<strong>Batch Size</strong>: Adjust <code>max_batch_size</code> based on your server's CPU capacity</li>
+<li>
+<strong>Monitor Logs</strong>: Check server logs for any configuration warnings or errors</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Integration Tips</h3><a id="user-content-integration-tips" class="anchor" aria-label="Permalink: Integration Tips" href="#integration-tips"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Repair Plugins</strong>: This plugin works well with repair and enchantment plugins</li>
+<li>
+<strong>Custom Items</strong>: Compatible with plugins that create custom durable items</li>
+<li>
+<strong>Economy Plugins</strong>: Great for servers with item-based economies where durability matters</li>
+<li>
+<strong>PvP Servers</strong>: Essential for competitive servers where equipment condition is crucial</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Screenshots and Documentation</h3><a id="user-content-screenshots-and-documentation" class="anchor" aria-label="Permalink: Screenshots and Documentation" href="#screenshots-and-documentation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Take screenshots of items with different durability levels to showcase the color system</li>
+<li>Document your custom format strings for server staff</li>
+<li>Share performance settings that work well for your server size</li>
+</ul>
+<hr>
+<p><strong>Made with ❤️ by ImmoDevs</strong><br>
+Copyright © 2025 ImmoDevs. All rights reserved.</p>

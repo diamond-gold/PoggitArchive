@@ -1,0 +1,203 @@
+<div class="markdown-heading"><h1 class="heading-element">🌍 WorldManager</h1><a id="user-content--worldmanager" class="anchor" aria-label="Permalink: 🌍 WorldManager" href="#-worldmanager"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://github.com/pmmp/PocketMine-MP"><img src="https://camo.githubusercontent.com/0ea40eec9d70e1b9771b40d6ce65f6a057750cb78422560b89a7053dfe68a02b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f506f636b65744d696e652d2d4d502d4150492b352e782d626c75653f6c6f676f3d706f636b65746d696e65" alt="PMMP API 5.x" data-canonical-src="https://img.shields.io/badge/PocketMine--MP-API+5.x-blue?logo=pocketmine" style="max-width: 100%;"></a>
+<a href="LICENSE"><img src="https://camo.githubusercontent.com/44e7845c81a431dc740c9a7f76d0ea33e030e05d7a41d6164167ee435b17168f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d677265656e2e737667" alt="License: MIT" data-canonical-src="https://img.shields.io/badge/license-MIT-green.svg" style="max-width: 100%;"></a>
+<a href=""><img src="https://camo.githubusercontent.com/95cbdac3358a283a047c99199ae913b1339c8b471999e137d93e6f9717efb678/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7374617475732d6163746976652d627269676874677265656e" alt="Plugin Status" data-canonical-src="https://img.shields.io/badge/status-active-brightgreen" style="max-width: 100%;"></a>
+<a href="https://pmmp.io" rel="nofollow"><img src="https://camo.githubusercontent.com/9b6abe206f0c161fece08790c37e6493dab62b2503ccf58b7b2b917fc7b4380c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d6164652b666f722d506f636b65744d696e652d2d4d502d6f72616e6765" alt="Made with ❤️ for PMMP" data-canonical-src="https://img.shields.io/badge/made+for-PocketMine--MP-orange" style="max-width: 100%;"></a></p>
+<p><strong>WorldManager</strong> is a powerful and lightweight world management plugin for PocketMine-MP servers.<br>
+Create, delete, duplicate, rename, load, unload, teleport and fully control your worlds directly in-game — all with region support!</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">✨ Features</h2><a id="user-content--features" class="anchor" aria-label="Permalink: ✨ Features" href="#-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>🔧 Create new worlds (supports custom generators)</li>
+<li>🗑 Delete worlds safely</li>
+<li>📦 Duplicate (clone) worlds</li>
+<li>✏ Rename existing worlds</li>
+<li>🚀 Teleport between worlds</li>
+<li>🔄 Load &amp; unload worlds dynamically</li>
+<li>📃 List all available worlds</li>
+<li>🗺 Region management system (<code>/wm region</code>)</li>
+<li>🎯 Full permission system</li>
+<li>⚡ Fast and optimized performance</li>
+<li>🎮 In-game commands with aliases and tab completion</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📥 Installation</h2><a id="user-content--installation" class="anchor" aria-label="Permalink: 📥 Installation" href="#-installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>1️⃣ Download the latest release of the plugin.<br>
+2️⃣ Place the <code>.phar</code> file into your server's <code>plugins/</code> directory.<br>
+3️⃣ Restart your server.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">⚙ Commands</h2><a id="user-content--commands" class="anchor" aria-label="Permalink: ⚙ Commands" href="#-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Main command: <code>/worldmanager</code><br>
+Alias: <code>/wm</code></p>
+<table>
+<thead>
+<tr>
+<th>Subcommand</th>
+<th>Description</th>
+<th>Usage</th>
+<th>Aliases</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>help</code></td>
+<td>Show help message</td>
+<td><code>/worldmanager help</code></td>
+<td>—</td>
+<td><code>worldmanager.subcommand.help</code></td>
+</tr>
+<tr>
+<td><code>region</code></td>
+<td>Region management</td>
+<td><code>/worldmanager region &lt;args&gt;</code></td>
+<td><code>rg</code></td>
+<td><code>worldmanager.subcommand.region</code></td>
+</tr>
+<tr>
+<td><code>delete</code></td>
+<td>Delete a world</td>
+<td><code>/worldmanager delete &lt;world&gt;</code></td>
+<td>—</td>
+<td><code>worldmanager.subcommand.delete</code></td>
+</tr>
+<tr>
+<td><code>duplicate</code></td>
+<td>Duplicate a world</td>
+<td><code>/worldmanager duplicate &lt;source&gt; &lt;newName&gt;</code></td>
+<td><code>clone</code></td>
+<td><code>worldmanager.subcommand.duplicate</code></td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>List all worlds</td>
+<td><code>/worldmanager list</code></td>
+<td><code>ls</code></td>
+<td><code>worldmanager.subcommand.list</code></td>
+</tr>
+<tr>
+<td><code>tp</code></td>
+<td>Teleport to world</td>
+<td><code>/worldmanager tp &lt;world&gt;</code></td>
+<td><code>teleport</code></td>
+<td><code>worldmanager.subcommand.tp</code></td>
+</tr>
+<tr>
+<td><code>create</code></td>
+<td>Create new world</td>
+<td><code>/worldmanager create &lt;name&gt; &lt;generator&gt;</code></td>
+<td><code>new</code></td>
+<td><code>worldmanager.subcommand.create</code></td>
+</tr>
+<tr>
+<td><code>load</code></td>
+<td>Load world</td>
+<td><code>/worldmanager load &lt;name&gt;</code></td>
+<td>—</td>
+<td><code>worldmanager.subcommand.load</code></td>
+</tr>
+<tr>
+<td><code>unload</code></td>
+<td>Unload world</td>
+<td><code>/worldmanager unload &lt;name&gt;</code></td>
+<td>—</td>
+<td><code>worldmanager.subcommand.unload</code></td>
+</tr>
+<tr>
+<td><code>rename</code></td>
+<td>Rename world</td>
+<td><code>/worldmanager rename &lt;oldName&gt; &lt;newName&gt;</code></td>
+<td>—</td>
+<td><code>worldmanager.subcommand.rename</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🔐 Permissions</h2><a id="user-content--permissions" class="anchor" aria-label="Permalink: 🔐 Permissions" href="#-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>worldmanager.command</code></td>
+<td>Access main command</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>worldmanager.subcommand.help</code></td>
+<td>Help command</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>worldmanager.subcommand.region</code></td>
+<td>Region commands</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>worldmanager.subcommand.delete</code></td>
+<td>Delete worlds</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>worldmanager.subcommand.duplicate</code></td>
+<td>Duplicate worlds</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>worldmanager.subcommand.list</code></td>
+<td>List worlds</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>worldmanager.subcommand.tp</code></td>
+<td>Teleport to worlds</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>worldmanager.subcommand.create</code></td>
+<td>Create worlds</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>worldmanager.subcommand.load</code></td>
+<td>Load worlds</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>worldmanager.subcommand.unload</code></td>
+<td>Unload worlds</td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>worldmanager.subcommand.rename</code></td>
+<td>Rename worlds</td>
+<td>OP</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🗺 Region System</h2><a id="user-content--region-system" class="anchor" aria-label="Permalink: 🗺 Region System" href="#-region-system"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Region management commands are accessible via:</p>
+<p>/worldmanager region </p>
+<p>Alias: <code>/wm rg</code><br>
+<em>(Region subcommands can be expanded based on your plugin details)</em></p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📦 Requirements</h2><a id="user-content--requirements" class="anchor" aria-label="Permalink: 📦 Requirements" href="#-requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>PocketMine-MP: <strong>API 5.x</strong>
+</li>
+<li>PHP: <strong>8.0+</strong>
+</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📄 License</h2><a id="user-content--license" class="anchor" aria-label="Permalink: 📄 License" href="#-license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This project is licensed under the <a href="LICENSE">MIT License</a>.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">❤️ Support</h2><a id="user-content-️-support" class="anchor" aria-label="Permalink: ❤️ Support" href="#️-support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you enjoy using this plugin, consider giving a ⭐ star on GitHub or sharing feedback!</p>
+<hr>
