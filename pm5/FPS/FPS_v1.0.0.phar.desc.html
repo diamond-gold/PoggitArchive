@@ -1,0 +1,94 @@
+<div class="markdown-heading"><h1 class="heading-element">FPS</h1><a id="user-content-fps" class="anchor" aria-label="Permalink: FPS" href="#fps"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A simple FPS display plugin for PocketMine-MP servers.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Real-time FPS display for players</li>
+<li>Multiple display modes (popup, tip, jukebox, scoreboard)</li>
+<li>Color customization</li>
+<li>ScoreHUD integration</li>
+<li>Resource pack support</li>
+<li>Per-player settings</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Requirements</h2><a id="user-content-requirements" class="anchor" aria-label="Permalink: Requirements" href="#requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>PocketMine-MP 5.0+</li>
+<li>FormAPI plugin (Will automatically download the UI)</li>
+<li>libCustomPack plugin (Will automatically download for the resource pack)</li>
+<li>ScoreHud plugin (optional, for scoreboard display)</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the plugin <code>.phar</code> file</li>
+<li>Place it in your server's <code>plugins/</code> folder</li>
+<li>Install required dependencies:
+<ul>
+<li>ScoreHud.phar (optional)</li>
+</ul>
+</li>
+<li>Restart your server</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">For Players</h3><a id="user-content-for-players" class="anchor" aria-label="Permalink: For Players" href="#for-players"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Enable "Client Diagnostics" in Minecraft settings:
+<ul>
+<li>Settings → Creator Settings → Enable Client Diagnostics</li>
+</ul>
+</li>
+<li>Use <code>/fps</code> command to configure display options</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element">For Server Owners</h3><a id="user-content-for-server-owners" class="anchor" aria-label="Permalink: For Server Owners" href="#for-server-owners"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>The plugin works out of the box with default settings</li>
+<li>Players can customize their own display preferences</li>
+<li>Resource pack is automatically generated if libCustomPack is installed</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/fps</code></td>
+<td><code>fps.command.fps</code></td>
+<td>Open FPS settings menu</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fps.command.fps</code></td>
+<td><code>true</code></td>
+<td>Use the /fps command</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">ScoreHUD Integration</h2><a id="user-content-scorehud-integration" class="anchor" aria-label="Permalink: ScoreHUD Integration" href="#scorehud-integration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Add this tag to your ScoreHUD scoreboards:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">lines</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>{fps.display}<span class="pl-pds">"</span></span></pre></div>
+<p>The tag will show "FPS: 60" with colors when enabled, or hide completely when disabled.</p>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin creates a simple config file with basic settings. Most configuration is done through the in-game <code>/fps</code> menu.</p>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Create an issue on GitHub for bugs or feature requests</li>
+<li>Make sure you have the required dependencies installed</li>
+<li>Check console logs for error messages</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>MIT License</p>
