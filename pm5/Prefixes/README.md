@@ -1,10 +1,12 @@
 # Prefixes
-## Crea prefixes para mostrarlos en el chat del jugador
+<img src="https://raw.githubusercontent.com/FrostCheatMC/Prefixes/81838b6327b7ff789ee5573ba29ee74d6ea83c3a/icon.png" width="128" height="128" />
+
+## Plugin to create chat prefixes for your users
 ```properties
-Version: 1.3.0
-    API: 5.0.0
-    Updated: 23-07-2024 23:39:13 UTC
-Repo: https://github.com/FrostCheatMC/Prefixes
+Version: 1.4.0
+    API: 5.3.0
+    Updated: 19-06-2025 04:07:59 UTC
+Repo: https://github.com/FrostCheat/Prefixes
 License: Apache-2.0
 Categories: Chat-Related,Mechanics,Informational,General
 Keywords: chat,languages,multilanguage,plugin,plugins,prefix,prefixes,ranksystem

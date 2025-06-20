@@ -6,7 +6,7 @@
 Version: 1.0.0
     API: 5.3.0
     Updated: 17-06-2025 00:39:05 UTC
-Repo: https://github.com/FrostCheatMC/ActionHouse
+Repo: https://github.com/FrostCheat/ActionHouse
 License: MIT
 Categories: General,Miscellaneous,Minigame,Economy,Mechanics
 Keywords: action,actionhouse,ah,economy,house,npc
