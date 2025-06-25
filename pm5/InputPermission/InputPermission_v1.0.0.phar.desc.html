@@ -1,0 +1,160 @@
+<div class="markdown-heading"><h1 class="heading-element">InputPermission</h1><a id="user-content-inputpermission" class="anchor" aria-label="Permalink: InputPermission" href="#inputpermission"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://youtu.be/7pi1HXQzUpM" rel="nofollow">https://youtu.be/7pi1HXQzUpM</a></p>
+<p>InputPermission is a PocketMine-MP plugin that implements the functionality of the <code>/inputpermission</code> command from
+Minecraft Bedrock Edition into your server. This plugin allows server administrators to control whether a player's input
+can affect their character in the game, providing granular control over various aspects of player movement and
+interaction.</p>
+<p>With this plugin, you can control specific inputs like jumping, sneaking, moving, or even camera interaction.</p>
+<div class="markdown-heading"><h2 class="heading-element">Key Features</h2><a id="user-content-key-features" class="anchor" aria-label="Permalink: Key Features" href="#key-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong><code>/inputpermission</code> Command:</strong> Full functionality of the Minecraft Bedrock Edition <code>/inputpermission</code> command is
+implemented.</li>
+<li>
+<strong>Granular Control:</strong> Allow or restrict specific inputs through various permission categories:
+<ul>
+<li>
+<code>camera</code>: Controls player input relating to camera movement.</li>
+<li>
+<code>movement</code>: Controls all player movement. Disabling this is equivalent to disabling <code>jump</code>, <code>sneak</code>,
+<code>lateral_movement</code>, <code>mount</code>, and <code>dismount</code>.</li>
+<li>
+<code>lateral_movement</code>: Controls player input for moving laterally in the world. This would be WASD on a keyboard or
+the movement joystick on gamepad or touch.</li>
+<li>
+<code>sneak</code>: Controls player input relating to sneak. This also affects flying down.</li>
+<li>
+<code>jump</code>: Controls player input relating to jumping. This also affects flying up.</li>
+<li>
+<code>mount</code>: Controls player input relating to mounting vehicles.</li>
+<li>
+<code>dismount</code>: Controls player input relating to dismounting.</li>
+<li>
+<code>move_forward</code>: Controls player input relating to moving the player forward.</li>
+<li>
+<code>move_backward</code>: Controls player input relating to moving the player backward.</li>
+<li>
+<code>move_left</code>: Controls player input relating to moving the player left.</li>
+<li>
+<code>move_right</code>: Controls player input relating to moving the player right.</li>
+</ul>
+</li>
+<li>
+<strong>Flexible Permission System:</strong> Control who can use the commands and manage permissions with a comprehensive
+permission system.</li>
+<li>
+<strong>Form UI Support:</strong> The plugin provides an intuitive Form UI interface for managing input permissions, making it
+easier for administrators unfamiliar with console commands.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin adds the <code>/inputpermission</code> command to your server.</p>
+<p><strong>Syntax:</strong>
+<code>/inputpermission &lt;option&gt; [target] [permission] [state]</code></p>
+<ul>
+<li>
+<code>&lt;option&gt;</code>: The operation to perform (<code>query</code> or <code>set</code>).</li>
+<li>
+<code>[target]</code>: The name of the player you wish to affect.</li>
+<li>
+<code>[permission]</code>: The input permission category you wish to configure (e.g., <code>jump</code>, <code>movement</code>, <code>camera</code>).</li>
+<li>
+<code>[state]</code>: The state you wish to set (<code>enabled</code> or <code>disabled</code>). Only relevant for the <code>set</code> option.</li>
+</ul>
+<p><strong>Usage Examples:</strong></p>
+<ul>
+<li>
+<code>/inputpermission query DavyCraft648 movement</code>: Queries the <code>movement</code> permission status for player DavyCraft648.</li>
+<li>
+<code>/inputpermission set DavyCraft648 jump disabled</code>: Disables the jumping ability for player DavyCraft648.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin provides the following permissions for granular control:</p>
+<p><strong>Command Permissions:</strong></p>
+<ul>
+<li>
+<code>inputpermission.command</code> (default: <code>op</code>): Allows basic usage of the <code>/inputpermission</code> command.</li>
+<li>
+<code>inputpermission.command.query.self</code> (default: <code>op</code>): Allows players to query their own input permissions.</li>
+<li>
+<code>inputpermission.command.query.other</code> (default: <code>op</code>): Allows players to query other players' input permissions.</li>
+<li>
+<code>inputpermission.command.set.self</code> (default: <code>op</code>): Allows players to set their own input permissions.</li>
+<li>
+<code>inputpermission.command.set.other</code> (default: <code>op</code>): Allows players to set other players' input permissions.</li>
+<li>
+<code>inputpermission.command.admin</code> (default: <code>op</code>): Grants full access to all <code>inputpermission</code> command functionalities,
+including plugin configuration.</li>
+</ul>
+<p><strong>Input Category Permissions:</strong></p>
+<p>Each input category has an associated permission that can be managed by external permission plugins to control default
+player input. If a player <strong>does not have</strong> this permission, the related input will be <strong>disabled</strong>. By default, all
+these input permissions are set to <code>true</code> for all players.</p>
+<ul>
+<li>
+<code>inputpermission.permission.camera</code> (default: <code>true</code>)</li>
+<li>
+<code>inputpermission.permission.dismount</code> (default: <code>true</code>)</li>
+<li>
+<code>inputpermission.permission.jump</code> (default: <code>true</code>)</li>
+<li>
+<code>inputpermission.permission.lateral_movement</code> (default: <code>true</code>)</li>
+<li>
+<code>inputpermission.permission.mount</code> (default: <code>true</code>)</li>
+<li>
+<code>inputpermission.permission.move_backward</code> (default: <code>true</code>)</li>
+<li>
+<code>inputpermission.permission.move_forward</code> (default: <code>true</code>)</li>
+<li>
+<code>inputpermission.permission.move_left</code> (default: <code>true</code>)</li>
+<li>
+<code>inputpermission.permission.move_right</code> (default: <code>true</code>)</li>
+<li>
+<code>inputpermission.permission.movement</code> (default: <code>true</code>)</li>
+<li>
+<code>inputpermission.permission.sneak</code> (default: <code>true</code>)</li>
+</ul>
+<p><strong>Permission Mechanism:</strong>
+The plugin actively checks for these input category permissions for each player. If a player has the
+<code>inputpermission.permission.&lt;category&gt;</code> permission, then the input for that category is enabled. Otherwise, the input is
+disabled. This means you can use external permission plugins to grant or revoke these permissions from specific groups
+or players, and the InputPermission plugin will automatically apply those changes.</p>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin has a <code>config.yml</code> file that allows you to set the default status for each input permission category. This is
+useful for defining whether a certain permission should be enabled by default for all players or only for operators,
+etc.</p>
+<p>Example <code>config.yml</code>:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Default input permission for players</span>
+<span class="pl-ent">default</span>:
+  <span class="pl-ent">camera</span>: <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> Permission is granted by default to everyone</span>
+  <span class="pl-ent">movement</span>: <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+  <span class="pl-ent">lateral_movement</span>: <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+  <span class="pl-ent">sneak</span>: <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+  <span class="pl-ent">jump</span>: <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+  <span class="pl-ent">mount</span>: <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+  <span class="pl-ent">dismount</span>: <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+  <span class="pl-ent">move_forward</span>: <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+  <span class="pl-ent">move_backward</span>: <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+  <span class="pl-ent">move_left</span>: <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+  <span class="pl-ent">move_right</span>: <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span></pre></div>
+<p><strong>Default Value Options:</strong></p>
+<ul>
+<li>
+<code>true</code>: Permission is granted by default to everyone.</li>
+<li>
+<code>false</code>: Permission is not granted by default.</li>
+<li>
+<code>op</code>: Permission is granted by default only to operators.</li>
+<li>
+<code>notop</code>: Permission is granted by default to all players who are NOT operators.</li>
+</ul>
+<p>You can modify these values directly in <code>config.yml</code> or via the "Plugin Config" Form UI accessible with the
+<code>/inputpermission</code> command.</p>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the latest release from <a href="https://poggit.pmmp.io/p/InputPermission" rel="nofollow">Poggit</a>.</li>
+<li>Move the downloaded <code>.phar</code> file into your PocketMine-MP server's <code>plugins/</code> folder.</li>
+<li>Restart or reload your server.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Support</h2><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you encounter any bugs or have feature suggestions, please open a new issue on
+the <a href="https://github.com/DavyCraft648/InputPermission/issues">GitHub repository</a>.</p>
