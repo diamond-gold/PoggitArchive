@@ -1,0 +1,32 @@
+<ul dir="auto">
+<li>
+<p dir="auto">Features:</p>
+<ul dir="auto">
+<li>Introduced ifera-mc/update-notifier for update notifications.</li>
+</ul>
+</li>
+<li>
+<p dir="auto">Bug Fixes:</p>
+<ul dir="auto">
+<li>Warns: Corrected an issue where the original timestamp of a WarnEntry was lost upon loading from storage; the timestamp is now correctly preserved.</li>
+<li>Command: Resolved duration handling in WarnCommand to prevent errors when no duration is provided and ensured proper reason setting with single arguments. Improved command execution error handling.</li>
+</ul>
+</li>
+<li>
+<p dir="auto">Refactoring &amp; Optimizations:</p>
+<ul dir="auto">
+<li>Removed src-namespace-prefix.</li>
+<li>Utils Class:
+<ul dir="auto">
+<li>Optimized and modernized the Utils class by simplifying parseDurationString logic.</li>
+<li>Enhanced readability with direct type hints and short-circuiting.</li>
+<li>Utilized match expressions in formatDuration for clearer control flow.</li>
+<li>Improved maintainability through cleaned-up variable handling and concise comments.</li>
+</ul>
+</li>
+<li>Expired Warnings Task: Optimized the expired warnings task by skipping players who have no warnings, improving efficiency.</li>
+<li>WarnList Class: Simplified and reduced complexity in the WarnList class by encapsulating WarnEntry creation and exception handling within a createWarnEntry method, improving readability and maintainability.</li>
+<li>WarnEntry: Improved data validation within the fromArray method of the WarnEntry class.</li>
+</ul>
+</li>
+</ul>
