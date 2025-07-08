@@ -1,0 +1,120 @@
+<div class="markdown-heading"><h1 class="heading-element">AutoClearChunk</h1><a id="user-content-autoclearchunk" class="anchor" aria-label="Permalink: AutoClearChunk" href="#autoclearchunk"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://poggit.pmmp.io/p/AutoClearChunk" rel="nofollow"><img src="https://camo.githubusercontent.com/b6d567a6fc188d4cb66f69ad01d0de0a14c7fcbbf0bb709b91bf50874b2e4be6/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4175746f436c6561724368756e6b" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/AutoClearChunk" style="max-width: 100%; height: auto;"></a>
+<a href="https://poggit.pmmp.io/p/AutoClearChunk" rel="nofollow"><img src="https://camo.githubusercontent.com/ce992101b16c63cbd25e418e9b8d4ecc62939a8ed7cd760025654f936085600b/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f4175746f436c6561724368756e6b" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/AutoClearChunk" style="max-width: 100%; height: auto;"></a></p>
+<p>A PocketMine-MP plugin that automatically clears chunks in specified worlds at regular intervals.</p>
+<div class="markdown-heading"><h1 class="heading-element">Features</h1><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Automatic clearing of chunks in configured worlds.</li>
+<li>Configurable clearing interval to suit your server's needs.</li>
+<li>Command-based chunk clearing options for manual control.</li>
+<li>Customizable messages for different events to enhance player experience.</li>
+<li>Blacklist support for excluding specific worlds from chunk clearing.</li>
+<li>Auto-update notifier to keep the plugin up to date with the latest releases.</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Default Config</h1><a id="user-content-default-config" class="anchor" aria-label="Permalink: Default Config" href="#default-config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> AutoClearChunk Configuration</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Enable Auto Schedule</span>
+<span class="pl-c"><span class="pl-c">#</span> Determines whether the plugin automatically schedules the task to clear unloaded chunks at the specified interval.</span>
+<span class="pl-c"><span class="pl-c">#</span> Set to 'true' to enable auto schedule, 'false' to disable.</span>
+<span class="pl-ent">enable-auto-schedule</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Clear Interval Duration</span>
+<span class="pl-c"><span class="pl-c">#</span> Determines the time interval at which unloaded chunks are automatically cleared.</span>
+<span class="pl-c"><span class="pl-c">#</span> The value should be specified as a duration format string.</span>
+<span class="pl-c"><span class="pl-c">#</span> Examples: 1h (1 hour), 30m (30 minutes), 15s (15 seconds)</span>
+<span class="pl-ent">clear-interval-duration</span>: <span class="pl-s">5m30s</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message displayed when chunks are cleared using the ClearChunk command</span>
+<span class="pl-c"><span class="pl-c">#</span> Use %d placeholder for the number of cleared chunks and %s placeholder for the world name.</span>
+<span class="pl-c"><span class="pl-c">#</span> You can customize the message using color codes.</span>
+<span class="pl-c"><span class="pl-c">#</span> Default: "Successfully cleared %d chunks in world %s"</span>
+<span class="pl-ent">clearchunk-message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;aSuccessfully cleared %d chunks in world %s<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message broadcasted to all players when chunks are cleared using the ClearChunk command</span>
+<span class="pl-c"><span class="pl-c">#</span> Use %d placeholder for the number of cleared chunks and %s placeholder for the world name.</span>
+<span class="pl-c"><span class="pl-c">#</span> You can customize the message using color codes.</span>
+<span class="pl-c"><span class="pl-c">#</span> Default: "&amp;e%d chunks have been cleared in world %s"</span>
+<span class="pl-ent">clearchunk-broadcast-message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;e%d chunks have been cleared in world %s<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message displayed when chunks are cleared using the ClearAllChunk command</span>
+<span class="pl-c"><span class="pl-c">#</span> Use %d placeholder for the number of cleared chunks.</span>
+<span class="pl-c"><span class="pl-c">#</span> You can customize the message using color codes.</span>
+<span class="pl-c"><span class="pl-c">#</span> Default: "Successfully cleared %d chunks in all worlds"</span>
+<span class="pl-ent">clearallchunk-message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;aSuccessfully cleared %d chunks in all worlds<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Message broadcasted to all players when chunks are cleared using the ClearAllChunk command</span>
+<span class="pl-c"><span class="pl-c">#</span> Use %d placeholder for the number of cleared chunks.</span>
+<span class="pl-c"><span class="pl-c">#</span> You can customize the message using color codes.</span>
+<span class="pl-c"><span class="pl-c">#</span> Default: "&amp;e%d chunks have been cleared in all worlds"</span>
+<span class="pl-ent">clearallchunk-broadcast-message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;e%d chunks have been cleared in all worlds<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Enable or Disable Message broadcast to all players when chunk are cleared</span>
+<span class="pl-ent">broadcast-message</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> List of worlds that are blacklisted and won't be cleared</span>
+<span class="pl-c"><span class="pl-c">#</span> Add the names of any worlds you want to exclude from the clearing process.</span>
+<span class="pl-c"><span class="pl-c">#</span> Default: []</span>
+<span class="pl-ent">blacklisted-worlds</span>:
+  - <span class="pl-s">your_world</span>
+  - <span class="pl-s">another_world</span>
+</pre></div>
+<div class="markdown-heading"><h1 class="heading-element">Configuration</h1><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin configuration file (<code>config.yml</code>) allows you to customize various aspects of the AutoClearChunk plugin. Here are the configurable options:</p>
+<ul>
+<li>
+<code>enable-auto-schedule</code> (boolean): Set this option to <code>true</code> if you want to enable the automatic chunk clearing schedule. If set to <code>false</code>, chunks will only be cleared manually using commands.</li>
+<li>
+<code>clear-interval-duration</code> (string): Specify the duration interval at which chunks should be cleared automatically. The duration should be specified in the format of <code>1h30m</code> for 1 hour and 30 minutes.</li>
+<li>
+<code>clearchunk-message</code> (string): Customize the message sent to players when chunks are cleared using the <code>/clearchunk</code> command.</li>
+<li>
+<code>clearchunk-broadcast-message</code> (string): Customize the message broadcasted to all players when chunks are cleared using the <code>/clearchunk</code> command.</li>
+<li>
+<code>clearallchunk-message</code> (string): Customize the message sent to players when chunks are cleared using the <code>/clearallchunk</code> command.</li>
+<li>
+<code>clearallchunk-broadcast-message</code> (string): Customize the message broadcasted to all players when chunks are cleared using the <code>/clearallchunk</code> command.</li>
+<li>
+<code>broadcast-message</code> (boolean): Set this option to <code>true</code> if you want to enable the broadcasting message when Chunk Cleared</li>
+<li>
+<code>blacklisted-worlds</code> (array): Specify a list of worlds to exclude from chunk clearing. Add world names as individual array items.</li>
+</ul>
+<p>You can edit the <code>config.yml</code> file using a text editor to adjust the plugin's behavior, customize messages, and define the worlds where chunk clearing should be applied.</p>
+<div class="markdown-heading"><h1 class="heading-element">Commands</h1><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The AutoClearChunk plugin provides the following commands for chunk clearing:</p>
+<ul>
+<li>
+<code>/clearchunk</code>: Clears all chunks in the current world. Players receive a notification message.
+<ul>
+<li>Permission: <code>autoclearchunk.command.clearchunk</code>
+</li>
+</ul>
+</li>
+<li>
+<code>/clearallchunk</code>: Clears all chunks in all configured worlds. Players receive a notification message.
+<ul>
+<li>Permission: <code>autoclearchunk.command.clearallchunk</code>
+</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Permissions</h1><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>To control access to the commands provided by the AutoClearChunk plugin, the following permissions are available:</p>
+<ul>
+<li>
+<code>autoclearchunk.command.clearchunk</code>: Allows players to use the <code>/clearchunk</code> command.</li>
+<li>
+<code>autoclearchunk.command.clearallchunk</code>: Allows players to use the <code>/clearallchunk</code> command.</li>
+</ul>
+<p>Grant these permissions to specific player groups or individuals using a permissions management plugin of your choice.</p>
+<div class="markdown-heading"><h1 class="heading-element">Upcoming Features</h1><a id="user-content-upcoming-features" class="anchor" aria-label="Permalink: Upcoming Features" href="#upcoming-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Currently none planned. You can contribute or suggest for new features.</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Additional Notes</h1><a id="user-content-additional-notes" class="anchor" aria-label="Permalink: Additional Notes" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/HazardTeam/AutoClearChunk/issues">here</a>.</li>
+<li>We accept all contributions! If you want to contribute, please make a pull request in <a href="https://github.com/HazardTeam/AutoClearChunk/pulls">here</a>.</li>
+<li>Icons made from <a href="https://icons8.com" rel="nofollow">icons8.com</a>
+</li>
+</ul>
