@@ -7,5 +7,5 @@ Version: 1.0.0
 Repo: https://github.com/GabBiswajit/BankNote
 License: Apache-2.0
 Categories: General,Economy
-Keywords: BankNote,EconomyNoye
+Keywords: banknote,econommy,plugin,note
 ```
