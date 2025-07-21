@@ -1,7 +1,7 @@
 # Zuri
 <img src="https://raw.githubusercontent.com/ReinfyTeam/Zuri/74c75b3908dd3fad8f80bee65467ecc49ee16c30/icon.png" width="128" height="128" />
 
-## A powerful anticheat made to destroy hackers from your server for PocketMine-MP.
+## A fast-development powerful anticheat made to destroy hackers from your server for PocketMine-MP.
 ```properties
 Version: 1.3.5-BETA
     API: 5.0.0

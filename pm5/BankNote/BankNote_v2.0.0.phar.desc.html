@@ -1,0 +1,348 @@
+<div class="markdown-heading"><h1 class="heading-element">💰 BankNote Plugin v2.0.0</h1><a id="user-content--banknote-plugin-v200" class="anchor" aria-label="Permalink: 💰 BankNote Plugin v2.0.0" href="#-banknote-plugin-v200"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://poggit.pmmp.io/ci/GabBiswajit/BankNote/BankNote" rel="nofollow"><img src="https://camo.githubusercontent.com/a6c65013929221f5a2c3f74a852244c44c4a26bf59745e1ad87a8aa8c12e27d3/68747470733a2f2f706f676769742e706d6d702e696f2f63692e736869656c642f47616242697377616a69742f42616e6b4e6f74652f42616e6b4e6f7465" alt="Poggit-CI" data-canonical-src="https://poggit.pmmp.io/ci.shield/GabBiswajit/BankNote/BankNote" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/BankNote" rel="nofollow"><img src="https://camo.githubusercontent.com/8ab34514cfb0c98895c41db8837f6d8f8ee79382ddf086b6baf568df523275de/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f42616e6b4e6f7465" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/BankNote" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/BankNote" rel="nofollow"><img src="https://camo.githubusercontent.com/162e571fc1ca14d9990b5f3c3a7a9cdb5e8a373bbb298511dbe594d4c4c27b8c/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2f42616e6b4e6f7465" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl/BankNote" style="max-width: 100%;"></a></p>
+<p>A secure and feature-rich banknote system for PocketMine-MP servers! Convert your money into physical items that can be traded, stored, and redeemed safely with advanced anti-duplication protection.</p>
+<div class="markdown-heading"><h2 class="heading-element">🆕 <strong>What's New in v2.0.0</strong>
+</h2><a id="user-content--whats-new-in-v200" class="anchor" aria-label="Permalink: 🆕 What's New in v2.0.0" href="#-whats-new-in-v200"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">🔥 <strong>Major Updates:</strong>
+</h3><a id="user-content--major-updates" class="anchor" aria-label="Permalink: 🔥 Major Updates:" href="#-major-updates"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>🆕 BedrockEconomy Support</strong>: Modern async economy system (replacing libEco)</li>
+<li>
+<strong>🛡️ Enhanced Security</strong>: Advanced anti-duplication and exploit prevention</li>
+<li>
+<strong>💎 Universal Item Support</strong>: Use ANY Minecraft item via StringToItemParser</li>
+<li>
+<strong>🎨 Improved UI</strong>: Better FormAPI integration with fallback support</li>
+<li>
+<strong>🔐 Professional Permissions</strong>: Standardized <code>banknote.use</code> system</li>
+<li>
+<strong>⚡ Performance Boost</strong>: Async operations and optimized code</li>
+<li>
+<strong>📋 Poggit Ready</strong>: Full compliance with modern standards</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">🔄 <strong>Breaking Changes:</strong>
+</h3><a id="user-content--breaking-changes" class="anchor" aria-label="Permalink: 🔄 Breaking Changes:" href="#-breaking-changes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Economy System</strong>: libEco → BedrockEconomy (auto-detection included)</li>
+<li>
+<strong>Permissions</strong>: <code>BankNote.note.cmd</code> → <code>banknote.use</code>
+</li>
+<li>
+<strong>Configuration</strong>: Enhanced config structure with more options</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">✨ <strong>Core Features</strong>
+</h2><a id="user-content--core-features" class="anchor" aria-label="Permalink: ✨ Core Features" href="#-core-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">🛡️ <strong>Advanced Security</strong>
+</h3><a id="user-content-️-advanced-security" class="anchor" aria-label="Permalink: 🛡️ Advanced Security" href="#️-advanced-security"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Anti-Duplication System</strong>: Prevents exploit attempts and item duplication</li>
+<li>
+<strong>NBT Validation</strong>: Ensures banknote integrity and authenticity</li>
+<li>
+<strong>Block Interaction Filter</strong>: Prevents conflicts with chests and item frames</li>
+<li>
+<strong>Cooldown Protection</strong>: Configurable spam prevention system</li>
+<li>
+<strong>Item Validation</strong>: Multi-layer verification for secure transactions</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">💎 <strong>Flexible Item System</strong>
+</h3><a id="user-content--flexible-item-system" class="anchor" aria-label="Permalink: 💎 Flexible Item System" href="#-flexible-item-system"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>StringToItemParser</strong>: Support for ANY Minecraft item type</li>
+<li>
+<strong>Custom Items</strong>: Diamond, emerald, nether star, totem, and more</li>
+<li>
+<strong>Visual Customization</strong>: Color codes, custom names, and lore</li>
+<li>
+<strong>Placeholder Support</strong>: Dynamic {amount}, {creator}, {date} variables</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">💰 <strong>Multi-Economy Support</strong>
+</h3><a id="user-content--multi-economy-support" class="anchor" aria-label="Permalink: 💰 Multi-Economy Support" href="#-multi-economy-support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>BedrockEconomy</strong> (Primary) - Modern async operations</li>
+<li>
+<strong>EconomyAPI</strong> (Secondary) - Classic compatibility</li>
+<li>
+<strong>Auto-Detection</strong>: Seamless economy plugin detection</li>
+<li>
+<strong>Fallback Support</strong>: Works with either economy system</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">🎨 <strong>Enhanced User Interface</strong>
+</h3><a id="user-content--enhanced-user-interface" class="anchor" aria-label="Permalink: 🎨 Enhanced User Interface" href="#-enhanced-user-interface"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>FormAPI Integration</strong>: Beautiful GUI forms with quick amounts</li>
+<li>
+<strong>Custom Amount Input</strong>: Flexible amount entry system</li>
+<li>
+<strong>Fallback UI</strong>: Text-based interface when FormAPI unavailable</li>
+<li>
+<strong>User-Friendly Messages</strong>: Clear feedback and error handling</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">📋 <strong>Requirements</strong>
+</h2><a id="user-content--requirements" class="anchor" aria-label="Permalink: 📋 Requirements" href="#-requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>PocketMine-MP</strong>: 5.0.0+</li>
+<li>
+<strong>PHP</strong>: 8.0+</li>
+<li>
+<strong>Economy Plugin</strong>: BedrockEconomy OR EconomyAPI</li>
+<li>
+<strong>Optional</strong>: FormAPI for enhanced GUI experience</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">🚀 <strong>Installation</strong>
+</h2><a id="user-content--installation" class="anchor" aria-label="Permalink: 🚀 Installation" href="#-installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download from <a href="https://poggit.pmmp.io/p/BankNote" rel="nofollow">Poggit</a>
+</li>
+<li>Place the <code>.phar</code> file in your server's <code>plugins/</code> folder</li>
+<li>Install an economy plugin:
+<ul>
+<li>
+<strong>Recommended</strong>: <a href="https://poggit.pmmp.io/p/BedrockEconomy" rel="nofollow">BedrockEconomy</a>
+</li>
+<li>
+<strong>Alternative</strong>: <a href="https://poggit.pmmp.io/p/EconomyAPI" rel="nofollow">EconomyAPI</a>
+</li>
+</ul>
+</li>
+<li>
+<strong>Optional</strong>: Install <a href="https://poggit.pmmp.io/p/FormAPI" rel="nofollow">FormAPI</a> for GUI support</li>
+<li>Restart your server</li>
+<li>Configure in <code>plugins/BankNote/config.yml</code>
+</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">🎯 <strong>Commands &amp; Permissions</strong>
+</h2><a id="user-content--commands--permissions" class="anchor" aria-label="Permalink: 🎯 Commands &amp; Permissions" href="#-commands--permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Aliases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/banknote &lt;amount&gt;</code></td>
+<td>Create a banknote</td>
+<td><code>banknote.use</code></td>
+<td>
+<code>/bn</code>, <code>/note</code>
+</td>
+</tr>
+<tr>
+<td><code>/banknote ui</code></td>
+<td>Open GUI interface</td>
+<td><code>banknote.use</code></td>
+<td><code>/bn ui</code></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">🔐 <strong>Permissions:</strong>
+</h3><a id="user-content--permissions" class="anchor" aria-label="Permalink: 🔐 Permissions:" href="#-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>banknote.use</code> - Create and redeem banknotes (default: true)</li>
+<li>
+<code>banknote.admin</code> - Administrative access (default: op)</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">📖 <strong>How to Use</strong>
+</h2><a id="user-content--how-to-use" class="anchor" aria-label="Permalink: 📖 How to Use" href="#-how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element"><strong>Creating Banknotes:</strong></h3><a id="user-content-creating-banknotes" class="anchor" aria-label="Permalink: Creating Banknotes:" href="#creating-banknotes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<strong>Command Method</strong>: <code>/banknote 1000</code> - Creates $1000 banknote</li>
+<li>
+<strong>GUI Method</strong>: <code>/banknote ui</code> - Interactive form (requires FormAPI)</li>
+<li>
+<strong>Quick Amounts</strong>: Predefined buttons for common values</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element"><strong>Redeeming Banknotes:</strong></h3><a id="user-content-redeeming-banknotes" class="anchor" aria-label="Permalink: Redeeming Banknotes:" href="#redeeming-banknotes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<strong>Right-click</strong> the banknote item while holding it</li>
+<li>Money is instantly added to your balance</li>
+<li>Item is consumed and cannot be duplicated</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element"><strong>Supported Items:</strong></h3><a id="user-content-supported-items" class="anchor" aria-label="Permalink: Supported Items:" href="#supported-items"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Use any Minecraft item via configuration:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">banknote</span>:
+  <span class="pl-ent">item</span>:
+    <span class="pl-ent">type</span>: <span class="pl-s"><span class="pl-pds">"</span>paper<span class="pl-pds">"</span></span>        <span class="pl-c"><span class="pl-c">#</span> Default</span>
+    <span class="pl-ent">type</span>: <span class="pl-s"><span class="pl-pds">"</span>diamond<span class="pl-pds">"</span></span>      <span class="pl-c"><span class="pl-c">#</span> Premium look</span>
+    <span class="pl-ent">type</span>: <span class="pl-s"><span class="pl-pds">"</span>nether_star<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> Ultra rare</span>
+    <span class="pl-ent">type</span>: <span class="pl-s"><span class="pl-pds">"</span>emerald<span class="pl-pds">"</span></span>      <span class="pl-c"><span class="pl-c">#</span> Classic currency</span>
+    <span class="pl-c"><span class="pl-c">#</span> ... and 500+ more items!</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">⚙️ <strong>Configuration</strong>
+</h2><a id="user-content-️-configuration" class="anchor" aria-label="Permalink: ⚙️ Configuration" href="#️-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Enhanced Configuration v2.0.0</span>
+<span class="pl-ent">banknote</span>:
+  <span class="pl-ent">item</span>:
+    <span class="pl-ent">type</span>: <span class="pl-s"><span class="pl-pds">"</span>paper<span class="pl-pds">"</span></span>
+    <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>§r§l§6${amount} §aBAN§fK §aNOTE<span class="pl-pds">"</span></span>
+    <span class="pl-ent">lore</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>§r§7Right-click to redeem<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>§r§7Value: §a${amount}<span class="pl-pds">"</span></span>
+  
+  <span class="pl-ent">limits</span>:
+    <span class="pl-ent">minimum</span>: <span class="pl-c1">1</span>
+    <span class="pl-ent">maximum</span>: <span class="pl-c1">1000000</span>
+    <span class="pl-ent">cooldown</span>: <span class="pl-c1">1</span>
+
+<span class="pl-ent">ui</span>:
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>§l§aBankNote Manager<span class="pl-pds">"</span></span>
+  <span class="pl-ent">quick_amounts</span>: <span class="pl-s">[100, 500, 1000, 5000, 10000]</span>
+
+<span class="pl-ent">economy</span>:
+  <span class="pl-ent">preferred</span>: <span class="pl-s"><span class="pl-pds">"</span>BedrockEconomy<span class="pl-pds">"</span></span>
+  <span class="pl-ent">auto_detect</span>: <span class="pl-c1">true</span>
+
+<span class="pl-ent">security</span>:
+  <span class="pl-ent">anti_duplication</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">nbt_validation</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">block_interaction_filter</span>: <span class="pl-c1">true</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">🔌 <strong>Economy Plugin Compatibility</strong>
+</h2><a id="user-content--economy-plugin-compatibility" class="anchor" aria-label="Permalink: 🔌 Economy Plugin Compatibility" href="#-economy-plugin-compatibility"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">BedrockEconomy (Recommended)</h3><a id="user-content-bedrockeconomy-recommended" class="anchor" aria-label="Permalink: BedrockEconomy (Recommended)" href="#bedrockeconomy-recommended"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Modern async economy system</span>
+- <span class="pl-s">Better performance</span>
+- <span class="pl-s">Async operations</span>
+- <span class="pl-s">Active development</span>
+- <span class="pl-s">Latest PocketMine-MP support</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">EconomyAPI (Legacy Support)</h3><a id="user-content-economyapi-legacy-support" class="anchor" aria-label="Permalink: EconomyAPI (Legacy Support)" href="#economyapi-legacy-support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Classic economy plugin</span>
+- <span class="pl-s">Backwards compatibility</span>
+- <span class="pl-s">Synchronous operations</span>
+- <span class="pl-s">Stable and tested</span>
+- <span class="pl-s">Wide plugin support</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">📊 <strong>Version Comparison</strong>
+</h2><a id="user-content--version-comparison" class="anchor" aria-label="Permalink: 📊 Version Comparison" href="#-version-comparison"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>v1.0.0</th>
+<th>v2.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Economy Support</td>
+<td>libEco only</td>
+<td>BedrockEconomy + EconomyAPI</td>
+</tr>
+<tr>
+<td>Item Support</td>
+<td>Paper only</td>
+<td>Any Minecraft item</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>Basic</td>
+<td>Advanced anti-duplication</td>
+</tr>
+<tr>
+<td>UI</td>
+<td>FormAPI only</td>
+<td>FormAPI + fallback</td>
+</tr>
+<tr>
+<td>Permissions</td>
+<td>Non-standard</td>
+<td>Professional system</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Standard</td>
+<td>Optimized with async</td>
+</tr>
+<tr>
+<td>Poggit Compliance</td>
+<td>Partial</td>
+<td>Full compliance</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">📝 <strong>Changelog</strong>
+</h2><a id="user-content--changelog" class="anchor" aria-label="Permalink: 📝 Changelog" href="#-changelog"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">
+<strong>v2.0.0</strong> (Major Update)</h3><a id="user-content-v200-major-update" class="anchor" aria-label="Permalink: v2.0.0 (Major Update)" href="#v200-major-update"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h4 class="heading-element">🆕 <strong>New Features:</strong>
+</h4><a id="user-content--new-features" class="anchor" aria-label="Permalink: 🆕 New Features:" href="#-new-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>BedrockEconomy integration with async support</li>
+<li>StringToItemParser for universal item support</li>
+<li>Advanced anti-duplication security system</li>
+<li>Professional permission system (<code>banknote.use</code>)</li>
+<li>Enhanced FormAPI integration with fallback UI</li>
+<li>Comprehensive configuration system</li>
+<li>Poggit CI compliance and quality checks</li>
+</ul>
+<div class="markdown-heading"><h4 class="heading-element">🔄 <strong>Changes:</strong>
+</h4><a id="user-content--changes" class="anchor" aria-label="Permalink: 🔄 Changes:" href="#-changes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>BREAKING</strong>: Replaced libEco with BedrockEconomy</li>
+<li>
+<strong>BREAKING</strong>: Updated permission names for standardization</li>
+<li>Improved error handling and user feedback</li>
+<li>Cleaner code structure (removed unnecessary logging)</li>
+<li>Updated plugin.yml for modern standards</li>
+<li>Enhanced .poggit.yml configuration</li>
+</ul>
+<div class="markdown-heading"><h4 class="heading-element">🐛 <strong>Bug Fixes:</strong>
+</h4><a id="user-content--bug-fixes" class="anchor" aria-label="Permalink: 🐛 Bug Fixes:" href="#-bug-fixes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Fixed duplication exploits and security vulnerabilities</li>
+<li>Resolved interaction conflicts with storage blocks</li>
+<li>Improved NBT validation and item integrity checks</li>
+<li>Enhanced cooldown system reliability</li>
+</ul>
+<div class="markdown-heading"><h4 class="heading-element">🎯 <strong>Performance:</strong>
+</h4><a id="user-content--performance" class="anchor" aria-label="Permalink: 🎯 Performance:" href="#-performance"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Async economy operations for better server performance</li>
+<li>Optimized item validation and processing</li>
+<li>Reduced memory footprint and CPU usage</li>
+<li>Faster plugin initialization and loading</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">
+<strong>v1.0.0</strong> (Initial Release)</h3><a id="user-content-v100-initial-release" class="anchor" aria-label="Permalink: v1.0.0 (Initial Release)" href="#v100-initial-release"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Basic banknote functionality</li>
+<li>libEco integration</li>
+<li>FormAPI support</li>
+<li>Simple configuration</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">👨‍💻 <strong>Author &amp; Support</strong>
+</h2><a id="user-content--author--support" class="anchor" aria-label="Permalink: 👨‍💻 Author &amp; Support" href="#-author--support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Biswajit</strong> - Plugin Developer</p>
+<ul>
+<li>GitHub: <a href="https://github.com/GabBiswajit">@GabBiswajit</a>
+</li>
+<li>Repository: <a href="https://github.com/GabBiswajit/BankNote">BankNote</a>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">🆘 <strong>Support:</strong>
+</h3><a id="user-content--support" class="anchor" aria-label="Permalink: 🆘 Support:" href="#-support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>🐛 <strong>Bug Reports</strong>: <a href="https://github.com/GabBiswajit/BankNote/issues">GitHub Issues</a>
+</li>
+<li>💡 <strong>Feature Requests</strong>: <a href="https://github.com/GabBiswajit/BankNote/discussions">GitHub Discussions</a>
+</li>
+<li>⭐ <strong>Show Support</strong>: Star the repository</li>
+</ul>
+<hr>
+<p><strong>🎉 Thank you for using BankNote v2.0.0!</strong><br>
+<em>Making secure economy transactions simple and reliable for the PocketMine-MP community.</em></p>
