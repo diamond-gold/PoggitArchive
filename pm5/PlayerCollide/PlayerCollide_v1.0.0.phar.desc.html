@@ -1,0 +1,43 @@
+<div class="markdown-heading"><h1 class="heading-element">PlayerCollide</h1><a id="user-content-playercollide" class="anchor" aria-label="Permalink: PlayerCollide" href="#playercollide"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A PocketMine-MP plugin that enables player-to-player collision, applying knockback when players get too close to each other.</p>
+<div class="markdown-heading"><h1 class="heading-element">Features</h1><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Player Collision</strong>: Players within a configurable distance will collide.</li>
+<li>
+<strong>Configurable Knockback</strong>: Adjust the base knockback strength and a multiplier based on player speed.</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Default Config</h1><a id="user-content-default-config" class="anchor" aria-label="Permalink: Default Config" href="#default-config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> PlayerCollide Configuration</span>
+
+<span class="pl-c"><span class="pl-c">#</span> The maximum distance (in blocks) between two players for collision to occur.</span>
+<span class="pl-c"><span class="pl-c">#</span> Players closer than this distance will be considered for collision.</span>
+<span class="pl-ent">collision_distance</span>: <span class="pl-c1">0.8</span>
+
+<span class="pl-c"><span class="pl-c">#</span> The base knockback strength applied when players collide.</span>
+<span class="pl-c"><span class="pl-c">#</span> This is the minimum knockback applied.</span>
+<span class="pl-ent">knockback_strength</span>: <span class="pl-c1">0.1</span>
+
+<span class="pl-c"><span class="pl-c">#</span> The multiplier for knockback strength based on player speed.</span>
+<span class="pl-c"><span class="pl-c">#</span> If a player is moving fast, the knockback will be increased by this multiplier</span>
+<span class="pl-c"><span class="pl-c">#</span> multiplied by the player's speed.</span>
+<span class="pl-ent">speed_knockback_multiplier</span>: <span class="pl-c1">0.5</span></pre></div>
+<ul>
+<li>
+<strong>collision_distance</strong>: The maximum distance (in blocks) between two players for a collision to be registered. Players closer than this distance will experience knockback.</li>
+<li>
+<strong>knockback_strength</strong>: The base knockback strength applied to both players during a collision. This is the minimum knockback value.</li>
+<li>
+<strong>speed_knockback_multiplier</strong>: A multiplier that increases the knockback strength based on the player's movement speed. A higher value means faster-moving players will cause more knockback.</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Upcoming Features</h1><a id="user-content-upcoming-features" class="anchor" aria-label="Permalink: Upcoming Features" href="#upcoming-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Currently none planned. You can contribute or suggest for new features.</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Additional Notes</h1><a id="user-content-additional-notes" class="anchor" aria-label="Permalink: Additional Notes" href="#additional-notes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>If you find bugs or want to give suggestions, please visit <a href="https://github.com/AIPTU/PlayerCollide/issues">here</a>.</li>
+<li>We accept all contributions! If you want to contribute, please make a pull request in <a href="https://github.com/AIPTU/PlayerCollide/pulls">here</a>.</li>
+<li>Icons made from <a href="https://www.flaticon.com" rel="nofollow">www.flaticon.com</a>
+</li>
+</ul>

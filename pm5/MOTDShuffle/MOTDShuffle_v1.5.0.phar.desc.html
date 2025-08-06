@@ -1,0 +1,56 @@
+<div class="markdown-heading"><h1 class="heading-element">MOTDShuffle</h1><a id="user-content-motdshuffle" class="anchor" aria-label="Permalink: MOTDShuffle" href="#motdshuffle"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Gives a random MOTD shuffle, such as the Minecraft Featured Servers!</p>
+<blockquote>
+<p>According to the latest Minecraft Preview, MOTDs are making a comeback! So I may consider keeping this updated! Who knows...</p>
+</blockquote>
+<div class="markdown-heading"><h2 class="heading-element">Config</h2><a id="user-content-config" class="anchor" aria-label="Permalink: Config" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<pre><code>---
+# The amount of time in ticks that you wish for the MOTD Delay.
+# This doesn't make the client's query change,
+# This affects the amount of time the server sends the message.
+# -----------------------
+# One second is 20 ticks.
+# Default: 100
+MOTD Delay: 100
+
+# Here you can set if you want the shuffle "on", or "off".
+# It is required to use quotations.
+# Default: "on"
+MOTD Shuffle: "on"
+
+# The MOTD Messages.
+# You can add to as much as you like! 
+# Just make sure you copy it correctly.
+# VARIABLES:
+# Use these within the MOTD Messages below. 
+# {POCKETMINE_API}   - Displays the PocketMine version.
+# {SERVER_VERSION}   - Displays the Minecraft version for the server.
+# {ONLINE_PLAYERS}   - Displays the current amount of online players.
+# {MAX_PLAYERS}      - Displays the current Max players stated in server.properties.
+# {PREFIX}           - Displays the set prefix below.
+# {SUFFIX}           - Displays the set suffix below.
+Prefix: "Example #1"
+Suffix: "Example #2"
+
+MOTD Message:
+    - "&amp;aMessage 1&amp;r"
+    - "&amp;bMessage 2&amp;r"
+    - "&amp;cMessage 3&amp;r"
+    - "&amp;dMessage 4&amp;r"
+    - "&amp;eMessage 5&amp;r"
+
+# Config Version:
+# Do not touch the config version. 
+# It's only to allow changes without issue  
+Config Version: 1.0.0
+...
+</code></pre>
+<div class="markdown-heading"><h2 class="heading-element">Commands and Permissions</h2><a id="user-content-commands-and-permissions" class="anchor" aria-label="Permalink: Commands and Permissions" href="#commands-and-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>No Permissions or Commands are required. Simply Stop your server, edit the config.yml and start the server again.</p>
+<div class="markdown-heading"><h2 class="heading-element">Issues</h2><a id="user-content-issues" class="anchor" aria-label="Permalink: Issues" href="#issues"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Known Issue:</h3><a id="user-content-known-issue" class="anchor" aria-label="Permalink: Known Issue:" href="#known-issue"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<pre><code>Attention:
+Due to the way the plugin "CustomAlerts" works, it does not allow MOTDShuffle to work. Please stop sending me issues saying it's not working. Disable "CustomAlerts" first then try again. Then decide which plugin you'd rather have. It's up to you!
+</code></pre>
+<div class="markdown-heading"><h3 class="heading-element">Found some Bugs?</h3><a id="user-content-found-some-bugs" class="anchor" aria-label="Permalink: Found some Bugs?" href="#found-some-bugs"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you find some bugs, click the handy dandy Bugs button at the top of this page!</p>

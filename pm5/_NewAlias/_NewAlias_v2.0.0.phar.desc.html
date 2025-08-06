@@ -1,0 +1,32 @@
+<div class="markdown-heading"><h1 class="heading-element">Alias</h1><a id="user-content-alias" class="anchor" aria-label="Permalink: Alias" href="#alias"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Detects players possible alternatives accounts</p>
+<div class="markdown-heading"><h2 class="heading-element">Overview</h2><a id="user-content-overview" class="anchor" aria-label="Permalink: Overview" href="#overview"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin stores players <code>Address</code>, <code>ClientRandomId</code>, <code>DeviceId</code>, <code>SelfSignedId</code>, and <code>XUID</code>.
+Which will detect players accurately and hard for hackers to ban evade.</p>
+<p>Also it has a command and alert system to staff members.</p>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>In the configuration you can modify the <code>mode</code>, <code>data</code> and <code>alert</code>.</p>
+<p>Here's a example of the default configuration:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">alert</span>: <span class="pl-s">false </span><span class="pl-c"><span class="pl-c">#</span>Everyone that has alias.alerts permission</span>
+<span class="pl-ent">ban</span>: <span class="pl-s"><span class="pl-pds">'</span>You are banned<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">#</span>Ban message</span>
+<span class="pl-ent">mode</span>: <span class="pl-s">none </span><span class="pl-c"><span class="pl-c">#</span>Options: none, ban</span>
+<span class="pl-ent">data</span>: <span class="pl-s">['Address', 'ClientRandomId', 'DeviceId', 'SelfSignedId', 'XUID'] </span><span class="pl-c"><span class="pl-c">#</span>Check for matching data in which will alert the staff members or ban the player</span>
+<span class="pl-c"><span class="pl-c">#</span> Data that can be saved from a detected player, usually you would want to save the data that can't be spoofed, so it doesn't ban</span>
+<span class="pl-c"><span class="pl-c">#</span> innocent players, but you may also want to save legit players that attempt to ban evade.</span>
+<span class="pl-ent">save</span>: <span class="pl-s">['Address', 'XUID']</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Command</h2><a id="user-content-command" class="anchor" aria-label="Permalink: Command" href="#command"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><code>/alias &lt;name: target&gt;</code></p>
+<p>Only users with <code>alias.command.alias</code> permission can execute this command.</p>
+<p>Returns a list of possible players matching <code>IP</code>, <code>ClientRandomId</code>, <code>DeviceId</code>, <code>SelfSignedId</code>, and <code>XUID</code>.</p>
+<div class="markdown-heading"><h2 class="heading-element">API</h2><a id="user-content-api" class="anchor" aria-label="Permalink: API" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>You can use this plugin API by the following:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">JavierLeon9966</span>\<span class="pl-v">Alias</span>\<span class="pl-smi">Alias</span>;
+<span class="pl-k">use</span> <span class="pl-v">SOFe</span>\<span class="pl-v">AwaitGenerator</span>\<span class="pl-smi">Await</span>;
+
+Await::<span class="pl-en">f2c</span>(<span class="pl-k">function</span>() <span class="pl-k">use</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>){
+    <span class="pl-s1"><span class="pl-c1">$</span>database</span> = <span class="pl-k">yield</span> <span class="pl-k">from</span> Alias::<span class="pl-en">getDatabase</span>();
+    <span class="pl-s1"><span class="pl-c1">$</span>players</span> = <span class="pl-k">yield</span> <span class="pl-k">from</span> <span class="pl-s1"><span class="pl-c1">$</span>database</span>-&gt;<span class="pl-en">getPlayersMatchingAddressesFrom</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">getName</span>());
+    <span class="pl-c">//Do something with the players whose adresses match the given player's name</span>
+});</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Database</h2><a id="user-content-database" class="anchor" aria-label="Permalink: Database" href="#database"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>In the data folder of this plugin there is a file called <code>players.sqlite</code> which there's stored all the players that have logged into the server.</p>

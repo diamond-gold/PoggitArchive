@@ -1,0 +1,43 @@
+<p dir="auto">End-User Changes</p>
+<ul dir="auto">
+<li>Data Storage: Player data is now stored in a new, more organized format. Old data will be automatically migrated to the new format.</li>
+<li>Configuration: The config.yml file has been updated with a new structure. Please review the new configuration options.</li>
+</ul>
+<p dir="auto">Developer API Changes</p>
+<ul dir="auto">
+<li>Data Hashing: All data saved to the database, except for usernames, is now hashed using SHA512.</li>
+<li>Database Schema: The database schema has been updated to support the new data hashing. The Players table has been replaced with Addresses,<br>
+ClientRandomIds, DeviceIds, SelfSignedIds, and XUIDs. The columns that store hashed data have been changed to VARCHAR(128).</li>
+<li>Asynchronous Operations: Database operations are now fully asynchronous, using await-generator.</li>
+<li>Configuration: The plugin now uses a structured configuration system with libMarshal.</li>
+<li>API Version: The plugin API version has been updated to 5.0.0.</li>
+<li>Dependencies: The plugin now uses composer to manage dependencies.</li>
+<li>CI/CD: The plugin now uses GitHub Actions for CI/CD.</li>
+<li>Removed <code class="notranslate">.poggit.yml</code>: The .poggit.yml file has been removed in favor of GitHub Actions.</li>
+<li>Updated <code class="notranslate">plugin.yml</code>: The plugin.yml file has been updated with the new API version and dependencies.</li>
+</ul>
+<p dir="auto">New Database Class</p>
+<p dir="auto">The JavierLeon9966\Alias\database\Database class is new and provides the following public methods for interacting with the database:</p>
+<ul dir="auto">
+<li>public static function create(RawQueries $queries): Generator</li>
+<li>public function addAddress(string $username, string $address): Generator</li>
+<li>public function addClientRandomId(string $username, string $clientRandomId): Generator</li>
+<li>public function addDeviceId(string $username, string $deviceId): Generator</li>
+<li>public function addSelfSignedId(string $username, string $selfSignedId): Generator</li>
+<li>public function addXuid(string $username, string $xuid): Generator</li>
+<li>public function getPlayersMatchingAddressesFrom(string $username, ?string $extraAddress = null): Generator</li>
+<li>public function getPlayersMatchingClientRandomIdsFrom(string $username, ?string $extraClientRandomId = null): Generator</li>
+<li>public function getPlayersMatchingDeviceIdsFrom(string $username, ?string $extraDeviceId = null): Generator</li>
+<li>public function getPlayersMatchingSelfSignedIdsFrom(string $username, ?string $extraSelfSignedId = null): Generator</li>
+<li>public function getPlayersMatchingXUIDFrom(string $username, ?string $extraXuid = null): Generator</li>
+</ul>
+<p dir="auto">Method Signature Changes</p>
+<ul dir="auto">
+<li><code class="notranslate">JavierLeon9966\Alias\Alias</code>:
+<ul dir="auto">
+<li>The main plugin class was heavily refactored to be asynchronous.</li>
+<li>Added getDatabase(): Generator to get the database instance.</li>
+<li>Event handlers like onPlayerLogin are now asynchronous.</li>
+</ul>
+</li>
+</ul>

@@ -1,11 +1,11 @@
 # PlaceholderAPI
-<img src="https://raw.githubusercontent.com/MohamadRZ4/Placeholder/2d1263e08506197b01a387bce249d551c008112b/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/MohamadRZ4/Placeholder/8f904463f80aab6d74a2df800d202721f6f995dc/icon.png" width="128" height="128" />
 
 ## A powerful and flexible placeholder system for PocketMine-MP.
 ```properties
-Version: 2.0.2
+Version: 3.0.0
     API: 5.0.0
-    Updated: 04-01-2025 23:54:35 UTC
+    Updated: 05-08-2025 04:54:01 UTC
 Repo: https://github.com/MohamadRZ4/Placeholder
 License: MIT
 Categories: General,API plugins,Developer Tools

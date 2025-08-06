@@ -1,0 +1,188 @@
+<div class="markdown-heading"><h1 class="heading-element">PlaceholderAPI</h1><a id="user-content-placeholderapi" class="anchor" aria-label="Permalink: PlaceholderAPI" href="#placeholderapi"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A powerful and flexible placeholder plugin for PocketMine-MP Minecraft servers, enabling dynamic data integration in chat, scoreboards, and other plugins.</p>
+<div class="markdown-heading"><h2 class="heading-element">Overview</h2><a id="user-content-overview" class="anchor" aria-label="Permalink: Overview" href="#overview"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>PlaceholderAPI allows server administrators to use dynamic placeholders (e.g., <code>%player_name%</code>, <code>%server_online_players%</code>) to display real-time information about players, server status, and time. It includes built-in expansions and supports custom ones for developers to extend functionality.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Dynamic Placeholders</strong>: Replace placeholders with real-time data.</li>
+<li>
+<strong>Built-in Expansions</strong>: Player, server, and time data out of the box.</li>
+<li>
+<strong>Player Data Tracking</strong>: Tracks session data like join time.</li>
+<li>
+<strong>Commands</strong>: Manage and test placeholders easily.</li>
+<li>
+<strong>Developer-Friendly</strong>: Extendable with custom expansions.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/papi reload</code>: Reloads the plugin configuration.</li>
+<li>
+<code>/papi list</code>: Lists all registered expansions.</li>
+<li>
+<code>/papi parse &lt;text&gt;</code>: Parses placeholders in the given text.</li>
+<li>
+<code>/papi test &lt;expansion&gt; &lt;placeholder&gt;</code>: Tests a specific placeholder.</li>
+</ul>
+<p><strong>Permission</strong>: <code>placeholderapi.admin</code> (required for commands).</p>
+<div class="markdown-heading"><h2 class="heading-element">Default Expansions</h2><a id="user-content-default-expansions" class="anchor" aria-label="Permalink: Default Expansions" href="#default-expansions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Player Expansion (<code>player</code>)</h3><a id="user-content-player-expansion-player" class="anchor" aria-label="Permalink: Player Expansion (player)" href="#player-expansion-player"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>%player_name%</code>: Player's username.</li>
+<li>
+<code>%player_display_name%</code>: Player's display name.</li>
+<li>
+<code>%player_ping%</code>: Player's ping.</li>
+<li>
+<code>%player_health%</code>: Current health.</li>
+<li>
+<code>%player_max_health%</code>: Maximum health.</li>
+<li>
+<code>%player_food%</code>: Food level.</li>
+<li>
+<code>%player_level%</code>: World name.</li>
+<li>
+<code>%player_gamemode%</code>: Current gamemode.</li>
+<li>
+<code>%player_ip%</code>: Player's IP address.</li>
+<li>
+<code>%player_x%</code>, <code>%player_y%</code>, <code>%player_z%</code>: Coordinates.</li>
+<li>
+<code>%player_is_op%</code>: Operator status (<code>true</code>/<code>false</code>).</li>
+<li>
+<code>%player_name_format%</code>: Rank-based name color (requires RankSystem).</li>
+<li>
+<code>%player_session_time%</code>: Session duration (HH:MM:SS).</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Server Expansion (<code>server</code>)</h3><a id="user-content-server-expansion-server" class="anchor" aria-label="Permalink: Server Expansion (server)" href="#server-expansion-server"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>%server_name%</code>: Server MOTD.</li>
+<li>
+<code>%server_ip%</code>: Server IP.</li>
+<li>
+<code>%server_port%</code>: Server port.</li>
+<li>
+<code>%server_max_players%</code>: Max player limit.</li>
+<li>
+<code>%server_online_players%</code>: Current online players.</li>
+<li>
+<code>%server_version%</code>: Server version.</li>
+<li>
+<code>%server_tps%</code>: Ticks per second.</li>
+<li>
+<code>%server_load%</code>: Tick usage percentage.</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Time Expansion (<code>time</code>)</h3><a id="user-content-time-expansion-time" class="anchor" aria-label="Permalink: Time Expansion (time)" href="#time-expansion-time"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>%time_current%</code>: Current time (e.g., <code>14:30:45</code>).</li>
+<li>
+<code>%time_date%</code>: Current date (e.g., <code>2025-07-23</code>).</li>
+<li>
+<code>%time_datetime%</code>: Date and time (e.g., <code>2025-07-23 14:30:45</code>).</li>
+<li>
+<code>%time_timestamp%</code>: Unix timestamp.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Parsing Placeholders</h2><a id="user-content-parsing-placeholders" class="anchor" aria-label="Permalink: Parsing Placeholders" href="#parsing-placeholders"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>To use placeholders in your plugin, call the <code>parsePlaceholders</code> method from the <code>PlaceholderAPI</code> class. This method processes a string containing placeholders and replaces them with their corresponding values.</p>
+<div class="markdown-heading"><h3 class="heading-element">Method Signature</h3><a id="user-content-method-signature" class="anchor" aria-label="Permalink: Method Signature" href="#method-signature"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">public</span> <span class="pl-k">function</span> parsePlaceholders(<span class="pl-smi">string</span> <span class="pl-s1"><span class="pl-c1">$</span>text</span>, ?<span class="pl-smi"><span class="pl-smi">Player</span></span> <span class="pl-s1"><span class="pl-c1">$</span>player</span> = <span class="pl-c1">null</span>): <span class="pl-smi">string</span></pre></div>
+<ul>
+<li>
+<strong>Parameters</strong>:
+<ul>
+<li>
+<code>$text</code>: The input string containing placeholders (e.g., <code>Hello %player_name%!</code>).</li>
+<li>
+<code>$player</code>: An optional <code>Player</code> object for player-specific placeholders. Pass <code>null</code> for non-player-specific placeholders (e.g., server or time).</li>
+</ul>
+</li>
+<li>
+<strong>Returns</strong>: The string with placeholders replaced by their values.</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">How It Works</h3><a id="user-content-how-it-works" class="anchor" aria-label="Permalink: How It Works" href="#how-it-works"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The method uses a regular expression to match placeholders in the format <code>%identifier_placeholder%</code> (e.g., <code>%player_name%</code>). It then calls the <code>onPlaceholderRequest</code> method of the corresponding expansion to retrieve the value. If the placeholder or expansion is invalid, the original placeholder text is returned unchanged.</p>
+<div class="markdown-heading"><h3 class="heading-element">Example Usage</h3><a id="user-content-example-usage" class="anchor" aria-label="Permalink: Example Usage" href="#example-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">MohamadRZ4</span>\<span class="pl-v">Placeholder</span>\<span class="pl-smi">PlaceholderAPI</span>;
+<span class="pl-k">use</span> <span class="pl-v">pocketmine</span>\<span class="pl-v">player</span>\<span class="pl-smi">Player</span>;
+
+<span class="pl-k">function</span> <span class="pl-en">displayWelcomeMessage</span>(<span class="pl-smi"><span class="pl-smi">Player</span></span> <span class="pl-s1"><span class="pl-c1">$</span>player</span>): <span class="pl-smi">void</span> {
+    <span class="pl-s1"><span class="pl-c1">$</span>placeholderAPI</span> = PlaceholderAPI::<span class="pl-en">getAPI</span>();
+    <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>placeholderAPI</span> !== <span class="pl-c1">null</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>message</span> = <span class="pl-s1"><span class="pl-c1">$</span>placeholderAPI</span>-&gt;<span class="pl-en">parsePlaceholders</span>(
+            <span class="pl-s">"<span class="pl-s">Welcome %player_name% to %server_name%! Time: %time_current%</span>"</span>,
+            <span class="pl-s1"><span class="pl-c1">$</span>player</span>
+        );
+        <span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">sendMessage</span>(<span class="pl-s1"><span class="pl-c1">$</span>message</span>);
+    }
+}</pre></div>
+<p><strong>Output</strong> (example):</p>
+<pre><code>Welcome Steve to MyServer! Time: 14:30:45
+</code></pre>
+<div class="markdown-heading"><h3 class="heading-element">Notes on Parsing</h3><a id="user-content-notes-on-parsing" class="anchor" aria-label="Permalink: Notes on Parsing" href="#notes-on-parsing"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Ensure the <code>PlaceholderAPI</code> plugin is enabled and loaded before calling <code>getAPI()</code>.</li>
+<li>Placeholders are case-sensitive.</li>
+<li>For player-specific placeholders, always pass a valid <code>Player</code> object.</li>
+<li>Non-existent placeholders remain unchanged in the output string.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">For Developers</h2><a id="user-content-for-developers" class="anchor" aria-label="Permalink: For Developers" href="#for-developers"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Create custom expansions by extending <code>PlaceholderExpansion</code>. Implement required methods: <code>getIdentifier</code>, <code>getVersion</code>, <code>getAuthor</code>, and <code>onPlaceholderRequest</code>.</p>
+<div class="markdown-heading"><h3 class="heading-element">Example: Custom Expansion</h3><a id="user-content-example-custom-expansion" class="anchor" aria-label="Permalink: Example: Custom Expansion" href="#example-custom-expansion"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
+
+<span class="pl-k">namespace</span> <span class="pl-v">MyPlugin</span>\<span class="pl-v">Expansion</span>;
+
+<span class="pl-k">use</span> <span class="pl-v">MohamadRZ4</span>\<span class="pl-v">Placeholder</span>\<span class="pl-v">expansion</span>\<span class="pl-smi">PlaceholderExpansion</span>;
+<span class="pl-k">use</span> <span class="pl-v">MohamadRZ4</span>\<span class="pl-v">Placeholder</span>\<span class="pl-smi">PlaceholderAPI</span>;
+<span class="pl-k">use</span> <span class="pl-v">pocketmine</span>\<span class="pl-v">player</span>\<span class="pl-smi">Player</span>;
+
+<span class="pl-k">class</span> PlayTimeExpansion <span class="pl-k">extends</span> PlaceholderExpansion {
+
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getIdentifier</span>(): <span class="pl-smi">string</span> {
+        <span class="pl-k">return</span> <span class="pl-s">"<span class="pl-s">playtime</span>"</span>;
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getVersion</span>(): <span class="pl-smi">string</span> {
+        <span class="pl-k">return</span> <span class="pl-s">"<span class="pl-s">1.0.0</span>"</span>;
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getAuthor</span>(): <span class="pl-smi">string</span> {
+        <span class="pl-k">return</span> <span class="pl-s">"<span class="pl-s">YourName</span>"</span>;
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onPlaceholderRequest</span>(?<span class="pl-smi"><span class="pl-smi">Player</span></span> <span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-smi">string</span> <span class="pl-s1"><span class="pl-c1">$</span>placeholder</span>): ?<span class="pl-smi">string</span> {
+        <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>player</span> === <span class="pl-c1">null</span>) {
+            <span class="pl-k">return</span> <span class="pl-c1">null</span>;
+        }
+
+        <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>placeholder</span> === <span class="pl-s">"<span class="pl-s">total_hours</span>"</span>) {
+            <span class="pl-s1"><span class="pl-c1">$</span>joinTime</span> = <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">plugin</span>-&gt;<span class="pl-en">getPlayerData</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">getName</span>())[<span class="pl-s">"<span class="pl-s">join_time</span>"</span>] jQuery32106993173049449735_1753261601640 <span class="pl-en">time</span>();
+            <span class="pl-s1"><span class="pl-c1">$</span>totalSeconds</span> = <span class="pl-en">time</span>() - <span class="pl-s1"><span class="pl-c1">$</span>joinTime</span>;
+            <span class="pl-s1"><span class="pl-c1">$</span>hours</span> = <span class="pl-en">floor</span>(<span class="pl-s1"><span class="pl-c1">$</span>totalSeconds</span> / <span class="pl-c1">3600</span>);
+            <span class="pl-k">return</span> (<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>hours</span>;
+        }
+
+        <span class="pl-k">return</span> <span class="pl-c1">null</span>;
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onRegister</span>(<span class="pl-smi"><span class="pl-smi">PlaceholderAPI</span></span> <span class="pl-s1"><span class="pl-c1">$</span>plugin</span>): <span class="pl-smi">void</span> {
+        <span class="pl-smi">parent</span>::<span class="pl-en">onRegister</span>(<span class="pl-s1"><span class="pl-c1">$</span>plugin</span>);
+    }
+}</pre></div>
+<p>Register the expansion:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>placeholderAPI</span> = PlaceholderAPI::<span class="pl-en">getAPI</span>();
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>placeholderAPI</span> !== <span class="pl-c1">null</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>placeholderAPI</span>-&gt;<span class="pl-en">registerExpansion</span>(<span class="pl-k">new</span> <span class="pl-v">PlayTimeExpansion</span>());
+}</pre></div>
+<p>Use <code>%playtime_total_hours%</code> to display total hours played.</p>
+<div class="markdown-heading"><h2 class="heading-element">Notes</h2><a id="user-content-notes" class="anchor" aria-label="Permalink: Notes" href="#notes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Placeholders are case-sensitive (e.g., <code>%player_name%</code>).</li>
+<li>Updates every 20 ticks (1 second) for real-time data.</li>
+<li>Ensure dependencies are installed for full functionality.</li>
+</ul>
