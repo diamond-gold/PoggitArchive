@@ -1,0 +1,322 @@
+<div class="markdown-heading"><h1 class="heading-element">CustomGUI Plugin</h1><a id="user-content-customgui-plugin" class="anchor" aria-label="Permalink: CustomGUI Plugin" href="#customgui-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A powerful and flexible custom GUI system for PocketMine-MP 5.x that allows server administrators to create interactive graphical user interfaces with various actions and customizations.</p>
+<div class="markdown-heading"><h2 class="heading-element">🌟 Features</h2><a id="user-content--features" class="anchor" aria-label="Permalink: 🌟 Features" href="#-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">🎨 <strong>Visual GUI Builder</strong>
+</h3><a id="user-content--visual-gui-builder" class="anchor" aria-label="Permalink: 🎨 Visual GUI Builder" href="#-visual-gui-builder"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>In-game GUI Editor</strong>: Create and edit GUIs directly in-game with a visual grid interface</li>
+<li>
+<strong>Drag &amp; Drop Interface</strong>: Intuitive 6x9 grid layout for easy item placement</li>
+<li>
+<strong>Real-time Preview</strong>: See your GUI changes instantly as you build</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">⚡ <strong>Action System</strong>
+</h3><a id="user-content--action-system" class="anchor" aria-label="Permalink: ⚡ Action System" href="#-action-system"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Command Actions</strong>: Execute server commands when players click items</li>
+<li>
+<strong>Teleport Actions</strong>: Teleport players to specific coordinates</li>
+<li>
+<strong>GUI Navigation</strong>: Open other GUIs from within a GUI (nested navigation)</li>
+<li>
+<strong>Multiple Actions</strong>: Assign multiple actions to a single item slot</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">📝 <strong>Custom Lore System</strong>
+</h3><a id="user-content--custom-lore-system" class="anchor" aria-label="Permalink: 📝 Custom Lore System" href="#-custom-lore-system"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Dynamic Lore</strong>: Add custom titles and descriptions to any item</li>
+<li>
+<strong>Interactive Hints</strong>: Show additional information on item hover</li>
+<li>
+<strong>Rich Text Support</strong>: Use color codes and formatting in lore text</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">🔧 <strong>Management Features</strong>
+</h3><a id="user-content--management-features" class="anchor" aria-label="Permalink: 🔧 Management Features" href="#-management-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>GUI Management Menu</strong>: Comprehensive in-game GUI management system</li>
+<li>
+<strong>Action Management</strong>: Add, edit, and remove actions from any slot</li>
+<li>
+<strong>Lore Management</strong>: Manage custom lore for items</li>
+<li>
+<strong>GUI Deletion</strong>: Safely remove unwanted GUIs</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">🚀 <strong>Performance &amp; Reliability</strong>
+</h3><a id="user-content--performance--reliability" class="anchor" aria-label="Permalink: 🚀 Performance &amp; Reliability" href="#-performance--reliability"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Caching System</strong>: Server-wide and per-player GUI caching for optimal performance</li>
+<li>
+<strong>Database Support</strong>: SQLite and MySQL database support for data persistence</li>
+<li>
+<strong>Error Handling</strong>: Robust error handling with user-friendly messages</li>
+<li>
+<strong>Permission System</strong>: Granular permission control for different user roles</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">📋 Requirements</h2><a id="user-content--requirements" class="anchor" aria-label="Permalink: 📋 Requirements" href="#-requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>PocketMine-MP</strong>: Version 5.0.0 or higher</li>
+<li>
+<strong>PHP</strong>: Version 8.0 or higher</li>
+<li>
+<strong>Database</strong>: SQLite (included) or MySQL (optional)</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">🛠️ Installation</h2><a id="user-content-️-installation" class="anchor" aria-label="Permalink: 🛠️ Installation" href="#️-installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">1. Download the Plugin</h3><a id="user-content-1-download-the-plugin" class="anchor" aria-label="Permalink: 1. Download the Plugin" href="#1-download-the-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the latest release from the releases page</li>
+<li>Extract the plugin files to your server's <code>plugins</code> folder</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element">2. Install Dependencies</h3><a id="user-content-2-install-dependencies" class="anchor" aria-label="Permalink: 2. Install Dependencies" href="#2-install-dependencies"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin includes all necessary libraries:</p>
+<ul>
+<li>
+<strong>InvMenu</strong>: For inventory menu functionality</li>
+<li>
+<strong>libasynql</strong>: For database operations</li>
+<li>
+<strong>pmforms</strong>: For form handling</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">3. Configure the Plugin</h3><a id="user-content-3-configure-the-plugin" class="anchor" aria-label="Permalink: 3. Configure the Plugin" href="#3-configure-the-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Start your server once to generate the configuration files</li>
+<li>Edit <code>plugins/Customgui/config.yml</code> to configure your database settings</li>
+<li>Restart your server</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element">4. Set Up Permissions</h3><a id="user-content-4-set-up-permissions" class="anchor" aria-label="Permalink: 4. Set Up Permissions" href="#4-set-up-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Configure permissions in your permission plugin:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">permissions</span>:
+  <span class="pl-ent">cg.use</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows use of /customgui command<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">cg.admin</span>:
+    <span class="pl-ent">description</span>: <span class="pl-s"><span class="pl-pds">"</span>Allows access to the GUI management menu<span class="pl-pds">"</span></span>
+    <span class="pl-ent">default</span>: <span class="pl-s">op</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">🎮 Usage</h2><a id="user-content--usage" class="anchor" aria-label="Permalink: 🎮 Usage" href="#-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Commands</h3><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/customgui</code></td>
+<td><code>cg.use</code></td>
+<td>Opens the main GUI management menu</td>
+</tr>
+<tr>
+<td><code>/customgui &lt;gui_name&gt;</code></td>
+<td><code>cg.use</code></td>
+<td>Opens a specific GUI by name</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">Creating Your First GUI</h3><a id="user-content-creating-your-first-gui" class="anchor" aria-label="Permalink: Creating Your First GUI" href="#creating-your-first-gui"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<p><strong>Access the Management Menu</strong></p>
+<pre><code>/customgui
+</code></pre>
+</li>
+<li>
+<p><strong>Create a New GUI</strong></p>
+<ul>
+<li>Select "Create GUI" from the main menu</li>
+<li>Enter a name for your GUI (e.g., "welcome_menu")</li>
+<li>Click "Submit"</li>
+</ul>
+</li>
+<li>
+<p><strong>Design Your GUI</strong></p>
+<ul>
+<li>Use the 6x9 grid to place items</li>
+<li>Right-click to place items in slots</li>
+<li>Items will be saved automatically</li>
+</ul>
+</li>
+<li>
+<p><strong>Add Actions</strong></p>
+<ul>
+<li>Click on an item slot to add actions</li>
+<li>Choose from Command, Teleport, or Open GUI actions</li>
+<li>Configure the action parameters</li>
+</ul>
+</li>
+<li>
+<p><strong>Add Custom Lore</strong></p>
+<ul>
+<li>Add descriptive titles and descriptions to items</li>
+<li>Use color codes for formatting (e.g., <code>§a</code> for green)</li>
+</ul>
+</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element">Action Types</h3><a id="user-content-action-types" class="anchor" aria-label="Permalink: Action Types" href="#action-types"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h4 class="heading-element">Command Actions</h4><a id="user-content-command-actions" class="anchor" aria-label="Permalink: Command Actions" href="#command-actions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Execute server commands when players click items.</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">type</span>: <span class="pl-s">command</span>
+<span class="pl-ent">command</span>: <span class="pl-s"><span class="pl-pds">"</span>spawn<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h4 class="heading-element">Teleport Actions</h4><a id="user-content-teleport-actions" class="anchor" aria-label="Permalink: Teleport Actions" href="#teleport-actions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Teleport players to specific coordinates.</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">type</span>: <span class="pl-s">teleport</span>
+<span class="pl-ent">x</span>: <span class="pl-c1">100.5</span>
+<span class="pl-ent">y</span>: <span class="pl-c1">64</span>
+<span class="pl-ent">z</span>: <span class="pl-c1">200.5</span></pre></div>
+<div class="markdown-heading"><h4 class="heading-element">Open GUI Actions</h4><a id="user-content-open-gui-actions" class="anchor" aria-label="Permalink: Open GUI Actions" href="#open-gui-actions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Open another GUI when players click items.</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">type</span>: <span class="pl-s">open_gui</span>
+<span class="pl-ent">gui_name</span>: <span class="pl-s"><span class="pl-pds">"</span>shop_menu<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">⚙️ Configuration</h2><a id="user-content-️-configuration" class="anchor" aria-label="Permalink: ⚙️ Configuration" href="#️-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Database Configuration</h3><a id="user-content-database-configuration" class="anchor" aria-label="Permalink: Database Configuration" href="#database-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin supports both SQLite and MySQL databases:</p>
+<div class="markdown-heading"><h4 class="heading-element">SQLite (Default)</h4><a id="user-content-sqlite-default" class="anchor" aria-label="Permalink: SQLite (Default)" href="#sqlite-default"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">database</span>:
+  <span class="pl-ent">type</span>: <span class="pl-s">sqlite</span>
+  <span class="pl-ent">sqlite</span>:
+    <span class="pl-ent">file</span>: <span class="pl-s">customgui.sqlite</span>
+  <span class="pl-ent">worker-limit</span>: <span class="pl-c1">1</span></pre></div>
+<div class="markdown-heading"><h4 class="heading-element">MySQL</h4><a id="user-content-mysql" class="anchor" aria-label="Permalink: MySQL" href="#mysql"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">database</span>:
+  <span class="pl-ent">type</span>: <span class="pl-s">mysql</span>
+  <span class="pl-ent">mysql</span>:
+    <span class="pl-ent">host</span>: <span class="pl-s">127.0.0.1</span>
+    <span class="pl-ent">username</span>: <span class="pl-s">your_username</span>
+    <span class="pl-ent">password</span>: <span class="pl-s">your_password</span>
+    <span class="pl-ent">schema</span>: <span class="pl-s">your_database</span>
+  <span class="pl-ent">worker-limit</span>: <span class="pl-c1">2</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">GUI Storage</h3><a id="user-content-gui-storage" class="anchor" aria-label="Permalink: GUI Storage" href="#gui-storage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>GUIs are stored as JSON files in the <code>plugin_data/customgui/guis/</code> directory. Each GUI has its own file with the structure:</p>
+<div class="highlight highlight-source-json"><pre>{
+  <span class="pl-ent">"0,0"</span>: {
+    <span class="pl-ent">"nbt"</span>: <span class="pl-s"><span class="pl-pds">"</span>item_nbt_data<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"action"</span>: {
+      <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>command<span class="pl-pds">"</span></span>,
+      <span class="pl-ent">"command"</span>: <span class="pl-s"><span class="pl-pds">"</span>spawn<span class="pl-pds">"</span></span>
+    },
+    <span class="pl-ent">"lore"</span>: {
+      <span class="pl-ent">"title"</span>: <span class="pl-s"><span class="pl-pds">"</span>Spawn<span class="pl-pds">"</span></span>,
+      <span class="pl-ent">"description"</span>: <span class="pl-s"><span class="pl-pds">"</span>Return to spawn<span class="pl-pds">"</span></span>
+    }
+  }
+}</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">🔄 Migration from Old Versions</h2><a id="user-content--migration-from-old-versions" class="anchor" aria-label="Permalink: 🔄 Migration from Old Versions" href="#-migration-from-old-versions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you're upgrading from an older version of the plugin, your GUI data will be automatically migrated from the old <code>resources/guis/</code> directory to the new <code>plugin_data/customgui/guis/</code> directory.</p>
+<div class="markdown-heading"><h3 class="heading-element">Manual Migration</h3><a id="user-content-manual-migration" class="anchor" aria-label="Permalink: Manual Migration" href="#manual-migration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If automatic migration doesn't work, you can manually migrate your data:</p>
+<ol>
+<li>
+<strong>Manual File Copy</strong>
+<ul>
+<li>Copy all <code>.json</code> files from <code>plugins/Customgui/resources/guis/</code>
+</li>
+<li>Paste them into <code>plugin_data/customgui/guis/</code>
+</li>
+<li>Restart your server</li>
+</ul>
+</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element">Why This Change?</h3><a id="user-content-why-this-change" class="anchor" aria-label="Permalink: Why This Change?" href="#why-this-change"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This change was necessary because:</p>
+<ul>
+<li>
+<strong>PHAR Compatibility</strong>: When the plugin is compiled into a .phar file, the <code>resources/</code> directory becomes read-only</li>
+<li>
+<strong>Better Organization</strong>: Plugin data is now properly stored in the plugin's data folder</li>
+<li>
+<strong>Server Standards</strong>: Follows PocketMine-MP best practices for data storage</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">🎯 Examples</h2><a id="user-content--examples" class="anchor" aria-label="Permalink: 🎯 Examples" href="#-examples"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Welcome Menu GUI</h3><a id="user-content-welcome-menu-gui" class="anchor" aria-label="Permalink: Welcome Menu GUI" href="#welcome-menu-gui"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Create a welcome menu with navigation options:</p>
+<ol>
+<li>
+<strong>Spawn Button</strong>
+<ul>
+<li>Item: Compass</li>
+<li>Action: Teleport to spawn coordinates</li>
+<li>Lore: "§a§lSPAWN§r\n§7Click to return to spawn"</li>
+</ul>
+<p align="center">
+</p>
+</li>
+</ol>
+  <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/NetherByte233/images/blob/main/spawn.jpg?raw=true"><img src="https://github.com/NetherByte233/images/raw/main/spawn.jpg?raw=true" width="100%" style="max-width: 100%;"></a></p>
+
+<ol start="2">
+<li>
+<strong>Shop Button</strong>
+<ul>
+<li>Item: Emerald</li>
+<li>Action: Open GUI "shop_menu"</li>
+<li>Lore: "§a§lSHOP§r\n§7Click to open the shop"</li>
+</ul>
+</li>
+</ol>
+  <p align="center">
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/NetherByte233/images/blob/main/shop.jpg?raw=true"><img src="https://github.com/NetherByte233/images/raw/main/shop.jpg?raw=true" width="45%" style="max-width: 100%;"></a>
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/NetherByte233/images/blob/main/shop_menu.jpg?raw=true"><img src="https://github.com/NetherByte233/images/raw/main/shop_menu.jpg?raw=true" width="45%" style="max-width: 100%;"></a>
+</p>
+3. **Rules Button**
+   - Item: Book
+   - Action: Command "rules"
+   - Lore: "§e§lRULES§r\n§7Click to view server rules
+   <p align="center">
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/NetherByte233/images/blob/main/rules.jpg?raw=true"><img src="https://github.com/NetherByte233/images/raw/main/rules.jpg?raw=true" width="100%" style="max-width: 100%;"></a>
+</p>
+<div class="markdown-heading"><h3 class="heading-element">Admin Panel GUI</h3><a id="user-content-admin-panel-gui" class="anchor" aria-label="Permalink: Admin Panel GUI" href="#admin-panel-gui"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Create an admin panel with management tools:</p>
+<ol>
+<li>
+<p><strong>Player Management</strong></p>
+<ul>
+<li>Item: Player Head</li>
+<li>Action: Open GUI "player_management"</li>
+<li>Lore: "§c§lPLAYER MANAGEMENT§r\n§7Manage players and permissions"</li>
+</ul>
+</li>
+<li>
+<p><strong>Server Control</strong></p>
+<ul>
+<li>Item: Redstone</li>
+<li>Action: Command "server status"</li>
+<li>Lore: "§c§lSERVER CONTROL§r\n§7View server status and controls"</li>
+</ul>
+</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">🔧 Advanced Features</h2><a id="user-content--advanced-features" class="anchor" aria-label="Permalink: 🔧 Advanced Features" href="#-advanced-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Nested GUI Navigation</h3><a id="user-content-nested-gui-navigation" class="anchor" aria-label="Permalink: Nested GUI Navigation" href="#nested-gui-navigation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Create complex menu systems with multiple levels:</p>
+<ul>
+<li>Main Menu → Category Menu → Item Menu</li>
+<li>Each level can have its own actions and navigation</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Multiple Actions per Slot</h3><a id="user-content-multiple-actions-per-slot" class="anchor" aria-label="Permalink: Multiple Actions per Slot" href="#multiple-actions-per-slot"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Assign multiple actions to a single item:</p>
+<div class="highlight highlight-source-json"><pre>{
+  <span class="pl-ent">"action"</span>: [
+    {
+      <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>command<span class="pl-pds">"</span></span>,
+      <span class="pl-ent">"command"</span>: <span class="pl-s"><span class="pl-pds">"</span>spawn<span class="pl-pds">"</span></span>
+    },
+    {
+      <span class="pl-ent">"type"</span>: <span class="pl-s"><span class="pl-pds">"</span>teleport<span class="pl-pds">"</span></span>,
+      <span class="pl-ent">"x"</span>: <span class="pl-c1">100</span>,
+      <span class="pl-ent">"y"</span>: <span class="pl-c1">64</span>,
+      <span class="pl-ent">"z"</span>: <span class="pl-c1">200</span>
+    }
+  ]
+}</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Dynamic Content</h3><a id="user-content-dynamic-content" class="anchor" aria-label="Permalink: Dynamic Content" href="#dynamic-content"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>GUIs automatically reload when files are modified</li>
+<li>Cache system ensures optimal performance</li>
+<li>Real-time updates without server restarts</li>
+</ul>

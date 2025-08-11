@@ -1,0 +1,78 @@
+<div class="markdown-heading"><h1 class="heading-element">User changes</h1><a id="user-content-user-changes" class="anchor" aria-label="Permalink: User changes" href="#user-changes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Added support for Minecraft: Bedrock Edition 1.21.0-1.21.93.</li>
+<li>Added feature to update the kit contents and change its name with /kit update &lt;kit: string&gt; [newName: string]</li>
+<li>Added feature to disable or enable kits with /kit enable &lt;kit: string&gt; and /kit disable &lt;kit: string&gt;</li>
+<li>Fixed not sending the next players in queue when a game ends</li>
+<li>Fixed queue fetching players with specific UUIDs, leading to a crash</li>
+<li>Fixed using the plugin with MySQL, leading to a deadlock and not saving data</li>
+<li>Enforced the usage of one worker when using SQLite3</li>
+<li>Lower memory overhead since the data is only fetched when needed</li>
+<li>The config messages can now use specific placeholders such as {red}, {aqua}, {player name}, etc.</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">API Changelog</h1><a id="user-content-api-changelog" class="anchor" aria-label="Permalink: API Changelog" href="#api-changelog"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This update introduces several significant changes to the ProperDuels API, focusing on asynchronous operations, a more robust data layer, and new kit management features.</p>
+<div class="markdown-heading"><h2 class="heading-element">Major Changes &amp; New Features</h2><a id="user-content-major-changes--new-features" class="anchor" aria-label="Permalink: Major Changes &amp; New Features" href="#major-changes--new-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Asynchronous Architecture</h3><a id="user-content-asynchronous-architecture" class="anchor" aria-label="Permalink: Asynchronous Architecture" href="#asynchronous-architecture"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The entire data layer of the plugin has been refactored to be asynchronous, built on top of <code>libasynql</code> and <code>AwaitGenerator</code>. This is a major breaking change.</p>
+<ul>
+<li>
+<strong><code>ArenaManager</code> &amp; <code>KitManager</code></strong>: All methods that interact with the database now return a <code>Generator</code> and must be resolved using <code>yield from</code> within an <code>SOFe\AwaitGenerator\Await</code> context.
+<ul>
+<li><code>ArenaManager::add(Arena $arena): Generator&lt;... ArenaCreationStatus&gt;</code></li>
+<li><code>ArenaManager::get(string $arena): Generator&lt;... ?Arena&gt;</code></li>
+<li><code>ArenaManager::getRandom(): Generator&lt;... ?Arena&gt;</code></li>
+<li><code>ArenaManager::remove(string $arena): Generator&lt;... bool&gt;</code></li>
+<li><code>ArenaManager::getList(int $offset, int $limit): Generator&lt;... list&lt;Arena&gt;&gt;</code></li>
+<li><code>KitManager::add(Kit $kit): Generator</code></li>
+<li><code>KitManager::get(string $kit): Generator&lt;... ?Kit&gt;</code></li>
+<li><code>KitManager::getRandom(): Generator&lt;... ?Kit&gt;</code></li>
+<li><code>KitManager::remove(string $kit): Generator&lt;... bool&gt;</code></li>
+<li><code>KitManager::getList(int $offset, int $limit): Generator&lt;... list&lt;Kit&gt;&gt;</code></li>
+</ul>
+</li>
+<li>
+<strong><code>ProperDuels</code> Main Class</strong>:
+<ul>
+<li>The static <code>getInstance()</code> method has been removed.</li>
+<li>Static getters for managers are now asynchronous and return <code>Generator</code>s (e.g., <code>ProperDuels::getArenaManager()</code>).</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Kit Management Features</h3><a id="user-content-kit-management-features" class="anchor" aria-label="Permalink: Kit Management Features" href="#kit-management-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Kit Updates</strong>:
+<ul>
+<li>A new method <code>KitManager::update(string $kitName, Kit $kit): Generator</code> has been added to allow for updating kit contents and names. It returns a <code>KitUpdateStatus</code> enum.</li>
+</ul>
+</li>
+<li>
+<strong>Kit Enable/Disable</strong>:
+<ul>
+<li>A new method <code>KitManager::setEnabled(string $kitName, bool $enabled): Generator</code> has been added to toggle a kit's availability. It returns a <code>KitUpdateStatus</code> enum.</li>
+<li>The <code>Kit</code> class now has an <code>enabled</code> property and an <code>isEnabled(): bool</code> method.</li>
+<li>
+<code>KitManager::get()</code> and <code>KitManager::getRandom()</code> will now <strong>only</strong> return kits that are enabled.</li>
+<li>
+<code>KitManager::getList()</code> will return all kits, with their <code>enabled</code> status correctly populated.</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Configuration Overhaul</h3><a id="user-content-configuration-overhaul" class="anchor" aria-label="Permalink: Configuration Overhaul" href="#configuration-overhaul"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>The plugin's configuration is now mapped to a set of strongly-typed data classes under the <code>JavierLeon9966\ProperDuels\config</code> namespace (e.g., <code>Config</code>, <code>Database</code>, <code>MatchConfig</code>). This provides better type safety and autocompletion when accessing configuration values.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Minor API Changes &amp; Bug Fixes</h2><a id="user-content-minor-api-changes--bug-fixes" class="anchor" aria-label="Permalink: Minor API Changes &amp; Bug Fixes" href="#minor-api-changes--bug-fixes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Database Migrations</strong>: The database schema and migration system have been significantly improved to be more robust, especially for older database formats. This is handled automatically but is a key change for those managing the database manually.</li>
+<li>
+<strong><code>Game</code> Class</strong>: The constructor and <code>start()</code> method now require more dependencies to be injected to support the new asynchronous architecture.</li>
+<li>
+<strong>Queueing Logic</strong>: Several bugs in the queueing system have been fixed, improving player assignment and arena identification.</li>
+<li>
+<strong>Race Conditions</strong>: Addressed several race conditions that could occur during database initialization and player session handling.</li>
+<li>
+<strong>PHPStan Level 10</strong>: The codebase is now compliant with PHPStan level 10, improving overall code quality and type safety.</li>
+</ul>
