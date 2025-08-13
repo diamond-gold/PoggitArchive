@@ -1,0 +1,48 @@
+<div class="markdown-heading"><h1 class="heading-element">Commands</h1><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>- /rg pos
+Set the area.
+Click on the first point and block on the second point</strong></p>
+<p><strong>- When you have finished setting the position, please enter /rg define [area name]</strong></p>
+<p><strong>- /rg flag [area name] [flag] allow/deny,none Please enter double</strong></p>
+<p><strong>- The /rg list brings out possible flags.</strong></p>
+<p><strong>allow = allow<br>
+deny = Disallow - the player will be unable to interact with the type or the area.<br>
+none = none</strong></p>
+<p><strong>/rg list | View the list of areas you created.</strong></p>
+<p><strong>/rg addmembers [area name] [player] | Add members for the area.</strong></p>
+<p><strong>/rg removemembers [area name] [player] | Remove members in the area.</strong></p>
+<p><strong>/rg remove [area name] | Remove the area.</strong></p>
+<p><strong>/rg info [area name] | View information for the area.</strong></p>
+<div class="markdown-heading"><h1 class="heading-element">Recommended for use</h1><a id="user-content-recommended-for-use" class="anchor" aria-label="Permalink: Recommended for use" href="#recommended-for-use"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>It acts like a local protection.</strong></p>
+<div class="markdown-heading"><h1 class="heading-element">Flag List:</h1><a id="user-content-flag-list" class="anchor" aria-label="Permalink: Flag List:" href="#flag-list"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>build: The player will decide to install/destroy the block according to allow/deny/none.</strong></p>
+<p><strong>pvp: a battle between players</strong></p>
+<p><strong>tnt: TNT Explosion</strong></p>
+<p><strong>invincible: Do not suffer all damage</strong></p>
+<p><strong>lava-flow: lava flow</strong></p>
+<p><strong>chat: player chat</strong></p>
+<p><strong>use: All touches</strong></p>
+<p><strong>water-flow: water flow</strong> &lt; It will be replaced by water-flow in the next update.</p>
+<p><strong>tnt-damage: tnt damage</strong></p>
+<p><strong>mob-damage: layer damage to entity</strong></p>
+<p><strong>mob-pvp: Damage to entities</strong></p>
+<p><strong>fire: Turned off when the player lights up and enters an unallowed zone</strong></p>
+<p><strong>mob-spawn: Whether mobs are summoned to disallowed zones (except item entities from next update)</strong></p>
+<p><strong>exit: Is the player teleportable to the area</strong></p>
+<p><strong>item-drop: whether to discard the item in the area</strong></p>
+<p><strong>tp: Teleport in the area</strong>
+<strong>Fall-damage: Whether or not the area has been damaged</strong></p>
+<p><strong>Falling-blocks: Yes, sand, gravel blocks fall from the area</strong></p>
+<div class="markdown-heading"><h1 class="heading-element">API</h1><a id="user-content-api" class="anchor" aria-label="Permalink: API" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>use gamegam\WorldGuardPlugin\WorldData;</strong>
+<br>
+<strong>use gamegam\WorldGuardPlugin\WorldGuard;</strong></p>
+<p><strong>get the name of the world guard I am now</strong></p>
+<p>$guard = WorldData::getInstance();
+<br>
+$name = $guard-&gt;getName(Position);</p>
+<p><strong>Make sure I'm currently in World Guard or not</strong></p>
+<p>if($guard-&gt;getBlockJoin(position)){
+<br></p>
+<p>example: $player-&gt;sendMessage($name."is Join");</p>
