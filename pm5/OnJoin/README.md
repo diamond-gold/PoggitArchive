@@ -7,5 +7,5 @@ Version: 1.0.0
 Repo: https://github.com/darknessplx/OnJoin
 License: GPL-3.0-only
 Categories: General,Fun,Chat-Related,Informational
-Keywords: join,onjoin,messagesjoin,onJoin,OnJoin
+Keywords: join,messagesjoin,onjoin
 ```
