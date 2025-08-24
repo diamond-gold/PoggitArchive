@@ -1,0 +1,59 @@
+<div class="markdown-heading"><h1 class="heading-element">PearlMotion – Motion Customizer for Ender Pearls</h1><a id="user-content-pearlmotion--motion-customizer-for-ender-pearls" class="anchor" aria-label="Permalink: PearlMotion – Motion Customizer for Ender Pearls" href="#pearlmotion--motion-customizer-for-ender-pearls"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>PearlMotion is a PocketMine-MP 5.x plugin that lets you customize the <strong>motion speed</strong> of thrown ender pearls on each axis (X, Y, Z).</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">To the reviewer</h2><a id="user-content-to-the-reviewer" class="anchor" aria-label="Permalink: To the reviewer" href="#to-the-reviewer"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Please unban me from the pocketmine discord</li>
+<li>I repent my actions.</li>
+<li>@trix.pro</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📦 Features</h2><a id="user-content--features" class="anchor" aria-label="Permalink: 📦 Features" href="#-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Change ender pearl throw speed per axis.</li>
+<li>Simple configuration file.</li>
+<li>Lightweight and optimized.</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">⚙️ Configuration</h2><a id="user-content-️-configuration" class="anchor" aria-label="Permalink: ⚙️ Configuration" href="#️-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><code>config.yml</code>:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Adjust the motion axis values (float)</span>
+<span class="pl-ent">pearl-motion</span>:
+  <span class="pl-ent">x</span>: <span class="pl-c1">1.4</span>
+  <span class="pl-ent">y</span>: <span class="pl-c1">1.4</span>
+  <span class="pl-ent">z</span>: <span class="pl-c1">1.4</span></pre></div>
+<ul>
+<li>
+<strong>x</strong> → Horizontal motion (left/right)</li>
+<li>
+<strong>y</strong> → Vertical motion (up/down)</li>
+<li>
+<strong>z</strong> → Horizontal motion (forward/backward)</li>
+</ul>
+<p>Values must be <strong>floats</strong>.<br>
+For example: <code>1.0</code> = default speed, <code>2.0</code> = double speed, <code>0.5</code> = half speed.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📥 Installation</h2><a id="user-content--installation" class="anchor" aria-label="Permalink: 📥 Installation" href="#-installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Place the plugin <code>.phar</code> file into your server’s <code>plugins/</code> folder.</li>
+<li>Start the server to generate <code>config.yml</code>.</li>
+<li>Edit <code>config.yml</code> to your liking.</li>
+<li>Restart the server.</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🚀 How it Works</h2><a id="user-content--how-it-works" class="anchor" aria-label="Permalink: 🚀 How it Works" href="#-how-it-works"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Whenever a player throws an ender pearl:</p>
+<ol>
+<li>The plugin intercepts the launch event.</li>
+<li>It multiplies the pearl's motion by your configured values.</li>
+<li>The pearl travels faster or slower depending on your settings.</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🛠 Requirements</h2><a id="user-content--requirements" class="anchor" aria-label="Permalink: 🛠 Requirements" href="#-requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>PocketMine-MP <strong>5.x</strong>
+</li>
+<li>PHP <strong>8.1+</strong>
+</li>
+</ul>
+<hr>
