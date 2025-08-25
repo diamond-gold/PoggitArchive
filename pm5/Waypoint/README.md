@@ -1,13 +1,13 @@
 # Waypoint
-<img src="https://raw.githubusercontent.com/Cosmoverse/Waypoint/4fbe9f3965a64e283edad296f6cf6e4dbae9782b/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/Cosmoverse/Waypoint/be593877904036d6757c47057b0bcf556a86495e/icon.png" width="128" height="128" />
 
 ## Waypoint is a plugin that lets you set a visual holographic marker at your desired position.
 ```properties
-Version: 0.0.1
+Version: 0.0.2
     API: 5.30.0
-    Updated: 27-06-2025 13:29:39 UTC
+    Updated: 24-08-2025 20:38:42 UTC
 Repo: https://github.com/Cosmoverse/Waypoint
 License: GPL-3.0
 Categories: General,API plugins,Miscellaneous,Informational
-Keywords: waypoint,teleport
+Keywords: teleport,waypoint
 ```

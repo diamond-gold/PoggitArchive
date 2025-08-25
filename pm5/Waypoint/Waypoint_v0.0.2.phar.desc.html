@@ -1,0 +1,106 @@
+<div class="markdown-heading"><h1 class="heading-element">Waypoint</h1><a id="user-content-waypoint" class="anchor" aria-label="Permalink: Waypoint" href="#waypoint"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Waypoint is a plugin that lets you set a visual holographic marker at your desired position. The concept is similar to
+homes in that a waypoint is a labeled position, but differs in that you need to walk all the way to your desired location.</p>
+<p><a href="https://github.com/user-attachments/assets/c629811d-d5b5-4c31-b246-778a8231198e">https://github.com/user-attachments/assets/c629811d-d5b5-4c31-b246-778a8231198e</a></p>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Simply download this plugin as a .phar file from Poggit CI and restart your server. Use <code>/waypoint</code> or <code>/wp</code> to manage
+your personal waypoints. A player may have up to 64 waypoints configured, but can see only 1 waypoint  at any given
+moment. However, both these values are configurable from <a href="resources/config.yml">config.yml</a>.</p>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Quick start: use <code>/wp sethere mywaypoint</code> to set a waypoint at your position.</p>
+<p>A waypoint comprises of 5 properties—a name, a title, X, Y, Z position values. A name is a unique identifier, so you are
+restricted to the usage of alpha-numeric characters and underscores. But you can use fancier characters including color
+codes (<code>§</code> and <code>&amp;</code>) in the title. Title is displayed in the hologram. X Y Z are the coordinates to your waypoint. You
+may use <code>~</code>, <code>~+40</code>, etc. to set relative coordinates when using <code>/wp set</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/wp set &lt;name&gt; &lt;x&gt; &lt;y&gt; &lt;z&gt; [title=name]</code></td>
+<td>Set a waypoint named <code>&lt;name&gt;</code> at <code>&lt;x&gt; &lt;y&gt; &lt;z&gt;</code>
+</td>
+</tr>
+<tr>
+<td><code>/wp sethere &lt;name&gt; [title=name]</code></td>
+<td>Set a waypoint named <code>&lt;name&gt;</code> at your position</td>
+</tr>
+<tr>
+<td><code>/wp delete &lt;name&gt;</code></td>
+<td>Delete a waypoint named <code>&lt;name&gt;</code>
+</td>
+</tr>
+<tr>
+<td><code>/wp toggle &lt;name&gt;</code></td>
+<td>Toggle a waypoint (show/hide current waypoint)</td>
+</tr>
+<tr>
+<td><code>/wp rename &lt;name&gt; &lt;newTitle&gt;</code></td>
+<td>Change title of a waypoint</td>
+</tr>
+<tr>
+<td><code>/wp face &lt;name&gt;</code></td>
+<td>Face towards a waypoint</td>
+</tr>
+<tr>
+<td><code>/wp list [page=1]</code></td>
+<td>List all waypoints</td>
+</tr>
+<tr>
+<td><code>/wp config</code></td>
+<td>Configure waypoint preferences</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Developer documentation</h2><a id="user-content-developer-documentation" class="anchor" aria-label="Permalink: Developer documentation" href="#developer-documentation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>As a developer, you get to have more control over waypoint management. To programatically create a waypoint for a player,
+use <code>WaypointPlugin::setWaypointForPlayer()</code>. As this plugin uses <code>await-generator</code>, your plugin must use the library as
+well. If you are new to await-generator, wrap the <code>yield from</code> statements in <code>Await::f2c()</code> closure. I will show you an
+example here so you get an idea of how to use it:</p>
+<div class="highlight highlight-text-html-php"><pre>Await::<span class="pl-en">f2c</span>(<span class="pl-k">function</span>() : <span class="pl-smi"><span class="pl-smi">Generator</span></span>{
+	<span class="pl-s1"><span class="pl-c1">$</span>server</span> = Server::<span class="pl-en">getInstance</span>();
+	<span class="pl-s1"><span class="pl-c1">$</span>player</span> = <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getPlayerExact</span>(<span class="pl-s">"<span class="pl-s">BlahCoast30765</span>"</span>);
+	
+	<span class="pl-c">/** @var WaypointPlugin $plugin */</span>
+	<span class="pl-s1"><span class="pl-c1">$</span>plugin</span> = <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getPluginManager</span>()-&gt;<span class="pl-en">getPlugin</span>(<span class="pl-s">"<span class="pl-s">Waypoint</span>"</span>);
+	
+	<span class="pl-c">// for an online player</span>
+	<span class="pl-k">yield</span> <span class="pl-k">from</span> <span class="pl-s1"><span class="pl-c1">$</span>plugin</span>-&gt;<span class="pl-en">setWaypointForPlayer</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s">"<span class="pl-s">name</span>"</span>, <span class="pl-s">"<span class="pl-s">Title</span>"</span>, <span class="pl-c1">320</span>, <span class="pl-c1">64</span>, <span class="pl-c1">128</span>);
+	
+	<span class="pl-c">// or if they are offline</span>
+	<span class="pl-k">yield</span> <span class="pl-k">from</span> <span class="pl-s1"><span class="pl-c1">$</span>plugin</span>-&gt;<span class="pl-en">setWaypoint</span>(<span class="pl-s1"><span class="pl-c1">$</span>uuid</span>, <span class="pl-s">"<span class="pl-s">name</span>"</span>, <span class="pl-k">new</span> <span class="pl-v">Waypoint</span>(<span class="pl-s">"<span class="pl-s">Title</span>"</span>, <span class="pl-c1">320</span>, <span class="pl-c1">64</span>, <span class="pl-c1">128</span>), <span class="pl-c1">true</span>);
+	
+	<span class="pl-c">// delete it</span>
+	<span class="pl-k">yield</span> <span class="pl-k">from</span> <span class="pl-s1"><span class="pl-c1">$</span>plugin</span>-&gt;<span class="pl-en">deleteWaypoint</span>(<span class="pl-s1"><span class="pl-c1">$</span>uuid</span>, <span class="pl-s">"<span class="pl-s">name</span>"</span>);
+	
+	<span class="pl-c">// list all waypoint names</span>
+	<span class="pl-s1"><span class="pl-c1">$</span>names</span> = <span class="pl-k">yield</span> <span class="pl-k">from</span> <span class="pl-s1"><span class="pl-c1">$</span>plugin</span>-&gt;<span class="pl-en">listWaypointNames</span>(<span class="pl-s1"><span class="pl-c1">$</span>uuid</span>); <span class="pl-c">// list&lt;string&gt;</span>
+	
+	<span class="pl-c">// list a waypoint</span>
+	<span class="pl-s1"><span class="pl-c1">$</span>value</span> = <span class="pl-k">yield</span> <span class="pl-k">from</span> <span class="pl-s1"><span class="pl-c1">$</span>plugin</span>-&gt;<span class="pl-en">getWaypoint</span>(<span class="pl-s1"><span class="pl-c1">$</span>uuid</span>, <span class="pl-s">"<span class="pl-s">name</span>"</span>); <span class="pl-c">// array{Waypoint, string, bool}|null</span>
+	[<span class="pl-s1"><span class="pl-c1">$</span>waypoint</span>, <span class="pl-s1"><span class="pl-c1">$</span>name</span>, <span class="pl-s1"><span class="pl-c1">$</span>selected</span>] = <span class="pl-s1"><span class="pl-c1">$</span>value</span>;
+});</pre></div>
+<p>Both <code>setWaypoint()</code> and <code>setWaypointForPlayer()</code> persist waypoints in database. You may instead create waypoint objects
+directly if you do not intend to persist them. However, these waypoints will stay hidden from <code>/wp</code> command as they will
+not be tied a <code>&lt;name&gt;</code>:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>waypoint</span> = <span class="pl-k">new</span> <span class="pl-v">Waypoint</span>(<span class="pl-s">"<span class="pl-s">Title</span>"</span>, <span class="pl-c1">320</span>, <span class="pl-c1">64</span>, <span class="pl-c1">128</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>renderer</span> = <span class="pl-k">new</span> <span class="pl-v">WaypointRenderer</span>(<span class="pl-s1"><span class="pl-c1">$</span>waypoint</span>, <span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-c1">5.0</span>, <span class="pl-s">"<span class="pl-s">{TITLE} [{DISTANCE}m]</span>"</span>);
+
+<span class="pl-c">// to hide the waypoint (which will also destroy the $renderer object's state)</span>
+<span class="pl-s1"><span class="pl-c1">$</span>renderer</span>-&gt;<span class="pl-en">destroy</span>();</pre></div>
+<p>While static limits can be defined in <code>config.yml</code>, you as a developer have more control in that you get to set
+per-player limits. These limits are evaluated during creation or when a player toggles a waypoint:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>plugin</span>-&gt;<span class="pl-c1">limit_evaluator</span> = <span class="pl-k">new</span> <span class="pl-v">MyWaypointLimitEvaluator</span>();</pre></div>
+<p>Registering a <code>WaypointListener</code> will notify you whenever a waypoint is created or deleted. This is generally sufficient
+if you are working on something like updating a command enum of per-player waypoints (pair it with listWaypointNames
+during player join):</p>
+<div class="highlight highlight-text-html-php"><pre>WaypointPlugin::<span class="pl-s1"><span class="pl-c1">$</span>listeners</span>[] = <span class="pl-k">new</span> <span class="pl-k">class</span> <span class="pl-k">implements</span> WaypointListener{
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onCreate</span>(<span class="pl-smi"><span class="pl-smi">UuidInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>uuid</span>, <span class="pl-smi">string</span> <span class="pl-s1"><span class="pl-c1">$</span>name</span>, <span class="pl-smi"><span class="pl-smi">Waypoint</span></span> <span class="pl-s1"><span class="pl-c1">$</span>waypoint</span>) : <span class="pl-smi">void</span>{}
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onDelete</span>(<span class="pl-smi"><span class="pl-smi">UuidInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>uuid</span>, <span class="pl-smi">string</span> <span class="pl-s1"><span class="pl-c1">$</span>name</span>) : <span class="pl-smi">void</span>{}
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onRender</span>(<span class="pl-smi"><span class="pl-smi">WaypointRenderer</span></span> <span class="pl-s1"><span class="pl-c1">$</span>renderer</span>) : <span class="pl-smi">void</span>{}
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onDerender</span>(<span class="pl-smi"><span class="pl-smi">WaypointRenderer</span></span> <span class="pl-s1"><span class="pl-c1">$</span>renderer</span>) : <span class="pl-smi">void</span>{}
+};</pre></div>
