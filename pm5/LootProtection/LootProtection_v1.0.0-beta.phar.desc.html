@@ -1,0 +1,47 @@
+<div class="markdown-heading"><h1 class="heading-element">Loot Protection</h1><a id="user-content-loot-protection" class="anchor" aria-label="Permalink: Loot Protection" href="#loot-protection"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A PocketMine-MP 5.x plugin that protects a player's dropped loot from being picked up by others for a configurable duration after they are killed.<br>
+Perfect for PvP servers to prevent loot swiping.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Customizable Protection Time</strong> – Set how many seconds loot remains protected for the killer.</li>
+<li>
+<strong>Automatic Removal</strong> – Protection tag is automatically removed after the set duration.</li>
+<li>
+<strong>Killer-Only Pickup</strong> – Only the player who dealt the killing blow can pick up the loot until the timer expires.</li>
+<li>
+<strong>Optimized</strong> – Tested in production with over 100+ players without lag.</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">To the reviewer</h2><a id="user-content-to-the-reviewer" class="anchor" aria-label="Permalink: To the reviewer" href="#to-the-reviewer"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Please unban me from pocketmine discord i deeply regret my actions</li>
+<li><strong>@trix.pro</strong></li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the latest release <code>.phar</code> file.</li>
+<li>Place it into your server's <code>plugins/</code> folder.</li>
+<li>Restart the server.</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Located in <code>config.yml</code>:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> The amount of seconds loot will be protected after a player kill</span>
+<span class="pl-ent">protection-duration</span>: <span class="pl-c1">10</span></pre></div>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">How it works</h2><a id="user-content-how-it-works" class="anchor" aria-label="Permalink: How it works" href="#how-it-works"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>When a player is killed, their loot is tagged with:</li>
+</ol>
+<ul>
+<li>Killer's name</li>
+<li>Remaining protection time</li>
+</ul>
+<ol start="2">
+<li>Only the killer can pick up the items during the protection period.</li>
+<li>After the timer runs out, anyone can pick up the loot.</li>
+</ol>
+<hr>
