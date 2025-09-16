@@ -1,0 +1,132 @@
+<div class="markdown-heading"><h1 class="heading-element">✨ Cosmetics ✨</h1><a id="user-content--cosmetics-" class="anchor" aria-label="Permalink: ✨ Cosmetics ✨" href="#-cosmetics-"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A high-performance, feature-rich cosmetics plugin for PocketMine-MP API 5, designed for seamless integration and zero-lag gameplay.</p>
+<div class="markdown-heading"><h2 class="heading-element">📋 Features</h2><a id="user-content--features" class="anchor" aria-label="Permalink: 📋 Features" href="#-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>🪄 Particle Effects:</strong> A wide variety of particle effects that follow the player.
+<ul>
+<li><strong>Circles</strong></li>
+<li><strong>Stripes</strong></li>
+<li>
+<strong>12 Color Variations</strong> - Red, Yellow, Green, Blue, Orange, Aqua, Purple, Pink, Black, White, Rainbow, and Flame</li>
+</ul>
+</li>
+<li>
+<strong>🧰 Gadgets:</strong> Fun and interactive items for players to use in lobbies.
+<ul>
+<li><strong>Snowball Launcher</strong></li>
+<li><strong>TNT Launcher</strong></li>
+<li><strong>Colorful Armor</strong></li>
+</ul>
+</li>
+<li>
+<strong>💾 Data Storage:</strong> Supports both MySQL for production servers and JSON for lightweight use.</li>
+<li>
+<strong>🌐 Multi-World Support:</strong> Enable or disable cosmetics in specific worlds.</li>
+<li>
+<strong>⚡ Performance Optimized:</strong> Efficient task scheduling and minimal memory overhead.</li>
+<li>
+<strong>🛡️ Safety Features:</strong> All explosive gadgets include fall damage protection for affected players.</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🔑 Permissions</h2><a id="user-content--permissions" class="anchor" aria-label="Permalink: 🔑 Permissions" href="#-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The permission system is designed to be both powerful and simple, giving you flexible control without a cluttered <a href="plugin.yml"><code>plugin.yml</code></a>.</p>
+<p>You can grant access to entire categories or to specific cosmetic items.</p>
+<ul>
+<li>
+<code>cosmetics.wildcard</code> - Grants access to all cosmetics.</li>
+<li>
+<code>cosmetics.particles</code> - Grants access to all particle effects.</li>
+<li>
+<code>cosmetics.gadgets</code> - Grants access to all gadgets.</li>
+</ul>
+<p>For more granular control, you can assign permissions for individual items. These work automatically and do not need to be registered in <a href="plugin.yml"><code>plugin.yml</code></a>.</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><code>cosmetics.particles.red-circles</code></li>
+<li><code>cosmetics.particles.flame-stripes</code></li>
+<li><code>cosmetics.gadgets.snowball-launcher</code></li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">⚙️ Configuration</h2><a id="user-content-️-configuration" class="anchor" aria-label="Permalink: ⚙️ Configuration" href="#️-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin includes a comprehensive configuration system in <a href="resources/config.yml"><code>config.yml</code></a>:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Enable multiworld support</span>
+<span class="pl-ent">multiworld-support</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Worlds where cosmetics are enabled</span>
+<span class="pl-ent">enabled-worlds</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>world<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> MySQL Database configuration</span>
+<span class="pl-ent">database</span>:
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">host</span>: <span class="pl-s">localhost</span>
+  <span class="pl-ent">username</span>: <span class="pl-s">root</span>
+  <span class="pl-ent">password</span>: <span class="pl-s"><span class="pl-pds">"</span>password<span class="pl-pds">"</span></span>
+  <span class="pl-ent">database</span>: <span class="pl-s">cosmetics</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Inventory configuration for cosmetic items and menus</span>
+<span class="pl-ent">inventory</span>:
+  <span class="pl-ent">items</span>:
+    <span class="pl-ent">cosmetics</span>:
+      <span class="pl-ent">id</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:magma_cream<span class="pl-pds">"</span></span>
+      <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>§r§l§6Cosmetics<span class="pl-pds">"</span></span>
+      <span class="pl-ent">slot</span>: <span class="pl-c1">0</span>
+    <span class="pl-ent">pets</span>: 
+      <span class="pl-ent">id</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:villager_spawn_egg<span class="pl-pds">"</span></span>
+      <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>§r§l§6Pets<span class="pl-pds">"</span></span>
+      <span class="pl-ent">slot</span>: <span class="pl-c1">2</span>
+    <span class="pl-ent">particles</span>:
+      <span class="pl-ent">id</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:ender_chest<span class="pl-pds">"</span></span>
+      <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>§r§l§6Particles<span class="pl-pds">"</span></span>
+      <span class="pl-ent">slot</span>: <span class="pl-c1">0</span>
+    <span class="pl-ent">gadgets</span>:
+      <span class="pl-ent">id</span>: <span class="pl-s"><span class="pl-pds">"</span>minecraft:blaze_powder<span class="pl-pds">"</span></span>
+      <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>§r§l§6Gadgets<span class="pl-pds">"</span></span>
+      <span class="pl-ent">slot</span>: <span class="pl-c1">1</span></pre></div>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🧠 The Nerd Stuff</h2><a id="user-content--the-nerd-stuff" class="anchor" aria-label="Permalink: 🧠 The Nerd Stuff" href="#-the-nerd-stuff"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin was engineered from the ground up with three core principles: maximum performance, strict adherence to the DRY (Don't Repeat Yourself) principle, and long-term maintainability.</p>
+<div class="markdown-heading"><h3 class="heading-element">🚀 Performance First</h3><a id="user-content--performance-first" class="anchor" aria-label="Permalink: 🚀 Performance First" href="#-performance-first"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Efficient Task Scheduling:</strong> All recurring actions, such as particle rendering and gadget updates, are handled by optimized, low-frequency server tasks to minimize CPU load.</li>
+<li>
+<strong>Pre-calculated Rainbow Cache:</strong> The full spectrum of rainbow colors is pre-calculated and cached on startup, avoiding expensive color calculations on every tick.</li>
+<li>
+<strong>World-Aware Operations:</strong> The plugin can be configured to only run in specific worlds, preventing any processing from occurring in gameplay-critical areas where cosmetics are disabled.</li>
+<li>
+<strong>Async Database Operations:</strong> All database operations are performed asynchronously to prevent main thread blocking.</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">📈 Scalable by Design</h3><a id="user-content--scalable-by-design" class="anchor" aria-label="Permalink: 📈 Scalable by Design" href="#-scalable-by-design"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Dynamic, Enum-Driven Systems:</strong> Adding a new particle is as simple as adding a new case to the <a href="src/lee1387/cosmetics/types/ParticleType.php"><code>ParticleType</code></a> enum. The form generation system and particle spawning logic will adapt automatically without requiring any new functions or boilerplate code.</li>
+<li>
+<strong>Hybrid Permission Model:</strong> The permission system avoids a bloated <a href="plugin.yml"><code>plugin.yml</code></a> by only requiring parent nodes (e.g., <code>cosmetics.particles</code>). Specific permissions (e.g., <code>cosmetics.particles.red-circles</code>) are checked dynamically, providing granular control for server owners without sacrificing configuration simplicity.</li>
+<li>
+<strong>Modular Architecture:</strong> Clean separation of concerns with dedicated managers, services, and utilities following SOLID principles.</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">✅ Clean &amp; Maintainable Code</h3><a id="user-content--clean--maintainable-code" class="anchor" aria-label="Permalink: ✅ Clean &amp; Maintainable Code" href="#-clean--maintainable-code"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Strictly DRY:</strong> All repetitive logic has been aggressively refactored. Instead of dozens of functions for each particle color and shape, a single dynamic method handles all variations.</li>
+<li>
+<strong>Dependency Injection:</strong> All components use proper dependency injection, making the code testable and maintainable.</li>
+<li>
+<strong>No Static Access:</strong> Following modern PHP practices, the plugin avoids static access patterns in favor of proper object-oriented design.</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">🛡️ Safety &amp; User Experience</h3><a id="user-content-️-safety--user-experience" class="anchor" aria-label="Permalink: 🛡️ Safety &amp; User Experience" href="#️-safety--user-experience"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Fall Damage Protection:</strong> All explosive gadgets automatically prevent fall damage for affected players.</li>
+<li>
+<strong>Safe Explosions:</strong> Visual and audio effects without block damage or entity harm.</li>
+<li>
+<strong>Cooldown System:</strong> Prevents spam and ensures balanced gameplay.</li>
+<li>
+<strong>Permission-Based Access:</strong> Granular control over who can use what features.</li>
+<li>
+<strong>Multi-World Compatibility:</strong> Seamlessly works across different world types and configurations.</li>
+</ul>
+<hr>

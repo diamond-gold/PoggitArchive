@@ -1,0 +1,142 @@
+<div class="markdown-heading"><h1 class="heading-element">HiveOreRewards</h1><a id="user-content-hiveorerewards" class="anchor" aria-label="Permalink: HiveOreRewards" href="#hiveorerewards"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Enhance your Minecraft server with custom ore rewards, random drops, enchantments, effects, and a heart system! This is useful for FFA Servers. Break ores to gain items, potion effects, or extra hearts all configurable through a simple YAML file. This is similar's to “Hive” mechanics in SkyWars.</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/PDevChris/HiveOreRewards/blob/main/giphy.gif"><img src="https://github.com/PDevChris/HiveOreRewards/raw/main/giphy.gif" alt="1750733594209" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h3 class="heading-element">Features</h3><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>[X] Custom drops for ores: Players can get items or blocks when breaking ores.</li>
+<li>[X] Randomized drops: Choose whether all items drop or just a random one.</li>
+<li>[X] Enchantments support: Give enchanted items with configurable chance and level.</li>
+<li>[X] Potion effects: Apply effects to players when they break an ore (random or all).</li>
+<li>[X] Extra hearts system: Redstone ore gives extra health, capped by config (This is still being worked on).</li>
+<li>[X] Supports default ores: Diamond, Emerald, Lapis, Gold, Iron, Coal, Redstone.</li>
+<li>[X] Add custom ores and blocks: Just add them in the config—no code changes required!</li>
+<li>[X] IMPORTANT: Reset hearts on death: Player’s max health resets to 20 on death.</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Config Structure</h3><a id="user-content-config-structure" class="anchor" aria-label="Permalink: Config Structure" href="#config-structure"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> HiveOreRewards Configuration</span>
+<span class="pl-c"><span class="pl-c">#</span> PMDevChris</span>
+
+<span class="pl-c"><span class="pl-c">#</span> This affects the regular behavior of minecraft items!</span>
+<span class="pl-ent">vanilla_drops</span>: <span class="pl-c1">false</span>
+<span class="pl-ent">vanilla_xp</span>: <span class="pl-c1">false</span>
+
+<span class="pl-ent">redstone</span>:
+  <span class="pl-ent">max_hearts</span>: <span class="pl-c1">30</span> <span class="pl-c"><span class="pl-c">#</span> Maximum extra hearts a player can gain. This is five extra hearts by default. This is still being worked on!</span>
+  <span class="pl-ent">duration_seconds</span>: <span class="pl-c1">60</span>
+
+<span class="pl-ent">ores</span>:
+  <span class="pl-ent">coal_ore</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">drop-mode</span>: <span class="pl-s">all  </span><span class="pl-c"><span class="pl-c">#</span> all or random</span>
+    <span class="pl-ent">drops</span>:
+      - <span class="pl-s">coal:1</span>
+    <span class="pl-ent">effects</span>: <span class="pl-s">[]</span>
+    <span class="pl-ent">effects-mode</span>: <span class="pl-s">random </span><span class="pl-c"><span class="pl-c">#</span> all or random</span>
+
+  <span class="pl-ent">iron_ore</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">drop-mode</span>: <span class="pl-s">random</span>
+    <span class="pl-ent">drops</span>:
+      - <span class="pl-s">iron_ingot:16</span>
+      - <span class="pl-s">iron_sword:1</span>
+    <span class="pl-ent">effects</span>: <span class="pl-s">[]</span>
+    <span class="pl-ent">effects-mode</span>: <span class="pl-s">random</span>
+
+  <span class="pl-ent">redstone_ore</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">drop-mode</span>: <span class="pl-s">all</span>
+    <span class="pl-ent">drops</span>: <span class="pl-s">[]</span>
+    <span class="pl-ent">effects</span>: <span class="pl-s">[]</span>
+    <span class="pl-ent">effects-mode</span>: <span class="pl-s">random</span>
+
+  <span class="pl-ent">gold_ore</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">drop-mode</span>: <span class="pl-s">random</span>
+    <span class="pl-ent">drops</span>:
+      - <span class="pl-s">bow:1</span>
+      - <span class="pl-s">arrow:2</span>
+      - <span class="pl-s">cobweb:1</span>
+    <span class="pl-ent">effects</span>: <span class="pl-s">[]</span>
+    <span class="pl-ent">effects-mode</span>: <span class="pl-s">random</span>
+
+  <span class="pl-ent">lapis_ore</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">drop-mode</span>: <span class="pl-s">random</span>
+    <span class="pl-ent">drops</span>:
+      - <span class="pl-s">lapis_lazuli:8</span>
+    <span class="pl-ent">effects</span>:
+      - <span class="pl-ent">type</span>: <span class="pl-s">SPEED</span>
+        <span class="pl-ent">duration</span>: <span class="pl-c1">200</span>
+        <span class="pl-ent">amplifier</span>: <span class="pl-c1">1</span>
+      - <span class="pl-ent">type</span>: <span class="pl-s">STRENGTH</span>
+        <span class="pl-ent">duration</span>: <span class="pl-c1">200</span>
+        <span class="pl-ent">amplifier</span>: <span class="pl-c1">0</span>
+      - <span class="pl-ent">type</span>: <span class="pl-s">JUMP_BOOST</span>
+        <span class="pl-ent">duration</span>: <span class="pl-c1">200</span>
+        <span class="pl-ent">amplifier</span>: <span class="pl-c1">1</span>
+    <span class="pl-ent">effects-mode</span>: <span class="pl-s">random</span>
+
+  <span class="pl-ent">diamond_ore</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">drop-mode</span>: <span class="pl-s">random</span>
+    <span class="pl-ent">drops</span>:
+      - <span class="pl-s">diamond_helmet:1</span>
+      - <span class="pl-s">diamond_chestplate:1</span>
+      - <span class="pl-s">diamond_leggings:1</span>
+      - <span class="pl-s">diamond_boots:1</span>
+      - <span class="pl-s">diamond_sword:1</span>
+    <span class="pl-ent">effects</span>: <span class="pl-s">[]</span>
+    <span class="pl-ent">effects-mode</span>: <span class="pl-s">random</span>
+
+  <span class="pl-ent">emerald_ore</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">drop-mode</span>: <span class="pl-s">all</span>
+    <span class="pl-ent">drops</span>:
+      - <span class="pl-s">iron_sword:1</span>
+    <span class="pl-ent">effects</span>: <span class="pl-s">[]</span>
+    <span class="pl-ent">effects-mode</span>: <span class="pl-s">random</span>
+
+<span class="pl-c"><span class="pl-c">#</span> -----------------------------</span>
+<span class="pl-c"><span class="pl-c">#</span> Enchantments Section </span>
+<span class="pl-c"><span class="pl-c">#</span> PMDevChris</span>
+<span class="pl-c"><span class="pl-c">#</span> -----------------------------</span>
+
+<span class="pl-ent">enchantments</span>:
+  <span class="pl-ent">emerald_ore</span>:
+    <span class="pl-ent">items</span>:
+      <span class="pl-ent">iron_sword</span>:
+        <span class="pl-ent">chance</span>: <span class="pl-c1">100</span>
+        <span class="pl-ent">max_level</span>: <span class="pl-c1">3</span>
+        <span class="pl-ent">enchantments</span>:
+          - <span class="pl-s">sharpness</span>
+<span class="pl-c"><span class="pl-c">#</span> -----------------------------</span>
+<span class="pl-c"><span class="pl-c">#</span> Instructions</span>
+<span class="pl-c"><span class="pl-c">#</span> -----------------------------</span>
+<span class="pl-c"><span class="pl-c">#</span> 1. To modify drops for an ore, edit ores.&lt;ore_name&gt;.drops</span>
+<span class="pl-c"><span class="pl-c">#</span>    - Format: item_name:count</span>
+<span class="pl-c"><span class="pl-c">#</span>    - Example: diamond_sword:1</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> 2. To add enchantments to an item:</span>
+<span class="pl-c"><span class="pl-c">#</span>    - Go to top-level enchantments.&lt;ore_name&gt;.items.&lt;item_name&gt;</span>
+<span class="pl-c"><span class="pl-c">#</span>    - Set chance (0-100) for probability, max_level, and enchantments list</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> 3. Effects:</span>
+<span class="pl-c"><span class="pl-c">#</span>    - Use ores.&lt;ore_name&gt;.effects for potion effects</span>
+<span class="pl-c"><span class="pl-c">#</span>    - Each effect: type, duration (ticks), amplifier</span>
+<span class="pl-c"><span class="pl-c">#</span>    - Set effects-mode: "all" or "random"</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> 4. You can add new ores by copying the pattern under "ores" and adding a matching section in "enchantments" if you want enchanted drops.</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> 5. PMDevChris hashtags are included as comments for reference</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Installation</h3><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Download the latest .phar file from Poggit.</li>
+<li>Place the .phar file in your server’s plugins/ folder.</li>
+<li>Start or reload the server.</li>
+<li>Edit the config.yml in plugin_data/HiveOreRewards/ to customize your ores, drops, enchantments, and effects.</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Support</h3><a id="user-content-support" class="anchor" aria-label="Permalink: Support" href="#support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Plugin made by PMDevChris</li>
+<li>For questions or suggestions, open an issue on the Poggit repository.</li>
+</ul>

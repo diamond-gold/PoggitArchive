@@ -1,0 +1,106 @@
+<h1 dir="auto">WebSocket Console Plugin for PocketMine-MP</h1>
+<p dir="auto">A complete WebSocket implementation for remote server console access with <strong>zero external dependencies</strong>.</p>
+<h2 dir="auto">🚀 Features</h2>
+<ul dir="auto">
+<li>🔐 <strong>Password Authentication</strong> - Secure your console access</li>
+<li>📡 <strong>Real-time Communication</strong> - Instant command execution and responses</li>
+<li>🎯 <strong>Event Broadcasting</strong> - Player joins, quits, chat, deaths, and server commands</li>
+<li>👥 <strong>Multiple Clients</strong> - Support for concurrent WebSocket connections</li>
+<li>⚙️ <strong>Configurable</strong> - Easy setup via config.yml</li>
+<li>🛡️ <strong>Session Management</strong> - Secure authentication per connection</li>
+<li>📝 <strong>Debug Logging</strong> - Optional detailed logging for troubleshooting</li>
+<li>🔧 <strong>Pure PHP</strong> - No external libraries or Composer packages required</li>
+</ul>
+<h2 dir="auto">🌐 Online interface:</h2>
+<p dir="auto">I've made an interface for this plugin, that can be found over at <a href="https://hbidamian.github.io/wsRCON/" rel="nofollow">https://hbidamian.github.io/wsRCON/</a>.</p>
+<p dir="auto">If you want to self host your own interface, you can grab it from <a href="https://github.com/HBIDamian/wsRCON/tree/webconsole">https://github.com/HBIDamian/wsRCON/tree/webconsole</a></p>
+<h2 dir="auto">⚙️ Configuration</h2>
+<p dir="auto">After the first startup, the plugin will create a config file at:<br>
+<code class="notranslate">plugins/wsRCON/config.yml</code></p>
+<p dir="auto">Edit this file to customize your settings:</p>
+<div class="highlight highlight-source-yaml" dir="auto"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span>═══════════════════════════════════════════════════════════════════════════════</span>
+<span class="pl-c"><span class="pl-c">#</span>                         WebSocket Console Configuration</span>
+<span class="pl-c"><span class="pl-c">#</span>═══════════════════════════════════════════════════════════════════════════════</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 🔐 Authentication Password</span>
+<span class="pl-c"><span class="pl-c">#</span> This will be automatically generated on first run for security</span>
+<span class="pl-ent">websocket-password</span>: <span class="pl-s"><span class="pl-pds">"</span>change_this_password_123<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> 🌐 Server Port</span>
+<span class="pl-c"><span class="pl-c">#</span> Set to "default" (with quotations) to use the server's current port, or specify a port number (Ex: 19132)</span>
+<span class="pl-ent">websocket-port</span>: <span class="pl-s"><span class="pl-pds">"</span>default<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> 🏠 Server Host</span>
+<span class="pl-c"><span class="pl-c">#</span> Default: 0.0.0.0 for all interfaces</span>
+<span class="pl-ent">websocket-host</span>: <span class="pl-s"><span class="pl-pds">"</span>0.0.0.0<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> 🐛 Debug Mode</span>
+<span class="pl-c"><span class="pl-c">#</span> Enable debug logging (useful for troubleshooting)</span>
+<span class="pl-ent">debug-logging</span>: <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 👥 Connection Limit</span>
+<span class="pl-c"><span class="pl-c">#</span> Maximum number of concurrent WebSocket connections</span>
+<span class="pl-ent">max-connections</span>: <span class="pl-c1">10</span>
+
+<span class="pl-c"><span class="pl-c">#</span>═══════════════════════════════════════════════════════════════════════════════</span>
+<span class="pl-c"><span class="pl-c">#</span>                                   Notes</span>
+<span class="pl-c"><span class="pl-c">#</span>═══════════════════════════════════════════════════════════════════════════════</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ⚠️  IMPORTANT: Restart your PocketMine server after changing this configuration</span>
+
+<span class="pl-c"><span class="pl-c">#</span>───────────────────────────────────────────────────────────────────────────────</span>
+<span class="pl-c"><span class="pl-c">#</span>                              Password Examples</span>
+<span class="pl-c"><span class="pl-c">#</span>───────────────────────────────────────────────────────────────────────────────</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 💡 Strong password examples:</span>
+<span class="pl-c"><span class="pl-c">#</span> websocket-password: "Random_Words-789"</span>
+<span class="pl-c"><span class="pl-c">#</span> websocket-password: "WebSocket@Admin#2025"</span>
+<span class="pl-c"><span class="pl-c">#</span> websocket-password: "WA%5e6vPF3JHL!"</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ⚠️  For no authentication (SECURITY RISK):</span>
+<span class="pl-c"><span class="pl-c">#</span> websocket-password: ""</span>
+
+</pre></div>
+<h2 dir="auto">📡 Supported Events</h2>
+<p dir="auto">The plugin broadcasts the following server events to all authenticated clients:</p>
+<ul dir="auto">
+<li>👋 <strong>Player Join/Quit</strong> - When players connect or disconnect</li>
+<li>💬 <strong>Player Chat</strong> - All chat messages</li>
+<li>💀 <strong>Player Deaths</strong> - Death messages</li>
+<li>⌨️ <strong>Console Commands</strong> - Commands executed in server console</li>
+</ul>
+<h2 dir="auto">🛠️ Troubleshooting</h2>
+<h4 dir="auto">Plugin Won't Start</h4>
+<ol dir="auto">
+<li><strong>Port in use</strong>: Change <code class="notranslate">websocket-port</code> in config.yml</li>
+<li><strong>Permission denied</strong>: Check server file permissions</li>
+<li><strong>Firewall</strong>: Ensure the port is open</li>
+</ol>
+<h4 dir="auto">Can't Connect</h4>
+<ol dir="auto">
+<li><strong>Wrong host/port</strong>: Verify connection settings</li>
+<li><strong>Firewall</strong>: Check if port is blocked</li>
+<li><strong>Authentication</strong>: Verify password is correct</li>
+</ol>
+<h4 dir="auto">Commands Not Working</h4>
+<ol dir="auto">
+<li><strong>Not authenticated</strong>: Check password</li>
+<li><strong>Insufficient permissions</strong>: Plugin runs with OP permissions</li>
+<li><strong>Invalid command</strong>: Use <code class="notranslate">help</code> to see available commands</li>
+</ol>
+<h2 dir="auto">📊 Debug Mode</h2>
+<p dir="auto">This is meant for troubleshooting and development purposes. You most likely need to use it unless you like to tinker with the code directly</p>
+<div class="highlight highlight-source-yaml" dir="auto"><pre class="notranslate"><span class="pl-ent">debug-logging</span>: <span class="pl-c1">true</span></pre></div>
+<p dir="auto">This will log:</p>
+<ul dir="auto">
+<li>Connection attempts</li>
+<li>Authentication events</li>
+<li>Message broadcasts</li>
+<li>Client disconnections</li>
+</ul>
+<h2 dir="auto">🤝 Contributing</h2>
+<p dir="auto">This plugin is open source and contributions are welcome! Or if you have a better implementation idea, feel free to share it, and overtake this plugin with your own!</p>
+<h2 dir="auto">📄 License</h2>
+<p dir="auto">Apache License 2.0 - See LICENSE file for details.</p>
+<hr>
+<p dir="auto"><strong>Made with ❤️ for the PocketMine community</strong></p>
