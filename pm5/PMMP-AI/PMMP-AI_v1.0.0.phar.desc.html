@@ -1,0 +1,139 @@
+<div class="markdown-heading"><h2 class="heading-element">🤖 Advanced AI Assistant for Minecraft Pocket Edition Servers</h2><a id="user-content--advanced-ai-assistant-for-minecraft-pocket-edition-servers" class="anchor" aria-label="Permalink: 🤖 Advanced AI Assistant for Minecraft Pocket Edition Servers" href="#-advanced-ai-assistant-for-minecraft-pocket-edition-servers"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>PMMP-AI is a powerful AI assistant plugin for PocketMine-MP servers that integrates multiple AI providers to enhance your Minecraft server experience. The plugin offers a wide range of features including AI chat, crafting help, building calculations, server information, and more..</p>
+<div class="markdown-heading"><h2 class="heading-element">✨ Features</h2><a id="user-content--features" class="anchor" aria-label="Permalink: ✨ Features" href="#-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Multi-Provider AI Integration</strong>: Support for OpenAI, Anthropic, Google AI, OpenRouter, and local AI models</li>
+<li>
+<strong>Interactive Chat</strong>: Talk directly with AI to get help with Minecraft-related questions</li>
+<li>
+<strong>Crafting Helper</strong>: Get crafting recipes for any item in the game</li>
+<li>
+<strong>Building Calculator</strong>: Calculate required materials for your building projects</li>
+<li>
+<strong>Server Information</strong>: Access server stats, rules, and features</li>
+<li>
+<strong>Token System</strong>: Optional economy integration with configurable token packages</li>
+<li>
+<strong>Chat History</strong>: Save and review past conversations with the AI</li>
+<li>
+<strong>Fully Customizable</strong>: Extensive configuration options for all aspects of the plugin</li>
+<li>
+<strong>Broadcast System</strong>: Configurable AI tips broadcast to players</li>
+<li>
+<strong>HTTPS REQUEST</strong> Asynchronous HTTPS requests with secure header masking, retries, and use PocketMine BulkCurlTask.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">⚙️ Configuration</h2><a id="user-content-️-configuration" class="anchor" aria-label="Permalink: ⚙️ Configuration" href="#️-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>PMMP-AI offers extensive configuration options through multiple YAML files:</p>
+<div class="markdown-heading"><h3 class="heading-element">config.yml</h3><a id="user-content-configyml" class="anchor" aria-label="Permalink: config.yml" href="#configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The main configuration file contains settings for:</p>
+<ul>
+<li>API providers (OpenAI, Anthropic, Google AI, OpenRouter, Local AI)</li>
+<li>AI prompt settings</li>
+<li>Message settings</li>
+<li>Server information</li>
+<li>Token system</li>
+<li>Chat history</li>
+<li>Advanced settings</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">forms.yml</h3><a id="user-content-formsyml" class="anchor" aria-label="Permalink: forms.yml" href="#formsyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The forms configuration file allows you to customize all UI elements:</p>
+<ul>
+<li>Form titles and content</li>
+<li>Button texts and colors</li>
+<li>Button textures</li>
+<li>Form layouts</li>
+<li>Text formatting</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">fiturserver.yml</h3><a id="user-content-fiturserveryml" class="anchor" aria-label="Permalink: fiturserver.yml" href="#fiturserveryml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This file contains information about your server's features that the AI can use to help players:</p>
+<ul>
+<li>Economy features</li>
+<li>Land protection systems</li>
+<li>Teleportation commands</li>
+<li>Custom enchantments</li>
+<li>Minigames</li>
+<li>Voting systems</li>
+<li>Ranks and more</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">🎮 Usage</h2><a id="user-content--usage" class="anchor" aria-label="Permalink: 🎮 Usage" href="#-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Player Commands</h3><a id="user-content-player-commands" class="anchor" aria-label="Permalink: Player Commands" href="#player-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/ai</code> - Open the main AI Assistant interface</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Admin Commands</h3><a id="user-content-admin-commands" class="anchor" aria-label="Permalink: Admin Commands" href="#admin-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/ai &lt;question&gt;</code> - direct ai response in chat</li>
+<li>
+<code>/ai setup &lt;provider&gt; &lt;apikey&gt; &lt;models&gt;</code> - quick settings ai in-game</li>
+<li>
+<code>/ai help</code> - see all available command</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">🎨 Customization</h2><a id="user-content--customization" class="anchor" aria-label="Permalink: 🎨 Customization" href="#-customization"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Form Customization</h3><a id="user-content-form-customization" class="anchor" aria-label="Permalink: Form Customization" href="#form-customization"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>All forms can be fully customized through the <code>forms.yml</code> file:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Example: Customizing the main form</span>
+<span class="pl-ent">main_form</span>:
+  <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>My Custom AI<span class="pl-pds">"</span></span>
+  <span class="pl-ent">content</span>: <span class="pl-s"><span class="pl-pds">"</span>Welcome to my custom AI assistant!<span class="pl-pds">"</span></span>
+  <span class="pl-ent">buttons</span>:
+    <span class="pl-ent">chat</span>:
+      <span class="pl-ent">text</span>: <span class="pl-s"><span class="pl-pds">"</span>Talk to AI<span class="pl-pds">"</span></span>
+      <span class="pl-ent">color</span>: <span class="pl-s"><span class="pl-pds">"</span>{primary}<span class="pl-pds">"</span></span>
+      <span class="pl-ent">texture</span>: <span class="pl-s"><span class="pl-pds">"</span>textures/ui/chat_icon<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Button Textures</h3><a id="user-content-button-textures" class="anchor" aria-label="Permalink: Button Textures" href="#button-textures"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>You can customize button textures using Minecraft's built-in textures or your own resource pack:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">button_textures</span>:
+  <span class="pl-ent">chat</span>: <span class="pl-s"><span class="pl-pds">"</span>textures/ui/chat_icon<span class="pl-pds">"</span></span>
+  <span class="pl-ent">crafting</span>: <span class="pl-s"><span class="pl-pds">"</span>textures/ui/crafting_icon<span class="pl-pds">"</span></span>
+  <span class="pl-ent">building</span>: <span class="pl-s"><span class="pl-pds">"</span>textures/ui/building_icon<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Text Formatting</h3><a id="user-content-text-formatting" class="anchor" aria-label="Permalink: Text Formatting" href="#text-formatting"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Customize text colors and formatting throughout the plugin:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">text_formatting</span>:
+  <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;b<span class="pl-pds">"</span></span>       <span class="pl-c"><span class="pl-c">#</span> Bold Aqua</span>
+  <span class="pl-ent">subtitle</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;e<span class="pl-pds">"</span></span>    <span class="pl-c"><span class="pl-c">#</span> Bold Yellow</span>
+  <span class="pl-ent">heading</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;6<span class="pl-pds">"</span></span>     <span class="pl-c"><span class="pl-c">#</span> Bold Gold</span>
+  <span class="pl-ent">content</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;7<span class="pl-pds">"</span></span>       <span class="pl-c"><span class="pl-c">#</span> Gray</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">🔧 API Integration</h2><a id="user-content--api-integration" class="anchor" aria-label="Permalink: 🔧 API Integration" href="#-api-integration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">OpenAI Setup</h3><a id="user-content-openai-setup" class="anchor" aria-label="Permalink: OpenAI Setup" href="#openai-setup"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Get an API key from <a href="https://platform.openai.com/" rel="nofollow">OpenAI</a>
+</li>
+<li>Add your API key to the <code>config.yml</code> file:</li>
+</ol>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">api_providers</span>:
+  <span class="pl-ent">default_provider</span>: <span class="pl-s"><span class="pl-pds">"</span>openai<span class="pl-pds">"</span></span>
+  <span class="pl-ent">openai</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">api_key</span>: <span class="pl-s"><span class="pl-pds">"</span>YOUR_OPENAI_API_KEY<span class="pl-pds">"</span></span>
+    <span class="pl-ent">model</span>: <span class="pl-s"><span class="pl-pds">"</span>gpt-3.5-turbo<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Other Providers</h3><a id="user-content-other-providers" class="anchor" aria-label="Permalink: Other Providers" href="#other-providers"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin also supports:</p>
+<ul>
+<li><a href="https://www.anthropic.com/" rel="nofollow">Anthropic Claude</a></li>
+<li><a href="https://ai.google.dev/" rel="nofollow">Google AI (Gemini)</a></li>
+<li><a href="https://openrouter.ai/" rel="nofollow">OpenRouter</a></li>
+<li>Local AI models (self-hosted)</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">📊 Token System</h2><a id="user-content--token-system" class="anchor" aria-label="Permalink: 📊 Token System" href="#-token-system"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin includes an optional token system that integrates with economy plugins:</p>
+<ul>
+<li>Players receive free daily tokens</li>
+<li>Additional tokens can be purchased with in-game currency</li>
+<li>Configurable token packages and prices</li>
+<li>Support for multiple economy plugins</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">🙏 Acknowledgements</h2><a id="user-content--acknowledgements" class="anchor" aria-label="Permalink: 🙏 Acknowledgements" href="#-acknowledgements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<a href="https://github.com/pmmp/PocketMine-MP">PocketMine-MP</a> team for the amazing server software</li>
+<li>
+<a href="https://github.com/jojoe77777">jojoe77777</a> for the FormAPI plugin</li>
+<li>All contributors and testers who helped improve this plugin</li>
+<li>This work builds upon the concept introduced in the ChatPM-GPT project.
+I am grateful to the author for sharing their innovation and making this development possible.
+<a href="https://github.com/HBIDamian/ChatPM_GPT">https://github.com/HBIDamian/ChatPM_GPT</a>
+</li>
+</ul>
