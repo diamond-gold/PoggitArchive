@@ -1,0 +1,108 @@
+<div class="markdown-heading"><h1 class="heading-element">About</h1><a id="user-content-about" class="anchor" aria-label="Permalink: About" href="#about"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>BetterNPC is a basic npc plugin for PocketMine-MP.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Entities are being saved in the world directly</li>
+<li>
+<strong>Editable</strong> via command or by right-clicking the entity (Required Permission: betternpc.edit)</li>
+<li>Customize the entities to your will</li>
+<li>Assign hit actions to your entities</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/betternpc</td>
+<td>Main Command</td>
+<td>betternpc.command</td>
+</tr>
+<tr>
+<td>/betternpc create</td>
+<td>Create an entity</td>
+<td></td>
+</tr>
+<tr>
+<td>/betternpc edit [entityId: int]</td>
+<td>Edit an entity</td>
+<td></td>
+</tr>
+<tr>
+<td>/betternpc remove [entityId: int]</td>
+<td>Remove an entity</td>
+<td></td>
+</tr>
+<tr>
+<td>/betternpc list</td>
+<td>List all entities</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Current Hit Actions</h2><a id="user-content-current-hit-actions" class="anchor" aria-label="Permalink: Current Hit Actions" href="#current-hit-actions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Emote</td>
+<td>The entity is doing an emote</td>
+<td>The emote only works for human entities</td>
+</tr>
+<tr>
+<td>Run Command</td>
+<td>The player runs a command</td>
+<td></td>
+</tr>
+<tr>
+<td>Send Message</td>
+<td>Send a message to the player</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Action Tag-Replacements</h2><a id="user-content-action-tag-replacements" class="anchor" aria-label="Permalink: Action Tag-Replacements" href="#action-tag-replacements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Current player = The player who clicks on the NPC and runs the action</p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{player}</td>
+<td>Current player username</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Config</h2><a id="user-content-config" class="anchor" aria-label="Permalink: Config" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> You can find all the emotes at https://github.com/JustTalDevelops/bedrock-emotes?tab=readme-ov-file#emotes</span>
+<span class="pl-ent">emotes</span>:
+  <span class="pl-ent">wave</span>:
+    <span class="pl-ent">id</span>: <span class="pl-s">4c8ae710-df2e-47cd-814d-cc7bf21a3d67</span>
+    <span class="pl-ent">name</span>: <span class="pl-s">Wave</span>
+  <span class="pl-ent">yoga</span>:
+    <span class="pl-ent">id</span>: <span class="pl-s">3f1bdf46-80b0-4a64-b631-4ac2f2491165</span>
+    <span class="pl-ent">name</span>: <span class="pl-s">Yoga</span>
+
+<span class="pl-c"><span class="pl-c">#</span> The cooldown for each hit action for the entities in seconds (Default: 10)</span>
+<span class="pl-ent">hit-action-cooldown</span>: <span class="pl-c1">10</span>
+
+<span class="pl-c"><span class="pl-c">#</span> The cooldown for the random emote setting for entities in seconds (Default: 60)</span>
+<span class="pl-ent">random-emote-cooldown</span>: <span class="pl-c1">60</span>
+
+<span class="pl-c"><span class="pl-c">#</span> If true, when a player hits the entity and the entity has a "run_command" hit action, the server performs the command and not the client. (Default: false)</span>
+<span class="pl-ent">server-command-handling</span>: <span class="pl-c1">false</span></pre></div>
