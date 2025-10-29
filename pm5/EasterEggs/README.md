@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/fernanACM/EasterEggs
 License: Apache-2.0
 Categories: General,API plugins,Minigame,Economy
-Keywords: EasterEggs,Easter,Eggs,ACM
+Keywords: ACM,Easter,EasterEggs,Eggs
 ```

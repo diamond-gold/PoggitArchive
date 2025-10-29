@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/fernanACM/GiveAll
 License: Apache-2.0
 Categories: General,Fun,Admin Tools
-Keywords: Giveall,give,itemsall
+Keywords: give,Giveall,itemsall
 ```
