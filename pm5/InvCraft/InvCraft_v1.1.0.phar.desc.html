@@ -1,0 +1,45 @@
+<div class="markdown-heading"><h1 class="heading-element">Invcraft - A 6x6 crafting table plugin for PocketMine-MP</h1><a id="user-content-invcraft---a-6x6-crafting-table-plugin-for-pocketmine-mp" class="anchor" aria-label="Permalink: Invcraft - A 6x6 crafting table plugin for PocketMine-MP" href="#invcraft---a-6x6-crafting-table-plugin-for-pocketmine-mp"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Feel free to report any bugs or suggest new features in <a href="https://github.com/NgLam2911/InvCraft/issues">Issues</a></p>
+<div class="markdown-heading"><h1 class="heading-element">Command &amp; Permission</h1><a id="user-content-command--permission" class="anchor" aria-label="Permalink: Command &amp; Permission" href="#command--permission"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h2 class="heading-element">Command</h2><a id="user-content-command" class="anchor" aria-label="Permalink: Command" href="#command"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/invcraft</code> - Open InvCraft main menu
+<ul>
+<li>aliases: <code>/ic</code>
+</li>
+<li>permission: <code>ic.command</code>
+</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Permission</h2><a id="user-content-permission" class="anchor" aria-label="Permalink: Permission" href="#permission"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>ic.command</code> - Allow player to use <code>/invcraft</code> command including view and craft items</li>
+<li>
+<code>ic.admin</code> - Allow player to use add, edit, remove recipes (will show additional options in menu for admin)</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">For developers (API Doc)</h1><a id="user-content-for-developers-api-doc" class="anchor" aria-label="Permalink: For developers (API Doc)" href="#for-developers-api-doc"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h2 class="heading-element">Recipes API</h2><a id="user-content-recipes-api" class="anchor" aria-label="Permalink: Recipes API" href="#recipes-api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">NgLam2911</span>\<span class="pl-v">InvCraft</span>\<span class="pl-v">crafting</span>\<span class="pl-smi">Recipe</span>;
+<span class="pl-k">use</span> <span class="pl-v">NgLam2911</span>\<span class="pl-v">InvCraft</span>\<span class="pl-smi">InvCraft</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>recipeManager</span> = InvCraft::<span class="pl-en">getInstance</span>()-&gt;<span class="pl-en">getRecipeManager</span>();
+<span class="pl-c">// Create a new recipe</span>
+<span class="pl-s1"><span class="pl-c1">$</span>recipe</span> = <span class="pl-k">new</span> <span class="pl-v">Recipe</span>(&lt;args here&gt;);
+<span class="pl-s1"><span class="pl-c1">$</span>recipeManager</span>-&gt;<span class="pl-en">addRecipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>recipe</span>);
+<span class="pl-c">// Remove a recipe</span>
+<span class="pl-s1"><span class="pl-c1">$</span>recipeManager</span>-&gt;<span class="pl-c1">removeRecipe</span>(&lt;recipe name&gt;);
+<span class="pl-c">// Get a recipe</span>
+<span class="pl-s1"><span class="pl-c1">$</span>result</span> = <span class="pl-s1"><span class="pl-c1">$</span>recipeManager</span>-&gt;<span class="pl-c1">getRecipe</span>(&lt;recipe name&gt;);</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Handle when a player craft an item</h2><a id="user-content-handle-when-a-player-craft-an-item" class="anchor" aria-label="Permalink: Handle when a player craft an item" href="#handle-when-a-player-craft-an-item"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">NgLam2911</span>\<span class="pl-v">InvCraft</span>\<span class="pl-v">event</span>\<span class="pl-smi">InvCraftItemEvent</span>;
+
+<span class="pl-c">// EventsListener.php</span>
+<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onCraft</span>(<span class="pl-smi"><span class="pl-smi">InvCraftItemEvent</span></span> <span class="pl-s1"><span class="pl-c1">$</span>event</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>player</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getPlayer</span>();
+    <span class="pl-s1"><span class="pl-c1">$</span>recipe</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getRecipe</span>();
+    <span class="pl-s1"><span class="pl-c1">$</span>result</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getResult</span>();
+    <span class="pl-c">// Do something here</span>
+}</pre></div>

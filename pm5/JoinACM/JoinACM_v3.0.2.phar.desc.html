@@ -1,0 +1,375 @@
+<div class="markdown-heading"><h1 class="heading-element">JoinACM</h1><a id="user-content-joinacm" class="anchor" aria-label="Permalink: JoinACM" href="#joinacm"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://poggit.pmmp.io/p/JoinACM" rel="nofollow"><img src="https://camo.githubusercontent.com/512828feab341f6fcb8a5def9b2f24bcf520d18db10332c5a1d51fd1cdc613ca/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4a6f696e41434d" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/JoinACM" style="max-width: 100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/JoinACM" rel="nofollow"><img src="https://camo.githubusercontent.com/111a9dd7405b70e2685e5851bfee21882253fb2ef7f5e30fc7cfe1c29f9ac5be/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f4a6f696e41434d" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/JoinACM" style="max-width: 100%;"></a></p>
+<p>A simple JoinUI customizable through the 'config.yml' file, you can edit the form and chat messages, you can also edit the sounds.</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/83558341/224910873-d50048b2-a7cf-42a1-a6c3-c6805c341c55.png"><img src="https://user-images.githubusercontent.com/83558341/224910873-d50048b2-a7cf-42a1-a6c3-c6805c341c55.png" alt="Captura de pantalla 2023-03-14 010240" style="max-width: 100%;"></a>
+<a href="https://discord.gg/YyE9XFckqb" rel="nofollow"><img src="https://camo.githubusercontent.com/0ab3d944301c5abca358b48745e716ae090869372d46d4a9c5f1303e48dedd9b/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833373730313836383634393730393536383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/837701868649709568?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h3 class="heading-element">📸 Images</h3><a id="user-content--images" class="anchor" aria-label="Permalink: 📸 Images" href="#-images"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>FormUI</strong>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/83558341/224911130-c648279d-056a-4d8e-84d2-03fe92572c49.png"><img src="https://user-images.githubusercontent.com/83558341/224911130-c648279d-056a-4d8e-84d2-03fe92572c49.png" style="max-width: 100%;"></a></p>
+<p><strong>BookUI</strong>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/83558341/224911329-40c3467d-23a8-4ab1-b71c-3e54b5386ade.png"><img src="https://user-images.githubusercontent.com/83558341/224911329-40c3467d-23a8-4ab1-b71c-3e54b5386ade.png" style="max-width: 100%;"></a></p>
+<p><strong>Title and Animation</strong>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/83558341/224911885-d9908ac2-96cf-4875-bacb-ab01c1bac8f6.png"><img src="https://user-images.githubusercontent.com/83558341/224911885-d9908ac2-96cf-4875-bacb-ab01c1bac8f6.png" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h3 class="heading-element">💡 Implementations</h3><a id="user-content--implementations" class="anchor" aria-label="Permalink: 💡 Implementations" href="#-implementations"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>[X] Configuration.</li>
+<li>[X] Personalization in config</li>
+<li>[X] Two types of forms (FormUI and BookUI)</li>
+<li>[X] New welcome system</li>
+<li>[X] New welcome system for select people</li>
+<li>[X] Join in a selected world</li>
+<li>[X] Commands.</li>
+<li>[x] Keys in config.yml.</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">💾 Config</h3><a id="user-content--config" class="anchor" aria-label="Permalink: 💾 Config" href="#-config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span>      _         _            _      ___   __  __ </span>
+<span class="pl-c"><span class="pl-c">#</span>  _  | |  ___  (_)  _ _     /_\    / __| |  \/  |</span>
+<span class="pl-c"><span class="pl-c">#</span>  | || | / _ \ | | | ' \   / _ \  | (__  | |\/| |</span>
+<span class="pl-c"><span class="pl-c">#</span>   \__/  \___/ |_| |_||_| /_/ \_\  \___| |_|  |_|</span>
+<span class="pl-c"><span class="pl-c">#</span>           by fernanACM</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Here is the page for you to choose the sound you like: </span>
+<span class="pl-c"><span class="pl-c">#</span> https://www.digminecraft.com/lists/sound_list_pe.php</span>
+<span class="pl-c"><span class="pl-c">#</span> Remember that the type of music must be of the " ", </span>
+
+<span class="pl-c"><span class="pl-c">#</span> DO NOT TOUCH!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-s"><span class="pl-pds">"</span>2.0.0<span class="pl-pds">"</span></span> 
+
+<span class="pl-c"><span class="pl-c">#</span> ====(PREFIX)====</span>
+<span class="pl-ent">Prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;f[&amp;6JoinACM&amp;f]&amp;r&amp;8»&amp;r <span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====(VIP SUPPORT)====</span>
+<span class="pl-ent">JoinVip</span>:
+  <span class="pl-ent">Support</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" To activate/deactivate this option</span>
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">false</span>
+  <span class="pl-c"><span class="pl-c">#</span> Add player names</span>
+  <span class="pl-ent">vip-list</span>:
+    - <span class="pl-s">fernanACM9606</span>
+    - <span class="pl-s">Steve</span>
+    - <span class="pl-s">KEN3701</span>
+  <span class="pl-c"><span class="pl-c">#</span> Add messages to the aforementioned users, this applies</span>
+  <span class="pl-c"><span class="pl-c">#</span> at the time of joining the game.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Use: {PLAYER} =&gt; player name</span>
+  <span class="pl-c"><span class="pl-c">#</span> Example:</span>
+  <span class="pl-c"><span class="pl-c">#</span> Join:</span>
+  <span class="pl-c"><span class="pl-c">#</span>   PlayerName:</span>
+  <span class="pl-c"><span class="pl-c">#</span>    message: "{PLAYER} just joined, please welcome them."</span>
+  <span class="pl-c"><span class="pl-c">#</span>    // sounds: https://www.digminecraft.com/lists/sound_list_pe.php</span>
+  <span class="pl-c"><span class="pl-c">#</span>    soundName: "random.totem"</span>
+  <span class="pl-ent">Join</span>:
+    <span class="pl-ent">fernanACM9606</span>:
+      <span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;f[&amp;c{PLAYER}&amp;f]&amp;b:&amp;e The server owner just joined.<span class="pl-pds">"</span></span>
+      <span class="pl-ent">soundName</span>: <span class="pl-s"><span class="pl-pds">"</span>random.totem<span class="pl-pds">"</span></span>
+    <span class="pl-ent">KEN3701</span>:
+      <span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;f[&amp;6{PLAYER}&amp;f]&amp;b:&amp;e You have joined ACM servers.<span class="pl-pds">"</span></span>
+      <span class="pl-ent">soundName</span>: <span class="pl-s"><span class="pl-pds">"</span>mob.villager.yes<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Add messages to the aforementioned users, this applies</span>
+  <span class="pl-c"><span class="pl-c">#</span> at the time of leaving the game.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Use: {PLAYER} =&gt; player name</span>
+  <span class="pl-c"><span class="pl-c">#</span> Example:</span>
+  <span class="pl-c"><span class="pl-c">#</span> Quit:</span>
+  <span class="pl-c"><span class="pl-c">#</span>   PlayerName:</span>
+  <span class="pl-c"><span class="pl-c">#</span>    message: "{PLAYER} the owner is gone."</span>
+  <span class="pl-c"><span class="pl-c">#</span>    // sounds: https://www.digminecraft.com/lists/sound_list_pe.php</span>
+  <span class="pl-c"><span class="pl-c">#</span>    soundName: "random.totem"</span>
+  <span class="pl-ent">Quit</span>:
+    <span class="pl-ent">fernanACM9606</span>:
+      <span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;f[&amp;c{PLAYER}&amp;f]&amp;b:&amp;e The server owner just joined.<span class="pl-pds">"</span></span>
+      <span class="pl-ent">soundName</span>: <span class="pl-s"><span class="pl-pds">"</span>random.pop2<span class="pl-pds">"</span></span>
+    <span class="pl-ent">KEN3701</span>:
+      <span class="pl-ent">message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;f[&amp;6{PLAYER}&amp;f]&amp;b:&amp;e The admin left :).<span class="pl-pds">"</span></span>
+      <span class="pl-ent">soundName</span>: <span class="pl-s"><span class="pl-pds">"</span>mob.villager.no<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span> Sound on/off settings</span>
+  <span class="pl-ent">Sound</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" To activate/deactivate this option</span>
+    <span class="pl-ent">playerJoin</span>: <span class="pl-c1">true</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" To activate/deactivate this option</span>
+    <span class="pl-ent">playerQuit</span>: <span class="pl-c1">true</span>
+    <span class="pl-c"><span class="pl-c">#</span> sounds: https://www.digminecraft.com/lists/sound_list_pe.php</span>
+    <span class="pl-c"><span class="pl-c">#</span> In case you forgot to put "soundName" in a message</span>
+    <span class="pl-ent">default-joinSoundName</span>: <span class="pl-s"><span class="pl-pds">"</span>mob.villager.yes<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span> sounds: https://www.digminecraft.com/lists/sound_list_pe.php</span>
+    <span class="pl-c"><span class="pl-c">#</span> In case you forgot to put "soundName" in a message</span>
+    <span class="pl-ent">default-quitSoundName</span>: <span class="pl-s"><span class="pl-pds">"</span>mob.villager.no<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====(PLAYER JOIN)====</span>
+<span class="pl-ent">PlayerJoin</span>:
+  <span class="pl-ent">BroadCast</span>:
+    <span class="pl-c"><span class="pl-c">#</span> (JOIN)</span>
+    <span class="pl-c"><span class="pl-c">#</span> Custom message when joining: </span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "{NAME}" to display player name</span>
+    <span class="pl-ent">playerJoinMessage</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;8[&amp;a+&amp;8]&amp;a {NAME}<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span> sounds: https://www.digminecraft.com/lists/sound_list_pe.php</span>
+    <span class="pl-ent">joinSoundName</span>: <span class="pl-s"><span class="pl-pds">"</span>mob.irongolem.hit<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" To activate/deactivate this option</span>
+    <span class="pl-ent">playerJoin</span>: <span class="pl-c1">true</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" To activate/deactivate this option</span>
+    <span class="pl-ent">joinSound</span>: <span class="pl-c1">true</span>
+    <span class="pl-c"><span class="pl-c">#</span> {FIRST_TIME}</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "{NAME}" to display player name</span>
+    <span class="pl-ent">firstTimeBroadCastMessage</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>==========================================<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;ePlease welcome {NAME}, he has joined our<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;ecommunity for the first time.<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>==========================================<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> (JOIN SETTINGS)</span>
+  <span class="pl-ent">JoinType</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Modes:</span>
+    <span class="pl-c"><span class="pl-c">#</span> UI =&gt; Send form</span>
+    <span class="pl-c"><span class="pl-c">#</span> BOOK =&gt; Send book</span>
+    <span class="pl-ent">formType</span>: <span class="pl-s"><span class="pl-pds">"</span>UI<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span> FIRST_TIME =&gt; When you first join</span>
+    <span class="pl-c"><span class="pl-c">#</span> ALWAYS =&gt; Always when you join</span>
+    <span class="pl-c"><span class="pl-c">#</span> false =&gt; Disabled when joined</span>
+    <span class="pl-ent">modeForm</span>: <span class="pl-s"><span class="pl-pds">"</span>ALWAYS<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span> TOAST =&gt; Achievement notification</span>
+    <span class="pl-c"><span class="pl-c">#</span> MESSAGE =&gt; Message in the chat</span>
+    <span class="pl-c"><span class="pl-c">#</span> TIP =&gt; Message in TIP</span>
+    <span class="pl-c"><span class="pl-c">#</span> POPUP Message in POPUP</span>
+    <span class="pl-c"><span class="pl-c">#</span> ACTION_BAR =&gt; Message in the action bar</span>
+    <span class="pl-c"><span class="pl-c">#</span> false =&gt; Disabled when joined</span>
+    <span class="pl-ent">modeMessage</span>: <span class="pl-s">TOAST</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" To activate/deactivate this option</span>
+    <span class="pl-ent">modeTitle</span>: <span class="pl-c1">true</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" To activate/deactivate this option</span>
+    <span class="pl-ent">modeAnimation</span>: <span class="pl-c1">true</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" To activate/deactivate this option</span>
+    <span class="pl-ent">firstTime</span>: <span class="pl-c1">true</span>
+    <span class="pl-c"><span class="pl-c">#</span> (ANIMATION)</span>
+    <span class="pl-ent">Animation</span>:
+      <span class="pl-c"><span class="pl-c">#</span> Modes:</span>
+      <span class="pl-c"><span class="pl-c">#</span> [BOOTS, CHAINS, PICKAXE, SHOVEL, SWORD, HEART, SHIELD, </span>
+      <span class="pl-c"><span class="pl-c">#</span> SHIELD_ON_FIRE, MIRROR, BLINDNESS, HUNGER, POISON, </span>
+      <span class="pl-c"><span class="pl-c">#</span> HEART_OF_WITHER, MULTi_HEART, EYE, PILLAGER, EMERALD, </span>
+      <span class="pl-c"><span class="pl-c">#</span> TWISTER, TOTEM, GUARDIAN] and "false" =&gt; Disabled option</span>
+      <span class="pl-ent">animationMode</span>: <span class="pl-s"><span class="pl-pds">"</span>EMERALD<span class="pl-pds">"</span></span>
+      <span class="pl-c"><span class="pl-c">#</span> sounds: https://www.digminecraft.com/lists/sound_list_pe.php</span>
+      <span class="pl-ent">soundName</span>: <span class="pl-s"><span class="pl-pds">"</span>random.anvil_land<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> (MESSAGE)</span>
+  <span class="pl-ent">Messages</span>:
+    <span class="pl-ent">sendToast</span>:
+      <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;aJoin&amp;fACM&amp;r&amp;e v2.0.0<span class="pl-pds">"</span></span>
+      <span class="pl-ent">subTitle</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;bHe is testing a new version of JoinACM with new stuff!<span class="pl-pds">"</span></span>
+    <span class="pl-ent">sendMessage</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;ePut something here, this is a welcome message &gt;:C<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;b- JoinACM v2.0.0<span class="pl-pds">"</span></span>
+    <span class="pl-ent">sendTip</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;bWelcome!<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;6{NAME}<span class="pl-pds">"</span></span>
+    <span class="pl-ent">sendPopup</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;bYou again, &amp;d{NAME}&amp;b?!<span class="pl-pds">"</span></span>
+    <span class="pl-ent">sendActionBar</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;9JOIN ACM<span class="pl-pds">"</span></span>
+    <span class="pl-ent">sendTitle</span>:
+      <span class="pl-ent">titleMessage</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;6Welcome<span class="pl-pds">"</span></span>
+      <span class="pl-ent">subTitleMessage</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;f{NAME}&amp;b, thanks for using JoinACM<span class="pl-pds">"</span></span>
+
+    <span class="pl-ent">firstTimeMessage</span>:
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;e==================<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;bWow, you seem to be new.<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;bWelcome.<span class="pl-pds">"</span></span>
+      - <span class="pl-s"><span class="pl-pds">"</span>&amp;e==================<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> ====(PLAYER QUIT)===</span>
+<span class="pl-ent">PlayerQuit</span>:
+  <span class="pl-ent">BroadCast</span>:
+    <span class="pl-c"><span class="pl-c">#</span> [QUIT]</span>
+    <span class="pl-c"><span class="pl-c">#</span> Custom message when joining: </span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "{NAME}" to display player name</span>
+    <span class="pl-ent">playerQuitMessage</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;8[&amp;c-&amp;8]&amp;c {NAME}<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span> sounds: https://www.digminecraft.com/lists/sound_list_pe.php</span>
+    <span class="pl-ent">quitSoundName</span>: <span class="pl-s"><span class="pl-pds">"</span>mob.irongolem.walk<span class="pl-pds">"</span></span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" To activate/deactivate this option</span>
+    <span class="pl-ent">playerQuit</span>: <span class="pl-c1">true</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" To activate/deactivate this option</span>
+    <span class="pl-ent">quitSound</span>: <span class="pl-c1">true</span>
+<span class="pl-c"><span class="pl-c">#</span> ====(SPAWN CUSTOM)====</span>
+<span class="pl-c"><span class="pl-c">#</span> Modes: </span>
+<span class="pl-c"><span class="pl-c">#</span> DEFAULT =&gt; Upon joining, you will appear in the default world.</span>
+
+<span class="pl-c"><span class="pl-c">#</span> CUSTOM =&gt; You will be able to define the world where you want </span>
+<span class="pl-c"><span class="pl-c">#</span> to spawn when you join. Use the command /joinacm setspawn</span>
+
+<span class="pl-c"><span class="pl-c">#</span> false =&gt; Disable this option</span>
+<span class="pl-ent">SpawnMode</span>:
+  <span class="pl-ent">joinSpawn</span>: <span class="pl-s"><span class="pl-pds">"</span>DEFAULT<span class="pl-pds">"</span></span>
+  <span class="pl-ent">undefined-message</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cYou have not defined &amp;l&amp;bJoinACM&amp;r&amp;c SpawnCustom. &amp;dUse: /joinacm setspawn<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====(JOIN UI)====</span>
+<span class="pl-ent">JoinUI</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" To activate/deactivate this option</span>
+  <span class="pl-ent">sendFormMessage</span>: <span class="pl-c1">true</span>
+  <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" To activate/deactivate this option</span>
+  <span class="pl-ent">modeAnimation</span>: <span class="pl-c1">true</span>
+  <span class="pl-c"><span class="pl-c">#</span> Title </span>
+  <span class="pl-ent">sendTitle</span>:
+      <span class="pl-ent">titleMessage</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;6Welcome<span class="pl-pds">"</span></span>
+      <span class="pl-ent">subTitleMessage</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;f{NAME}&amp;b, thanks for using JoinACM<span class="pl-pds">"</span></span>
+  <span class="pl-ent">Sounds</span>:
+    <span class="pl-c"><span class="pl-c">#</span> sounds: https://www.digminecraft.com/lists/sound_list_pe.php</span>
+    <span class="pl-ent">closeForm</span>: <span class="pl-s"><span class="pl-pds">"</span>random.pop2<span class="pl-pds">"</span></span>
+    <span class="pl-ent">clickTheButton</span>: <span class="pl-s"><span class="pl-pds">"</span>random.fizz<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> form</span>
+  <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;5JoinACM<span class="pl-pds">"</span></span>
+  <span class="pl-ent">content</span>:
+    - <span class="pl-s"><span class="pl-pds">"</span>§eWelcome to the server friend :D<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>§eI hope you like it very much<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>{LINE}{LINE}&amp;cVersion:&amp;e 2.0.0<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;cReport bug:&amp;e &amp;ehttps://discord.gg/YyE9XFckqb<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;cGithub:&amp;b https://github.com/fernanACM/<span class="pl-pds">"</span></span>
+    - <span class="pl-s"><span class="pl-pds">"</span>&amp;cAuthor: §ffernanACM<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> You can add an infinite number with or without commands.</span>
+  <span class="pl-c"><span class="pl-c">#</span> Example:</span>
+  <span class="pl-c"><span class="pl-c">#</span> JoinUI:</span>
+  <span class="pl-c"><span class="pl-c">#</span>   buttons:</span>
+  <span class="pl-c"><span class="pl-c">#</span>     ButtonName:</span>
+  <span class="pl-c"><span class="pl-c">#</span>       name: "Test"</span>
+  <span class="pl-c"><span class="pl-c">#</span>       // http or https</span>
+  <span class="pl-c"><span class="pl-c">#</span>       image: "https://i.imgur.com/cVJBKqf.png"</span>
+  <span class="pl-c"><span class="pl-c">#</span>       // Use "CONSOLE" or "PLAYER"</span>
+  <span class="pl-c"><span class="pl-c">#</span>       target: CONSOLE</span>
+  <span class="pl-c"><span class="pl-c">#</span>       command: "give {PLAYER} apple 5"</span>
+  <span class="pl-c"><span class="pl-c">#</span>         - </span>
+  <span class="pl-ent">buttons</span>:
+    <span class="pl-ent">JoinACM</span>:
+      <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Click to continue<span class="pl-pds">"</span></span>
+      <span class="pl-ent">image</span>: <span class="pl-s"><span class="pl-pds">"</span>https://i.imgur.com/cVJBKqf.png<span class="pl-pds">"</span></span>
+    <span class="pl-ent">Apple</span>:
+      <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Receive apple{LINE}click<span class="pl-pds">"</span></span>
+      <span class="pl-c"><span class="pl-c">#</span> http or https</span>
+      <span class="pl-ent">image</span>: <span class="pl-s"><span class="pl-pds">"</span>textures/items/apple<span class="pl-pds">"</span></span>
+      <span class="pl-ent">command</span>: <span class="pl-s"><span class="pl-pds">"</span>give {PLAYER} apple 5<span class="pl-pds">"</span></span>
+      <span class="pl-c"><span class="pl-c">#</span> Use "CONSOLE" or "PLAYER"</span>
+      <span class="pl-ent">target</span>: <span class="pl-s"><span class="pl-pds">"</span>CONSOLE<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====(BOOK UI)====</span>
+<span class="pl-ent">BookUI</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Book info</span>
+  <span class="pl-ent">title</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;cJoinACM<span class="pl-pds">"</span></span>
+  <span class="pl-ent">author</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;afernanACM<span class="pl-pds">"</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Pages</span>
+  <span class="pl-ent">pages</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Here you can add a great infinity of pages</span>
+    <span class="pl-c"><span class="pl-c">#</span> Example:</span>
+    <span class="pl-c"><span class="pl-c">#</span> BookUI:</span>
+    <span class="pl-c"><span class="pl-c">#</span>   pages:</span>
+    <span class="pl-c"><span class="pl-c">#</span>     PaginaName:</span>
+    <span class="pl-c"><span class="pl-c">#</span>       // The page number, the first page is equal to "0"</span>
+    <span class="pl-c"><span class="pl-c">#</span>       page: 3</span>
+    <span class="pl-c"><span class="pl-c">#</span>       content:</span>
+    <span class="pl-c"><span class="pl-c">#</span>         - "Your content here"</span>
+    <span class="pl-ent">JoinACM</span>:
+      <span class="pl-ent">page</span>: <span class="pl-c1">0</span>
+      <span class="pl-ent">content</span>:
+        - <span class="pl-s"><span class="pl-pds">"</span>       &amp;l&amp;9JoinACM   {LINE}{LINE}<span class="pl-pds">"</span></span>
+        - <span class="pl-s"><span class="pl-pds">"</span>§bWelcome to the server friend :D<span class="pl-pds">"</span></span>
+        - <span class="pl-s"><span class="pl-pds">"</span>§bI hope you like it very much<span class="pl-pds">"</span></span>
+        - <span class="pl-s"><span class="pl-pds">"</span>{LINE}{LINE}&amp;cVersion:&amp;a 2.0.0<span class="pl-pds">"</span></span>
+        - <span class="pl-s"><span class="pl-pds">"</span>&amp;cReport bug:&amp;a https://discord.gg/YyE9XFckqb<span class="pl-pds">"</span></span>
+        - <span class="pl-s"><span class="pl-pds">"</span>&amp;cGithub:&amp;b https://github.com/fernanACM/<span class="pl-pds">"</span></span>
+        - <span class="pl-s"><span class="pl-pds">"</span>&amp;cAuthor: §afernanACM<span class="pl-pds">"</span></span>
+    <span class="pl-ent">Page2</span>:
+      <span class="pl-ent">page</span>: <span class="pl-c1">1</span>
+      <span class="pl-ent">content</span>:
+        - <span class="pl-s"><span class="pl-pds">"</span>Here you can add many more information<span class="pl-pds">"</span></span>
+        - <span class="pl-s"><span class="pl-pds">"</span>&amp;cReport bug:&amp;a https://discord.gg/YyE9XFckqb<span class="pl-pds">"</span></span>
+        - <span class="pl-s"><span class="pl-pds">"</span>&amp;cGithub:&amp;b https://github.com/fernanACM/<span class="pl-pds">"</span></span>
+        - <span class="pl-s"><span class="pl-pds">"</span>&amp;cAuthor: §afernanACM<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====(MESSAGES)====</span>
+<span class="pl-ent">Messages</span>:
+  <span class="pl-ent">no-permission</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;cYou don't have permissions for this<span class="pl-pds">"</span></span>
+  <span class="pl-ent">spawn-selected-successfully</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;aWorld custom spawn defined:&amp;b {X}, {Y}, {Z}, world:&amp;a {WORLD_NAME}<span class="pl-pds">"</span></span>
+  <span class="pl-ent">spawn-successfully-removed</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;aThe old spawn has been successfully removed!<span class="pl-pds">"</span></span>
+</pre></div>
+<hr>
+<div class="markdown-heading"><h3 class="heading-element">🕹 Commands</h3><a id="user-content--commands" class="anchor" aria-label="Permalink: 🕹 Commands" href="#-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/joinacm</code> &gt; Open form to preview the 2 types of FormUI</li>
+<li>
+<code>/joinacm setspawn</code> &gt; Define spawn</li>
+<li>
+<code>/joinacm removespawn</code> &gt; Remove spawn</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">🔒 Permissions</h3><a id="user-content--permissions" class="anchor" aria-label="Permalink: 🔒 Permissions" href="#-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Executing the command: <code>joinacm.command:</code>
+</li>
+<li>Define spawn: <code>joinacm.command.setpawn</code>
+</li>
+<li>Remove spawn: <code>joinacm.command.removespawn</code>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">📞 Contact</h3><a id="user-content--contact" class="anchor" aria-label="Permalink: 📞 Contact" href="#-contact"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Redes</th>
+<th>Tag</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube</td>
+<td>fernanACM</td>
+<td><a href="https://www.youtube.com/channel/UC-M5iTrCItYQBg5GMuX5ySw" rel="nofollow">YouTube</a></td>
+</tr>
+<tr>
+<td>Discord</td>
+<td>fernanACM#5078</td>
+<td><a href="https://discord.gg/YyE9XFckqb" rel="nofollow">Discord</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>fernanACM</td>
+<td><a href="https://github.com/fernanACM">GitHub</a></td>
+</tr>
+<tr>
+<td>Poggit</td>
+<td>fernanACM</td>
+<td><a href="https://poggit.pmmp.io/ci/fernanACM" rel="nofollow">Poggit</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="markdown-heading"><h3 class="heading-element">✔ Credits</h3><a id="user-content--credits" class="anchor" aria-label="Permalink: ✔ Credits" href="#-credits"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Authors</th>
+<th>Github</th>
+<th>Lib</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vecnavium</td>
+<td><a href="https://github.com/Vecnavium">Vecnavium</a></td>
+<td><a href="https://github.com/Vecnavium/FormsUI/tree/master/">FormsUI</a></td>
+</tr>
+<tr>
+<td>CortexPE</td>
+<td><a href="https://github.com/CortexPE">CortexPE</a></td>
+<td><a href="https://github.com/CortexPE/Commando/tree/master/">Commando</a></td>
+</tr>
+<tr>
+<td>Muqsit</td>
+<td><a href="https://github.com/Muqsit">Muqsit</a></td>
+<td><a href="https://github.com/Muqsit/SimplePacketHandler">SimplePacketHandler</a></td>
+</tr>
+<tr>
+<td>DaPigGuy</td>
+<td><a href="https://github.com/DaPigGuy">DaPigGuy</a></td>
+<td><a href="https://github.com/DaPigGuy/libPiggyUpdateChecker">libPiggyUpdateChecker</a></td>
+</tr>
+<tr>
+<td>cooldogedev</td>
+<td><a href="https://github.com/cooldogedev">cooldogedev</a></td>
+<td><a href="https://github.com/cooldogedev/libBook">LibBook</a></td>
+</tr>
+</tbody>
+</table>
+<hr>

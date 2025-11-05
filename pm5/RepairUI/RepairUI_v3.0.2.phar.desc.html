@@ -1,0 +1,288 @@
+<div class="markdown-heading"><h1 class="heading-element">RepairUI</h1><a id="user-content-repairui" class="anchor" aria-label="Permalink: RepairUI" href="#repairui"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://poggit.pmmp.io/p/RepairUI" rel="nofollow"><img src="https://camo.githubusercontent.com/f71fddb3150de33678d0956c8ece89e96994f9e7b729a5c6876ed86794d9bc34/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f5265706169725549" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/RepairUI" style="max-width: 100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/RepairUI" rel="nofollow"><img src="https://camo.githubusercontent.com/c79f61b7aecc21bb9d9c630d2694854717c293e4999559a2483609cd776f926a/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f5265706169725549" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/RepairUI" style="max-width: 100%;"></a></p>
+<p><strong>Repair and customize your item names with RepairUI, use money or experience to perform these actions. Only for PocketMine-MP 5.0 servers</strong></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/83558341/176567746-9eda44e8-2ce8-4a36-9b84-eacf611e1385.png"><img src="https://user-images.githubusercontent.com/83558341/176567746-9eda44e8-2ce8-4a36-9b84-eacf611e1385.png" alt="Captura de pantalla 2022-06-29 174022" style="max-width: 100%;"></a></p>
+<p><a href="https://discord.gg/YyE9XFckqb" rel="nofollow"><img src="https://camo.githubusercontent.com/0ab3d944301c5abca358b48745e716ae090869372d46d4a9c5f1303e48dedd9b/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833373730313836383634393730393536383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/837701868649709568?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h3 class="heading-element">🌍 Wiki</h3><a id="user-content--wiki" class="anchor" aria-label="Permalink: 🌍 Wiki" href="#-wiki"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Check our plugin <a href="https://github.com/fernanACM/RepairUI/wiki">wiki</a> for features and secrets in the...</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">💡 Implementations</h3><a id="user-content--implementations" class="anchor" aria-label="Permalink: 💡 Implementations" href="#-implementations"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>[x] Images &gt; <em>To load the images, use <a href="https://poggit.pmmp.io/ci/VennDev/VFormImagesFix/VFormImagesFix" rel="nofollow">FormImagesFIX</a></em>
+</li>
+<li>[X] Configuration</li>
+<li>[X] Multilanguage</li>
+<li>[x] EconmyAPI &amp; BedrockEconomy</li>
+<li>[x] Sounds</li>
+<li>[X] Commands</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h3 class="heading-element">💾 Config</h3><a id="user-content--config" class="anchor" aria-label="Permalink: 💾 Config" href="#-config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span>  ____                           _          _   _   ___ </span>
+<span class="pl-c"><span class="pl-c">#</span> |  _ \    ___   _ __     __ _  (_)  _ __  | | | | |_ _|</span>
+<span class="pl-c"><span class="pl-c">#</span> | |_) |  / _ \ | '_ \   / _` | | | | '__| | | | |  | | </span>
+<span class="pl-c"><span class="pl-c">#</span> |  _ &lt;  |  __/ | |_) | | (_| | | | | |    | |_| |  | | </span>
+<span class="pl-c"><span class="pl-c">#</span> |_| \_\  \___| | .__/   \__,_| |_| |_|     \___/  |___|</span>
+<span class="pl-c"><span class="pl-c">#</span>                |_|                                     </span>
+<span class="pl-c"><span class="pl-c">#</span>           by fernanACM</span>
+<span class="pl-c"><span class="pl-c">#</span> Repair and customize your item names with RepairUI, for PocketMine-MP 5.0 servers</span>
+
+<span class="pl-c"><span class="pl-c">#</span> DO NOT TOUCH!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-s"><span class="pl-pds">"</span>1.0.0<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Plugin prefix</span>
+<span class="pl-ent">Prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;f[&amp;dRepairUI&amp;f]&amp;8»&amp;r <span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Languages</span>
+<span class="pl-c"><span class="pl-c">#</span> "eng", // English</span>
+<span class="pl-c"><span class="pl-c">#</span> "spa", // Spanish</span>
+<span class="pl-c"><span class="pl-c">#</span> "ger", // German</span>
+<span class="pl-c"><span class="pl-c">#</span> "indo", // Indonesian</span>
+<span class="pl-c"><span class="pl-c">#</span> "vie" // Vietnamese</span>
+<span class="pl-ent">language</span>: <span class="pl-s">eng</span>
+<span class="pl-c"><span class="pl-c">#</span> Usa economyapi, bedrockeconomy, xp</span>
+<span class="pl-ent">Economy</span>: 
+  <span class="pl-ent">provider</span>: <span class="pl-s">bedrockeconomy</span>
+<span class="pl-c"><span class="pl-c">#</span> ==(SETTINGS)==</span>
+<span class="pl-ent">Settings</span>:
+  <span class="pl-ent">Use</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to interact with the anvil</span>
+    <span class="pl-ent">anvil</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">Commands</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to run the command</span>
+    <span class="pl-c"><span class="pl-c">#</span> RepairAll command; /repair all</span>
+    <span class="pl-ent">all</span>: <span class="pl-c1">true</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to run the command</span>
+    <span class="pl-c"><span class="pl-c">#</span> RepairHand command: /repair hand</span>
+    <span class="pl-ent">hand</span>: <span class="pl-c1">true</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to run the command</span>
+    <span class="pl-c"><span class="pl-c">#</span> RepairAll command; /repair rename &lt;name&gt;</span>
+    <span class="pl-ent">rename</span>: <span class="pl-c1">true</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to run the command</span>
+    <span class="pl-c"><span class="pl-c">#</span> RepairAll command; /repair lore &lt;lore&gt;</span>
+    <span class="pl-ent">lore</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ==(REPAIR COST)==</span>
+<span class="pl-ent">RepairCost</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Repair mode</span>
+  <span class="pl-ent">Repair</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Put the amount of money cost to repair the items</span>
+    <span class="pl-ent">money-cost</span>: <span class="pl-c1">30</span>
+    <span class="pl-c"><span class="pl-c">#</span> Put the amount of experience cost to repair the items</span>
+    <span class="pl-ent">xp-cost</span>: <span class="pl-c1">10</span>
+    <span class="pl-c"><span class="pl-c">#</span> Damage repair mode. The price will be multiplied by the damage of the item. </span>
+    <span class="pl-c"><span class="pl-c">#</span> IT IS RECOMMENDED TO PUT THE PRICE LOW IF THIS OPTION IS CURRENT.</span>
+    <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to enable/disable this option</span>
+    <span class="pl-ent">damage-mode</span>: <span class="pl-c1">false</span>
+  <span class="pl-c"><span class="pl-c">#</span> Lore mode</span>
+  <span class="pl-ent">Lore</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Put the amount of money cost to change the lore of the items</span>
+    <span class="pl-ent">money-cost</span>: <span class="pl-c1">60</span>
+    <span class="pl-c"><span class="pl-c">#</span> Put the amount of experence cost to change the lore of the items</span>
+    <span class="pl-ent">xp-cost</span>: <span class="pl-c1">20</span>
+  <span class="pl-c"><span class="pl-c">#</span> Rename mode</span>
+  <span class="pl-ent">Rename</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Put the amount of money cost to change the name of the items</span>
+    <span class="pl-ent">money-cost</span>: <span class="pl-c1">50</span>
+    <span class="pl-c"><span class="pl-c">#</span> Put the amount of experence cost to change the name of the items</span>
+    <span class="pl-ent">xp-cost</span>: <span class="pl-c1">20</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">🕹 Commands</h3><a id="user-content--commands" class="anchor" aria-label="Permalink: 🕹 Commands" href="#-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/repairui</code></td>
+<td>Open the main menu</td>
+</tr>
+<tr>
+<td><code>/repairui help</code></td>
+<td>Command list</td>
+</tr>
+<tr>
+<td><code>/repairui all</code></td>
+<td>Repair all items</td>
+</tr>
+<tr>
+<td><code>/repairui hand</code></td>
+<td>Repair the items in your hand</td>
+</tr>
+<tr>
+<td><code>/repairui rename</code></td>
+<td>Rename the item in your hand</td>
+</tr>
+<tr>
+<td><code>/repairui lore</code></td>
+<td>Lore the item in your hand</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">🔒 Permissions</h3><a id="user-content--permissions" class="anchor" aria-label="Permalink: 🔒 Permissions" href="#-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>repairui.cmd.acm</code></td>
+<td>Executing the command</td>
+</tr>
+<tr>
+<td><code>repairui.help.acm</code></td>
+<td>Command list</td>
+</tr>
+<tr>
+<td><code>repairui.repair.all</code></td>
+<td>Repair all command</td>
+</tr>
+<tr>
+<td><code>repairui.repair.hand</code></td>
+<td>Repair hand command</td>
+</tr>
+<tr>
+<td><code>repairui.repair.money</code></td>
+<td>Repair with money</td>
+</tr>
+<tr>
+<td><code>repairui.repair.xp</code></td>
+<td>Repair with xp</td>
+</tr>
+<tr>
+<td><code>repairui.rename.money</code></td>
+<td>Rename with money</td>
+</tr>
+<tr>
+<td><code>repairui.rename.xp</code></td>
+<td>Rename with xp</td>
+</tr>
+<tr>
+<td><code>repairui.rename.cmd</code></td>
+<td>Rename command</td>
+</tr>
+<tr>
+<td><code>repairui.lore.money</code></td>
+<td>Lore with money</td>
+</tr>
+<tr>
+<td><code>repairui.lore.xp</code></td>
+<td>Lore with xp</td>
+</tr>
+<tr>
+<td><code>repairui.lore.cmd</code></td>
+<td>Lore command</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">🌐 MultiLanguage</h3><a id="user-content--multilanguage" class="anchor" aria-label="Permalink: 🌐 MultiLanguage" href="#-multilanguage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Translated by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>English</td>
+<td><a href="https://github.com/fernanACM">fernanACM</a></td>
+</tr>
+<tr>
+<td>Spanish</td>
+<td><a href="https://github.com/fernanACM">fernanACM</a></td>
+</tr>
+<tr>
+<td>Indonesian</td>
+<td>RepairUI</td>
+</tr>
+<tr>
+<td>German</td>
+<td><a href="https://github.com/GamerMJay">GamerMJay</a></td>
+</tr>
+<tr>
+<td>Vietnamese</td>
+<td><a href="https://github.com/NhanAZ">NhanAZ</a></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">📢 Report bug</h3><a id="user-content--report-bug" class="anchor" aria-label="Permalink: 📢 Report bug" href="#-report-bug"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>If you find any bugs in this plugin, please let me know via: <a href="https://github.com/fernanACM/RepairUI/issues">issues</a>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">📞 Contact</h3><a id="user-content--contact" class="anchor" aria-label="Permalink: 📞 Contact" href="#-contact"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Redes</th>
+<th>Tag</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube</td>
+<td>fernanACM</td>
+<td><a href="https://www.youtube.com/channel/UC-M5iTrCItYQBg5GMuX5ySw" rel="nofollow">YouTube</a></td>
+</tr>
+<tr>
+<td>Discord</td>
+<td>fernanACM#5078</td>
+<td><a href="https://discord.gg/YyE9XFckqb" rel="nofollow">Discord</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>fernanACM</td>
+<td><a href="https://github.com/fernanACM">GitHub</a></td>
+</tr>
+<tr>
+<td>Poggit</td>
+<td>fernanACM</td>
+<td><a href="https://poggit.pmmp.io/ci/fernanACM" rel="nofollow">Poggit</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="markdown-heading"><h3 class="heading-element">✔ Credits</h3><a id="user-content--credits" class="anchor" aria-label="Permalink: ✔ Credits" href="#-credits"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Authors</th>
+<th>Github</th>
+<th>Lib</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CortexPE</td>
+<td><a href="https://github.com/CortexPE">CortexPE</a></td>
+<td><a href="https://github.com/CortexPE/Commando/tree/master/">Commando</a></td>
+</tr>
+<tr>
+<td>Muqsit</td>
+<td><a href="https://github.com/Muqsit">Muqsit</a></td>
+<td><a href="https://github.com/Muqsit/SimplePacketHandler">SimplePacketHandler</a></td>
+</tr>
+<tr>
+<td>Vecnavium</td>
+<td><a href="https://github.com/Vecnavium">Vecnavium</a></td>
+<td><a href="https://github.com/Vecnavium/FormsUI/tree/master/">FormsUI</a></td>
+</tr>
+<tr>
+<td>DaPigGuy</td>
+<td><a href="https://github.com/DaPigGuy">DaPigGuy</a></td>
+<td><a href="https://github.com/DaPigGuy/libPiggyEconomy">libPiggyEconomy</a></td>
+</tr>
+<tr>
+<td>DaPigGuy</td>
+<td><a href="https://github.com/DaPigGuy">DaPigGuy</a></td>
+<td><a href="https://github.com/DaPigGuy/libPiggyUpdateChecker">libPiggyUpdateChecker</a></td>
+</tr>
+</tbody>
+</table>
