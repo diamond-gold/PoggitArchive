@@ -1,0 +1,242 @@
+<p><a href="https://poggit.pmmp.io/p/EasterEggs" rel="nofollow"><img src="https://camo.githubusercontent.com/404679972c872960899e04423f83d7b6d508bf5da5d9732bdb7b9951d802e44b/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f45617374657245676773" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/EasterEggs" style="max-width: 100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/EasterEggs" rel="nofollow"><img src="https://camo.githubusercontent.com/f71bc357517f315027bf2b66dd1139d4023ca27952e4caaef21d0506273e6345/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f45617374657245676773" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/EasterEggs" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h1 class="heading-element">EasterEggs</h1><a id="user-content-eastereggs" class="anchor" aria-label="Permalink: EasterEggs" href="#eastereggs"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>EasterEggs addon with customizable locations, world objectives, and unique rewards. Make your players enjoy searching and competing!</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/be799da7-2e28-40a4-bbd6-f92df924008a"><img src="https://github.com/user-attachments/assets/be799da7-2e28-40a4-bbd6-f92df924008a" alt="image" style="max-width: 100%;"></a></p>
+<p><a href="https://discord.gg/YyE9XFckqb" rel="nofollow"><img src="https://camo.githubusercontent.com/0ab3d944301c5abca358b48745e716ae090869372d46d4a9c5f1303e48dedd9b/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833373730313836383634393730393536383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/837701868649709568?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h3 class="heading-element">🌍 Wiki</h3><a id="user-content--wiki" class="anchor" aria-label="Permalink: 🌍 Wiki" href="#-wiki"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Check our plugin <a href="https://github.com/fernanACM/EasterEggs/wiki">wiki</a> for features and secrets in the...</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">💡 Implementations</h3><a id="user-content--implementations" class="anchor" aria-label="Permalink: 💡 Implementations" href="#-implementations"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>[X] Configuration</li>
+<li>[x] ScoreHud support</li>
+<li>[x] Keys in config.yml</li>
+<li>[x] Reward system</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">💾 Config</h3><a id="user-content--config" class="anchor" aria-label="Permalink: 💾 Config" href="#-config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span>  _____                 _                   _____                       </span>
+<span class="pl-c"><span class="pl-c">#</span> | ____|   __ _   ___  | |_    ___   _ __  | ____|   __ _    __ _   ___ </span>
+<span class="pl-c"><span class="pl-c">#</span> |  _|    / _` | / __| | __|  / _ \ | '__| |  _|    / _` |  / _` | / __|</span>
+<span class="pl-c"><span class="pl-c">#</span> | |___  | (_| | \__ \ | |_  |  __/ | |    | |___  | (_| | | (_| | \__ \</span>
+<span class="pl-c"><span class="pl-c">#</span> |_____|  \__,_| |___/  \__|  \___| |_|    |_____|  \__, |  \__, | |___/</span>
+<span class="pl-c"><span class="pl-c">#</span>                                                    |___/   |___/</span>
+<span class="pl-c"><span class="pl-c">#</span>               by fernanACM</span>
+
+<span class="pl-c"><span class="pl-c">#</span> EasterEggs for PocketMine-MP 5.0 servers. Find the Eggs and get rewards </span>
+<span class="pl-c"><span class="pl-c">#</span> by completing the Eggs goal.</span>
+
+<span class="pl-c"><span class="pl-c">#</span> DO NOT TOUCH!!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-s"><span class="pl-pds">"</span>1.0.0<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Languages</span>
+<span class="pl-c"><span class="pl-c">#</span> "eng", // English</span>
+<span class="pl-c"><span class="pl-c">#</span> "spa", // Spanish</span>
+<span class="pl-c"><span class="pl-c">#</span> "ger", // German</span>
+<span class="pl-c"><span class="pl-c">#</span> "indo", // Indonesian</span>
+<span class="pl-c"><span class="pl-c">#</span> "vie" // Vietnamese</span>
+<span class="pl-ent">language</span>: <span class="pl-s">eng</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Prefix plugin</span>
+<span class="pl-ent">Prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;f[&amp;aEasterEggs&amp;f]&amp;8»&amp;r <span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====(SETIINGS)====</span>
+<span class="pl-ent">Settings</span>:
+  <span class="pl-ent">Form</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Set the character limit to create an event</span>
+    <span class="pl-ent">characteres</span>: <span class="pl-c1">16</span>
+  <span class="pl-ent">EasterEgg</span>:
+    <span class="pl-c"><span class="pl-c">#</span> EasterEggs limit</span>
+    <span class="pl-ent">egg-limit</span>: <span class="pl-c1">10</span>
+
+    <span class="pl-ent">Reward</span>:
+      <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to activate/deactivate this option</span>
+      <span class="pl-ent">broadcast</span>: <span class="pl-c1">true</span>
+      <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to activate/deactivate this option</span>
+      <span class="pl-ent">player-titles</span>: <span class="pl-c1">true</span>
+
+      <span class="pl-ent">Commands</span>:
+        <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to activate/deactivate this option</span>
+        <span class="pl-ent">execute</span>: <span class="pl-c1">true</span>
+        <span class="pl-c"><span class="pl-c">#</span> Use "{PLAYER}" to run commands with the player name</span>
+        <span class="pl-ent">list</span>:
+          - <span class="pl-s">give "{PLAYER}" apple 22</span>
+      <span class="pl-ent">Items</span>:
+        <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to activate/deactivate this option</span>
+        <span class="pl-ent">receive</span>: <span class="pl-c1">true</span>
+        <span class="pl-c"><span class="pl-c">#</span> Set the minimum number of items to receive</span>
+        <span class="pl-ent">min</span>: <span class="pl-c1">5</span>
+        <span class="pl-c"><span class="pl-c">#</span> Set the maximum number of items to receive</span>
+        <span class="pl-ent">max</span>: <span class="pl-c1">8</span>
+    <span class="pl-ent">Entity</span>:
+      <span class="pl-c"><span class="pl-c">#</span> Use "true" or "false" to activate/deactivate this option</span>
+      <span class="pl-ent">particles</span>: <span class="pl-c1">true</span>
+      <span class="pl-c"><span class="pl-c">#</span> Sets the particle color for the egg. Use this page to get the RGB code:</span>
+      <span class="pl-c"><span class="pl-c">#</span> https://htmlcolorcodes.com/es/</span>
+      <span class="pl-ent">particle-color</span>: <span class="pl-s">[16, 230, 227]</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">🔒 Permissions</h3><a id="user-content--permissions" class="anchor" aria-label="Permalink: 🔒 Permissions" href="#-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>eastereggs.cmd.acm</code></td>
+<td>Executing the command</td>
+</tr>
+<tr>
+<td><code>eastereggs.events.cmd.acm</code></td>
+<td>Events</td>
+</tr>
+<tr>
+<td><code>eastereggs.loot.cmd.acm</code></td>
+<td>Loot</td>
+</tr>
+<tr>
+<td><code>eastereggs.setup.cmd.acm</code></td>
+<td>Setup</td>
+</tr>
+<tr>
+<td><code>astereggs.enter.setupmode.acm</code></td>
+<td>Enter in setup mode</td>
+</tr>
+<tr>
+<td><code>eastereggs.use.remover.wand.acm</code></td>
+<td>Use the wand to remove eggs</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">🍟ScoreHud</h3><a id="user-content-scorehud" class="anchor" aria-label="Permalink: 🍟ScoreHud" href="#scorehud"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{eastereggs.eggs}</code></td>
+<td>Eggs obtained</td>
+</tr>
+<tr>
+<td><code>{eastereggs.goal}</code></td>
+<td>Egg goal</td>
+</tr>
+<tr>
+<td><code>{eastereggs.event-name}</code></td>
+<td>Current event</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">🌐 MultiLanguage</h3><a id="user-content--multilanguage" class="anchor" aria-label="Permalink: 🌐 MultiLanguage" href="#-multilanguage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Translated by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>English</td>
+<td><a href="https://github.com/fernanACM">fernanACM</a></td>
+</tr>
+<tr>
+<td>Spanish</td>
+<td><a href="https://github.com/fernanACM">fernanACM</a></td>
+</tr>
+<tr>
+<td>Indonesian</td>
+<td>EasterEggs</td>
+</tr>
+<tr>
+<td>German</td>
+<td>EasterEggs</td>
+</tr>
+<tr>
+<td>Vietnamese</td>
+<td>EasterEggs</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">📢 Report bug</h3><a id="user-content--report-bug" class="anchor" aria-label="Permalink: 📢 Report bug" href="#-report-bug"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>If you find any bugs in this plugin, please let me know via: <a href="https://github.com/fernanACM/EasterEggs/issues">issues</a>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">📞 Contact</h3><a id="user-content--contact" class="anchor" aria-label="Permalink: 📞 Contact" href="#-contact"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Redes</th>
+<th>Tag</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube</td>
+<td>fernanACM</td>
+<td><a href="https://www.youtube.com/channel/UC-M5iTrCItYQBg5GMuX5ySw" rel="nofollow">YouTube</a></td>
+</tr>
+<tr>
+<td>Discord</td>
+<td>fernanACM#5078</td>
+<td><a href="https://discord.gg/YyE9XFckqb" rel="nofollow">Discord</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>fernanACM</td>
+<td><a href="https://github.com/fernanACM">GitHub</a></td>
+</tr>
+<tr>
+<td>Poggit</td>
+<td>fernanACM</td>
+<td><a href="https://poggit.pmmp.io/ci/fernanACM" rel="nofollow">Poggit</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="markdown-heading"><h3 class="heading-element">✔ Credits</h3><a id="user-content--credits" class="anchor" aria-label="Permalink: ✔ Credits" href="#-credits"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Authors</th>
+<th>Github</th>
+<th>Lib</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vecnavium</td>
+<td><a href="https://github.com/Vecnavium">Vecnavium</a></td>
+<td><a href="https://github.com/Vecnavium/FormsUI/tree/master/">FormsUI</a></td>
+</tr>
+<tr>
+<td>CortexPE</td>
+<td><a href="https://github.com/CortexPE">CortexPE</a></td>
+<td><a href="https://github.com/CortexPE/Commando/tree/master/">Commando</a></td>
+</tr>
+<tr>
+<td>Muqsit</td>
+<td><a href="https://github.com/Muqsit">Muqsit</a></td>
+<td><a href="https://github.com/Muqsit/SimplePacketHandler">SimplePacketHandler</a></td>
+</tr>
+<tr>
+<td>Muqsit</td>
+<td><a href="https://github.com/Muqsit">Muqsit</a></td>
+<td><a href="https://github.com/Muqsit/InvMenu">InvMenu</a></td>
+</tr>
+<tr>
+<td>DaPigGuy</td>
+<td><a href="https://github.com/DaPigGuy">DaPigGuy</a></td>
+<td><a href="https://github.com/DaPigGuy/libPiggyUpdateChecker">libPiggyUpdateChecker</a></td>
+</tr>
+</tbody>
+</table>
+<hr>

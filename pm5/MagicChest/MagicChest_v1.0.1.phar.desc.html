@@ -1,0 +1,168 @@
+<p><a href="https://poggit.pmmp.io/p/MagicChest" rel="nofollow"><img src="https://camo.githubusercontent.com/201ec423efd0ee926b6c4443700d38d4fc4fac9580691debf695397092e1a4fa/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4d616769634368657374" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/MagicChest" style="max-width: 100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/MagicChest" rel="nofollow"><img src="https://camo.githubusercontent.com/55f1935e24c377f1af4c15efb1a02713e3ede82a0d4b1ba96c0150052b68ffba/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f4d616769634368657374" alt="" data-canonical-src="https://poggit.pmmp.io/shield.api/MagicChest" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h1 class="heading-element">MagicChest</h1><a id="user-content-magicchest" class="anchor" aria-label="Permalink: MagicChest" href="#magicchest"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A MagicChest full of special and random items. Only servers PocketMine-MP 5.0</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/f48f90ff-785c-4f3c-9287-b4532548099e"><img src="https://github.com/user-attachments/assets/f48f90ff-785c-4f3c-9287-b4532548099e" alt="1750733594209" style="max-width: 100%;"></a></p>
+<p><a href="https://discord.gg/YyE9XFckqb" rel="nofollow"><img src="https://camo.githubusercontent.com/0ab3d944301c5abca358b48745e716ae090869372d46d4a9c5f1303e48dedd9b/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3833373730313836383634393730393536383f6c6162656c3d646973636f726426636f6c6f723d373238394441266c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/837701868649709568?label=discord&amp;color=7289DA&amp;logo=discord" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h3 class="heading-element">🌍 Wiki</h3><a id="user-content--wiki" class="anchor" aria-label="Permalink: 🌍 Wiki" href="#-wiki"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Check our plugin <a href="https://github.com/fernanACM/MagicChest/wiki">wiki</a> for features and secrets in the...</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">💡 Implementations</h3><a id="user-content--implementations" class="anchor" aria-label="Permalink: 💡 Implementations" href="#-implementations"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>[X] Configuration</li>
+<li>[x] Keys in config.yml</li>
+<li>[x] Loot system</li>
+<li>[x] Reward system</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">💾 Config</h3><a id="user-content--config" class="anchor" aria-label="Permalink: 💾 Config" href="#-config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span>  __  __                   _           ____   _                    _   </span>
+<span class="pl-c"><span class="pl-c">#</span> |  \/  |   __ _    __ _  (_)   ___   / ___| | |__     ___   ___  | |_ </span>
+<span class="pl-c"><span class="pl-c">#</span> | |\/| |  / _` |  / _` | | |  / __| | |     | '_ \   / _ \ / __| | __|</span>
+<span class="pl-c"><span class="pl-c">#</span> | |  | | | (_| | | (_| | | | | (__  | |___  | | | | |  __/ \__ \ | |_ </span>
+<span class="pl-c"><span class="pl-c">#</span> |_|  |_|  \__,_|  \__, | |_|  \___|  \____| |_| |_|  \___| |___/  \__|</span>
+<span class="pl-c"><span class="pl-c">#</span>                   |___/</span>
+<span class="pl-c"><span class="pl-c">#</span>           by fernanACM</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Chest refill system with random items. Easy to set up and fun. Only </span>
+<span class="pl-c"><span class="pl-c">#</span> for PocketMine-MP 5.0 servers.</span>
+
+<span class="pl-c"><span class="pl-c">#</span> DO NOT TOUCH!!</span>
+<span class="pl-ent">config-version</span>: <span class="pl-s"><span class="pl-pds">"</span>1.0.0<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Languages</span>
+<span class="pl-c"><span class="pl-c">#</span> "eng", // English</span>
+<span class="pl-c"><span class="pl-c">#</span> "spa", // Spanish</span>
+<span class="pl-c"><span class="pl-c">#</span> "ger", // German</span>
+<span class="pl-c"><span class="pl-c">#</span> "indo", // Indonesian</span>
+<span class="pl-c"><span class="pl-c">#</span> "vie" // Vietnamese</span>
+<span class="pl-ent">language</span>: <span class="pl-s">eng</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Prefix plugin</span>
+<span class="pl-ent">Prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>&amp;l&amp;f[&amp;9MC&amp;f]&amp;8»&amp;r <span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> ====(SETTINGS)====</span>
+<span class="pl-ent">Settings</span>:
+  <span class="pl-ent">MagicChest</span>:
+    <span class="pl-c"><span class="pl-c">#</span> It's time to fill the magic chest:</span>
+    <span class="pl-c"><span class="pl-c">#</span> 300 =&gt; 5 minutes</span>
+    <span class="pl-ent">refill-interval</span>: <span class="pl-c1">300</span>
+    <span class="pl-c"><span class="pl-c">#</span> ====(LOOT)====</span>
+    <span class="pl-ent">Loot</span>:
+      <span class="pl-c"><span class="pl-c">#</span> Minimum amount of loot in the chest.</span>
+      <span class="pl-ent">min</span>: <span class="pl-c1">4</span>
+      <span class="pl-c"><span class="pl-c">#</span> Maximum amount of loot in the chest.</span>
+      <span class="pl-ent">max</span>: <span class="pl-c1">6</span>
+    <span class="pl-c"><span class="pl-c">#</span> ====(BROADCAST)====</span>
+    <span class="pl-ent">Broadcast</span>:
+      <span class="pl-c"><span class="pl-c">#</span> Enter the number of seconds the announcer </span>
+      <span class="pl-c"><span class="pl-c">#</span> will be active. If you have no idea what </span>
+      <span class="pl-c"><span class="pl-c">#</span> it's for, leave it as is.</span>
+      <span class="pl-ent">times</span>: <span class="pl-s">[1, 2, 3, 4, 5, 60, 3600, 10800, 86400, 2592000]</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">🌐 MultiLanguage</h3><a id="user-content--multilanguage" class="anchor" aria-label="Permalink: 🌐 MultiLanguage" href="#-multilanguage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Translated by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>English</td>
+<td><a href="https://github.com/fernanACM">fernanACM</a></td>
+</tr>
+<tr>
+<td>Spanish</td>
+<td><a href="https://github.com/fernanACM">fernanACM</a></td>
+</tr>
+<tr>
+<td>Indonesian</td>
+<td>MagicChest</td>
+</tr>
+<tr>
+<td>German</td>
+<td>MagicChest</td>
+</tr>
+<tr>
+<td>Vietnamese</td>
+<td>MagicChest</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">📢 Report bug</h3><a id="user-content--report-bug" class="anchor" aria-label="Permalink: 📢 Report bug" href="#-report-bug"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>If you find any bugs in this plugin, please let me know via: <a href="https://github.com/fernanACM/MagicChest/issues">issues</a>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">📞 Contact</h3><a id="user-content--contact" class="anchor" aria-label="Permalink: 📞 Contact" href="#-contact"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Redes</th>
+<th>Tag</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube</td>
+<td>fernanACM</td>
+<td><a href="https://www.youtube.com/channel/UC-M5iTrCItYQBg5GMuX5ySw" rel="nofollow">YouTube</a></td>
+</tr>
+<tr>
+<td>Discord</td>
+<td>fernanACM#5078</td>
+<td><a href="https://discord.gg/YyE9XFckqb" rel="nofollow">Discord</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>fernanACM</td>
+<td><a href="https://github.com/fernanACM">GitHub</a></td>
+</tr>
+<tr>
+<td>Poggit</td>
+<td>fernanACM</td>
+<td><a href="https://poggit.pmmp.io/ci/fernanACM" rel="nofollow">Poggit</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="markdown-heading"><h3 class="heading-element">✔ Credits</h3><a id="user-content--credits" class="anchor" aria-label="Permalink: ✔ Credits" href="#-credits"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Authors</th>
+<th>Github</th>
+<th>Lib</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vecnavium</td>
+<td><a href="https://github.com/Vecnavium">Vecnavium</a></td>
+<td><a href="https://github.com/Vecnavium/FormsUI/tree/master/">FormsUI</a></td>
+</tr>
+<tr>
+<td>CortexPE</td>
+<td><a href="https://github.com/CortexPE">CortexPE</a></td>
+<td><a href="https://github.com/CortexPE/Commando/tree/master/">Commando</a></td>
+</tr>
+<tr>
+<td>Muqsit</td>
+<td><a href="https://github.com/Muqsit">Muqsit</a></td>
+<td><a href="https://github.com/Muqsit/SimplePacketHandler">SimplePacketHandler</a></td>
+</tr>
+<tr>
+<td>Muqsit</td>
+<td><a href="https://github.com/Muqsit">Muqsit</a></td>
+<td><a href="https://github.com/Muqsit/InvMenu">InvMenu</a></td>
+</tr>
+<tr>
+<td>DaPigGuy</td>
+<td><a href="https://github.com/DaPigGuy">DaPigGuy</a></td>
+<td><a href="https://github.com/DaPigGuy/libPiggyUpdateChecker">libPiggyUpdateChecker</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
