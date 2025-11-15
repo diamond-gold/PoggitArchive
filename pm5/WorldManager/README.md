@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/PocketMine-Community/WorldManager
 License: MIT
 Categories: World Editing and Management,World Generators,Teleportation,General
-Keywords: 
+Keywords: multiworld,world,worldmanager,worlds
 ```
