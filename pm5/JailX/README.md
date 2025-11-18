@@ -6,7 +6,7 @@
 Version: 2.0.0
     API: 5.0.0
     Updated: 18-07-2024 12:29:43 UTC
-Repo: https://github.com/t-starks/JailX
+Repo: https://github.com/tstarkdev/JailX
 License: Apache-2.0
 Categories: General,Educational,Fun,Teleportation,Admin Tools
 Keywords: jailx,plugin-pocketmine,pmmp,pmmp-plugin,pocketmine-mp,pocketmine-school

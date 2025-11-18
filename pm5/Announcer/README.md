@@ -6,7 +6,7 @@
 Version: 1.0.0
     API: 5.0.0
     Updated: 27-03-2025 02:13:22 UTC
-Repo: https://github.com/t-starks/Announcer
+Repo: https://github.com/tstarkdev/Announcer
 License: Apache-2.0
 Categories: General,Vanilla Mechanics,API plugins,Developer Tools,Fun,Informational
 Keywords: 

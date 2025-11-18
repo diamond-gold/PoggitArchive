@@ -6,7 +6,7 @@
 Version: 1.0.0
     API: 5.0.0
     Updated: 09-06-2024 16:25:23 UTC
-Repo: https://github.com/t-starks/ClearLag
+Repo: https://github.com/tstarkdev/ClearLag
 License: Apache-2.0
 Categories: General,Developer Tools,Informational,Admin Tools
 Keywords: ClearLag

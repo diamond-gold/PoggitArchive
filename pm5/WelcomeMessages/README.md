@@ -6,7 +6,7 @@
 Version: 1.0.0
     API: 5.0.0
     Updated: 16-05-2025 14:27:50 UTC
-Repo: https://github.com/t-starks/WelcomeMessages
+Repo: https://github.com/tstarkdev/WelcomeMessages
 License: Apache-2.0
 Categories: General,API plugins,World Editing and Management,Fun,Teleportation,Chat-Related,Informational
 Keywords: bedrock,mcpe,pocketmine,pocketmine-plugins
