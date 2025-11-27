@@ -1,11 +1,11 @@
 # Smaccer
-<img src="https://raw.githubusercontent.com/AIPTU/Smaccer/b631e58bbe0ad7f4d4ac1c077c4e047238ec5eb9/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/AIPTU/Smaccer/54bd6728c89530d2c0ed8c91683d6514fbcae90b/icon.png" width="128" height="128" />
 
 ## A PocketMine-MP plugin NPCs
 ```properties
-Version: 1.0.7
-    API: 5.16.0
-    Updated: 24-03-2025 15:57:01 UTC
+Version: 1.1.0
+    API: 5.36.0
+    Updated: 26-11-2025 18:33:40 UTC
 Repo: https://github.com/AIPTU/Smaccer
 License: MIT
 Categories: General,Miscellaneous,Developer Tools,Mechanics,Teleportation,Informational,Admin Tools

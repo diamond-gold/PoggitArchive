@@ -1,11 +1,11 @@
 # WorldManager
-<img src="https://raw.githubusercontent.com/PocketMine-Community/WorldManager/3973fbcc7a4c540f11e68414c5bd2f8f6b4a4753/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/PocketMine-Community/WorldManager/bfac237a74d821cc9aa9167ee8eb0a9b8933fa2b/icon.png" width="128" height="128" />
 
-## Advanced world management plugin for PocketMine-MP 5.0.0.
+## Advanced world management plugin for PocketMine-MP 5.x.
 ```properties
-Version: 1.0.0
+Version: 1.1.0
     API: 5.0.0
-    Updated: 12-06-2025 16:23:38 UTC
+    Updated: 26-11-2025 18:34:10 UTC
 Repo: https://github.com/PocketMine-Community/WorldManager
 License: MIT
 Categories: World Editing and Management,World Generators,Teleportation,General
