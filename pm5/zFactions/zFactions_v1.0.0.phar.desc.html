@@ -1,0 +1,200 @@
+<div class="markdown-heading"><h1 class="heading-element">🛡 zPlugins Factions — Advanced Factions System for PocketMine-MP</h1><a id="user-content--zplugins-factions--advanced-factions-system-for-pocketmine-mp" class="anchor" aria-label="Permalink: 🛡 zPlugins Factions — Advanced Factions System for PocketMine-MP" href="#-zplugins-factions--advanced-factions-system-for-pocketmine-mp"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<blockquote>
+<p><strong>A fully-featured factions plugin for PocketMine-MP 5.x</strong>, built for performance and simplicity<br>
+by <strong>zPluginsTeam</strong></p>
+</blockquote>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">⚔️ Features</h2><a id="user-content-️-features" class="anchor" aria-label="Permalink: ⚔️ Features" href="#️-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>🏘 <strong>Faction Creation &amp; Management</strong>
+</li>
+<li>🤝 <strong>Invites, Promotions, Demotions</strong>
+</li>
+<li>💬 <strong>Faction &amp; Ally Chat Systems</strong>
+</li>
+<li>🌍 <strong>Territory Claiming, Overclaiming &amp; Unclaiming</strong>
+</li>
+<li>🏡 <strong>Faction Home &amp; Set Home</strong>
+</li>
+<li>🏦 <strong>Faction Bank System (Deposit &amp; Withdraw)</strong>
+</li>
+<li>🗺 <strong>Territory Map Viewer</strong>
+</li>
+<li>🛡 <strong>Alliances, Enemies, and Diplomacy</strong>
+</li>
+<li>✏️ <strong>Faction Description &amp; Renaming Support</strong>
+</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📦 Requirements</h2><a id="user-content--requirements" class="anchor" aria-label="Permalink: 📦 Requirements" href="#-requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>[x] PocketMine-MP 5.0.0+</li>
+<li>[x] <a href="https://poggit.pmmp.io/p/BedrockEconomy" rel="nofollow">BedrockEconomy</a> (required for economy features)</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📥 Installation</h2><a id="user-content--installation" class="anchor" aria-label="Permalink: 📥 Installation" href="#-installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the <code>zFactions.phar</code>
+</li>
+<li>Place it in your <code>plugins/</code> folder</li>
+<li>Restart your server</li>
+<li>Configure settings in <code>config.yml</code> if available</li>
+<li>Done!</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🧾 Commands</h2><a id="user-content--commands" class="anchor" aria-label="Permalink: 🧾 Commands" href="#-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/f create &lt;name&gt;</code></td>
+<td>Create a new faction</td>
+</tr>
+<tr>
+<td><code>/f invite &lt;player&gt;</code></td>
+<td>Invite a player to your faction</td>
+</tr>
+<tr>
+<td><code>/f accept &lt;faction&gt;</code></td>
+<td>Accept a faction invite</td>
+</tr>
+<tr>
+<td><code>/f deny &lt;faction&gt;</code></td>
+<td>Deny a faction invite</td>
+</tr>
+<tr>
+<td><code>/f promote &lt;player&gt;</code></td>
+<td>Promote a faction member</td>
+</tr>
+<tr>
+<td><code>/f demote &lt;player&gt;</code></td>
+<td>Demote a faction member</td>
+</tr>
+<tr>
+<td><code>/f rename &lt;name&gt;</code></td>
+<td>Rename your faction</td>
+</tr>
+<tr>
+<td><code>/f description &lt;text&gt;</code></td>
+<td>Set a new description for your faction</td>
+</tr>
+<tr>
+<td><code>/f leave</code></td>
+<td>Leave your current faction</td>
+</tr>
+<tr>
+<td><code>/f claim</code></td>
+<td>Claim the current chunk</td>
+</tr>
+<tr>
+<td><code>/f overclaim</code></td>
+<td>Overclaim territory from another faction</td>
+</tr>
+<tr>
+<td><code>/f unclaim</code></td>
+<td>Unclaim the current chunk</td>
+</tr>
+<tr>
+<td><code>/f unclaimall</code></td>
+<td>Unclaim all your faction’s territory</td>
+</tr>
+<tr>
+<td><code>/f home</code></td>
+<td>Teleport to faction home</td>
+</tr>
+<tr>
+<td><code>/f sethome</code></td>
+<td>Set your faction home</td>
+</tr>
+<tr>
+<td><code>/f bank</code></td>
+<td>View the faction bank balance</td>
+</tr>
+<tr>
+<td><code>/f deposit &lt;amount&gt;</code></td>
+<td>Deposit money into your faction’s bank</td>
+</tr>
+<tr>
+<td><code>/f withdraw &lt;amount&gt;</code></td>
+<td>Withdraw money from your faction’s bank</td>
+</tr>
+<tr>
+<td><code>/f chat</code></td>
+<td>Toggle faction-only chat</td>
+</tr>
+<tr>
+<td><code>/f allychat</code></td>
+<td>Toggle chat with allies</td>
+</tr>
+<tr>
+<td><code>/f fly</code></td>
+<td>Toggle faction flight mode</td>
+</tr>
+<tr>
+<td><code>/f info [faction]</code></td>
+<td>View info about a faction</td>
+</tr>
+<tr>
+<td><code>/f map</code></td>
+<td>View the faction territory map</td>
+</tr>
+<tr>
+<td><code>/f ally &lt;faction&gt;</code></td>
+<td>Request alliance with another faction</td>
+</tr>
+<tr>
+<td><code>/f acceptally &lt;faction&gt;</code></td>
+<td>Accept an alliance request</td>
+</tr>
+<tr>
+<td><code>/f denyally &lt;faction&gt;</code></td>
+<td>Deny an alliance request</td>
+</tr>
+<tr>
+<td><code>/f enemy &lt;faction&gt;</code></td>
+<td>Declare another faction as an enemy</td>
+</tr>
+<tr>
+<td><code>/f help</code></td>
+<td>View the help message</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📜 Permissions (Optional)</h2><a id="user-content--permissions-optional" class="anchor" aria-label="Permalink: 📜 Permissions (Optional)" href="#-permissions-optional"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>zfactions.command</code></td>
+<td>Use basic faction commands</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>zfactions.admin</code></td>
+<td>Admin-only controls and overrides</td>
+<td><code>op</code></td>
+</tr>
+<tr>
+<td><code>zfactions.fly</code></td>
+<td>Allows flying in your faction claim</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>zfactions.overclaim</code></td>
+<td>Allows overclaiming faction claims</td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
