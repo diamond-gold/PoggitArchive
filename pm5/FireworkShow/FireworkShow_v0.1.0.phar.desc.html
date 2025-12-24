@@ -1,0 +1,155 @@
+<div class="markdown-heading"><h1 class="heading-element">
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/DavyCraft648/FireworkShow/blob/main/icon.png"><img src="https://github.com/DavyCraft648/FireworkShow/raw/main/icon.png" height="64" width="64" style="max-width: 100%; height: auto; max-height: 64px;"></a> FireworkShow</h1><a id="user-content--fireworkshow" class="anchor" aria-label="Permalink:  FireworkShow" href="#-fireworkshow"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Bring automated firework displays to your PocketMine-MP server.</p>
+<p>FireworkShow spawns fireworks at configured positions in worlds on a repeating schedule. It's ideal for nightly shows,
+holidays, or automated decorations.</p>
+<p><a href="https://youtu.be/QU8hQ95-cWQ" rel="nofollow">https://youtu.be/QU8hQ95-cWQ</a></p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Spawn fireworks automatically at configured positions per world</li>
+<li>Per-position options: enabled, night-only mode, spawn delay (ticks)</li>
+<li>Customizable explosions: type, colors, fade colors, twinkle, trail</li>
+<li>Add, remove, toggle positions from console or in-game via a simple UI</li>
+<li>Command name and aliases are configurable</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Drop the plugin .phar or plugin folder into your server's <code>plugins/</code> directory.</li>
+<li>Start (or restart) the server. A default <code>config.yml</code> will be created if it doesn't exist.</li>
+<li>Edit <code>config.yml</code> to set positions, command name, or explosion presets as needed.</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element">Requirements</h3><a id="user-content-requirements" class="anchor" aria-label="Permalink: Requirements" href="#requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>PocketMine-MP v5.34.0+</li>
+<li>PHP 8.2+</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Quick usage</h2><a id="user-content-quick-usage" class="anchor" aria-label="Permalink: Quick usage" href="#quick-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Default command: <code>/fireworkshow</code> (can be changed in <code>config.yml</code>)</p>
+<p>Permission: <code>fireworkshow.command.fireworkshow</code></p>
+<div class="markdown-heading"><h3 class="heading-element">Subcommands:</h3><a id="user-content-subcommands" class="anchor" aria-label="Permalink: Subcommands:" href="#subcommands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/fireworkshow list</code> — show configured positions for all worlds</li>
+<li>
+<code>/fireworkshow add &lt;world&gt; &lt;x&gt; &lt;y&gt; &lt;z&gt;</code> — add a new position (there's also an in-game UI)</li>
+<li>
+<code>/fireworkshow remove &lt;world&gt; &lt;index&gt;</code> — remove a position by its index</li>
+<li>
+<code>/fireworkshow toggle &lt;world&gt; &lt;index&gt;</code> — enable/disable a position</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The command name and aliases are configurable in <code>config.yml</code>. The permission node is
+<code>fireworkshow.command.fireworkshow</code> by default.</li>
+<li>The plugin also provides a simple UI for adding, toggling, and removing positions when used in-game.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Behavior details</h2><a id="user-content-behavior-details" class="anchor" aria-label="Permalink: Behavior details" href="#behavior-details"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Each configured position runs on its own repeating task using the <code>spawnTick</code> interval (in ticks; 20 ticks ≈ 1
+second).</li>
+<li>If <code>nightOnly: true</code> for a position, fireworks spawn only while the world's time is in the night range.</li>
+<li>Fireworks spawn only when the chunk containing the position is loaded.</li>
+<li>If a position has an <code>explosions</code> list, those explosions are used deterministically. If omitted, the plugin will spawn
+randomized fireworks.</li>
+<li>Flight time (controlled by <code>flightTimeMultiplier</code>) determines how long the rocket entity will fly before exploding. See the "Flight time" section below for the exact formula and examples.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin stores configuration in <code>config.yml</code>. A default file is generated on first run. Key sections:</p>
+<ul>
+<li>
+<code>command</code>: controls the registered command name, description, usage, and aliases.</li>
+<li>
+<code>positions</code>: list of configured firework positions. Each entry defines where and how fireworks spawn.</li>
+</ul>
+<p>Example <code>positions</code> entries:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">command</span>:
+  <span class="pl-ent">name</span>: <span class="pl-s">fireworkshow</span>
+  <span class="pl-ent">description</span>: <span class="pl-s">Manage firework shows</span>
+  <span class="pl-ent">usage</span>: <span class="pl-s">/fireworkshow</span>
+  <span class="pl-ent">aliases</span>:
+    - <span class="pl-s">fwshow</span>
+    - <span class="pl-s">fws</span>
+
+<span class="pl-ent">positions</span>:
+  - <span class="pl-ent">worldName</span>: <span class="pl-s">world</span>
+    <span class="pl-ent">x</span>: <span class="pl-c1">-385</span>
+    <span class="pl-ent">y</span>: <span class="pl-c1">67</span>
+    <span class="pl-ent">z</span>: <span class="pl-c1">-24</span>
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">nightOnly</span>: <span class="pl-c1">false</span>
+    <span class="pl-ent">spawnTick</span>: <span class="pl-c1">40</span>
+    <span class="pl-ent">flightTimeMultiplier</span>: <span class="pl-c1">1</span>
+    <span class="pl-ent">explosions</span>:
+      - <span class="pl-ent">type</span>: <span class="pl-s">SMALL_BALL</span>
+        <span class="pl-ent">colors</span>:
+          - <span class="pl-s">LIGHT_BLUE</span>
+        <span class="pl-ent">fade</span>: <span class="pl-s">[]</span>
+        <span class="pl-ent">twinkle</span>: <span class="pl-c1">true</span>
+        <span class="pl-ent">trail</span>: <span class="pl-c1">false</span>
+  - <span class="pl-ent">worldName</span>: <span class="pl-s">world</span>
+    <span class="pl-ent">x</span>: <span class="pl-c1">-390</span>
+    <span class="pl-ent">y</span>: <span class="pl-c1">66</span>
+    <span class="pl-ent">z</span>: <span class="pl-c1">-20</span>
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">nightOnly</span>: <span class="pl-c1">false</span>
+    <span class="pl-ent">spawnTick</span>: <span class="pl-c1">40</span>
+    <span class="pl-ent">flightTimeMultiplier</span>: <span class="pl-c1">1</span>
+    <span class="pl-ent">explosions</span>:
+      - <span class="pl-ent">type</span>: <span class="pl-s">CREEPER</span>
+        <span class="pl-ent">colors</span>:
+          - <span class="pl-s">LIME</span>
+        <span class="pl-ent">fade</span>: <span class="pl-s">[]</span>
+        <span class="pl-ent">twinkle</span>: <span class="pl-c1">false</span>
+        <span class="pl-ent">trail</span>: <span class="pl-c1">false</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Position fields</h3><a id="user-content-position-fields" class="anchor" aria-label="Permalink: Position fields" href="#position-fields"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>worldName</code> (string): the world where the position is located.</li>
+<li>
+<code>x</code>, <code>y</code>, <code>z</code> (int/float): coordinates for the spawn location.</li>
+<li>
+<code>enabled</code> (bool): whether this position is active.</li>
+<li>
+<code>nightOnly</code> (bool): if true, spawn only during night.</li>
+<li>
+<code>spawnTick</code> (int): spawn interval in ticks (20 ticks ≈ 1 second).</li>
+<li>
+<code>flightTimeMultiplier</code> (int): multiplier that controls rocket flight duration before explosion. Valid range: 1–127. Default: 1</li>
+<li>
+<code>explosions</code> (optional array): explicit explosion definitions to use at this position.</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Flight time (how <code>flightTimeMultiplier</code> works)</h3><a id="user-content-flight-time-how-flighttimemultiplier-works" class="anchor" aria-label="Permalink: Flight time (how flightTimeMultiplier works)" href="#flight-time-how-flighttimemultiplier-works"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>When a firework is spawned the plugin computes a randomized duration in ticks using this formula:</p>
+<p>random duration (ticks) = ((flightTimeMultiplier + 1) * 10) + random(0..12)</p>
+<ul>
+<li>Example: <code>flightTimeMultiplier = 1</code> -&gt; ((1 + 1) * 10) + (0..12) = 20..32 ticks (≈ 1.0–1.6 seconds).</li>
+<li>Example: <code>flightTimeMultiplier = 5</code> -&gt; ((5 + 1) * 10) + (0..12) = 60..72 ticks (≈ 3.0–3.6 seconds).</li>
+<li>Example: <code>flightTimeMultiplier = 127</code> -&gt; ((127 + 1) * 10) + (0..12) = 1280..1292 ticks (≈ 64.0–64.6 seconds).</li>
+</ul>
+<p>A larger <code>flightTimeMultiplier</code> makes rockets fly longer before exploding. The UI and config accept integer values; the in-game UI clamps the input to the 1–127 range.</p>
+<div class="markdown-heading"><h3 class="heading-element">Explosion schema</h3><a id="user-content-explosion-schema" class="anchor" aria-label="Permalink: Explosion schema" href="#explosion-schema"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Each explosion object supports:</p>
+<ul>
+<li>
+<code>type</code> (string|int): firework shape (case-insensitive name or numeric id). Common names: SMALL_BALL, LARGE_BALL, STAR,
+CREEPER, BURST.</li>
+<li>
+<code>colors</code> (array): dye color names (e.g., RED) or numeric color ids.</li>
+<li>
+<code>fade</code> (array, optional): dye color names or ids used for fade.</li>
+<li>
+<code>twinkle</code> (bool, optional): if true, the explosion twinkles.</li>
+<li>
+<code>trail</code> (bool, optional): if true, the explosion leaves a trail.</li>
+</ul>
+<p>Notes on values:</p>
+<ul>
+<li>The plugin accepts both enum names and numeric IDs for colors and explosion types.</li>
+<li>Names are matched case-insensitively; separators like spaces, dashes, and underscores are ignored when matching.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Troubleshooting</h2><a id="user-content-troubleshooting" class="anchor" aria-label="Permalink: Troubleshooting" href="#troubleshooting"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>No fireworks are appearing: check that the position's chunk is loaded and <code>enabled</code> is true.</li>
+<li>Night-only positions don't fire: verify the world's time and the <code>nightOnly</code> flag.</li>
+<li>Command not found: confirm the command name/aliases in <code>config.yml</code> and that you have the permission node.</li>
+</ul>
