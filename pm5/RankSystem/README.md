@@ -1,11 +1,11 @@
 # RankSystem
-<img src="https://raw.githubusercontent.com/IvanCraft623/RankSystem/e3bb5c095f41346cb2dd9f22bf0421a233efb61d/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/IvanCraft623/RankSystem/34333320ccfaddc8b588a79a38ef58c565071ea6/icon.png" width="128" height="128" />
 
 ## An amazing Rank and Permissions Manager. The best ranks manager for PocketMine-MP.
 ```properties
-Version: 1.1.3
-    API: 5.3.0
-    Updated: 14-07-2023 18:49:51 UTC
+Version: 1.1.4
+    API: 5.36.0
+    Updated: 30-12-2025 14:21:55 UTC
 Repo: https://github.com/IvanCraft623/RankSystem
 License: Apache-2.0
 Categories: General,API plugins,Miscellaneous,Chat-Related,Admin Tools

@@ -1,0 +1,219 @@
+<div class="markdown-heading"><h2 class="heading-element">🏆 TopStats</h2><a id="user-content--topstats" class="anchor" aria-label="Permalink: 🏆 TopStats" href="#-topstats"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>TopStats is an advanced and feature-rich plugin designed for PocketMine-MP, a popular Minecraft server software. This plugin provides server administrators and players with detailed and real-time statistics tracking, enhancing the overall gaming experience.</p>
+<p><strong>Key Features</strong>:</p>
+<ul>
+<li>Player Statistics: Tracks a wide range of player statistics, including kills, deaths, blocks mined, distance traveled, and more.</li>
+<li>Leaderboards: Displays top players in various categories, encouraging competitive gameplay.</li>
+<li>Customizable: Offers extensive configuration options, allowing server administrators to tailor the plugin to their specific needs.</li>
+<li>Performance Optimized: Designed to run efficiently, ensuring minimal impact on server performance.</li>
+</ul>
+<p>TopStats is an essential tool for any Minecraft server aiming to provide its players with a comprehensive and engaging statistics system. Whether you are running a small community server or a large-scale public server, TopStats will help you track and showcase player achievements effortlessly.</p>
+<div class="markdown-heading"><h2 class="heading-element">🛠️ Commands</h2><a id="user-content-️-commands" class="anchor" aria-label="Permalink: 🛠️ Commands" href="#️-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Main Commands</h3><a id="user-content-main-commands" class="anchor" aria-label="Permalink: Main Commands" href="#main-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+<th>Permissions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/topstats &lt;subcommands&gt;</code></td>
+<td>TopStats Commands</td>
+<td><code>topstats.command</code></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">SubCommands</h3><a id="user-content-subcommands" class="anchor" aria-label="Permalink: SubCommands" href="#subcommands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>SubCommands</th>
+<th>Description</th>
+<th>Permissions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>autosave</code></td>
+<td>Auto-save TopStats Database</td>
+<td><code>topstats.command.autosave</code></td>
+</tr>
+<tr>
+<td><code>create</code></td>
+<td>Spawn TopStats</td>
+<td><code>topstats.command.create</code></td>
+</tr>
+<tr>
+<td><code>delete</code></td>
+<td>Delete TopStats</td>
+<td><code>topstats.command.delete</code></td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>TopStats List</td>
+<td><code>topstats.command.list</code></td>
+</tr>
+<tr>
+<td><code>teleport</code></td>
+<td>Teleport Player to TopStats</td>
+<td><code>topstats.command.teleport</code></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>List of TopStats Type</td>
+<td><code>topstats.command.type</code></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">🖼️ Models</h2><a id="user-content-️-models" class="anchor" aria-label="Permalink: 🖼️ Models" href="#️-models"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>TopStats has 2 models:</strong></p>
+<table>
+<thead>
+<tr>
+<th><code>player</code></th>
+<th><code>text</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple TopStats with Human Entity</td>
+<td>Simple TopStats with Floating Text</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">📊 Data Type</h2><a id="user-content--data-type" class="anchor" aria-label="Permalink: 📊 Data Type" href="#-data-type"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>TopStats has 20++ data type:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>death</code></td>
+<td>Number of Player Deaths</td>
+</tr>
+<tr>
+<td><code>kill</code></td>
+<td>Number of Player Kills</td>
+</tr>
+<tr>
+<td><code>block-break</code></td>
+<td>Number of Break Blocks</td>
+</tr>
+<tr>
+<td><code>block-place</code></td>
+<td>Number of Blocks Placed</td>
+</tr>
+<tr>
+<td><code>change-skin </code></td>
+<td>Number of Player Skin Changes</td>
+</tr>
+<tr>
+<td><code>chat</code></td>
+<td>Number of Messages Sent</td>
+</tr>
+<tr>
+<td><code>consume</code></td>
+<td>Number of Items Consumed</td>
+</tr>
+<tr>
+<td><code>crafting</code></td>
+<td>Number of Items Crafted</td>
+</tr>
+<tr>
+<td><code>damage-dealt</code></td>
+<td>Number of Damage Dealt</td>
+</tr>
+<tr>
+<td><code>damage-received</code></td>
+<td>Number of Damage Received</td>
+</tr>
+<tr>
+<td><code>drop-item</code></td>
+<td>Number of Items Dropped</td>
+</tr>
+<tr>
+<td><code>emote</code></td>
+<td>Number of Player Emotes</td>
+</tr>
+<tr>
+<td><code>enchant</code></td>
+<td>Number of Enchanted Items</td>
+</tr>
+<tr>
+<td><code>farm</code></td>
+<td>Number of Planted Crops</td>
+</tr>
+<tr>
+<td><code>heal</code></td>
+<td>Number of Health Recovered</td>
+</tr>
+<tr>
+<td><code>item-pickup</code></td>
+<td>Number of Items Taken</td>
+</tr>
+<tr>
+<td><code>jump</code></td>
+<td>Number of Player Jumps</td>
+</tr>
+<tr>
+<td><code>kick</code></td>
+<td>Number of Player Kicked</td>
+</tr>
+<tr>
+<td><code>money</code></td>
+<td>Number of Player Money</td>
+</tr>
+<tr>
+<td><code>online-time</code></td>
+<td>Number of Player Online Time</td>
+</tr>
+<tr>
+<td><code>xp</code></td>
+<td>Number of Player XP</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">📋 TODO List:</h2><a id="user-content--todo-list" class="anchor" aria-label="Permalink: 📋 TODO List:" href="#-todo-list"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>[x] Implement player models (v0.2.0)</li>
+<li>[x] Save TopStats while server restart (v0.2.0)</li>
+<li>[x] Implement more data type (v0.2.3)</li>
+<li>[ ] Make leaderboard IDs visible to admin</li>
+<li>[x] Implement Commando libraries (v0.3.0)</li>
+<li>[x] Implement support for more database providers (v0.3.4)</li>
+<li>[ ] Implement UI for improved settings</li>
+<li>[x] Implement custom data support from other plugins (v0.3.2)</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">💡 Issues &amp; Suggestions</h2><a id="user-content--issues--suggestions" class="anchor" aria-label="Permalink: 💡 Issues &amp; Suggestions" href="#-issues--suggestions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Feel free to creating an issues for bug reports and feature requests!</p>
+<div class="markdown-heading"><h2 class="heading-element">🌟 Support Development</h2><a id="user-content--support-development" class="anchor" aria-label="Permalink: 🌟 Support Development" href="#-support-development"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you find my PocketMine-MP plugins useful and wish to support their ongoing development and maintenance, your contributions are greatly appreciated. Your generosity enables me to dedicate more time and resources to improving and expanding the functionality of these plugins for the benefit of the community.</p>
+<div class="markdown-heading"><h3 class="heading-element">How to Contribute</h3><a id="user-content-how-to-contribute" class="anchor" aria-label="Permalink: How to Contribute" href="#how-to-contribute"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>You can support this project in several ways:</p>
+<ul>
+<li>
+<p>💰 <strong>Financial Contributions</strong>: Donations are welcome via <a href="https://paypal.me/FireRashkar" rel="nofollow">PayPal</a>. Your financial support helps cover hosting costs, development tools, and other expenses associated with maintaining this project.</p>
+</li>
+<li>
+<p>📝 <strong>Feedback and Suggestions</strong>: Your feedback is invaluable in shaping the future direction of these plugins. Whether you encounter a bug, have an idea for a new feature, or simply want to share your thoughts, please don't hesitate to open an issue or reach out to me directly.</p>
+</li>
+<li>
+<p>💻 <strong>Code Contributions</strong>: If you're a developer and would like to contribute to the codebase, pull requests are always welcome.</p>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Acknowledgements</h3><a id="user-content-acknowledgements" class="anchor" aria-label="Permalink: Acknowledgements" href="#acknowledgements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>I would like to express my heartfelt gratitude to all the individuals and organizations who have supported this project through their contributions, be it through code, financial donations, or valuable feedback. Your support keeps this project alive and thriving.</p>
+<p>Thank you for your continued support and encouragement!</p>
+<div class="markdown-heading"><h2 class="heading-element">📸 Screenshots</h2><a id="user-content--screenshots" class="anchor" aria-label="Permalink: 📸 Screenshots" href="#-screenshots"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div align="center">
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/nicholass003/TopStats/main/assets/screenshots/example.png"><img src="https://raw.githubusercontent.com/nicholass003/TopStats/main/assets/screenshots/example.png" style="max-width: 100%;"></a>
+</div>
+<div class="markdown-heading"><h2 class="heading-element">🎖️ Credits</h2><a id="user-content-️-credits" class="anchor" aria-label="Permalink: 🎖️ Credits" href="#️-credits"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://icons8.com/icon/CJOznVjwe3u5/podium" rel="nofollow">Podium</a> icon by <a href="https://icons8.com" rel="nofollow">Icons8</a></p>

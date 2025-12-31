@@ -1,11 +1,11 @@
 # AllSigns
-<img src="https://raw.githubusercontent.com/survanetwork/AllSigns/f3b1b65933172cd30a5024b4fd1c7f7e7d8f36bd/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/survanetwork/AllSigns/1504e144fe909ad41e034cce6339d8778d83de39/icon.png" width="128" height="128" />
 
 ## Turn signs into world teleport and command signs
 ```properties
-Version: 2.0.7
+Version: 2.0.8
     API: 5.0.0
-    Updated: 21-01-2024 00:16:34 UTC
+    Updated: 30-12-2025 14:20:26 UTC
 Repo: https://github.com/survanetwork/AllSigns
 License: MIT
 Categories: General,Miscellaneous,Mechanics,Teleportation,Informational,Admin Tools
