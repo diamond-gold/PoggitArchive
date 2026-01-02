@@ -1,0 +1,79 @@
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/e3f89c56-2399-454f-9c63-17febaedaff1"><img src="https://github.com/user-attachments/assets/e3f89c56-2399-454f-9c63-17febaedaff1" alt="minecraft_title" style="max-width: 100%;"></a></p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">✨ Features</h2><a id="user-content--features" class="anchor" aria-label="Permalink: ✨ Features" href="#-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>✅ Add / remove friends with <strong>request system</strong>
+</li>
+<li>✅ Accept or deny friend requests</li>
+<li>✅ Automatic expiration of requests after configurable cooldown</li>
+<li>✅ Optional storage: <strong>YAML</strong>, or <strong>JSON</strong>
+</li>
+<li>✅ Friend status display: <code>Online</code> / <code>Offline</code>
+</li>
+<li>✅ Notifications when a friend <em>joins</em> or <em>leaves</em> the server</li>
+<li>✅ Configurable message prefix (<code>[FriendsX]</code>)</li>
+<li>✅ Multi-language support: <code>eng</code>, <code>ita</code>, <code>fra</code>, <code>deu</code>, <code>esp</code>, <code>pol</code>, <code>por</code>
+</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📦 Installation</h2><a id="user-content--installation" class="anchor" aria-label="Permalink: 📦 Installation" href="#-installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the precompiled <code>.phar</code> or build from source (see below)</li>
+<li>Place the <code>FriendsX.phar</code> into your server's <code>plugins/</code> folder</li>
+<li>Start the server once to generate files</li>
+<li>(Optional) Edit <code>config.yml</code> to configure:
+<ul>
+<li>Storage type</li>
+<li>Friend request cooldown</li>
+<li>Language</li>
+<li>Prefix formatting</li>
+</ul>
+</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🧾 Commands</h2><a id="user-content--commands" class="anchor" aria-label="Permalink: 🧾 Commands" href="#-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/friend add &lt;player&gt;</code></td>
+<td>Send a friend request</td>
+</tr>
+<tr>
+<td><code>/friend accept &lt;player&gt;</code></td>
+<td>Accept a received request</td>
+</tr>
+<tr>
+<td><code>/friend deny &lt;player&gt;</code></td>
+<td>Deny a received request</td>
+</tr>
+<tr>
+<td><code>/friend remove &lt;player&gt;</code></td>
+<td>Remove from your friend list</td>
+</tr>
+<tr>
+<td><code>/friend list</code></td>
+<td>Show your friends and their statuses (<code>Online</code>/<code>Offline</code>)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🌍 Supported Languages</h2><a id="user-content--supported-languages" class="anchor" aria-label="Permalink: 🌍 Supported Languages" href="#-supported-languages"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Currently included:</p>
+<ul>
+<li>🇬🇧 English</li>
+<li>🇮🇹 Italian</li>
+<li>🇫🇷 French</li>
+<li>🇩🇪 German</li>
+<li>🇪🇸 Spanish</li>
+<li>🇵🇱 Polish</li>
+<li>🇵🇹 Portuguese (BR)</li>
+</ul>
+<p>You can add your own in <code>resources/lang/</code>.</p>
+<p>Set the language in the <code>config.yml</code>:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">lang</span>: <span class="pl-s">eng</span></pre></div>
