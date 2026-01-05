@@ -1,9 +1,9 @@
 # LeafFoodDrops
 ## Causes tree leaves to drop food by breaking them
 ```properties
-Version: 1.1.0
+Version: 1.2.0
     API: 5.0.0
-    Updated: 15-12-2025 19:55:55 UTC
+    Updated: 04-01-2026 16:21:57 UTC
 Repo: https://github.com/JesusHR1k/LeafFoodDrops
 License: GPL-3.0-or-later
 Categories: Fun,Vanilla Mechanics,General

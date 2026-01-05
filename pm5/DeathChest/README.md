@@ -1,11 +1,11 @@
 # DeathChest
-<img src="https://raw.githubusercontent.com/Terpz710/DeathChest/11e144b2463b0ccb00b66d1a58aedc83417952d7/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/Terpz710/DeathChest/6b839e1fcd25e8063c15c521b8714cab2e114596/icon.png" width="128" height="128" />
 
 ## When a player dies it will add the items into a chest
 ```properties
-Version: 1.0.2
+Version: 1.0.3
     API: 5.0.0
-    Updated: 05-03-2024 12:16:40 UTC
+    Updated: 04-01-2026 16:19:39 UTC
 Repo: https://github.com/Terpz710/DeathChest
 License: Apache-2.0
 Categories: General,Miscellaneous,Fun,Mechanics
