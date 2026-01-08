@@ -1,0 +1,84 @@
+<div class="markdown-heading"><h1 class="heading-element">XGTShowPlayerHP</h1><a id="user-content-xgtshowplayerhp" class="anchor" aria-label="Permalink: XGTShowPlayerHP" href="#xgtshowplayerhp"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h2 class="heading-element">Description</h2><a id="user-content-description" class="anchor" aria-label="Permalink: Description" href="#description"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This is a PocketMine Plugin.
+It shows the health of the opponent.</p>
+<p>You have two options:</p>
+<ol>
+<li>
+<p>show your opponent's health in numbers</p>
+</li>
+<li>
+<p>show your opponent's health in hearts</p>
+</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">How to install</h2><a id="user-content-how-to-install" class="anchor" aria-label="Permalink: How to install" href="#how-to-install"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<p>Install plugin</p>
+</li>
+<li>
+<p>Stop/start server</p>
+</li>
+<li>
+<p>Edit config</p>
+</li>
+<li>
+<p>Restart server</p>
+</li>
+<li>
+<p>Have FUN!</p>
+</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<p>[X] Config</p>
+</li>
+<li>
+<p>[X] Costom Message</p>
+</li>
+<li>
+<p>[X] Custom Format</p>
+</li>
+<li>
+<p>[X] Custom Type: Numeric/Emoji</p>
+</li>
+<li>
+<p>[X] Custom Show</p>
+</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Other</h2><a id="user-content-other" class="anchor" aria-label="Permalink: Other" href="#other"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://discord.gg/h8uTKFh" rel="nofollow"><img src="https://camo.githubusercontent.com/c58d1ab6a6049ceef2002cc9e829a10cc9fa7b197e2e19d4c3acceebac2da4c4/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3638393231313437353533373239373431313f6c6f676f3d646973636f7264" alt="Discord" data-canonical-src="https://img.shields.io/discord/689211475537297411?logo=discord" style="max-width: 100%;"></a></p>
+<p><a href="https://poggit.pmmp.io/p/XGTShowPlayerHP" rel="nofollow"><img src="https://camo.githubusercontent.com/e5bd01ecbf04a8d19030d721150b5c8ac7b5f0f557d83ca51b9a69f35657449d/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f58475453686f77506c617965724850" alt="" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/XGTShowPlayerHP" style="max-width: 100%;"></a></p>
+<p><a href="https://github.com/XGDavid"><img src="https://camo.githubusercontent.com/89735e7b32d9cf27b9894f4bf8d0187e0c213208b3cab140c850f29298535101/687474703a2f2f466f7254686542616467652e636f6d2f696d616765732f6261646765732f6275696c742d776974682d6c6f76652e737667" alt="ForTheBadge built-with-love" data-canonical-src="http://ForTheBadge.com/images/badges/built-with-love.svg" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h2 class="heading-element">Config</h2><a id="user-content-config" class="anchor" aria-label="Permalink: Config" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<pre><code>#Show:
+  # 1 = It only shows you health when you hit it with a projectile
+  # 2 = It shows your health when you hit it with anything
+
+Show: 2
+
+#Type:
+  # 0 = Disable Show HP
+  # 1 = Default, show numeric HP
+  # 2 = Show Player HP in Hreat Emoji(Hypixel)
+
+Type: 2
+
+#Format type:
+  # 1 = Send Player Message with Attacked player HP
+  # 2 = Send Player Popup with Attacked player HP
+  # 3 = Send Player Title with Attacked player HP
+
+Format: 2
+
+#Message:
+  # (optional)Use for Heart = ❤
+  # (optional)Use for Color = §
+  # @name = Player name
+  # @hp = Player HP
+
+MessageHP: "§l§e@name §cis now in§e @hp §cHP"
+PopupHP: "§l§7@name§c @hp §4❤"
+TitleHP: "§l§b@name §r§c\n@hp §4❤"
+</code></pre>
