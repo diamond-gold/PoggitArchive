@@ -8,6 +8,6 @@ Version: 2.2.0
     Updated: 16-06-2024 18:15:20 UTC
 Repo: https://github.com/LuthMC/AFKZone
 License: MIT
-Categories: General,Economy
+Categories: General,Economy,Mechanics
 Keywords: AFK,AFKZone,Economy,Zone
 ```
