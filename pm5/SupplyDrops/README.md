@@ -9,5 +9,5 @@ Version: 1.0.0
 Repo: https://github.com/FrostCheat/SupplyDrops
 License: MIT
 Categories: General,Miscellaneous,Developer Tools,Fun,Minigame,Mechanics
-Keywords: chest,random,supply,drop,supplydrop,sdrop
+Keywords: chest,drop,random,sdrop,supply,supplydrop
 ```
