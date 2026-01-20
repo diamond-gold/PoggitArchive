@@ -1,0 +1,47 @@
+<div class="markdown-heading"><h1 class="heading-element">VanillaWeather by WeaVerseStudio</h1><a id="user-content-vanillaweather-by-weaversestudio" class="anchor" aria-label="Permalink: VanillaWeather by WeaVerseStudio" href="#vanillaweather-by-weaversestudio"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Description:</h3><a id="user-content-description" class="anchor" aria-label="Permalink: Description:" href="#description"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<blockquote>
+<p>A plugin that adds weather mechanics like in vanilla.</p>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/WeaVerseStudio/VanillaWeather/blob/master/resources/image0.png?raw=true"><img src="https://github.com/WeaVerseStudio/VanillaWeather/raw/master/resources/image0.png?raw=true" alt="image not found" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/WeaVerseStudio/VanillaWeather/blob/master/resources/image1.png?raw=true"><img src="https://github.com/WeaVerseStudio/VanillaWeather/raw/master/resources/image1.png?raw=true" alt="image not found" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/WeaVerseStudio/VanillaWeather/blob/master/resources/image2.png?raw=true"><img src="https://github.com/WeaVerseStudio/VanillaWeather/raw/master/resources/image2.png?raw=true" alt="image not found" style="max-width: 100%;"></a>
+</blockquote>
+<div class="markdown-heading"><h3 class="heading-element">Authors:</h3><a id="user-content-authors" class="anchor" aria-label="Permalink: Authors:" href="#authors"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<blockquote>
+<p>PrograMistV1 - made major contributions to the writing of the plugin.</p>
+</blockquote>
+<div class="markdown-heading"><h3 class="heading-element">Commands:</h3><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands:" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<blockquote>
+<p><code>/weather &lt;clear|rain|thunder&gt; [duration: int]</code> - Players who have permission can change the current weather if they wish, by entering one of the following commands: /weather rain [<em>duration</em>] or /weather thunder [<em>duration</em>], and /weather clear [<em>duration</em>] to clear the inclement weather. The <strong>time</strong> parameter is the duration of the weather in seconds.
+If you want to prevent weather changes in the world, then set the time value to 0 or less.</p>
+<p>Permission: <code>vanillaweather.weather.command</code></p>
+</blockquote>
+<div class="markdown-heading"><h3 class="heading-element">For developers:</h3><a id="user-content-for-developers" class="anchor" aria-label="Permalink: For developers:" href="#for-developers"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<blockquote>
+<p>Track events using these events:
+<code>PrograMistV1\Weather\events\SnowLayerCreateEvent</code>
+<code>PrograMistV1\Weather\events\ThunderBoltSpawnEvent</code>
+<code>PrograMistV1\Weather\events\WeatherChangeEvent</code></p>
+<p>You can change the weather using:
+<code>PrograMistV1\Weather\Weather::changeWeather(World $world, int $weather, int $time = 6000) : void;</code></p>
+</blockquote>
+<div class="markdown-heading"><h3 class="heading-element">Config</h3><a id="user-content-config" class="anchor" aria-label="Permalink: Config" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<blockquote>
+<p>You can customize the weather behavior for a specific world. To do this, edit config.yml in plugin_data. The default values for all worlds are set to <code>default</code>.</p>
+<p>Filling example:</p>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-ent">default</span>:
+  <span class="pl-ent">weatherChange</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">createLightning</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">lightningFire</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">damageFromLightning</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">createSnowLayers</span>: <span class="pl-c1">true</span>
+
+<span class="pl-ent">firstWorld</span>:
+  <span class="pl-ent">weatherChange</span>: <span class="pl-c1">false</span>
+
+<span class="pl-ent">secondWorld</span>:
+  <span class="pl-ent">createLightning</span>: <span class="pl-c1">false</span>
+  <span class="pl-ent">createSnowLayers</span>: <span class="pl-c1">false</span>
+...</pre></div>
+</blockquote>
