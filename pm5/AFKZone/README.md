@@ -1,13 +1,13 @@
 # AFKZone
-<img src="https://raw.githubusercontent.com/LuthMC/AFKZone/63a6e2b93f07c933aa199d368b7791c1fc7986ed/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/LuthMC/AFKZone/10b3a94aae0874c298cff79de2b46c8deae0623d/icon.png" width="128" height="128" />
 
-## AFKZone V2
+## AFKZone V3
 ```properties
-Version: 2.2.0
+Version: 3.0.2
     API: 5.0.0
-    Updated: 16-06-2024 18:15:20 UTC
+    Updated: 04-02-2026 14:16:23 UTC
 Repo: https://github.com/LuthMC/AFKZone
-License: MIT
+License: GPL-3.0
 Categories: General,Economy,Mechanics
 Keywords: AFK,AFKZone,Economy,Zone
 ```

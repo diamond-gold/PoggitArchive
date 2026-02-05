@@ -1,0 +1,36 @@
+<div class="markdown-heading"><h1 class="heading-element">NewbieGuard 🛡️</h1><a id="user-content-newbieguard-️" class="anchor" aria-label="Permalink: NewbieGuard 🛡️" href="#newbieguard-️"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>NewbieGuard</strong> is a robust and lightweight protection plugin for PocketMine-MP (API 5.x) designed to enhance the experience of new players and prevent spawn-killing.</p>
+<p>The plugin provides a temporary "safe window" for players joining the server, ensuring they can find their way before engaging in combat or world modification.</p>
+<div class="markdown-heading"><h2 class="heading-element">🌟 Key Features</h2><a id="user-content--key-features" class="anchor" aria-label="Permalink: 🌟 Key Features" href="#-key-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>🛡️ Automatic Protection:</strong> Automatically grants invulnerability to players upon joining.</li>
+<li>
+<strong>⚖️ Fair-Play System:</strong> Protection is instantly removed if the player attacks someone else.</li>
+<li>
+<strong>💾 Persistent Timers:</strong> Remaining protection time is saved in a YAML file, so logging out doesn't "reset" or "waste" the protection.</li>
+<li>
+<strong>🚫 Interaction Control:</strong> Prevents building and breaking blocks while under protection to maintain balance.</li>
+<li>
+<strong>💬 Fully Customizable:</strong> All messages and the duration (in minutes) can be easily edited via <code>config.yml</code>.</li>
+<li>
+<strong>🚀 Optimized Performance:</strong> Uses an internal task to handle countdowns efficiently without server lag.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">🛠️ Installation</h2><a id="user-content-️-installation" class="anchor" aria-label="Permalink: 🛠️ Installation" href="#️-installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the latest <code>.phar</code> from <a href="https://poggit.pmmp.io/p/NewbieGuard" rel="nofollow">Poggit</a>.</li>
+<li>Drop it into your server's <code>plugins/</code> folder.</li>
+<li>Restart your server.</li>
+<li>Customize the settings in <code>plugin_data/NewbieGuard/config.yml</code>.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">⚙️ Configuration</h2><a id="user-content-️-configuration" class="anchor" aria-label="Permalink: ⚙️ Configuration" href="#️-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The default configuration provides 5 minutes of safety:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Protection duration in minutes</span>
+<span class="pl-ent">protection-time</span>: <span class="pl-c1">5</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Messages (Colors supported with §)</span>
+<span class="pl-ent">msg-protection-start</span>: <span class="pl-s"><span class="pl-pds">"</span>§aYou are protected for {TIME} minutes! PvP and building disabled.<span class="pl-pds">"</span></span>
+<span class="pl-ent">msg-protection-end</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYour newbie protection has ended!<span class="pl-pds">"</span></span>
+<span class="pl-ent">msg-protection-removed</span>: <span class="pl-s"><span class="pl-pds">"</span>§6You attacked a player! Protection removed.<span class="pl-pds">"</span></span>
+<span class="pl-ent">msg-cant-build</span>: <span class="pl-s"><span class="pl-pds">"</span>§cYou cannot build while protected.<span class="pl-pds">"</span></span>
+<span class="pl-ent">msg-cant-pvp</span>: <span class="pl-s"><span class="pl-pds">"</span>§cThis player is protected!<span class="pl-pds">"</span></span></pre></div>

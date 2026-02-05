@@ -1,0 +1,116 @@
+<div class="markdown-heading"><h1 class="heading-element">WebSocket Console Plugin for PocketMine-MP</h1><a id="user-content-websocket-console-plugin-for-pocketmine-mp" class="anchor" aria-label="Permalink: WebSocket Console Plugin for PocketMine-MP" href="#websocket-console-plugin-for-pocketmine-mp"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A complete WebSocket implementation for remote server console access with <strong>zero external dependencies</strong>.</p>
+<div class="markdown-heading"><h2 class="heading-element">🚀 Features</h2><a id="user-content--features" class="anchor" aria-label="Permalink: 🚀 Features" href="#-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>🔐 <strong>Password Authentication</strong> - Secure your console access</li>
+<li>📡 <strong>Real-time Communication</strong> - Instant command execution and responses</li>
+<li>🎯 <strong>Event Broadcasting</strong> - Player joins, quits, chat, deaths, and server commands</li>
+<li>👥 <strong>Multiple Clients</strong> - Support for concurrent WebSocket connections</li>
+<li>⚙️ <strong>Configurable</strong> - Easy setup via config.yml</li>
+<li>🛡️ <strong>Session Management</strong> - Secure authentication per connection</li>
+<li>📝 <strong>Debug Logging</strong> - Optional detailed logging for troubleshooting</li>
+<li>🔧 <strong>Pure PHP</strong> - No external libraries or Composer packages required</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">🌐 Online interface:</h2><a id="user-content--online-interface" class="anchor" aria-label="Permalink: 🌐 Online interface:" href="#-online-interface"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>I've made an interface for this plugin, that can be found over at <a href="https://hbidamian.github.io/wsRCON/" rel="nofollow">https://hbidamian.github.io/wsRCON/</a>.</p>
+<p><strong>Important Note:</strong> SSL/TLS isn't set up in the plugin, and I quite honestly cba setting it up. So if you wish to use the WSRcon, you must self host it, and make sure the url protocol is "HTTP", not "HTTPS" in order for it to connect to ws://Your.Server.</p>
+<p>If you want to self host your own interface, you can grab it from <a href="https://github.com/HBIDamian/wsRCON/tree/webconsole">https://github.com/HBIDamian/wsRCON/tree/webconsole</a></p>
+<div class="markdown-heading"><h2 class="heading-element">⚙️ Configuration</h2><a id="user-content-️-configuration" class="anchor" aria-label="Permalink: ⚙️ Configuration" href="#️-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>After the first startup, the plugin will create a config file at:
+<code>plugins/wsRCON/config.yml</code></p>
+<p>Edit this file to customize your settings:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span>═══════════════════════════════════════════════════════════════════════════════</span>
+<span class="pl-c"><span class="pl-c">#</span>                         WebSocket Console Configuration</span>
+<span class="pl-c"><span class="pl-c">#</span>═══════════════════════════════════════════════════════════════════════════════</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 🔐 Authentication Password</span>
+<span class="pl-c"><span class="pl-c">#</span> This will be automatically generated on first run for security</span>
+<span class="pl-ent">websocket-password</span>: <span class="pl-s"><span class="pl-pds">"</span>change_this_password_123<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> 🌐 Server Port</span>
+<span class="pl-c"><span class="pl-c">#</span> Set to "default" (with quotations) to use the server's current port, or specify a port number (Ex: 19132)</span>
+<span class="pl-ent">websocket-port</span>: <span class="pl-s"><span class="pl-pds">"</span>default<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> 🏠 Server Host</span>
+<span class="pl-c"><span class="pl-c">#</span> Default: 0.0.0.0 for all interfaces</span>
+<span class="pl-ent">websocket-host</span>: <span class="pl-s"><span class="pl-pds">"</span>0.0.0.0<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> 🐛 Debug Mode</span>
+<span class="pl-c"><span class="pl-c">#</span> Enable debug logging (useful for troubleshooting)</span>
+<span class="pl-ent">debug-logging</span>: <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 👥 Connection Limit</span>
+<span class="pl-c"><span class="pl-c">#</span> Maximum number of concurrent WebSocket connections</span>
+<span class="pl-ent">max-connections</span>: <span class="pl-c1">10</span>
+
+<span class="pl-c"><span class="pl-c">#</span>═══════════════════════════════════════════════════════════════════════════════</span>
+<span class="pl-c"><span class="pl-c">#</span>                                   Notes</span>
+<span class="pl-c"><span class="pl-c">#</span>═══════════════════════════════════════════════════════════════════════════════</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ⚠️  IMPORTANT: Restart your PocketMine server after changing this configuration</span>
+
+<span class="pl-c"><span class="pl-c">#</span>───────────────────────────────────────────────────────────────────────────────</span>
+<span class="pl-c"><span class="pl-c">#</span>                              Password Examples</span>
+<span class="pl-c"><span class="pl-c">#</span>───────────────────────────────────────────────────────────────────────────────</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 💡 Strong password examples:</span>
+<span class="pl-c"><span class="pl-c">#</span> websocket-password: "Random_Words-789"</span>
+<span class="pl-c"><span class="pl-c">#</span> websocket-password: "WebSocket@Admin#2025"</span>
+<span class="pl-c"><span class="pl-c">#</span> websocket-password: "WA%5e6vPF3JHL!"</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ⚠️  For no authentication (SECURITY RISK):</span>
+<span class="pl-c"><span class="pl-c">#</span> websocket-password: ""</span>
+
+</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">📡 Supported Events</h2><a id="user-content--supported-events" class="anchor" aria-label="Permalink: 📡 Supported Events" href="#-supported-events"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin broadcasts the following server events to all authenticated clients:</p>
+<ul>
+<li>👋 <strong>Player Join/Quit</strong> - When players connect or disconnect</li>
+<li>💬 <strong>Player Chat</strong> - All chat messages</li>
+<li>💀 <strong>Player Deaths</strong> - Death messages</li>
+<li>⌨️ <strong>Console Commands</strong> - Commands executed in server console</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">🛠️ Troubleshooting</h2><a id="user-content-️-troubleshooting" class="anchor" aria-label="Permalink: 🛠️ Troubleshooting" href="#️-troubleshooting"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h4 class="heading-element">Plugin Won't Start</h4><a id="user-content-plugin-wont-start" class="anchor" aria-label="Permalink: Plugin Won't Start" href="#plugin-wont-start"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<strong>Port in use</strong>: Change <code>websocket-port</code> in config.yml</li>
+<li>
+<strong>Permission denied</strong>: Check server file permissions</li>
+<li>
+<strong>Firewall</strong>: Ensure the port is open</li>
+</ol>
+<div class="markdown-heading"><h4 class="heading-element">Can't Connect</h4><a id="user-content-cant-connect" class="anchor" aria-label="Permalink: Can't Connect" href="#cant-connect"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<strong>Wrong host/port</strong>: Verify connection settings</li>
+<li>
+<strong>Firewall</strong>: Check if port is blocked</li>
+<li>
+<strong>Authentication</strong>: Verify password is correct</li>
+</ol>
+<div class="markdown-heading"><h4 class="heading-element">Commands Not Working</h4><a id="user-content-commands-not-working" class="anchor" aria-label="Permalink: Commands Not Working" href="#commands-not-working"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<strong>Not authenticated</strong>: Check password</li>
+<li>
+<strong>Insufficient permissions</strong>: Plugin runs with OP permissions</li>
+<li>
+<strong>Invalid command</strong>: Use <code>help</code> to see available commands</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">📊 Debug Mode</h2><a id="user-content--debug-mode" class="anchor" aria-label="Permalink: 📊 Debug Mode" href="#-debug-mode"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This is meant for troubleshooting and development purposes. You most likely need to use it unless you like to tinker with the code directly</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">debug-logging</span>: <span class="pl-c1">true</span></pre></div>
+<p>This will log:</p>
+<ul>
+<li>Connection attempts</li>
+<li>Authentication events</li>
+<li>Message broadcasts</li>
+<li>Client disconnections</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">🤝 Contributing</h2><a id="user-content--contributing" class="anchor" aria-label="Permalink: 🤝 Contributing" href="#-contributing"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin is open source and contributions are welcome! Or if you have a better implementation idea, feel free to share it, and overtake this plugin with your own!</p>
+<div class="markdown-heading"><h2 class="heading-element">📄 License</h2><a id="user-content--license" class="anchor" aria-label="Permalink: 📄 License" href="#-license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Apache License 2.0 - See LICENSE file for details.</p>
+<hr>
+<p><strong>Made with ❤️ for the PocketMine community</strong></p>
