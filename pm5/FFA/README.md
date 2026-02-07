@@ -1,13 +1,13 @@
 # FFA
-<img src="https://raw.githubusercontent.com/Laith98Dev/FFA/61d3604a5868861fd37e319dc1384149ba19c79d/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/Laith98Dev/FFA/3d31990671b409c11dc40c08deaa75bf7d219e28/icon.png" width="128" height="128" />
 
-## FreeForAll MiniGame
+## PvP arena plugin with kits, leaderboards, and survival combat zones.
 ```properties
-Version: 2.0.0
+Version: 2.5.0
     API: 5.0.0
-    Updated: 21-01-2024 00:25:07 UTC
+    Updated: 06-02-2026 11:50:31 UTC
 Repo: https://github.com/Laith98Dev/FFA
 License: GPL-3.0
 Categories: Minigame,Fun,General
-Keywords: ffa,free_for_all,laith98dev,minigame
+Keywords: ffa,freeforall,laith98dev,pmmp,pocketmine-mp,minigame
 ```
