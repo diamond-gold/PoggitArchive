@@ -1,0 +1,90 @@
+<div class="markdown-heading"><h2 class="heading-element">BadWordBlocker</h2><a id="user-content-badwordblocker" class="anchor" aria-label="Permalink: BadWordBlocker" href="#badwordblocker"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p align="center">
+    <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/8e5e56603d4e751fffb089a4768163028daf801fb5bab31bce4bbaf01c46128d/68747470733a2f2f7374617469632e73757276612e6e65742f6f73706c7567696e2d666561747572652d62616e6e6572732f626164776f7264626c6f636b65722e706e67"><img src="https://camo.githubusercontent.com/8e5e56603d4e751fffb089a4768163028daf801fb5bab31bce4bbaf01c46128d/68747470733a2f2f7374617469632e73757276612e6e65742f6f73706c7567696e2d666561747572652d62616e6e6572732f626164776f7264626c6f636b65722e706e67" width="650" height="365" alt="BadWordBlocker plugin features" data-canonical-src="https://static.surva.net/osplugin-feature-banners/badwordblocker.png" style="max-width: 100%; height: auto; max-height: 365px;"></a>
+</p>
+<div class="markdown-heading"><h2 class="heading-element">Description</h2><a id="user-content-description" class="anchor" aria-label="Permalink: Description" href="#description"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>BadWorkBlocker is a chat filter suitable for every server to keep the chat clean from swear words and spam (including ready-to-use lists).
+It can prevent swear words, sending the same message twice, sending too many messages and using caps lock.
+Additionally, it can filter messages that contain IP addresses, websites or e-mail addresses.
+Filtering is done at each aspect of the game, including the public server chat, private tell messages and text on signs.
+The plugin is highly configurable for nearly every needs.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The main features of this plugin are:</p>
+<ul>
+<li>
+<strong>SWEAR FILTER</strong> Block messages containing swear words (specified in the config file)</li>
+<li>
+<strong>BLOCK SAME MESSAGES</strong> Show a warning to the player if he tries to send the same message twice</li>
+<li>
+<strong>PREVENT SPAM</strong> Prevent spam by preventing the player to send messages in an interval shorter than specified in the config</li>
+<li>
+<strong>ANTI CAPS</strong> Filter messages containing too much uppercase letters</li>
+<li>
+<strong>BLOCK ADDRESSES</strong> Prevent sending IP addresses, websites/domains and e-mail addresses into the chat</li>
+<li>
+<strong>IMPORT LISTS</strong> Import profanity word list from internet sources right into the plugin's config</li>
+<li>
+<strong>ADVANCED FILTERING</strong> Not only check chat messages, but also private messages or text on placed signs</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>All settings can be changed in the <code>config.yml</code>-file, there are no commands:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Language of the plugin messages</span>
+<span class="pl-c"><span class="pl-c">#</span> Possible options are: en (English), de (German), fr (French), ru (Russian), tr (Turkish), id (Indonesian)</span>
+<span class="pl-ent">language</span>: <span class="pl-s"><span class="pl-pds">"</span>en<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Try to automatically detect the player's language and send translated messages for each player</span>
+<span class="pl-c"><span class="pl-c">#</span> (language set above is used if player's language can't be detected)</span>
+<span class="pl-ent">autodetectlanguage</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> List of the blocked words</span>
+<span class="pl-ent">badwords</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>fuck<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>shit<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>bitch<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Ignore spaces in messages when checking for swear words / spam</span>
+<span class="pl-ent">ignorespaces</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Show the player which word has been blocked</span>
+<span class="pl-ent">showblocked</span>: <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Minimum time between chat messages in seconds</span>
+<span class="pl-ent">waitingtime</span>: <span class="pl-c1">2</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Percentage of uppercase chars in a message required to trigger caps checker</span>
+<span class="pl-ent">uppercasepercentage</span>: <span class="pl-c1">0.75</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Minimum amount of chars in a message required to activate caps checker (to avoid blocking HI, OK, etc.)</span>
+<span class="pl-ent">minimumchars</span>: <span class="pl-c1">3</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Filter web addresses like IP addresses, domains, or email addresses</span>
+<span class="pl-ent">filter_web_addresses</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Check placed signs if they violate a filter</span>
+<span class="pl-ent">check_signs</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> After how many violations against the chat filter, a player should be kicked/banned - set to 0 to disable</span>
+<span class="pl-c"><span class="pl-c">#</span> Violations are reset after a server restart</span>
+<span class="pl-ent">violations</span>:
+  <span class="pl-ent">kick</span>: <span class="pl-c1">0</span>
+  <span class="pl-ent">ban</span>: <span class="pl-c1">0</span>
+  <span class="pl-ent">resetafterkick</span>: <span class="pl-s">true </span><span class="pl-c"><span class="pl-c">#</span> reset violations after kick (this disables banning if kick-count is lower)</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Send a reminder message once per session if bypassing filters using ones permissions</span>
+<span class="pl-ent">send_bypassed_message</span>: <span class="pl-c1">true</span></pre></div>
+<p><a href="https://plugin-docs.surva.net/badwordblocker" rel="nofollow">Read the full documentation 📖</a> • <a href="https://discord.gg/t4Kg4j3829" rel="nofollow">Ask questions on Discord 💬</a></p>
+<div class="markdown-heading"><h2 class="heading-element">Contribution</h2><a id="user-content-contribution" class="anchor" aria-label="Permalink: Contribution" href="#contribution"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Feel free to contribute if you have ideas or found an issue.</p>
+<p>You can:</p>
+<ul>
+<li>
+<a href="https://github.com/survanetwork/BadWordBlocker/issues">open an issue</a> (problems, bugs or feature requests)</li>
+<li>
+<a href="https://github.com/survanetwork/BadWordBlocker/pulls">create a pull request</a> (code contributions like fixed bugs or added features)</li>
+<li>
+<a href="https://www.transifex.com/surva/badwordblocker" rel="nofollow">help translating the plugin</a> (help us to translate this plugin into your language on Transifex platform)</li>
+</ul>
+<p>Please read our <strong><a href="CONTRIBUTING.md">Contribution Guidelines</a></strong> before creating an issue or submitting a pull request.</p>
+<p>Many thanks for their support to all contributors!</p>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://github.com/survanetwork/BadWordBlocker/blob/master/LICENSE">MIT</a></p>

@@ -1,11 +1,11 @@
 # Worlds
-<img src="https://raw.githubusercontent.com/survanetwork/Worlds/fb233826765f2170fc43671c8bf4b92ac21ed35e/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/survanetwork/Worlds/ebfebb35cd6e94e64812aedae4761fe184d2f15d/icon.png" width="128" height="128" />
 
 ## Easy to use but feature rich World Guard Plugin
 ```properties
-Version: 4.0.8
+Version: 4.0.9
     API: 5.0.0
-    Updated: 15-07-2025 19:30:07 UTC
+    Updated: 15-02-2026 17:14:37 UTC
 Repo: https://github.com/survanetwork/Worlds
 License: MIT
 Categories: World Editing and Management,World Generators,Teleportation,Anti-Griefing Tools,Admin Tools
