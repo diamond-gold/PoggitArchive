@@ -1,0 +1,374 @@
+<div class="markdown-heading"><h1 class="heading-element">NetherMenus</h1><a id="user-content-nethermenus" class="anchor" aria-label="Permalink: NetherMenus" href="#nethermenus"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A modern PocketMine-MP v5 GUI framework powered by the InventoryUI virion and PlaceholderAPI. Create fully dynamic menus from YAML with placeholders, requirements, actions, live updates, sounds, and more.</p>
+<ul>
+<li>Main class: <code>NetherByte\NetherMenus\NetherMenus</code>
+</li>
+<li>API: PocketMine-MP 5.x</li>
+<li>Softdepends: <code>PlaceholderAPI</code>, <code>PocketVault</code>
+</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Dynamic GUIs defined in simple YAML files under the plugin data folder</li>
+<li>Full PlaceholderAPI support (names, lore, requirements, actions)</li>
+<li>View and click requirements with success/deny actions</li>
+<li>Custom open commands per GUI (e.g. <code>/shop</code>, <code>/kits</code>), plus <code>/gui</code> and <code>/guiadmin</code>
+</li>
+<li>Live updates without closing the GUI (<code>update_interval</code>, <code>[refresh]</code> action)</li>
+<li>Rich action system (console/player commands, sounds, money/xp, perms, open GUI)</li>
+<li>Material sources: standard item IDs, NBT base64 blobs, placeholder-provided items, equipment</li>
+<li>Armor trims, leather dye, dynamic amounts</li>
+<li>Per-player menu tracking + placeholders (current/last menu)</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Place NetherMenus in your server <code>plugins/</code> folder.</li>
+<li>Ensure these dependencies are installed as needed:
+<ul>
+<li>PlaceholderAPI (for placeholders in text and requirements)</li>
+<li>PocketVault (for money/permissions actions and money requirements)</li>
+</ul>
+</li>
+<li>Start the server to generate <code>plugin_data/NetherMenus/</code> and default folders.</li>
+<li>Place your GUI YAML files in: <code>plugin_data/NetherMenus/guis/*.yml</code>.</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element">Inventory UI Resource Pack Requirement</h3><a id="user-content-inventory-ui-resource-pack-requirement" class="anchor" aria-label="Permalink: Inventory UI Resource Pack Requirement" href="#inventory-ui-resource-pack-requirement"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>NetherMenus uses a bundled InventoryUI virion that requires the server to have the Inventory UI Resource Pack installed and resource packs forced for clients.</p>
+<ul>
+<li>Required RP UUID: <code>21f0427f-572a-416d-a90e-c5d9becb0fa3</code>
+</li>
+<li>Required RP version: <code>1.1.0</code>
+</li>
+<li>Server setting: <code>force_resources=true</code> in <code>server.properties</code>
+</li>
+</ul>
+<p>If the pack is missing or not forced:</p>
+<ul>
+<li>The plugin stays enabled in a safe degraded mode.</li>
+<li>
+<code>/gui</code>, custom open commands and <code>/guiadmin</code> will show a message and NOT open any forms.</li>
+<li>Console will show messages like:
+<ul>
+<li><code>[NetherMenus] InventoryUI not ready: Resource pack 'Inventory UI Resource Pack' not found</code></li>
+<li><code>[NetherMenus] Plugin will not work and features will be degraded</code></li>
+<li><code>[NetherMenus] Download the resource pack from (link)</code></li>
+<li><code>[NetherMenus] NetherMenus: Resource pack not detected. Please download/enable the Inventory UI Resource Pack for full functionality.</code></li>
+</ul>
+</li>
+</ul>
+<p>Install the <a href="https://github.com/NetherByte233/NetherMenus/releases/download/v2.0.0/InventoryUIResourcePack-main.mcpac">resource pack</a> put the resource pack in the resource pack folder and set force_resources=true in resource_packs.yml and name file name of resource pack in resource_stack: like this</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">resource_stack</span>:
+<span class="pl-s">-Inventory UI Resource Pack</span></pre></div>
+<p>Then restart the server to restore full functionality.</p>
+<div class="markdown-heading"><h2 class="heading-element">Commands &amp; Permissions</h2><a id="user-content-commands--permissions" class="anchor" aria-label="Permalink: Commands &amp; Permissions" href="#commands--permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/gui &lt;id&gt;</code>
+<ul>
+<li>Opens a GUI if its YAML contains <code>open_command: "gui &lt;id&gt;"</code>
+</li>
+<li>Permission: <code>nethermenus.command</code> (default: true)</li>
+</ul>
+</li>
+<li>
+<code>/guiadmin</code>
+<ul>
+<li>Opens the admin form UI</li>
+<li>Permission: <code>nethermenus.admin</code> (default: op)</li>
+</ul>
+</li>
+<li>Custom open commands
+<ul>
+<li>Defined per GUI via <code>open_command:</code> (string or list). Example: <code>open_command: shop</code> registers <code>/shop</code>.</li>
+<li>Permission: <code>nethermenus.command</code>
+</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">YAML Overview</h2><a id="user-content-yaml-overview" class="anchor" aria-label="Permalink: YAML Overview" href="#yaml-overview"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Top-level keys (GUI file):</p>
+<ul>
+<li>
+<code>id: string</code> – Logical ID (defaults to the file name without extension)</li>
+<li>
+<code>name: string</code> – GUI title (supports placeholders)</li>
+<li>
+<code>rows: 1..6</code> – Number of rows (size = rows * 9)</li>
+<li>
+<code>open_command: string | string[]</code> – Commands that open this GUI (besides <code>/gui &lt;id&gt;</code>)</li>
+<li>
+<code>command_description: string</code> – Description used when registering custom commands</li>
+<li>
+<code>open_actions: string | string[]</code> – Actions to run when GUI opens</li>
+<li>
+<code>close_actions: string | string[]</code> – Actions to run when GUI closes</li>
+<li>
+<code>open_requirement: { … }</code> – Requirement block evaluated before opening</li>
+<li>
+<code>update_interval: number</code> – Seconds between updates for items with <code>update: true</code>
+</li>
+<li>
+<code>filler_item:</code> – Background filler configuration
+<ul>
+<li><code>material: string</code></li>
+<li>
+<code>slots: string | string[]</code> – Comma list or ranges (e.g. <code>"0-8, 36-44"</code>)</li>
+</ul>
+</li>
+<li>
+<code>items:</code> – Map of item entries. Each entry supports:
+<ul>
+<li>
+<code>slot: number | string | string[]</code> – Single slot or comma/range/array</li>
+<li>
+<code>priority: number</code> – Lower is chosen first when entries target the same slot</li>
+<li>
+<code>material: string</code> – See Materials</li>
+<li>
+<code>amount: number</code> (1..64)</li>
+<li>
+<code>dynamic_amount: string</code> – Placeholder string resolving to 1..64</li>
+<li><code>display_name: string</code></li>
+<li><code>lore: string | string[]</code></li>
+<li>
+<code>tooltip: { display_name?, lore? }</code> – Alternate container for name/lore</li>
+<li>
+<code>dye: string</code> – leather color (<code>purple</code> or <code>#RRGGBB</code>)</li>
+<li>
+<code>trim_material: string</code> – e.g. <code>emerald, copper, netherite, ...</code>
+</li>
+<li>
+<code>trim_pattern: string</code> – e.g. <code>host, coast, vex, ...</code>
+</li>
+<li>
+<code>update: bool</code> – If <code>true</code>, only name/lore are refreshed each <code>update_interval</code>
+</li>
+<li>
+<code>view_requirement: { … }</code> – Requirement block controlling visibility</li>
+<li>
+<code>click_requirement: { … }</code> – Requirement block evaluated on click</li>
+<li>
+<code>success_actions: string | string[]</code> – Actions to run on click success</li>
+<li>
+<code>action | actions</code> – Legacy aliases for <code>success_actions</code>
+</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Materials</h3><a id="user-content-materials" class="anchor" aria-label="Permalink: Materials" href="#materials"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Standard identifiers via <code>StringToItemParser</code>:
+<ul>
+<li>
+<code>STONE</code>, <code>OAK_PLANKS</code>, or full names like <code>minecraft:netherite_chestplate</code>
+</li>
+</ul>
+</li>
+<li>Base64 NBT item:
+<ul>
+<li><code>material: nbt-"&lt;base64-serialized-nbt&gt;"</code></li>
+</ul>
+</li>
+<li>Placeholder-provided identifiers:
+<ul>
+<li><code>material: placeholder-%player_item_in_hand%</code></li>
+</ul>
+</li>
+<li>Equipment shortcuts:
+<ul>
+<li>
+<code>main_hand</code> | <code>mainhand</code>, <code>off_hand</code> | <code>offhand</code>
+</li>
+<li>
+<code>armor_helmet</code>, <code>armor_chestplate</code>, <code>armor_leggings</code>, <code>armor_boots</code>
+</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Actions</h3><a id="user-content-actions" class="anchor" aria-label="Permalink: Actions" href="#actions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Write as lines in <code>[tag] arg</code> format. All args are parsed by PlaceholderAPI before use.</p>
+<ul>
+<li>Core
+<ul>
+<li>
+<code>[close]</code> – Closes the GUI (runs <code>close_actions</code>)</li>
+<li>
+<code>[opengui] &lt;guiId&gt;</code> – Opens another GUI (respects its open requirement)</li>
+<li>
+<code>[refresh]</code> – Rebuilds current GUI items without closing</li>
+<li>
+<code>[message] &lt;text&gt;</code> / <code>[broadcast] &lt;text&gt;</code> / <code>[chat] &lt;text&gt;</code>
+</li>
+<li>
+<code>[console] &lt;cmd&gt;</code> / <code>[player] &lt;cmd&gt;</code>
+</li>
+</ul>
+</li>
+<li>Economy (PocketVault)
+<ul>
+<li>
+<code>[givemoney] &lt;amount&gt;</code> / <code>[takemoney] &lt;amount&gt;</code>
+</li>
+</ul>
+</li>
+<li>Permissions (PocketVault)
+<ul>
+<li>
+<code>[givepermission] &lt;node&gt;</code> / <code>[takepermission] &lt;node&gt;</code>
+</li>
+</ul>
+</li>
+<li>Experience
+<ul>
+<li>
+<code>[giveexp] &lt;amt|amtL&gt;</code> / <code>[takeexp] &lt;amt|amtL&gt;</code> (<code>L</code> suffix = levels)</li>
+</ul>
+</li>
+<li>Sounds (Bedrock ids)
+<ul>
+<li><code>[sound] &lt;id&gt; [volume] [pitch]</code></li>
+<li><code>[broadcastsound] &lt;id&gt; [volume] [pitch]</code></li>
+<li><code>[broadcastsoundworld] &lt;id&gt; [volume] [pitch]</code></li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Requirements</h3><a id="user-content-requirements" class="anchor" aria-label="Permalink: Requirements" href="#requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A requirement block is evaluated as a whole and supports success/deny actions.</p>
+<p>Block keys:</p>
+<ul>
+<li>
+<code>requirements:</code> – map of individual requirement specs</li>
+<li>
+<code>minimum_requirements: number</code> – Minimum number of individual requirements that must pass</li>
+<li>
+<code>stop_at_success: bool</code> – Stop evaluating after reaching <code>minimum_requirements</code>
+</li>
+<li>
+<code>success_actions:</code> – Run if the block passes</li>
+<li>
+<code>deny_actions:</code> – Run if the block fails</li>
+</ul>
+<p>Individual requirement types (examples):</p>
+<ul>
+<li>
+<code>type: has permission</code> + <code>permission: node</code>
+</li>
+<li>
+<code>type: has permissions</code> + <code>permissions: [node1, node2]</code> + <code>minimum: 1</code>
+</li>
+<li>
+<code>type: has money</code> + <code>amount: 500</code>
+</li>
+<li>
+<code>type: has exp</code> + <code>amount: 10</code> + <code>level: true|false</code>
+</li>
+<li>
+<code>type: is near</code> + <code>location: 'WORLD,X,Y,Z'</code> + <code>distance: '5'</code>
+</li>
+<li>
+<code>type: has item</code> with advanced options (name/lore contains, ignorecase, armor/offhand, strict)</li>
+<li>String comparisons:
+<ul>
+<li>
+<code>type: string equals</code> / <code>string equals ignorecase</code> / <code>string contains</code>
+</li>
+<li>
+<code>type: string length</code> + <code>min:</code> + <code>max:</code>
+</li>
+</ul>
+</li>
+<li>Comparators:
+<ul>
+<li>
+<code>type: (==, !=, &gt;=, &lt;=, &gt;, &lt;)</code> + <code>input:</code> + <code>output:</code>
+</li>
+</ul>
+</li>
+<li>
+<code>type: javascript</code> + <code>expression:</code>
+</li>
+</ul>
+<p>Negation is supported for any type using <code>type: "!has permission"</code>, etc.</p>
+<div class="markdown-heading"><h3 class="heading-element">Placeholders (NetherMenus)</h3><a id="user-content-placeholders-nethermenus" class="anchor" aria-label="Permalink: Placeholders (NetherMenus)" href="#placeholders-nethermenus"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Provided via <code>hook/PlaceholdersHook.php</code> (requires PlaceholderAPI):</p>
+<ul>
+<li>
+<code>%nethermenus_opened_menu%</code> – ID of the menu currently open (empty if none)</li>
+<li>
+<code>%nethermenus_is_in_menu%</code> – <code>yes</code>/<code>no</code> if a menu is open</li>
+<li>
+<code>%nethermenus_last_menu%</code> – ID of the last menu the player had open</li>
+<li>
+<code>%nethermenus_opened_menu_name%</code> – Display name of the currently open menu</li>
+<li>
+<code>%nethermenus_last_menu_name%</code> – Display name of the last open menu</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Open Command and Visibility</h3><a id="user-content-open-command-and-visibility" class="anchor" aria-label="Permalink: Open Command and Visibility" href="#open-command-and-visibility"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Command(s) to open a GUI are read from <code>open_command:</code> and registered on enable (excluding the base <code>/gui</code> to avoid conflicts).</li>
+<li>If multiple items compete for the same slot, entries are considered in ascending <code>priority</code>. When priority ties, the last-defined entry wins.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Example GUI YAML</h2><a id="user-content-example-gui-yaml" class="anchor" aria-label="Permalink: Example GUI YAML" href="#example-gui-yaml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">id</span>: <span class="pl-c1">a1</span>
+<span class="pl-ent">name</span>: <span class="pl-s">Actions Menu</span>
+<span class="pl-ent">rows</span>: <span class="pl-c1">4</span>
+<span class="pl-ent">open_command</span>: <span class="pl-s">action</span>
+<span class="pl-ent">command_description</span>: <span class="pl-s">Open the actions menu</span>
+<span class="pl-ent">open_actions</span>: <span class="pl-s"><span class="pl-pds">'</span>[sound] beacon.activate 1 1<span class="pl-pds">'</span></span>
+<span class="pl-ent">close_actions</span>: <span class="pl-s"><span class="pl-pds">'</span>[sound] beacon.deactivate 1 1<span class="pl-pds">'</span></span>
+<span class="pl-ent">update_interval</span>: <span class="pl-c1">1</span>
+<span class="pl-ent">filler_item</span>:
+  <span class="pl-ent">material</span>: <span class="pl-s">light_gray_stained_glass_pane</span>
+  <span class="pl-ent">slots</span>: <span class="pl-c1">0-35</span>
+<span class="pl-ent">items</span>:
+  <span class="pl-ent">Slot_24</span>:
+    <span class="pl-ent">material</span>: <span class="pl-s">minecraft:clock</span>
+    <span class="pl-ent">slot</span>: <span class="pl-c1">24</span>
+    <span class="pl-ent">update</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">display_name</span>: <span class="pl-s">Ping</span>
+    <span class="pl-ent">lore</span>:
+      - <span class="pl-s"><span class="pl-pds">'</span>Ping: %player_ping%<span class="pl-pds">'</span></span>
+  <span class="pl-ent">Slot_26</span>:
+    <span class="pl-ent">material</span>: <span class="pl-s">minecraft:netherite_chestplate</span>
+    <span class="pl-ent">slot</span>: <span class="pl-c1">26</span>
+    <span class="pl-ent">trim_material</span>: <span class="pl-s">emerald</span>
+    <span class="pl-ent">trim_pattern</span>: <span class="pl-s">host</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Troubleshooting</h2><a id="user-content-troubleshooting" class="anchor" aria-label="Permalink: Troubleshooting" href="#troubleshooting"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Inventory UI Resource Pack missing
+<ul>
+<li>Install the pack (UUID/version above), set <code>force_resources=true</code>, restart the server.</li>
+<li>In degraded mode, <code>/gui</code> and <code>/guiadmin</code> will send an in-game message and not open.</li>
+</ul>
+</li>
+<li>Actions not working
+<ul>
+<li>For economy/permissions actions, ensure PocketVault is installed and providers are available.</li>
+</ul>
+</li>
+<li>Placeholders not resolving
+<ul>
+<li>Ensure PlaceholderAPI is installed and the text supports parsing (GUI name, lore, actions, requirement inputs/outputs).</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">File/Folder Structure</h2><a id="user-content-filefolder-structure" class="anchor" aria-label="Permalink: File/Folder Structure" href="#filefolder-structure"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>src/NetherByte/NetherMenus/</code> – Main plugin code</li>
+<li>
+<code>src/NetherByte/NetherMenus/ui/gui/</code> – GUI runtime</li>
+<li>
+<code>src/NetherByte/NetherMenus/hook/</code> – Hooks (PlaceholderAPI provider, PocketVault hook, inventory close listener)</li>
+<li>
+<code>src/NetherByte/NetherMenus/libs/</code> – Bundled virions/libs (InventoryUI, forms, etc.)</li>
+<li>
+<code>plugin_data/NetherMenus/guis/*.yml</code> – Your GUI definitions</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Credits</h2><a id="user-content-credits" class="anchor" aria-label="Permalink: Credits" href="#credits"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>InventoryUI virion by tedo0627 (bundled)</li>
+<li>PlaceholderAPI by NetherByte</li>
+<li>PocketVault by NetherByte (economy/permission integration)</li>
+</ul>
+<p>If you want a full in-depth guide, see the wiki in <code>NetherMenus-wiki/</code> for options, examples, and requirement type references.</p>

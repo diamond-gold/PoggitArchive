@@ -1,0 +1,116 @@
+<div class="markdown-heading"><h1 align="center" class="heading-element">📦 SuperiorVeinMiner - A fork of DeluxeVeinMiner</h1><a id="user-content--superiorveinminer---a-fork-of-deluxeveinminer" class="anchor" aria-label="Permalink: 📦 SuperiorVeinMiner - A fork of DeluxeVeinMiner" href="#-superiorveinminer---a-fork-of-deluxeveinminer"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p align="center">SuperiorVeinMiner allows players to mine entire veins of minerals or connected blocks by simply breaking a single one.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🌟 Features</h2><a id="user-content--features" class="anchor" aria-label="Permalink: 🌟 Features" href="#-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Automatically mines all connected ores of the same type.</li>
+<li>Compatible with enchantments like <strong>Fortune</strong> and <strong>Unbreaking</strong>.</li>
+<li>Applies durability loss correctly and respects tool compatibility.</li>
+<li>Drops all ores at the first block broken.</li>
+<li>Ignores world and block blacklists.</li>
+<li>Fast, recursive vein-mining logic with a configurable block limit (default: 64).</li>
+<li>Easy configuration and live command-based control.</li>
+<li>Java-like vein-mining experience for PocketMine-MP servers.</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📜 Commands</h2><a id="user-content--commands" class="anchor" aria-label="Permalink: 📜 Commands" href="#-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/deluxeveinminer addblock &lt;block&gt;</code></td>
+<td>Add a block to the block blacklist</td>
+<td><code>deluxeveinminer.command.add.block</code></td>
+</tr>
+<tr>
+<td><code>/deluxeveinminer removeblock &lt;block&gt;</code></td>
+<td>Remove a block from the block blacklist</td>
+<td><code>deluxeveinminer.command.remove.block</code></td>
+</tr>
+<tr>
+<td><code>/deluxeveinminer addwhitelist &lt;block&gt;</code></td>
+<td>Add a block to the whitelist</td>
+<td><code>deluxeveinminer.command.add.whitelist</code></td>
+</tr>
+<tr>
+<td><code>/deluxeveinminer removewhitelist &lt;block&gt;</code></td>
+<td>Remove a block from the whitelist</td>
+<td><code>deluxeveinminer.command.remove.whitelist</code></td>
+</tr>
+<tr>
+<td><code>/deluxeveinminer addworld &lt;world&gt;</code></td>
+<td>Add a world to the world blacklist</td>
+<td><code>deluxeveinminer.command.add.world</code></td>
+</tr>
+<tr>
+<td><code>/deluxeveinminer removeworld &lt;world&gt;</code></td>
+<td>Remove a world from the world blacklist</td>
+<td><code>deluxeveinminer.command.remove.world</code></td>
+</tr>
+<tr>
+<td><code>/deluxeveinminer setmaxblocks &lt;number&gt;</code></td>
+<td>Set maximum blocks per vein (1-1000)</td>
+<td><code>deluxeveinminer.command.setmaxblocks</code></td>
+</tr>
+<tr>
+<td><code>/deluxeveinminer toggle &lt;option&gt;</code></td>
+<td>Toggle features (shift-disable, require-tool)</td>
+<td><code>deluxeveinminer.command.toggle</code></td>
+</tr>
+<tr>
+<td><code>/deluxeveinminer status</code></td>
+<td>Show current plugin configuration</td>
+<td><code>deluxeveinminer.command.status</code></td>
+</tr>
+<tr>
+<td><code>/deluxeveinminer reload</code></td>
+<td>Reload the plugin configuration</td>
+<td><code>deluxeveinminer.command.reload</code></td>
+</tr>
+<tr>
+<td><code>/deluxeveinminer help</code></td>
+<td>Show all available commands</td>
+<td><code>deluxeveinminer.command.help</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🧱 Supported Software</h2><a id="user-content--supported-software" class="anchor" aria-label="Permalink: 🧱 Supported Software" href="#-supported-software"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<blockquote>
+<p>✅ This plugin is only compatible with <strong>PocketMine-MP</strong><br>
+❌ It will NOT work on Nukkit, Altay, or other forks</p>
+</blockquote>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📥 Installation</h2><a id="user-content--installation" class="anchor" aria-label="Permalink: 📥 Installation" href="#-installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>📦 <a href="https://github.com/Not-Baguette/DeluxeVeinMiner/releases/latest">Download SuperiorVeinMiner</a> from Poggit</li>
+<li>📁 Place the <code>.phar</code> files inside your <code>/plugins/</code> directory</li>
+<li>🔁 Restart your server</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">⚙️ Todo</h2><a id="user-content-️-todo" class="anchor" aria-label="Permalink: ⚙️ Todo" href="#️-todo"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>[x] Commands for whitelist management</li>
+<li>[ ] config.yml backwards compatibility</li>
+<li>[x] Shift to stop veinmining temporarily</li>
+<li>[x] Disable veinmining with barehands</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📖 License</h2><a id="user-content--license" class="anchor" aria-label="Permalink: 📖 License" href="#-license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Licensed under the <a href="https://github.com/FrostCheatMC/DeluxeVeinMiner/blob/master/LICENSE">MIT License</a>
+You are free to fork, contribute, or suggest changes.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">☕ Support &amp; Donate</h2><a id="user-content--support--donate" class="anchor" aria-label="Permalink: ☕ Support &amp; Donate" href="#-support--donate"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you would like to give your thanks:</p>
+<blockquote>
+<p>💖 <a href="https://paypal.me/notnotbagu" rel="nofollow">Donate via PayPal</a></p>
+</blockquote>
+<p>Any support is greatly appreciated! Also shout out to the original creator <a href="https://github.com/FrostCheat/DeluxeVeinMiner">FrostCheat</a>!</p>
+<hr>
+<p align="center"><b>Made with 💙 by FrostCheatMC | Forked by 🥖 Baguette</b></p>
