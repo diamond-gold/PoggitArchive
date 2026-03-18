@@ -1,9 +1,9 @@
 # PerWorldInventory
 ## A full-featured per world inventory plugin for PocketMine-MP.
 ```properties
-Version: 3.0.0
+Version: 3.0.1
     API: 5.30.0
-    Updated: 18-11-2025 15:05:02 UTC
+    Updated: 17-03-2026 19:04:38 UTC
 Repo: https://github.com/BlockHorizons/PerWorldInventory
 License: Apache-2.0
 Categories: General,Miscellaneous

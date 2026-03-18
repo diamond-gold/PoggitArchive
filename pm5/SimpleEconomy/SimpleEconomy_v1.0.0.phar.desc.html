@@ -1,0 +1,477 @@
+<div class="markdown-heading"><h1 class="heading-element">SimpleEconomy</h1><a id="user-content-simpleeconomy" class="anchor" aria-label="Permalink: SimpleEconomy" href="#simpleeconomy"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A production-ready economy plugin for <a href="https://github.com/pmmp/PocketMine-MP">PocketMine-MP</a>, powered by <a href="https://github.com/NhanAZ-Libraries/SimpleSQL">SimpleSQL</a>.</p>
+<p>Built for <strong>server owners who want a working economy in minutes</strong> and <strong>developers who want an API that doesn't fight them</strong>.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Why another economy plugin?</h2><a id="user-content-why-another-economy-plugin" class="anchor" aria-label="Permalink: Why another economy plugin?" href="#why-another-economy-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>I know <a href="https://github.com/cooldogepm/BedrockEconomy">BedrockEconomy</a> exists, and it's a great plugin - recommended on Poggit, actively maintained. So why SimpleEconomy?</p>
+<p><strong>Short answer:</strong> Different philosophy, different strengths.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>SimpleEconomy</th>
+<th>BedrockEconomy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Storage</strong></td>
+<td>Hybrid SQL + YAML via SimpleSQL</td>
+<td>Pure SQL (libasynql)</td>
+</tr>
+<tr>
+<td><strong>API complexity</strong></td>
+<td>4 methods. That's it.</td>
+<td>Full async ClosureAPI / fluent builders</td>
+</tr>
+<tr>
+<td><strong>Setup</strong></td>
+<td>Drop-in, works instantly</td>
+<td>Requires understanding async patterns</td>
+</tr>
+<tr>
+<td><strong>Offline player data</strong></td>
+<td>Built-in (temporary sessions)</td>
+<td>Requires manual SQL queries</td>
+</tr>
+<tr>
+<td><strong>ScoreHud integration</strong></td>
+<td>Built-in</td>
+<td>Separate plugin required</td>
+</tr>
+<tr>
+<td><strong>Multi-language</strong></td>
+<td>14 languages built-in</td>
+<td>4 languages</td>
+</tr>
+<tr>
+<td><strong>Transaction events</strong></td>
+<td>Cancellable events for third-party control</td>
+<td>Custom event system</td>
+</tr>
+<tr>
+<td><strong>Target audience</strong></td>
+<td>Small-to-medium servers, non-dev admins</td>
+<td>Advanced setups, dev-oriented</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why not PR into BedrockEconomy?</strong> BedrockEconomy is architecturally pure-SQL. SimpleEconomy's hybrid SQL-YAML approach (via SimpleSQL) is a fundamentally different storage philosophy - this isn't a feature addition, it's a different way of thinking about player data. Both approaches have merit, but they can't coexist in one codebase without compromise.</p>
+<p><strong>TL;DR:</strong> BedrockEconomy is powerful and flexible. SimpleEconomy is simple and instant. Choose what fits your server.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>6 commands</strong> - <code>/money</code>, <code>/pay</code>, <code>/setmoney</code>, <code>/addmoney</code>, <code>/reducemoney</code>, <code>/topmoney</code>
+</li>
+<li>
+<strong>Name prefix matching</strong> - type <code>/money nh</code> and it finds <code>NhanAZ</code>
+</li>
+<li>
+<strong>Offline player support</strong> - check and modify balances of players who aren't online</li>
+<li>
+<strong>Leaderboard</strong> - paginated <code>/topmoney</code> with async cache rebuild</li>
+<li>
+<strong>14 languages</strong> - English, Vietnamese, Korean, Russian, Spanish, Ukrainian, Chinese, Indonesian, Turkish, French, Portuguese, German, Japanese, Italian</li>
+<li>
+<strong>ScoreHud integration</strong> - built-in scoreboard tags, no extra plugin needed</li>
+<li>
+<strong>Transaction events</strong> - other plugins can listen to, or even cancel, economy transactions</li>
+<li>
+<strong>Currency formatting</strong> - <code>$1,000,000</code> (default) or <code>$1.5M</code> (compact)</li>
+<li>
+<strong>SQLite &amp; MySQL</strong> - switch with one line in config</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">From Poggit (recommended)</h3><a id="user-content-from-poggit-recommended" class="anchor" aria-label="Permalink: From Poggit (recommended)" href="#from-poggit-recommended"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Download the latest <code>.phar</code> from <a href="https://poggit.pmmp.io/ci/NhanAZ-Plugins/SimpleEconomy/SimpleEconomy" rel="nofollow">Poggit CI</a>.</p>
+<p>Drop it in your server's <code>plugins/</code> folder. Done.</p>
+<div class="markdown-heading"><h3 class="heading-element">From source</h3><a id="user-content-from-source" class="anchor" aria-label="Permalink: From source" href="#from-source"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Clone this repository</li>
+<li>The plugin requires the <strong>SimpleSQL</strong> and <strong>libasynql</strong> virions to be injected (handled automatically by Poggit CI)</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/money [player]</code></td>
+<td>Check your balance, or someone else's</td>
+<td><code>simpleeconomy.command.money</code></td>
+<td>Everyone</td>
+</tr>
+<tr>
+<td><code>/pay &lt;player&gt; &lt;amount&gt;</code></td>
+<td>Send money to another player</td>
+<td><code>simpleeconomy.command.pay</code></td>
+<td>Everyone</td>
+</tr>
+<tr>
+<td><code>/topmoney [page]</code></td>
+<td>View the richest players</td>
+<td><code>simpleeconomy.command.topmoney</code></td>
+<td>Everyone</td>
+</tr>
+<tr>
+<td><code>/setmoney &lt;player&gt; &lt;amount&gt;</code></td>
+<td>Set a player's balance</td>
+<td><code>simpleeconomy.command.setmoney</code></td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>/addmoney &lt;player&gt; &lt;amount&gt;</code></td>
+<td>Add money to a player</td>
+<td><code>simpleeconomy.command.addmoney</code></td>
+<td>OP</td>
+</tr>
+<tr>
+<td><code>/reducemoney &lt;player&gt; &lt;amount&gt;</code></td>
+<td>Remove money from a player</td>
+<td><code>simpleeconomy.command.reducemoney</code></td>
+<td>OP</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tip:</strong> All commands support name prefix matching. If <code>Steve</code> is online, <code>/pay st 100</code> works.</p>
+<p><strong>Tip:</strong> Admin commands (<code>/setmoney</code>, <code>/addmoney</code>, <code>/reducemoney</code>) work on offline players too.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>After first run, edit <code>plugin_data/SimpleEconomy/config.yml</code>:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Language (14 supported)</span>
+<span class="pl-ent">language</span>: <span class="pl-s"><span class="pl-pds">"</span>eng<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Starting balance for new players</span>
+<span class="pl-ent">default-balance</span>: <span class="pl-c1">1000</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Currency display</span>
+<span class="pl-ent">currency</span>:
+  <span class="pl-ent">symbol</span>: <span class="pl-s"><span class="pl-pds">"</span>$<span class="pl-pds">"</span></span>
+  <span class="pl-ent">formatter</span>: <span class="pl-s"><span class="pl-pds">"</span>default<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> or "compact" for $1.5K style</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Leaderboard</span>
+<span class="pl-ent">topmoney-per-page</span>: <span class="pl-c1">10</span>
+<span class="pl-ent">leaderboard-size</span>: <span class="pl-c1">100</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Database (sqlite or mysql)</span>
+<span class="pl-ent">database</span>:
+  <span class="pl-ent">type</span>: <span class="pl-s">sqlite</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Supported Languages</h3><a id="user-content-supported-languages" class="anchor" aria-label="Permalink: Supported Languages" href="#supported-languages"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Language</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>eng</code></td>
+<td>English</td>
+</tr>
+<tr>
+<td><code>vie</code></td>
+<td>Tiếng Việt</td>
+</tr>
+<tr>
+<td><code>kor</code></td>
+<td>한국어</td>
+</tr>
+<tr>
+<td><code>rus</code></td>
+<td>Русский</td>
+</tr>
+<tr>
+<td><code>spa</code></td>
+<td>Español</td>
+</tr>
+<tr>
+<td><code>ukr</code></td>
+<td>Українська</td>
+</tr>
+<tr>
+<td><code>zho</code></td>
+<td>简体中文</td>
+</tr>
+<tr>
+<td><code>ind</code></td>
+<td>Bahasa Indonesia</td>
+</tr>
+<tr>
+<td><code>tur</code></td>
+<td>Türkçe</td>
+</tr>
+<tr>
+<td><code>fra</code></td>
+<td>Français</td>
+</tr>
+<tr>
+<td><code>por</code></td>
+<td>Português</td>
+</tr>
+<tr>
+<td><code>deu</code></td>
+<td>Deutsch</td>
+</tr>
+<tr>
+<td><code>jpn</code></td>
+<td>日本語</td>
+</tr>
+<tr>
+<td><code>ita</code></td>
+<td>Italiano</td>
+</tr>
+</tbody>
+</table>
+<p>All language files are saved to <code>plugin_data/SimpleEconomy/lang/</code> - you can edit them freely.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">ScoreHud Integration</h2><a id="user-content-scorehud-integration" class="anchor" aria-label="Permalink: ScoreHud Integration" href="#scorehud-integration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If <a href="https://github.com/Flavionsky/ScoreHud">ScoreHud</a> is installed, SimpleEconomy automatically provides these scoreboard tags:</p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{simpleeconomy.balance}</code></td>
+<td><code>$1,000</code></td>
+<td>Formatted balance</td>
+</tr>
+<tr>
+<td><code>{simpleeconomy.rank}</code></td>
+<td><code>3</code></td>
+<td>Leaderboard position</td>
+</tr>
+<tr>
+<td><code>{simpleeconomy.raw}</code></td>
+<td><code>1000</code></td>
+<td>Raw balance number</td>
+</tr>
+</tbody>
+</table>
+<p>No extra plugins or configuration needed. Just add the tags to your ScoreHud config.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">For Developers</h2><a id="user-content-for-developers" class="anchor" aria-label="Permalink: For Developers" href="#for-developers"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<blockquote>
+<p><strong>Want a full working example?</strong> Check out <a href="https://github.com/NhanAZ-Plugins/SimpleEconomyExample">SimpleEconomyExample</a> - a complete plugin demonstrating how to use the SimpleEconomy API with real commands and event listeners.</p>
+</blockquote>
+<div class="markdown-heading"><h3 class="heading-element">Quick Start - Using the API</h3><a id="user-content-quick-start---using-the-api" class="anchor" aria-label="Permalink: Quick Start - Using the API" href="#quick-start---using-the-api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">NhanAZ</span>\<span class="pl-v">SimpleEconomy</span>\<span class="pl-smi">Main</span> <span class="pl-k">as</span> <span class="pl-smi">SimpleEconomy</span>;
+
+<span class="pl-c">// Get the plugin instance</span>
+<span class="pl-s1"><span class="pl-c1">$</span>eco</span> = SimpleEconomy::<span class="pl-en">getInstance</span>();
+
+<span class="pl-c">// Check balance (online players)</span>
+<span class="pl-s1"><span class="pl-c1">$</span>balance</span> = <span class="pl-s1"><span class="pl-c1">$</span>eco</span>-&gt;<span class="pl-en">getMoney</span>(<span class="pl-s">"<span class="pl-s">Steve</span>"</span>);  <span class="pl-c">// ?int - null if offline</span>
+
+<span class="pl-c">// Modify balance (online players)</span>
+<span class="pl-s1"><span class="pl-c1">$</span>eco</span>-&gt;<span class="pl-en">setMoney</span>(<span class="pl-s">"<span class="pl-s">Steve</span>"</span>, <span class="pl-c1">5000</span>);    <span class="pl-c">// bool - false if offline or cancelled</span>
+<span class="pl-s1"><span class="pl-c1">$</span>eco</span>-&gt;<span class="pl-en">addMoney</span>(<span class="pl-s">"<span class="pl-s">Steve</span>"</span>, <span class="pl-c1">500</span>);     <span class="pl-c">// bool</span>
+<span class="pl-s1"><span class="pl-c1">$</span>eco</span>-&gt;<span class="pl-en">reduceMoney</span>(<span class="pl-s">"<span class="pl-s">Steve</span>"</span>, <span class="pl-c1">200</span>);  <span class="pl-c">// bool - false if insufficient funds</span>
+
+<span class="pl-c">// Format money using the server's configured style</span>
+<span class="pl-s1"><span class="pl-c1">$</span>display</span> = <span class="pl-s1"><span class="pl-c1">$</span>eco</span>-&gt;<span class="pl-en">formatMoney</span>(<span class="pl-c1">1500000</span>);  <span class="pl-c">// "$1,500,000" or "$1.5M"</span></pre></div>
+<p>That's the entire sync API. <strong>4 methods.</strong></p>
+<div class="markdown-heading"><h3 class="heading-element">Async API - Offline Players</h3><a id="user-content-async-api---offline-players" class="anchor" aria-label="Permalink: Async API - Offline Players" href="#async-api---offline-players"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// Works for BOTH online and offline players</span>
+<span class="pl-s1"><span class="pl-c1">$</span>eco</span>-&gt;<span class="pl-en">getMoneyAsync</span>(<span class="pl-s">"<span class="pl-s">Steve</span>"</span>, <span class="pl-k">function</span>(?<span class="pl-smi">int</span> <span class="pl-s1"><span class="pl-c1">$</span>balance</span>): <span class="pl-smi">void</span> {
+    <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>balance</span> !== <span class="pl-c1">null</span>) {
+        <span class="pl-c">// Steve has played before, balance is $balance</span>
+    } <span class="pl-k">else</span> {
+        <span class="pl-c">// Steve has never joined</span>
+    }
+});</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Transaction Events</h3><a id="user-content-transaction-events" class="anchor" aria-label="Permalink: Transaction Events" href="#transaction-events"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>SimpleEconomy fires events that your plugin can listen to:</p>
+<p><strong><code>TransactionSubmitEvent</code></strong> - fired <em>before</em> a transaction executes. <strong>Cancellable.</strong></p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">NhanAZ</span>\<span class="pl-v">SimpleEconomy</span>\<span class="pl-v">event</span>\<span class="pl-smi">TransactionSubmitEvent</span>;
+<span class="pl-k">use</span> <span class="pl-v">NhanAZ</span>\<span class="pl-v">SimpleEconomy</span>\<span class="pl-v">event</span>\<span class="pl-smi">TransactionEvent</span>;
+
+<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onTransaction</span>(<span class="pl-smi"><span class="pl-smi">TransactionSubmitEvent</span></span> <span class="pl-s1"><span class="pl-c1">$</span>event</span>): <span class="pl-smi">void</span> {
+    <span class="pl-c">// Block payments over $10,000</span>
+    <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-c1">type</span> === TransactionEvent::<span class="pl-c1">TYPE_PAY</span> &amp;&amp; <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getAmount</span>() &gt; <span class="pl-c1">10000</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">cancel</span>();
+    }
+}</pre></div>
+<p><strong><code>TransactionSuccessEvent</code></strong> - fired <em>after</em> a transaction completes. Read-only.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">NhanAZ</span>\<span class="pl-v">SimpleEconomy</span>\<span class="pl-v">event</span>\<span class="pl-smi">TransactionSuccessEvent</span>;
+
+<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onSuccess</span>(<span class="pl-smi"><span class="pl-smi">TransactionSuccessEvent</span></span> <span class="pl-s1"><span class="pl-c1">$</span>event</span>): <span class="pl-smi">void</span> {
+    <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">getLogger</span>()-&gt;<span class="pl-en">info</span>(<span class="pl-s">"{<span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-c1">playerName</span>}<span class="pl-s">: </span>{<span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-c1">oldBalance</span>}<span class="pl-s"> → </span>{<span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-c1">newBalance</span>}"</span>);
+}</pre></div>
+<div class="markdown-heading"><h4 class="heading-element">Event Properties</h4><a id="user-content-event-properties" class="anchor" aria-label="Permalink: Event Properties" href="#event-properties"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$event-&gt;playerName</code></td>
+<td><code>string</code></td>
+<td>The player involved</td>
+</tr>
+<tr>
+<td><code>$event-&gt;oldBalance</code></td>
+<td><code>int</code></td>
+<td>Balance before the transaction</td>
+</tr>
+<tr>
+<td><code>$event-&gt;newBalance</code></td>
+<td><code>int</code></td>
+<td>Balance after the transaction</td>
+</tr>
+<tr>
+<td><code>$event-&gt;type</code></td>
+<td><code>string</code></td>
+<td>
+<code>"set"</code>, <code>"add"</code>, <code>"reduce"</code>, or <code>"pay"</code>
+</td>
+</tr>
+<tr>
+<td><code>$event-&gt;getAmount()</code></td>
+<td><code>int</code></td>
+<td>Absolute difference between old and new</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">Offline Player Data Access</h3><a id="user-content-offline-player-data-access" class="anchor" aria-label="Permalink: Offline Player Data Access" href="#offline-player-data-access"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>For commands or features that need to work on offline players:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>eco</span>-&gt;<span class="pl-en">withPlayerSession</span>(<span class="pl-s">"<span class="pl-s">Steve</span>"</span>, <span class="pl-k">function</span>(<span class="pl-smi"><span class="pl-smi">Session</span></span> <span class="pl-s1"><span class="pl-c1">$</span>session</span>, <span class="pl-smi">bool</span> <span class="pl-s1"><span class="pl-c1">$</span>temporary</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>eco</span>): <span class="pl-smi">void</span> {
+    <span class="pl-s1"><span class="pl-c1">$</span>balance</span> = (<span class="pl-smi">int</span>) <span class="pl-s1"><span class="pl-c1">$</span>session</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">"<span class="pl-s">balance</span>"</span>, <span class="pl-c1">0</span>);
+
+    <span class="pl-c">// Do something with the balance...</span>
+
+    <span class="pl-c">// IMPORTANT: close temp sessions when done</span>
+    <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>temporary</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>eco</span>-&gt;<span class="pl-en">closeTempSession</span>(<span class="pl-s">"<span class="pl-s">Steve</span>"</span>);
+    }
+}, <span class="pl-k">function</span>(<span class="pl-smi">string</span> <span class="pl-s1"><span class="pl-c1">$</span>error</span>): <span class="pl-smi">void</span> {
+    <span class="pl-c">// Handle error (e.g., data still loading)</span>
+});</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Leaderboard Data</h3><a id="user-content-leaderboard-data" class="anchor" aria-label="Permalink: Leaderboard Data" href="#leaderboard-data"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// Get top 10 players</span>
+<span class="pl-s1"><span class="pl-c1">$</span>top</span> = <span class="pl-s1"><span class="pl-c1">$</span>eco</span>-&gt;<span class="pl-en">getTopBalances</span>(limit: <span class="pl-c1">10</span>, offset: <span class="pl-c1">0</span>);
+<span class="pl-c">// Returns: [["name" =&gt; "steve", "balance" =&gt; 50000], ...]</span>
+
+<span class="pl-c">// Get a player's rank</span>
+<span class="pl-s1"><span class="pl-c1">$</span>rank</span> = <span class="pl-s1"><span class="pl-c1">$</span>eco</span>-&gt;<span class="pl-en">getPlayerRank</span>(<span class="pl-s">"<span class="pl-s">Steve</span>"</span>);  <span class="pl-c">// ?int - null if not in cache</span>
+
+<span class="pl-c">// Total cached entries</span>
+<span class="pl-s1"><span class="pl-c1">$</span>count</span> = <span class="pl-s1"><span class="pl-c1">$</span>eco</span>-&gt;<span class="pl-en">getBalanceCacheCount</span>();</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Multi-Economy Provider Compatibility</h3><a id="user-content-multi-economy-provider-compatibility" class="anchor" aria-label="Permalink: Multi-Economy Provider Compatibility" href="#multi-economy-provider-compatibility"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>SimpleEconomy is supported by multiple multi-economy libraries. We recommend using <strong>EcoAPI</strong> for the best experience.</p>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Type</th>
+<th>Config value</th>
+<th>PR Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/NhanAZ-Libraries/EcoAPI"><strong>EcoAPI</strong></a></td>
+<td>Provider</td>
+<td><code>"simpleeconomy"</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><a href="https://github.com/DaPigGuy/libPiggyEconomy">libPiggyEconomy</a></td>
+<td>Provider</td>
+<td><code>"simpleeconomy"</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><a href="https://github.com/PJZ9n/MoneyConnector">MoneyConnector</a></td>
+<td>Connector</td>
+<td><code>"simpleeconomy"</code></td>
+<td>Planned</td>
+</tr>
+<tr>
+<td><a href="https://github.com/SpaceGameDev568/Economizer">Economizer</a></td>
+<td>Transistor</td>
+<td><code>"SimpleEconomy"</code></td>
+<td>Planned</td>
+</tr>
+<tr>
+<td><a href="https://github.com/David-pm-pl/libEco">libEco</a></td>
+<td>Auto-detect</td>
+<td>-</td>
+<td>Planned</td>
+</tr>
+<tr>
+<td><a href="https://github.com/SOF3/Capital">Capital</a></td>
+<td>Migration source</td>
+<td><code>"simpleeconomy"</code></td>
+<td>Planned</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Recommended:</strong> <a href="https://github.com/NhanAZ-Libraries/EcoAPI">EcoAPI</a> is a simple, lightweight, and unified economy API library that supports auto-detection, async operations, custom providers, and multiple economy plugins with a single clean interface. It is the recommended choice for plugin developers who want broad economy plugin compatibility.</p>
+</blockquote>
+<p>Once these libraries support SimpleEconomy, plugins using them (shop plugins, auction plugins, etc.) will automatically work with SimpleEconomy without any code changes on their end.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Project Structure</h2><a id="user-content-project-structure" class="anchor" aria-label="Permalink: Project Structure" href="#project-structure"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<pre><code>SimpleEconomy/
+├── plugin.yml
+├── LICENSE
+├── resources/
+│   ├── config.yml
+│   ├── simplesql/
+│   │   ├── mysql.sql
+│   │   └── sqlite.sql
+│   └── lang/
+│       ├── eng.yml          # English
+│       ├── vie.yml          # Tiếng Việt
+│       ├── kor.yml          # 한국어
+│       └── ... (14 languages)
+└── src/NhanAZ/SimpleEconomy/
+    ├── Main.php             # Core plugin + API
+    ├── LangManager.php      # Multi-language system
+    ├── CurrencyFormatter.php # $1,000 / $1K formatting
+    ├── LeaderboardTask.php  # Async cache builder
+    ├── ScoreHudListener.php # ScoreHud integration
+    ├── command/
+    │   ├── MoneyCommand.php
+    │   ├── PayCommand.php
+    │   ├── SetMoneyCommand.php
+    │   ├── AddMoneyCommand.php
+    │   ├── ReduceMoneyCommand.php
+    │   └── TopMoneyCommand.php
+    └── event/
+        ├── TransactionEvent.php       # Base event
+        ├── TransactionSubmitEvent.php  # Pre-transaction (cancellable)
+        └── TransactionSuccessEvent.php # Post-transaction
+</code></pre>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="LICENSE">MIT License</a> - do whatever you want with it.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Credits</h2><a id="user-content-credits" class="anchor" aria-label="Permalink: Credits" href="#credits"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong><a href="https://github.com/NhanAZ-Libraries/SimpleSQL">SimpleSQL</a></strong> - the hybrid SQL-YAML engine that powers this plugin</li>
+<li>
+<strong><a href="https://github.com/poggit/libasynql">libasynql</a></strong> - async SQL library for PocketMine-MP</li>
+<li>
+<strong><a href="https://github.com/Flavionsky/ScoreHud">ScoreHud</a></strong> - scoreboard addon (optional integration)</li>
+</ul>
