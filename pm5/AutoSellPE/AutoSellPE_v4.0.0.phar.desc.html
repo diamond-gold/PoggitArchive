@@ -1,0 +1,135 @@
+<div class="markdown-heading"><h1 class="heading-element">Overview</h1><a id="user-content-overview" class="anchor" aria-label="Permalink: Overview" href="#overview"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://poggit.pmmp.io/p/AutoSellPE" rel="nofollow"><img src="https://camo.githubusercontent.com/5649528e19e9dbb72e576e69a2386d47fe2c7407ea9d3328aecd73a685bcb8fe/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f4175746f53656c6c5045" data-canonical-src="https://poggit.pmmp.io/shield.state/AutoSellPE" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/AutoSellPE" rel="nofollow"><img src="https://camo.githubusercontent.com/36ac79cf4b86f5dd815f9726ef96a85d17d12e908c271496682f320d4b07815d/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e6170692f4175746f53656c6c5045" data-canonical-src="https://poggit.pmmp.io/shield.api/AutoSellPE" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/AutoSellPE" rel="nofollow"><img src="https://camo.githubusercontent.com/8656ae87e7d42ab786ed4648e5bdeaa9ce5cd6323a2ade420ffeb9ad365a269d/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2e746f74616c2f4175746f53656c6c5045" data-canonical-src="https://poggit.pmmp.io/shield.dl.total/AutoSellPE" style="max-width: 100%;"></a>
+<a href="https://poggit.pmmp.io/p/AutoSellPE" rel="nofollow"><img src="https://camo.githubusercontent.com/6de30260c95597618e9782b7c751d985352df051a4e797e7bf4f4bffd890f513/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e646c2f4175746f53656c6c5045" data-canonical-src="https://poggit.pmmp.io/shield.dl/AutoSellPE" style="max-width: 100%;"></a></p>
+<p>A PocketMine-MP plugin which automatically sells the blocks that you mine. The blocks and their prices can be changed in the config.yml file.
+You can even set the worlds on which autosell can be used.</p>
+<ul>
+<li>This plugin is compatible with AutoInv</li>
+<li>This plugin supports BedrockEconomy, Capital, EconomyAPI &amp; SimpleEconomy</li>
+</ul>
+<div class="markdown-heading"><h1 class="heading-element">Commands:</h1><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands:" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Usage: <code>/autosell &lt; on | off | add | remove | view &gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Sub-commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>autosell</td>
+<td>on</td>
+<td>Turns on autosell</td>
+</tr>
+<tr>
+<td></td>
+<td>off</td>
+<td>Turns off autosell</td>
+</tr>
+<tr>
+<td></td>
+<td>add</td>
+<td>Adds the item the user is holding to the autosell price list. Proper usage: <code>/autosell add {price}</code> {price} should be a integer or float. For updating prices repeat with different price</td>
+</tr>
+<tr>
+<td></td>
+<td>remove</td>
+<td>Removes the item the user is holding from the autosell price list</td>
+</tr>
+<tr>
+<td></td>
+<td>view</td>
+<td>Lists the prices of all blocks/items added to the autosell price list</td>
+</tr>
+</tbody>
+</table>
+<p>Alias: <code>/as</code></p>
+<div class="markdown-heading"><h1 class="heading-element">Config.yml</h1><a id="user-content-configyml" class="anchor" aria-label="Permalink: Config.yml" href="#configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<pre><code>#     _              _             ____           _   _   ____    _____
+#    / \     _   _  | |_    ___   / ___|    ___  | | | | |  _ \  | ____|
+#   / _ \   | | | | | __|  / _ \  \___ \   / _ \ | | | | | |_) | |  _|
+#  / ___ \  | |_| | | |_  | (_) |  ___) | |  __/ | | | | |  __/  | |___
+# /_/   \_\  \__,_|  \__|  \___/  |____/   \___| |_| |_| |_|     |_____|
+#
+# Author: MCA7
+# Website: https://github.com/MCPEAbdu77/AutoSellPE
+# Apache-2.0 (C) 2021
+
+# Don't change this shit
+ver: 1.3
+
+# Prefix: (use § for color coding)
+prefix: "§6AutoSell§aPE§7:"
+
+# Name of the world autosell works on.
+# Example:
+# worlds:
+#  - "world1"
+#  - "world2"
+
+worlds:
+  - "world"
+  - "world2"
+  - "world3"
+
+# Economy provider
+# the possible values for this currently are
+# 1. BedrockEconomy
+# 2. Capital
+# 3. EconomyAPI
+# 4. SimpleEconomy
+economy-provider: BedrockEconomy
+
+# DO NOT TOUCH IF YOU DONT KNOW WHAT YOU ARE DOING
+# BY DEFAULT SELECTOR ENTRY IS EMPTY
+capital-settings:
+  selector:
+
+# New system for adding/removing blocks/items for AutoSell
+# has been changed to in-game configeration.
+# Hold the block/item and use the command,
+# /autosell add &lt;price&gt;
+# Example:
+# Hold cobblestone block and then use
+# /autosell add 10
+# This will autosell cobblestone block for $10
+# when stone is mined.
+# Likewise for removing, hold the block and
+# use /autosell remove
+</code></pre>
+<div class="markdown-heading"><h1 class="heading-element">Permissions</h1><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>autosell.command</code></td>
+<td>Grants the user/group the permission to toggle autosell ON or OFF - Restricted to OP's by default</td>
+</tr>
+<tr>
+<td><code>autosell.command.add</code></td>
+<td>Grants the user/group the permission to add or update block prices - Restricted to OP's by default</td>
+</tr>
+<tr>
+<td><code>autosell.command.remove</code></td>
+<td>Grants the user/group the permission to remove blocks from autosell - Restricted to OP's by default</td>
+</tr>
+<tr>
+<td><code>autosell.command.view</code></td>
+<td>Grants the user/group the permission to view/list all the prices for the autoselling blocks - Granted to everyone by default</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h1 class="heading-element">Contact</h1><a id="user-content-contact" class="anchor" aria-label="Permalink: Contact" href="#contact"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Email: <a href="mailto:abdu77mcpe@gmail.com">abdu77mcpe@gmail.com</a>
+</li>
+</ul>

@@ -1,11 +1,11 @@
 # AutoSellPE
-<img src="https://raw.githubusercontent.com/MCPEAbdu77/AutoSellPE/55a82be6d88d105a150eafaddf3637c29cea989c/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/MCPEAbdu77/AutoSellPE/340af875a622209bd39a6ed6bae435150b04d3b4/icon.png" width="128" height="128" />
 
 ## PocketMine-MP plugin which lets you sell blocks instantly as you mine.
 ```properties
-Version: 3.2.1
+Version: 4.0.0
     API: 5.0.0
-    Updated: 16-08-2023 11:41:07 UTC
+    Updated: 21-03-2026 14:41:53 UTC
 Repo: https://github.com/MCPEAbdu77/AutoSellPE
 License: Apache-2.0
 Categories: Economy,Miscellaneous,Educational,Fun,Mechanics,General
