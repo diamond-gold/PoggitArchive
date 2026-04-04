@@ -1,0 +1,17 @@
+<div class="markdown-heading"><h1 class="heading-element">Uncensor</h1><a id="user-content-uncensor" class="anchor" aria-label="Permalink: Uncensor" href="#uncensor"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A plugin for PocketMine-MP that automatically bypasses Minecraft Bedrock's built-in client-side profanity filter.</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/04395bca-beb4-4472-98f7-551c100f908c"><img width="1920" height="1080" alt="Screenshot" src="https://github.com/user-attachments/assets/04395bca-beb4-4472-98f7-551c100f908c" style="max-width: 100%; height: auto; max-height: 1080px;"></a></p>
+<div class="markdown-heading"><h2 class="heading-element">How to use</h2><a id="user-content-how-to-use" class="anchor" aria-label="Permalink: How to use" href="#how-to-use"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Drop the plugin into your <code>plugins/</code> folder.</li>
+<li>Start the server - the bundled <code>profanity_filter.wlist</code> will be extracted automatically.</li>
+<li>That's it! All outgoing chat messages will be processed to bypass the client-side filter.</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element">Customizing the word list</h3><a id="user-content-customizing-the-word-list" class="anchor" aria-label="Permalink: Customizing the word list" href="#customizing-the-word-list"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The word list is located at <code>plugin_data/Uncensor/profanity_filter.wlist</code> (one word per line). You can add, remove, or replace words as needed. Changes take effect on server restart.</p>
+<div class="markdown-heading"><h2 class="heading-element">Will it interfere with other chat plugins?</h2><a id="user-content-will-it-interfere-with-other-chat-plugins" class="anchor" aria-label="Permalink: Will it interfere with other chat plugins?" href="#will-it-interfere-with-other-chat-plugins"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin operates directly on <code>TextPacket</code> as it is being sent to the client. Most chat filter plugins process messages <strong>before</strong> they reach the packet stage, so by the time Uncensor sees the message, any server-side filtering has already been applied. It is therefore unlikely to interfere with existing plugins.</p>
+<div class="markdown-heading"><h2 class="heading-element">Credits</h2><a id="user-content-credits" class="anchor" aria-label="Permalink: Credits" href="#credits"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin is a fork of <a href="https://github.com/dktapps-pm-pl/Uncensor/"><strong>dktapps-pm-pl/Uncensor</strong></a> by <a href="https://github.com/dktapps"><strong>@dktapps</strong></a> - the original author and creator of the concept. All credit for the original idea and implementation goes to him.</p>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This project is licensed under the <a href="LICENSE">GNU General Public License v3.0</a>.</p>
