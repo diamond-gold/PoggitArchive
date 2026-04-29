@@ -6,7 +6,7 @@
 Version: 0.1.0
     API: 5.0.0
     Updated: 08-06-2023 15:47:02 UTC
-Repo: https://github.com/Taylor-pm-pl/NoFarmlandDecay
+Repo: https://github.com/0xliam627/NoFarmlandDecay
 License: GPL-3.0
 Categories: General,Miscellaneous,Educational,Fun,Anti-Griefing Tools
 Keywords: decay,dirt,entity,land,player,plugin
