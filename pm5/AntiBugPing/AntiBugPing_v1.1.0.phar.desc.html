@@ -1,0 +1,35 @@
+<p>AntiBugPing is a lightweight plugin that detects and mitigates abnormal network behavior such as lag-switching and desynchronization in PocketMine-MP 5 servers.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Real-time monitoring of player connection (ping, jitter, packet flow)</li>
+<li>Dynamic risk scoring with automatic decay to reduce false positives</li>
+<li>Progressive mitigation system based on network instability</li>
+<li>Optional actions: restrict combat, freeze movement, setback, or kick</li>
+<li>No database required, fully in-memory</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Performance</h2><a id="user-content-performance" class="anchor" aria-label="Permalink: Performance" href="#performance"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>AntiBugPing is designed with performance in mind:</p>
+<ul>
+<li>Zero database usage</li>
+<li>Event-driven execution (no heavy repeating tasks)</li>
+<li>Optimized memory handling using efficient data structures</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The plugin is fully configurable:</p>
+<ul>
+<li>Adjust ping and jitter thresholds</li>
+<li>Control mitigation sensitivity</li>
+<li>Configure watchdog behavior</li>
+<li>Enable or disable kick system</li>
+</ul>
+<p>It is recommended to tune the configuration based on your server network conditions.</p>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>antibugping.bypass</code> → Ignore all checks</li>
+<li>
+<code>antibugping.notify</code> → Receive alerts and debug information</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Simply install the plugin and adjust the configuration file if needed.<br>
+The system will automatically start monitoring players and applying mitigation when necessary.</p>
