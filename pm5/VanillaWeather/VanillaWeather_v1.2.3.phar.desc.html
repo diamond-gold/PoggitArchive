@@ -1,0 +1,60 @@
+<p>A lightweight plugin that brings vanilla-like weather mechanics (clear, rain, thunder) with configurable behavior per
+world, lightning control and snow layer creation.</p>
+<div>
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/WeaVerseStudio/VanillaWeather/blob/master/resources/image0.png?raw=true"><img src="https://github.com/WeaVerseStudio/VanillaWeather/raw/master/resources/image0.png?raw=true" alt="screenshot0" width="320" style="max-width: 100%;"></a>
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/WeaVerseStudio/VanillaWeather/blob/master/resources/image1.png?raw=true"><img src="https://github.com/WeaVerseStudio/VanillaWeather/raw/master/resources/image1.png?raw=true" alt="screenshot1" width="320" style="max-width: 100%;"></a>
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/WeaVerseStudio/VanillaWeather/blob/master/resources/image2.png?raw=true"><img src="https://github.com/WeaVerseStudio/VanillaWeather/raw/master/resources/image2.png?raw=true" alt="screenshot2" width="320" style="max-width: 100%;"></a>
+</div>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Change weather to clear, rain or thunder via command or API.</li>
+<li>Control lightning spawning and its side-effects (fire, damage).</li>
+<li>Create snow layers when snow falls.</li>
+<li>Per-world configuration.</li>
+<li>Events for plugin integration and extension.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>/weather &lt;clear|rain|thunder&gt; [duration]</code>
+<ul>
+<li>Change the current world's weather. <code>duration</code> is in seconds.</li>
+<li>Use <code>0</code> or a negative number to prevent automatic weather changes in that world.</li>
+<li>Examples:
+<ul>
+<li>
+<code>/weather rain 120</code> — rain for 2 minutes</li>
+<li>
+<code>/weather clear</code> — make the weather clear</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<code>vanillaweather.weather.command</code> — Allows use of the <code>/weather</code> command.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Settings are stored per world in <code>plugin_data/VanillaWeather/config.yml</code>. The <code>default</code> section provides fallback
+values.</p>
+<p>Example <code>config.yml</code>:</p>
+<div class="highlight highlight-source-yaml"><pre>---
+<span class="pl-ent">default</span>:
+  <span class="pl-ent">weatherChange</span>: <span class="pl-s">true        </span><span class="pl-c"><span class="pl-c">#</span> Allow automatic weather changes</span>
+  <span class="pl-ent">createLightning</span>: <span class="pl-s">true      </span><span class="pl-c"><span class="pl-c">#</span> Allow lightning to spawn</span>
+  <span class="pl-ent">lightningFire</span>: <span class="pl-s">false       </span><span class="pl-c"><span class="pl-c">#</span> Lightning can set blocks on fire</span>
+  <span class="pl-ent">damageFromLightning</span>: <span class="pl-s">false </span><span class="pl-c"><span class="pl-c">#</span> Lightning deals damage to players</span>
+  <span class="pl-ent">createSnowLayers</span>: <span class="pl-s">true     </span><span class="pl-c"><span class="pl-c">#</span> Create snow layers during snow</span>
+
+<span class="pl-ent">world_nether</span>:
+  <span class="pl-ent">weatherChange</span>: <span class="pl-c1">false</span></pre></div>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Contributing</h2><a id="user-content-contributing" class="anchor" aria-label="Permalink: Contributing" href="#contributing"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Contributions are welcome — fork the repo, make your changes and open a pull request. For bug reports and feature
+requests please use the <a href="https://github.com/WeaVerseStudio/VanillaWeather/issues">repository Issues</a></p>
+<div class="markdown-heading"><h2 class="heading-element">Contact</h2><a id="user-content-contact" class="anchor" aria-label="Permalink: Contact" href="#contact"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you need help or want to report a bug, open an Issue on the repository or join
+our <a href="https://discord.gg/BBtZ4nh8Rc" rel="nofollow">Discord</a></p>

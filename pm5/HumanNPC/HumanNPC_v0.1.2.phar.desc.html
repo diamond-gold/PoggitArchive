@@ -1,0 +1,49 @@
+<div class="markdown-heading"><h1 class="heading-element">✅ HumanNPC</h1><a id="user-content--humannpc" class="anchor" aria-label="Permalink: ✅ HumanNPC" href="#-humannpc"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/BeeAZ-pm-pl/HumanNPC/blob/master/icon.png"><img src="https://github.com/BeeAZ-pm-pl/HumanNPC/raw/master/icon.png" style="max-width: 100%;"></a></p>
+<p><strong>A Simple NPC Plugin For PocketMine 5 !</strong></p>
+<hr>
+<div class="markdown-heading"><h1 class="heading-element">✅ Command:Permission &amp; Help</h1><a id="user-content--commandpermission--help" class="anchor" aria-label="Permalink: ✅ Command:Permission &amp; Help" href="#-commandpermission--help"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>💥 <strong>/hnpc</strong> : <code>humannpc.command</code>
+<br>
+💥 <strong>/rca</strong> : <code>humannpc.rca</code>
+<br>
+💡 Use <strong>/hnpc help</strong> : Show All Commands HNPC</p>
+<hr>
+<div class="markdown-heading"><h1 class="heading-element">✅ Notice</h1><a id="user-content--notice" class="anchor" aria-label="Permalink: ✅ Notice" href="#-notice"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>The plugin only supports getting skins from players not supporting skin mobs</strong></p>
+<hr>
+<div class="markdown-heading"><h1 class="heading-element">✅ Detailed Guide &amp; Examples</h1><a id="user-content--detailed-guide--examples" class="anchor" aria-label="Permalink: ✅ Detailed Guide &amp; Examples" href="#-detailed-guide--examples"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">💡 Basic Management</h3><a id="user-content--basic-management" class="anchor" aria-label="Permalink: 💡 Basic Management" href="#-basic-management"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>💥 <strong>Spawn NPC</strong>: <code>/hnpc spawn (name)</code>
+<br>
+💥 <strong>Get NPC ID</strong>: <code>/hnpc id</code> <em>(Toggle mode, hit an NPC to get its ID)</em>
+<br>
+💥 <strong>Delete NPC</strong>: <code>/hnpc delete</code> <em>(Toggle mode, hit an NPC to remove it)</em>
+<br>
+💥 <strong>List all NPCs</strong>: <code>/hnpc npcs</code>
+<br>
+💥 <strong>Teleport to NPC</strong>: <code>/hnpc tp (id)</code></p>
+<div class="markdown-heading"><h3 class="heading-element">💡 Editing Appearance</h3><a id="user-content--editing-appearance" class="anchor" aria-label="Permalink: 💡 Editing Appearance" href="#-editing-appearance"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>💥 <strong>Change Name</strong>: <code>/hnpc edit (id) rename (name)</code>
+<br>
+💥 <strong>Toogle NameTag</strong>: <code>/hnpc edit (id) nametag</code>
+<br>
+💥 <strong>Set Item in Hand</strong>: <code>/hnpc edit (id) settool</code> <em>(Must hold the item in your hand)</em>
+<br>
+I don't know why, but in the newer versions of Minecraft, when I use a skin on the server, it turns into the default skin. So I wanted to add this feature to help users quickly change the NPC appearance externally using a link.
+<br>
+💥 <strong>Update Skin via URL</strong>: <code>/hnpc edit (id) setskin (url)</code> <em>(Must be a direct .png link)</em></p>
+<div class="markdown-heading"><h3 class="heading-element">💡 Click Commands</h3><a id="user-content--click-commands" class="anchor" aria-label="Permalink: 💡 Click Commands" href="#-click-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Notice:</strong> <em>Use <code>{player}</code> for the clicker's name</em>
+<br>
+💥 <strong>Player Command (Using RCA)</strong>: <code>/hnpc edit (id) addcmd rca {player} (command)</code></p>
+<blockquote>
+<p><em>Example: <code>/hnpc edit 1 addcmd rca {player} shop</code></em></p>
+</blockquote>
+<p>💥 <strong>Console Command (System)</strong>: <code>/hnpc edit (id) addcmd (command)</code></p>
+<blockquote>
+<p><em>Example: <code>/hnpc edit 1 addcmd give {player} diamond_sword 1</code></em></p>
+</blockquote>
+<p>💥 <strong>View Assigned Commands</strong>: <code>/hnpc edit (id) listcmd</code>
+<br>
+💥 <strong>Remove a Command</strong>: <code>/hnpc edit (id) removecmd (command)</code></p>
