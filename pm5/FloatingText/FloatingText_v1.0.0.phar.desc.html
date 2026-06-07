@@ -1,0 +1,43 @@
+<div class="markdown-heading"><h1 class="heading-element">FloatingText</h1><a id="user-content-floatingtext" class="anchor" aria-label="Permalink: FloatingText" href="#floatingtext"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A premium, lightweight, and customizable floating text plugin for PocketMine-MP servers, featuring a state-of-the-art Bedrock Script API styled UI with dividers, labels, and submenus.</p>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Dynamic Placeholders</strong>: Supports placeholders like <code>{player}</code>, <code>{online}</code>, and <code>{max_online}</code> which update in real-time.</li>
+<li>
+<strong>In-Game Forms UI</strong>: Navigate through beautiful custom menus with dividers and clean color styling to manage all text entities.</li>
+<li>
+<strong>Hybrid Commands</strong>: Run commands directly with arguments (with tab-completion enum support) or use the interactive UI if no arguments are provided.</li>
+<li>
+<strong>Persistent Storage</strong>: Saves floating texts automatically in JSON format.</li>
+<li>
+<strong>Multi-world Support</strong>: Seamlessly teleports and displays floating texts across different worlds.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>All commands require the <code>floatingtext.command</code> permission (granted to OPs by default).</p>
+<ul>
+<li>
+<code>/floatingtext</code> (or <code>/ft</code>) - Opens the help menu.</li>
+<li>
+<code>/ft create</code> - Opens the form to create a new floating text.</li>
+<li>
+<code>/ft delete [id]</code> - Deletes the specified text, or opens the deletion form.</li>
+<li>
+<code>/ft edit [id]</code> - Edits the text message or position, or opens the selection form.</li>
+<li>
+<code>/ft tp [id]</code> - Teleports to the specified text, or opens a teleport menu.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the plugin and place it into the <code>plugins/</code> directory of your server.</li>
+<li>Restart the server.</li>
+<li>Edit configurations inside <code>plugin_data/FloatingText/texts.yml</code> if you wish to change language settings or command prefixes.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Shaded Libraries</h2><a id="user-content-shaded-libraries" class="anchor" aria-label="Permalink: Shaded Libraries" href="#shaded-libraries"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>This plugin includes a shaded version of <a href="https://github.com/DavyCraft648/PMServerUI">PMServerUI</a> to render user interface components.</li>
+<li>This plugin includes a shaded version of <a href="https://github.com/Muqsit/SimplePacketHandler">SimplePacketHandler</a> to allow reading and handling of packets.</li>
+<li>This plugin includes a shaded version of <a href="https://github.com/Paroxity/Commando">Commando</a> to allow the usage &amp; creation of hybrid commands.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Licensed under the <a href="LICENSE">MIT License</a>.</p>
