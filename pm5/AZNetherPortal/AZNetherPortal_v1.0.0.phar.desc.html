@@ -1,0 +1,115 @@
+<div class="markdown-heading"><h1 class="heading-element">🌋 AZNetherPortal</h1><a id="user-content--aznetherportal" class="anchor" aria-label="Permalink: 🌋 AZNetherPortal" href="#-aznetherportal"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p align="center">
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/BeeAZ-pm-pl/AZNetherPortal/blob/master/icon.png"><img src="https://github.com/BeeAZ-pm-pl/AZNetherPortal/raw/master/icon.png" width="180" height="180" alt="AZNetherPortal Icon" style="max-width: 100%; height: auto; max-height: 180px;"></a>
+</p>
+<p>A lightweight, robust, and highly optimized Nether Portal plugin for PocketMine-MP 5 that accurately recreates vanilla Bedrock and Java Nether portal behavior while maintaining excellent server performance and stability.</p>
+<hr>
+<div class="markdown-heading"><h1 class="heading-element">✨ Features</h1><a id="user-content--features" class="anchor" aria-label="Permalink: ✨ Features" href="#-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<p>🔗 <strong>Bidirectional Portal Linking</strong><br>
+Seamlessly links Overworld and Nether portals. Entering any registered portal block teleports players back to the exact paired location.</p>
+</li>
+<li>
+<p>🏠 <strong>Fallback Lobby Support</strong><br>
+Unlinked Nether portals safely return players to a configurable fallback world.</p>
+</li>
+<li>
+<p>⚡ <strong>Asynchronous Chunk Generation</strong><br>
+Automatically pre-generates surrounding destination chunks asynchronously before teleportation for maximum stability.</p>
+</li>
+<li>
+<p>💾 <strong>Asynchronous SQLite Database</strong><br>
+All database operations run in AsyncTasks to avoid TPS drops and main-thread lag.</p>
+</li>
+<li>
+<p>🧵 <strong>Thread-Safe PM5 Architecture</strong><br>
+Designed specifically for PocketMine-MP 5 multi-threading requirements using safe serialization techniques.</p>
+</li>
+<li>
+<p>🧱 <strong>Advanced 3D Portal Detection</strong><br>
+Robust 3x3x3 scanning detects complete portal structures even when players enter off-center.</p>
+</li>
+<li>
+<p>⏳ <strong>Teleport Delay &amp; Cooldown System</strong><br>
+Fully configurable portal warmup delays and cooldown timers to prevent teleport loops.</p>
+</li>
+<li>
+<p>🌍 <strong>Multi-World Support</strong><br>
+Easily supports survival servers using separate Overworld, Nether, and lobby worlds.</p>
+</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h1 class="heading-element">📂 Directory Structure</h1><a id="user-content--directory-structure" class="anchor" aria-label="Permalink: 📂 Directory Structure" href="#-directory-structure"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<pre lang="text"><code>AZNetherPortal/
+├── resources/
+│   └── config.yml
+├── src/BeeAZ/AZNetherPortal/
+│   ├── Main.php
+│   ├── listener/
+│   │   └── EventListener.php
+│   ├── manager/
+│   │   ├── PortalManager.php
+│   │   └── PortalTeleporter.php
+│   └── task/
+│       └── PortalSaveTask.php
+└── plugin.yml
+</code></pre>
+<hr>
+<div class="markdown-heading"><h1 class="heading-element">⚙️ Configuration</h1><a id="user-content-️-configuration" class="anchor" aria-label="Permalink: ⚙️ Configuration" href="#️-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> Nether world folder</span>
+<span class="pl-ent">nether_world</span>: <span class="pl-s"><span class="pl-pds">"</span>nether<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Fallback world when portal link is missing</span>
+<span class="pl-ent">fallback_world</span>: <span class="pl-s"><span class="pl-pds">"</span>lobby<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Random teleport area in Nether</span>
+<span class="pl-ent">rtp_min_x</span>: <span class="pl-c1">-1000</span>
+<span class="pl-ent">rtp_max_x</span>: <span class="pl-c1">1000</span>
+<span class="pl-ent">rtp_min_z</span>: <span class="pl-c1">-1000</span>
+<span class="pl-ent">rtp_max_z</span>: <span class="pl-c1">1000</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Seconds players must stand in portal</span>
+<span class="pl-ent">teleport_delay</span>: <span class="pl-c1">3</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Cooldown between teleportations</span>
+<span class="pl-ent">cooldown_time</span>: <span class="pl-c1">5</span></pre></div>
+<hr>
+<div class="markdown-heading"><h1 class="heading-element">🧠 How It Works</h1><a id="user-content--how-it-works" class="anchor" aria-label="Permalink: 🧠 How It Works" href="#-how-it-works"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">1️⃣ Portal Ignition</h3><a id="user-content-1️⃣-portal-ignition" class="anchor" aria-label="Permalink: 1️⃣ Portal Ignition" href="#1️⃣-portal-ignition"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Lighting a valid Obsidian frame automatically creates a Nether Portal structure.</p>
+<div class="markdown-heading"><h3 class="heading-element">2️⃣ Teleport Countdown</h3><a id="user-content-2️⃣-teleport-countdown" class="anchor" aria-label="Permalink: 2️⃣ Teleport Countdown" href="#2️⃣-teleport-countdown"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Players standing inside the portal trigger a configurable teleport timer.</p>
+<div class="markdown-heading"><h3 class="heading-element">3️⃣ Async Chunk Preparation</h3><a id="user-content-3️⃣-async-chunk-preparation" class="anchor" aria-label="Permalink: 3️⃣ Async Chunk Preparation" href="#3️⃣-async-chunk-preparation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Destination chunks are asynchronously loaded and generated before teleportation occurs.</p>
+<div class="markdown-heading"><h3 class="heading-element">4️⃣ Portal Linking</h3><a id="user-content-4️⃣-portal-linking" class="anchor" aria-label="Permalink: 4️⃣ Portal Linking" href="#4️⃣-portal-linking"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Existing linked portals are reused automatically.</li>
+<li>Missing links generate new paired portals safely.</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">5️⃣ Database Synchronization</h3><a id="user-content-5️⃣-database-synchronization" class="anchor" aria-label="Permalink: 5️⃣ Database Synchronization" href="#5️⃣-database-synchronization"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Broken or destroyed portals are automatically removed from cache and database asynchronously.</p>
+<hr>
+<div class="markdown-heading"><h1 class="heading-element">🚀 Performance Focus</h1><a id="user-content--performance-focus" class="anchor" aria-label="Permalink: 🚀 Performance Focus" href="#-performance-focus"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>AZNetherPortal is designed with performance as the highest priority:</p>
+<ul>
+<li>Minimal TPS impact</li>
+<li>Fully asynchronous database handling</li>
+<li>Safe teleportation logic</li>
+<li>Optimized chunk preparation</li>
+<li>Lightweight caching system</li>
+<li>PM5 thread-safe design</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h1 class="heading-element">📦 Requirements</h1><a id="user-content--requirements" class="anchor" aria-label="Permalink: 📦 Requirements" href="#-requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>PocketMine-MP 5.x</li>
+<li>PHP 8.1+</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h1 class="heading-element">📄 License</h1><a id="user-content--license" class="anchor" aria-label="Permalink: 📄 License" href="#-license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Licensed under the MIT License.</p>
+<hr>
+<div class="markdown-heading"><h1 class="heading-element">❤️ Support</h1><a id="user-content-️-support" class="anchor" aria-label="Permalink: ❤️ Support" href="#️-support"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>If you find bugs or have feature suggestions, feel free to open an issue on GitHub.</p>
+<p>⭐ Star the repository if you enjoy the project!</p>

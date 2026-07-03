@@ -1,11 +1,11 @@
 # FriendsX
-<img src="https://raw.githubusercontent.com/Akari-my/FriendsX/9fe52d4b36ffb6eb7a5746ce59e947e9af3ff4e5/icon.png" width="128" height="128" />
+<img src="https://raw.githubusercontent.com/Akari-my/FriendsX/54488874b2f3a2dddc34114fde995b6fc7209165/icon.png" width="128" height="128" />
 
 ## Advanced friend system
 ```properties
-Version: 1.2.0
+Version: 2.0.0
     API: 5.0.0
-    Updated: 04-02-2026 14:17:55 UTC
+    Updated: 02-07-2026 19:32:07 UTC
 Repo: https://github.com/Akari-my/FriendsX
 License: MIT
 Categories: General,Fun

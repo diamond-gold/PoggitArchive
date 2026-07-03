@@ -1,0 +1,51 @@
+<div class="markdown-heading"><h2 class="heading-element">General</h2><a id="user-content-general" class="anchor" aria-label="Permalink: General" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">what it does</h3><a id="user-content-what-it-does" class="anchor" aria-label="Permalink: what it does" href="#what-it-does"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Single plugin that handles everything elytra-related. No more juggling 3–4 separate plugins for the item, entity, fireworks boost, and flight physics. ElytraFly auto-detects your server kernel at runtime and loads only what's needed — this is a revolution among vanilla mechanics in PMMP.</p>
+<div class="markdown-heading"><h2 class="heading-element">Config</h2><a id="user-content-config" class="anchor" aria-label="Permalink: Config" href="#config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">configuration</h3><a id="user-content-configuration" class="anchor" aria-label="Permalink: configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<pre><code>language: en # english or russian, default is en. Set ru for russian.
+elytra-durability: 432 # elytra durability
+elytra-breakable: true # can elytra break at all? true - yes / false - no
+elytra-in-creative: true # show elytra in creative mode? true - yes / false - no
+cancel-fall-damage: true # disable fall damage while gliding? true - yes / false - no. This is a somewhat broken feature — proper BDS physics are hard to port to PHP. If you manage to do it, pull requests are welcome on GitHub.
+</code></pre>
+<div class="markdown-heading"><h2 class="heading-element">API</h2><a id="user-content-api" class="anchor" aria-label="Permalink: API" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Took care of plugin developers too, both small ones and those using this in production. Add ElytraFly as a dependency in your <code>plugin.yml</code>:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">softdepend</span>:
+  - <span class="pl-s">ElytraFly</span></pre></div>
+<p>Guard every call with a null-check first:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">getServer</span>()-&gt;<span class="pl-en">getPluginManager</span>()-&gt;<span class="pl-en">getPlugin</span>(<span class="pl-s">'<span class="pl-s">ElytraFly</span>'</span>) === <span class="pl-c1">null</span>) {
+    <span class="pl-k">return</span>;
+}</pre></div>
+<p>Item checks:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">berg</span>\<span class="pl-v">ElytraFly</span>\<span class="pl-smi">ElytraFlyAPI</span>;
+<span class="pl-c">// Get an elytra instance</span>
+<span class="pl-s1"><span class="pl-c1">$</span>elytra</span> = ElytraFlyAPI::<span class="pl-en">getElytra</span>();
+<span class="pl-c">// Get a fireworks instance — null on NetherGames</span>
+<span class="pl-s1"><span class="pl-c1">$</span>fireworks</span> = ElytraFlyAPI::<span class="pl-en">getFireworks</span>();
+<span class="pl-c">// Give elytra to a player</span>
+ElytraFlyAPI::<span class="pl-en">giveElytra</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);
+ElytraFlyAPI::<span class="pl-en">giveElytra</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, count: <span class="pl-c1">3</span>);
+<span class="pl-c">// Give fireworks — returns false on NetherGames</span>
+<span class="pl-s1"><span class="pl-c1">$</span>success</span> = ElytraFlyAPI::<span class="pl-en">giveFireworks</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);</pre></div>
+<p>Armor slot and instance checks:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// Equip elytra</span>
+ElytraFlyAPI::<span class="pl-en">equipElytra</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);
+<span class="pl-c">// Remove elytra if equipped — false if slot was empty</span>
+<span class="pl-s1"><span class="pl-c1">$</span>removed</span> = ElytraFlyAPI::<span class="pl-en">unequipElytra</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);
+<span class="pl-c">// Check if elytra is in the chestplate slot</span>
+<span class="pl-s1"><span class="pl-c1">$</span>equipped</span> = ElytraFlyAPI::<span class="pl-en">hasElytraEquipped</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);
+<span class="pl-c">// Check if elytra exists anywhere in inventory</span>
+<span class="pl-s1"><span class="pl-c1">$</span>has</span> = ElytraFlyAPI::<span class="pl-en">hasElytraInInventory</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);</pre></div>
+<p>Player flight state checks:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// Is the player currently gliding?</span>
+<span class="pl-c"></span><span class="pl-s1"><span class="pl-c1">$</span>gliding</span> = ElytraFlyAPI::<span class="pl-en">isGliding</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);
+<span class="pl-c">// Can the player glide? (elytra equipped + not broken)</span>
+<span class="pl-s1"><span class="pl-c1">$</span>canGlide</span> = ElytraFlyAPI::<span class="pl-en">canGlide</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);
+<span class="pl-c">// Remaining durability — null if no elytra equipped</span>
+<span class="pl-s1"><span class="pl-c1">$</span>durability</span> = ElytraFlyAPI::<span class="pl-en">getElytraDurability</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>);</pre></div>
+<p>Debug strings — originally kept these for personal use, then decided to leave them in forever. Might come in handy:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// "PocketMine-MP" or "NetherGames"</span>
+<span class="pl-s1"><span class="pl-c1">$</span>kernel</span> = ElytraFlyAPI::<span class="pl-en">getKernel</span>();
+ElytraFlyAPI::<span class="pl-en">isPMMP</span>();        <span class="pl-c">// bool</span>
+ElytraFlyAPI::<span class="pl-en">isNetherGames</span>(); <span class="pl-c">// bool</span></pre></div>
