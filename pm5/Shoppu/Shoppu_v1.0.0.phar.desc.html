@@ -1,0 +1,324 @@
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/9e2f2df3-02d8-4fa9-9fa7-8c816e5f0c2c"><img width="2000" height="273" alt="minecraft_title" src="https://github.com/user-attachments/assets/9e2f2df3-02d8-4fa9-9fa7-8c816e5f0c2c" style="max-width: 100%; height: auto; max-height: 273px;"></a></p>
+<p><strong>Shoppu</strong> is a shop plugin for <strong>PocketMine-MP 5</strong> that lets you create custom item shops with categories, buy/sell prices, category icons, and full language support.</p>
+<div class="markdown-heading"><h2 class="heading-element">✨ Features</h2><a id="user-content--features" class="anchor" aria-label="Permalink: ✨ Features" href="#-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>📂 Category-based shops</strong> — Organize items into categories with custom names and icons</li>
+<li>
+<strong>💰 Buy &amp; Sell</strong> — Configure items as buy-only, sell-only, or both</li>
+<li>
+<strong>🖼️ Category Icons</strong> — Each category shows a Minecraft item texture as its button icon</li>
+<li>
+<strong>🌍 15 languages</strong> — Fully translatable UI and messages (English, Italian, French, German, Spanish, Portuguese, Dutch, Swedish, Polish, Turkish, Russian, Ukrainian, Japanese, Korean, Chinese)</li>
+<li>
+<strong>🏦 Economy support</strong> — Built-in BedrockEconomy integration, extensible via interface</li>
+<li>
+<strong>💾 Dual storage</strong> — YAML (default) or JSON for shop data</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">📋 Requirements</h2><a id="user-content--requirements" class="anchor" aria-label="Permalink: 📋 Requirements" href="#-requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Dependency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PocketMine-MP</td>
+</tr>
+<tr>
+<td>BedrockEconomy</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">📥 Installation</h2><a id="user-content--installation" class="anchor" aria-label="Permalink: 📥 Installation" href="#-installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the <code>Shoppu.phar</code>
+</li>
+<li>Place it in your server's <code>plugins/</code> folder</li>
+<li>Restart the server</li>
+<li>Edit <code>plugin_data/Shoppu/shop.yml</code> to set up your shop</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">🎮 Commands</h2><a id="user-content--commands" class="anchor" aria-label="Permalink: 🎮 Commands" href="#-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/shop</code></td>
+<td>Opens the shop UI</td>
+<td><code>shoppu.command</code></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">⚙️ Configuration</h2><a id="user-content-️-configuration" class="anchor" aria-label="Permalink: ⚙️ Configuration" href="#️-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element"><code>config.yml</code></h3><a id="user-content-configyml" class="anchor" aria-label="Permalink: config.yml" href="#configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">lang</span>: <span class="pl-s">eng                          </span><span class="pl-c"><span class="pl-c">#</span> Language code</span>
+<span class="pl-ent">prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>§7[§6Shoppu§7] §r<span class="pl-pds">"</span></span>       <span class="pl-c"><span class="pl-c">#</span> Chat message prefix</span>
+<span class="pl-ent">storage</span>: <span class="pl-s">yaml                      </span><span class="pl-c"><span class="pl-c">#</span> Storage type: yaml or json</span>
+
+<span class="pl-ent">economy</span>:
+  <span class="pl-ent">type</span>: <span class="pl-s">bedrockeconomy             </span><span class="pl-c"><span class="pl-c">#</span> Economy provider</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">🌐 Supported Languages</h3><a id="user-content--supported-languages" class="anchor" aria-label="Permalink: 🌐 Supported Languages" href="#-supported-languages"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Language</th>
+<th></th>
+<th>Code</th>
+<th>Language</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>eng</code></td>
+<td>English</td>
+<td></td>
+<td><code>ita</code></td>
+<td>Italian</td>
+</tr>
+<tr>
+<td><code>fra</code></td>
+<td>French</td>
+<td></td>
+<td><code>deu</code></td>
+<td>German</td>
+</tr>
+<tr>
+<td><code>esp</code></td>
+<td>Spanish</td>
+<td></td>
+<td><code>por</code></td>
+<td>Portuguese</td>
+</tr>
+<tr>
+<td><code>nld</code></td>
+<td>Dutch</td>
+<td></td>
+<td><code>swe</code></td>
+<td>Swedish</td>
+</tr>
+<tr>
+<td><code>pol</code></td>
+<td>Polish</td>
+<td></td>
+<td><code>tur</code></td>
+<td>Turkish</td>
+</tr>
+<tr>
+<td><code>rus</code></td>
+<td>Russian</td>
+<td></td>
+<td><code>ukr</code></td>
+<td>Ukrainian</td>
+</tr>
+<tr>
+<td><code>jpn</code></td>
+<td>Japanese</td>
+<td></td>
+<td><code>kor</code></td>
+<td>Korean</td>
+</tr>
+<tr>
+<td><code>zho</code></td>
+<td>Chinese (Simplified)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Language files are in <code>plugin_data/Shoppu/lang/</code>. Edit them to customize any message.</p>
+</blockquote>
+<div class="markdown-heading"><h2 class="heading-element">🏪 Creating a Shop</h2><a id="user-content--creating-a-shop" class="anchor" aria-label="Permalink: 🏪 Creating a Shop" href="#-creating-a-shop"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Shops are defined in <code>plugin_data/Shoppu/shop.yml</code>.</p>
+<div class="markdown-heading"><h3 class="heading-element">Structure</h3><a id="user-content-structure" class="anchor" aria-label="Permalink: Structure" href="#structure"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">categories</span>:
+  <span class="pl-ent">&lt;category_id&gt;</span>:                <span class="pl-c"><span class="pl-c">#</span> Internal ID (lowercase, no spaces)</span>
+    <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Display Name<span class="pl-pds">"</span></span>        <span class="pl-c"><span class="pl-c">#</span> Shown in the UI</span>
+    <span class="pl-ent">icon</span>: <span class="pl-s"><span class="pl-pds">"</span>stone<span class="pl-pds">"</span></span>               <span class="pl-c"><span class="pl-c">#</span> Minecraft item/block for the button icon (optional)</span>
+    <span class="pl-ent">items</span>:
+      <span class="pl-ent">&lt;item_id&gt;</span>:                <span class="pl-c"><span class="pl-c">#</span> Minecraft item/block ID (e.g. stone, apple)</span>
+        <span class="pl-ent">buy</span>: <span class="pl-s">&lt;price&gt;            </span><span class="pl-c"><span class="pl-c">#</span> Purchase price — remove for sell-only</span>
+        <span class="pl-ent">sell</span>: <span class="pl-s">&lt;price&gt;           </span><span class="pl-c"><span class="pl-c">#</span> Sell price — remove for buy-only</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Examples</h3><a id="user-content-examples" class="anchor" aria-label="Permalink: Examples" href="#examples"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Both buy and sell:</strong></p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">stone</span>:
+  <span class="pl-ent">buy</span>: <span class="pl-c1">10</span>
+  <span class="pl-ent">sell</span>: <span class="pl-c1">5</span></pre></div>
+<p><strong>Buy-only</strong> (no sell price):</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">diamond</span>:
+  <span class="pl-ent">buy</span>: <span class="pl-c1">500</span></pre></div>
+<p><strong>Sell-only</strong> (no buy price):</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">gravel</span>:
+  <span class="pl-ent">sell</span>: <span class="pl-c1">1</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">🖼️ Category Icons</h3><a id="user-content-️-category-icons" class="anchor" aria-label="Permalink: 🖼️ Category Icons" href="#️-category-icons"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Each category can have an <code>icon</code> field pointing to a Minecraft item or block ID:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">food</span>:
+  <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Food<span class="pl-pds">"</span></span>
+  <span class="pl-ent">icon</span>: <span class="pl-s"><span class="pl-pds">"</span>apple<span class="pl-pds">"</span></span>          <span class="pl-c"><span class="pl-c">#</span> Shows the apple texture on the button</span>
+  <span class="pl-ent">items</span>:
+    <span class="pl-ent">apple</span>:
+      <span class="pl-ent">buy</span>: <span class="pl-c1">20</span>
+      <span class="pl-ent">sell</span>: <span class="pl-c1">10</span></pre></div>
+<p>The plugin automatically resolves the correct texture path:</p>
+<ul>
+<li>
+<strong>Blocks</strong> → <code>textures/blocks/&lt;id&gt;</code>
+</li>
+<li>
+<strong>Items</strong> → <code>textures/items/&lt;id&gt;</code>
+</li>
+</ul>
+<p>If no icon is set, the button appears without a texture.</p>
+<div class="markdown-heading"><h3 class="heading-element">📦 Example Shop</h3><a id="user-content--example-shop" class="anchor" aria-label="Permalink: 📦 Example Shop" href="#-example-shop"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Here's a complete shop with 6 categories covering building blocks, farming, food, ores, mob drops, and redstone components:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">categories</span>:
+  <span class="pl-ent">building</span>:
+    <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Building Blocks<span class="pl-pds">"</span></span>
+    <span class="pl-ent">icon</span>: <span class="pl-s"><span class="pl-pds">"</span>stone<span class="pl-pds">"</span></span>
+    <span class="pl-ent">items</span>:
+      <span class="pl-ent">stone</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">10</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">5</span>
+      <span class="pl-ent">oak_planks</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">8</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">4</span>
+      <span class="pl-ent">glass</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">12</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">6</span>
+
+  <span class="pl-ent">farming</span>:
+    <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Farming<span class="pl-pds">"</span></span>
+    <span class="pl-ent">icon</span>: <span class="pl-s"><span class="pl-pds">"</span>wheat<span class="pl-pds">"</span></span>
+    <span class="pl-ent">items</span>:
+      <span class="pl-ent">wheat</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">5</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">2</span>
+      <span class="pl-ent">carrot</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">8</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">4</span>
+      <span class="pl-ent">melon</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">10</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">5</span>
+
+  <span class="pl-ent">food</span>:
+    <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Food<span class="pl-pds">"</span></span>
+    <span class="pl-ent">icon</span>: <span class="pl-s"><span class="pl-pds">"</span>apple<span class="pl-pds">"</span></span>
+    <span class="pl-ent">items</span>:
+      <span class="pl-ent">apple</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">20</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">10</span>
+      <span class="pl-ent">bread</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">15</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">7</span>
+      <span class="pl-ent">cooked_beef</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">30</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">15</span>
+      <span class="pl-ent">golden_apple</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">200</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">100</span>
+
+  <span class="pl-ent">ores</span>:
+    <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Ores &amp; Minerals<span class="pl-pds">"</span></span>
+    <span class="pl-ent">icon</span>: <span class="pl-s"><span class="pl-pds">"</span>diamond<span class="pl-pds">"</span></span>
+    <span class="pl-ent">items</span>:
+      <span class="pl-ent">iron_ingot</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">50</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">25</span>
+      <span class="pl-ent">diamond</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">500</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">250</span>
+      <span class="pl-ent">netherite_ingot</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">2000</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">1000</span>
+
+  <span class="pl-ent">mob_drops</span>:
+    <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Mob Drops<span class="pl-pds">"</span></span>
+    <span class="pl-ent">icon</span>: <span class="pl-s"><span class="pl-pds">"</span>bone<span class="pl-pds">"</span></span>
+    <span class="pl-ent">items</span>:
+      <span class="pl-ent">ender_pearl</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">200</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">100</span>
+      <span class="pl-ent">blaze_rod</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">150</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">75</span>
+      <span class="pl-ent">slime_ball</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">30</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">15</span>
+
+  <span class="pl-ent">redstone</span>:
+    <span class="pl-ent">name</span>: <span class="pl-s"><span class="pl-pds">"</span>Redstone &amp; Tech<span class="pl-pds">"</span></span>
+    <span class="pl-ent">icon</span>: <span class="pl-s"><span class="pl-pds">"</span>redstone<span class="pl-pds">"</span></span>
+    <span class="pl-ent">items</span>:
+      <span class="pl-ent">piston</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">40</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">20</span>
+      <span class="pl-ent">hopper</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">70</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">35</span>
+      <span class="pl-ent">rail</span>:
+        <span class="pl-ent">buy</span>: <span class="pl-c1">15</span>
+        <span class="pl-ent">sell</span>: <span class="pl-c1">7</span></pre></div>
+<blockquote>
+<p>Use any valid Minecraft item ID: <code>stone</code>, <code>diamond</code>, <code>cooked_beef</code>, <code>iron_ingot</code>, <code>wheat</code>, <code>bone</code>, etc.</p>
+</blockquote>
+<div class="markdown-heading"><h2 class="heading-element">🏦 Economy</h2><a id="user-content--economy" class="anchor" aria-label="Permalink: 🏦 Economy" href="#-economy"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Supports <strong>BedrockEconomy</strong> out of the box.</p>
+<div class="markdown-heading"><h3 class="heading-element">Adding a Custom Economy</h3><a id="user-content-adding-a-custom-economy" class="anchor" aria-label="Permalink: Adding a Custom Economy" href="#adding-a-custom-economy"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Create a class implementing <code>Shoppu\economy\EconomyProvider</code>:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">namespace</span> <span class="pl-v">Shoppu</span>\<span class="pl-v">economy</span>;
+
+<span class="pl-k">use</span> <span class="pl-v">pocketmine</span>\<span class="pl-v">player</span>\<span class="pl-smi">Player</span>;
+
+<span class="pl-k">interface</span> EconomyProvider{
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getMoney</span>(<span class="pl-smi"><span class="pl-smi">Player</span></span> <span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-smi">callable</span> <span class="pl-s1"><span class="pl-c1">$</span>callback</span>): <span class="pl-smi">void</span>;
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">addMoney</span>(<span class="pl-smi"><span class="pl-smi">Player</span></span> <span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-smi">float</span> <span class="pl-s1"><span class="pl-c1">$</span>amount</span>, <span class="pl-smi">callable</span> <span class="pl-s1"><span class="pl-c1">$</span>callback</span>): <span class="pl-smi">void</span>;
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">subtractMoney</span>(<span class="pl-smi"><span class="pl-smi">Player</span></span> <span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-smi">float</span> <span class="pl-s1"><span class="pl-c1">$</span>amount</span>, <span class="pl-smi">callable</span> <span class="pl-s1"><span class="pl-c1">$</span>callback</span>): <span class="pl-smi">void</span>;
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getCurrencySymbol</span>(): <span class="pl-smi">string</span>;
+}</pre></div>
+<p>Then register it in <code>Main::createEconomyProvider()</code> and set <code>economy.type</code> in <code>config.yml</code>.</p>
+<div class="markdown-heading"><h2 class="heading-element">🌍 Translating</h2><a id="user-content--translating" class="anchor" aria-label="Permalink: 🌍 Translating" href="#-translating"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Language files are in <code>plugin_data/Shoppu/lang/</code>. To add a new language:</p>
+<ol>
+<li>Copy <code>eng.yml</code> and rename it (e.g. <code>ara.yml</code> for Arabic)</li>
+<li>Translate the values (keep the keys unchanged)</li>
+<li>Set <code>lang: ara</code> in <code>config.yml</code>
+</li>
+</ol>
+<p>Available placeholders: <code>{player}</code>, <code>{item}</code>, <code>{price}</code>, <code>{quantity}</code>, <code>{total}</code>, <code>{name}</code>, <code>{category}</code>.</p>
+<div class="markdown-heading"><h2 class="heading-element">💾 Storage</h2><a id="user-content--storage" class="anchor" aria-label="Permalink: 💾 Storage" href="#-storage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yaml</code></td>
+<td>Human-readable YAML files (default)</td>
+</tr>
+<tr>
+<td><code>json</code></td>
+<td>JSON format for shop data</td>
+</tr>
+</tbody>
+</table>
+<p>Set <code>storage</code> in <code>config.yml</code> to switch.</p>
+<div class="markdown-heading"><h2 class="heading-element">⭐ Contribute</h2><a id="user-content--contribute" class="anchor" aria-label="Permalink: ⭐ Contribute" href="#-contribute"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Found a bug? Open an issue</li>
+<li>Pull requests welcome</li>
+<li>Star the repo if you like the project!</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">📄 License</h2><a id="user-content--license" class="anchor" aria-label="Permalink: 📄 License" href="#-license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>MIT</p>

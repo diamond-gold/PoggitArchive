@@ -1,0 +1,184 @@
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/e3f89c56-2399-454f-9c63-17febaedaff1"><img src="https://github.com/user-attachments/assets/e3f89c56-2399-454f-9c63-17febaedaff1" alt="minecraft_title" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h2 class="heading-element">A complete, <strong>Friends System Plugin</strong> for <strong>PocketMine-MP</strong>, made with performance and modularity in mind.</h2><a id="user-content-a-complete-friends-system-plugin-for-pocketmine-mp-made-with-performance-and-modularity-in-mind" class="anchor" aria-label="Permalink: A complete, Friends System Plugin for PocketMine-MP, made with performance and modularity in mind." href="#a-complete-friends-system-plugin-for-pocketmine-mp-made-with-performance-and-modularity-in-mind"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h2 class="heading-element">✨ Features</h2><a id="user-content--features" class="anchor" aria-label="Permalink: ✨ Features" href="#-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>✅ Add / remove friends with <strong>request system</strong>
+</li>
+<li>✅ Accept or deny friend requests (player optional if only one request)</li>
+<li>✅ Automatic expiration of requests after configurable cooldown</li>
+<li>✅ Optional storage: <strong>YAML</strong> or <strong>JSON</strong>
+</li>
+<li>✅ Friend status display: <code>Online</code> / <code>Offline</code> + last seen</li>
+<li>✅ Notifications when a friend <em>joins</em> or <em>leaves</em> the server</li>
+<li>✅ Configurable message prefix (<code>[FriendsX]</code>)</li>
+<li>✅ Multi-language support (see below)</li>
+<li>✅ Per-player settings:
+<ul>
+<li>Receive friend requests on/off</li>
+<li>Friend join/leave notifications on/off</li>
+</ul>
+</li>
+<li>✅ Friend limit system, with permission-based limits</li>
+<li>✅ Block system:
+<ul>
+<li>Block / unblock players</li>
+<li>List blocked players</li>
+</ul>
+</li>
+<li>✅ Requests helper:
+<ul>
+<li>List all pending requests</li>
+<li>Accept/deny via name or UI</li>
+</ul>
+</li>
+<li>✅ Optional <strong>Forms UI</strong> (GUI) for managing friends, requests, settings, blocked players</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📦 Installation</h2><a id="user-content--installation" class="anchor" aria-label="Permalink: 📦 Installation" href="#-installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Download the precompiled <code>.phar</code> or build from source (see below)</li>
+<li>Place the <code>FriendsX.phar</code> into your server's <code>plugins/</code> folder</li>
+<li>Start the server once to generate files</li>
+<li>(Optional) Edit <code>config.yml</code> to configure:
+<ul>
+<li>Storage type (<code>yaml</code> / <code>json</code>)</li>
+<li>Friend request cooldown</li>
+<li>Language</li>
+<li>Prefix formatting</li>
+<li>Friend limits</li>
+<li>Forms (GUI) enabled / disabled</li>
+</ul>
+</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🧾 Commands</h2><a id="user-content--commands" class="anchor" aria-label="Permalink: 🧾 Commands" href="#-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/friends</code></td>
+<td>Open the Friends GUI (if forms are enabled) or show help</td>
+</tr>
+<tr>
+<td><code>/friends add &lt;player&gt;</code></td>
+<td>Send a friend request</td>
+</tr>
+<tr>
+<td><code>/friends accept [player]</code></td>
+<td>Accept a received request (player optional if only one)</td>
+</tr>
+<tr>
+<td><code>/friends deny [player]</code></td>
+<td>Deny a received request (player optional if only one)</td>
+</tr>
+<tr>
+<td><code>/friends remove &lt;player&gt;</code></td>
+<td>Remove from your friend list</td>
+</tr>
+<tr>
+<td><code>/friends list</code></td>
+<td>Show your friends and their statuses (<code>Online</code> / <code>Offline</code>)</td>
+</tr>
+<tr>
+<td><code>/friends requests</code></td>
+<td>Show all pending friend requests</td>
+</tr>
+<tr>
+<td><code>/friends settings</code></td>
+<td>Open personal settings (requests + notifications)</td>
+</tr>
+<tr>
+<td><code>/friends block &lt;player&gt;</code></td>
+<td>Block a player (they cannot send you friend requests)</td>
+</tr>
+<tr>
+<td><code>/friends unblock &lt;player&gt;</code></td>
+<td>Unblock a previously blocked player</td>
+</tr>
+<tr>
+<td><code>/friends blocked</code></td>
+<td>Show your blocked players list</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">⚙️ Config</h2><a id="user-content-️-config" class="anchor" aria-label="Permalink: ⚙️ Config" href="#️-config"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="pl-c"><span class="pl-c">#</span> ┃         FriendsX Plugin       ┃</span>
+<span class="pl-c"><span class="pl-c">#</span> ┃       Main Configuration      ┃</span>
+<span class="pl-c"><span class="pl-c">#</span> ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 🔧 Storage system for player data (friends list)</span>
+<span class="pl-c"><span class="pl-c">#</span> Options:</span>
+<span class="pl-c"><span class="pl-c">#</span>  - yaml   = saves data into YAML files (human-readable)</span>
+<span class="pl-c"><span class="pl-c">#</span>  - json   = saves data into JSON files</span>
+<span class="pl-ent">storage</span>: <span class="pl-s">yaml</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 🌐 Language for all plugin messages</span>
+<span class="pl-c"><span class="pl-c">#</span> Available: eng, ita, fra, deu, esp, por, pol</span>
+<span class="pl-c"><span class="pl-c">#</span> Make sure there is a corresponding file in the /lang folder, e.g. eng.yml</span>
+<span class="pl-ent">lang</span>: <span class="pl-s">eng</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ⏱️ Friend request expiration time (in seconds)</span>
+<span class="pl-c"><span class="pl-c">#</span> After this time, a pending request can no longer be accepted.</span>
+<span class="pl-ent">friend-request-cooldown</span>: <span class="pl-c1">120</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ✉️ Prefix shown before every message sent by the plugin</span>
+<span class="pl-c"><span class="pl-c">#</span> You can use Minecraft color codes like §6, §e, etc.</span>
+<span class="pl-ent">prefix</span>: <span class="pl-s"><span class="pl-pds">"</span>§7[§6FriendsX§7] §r<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> 🤝 Friendship behaviour</span>
+<span class="pl-c"><span class="pl-c">#</span> If true, when a player removes a friend, the other side is also removed.</span>
+<span class="pl-c"><span class="pl-c">#</span> Example:</span>
+<span class="pl-c"><span class="pl-c">#</span>  - two-sided-friends: true  -&gt; A removes B, B also loses A as friend</span>
+<span class="pl-c"><span class="pl-c">#</span>  - two-sided-friends: false -&gt; A removes B, but B still has A in their list</span>
+<span class="pl-ent">two-sided-friends</span>: <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 👥 Friend limit</span>
+<span class="pl-c"><span class="pl-c">#</span> Maximum number of friends a player can have by default.</span>
+<span class="pl-ent">default-friend-limit</span>: <span class="pl-c1">50</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 🔐 Friend limits by permission</span>
+<span class="pl-c"><span class="pl-c">#</span> You can override the default limit using permissions.</span>
+<span class="pl-c"><span class="pl-c">#</span> Format:</span>
+<span class="pl-c"><span class="pl-c">#</span>  friend-limits:</span>
+<span class="pl-c"><span class="pl-c">#</span>    permission.node.here: limit</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Example:</span>
+<span class="pl-c"><span class="pl-c">#</span>  friend-limits:</span>
+<span class="pl-c"><span class="pl-c">#</span>    friendsx.limit.vip: 100</span>
+<span class="pl-c"><span class="pl-c">#</span>    friendsx.limit.elite: 200</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> If a player has multiple permissions, the HIGHEST limit is used.</span>
+<span class="pl-ent">friend-limits</span>: <span class="pl-s">{}</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 🎛 UI / Forms</span>
+<span class="pl-c"><span class="pl-c">#</span> Enable or disable UI menus..</span>
+<span class="pl-ent">forms</span>:
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">🌍 Supported Languages</h2><a id="user-content--supported-languages" class="anchor" aria-label="Permalink: 🌍 Supported Languages" href="#-supported-languages"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>🇬🇧 <code>eng</code> – English</li>
+<li>🇮🇹 <code>ita</code> – Italian</li>
+<li>🇫🇷 <code>fra</code> – French</li>
+<li>🇩🇪 <code>deu</code> – German</li>
+<li>🇪🇸 <code>esp</code> – Spanish</li>
+<li>🇵🇱 <code>pol</code> – Polish</li>
+<li>🇵🇹 <code>por</code> – Portuguese (BR)</li>
+<li>🇺🇦 <code>ukr</code> – Ukrainian</li>
+<li>🇷🇺 <code>rus</code> – Russian</li>
+<li>🇯🇵 <code>jpn</code> – Japanese</li>
+<li>🇰🇷 <code>kor</code> – Korean</li>
+<li>🇨🇳 <code>zho</code> – Chinese (Simplified)</li>
+<li>🇹🇷 <code>tur</code> – Turkish</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">⭐ Contribute</h2><a id="user-content--contribute" class="anchor" aria-label="Permalink: ⭐ Contribute" href="#-contribute"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Found a bug? Open an issue</li>
+<li>Pull requests welcome</li>
+<li>Star the repo if you like the project!</li>
+</ul>

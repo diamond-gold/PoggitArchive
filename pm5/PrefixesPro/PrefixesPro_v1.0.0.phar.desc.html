@@ -1,0 +1,224 @@
+<div class="markdown-heading"><h2 class="heading-element">💡 Features</h2><a id="user-content--features" class="anchor" aria-label="Permalink: 💡 Features" href="#-features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>✅ Prefixes with color &amp; formatting support (<code>&amp;</code> color codes)</li>
+<li>🏷️ Two prefix categories: <strong>Free</strong> (anyone can activate) and <strong>Pay</strong> (admin-assigned)</li>
+<li>⏳ Expiration system — assign prefixes with a duration (<code>30d</code>, <code>1h</code>, <code>30m</code>, etc.)</li>
+<li>🛡️ Permission-based access control</li>
+<li>🧠 Per-player session management (active prefix, owned prefixes)</li>
+<li>📦 Full GUI interface via FormAPI for prefix selection and creation</li>
+<li>🔁 Auto-save system with configurable interval</li>
+<li>🏷️ Nametag update support (optional)</li>
+<li>📝 Fully customizable chat format with <code>{prefix}</code>, <code>{name}</code>, and <code>{message}</code> placeholders</li>
+<li>⚡ Lightweight and optimized for PocketMine-MP API 5.x</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🛠️ Installation</h2><a id="user-content-️-installation" class="anchor" aria-label="Permalink: 🛠️ Installation" href="#️-installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>📥 Download the <code>.phar</code> file</li>
+<li>🔌 Drag it into your server's <code>/plugins/</code> folder</li>
+<li>🚀 Restart your server</li>
+<li>✅ Use <code>/prefixes</code> in-game to open the GUI menu</li>
+</ol>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📚 Commands</h2><a id="user-content--commands" class="anchor" aria-label="Permalink: 📚 Commands" href="#-commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/prefixes</code></td>
+<td>Opens the prefix GUI menu</td>
+<td><code>prefixespro.gui</code></td>
+</tr>
+<tr>
+<td><code>/prefix help</code></td>
+<td>Shows the list of available commands</td>
+<td><code>prefixespro.command.help</code></td>
+</tr>
+<tr>
+<td><code>/prefix create</code></td>
+<td>Opens a form to create a new prefix</td>
+<td><code>prefixespro.command.create</code></td>
+</tr>
+<tr>
+<td><code>/prefix delete &lt;name&gt;</code></td>
+<td>Deletes a prefix from the server</td>
+<td><code>prefixespro.command.delete</code></td>
+</tr>
+<tr>
+<td><code>/prefix add &lt;player&gt; &lt;prefix&gt; [time]</code></td>
+<td>Assigns a prefix to a player (with optional duration)</td>
+<td><code>prefixespro.command.add</code></td>
+</tr>
+<tr>
+<td><code>/prefix remove &lt;player&gt; &lt;prefix&gt;</code></td>
+<td>Removes a prefix from a player</td>
+<td><code>prefixespro.command.remove</code></td>
+</tr>
+<tr>
+<td><code>/prefix list</code></td>
+<td>Lists all registered prefixes</td>
+<td><code>prefixespro.command.list</code></td>
+</tr>
+<tr>
+<td><code>/prefix reload</code></td>
+<td>Reloads config, prefixes, sessions, and messages</td>
+<td><code>prefixespro.command.reload</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 Most subcommands have aliases: <code>add</code> → <code>give</code>, <code>assign</code> | <code>remove</code> → <code>take</code> | <code>create</code> → <code>new</code> | <code>list</code> → <code>all</code></p>
+</blockquote>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">⏳ Time Format</h2><a id="user-content--time-format" class="anchor" aria-label="Permalink: ⏳ Time Format" href="#-time-format"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>When assigning prefixes with <code>/prefix add</code>, you can specify an optional duration:</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>30s</code></td>
+<td>30 seconds</td>
+</tr>
+<tr>
+<td><code>10m</code></td>
+<td>10 minutes</td>
+</tr>
+<tr>
+<td><code>2h</code></td>
+<td>2 hours</td>
+</tr>
+<tr>
+<td><code>7d</code></td>
+<td>7 days</td>
+</tr>
+<tr>
+<td><code>1w</code></td>
+<td>1 week</td>
+</tr>
+<tr>
+<td><code>1d12h</code></td>
+<td>Combined durations</td>
+</tr>
+<tr>
+<td><em>(no argument)</em></td>
+<td>Permanent</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong> <code>/prefix add Steve VIP 30d</code> — assigns the prefix <code>VIP</code> to Steve for 30 days.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🏷️ Prefix Categories</h2><a id="user-content-️-prefix-categories" class="anchor" aria-label="Permalink: 🏷️ Prefix Categories" href="#️-prefix-categories"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Prefixes have two categories that control how players can obtain them:</p>
+<ul>
+<li>
+<strong>Free</strong> — any player with the right permission node can activate it from the GUI (<code>/prefixes</code>).</li>
+<li>
+<strong>Pay</strong> — must be manually assigned by an admin using <code>/prefix add</code>. Ideal for donor or purchased ranks.</li>
+</ul>
+<p>You can set the category when creating a prefix via the in-game form (<code>/prefix create</code>).</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">🔑 Permissions</h2><a id="user-content--permissions" class="anchor" aria-label="Permalink: 🔑 Permissions" href="#-permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>prefixespro.command</code></td>
+<td><code>true</code></td>
+<td>Allows using <code>/prefix</code>
+</td>
+</tr>
+<tr>
+<td><code>prefixespro.command.help</code></td>
+<td><code>true</code></td>
+<td>View command help</td>
+</tr>
+<tr>
+<td><code>prefixespro.gui</code></td>
+<td><code>true</code></td>
+<td>Open the prefix GUI menu</td>
+</tr>
+<tr>
+<td><code>prefixespro.command.create</code></td>
+<td><code>op</code></td>
+<td>Create a new prefix</td>
+</tr>
+<tr>
+<td><code>prefixespro.command.delete</code></td>
+<td><code>op</code></td>
+<td>Delete a prefix</td>
+</tr>
+<tr>
+<td><code>prefixespro.command.add</code></td>
+<td><code>op</code></td>
+<td>Assign a prefix to a player</td>
+</tr>
+<tr>
+<td><code>prefixespro.command.remove</code></td>
+<td><code>op</code></td>
+<td>Remove a prefix from a player</td>
+</tr>
+<tr>
+<td><code>prefixespro.command.list</code></td>
+<td><code>op</code></td>
+<td>View all registered prefixes</td>
+</tr>
+<tr>
+<td><code>prefixespro.command.reload</code></td>
+<td><code>op</code></td>
+<td>Reload the plugin</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">⚙️ Configuration</h2><a id="user-content-️-configuration" class="anchor" aria-label="Permalink: ⚙️ Configuration" href="#️-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> config.yml</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Maximum length of the prefix name (without colors)</span>
+<span class="pl-ent">prefix-max-name-length</span>: <span class="pl-c1">10</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Maximum length of the prefix format (with color codes)</span>
+<span class="pl-ent">prefix-max-format-length</span>: <span class="pl-c1">30</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Time (in seconds) between each auto-save</span>
+<span class="pl-ent">autosave-interval</span>: <span class="pl-c1">300</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Chat format — placeholders: {prefix} {name} {message}</span>
+<span class="pl-ent">chat-format</span>: <span class="pl-s"><span class="pl-pds">"</span>{prefix} §7{name}§r: {message}<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Apply the active prefix to the player's nametag</span>
+<span class="pl-ent">update-nametag</span>: <span class="pl-c1">false</span></pre></div>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📁 File Structure</h2><a id="user-content--file-structure" class="anchor" aria-label="Permalink: 📁 File Structure" href="#-file-structure"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<pre><code>plugin_data/
+└── PrefixesPro/
+    ├── prefixes/
+    │   └── &lt;prefix&gt;.yml
+    ├── sessions/
+    │   └── &lt;uuid&gt;.yml
+    ├── messages.yml
+    └── config.yml
+</code></pre>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">📖 License</h2><a id="user-content--license" class="anchor" aria-label="Permalink: 📖 License" href="#-license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This plugin is open source and licensed under the <a href="LICENSE">MIT License</a>.
+Feel free to fork, contribute, or open issues and pull requests.</p>
+<hr>
+<p align="center"><b>Made with ❤️ by AndresD3us</b></p>
+<hr>

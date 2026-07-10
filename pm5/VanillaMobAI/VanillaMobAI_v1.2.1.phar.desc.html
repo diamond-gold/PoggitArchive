@@ -1,0 +1,102 @@
+<div class="markdown-heading"><h1 class="heading-element">VanillaMobAI</h1><a id="user-content-vanillamobai" class="anchor" aria-label="Permalink: VanillaMobAI" href="#vanillamobai"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Vanilla Bedrock–style mob AI for PocketMine-MP.</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/23e08f7a94c2fff170dbb373203e896c8c10d95492a81f7ec6600adc8e851067/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f76657273696f6e2d312e332e302d626c7565"><img src="https://camo.githubusercontent.com/23e08f7a94c2fff170dbb373203e896c8c10d95492a81f7ec6600adc8e851067/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f76657273696f6e2d312e332e302d626c7565" alt="Version" data-canonical-src="https://img.shields.io/badge/version-1.3.0-blue" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/42a40456eebfd97c9fa4211e51c62063d972ffd9ac9072af91de893d93cc7341/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f506f636b65744d696e652d2d4d502d352e302532422d6f72616e6765"><img src="https://camo.githubusercontent.com/42a40456eebfd97c9fa4211e51c62063d972ffd9ac9072af91de893d93cc7341/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f506f636b65744d696e652d2d4d502d352e302532422d6f72616e6765" alt="PocketMine-MP" data-canonical-src="https://img.shields.io/badge/PocketMine--MP-5.0%2B-orange" style="max-width: 100%;"></a></p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">About</h2><a id="user-content-about" class="anchor" aria-label="Permalink: About" href="#about"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>VanillaMobAI gives PMMP mobs vanilla-like behavior: wandering, combat, breeding, natural spawning, and interactions such as milking and shearing. Balance values (damage, speed, breeding timers) follow vanilla references in code and are <strong>not</strong> exposed in config.</p>
+<p>The plugin is <strong>stable and ready for production use</strong> on PocketMine-MP servers. Development is ongoing — new mobs and behaviors will continue to be added, but the current feature set is fully usable today.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Goal-based AI (wander, panic, tempt, attack, creeper explosion)</li>
+<li>Line of sight — no seeing through walls</li>
+<li>Creative players are not targeted by hostiles</li>
+<li>Natural spawning (caps, light, distance, world filters)</li>
+<li>Spawn eggs + monster spawner support (set spawner type with an egg)</li>
+<li>Horses: taming, saddle, armor, riding, breeding</li>
+<li>Breeding, milking, shearing, dyeing, chicken eggs</li>
+<li>Performance: activation range, tick budget, async pathfinding</li>
+</ul>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Mobs</h2><a id="user-content-mobs" class="anchor" aria-label="Permalink: Mobs" href="#mobs"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Mob</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cow, Pig, Sheep, Chicken, Horse</td>
+<td>Passive</td>
+</tr>
+<tr>
+<td>Zombie, Skeleton, Spider, Creeper</td>
+<td>Hostile</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Place the <code>VanillaMobAI</code> folder in <code>plugins/</code>.</li>
+<li>Start the server.</li>
+<li>Edit <code>plugin_data/VanillaMobAI/config.yml</code>.</li>
+</ol>
+<p><strong>Requirements:</strong> PocketMine-MP 5.0.0+, PHP 8.1+</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Server settings live in <code>config.yml</code>. Example:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">features</span>:
+  <span class="pl-ent">natural-spawn</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">mob-ai</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">monster-spawners</span>: <span class="pl-c1">true</span>
+
+<span class="pl-ent">worlds</span>:
+  <span class="pl-ent">natural-spawn-mode</span>: <span class="pl-s">whitelist</span>
+  <span class="pl-ent">natural-spawn-whitelist</span>:
+    - <span class="pl-s">world</span>
+
+<span class="pl-ent">natural-spawn</span>:
+  <span class="pl-ent">passive-cap</span>: <span class="pl-c1">12</span>
+  <span class="pl-ent">hostile-cap</span>: <span class="pl-c1">24</span>
+  <span class="pl-ent">mobs</span>:
+    <span class="pl-ent">creeper</span>: <span class="pl-c1">false</span></pre></div>
+<p><strong>Whitelist:</strong> Natural spawn only in listed world folder names.<br>
+<strong>Blacklist:</strong> Spawn everywhere except listed worlds (default: nether, end).</p>
+<p>Performance tuning is under the <code>performance</code> section. Gameplay balance (damage, speed, etc.) is intentionally not configurable.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/mobai stats</code></td>
+<td>AI and performance summary</td>
+</tr>
+<tr>
+<td><code>/mobai reload</code></td>
+<td>Reload config (spawn settings)</td>
+</tr>
+</tbody>
+</table>
+<p>Permission: <code>vanillaMobAI.command</code> (default: op)</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">Roadmap</h2><a id="user-content-roadmap" class="anchor" aria-label="Permalink: Roadmap" href="#roadmap"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>[ ] More vanilla mobs</li>
+<li>[ ] Biome-based spawn weights</li>
+<li>[ ] Additional vanilla interactions</li>
+</ul>
+<p>Use GitHub Issues for bugs and suggestions.</p>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>MIT — see <code>LICENSE</code> for details.</p>
+<p><strong>Author:</strong> grinn34</p>

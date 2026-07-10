@@ -1,0 +1,63 @@
+<div class="markdown-heading"><h1 class="heading-element">CurrencyAPI | PocketMine-MP</h1><a id="user-content-currencyapi--pocketmine-mp" class="anchor" aria-label="Permalink: CurrencyAPI | PocketMine-MP" href="#currencyapi--pocketmine-mp"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a href="https://poggit.pmmp.io/p/CurrencyAPI" rel="nofollow"><img src="https://camo.githubusercontent.com/b339f609f68a7280e983ea218b38143f1f8ebe4c369c629d3d1c3a7e5b41d33a/68747470733a2f2f706f676769742e706d6d702e696f2f736869656c642e73746174652f43757272656e6379415049" alt="" data-canonical-src="https://poggit.pmmp.io/shield.state/CurrencyAPI" style="max-width: 100%;"></a></p>
+<p>Two-way economic A.P.I. to create currencies on the one hand, and on the other the usual economic plugin PocketMine-MP 5</p>
+<div class="markdown-heading"><h1 class="heading-element">For create currency</h1><a id="user-content-for-create-currency" class="anchor" aria-label="Permalink: For create currency" href="#for-create-currency"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Main:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">gft</span>\<span class="pl-v">cur</span>\<span class="pl-c1">API</span>;
+
+	<span class="pl-c">/* ... */</span>
+		<span class="pl-c1">API</span>::<span class="pl-en">getCurrencyManager</span>()-&gt;<span class="pl-en">registerCurrency</span>(<span class="pl-s1"><span class="pl-c1">$</span>main</span>-&gt;<span class="pl-en">getName</span>(), <span class="pl-k">new</span> <span class="pl-v">YourCurrency</span>());
+	<span class="pl-c">/* ... */</span></pre></div>
+<p>Instead of YourCurrency the class of your currency
+Your Currency:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
+<span class="pl-k">namespace</span> <span class="pl-v">your</span>\<span class="pl-v">plugin</span>\<span class="pl-v">space</span>;
+
+<span class="pl-k">use</span> <span class="pl-v">gft</span>\<span class="pl-v">cur</span>\<span class="pl-v">currency</span>\<span class="pl-smi">Currency</span>;
+
+<span class="pl-k">class</span> YourCurrency <span class="pl-k">implements</span> Currency {
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getPrice</span>(): <span class="pl-smi">float</span> {
+		<span class="pl-k">return</span> <span class="pl-c1">1</span>;
+	}
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getExchangeable</span>(): <span class="pl-smi">string</span> {
+		<span class="pl-k">return</span> <span class="pl-s">"<span class="pl-s">Dollar</span>"</span>;
+	}
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onBuy</span>(<span class="pl-smi">float</span> <span class="pl-s1"><span class="pl-c1">$</span>count</span>): <span class="pl-smi">void</span> { <span class="pl-c">/* code */</span> }
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onSell</span>(<span class="pl-smi">float</span> <span class="pl-s1"><span class="pl-c1">$</span>count</span>): <span class="pl-smi">void</span> { <span class="pl-c">/* code */</span> }
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">setPrice</span>(<span class="pl-smi">float</span> <span class="pl-s1"><span class="pl-c1">$</span>price</span>): <span class="pl-smi">void</span> { <span class="pl-c">/* code */</span> }
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getName</span>(): <span class="pl-smi">string</span> {
+		<span class="pl-k">return</span> <span class="pl-s">"<span class="pl-s">Currency</span>"</span>; <span class="pl-c">// currency name</span>
+	}
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getSing</span>(): <span class="pl-smi">string</span> {
+		<span class="pl-k">return</span> <span class="pl-s">"<span class="pl-s">C</span>"</span>; <span class="pl-c">// sing</span>
+	}
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">isBuyable</span>(): <span class="pl-smi">bool</span> { <span class="pl-k">return</span> <span class="pl-c1">true</span>; }
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">isSalable</span>(): <span class="pl-smi">bool</span> { <span class="pl-k">return</span> <span class="pl-c1">true</span>; }
+
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">maxCount</span>(): <span class="pl-smi">float</span> { <span class="pl-k">return</span> PHP_float_MAX; }
+
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">buyLimit</span>(): <span class="pl-smi">float</span> { <span class="pl-k">return</span> PHP_float_NAX; }
+	<span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">sellLimit</span>(): <span class="pl-smi">float</span> { <span class="pl-k">return</span> PHP_float_MAX; }
+}</pre></div>
+<div class="markdown-heading"><h1 class="heading-element">For use economic side:</h1><a id="user-content-for-use-economic-side" class="anchor" aria-label="Permalink: For use economic side:" href="#for-use-economic-side"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Add to balance:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">add</span>(<span class="pl-s1"><span class="pl-c1">$</span>currencyName</span>, <span class="pl-s1"><span class="pl-c1">$</span>count</span>);</pre></div>
+<p>For remove from balance:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">remove</span>(<span class="pl-s1"><span class="pl-c1">$</span>currencyName</span>, <span class="pl-s1"><span class="pl-c1">$</span>count</span>);</pre></div>
+<p>For set balance:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">set</span>(<span class="pl-s1"><span class="pl-c1">$</span>currencyName</span>, <span class="pl-s1"><span class="pl-c1">$</span>count</span>);</pre></div>
+<p>For complete transaction:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">transaction</span>(<span class="pl-s1"><span class="pl-c1">$</span>currencyName</span>, <span class="pl-s1"><span class="pl-c1">$</span>count</span>, <span class="pl-s1"><span class="pl-c1">$</span>player</span>);</pre></div>
+<p>For get balance</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>count</span> = <span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>currencyName</span>);</pre></div>
+<div class="markdown-heading"><h1 class="heading-element">Commands</h1><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>/[currency]</p>
+<ul>
+<li>sell &lt;count: float&gt; all players</li>
+<li>buy &lt;count: float&gt; all players</li>
+<li>set &lt;count: float&gt; [player: string] operators only</li>
+<li>add &lt;count: float&gt; [player: string] operators only</li>
+<li>remove &lt;count: float&gt; [player: string] operators only</li>
+<li>transaction &lt;count: float&gt; &lt;player: string&gt; all players <br>
+</li>
+</ul>

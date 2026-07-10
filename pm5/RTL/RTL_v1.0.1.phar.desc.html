@@ -1,0 +1,30 @@
+<div class="markdown-heading"><h1 class="heading-element">RTL</h1><a id="user-content-rtl" class="anchor" aria-label="Permalink: RTL" href="#rtl"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>A PocketMine-MP plugin that corrects reversed RTL text in Minecraft: Bedrock Edition.</p>
+<p>Bedrock renders Right-To-Left scripts with their characters reversed.</p>
+<p>This plugin works around it by pre-reversing the text on the server.</p>
+<div class="markdown-heading"><h2 class="heading-element">What it fixes</h2><a id="user-content-what-it-fixes" class="anchor" aria-label="Permalink: What it fixes" href="#what-it-fixes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Chat UI and signs only.</strong></p>
+<ul>
+<li>Chat messages (player chat, <code>/say</code>, <code>/tell</code>, tips, popups, system messages, announcements)</li>
+<li>Sign text edited by players</li>
+</ul>
+<p>Form UIs, name tags, boss bars, books, scoreboards, titles, and toasts are not handled.</p>
+<div class="markdown-heading"><h2 class="heading-element">How it works</h2><a id="user-content-how-it-works" class="anchor" aria-label="Permalink: How it works" href="#how-it-works"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Hooks into <code>DataPacketSendEvent</code> (chat, tips, popups, system messages) and <code>SignChangeEvent</code> (signs). For each text containing RTL characters:</p>
+<ol>
+<li>Finds all RTL segments</li>
+<li>Reverses characters in each segment (cancels Bedrock's char reversal)</li>
+<li>Reverses their order (cancels Bedrock's swap around LTR words)</li>
+</ol>
+<p>Non-RTL text is untouched.</p>
+<div class="markdown-heading"><h2 class="heading-element">Supported scripts</h2><a id="user-content-supported-scripts" class="anchor" aria-label="Permalink: Supported scripts" href="#supported-scripts"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Arabic (incl. Kurdish, Pashto, Persian, Sindhi, Urdu), Hebrew (incl. Yiddish), Syriac, Thaana, NKo, Samaritan, Mandaic.</p>
+<div class="markdown-heading"><h2 class="heading-element">Limitations</h2><a id="user-content-limitations" class="anchor" aria-label="Permalink: Limitations" href="#limitations"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Chat input box</strong> — text appears reversed while typing. Server can't access the input box.</li>
+<li>
+<strong>Hindi/Thai/Tibetan</strong> — these need a text shaping engine (HarfBuzz) that Bedrock lacks. Unfixable server-side.</li>
+<li>
+<strong>Multi-line wrapping</strong> — long messages may have lines in reverse order. Depends on client screen size.</li>
+</ul>

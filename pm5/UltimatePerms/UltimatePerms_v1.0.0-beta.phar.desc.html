@@ -1,0 +1,636 @@
+<div class="markdown-heading"><h1 class="heading-element">UltimatePerms</h1><a id="user-content-ultimateperms" class="anchor" aria-label="Permalink: UltimatePerms" href="#ultimateperms"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>An ultimate Permission Management plugin for PocketMine-MP</strong></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/ac0e6350bd1a747fd6c3ffa64781612d3997df0c837a082a30d7af82a79ee225/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f76657273696f6e2d312e302d626c7565"><img src="https://camo.githubusercontent.com/ac0e6350bd1a747fd6c3ffa64781612d3997df0c837a082a30d7af82a79ee225/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f76657273696f6e2d312e302d626c7565" alt="Version" data-canonical-src="https://img.shields.io/badge/version-1.0-blue" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/d5d03719c3ef8d681c1c09cdb6c5493f2bd9fca1231f78a9820ead8e89c17022/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6170692d352e302e302532422d627269676874677265656e"><img src="https://camo.githubusercontent.com/d5d03719c3ef8d681c1c09cdb6c5493f2bd9fca1231f78a9820ead8e89c17022/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6170692d352e302e302532422d627269676874677265656e" alt="API" data-canonical-src="https://img.shields.io/badge/api-5.0.0%2B-brightgreen" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h2 class="heading-element">Tabla de Contenidos</h2><a id="user-content-tabla-de-contenidos" class="anchor" aria-label="Permalink: Tabla de Contenidos" href="#tabla-de-contenidos"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li><a href="#caracter%C3%ADsticas">Características</a></li>
+<li><a href="#instalaci%C3%B3n">Instalación</a></li>
+<li><a href="#configuraci%C3%B3n">Configuración</a></li>
+<li><a href="#comandos">Comandos</a></li>
+<li><a href="#sistema-de-permisos">Sistema de Permisos</a></li>
+<li><a href="#grupos-y-rangos">Grupos y Rangos</a></li>
+<li><a href="#almacenamiento">Almacenamiento</a></li>
+<li><a href="#api-p%C3%BAblica">API Pública</a></li>
+<li><a href="https://github.com/ImAMadDev/UltimatePerms/wiki">Wiki Completa</a></li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Características</h2><a id="user-content-características" class="anchor" aria-label="Permalink: Características" href="#características"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>✅ <strong>Sistema de Permisos Contextual</strong> — Permisos que varían según el mundo o gamemode<br>
+✅ <strong>Grupos con Jerarquía</strong> — Herencia lineal con detección de ciclos<br>
+✅ <strong>Rangos Temporales</strong> — Expiración automática de permisos y rangos<br>
+✅ <strong>Múltiples Rangos por Jugador</strong> — Combinación de varios grupos<br>
+✅ <strong>Chat Formatter Personalizado</strong> — Prefijos, sufijos y colores dinámicos<br>
+✅ <strong>4 Backends de Almacenamiento</strong> — YAML, JSON, SQLite, MySQL<br>
+✅ <strong>Eventos de Expiración</strong> — <code>RankExpireEvent</code>, <code>PermissionExpireEvent</code>, <code>GroupPermExpireEvent</code><br>
+✅ <strong>Wildcard Support</strong> — Permisos con comodines (<code>essentials.*</code>) y negación específica<br>
+✅ <strong>Metadata Personalizada</strong> — Key-value libre para extensibilidad<br>
+✅ <strong>API Pública</strong> — Integración fácil con otros plugins</p>
+<div class="markdown-heading"><h2 class="heading-element">Instalación</h2><a id="user-content-instalación" class="anchor" aria-label="Permalink: Instalación" href="#instalación"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Requisitos</h3><a id="user-content-requisitos" class="anchor" aria-label="Permalink: Requisitos" href="#requisitos"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>PocketMine-MP</strong> 5.0.0 o superior</li>
+<li><strong>PHP 8.1+</strong></li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Pasos</h3><a id="user-content-pasos" class="anchor" aria-label="Permalink: Pasos" href="#pasos"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Copiar la carpeta del plugin a <code>plugins/</code>
+</li>
+<li>Iniciar el servidor — el plugin creará <code>config.yml</code> automáticamente</li>
+<li>Verificar instalación ejecutando <code>/uperms</code>
+</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Configuración</h2><a id="user-content-configuración" class="anchor" aria-label="Permalink: Configuración" href="#configuración"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">config.yml</h3><a id="user-content-configyml" class="anchor" aria-label="Permalink: config.yml" href="#configyml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c"><span class="pl-c">#</span> ── Chat &amp; Display ────────────────────────────────────────────────────</span>
+<span class="pl-c"><span class="pl-c">#</span> Placeholders: {prefix} {suffix} {name} {displayname}</span>
+<span class="pl-c"><span class="pl-c">#</span>               {message} {group} {group_display} {chat_color}</span>
+
+<span class="pl-ent">chat</span>:
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">format</span>: <span class="pl-s"><span class="pl-pds">"</span>{prefix}{name}{suffix}§r: {chat_color}{message}<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">nametag</span>:
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">format</span>: <span class="pl-s"><span class="pl-pds">"</span>{prefix}{name}{suffix}<span class="pl-pds">"</span></span>
+
+<span class="pl-ent">displayName</span>:
+  <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span>
+
+<span class="pl-ent">locale</span>: <span class="pl-s">en_US</span>
+
+<span class="pl-c"><span class="pl-c">#</span> ── Storage ──────────────────────────────────────────────────────────</span>
+<span class="pl-ent">storage</span>:
+  <span class="pl-c"><span class="pl-c">#</span> Opciones: yaml | json | sqlite | mysql</span>
+  <span class="pl-ent">type</span>: <span class="pl-s">json</span>
+
+  <span class="pl-c"><span class="pl-c">#</span> Solo necesario si type: mysql</span>
+  <span class="pl-ent">mysql</span>:
+    <span class="pl-ent">host</span>: <span class="pl-s">127.0.0.1</span>
+    <span class="pl-ent">port</span>: <span class="pl-c1">3306</span>
+    <span class="pl-ent">user</span>: <span class="pl-s">root</span>
+    <span class="pl-ent">password</span>: <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+    <span class="pl-ent">database</span>: <span class="pl-s">ultimateperms</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Elegir Backend de Almacenamiento</h3><a id="user-content-elegir-backend-de-almacenamiento" class="anchor" aria-label="Permalink: Elegir Backend de Almacenamiento" href="#elegir-backend-de-almacenamiento"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>JSON (por defecto)</strong></p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">storage</span>:
+  <span class="pl-ent">type</span>: <span class="pl-s">json</span></pre></div>
+<p><strong>MySQL (recomendado para servidores grandes)</strong></p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">storage</span>:
+  <span class="pl-ent">type</span>: <span class="pl-s">mysql</span>
+  <span class="pl-ent">mysql</span>:
+    <span class="pl-ent">host</span>: <span class="pl-s">tu-servidor.com</span>
+    <span class="pl-ent">port</span>: <span class="pl-c1">3306</span>
+    <span class="pl-ent">user</span>: <span class="pl-s">ultimateperms</span>
+    <span class="pl-ent">password</span>: <span class="pl-s">tu-contraseña</span>
+    <span class="pl-ent">database</span>: <span class="pl-s">ultimateperms</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Comandos</h2><a id="user-content-comandos" class="anchor" aria-label="Permalink: Comandos" href="#comandos"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Comando Principal: <code>/uperms</code> · alias: <code>/up</code>, <code>/perms</code>
+</h3><a id="user-content-comando-principal-uperms--alias-up-perms" class="anchor" aria-label="Permalink: Comando Principal: /uperms · alias: /up, /perms" href="#comando-principal-uperms--alias-up-perms"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h4 class="heading-element">Usuarios (<code>ultimateperms.command.user</code>)</h4><a id="user-content-usuarios-ultimatepermscommanduser" class="anchor" aria-label="Permalink: Usuarios (ultimateperms.command.user)" href="#usuarios-ultimatepermscommanduser"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> Información del jugador</span>
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> info
+
+<span class="pl-c"><span class="pl-c">#</span> Gestión de rangos</span>
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> group <span class="pl-c1">set</span>    <span class="pl-k">&lt;</span>grupo<span class="pl-k">&gt;</span> [duración]  <span class="pl-c"><span class="pl-c">#</span> Reemplaza todos los rangos</span>
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> group add    <span class="pl-k">&lt;</span>grupo<span class="pl-k">&gt;</span> [duración]  <span class="pl-c"><span class="pl-c">#</span> Agrega rango adicional</span>
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> group remove <span class="pl-k">&lt;</span>grupo<span class="pl-k">&gt;</span>             <span class="pl-c"><span class="pl-c">#</span> Quita un rango</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Permisos personales (overrides)</span>
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> perm <span class="pl-c1">set</span>   <span class="pl-k">&lt;</span>nodo<span class="pl-k">&gt;</span> [true<span class="pl-k">|</span>false] [duración] [ctx<span class="pl-k">=</span>valor...]
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> perm <span class="pl-c1">unset</span> <span class="pl-k">&lt;</span>nodo<span class="pl-k">&gt;</span>
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> perm check <span class="pl-k">&lt;</span>nodo<span class="pl-k">&gt;</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Auditoría de permisos resueltos</span>
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> audit [página]
+
+<span class="pl-c"><span class="pl-c">#</span> Prefix / Suffix personal</span>
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> prefix <span class="pl-c1">set</span>   <span class="pl-k">&lt;</span>texto<span class="pl-k">&gt;</span>
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> prefix <span class="pl-c1">unset</span>
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> prefix get
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> suffix <span class="pl-c1">set</span>   <span class="pl-k">&lt;</span>texto<span class="pl-k">&gt;</span>
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> suffix <span class="pl-c1">unset</span>
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> suffix get
+
+<span class="pl-c"><span class="pl-c">#</span> Metadata</span>
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> meta <span class="pl-c1">set</span>   <span class="pl-k">&lt;</span>clave<span class="pl-k">&gt;</span> <span class="pl-k">&lt;</span>valor<span class="pl-k">&gt;</span>
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> meta <span class="pl-c1">unset</span> <span class="pl-k">&lt;</span>clave<span class="pl-k">&gt;</span>
+/uperms user <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> meta get   <span class="pl-k">&lt;</span>clave<span class="pl-k">&gt;</span></pre></div>
+<div class="markdown-heading"><h4 class="heading-element">Grupos (<code>ultimateperms.command.group</code>)</h4><a id="user-content-grupos-ultimatepermscommandgroup" class="anchor" aria-label="Permalink: Grupos (ultimateperms.command.group)" href="#grupos-ultimatepermscommandgroup"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> Listar todos los grupos (ordenados por weight)</span>
+/uperms group list
+
+<span class="pl-c"><span class="pl-c">#</span> Crear / info / eliminar / clonar</span>
+/uperms group <span class="pl-k">&lt;</span>nombre<span class="pl-k">&gt;</span> create    [displayName] [weight]
+/uperms group <span class="pl-k">&lt;</span>nombre<span class="pl-k">&gt;</span> info
+/uperms group <span class="pl-k">&lt;</span>nombre<span class="pl-k">&gt;</span> delete    [confirm]
+/uperms group <span class="pl-k">&lt;</span>nombre<span class="pl-k">&gt;</span> clone     <span class="pl-k">&lt;</span>nuevoId<span class="pl-k">&gt;</span> [displayName]
+
+<span class="pl-c"><span class="pl-c">#</span> Permisos del grupo</span>
+/uperms group <span class="pl-k">&lt;</span>nombre<span class="pl-k">&gt;</span> perm <span class="pl-c1">set</span>   <span class="pl-k">&lt;</span>nodo<span class="pl-k">&gt;</span> [true<span class="pl-k">|</span>false] [duración] [ctx<span class="pl-k">=</span>valor...]
+/uperms group <span class="pl-k">&lt;</span>nombre<span class="pl-k">&gt;</span> perm <span class="pl-c1">unset</span> <span class="pl-k">&lt;</span>nodo<span class="pl-k">&gt;</span>
+/uperms group <span class="pl-k">&lt;</span>nombre<span class="pl-k">&gt;</span> perm list  [página]
+
+<span class="pl-c"><span class="pl-c">#</span> Herencia (un solo padre por grupo)</span>
+/uperms group <span class="pl-k">&lt;</span>nombre<span class="pl-k">&gt;</span> parent <span class="pl-c1">set</span>   <span class="pl-k">&lt;</span>grupoPadre<span class="pl-k">&gt;</span>
+/uperms group <span class="pl-k">&lt;</span>nombre<span class="pl-k">&gt;</span> parent <span class="pl-c1">unset</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Display</span>
+/uperms group <span class="pl-k">&lt;</span>nombre<span class="pl-k">&gt;</span> setweight <span class="pl-k">&lt;</span>número<span class="pl-k">&gt;</span>
+/uperms group <span class="pl-k">&lt;</span>nombre<span class="pl-k">&gt;</span> setprefix <span class="pl-k">&lt;</span>texto<span class="pl-k">&gt;</span>
+/uperms group <span class="pl-k">&lt;</span>nombre<span class="pl-k">&gt;</span> setsuffix <span class="pl-k">&lt;</span>texto<span class="pl-k">&gt;</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Metadata</span>
+/uperms group <span class="pl-k">&lt;</span>nombre<span class="pl-k">&gt;</span> meta <span class="pl-c1">set</span>   <span class="pl-k">&lt;</span>clave<span class="pl-k">&gt;</span> <span class="pl-k">&lt;</span>valor<span class="pl-k">&gt;</span>
+/uperms group <span class="pl-k">&lt;</span>nombre<span class="pl-k">&gt;</span> meta <span class="pl-c1">unset</span> <span class="pl-k">&lt;</span>clave<span class="pl-k">&gt;</span>
+/uperms group <span class="pl-k">&lt;</span>nombre<span class="pl-k">&gt;</span> meta get   <span class="pl-k">&lt;</span>clave<span class="pl-k">&gt;</span></pre></div>
+<div class="markdown-heading"><h4 class="heading-element">Diagnóstico</h4><a id="user-content-diagnóstico" class="anchor" aria-label="Permalink: Diagnóstico" href="#diagnóstico"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> Verificar origen de un permiso con trazabilidad</span>
+/uperms check    <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> <span class="pl-k">&lt;</span>permiso<span class="pl-k">&gt;</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Simular permiso con contexto personalizado (sin aplicar)</span>
+/uperms simulate <span class="pl-k">&lt;</span>jugador<span class="pl-k">&gt;</span> <span class="pl-k">&lt;</span>permiso<span class="pl-k">&gt;</span> [ctx<span class="pl-k">=</span>valor...]
+<span class="pl-c"><span class="pl-c">#</span> alias: /uperms sim</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Listar permisos registrados por un plugin</span>
+/uperms inspect <span class="pl-k">&lt;</span>nombrePlugin<span class="pl-k">&gt;</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Recargar config.yml y recalcular permisos de todos los jugadores online</span>
+/uperms reload
+
+<span class="pl-c"><span class="pl-c">#</span> Abrir interfaz gráfica (experimental)</span>
+/uperms ui</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Formato de Duración</h3><a id="user-content-formato-de-duración" class="anchor" aria-label="Permalink: Formato de Duración" href="#formato-de-duración"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Sufijo</th>
+<th>Unidad</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Y</code></td>
+<td>Años</td>
+<td><code>1Y</code></td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>Meses</td>
+<td><code>2M</code></td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>Semanas</td>
+<td><code>3w</code></td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>Días</td>
+<td><code>7d</code></td>
+</tr>
+<tr>
+<td><code>h</code></td>
+<td>Horas</td>
+<td><code>24h</code></td>
+</tr>
+<tr>
+<td><code>m</code></td>
+<td>Minutos</td>
+<td><code>30m</code></td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>Segundos</td>
+<td><code>3600s</code></td>
+</tr>
+</tbody>
+</table>
+<p>Se pueden combinar: <code>1d12h</code> = 36 horas. Omitir duración = permanente.</p>
+<div class="markdown-heading"><h3 class="heading-element">Ejemplos Prácticos</h3><a id="user-content-ejemplos-prácticos" class="anchor" aria-label="Permalink: Ejemplos Prácticos" href="#ejemplos-prácticos"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> Crear rango YouTuber</span>
+/uperms group youtuber create <span class="pl-s"><span class="pl-pds">"</span>§c§lYouTuber<span class="pl-pds">"</span></span> 65
+
+<span class="pl-c"><span class="pl-c">#</span> Establecer herencia</span>
+/uperms group youtuber parent <span class="pl-c1">set</span> vip
+
+<span class="pl-c"><span class="pl-c">#</span> Agregar permisos</span>
+/uperms group youtuber perm <span class="pl-c1">set</span> essentials.fly <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Prohibir fly solo en PvP</span>
+/uperms group youtuber perm <span class="pl-c1">set</span> essentials.fly <span class="pl-c1">false</span> world=pvp
+
+<span class="pl-c"><span class="pl-c">#</span> Asignar a jugador permanente (reemplaza rangos anteriores)</span>
+/uperms user John group <span class="pl-c1">set</span> youtuber
+
+<span class="pl-c"><span class="pl-c">#</span> Asignar temporalmente 7 días (sin reemplazar)</span>
+/uperms user John group add youtuber 7d
+
+<span class="pl-c"><span class="pl-c">#</span> Verificar origen de un permiso</span>
+/uperms check John essentials.fly
+
+<span class="pl-c"><span class="pl-c">#</span> Simular en otro contexto</span>
+/uperms simulate John essentials.fly world=pvp</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Sistema de Permisos</h2><a id="user-content-sistema-de-permisos" class="anchor" aria-label="Permalink: Sistema de Permisos" href="#sistema-de-permisos"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Algoritmo de Resolución</h3><a id="user-content-algoritmo-de-resolución" class="anchor" aria-label="Permalink: Algoritmo de Resolución" href="#algoritmo-de-resolución"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>El plugin resuelve permisos en este orden de prioridad:</p>
+<ol>
+<li>
+<strong>Overrides Personales</strong> (máxima prioridad) — permisos asignados directamente al jugador; las negaciones explícitas siempre prevalecen</li>
+<li>
+<strong>Grupos del Jugador</strong> (ordenados por weight DESC) — se procesan del más pesado al menos pesado</li>
+<li>
+<strong>Herencia de Grupos</strong> — cada grupo puede heredar de un único padre</li>
+<li>
+<strong>Wildcard Support</strong> — <code>essentials.*</code> cubre <code>essentials.fly</code>, <code>essentials.nick</code>, etc.</li>
+<li>
+<strong>Default: Denegado</strong> — si un permiso no está definido en ningún nivel, se deniega</li>
+</ol>
+<div class="markdown-heading"><h3 class="heading-element">Contextos</h3><a id="user-content-contextos" class="anchor" aria-label="Permalink: Contextos" href="#contextos"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Los permisos pueden condicionarse a contextos. Los contextos disponibles son <code>world</code> y <code>gamemode</code>, calculados automáticamente cuando el jugador cambia de mundo o modo de juego.</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> Permiso global (sin contexto = siempre aplica)</span>
+/uperms group vip perm <span class="pl-c1">set</span> essentials.fly <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Solo en mundo específico</span>
+/uperms group vip perm <span class="pl-c1">set</span> essentials.fly <span class="pl-c1">true</span> world=creative
+
+<span class="pl-c"><span class="pl-c">#</span> Solo en gamemode específico</span>
+/uperms group vip perm <span class="pl-c1">set</span> essentials.nick <span class="pl-c1">true</span> gamemode=survival
+
+<span class="pl-c"><span class="pl-c">#</span> Negación en contexto (sobreescribe herencia)</span>
+/uperms group vip perm <span class="pl-c1">set</span> essentials.fly <span class="pl-c1">false</span> world=pvp
+
+<span class="pl-c"><span class="pl-c">#</span> Múltiples contextos en un mismo nodo</span>
+/uperms user John perm <span class="pl-c1">set</span> mycommand.use <span class="pl-c1">true</span> world=spawn gamemode=survival</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Wildcards</h3><a id="user-content-wildcards" class="anchor" aria-label="Permalink: Wildcards" href="#wildcards"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> Otorgar todos los permisos bajo essentials</span>
+/uperms group admin perm <span class="pl-c1">set</span> essentials.<span class="pl-k">*</span> <span class="pl-c1">true</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Negar uno específico dentro del wildcard</span>
+/uperms group admin perm <span class="pl-c1">set</span> essentials.ban <span class="pl-c1">false</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Resultado: tiene todo de essentials EXCEPTO essentials.ban</span></pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Grupos y Rangos</h2><a id="user-content-grupos-y-rangos" class="anchor" aria-label="Permalink: Grupos y Rangos" href="#grupos-y-rangos"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Crear Grupo</h3><a id="user-content-crear-grupo" class="anchor" aria-label="Permalink: Crear Grupo" href="#crear-grupo"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-shell"><pre>/uperms group youtuber create <span class="pl-s"><span class="pl-pds">"</span>§c§lYouTuber<span class="pl-pds">"</span></span> 65</pre></div>
+<p><strong>Parámetros:</strong></p>
+<ul>
+<li>
+<code>youtuber</code> — ID único e inmutable del grupo (lowercase)</li>
+<li>
+<code>"§c§lYouTuber"</code> — Nombre mostrado (soporta códigos de color <code>§</code>)</li>
+<li>
+<code>65</code> — Weight: mayor = más prioritario en resolución y para el prefijo visible</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Jerarquía</h3><a id="user-content-jerarquía" class="anchor" aria-label="Permalink: Jerarquía" href="#jerarquía"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Cada grupo puede tener <strong>un único padre</strong>. La herencia es lineal y el plugin detecta y bloquea ciclos automáticamente:</p>
+<pre><code>default (weight=0)
+  ↑
+vip (weight=30)
+  ↑
+youtuber (weight=65)
+  ↑
+admin (weight=100)
+</code></pre>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> Establecer padre</span>
+/uperms group youtuber parent <span class="pl-c1">set</span> vip
+
+<span class="pl-c"><span class="pl-c">#</span> Quitar herencia</span>
+/uperms group youtuber parent <span class="pl-c1">unset</span></pre></div>
+<p><strong>Protecciones automáticas:</strong></p>
+<ul>
+<li>Ciclos de herencia (A→B→C→A) — bloqueados</li>
+<li>Auto-herencia — bloqueada</li>
+<li>Padres inexistentes — bloqueados; al cargar, el padre se ignora con una advertencia en log</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Multi-Rango</h3><a id="user-content-multi-rango" class="anchor" aria-label="Permalink: Multi-Rango" href="#multi-rango"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Un jugador puede tener varios rangos simultáneamente:</p>
+<div class="highlight highlight-source-shell"><pre>/uperms user John group <span class="pl-c1">set</span> vip           <span class="pl-c"><span class="pl-c">#</span> Asigna vip, elimina otros rangos</span>
+/uperms user John group add helper 7d     <span class="pl-c"><span class="pl-c">#</span> Agrega helper temporal, mantiene vip</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Permisos = unión de todos los grupos + overrides personales</span>
+<span class="pl-c"><span class="pl-c">#</span> Prefijo = del grupo con mayor weight</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Display</h3><a id="user-content-display" class="anchor" aria-label="Permalink: Display" href="#display"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-shell"><pre>/uperms group youtuber setprefix <span class="pl-s"><span class="pl-pds">"</span>§7[§c§lYT§7] §f<span class="pl-pds">"</span></span>
+/uperms group youtuber setsuffix <span class="pl-s"><span class="pl-pds">"</span> §c♦<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Override personal para un jugador específico</span>
+/uperms user John prefix <span class="pl-c1">set</span> <span class="pl-s"><span class="pl-pds">"</span>§b[CUSTOM] <span class="pl-pds">"</span></span>
+/uperms user John suffix <span class="pl-c1">set</span> <span class="pl-s"><span class="pl-pds">"</span> §b⭐<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Volver al prefijo del grupo</span>
+/uperms user John prefix <span class="pl-c1">unset</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Chat formatter — Placeholders</h3><a id="user-content-chat-formatter--placeholders" class="anchor" aria-label="Permalink: Chat formatter — Placeholders" href="#chat-formatter--placeholders"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Placeholder</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{prefix}</code></td>
+<td>Prefijo resuelto (personal &gt; grupo primario &gt; herencia)</td>
+</tr>
+<tr>
+<td><code>{suffix}</code></td>
+<td>Sufijo resuelto (misma lógica)</td>
+</tr>
+<tr>
+<td><code>{name}</code></td>
+<td>Nombre del jugador</td>
+</tr>
+<tr>
+<td><code>{displayname}</code></td>
+<td>Display name actual (nametag)</td>
+</tr>
+<tr>
+<td><code>{message}</code></td>
+<td>Mensaje del chat</td>
+</tr>
+<tr>
+<td><code>{group}</code></td>
+<td>ID del grupo primario</td>
+</tr>
+<tr>
+<td><code>{group_display}</code></td>
+<td>DisplayName del grupo primario</td>
+</tr>
+<tr>
+<td><code>{chat_color}</code></td>
+<td>Meta <code>chat-color</code> (personal &gt; grupo)</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Almacenamiento</h2><a id="user-content-almacenamiento" class="anchor" aria-label="Permalink: Almacenamiento" href="#almacenamiento"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Tipos Disponibles</h3><a id="user-content-tipos-disponibles" class="anchor" aria-label="Permalink: Tipos Disponibles" href="#tipos-disponibles"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Descripción</th>
+<th>Recomendado para</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>json</code></td>
+<td>Un archivo JSON por jugador, grupos en un archivo separado</td>
+<td>Inicio, desarrollo</td>
+</tr>
+<tr>
+<td><code>yaml</code></td>
+<td>Equivalente en formato YAML</td>
+<td>Desarrollo</td>
+</tr>
+<tr>
+<td><code>sqlite</code></td>
+<td>Base de datos SQLite local</td>
+<td>Servidores medianos</td>
+</tr>
+<tr>
+<td><code>mysql</code></td>
+<td>Base de datos MySQL remota</td>
+<td>Servidores grandes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Setup MySQL:</strong></p>
+<div class="highlight highlight-source-sql"><pre><span class="pl-k">CREATE</span> <span class="pl-k">DATABASE</span> <span class="pl-en">ultimateperms</span>;
+<span class="pl-k">CREATE</span> <span class="pl-k">USER</span> '<span class="pl-en">ultimateperms</span>'@<span class="pl-s"><span class="pl-pds">'</span>localhost<span class="pl-pds">'</span></span> IDENTIFIED BY <span class="pl-s"><span class="pl-pds">'</span>contraseña<span class="pl-pds">'</span></span>;
+<span class="pl-k">GRANT</span> ALL PRIVILEGES <span class="pl-k">ON</span> ultimateperms.<span class="pl-k">*</span> TO <span class="pl-s"><span class="pl-pds">'</span>ultimateperms<span class="pl-pds">'</span></span>@<span class="pl-s"><span class="pl-pds">'</span>localhost<span class="pl-pds">'</span></span>;
+FLUSH PRIVILEGES;</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">API Pública</h2><a id="user-content-api-pública" class="anchor" aria-label="Permalink: API Pública" href="#api-pública"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Otros plugins pueden acceder a UltimatePerms declarando la dependencia en <code>plugin.yml</code>:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">depend</span>:
+  - <span class="pl-s">UltimatePerms</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Obtener Instancias</h3><a id="user-content-obtener-instancias" class="anchor" aria-label="Permalink: Obtener Instancias" href="#obtener-instancias"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">appgallery</span>\<span class="pl-v">uperms</span>\<span class="pl-smi">Loader</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>loader</span>         = Loader::<span class="pl-en">getInstance</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>sessionManager</span> = <span class="pl-s1"><span class="pl-c1">$</span>loader</span>-&gt;<span class="pl-en">getSessionManager</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>groupManager</span>   = <span class="pl-s1"><span class="pl-c1">$</span>loader</span>-&gt;<span class="pl-en">getGroupManager</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>storage</span>        = <span class="pl-s1"><span class="pl-c1">$</span>loader</span>-&gt;<span class="pl-en">getStorage</span>();</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Consultar Sesión de Jugador</h3><a id="user-content-consultar-sesión-de-jugador" class="anchor" aria-label="Permalink: Consultar Sesión de Jugador" href="#consultar-sesión-de-jugador"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<blockquote>
+<p><strong>Nota:</strong> Los métodos de sesión solo funcionan con jugadores <strong>online</strong>.</p>
+</blockquote>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// Por nombre de jugador</span>
+<span class="pl-s1"><span class="pl-c1">$</span>session</span> = <span class="pl-s1"><span class="pl-c1">$</span>sessionManager</span>-&gt;<span class="pl-en">getByName</span>(<span class="pl-s">"<span class="pl-s">PlayerName</span>"</span>);
+
+<span class="pl-c">// Por XUID</span>
+<span class="pl-s1"><span class="pl-c1">$</span>session</span> = <span class="pl-s1"><span class="pl-c1">$</span>sessionManager</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">getXuid</span>());
+
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>session</span> !== <span class="pl-c1">null</span>) {
+    <span class="pl-c">// Verificar permiso (usa el caché resuelto)</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>session</span>-&gt;<span class="pl-en">hasPermission</span>(<span class="pl-s">"<span class="pl-s">essentials.fly</span>"</span>);
+
+    <span class="pl-c">// Obtener rangos: [groupId =&gt; expiresAt|null]</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>groups</span> = <span class="pl-s1"><span class="pl-c1">$</span>session</span>-&gt;<span class="pl-en">getGroups</span>();
+
+    <span class="pl-c">// Rango primario (mayor weight)</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>primary</span> = <span class="pl-s1"><span class="pl-c1">$</span>sessionManager</span>-&gt;<span class="pl-en">getPrimaryGroup</span>(<span class="pl-s1"><span class="pl-c1">$</span>session</span>); <span class="pl-c">// Group|null</span>
+
+    <span class="pl-c">// Prefix / suffix actuales</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>prefix</span> = <span class="pl-s1"><span class="pl-c1">$</span>session</span>-&gt;<span class="pl-en">getPrefix</span>();
+    <span class="pl-s1"><span class="pl-c1">$</span>suffix</span> = <span class="pl-s1"><span class="pl-c1">$</span>session</span>-&gt;<span class="pl-en">getSuffix</span>();
+
+    <span class="pl-c">// Metadata</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>value</span> = <span class="pl-s1"><span class="pl-c1">$</span>session</span>-&gt;<span class="pl-en">getMeta</span>(<span class="pl-s">"<span class="pl-s">max-homes</span>"</span>);
+
+    <span class="pl-c">// Contexto actual</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>context</span> = <span class="pl-s1"><span class="pl-c1">$</span>session</span>-&gt;<span class="pl-en">getContext</span>(); <span class="pl-c">// ["world" =&gt; "...", "gamemode" =&gt; "..."]</span>
+
+    <span class="pl-c">// Todos los permisos resueltos</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>all</span> = <span class="pl-s1"><span class="pl-c1">$</span>session</span>-&gt;<span class="pl-en">getResolvedPermissions</span>(); <span class="pl-c">// [permission =&gt; bool]</span>
+}</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Gestión de Rangos (vía SessionManager)</h3><a id="user-content-gestión-de-rangos-vía-sessionmanager" class="anchor" aria-label="Permalink: Gestión de Rangos (vía SessionManager)" href="#gestión-de-rangos-vía-sessionmanager"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// Asignar rango — elimina todos los rangos anteriores excepto el default</span>
+<span class="pl-s1"><span class="pl-c1">$</span>sessionManager</span>-&gt;<span class="pl-en">setGroup</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s">"<span class="pl-s">vip</span>"</span>);
+
+<span class="pl-c">// Asignar temporal</span>
+<span class="pl-s1"><span class="pl-c1">$</span>expiresAt</span> = <span class="pl-en">time</span>() + <span class="pl-c1">7</span> * <span class="pl-c1">86400</span>; <span class="pl-c">// 7 días</span>
+<span class="pl-s1"><span class="pl-c1">$</span>sessionManager</span>-&gt;<span class="pl-en">setGroup</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s">"<span class="pl-s">vip</span>"</span>, <span class="pl-s1"><span class="pl-c1">$</span>expiresAt</span>);
+
+<span class="pl-c">// Agregar rango sin reemplazar otros</span>
+<span class="pl-s1"><span class="pl-c1">$</span>sessionManager</span>-&gt;<span class="pl-en">addGroup</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s">"<span class="pl-s">event-bonus</span>"</span>, <span class="pl-s1"><span class="pl-c1">$</span>expiresAt</span>);
+
+<span class="pl-c">// Quitar rango (si el jugador se queda sin rangos, se asigna el grupo default)</span>
+<span class="pl-s1"><span class="pl-c1">$</span>sessionManager</span>-&gt;<span class="pl-en">removeGroup</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s">"<span class="pl-s">event-bonus</span>"</span>);</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Gestión de Permisos Personales</h3><a id="user-content-gestión-de-permisos-personales" class="anchor" aria-label="Permalink: Gestión de Permisos Personales" href="#gestión-de-permisos-personales"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">appgallery</span>\<span class="pl-v">uperms</span>\<span class="pl-v">permission</span>\<span class="pl-v">node</span>\<span class="pl-smi">Node</span>;
+
+<span class="pl-c">// Permiso permanente</span>
+<span class="pl-s1"><span class="pl-c1">$</span>node</span> = <span class="pl-k">new</span> <span class="pl-v">Node</span>(permission: <span class="pl-s">"<span class="pl-s">essentials.fly</span>"</span>, state: <span class="pl-c1">true</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>sessionManager</span>-&gt;<span class="pl-en">addNode</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s1"><span class="pl-c1">$</span>node</span>);
+
+<span class="pl-c">// Permiso temporal con contexto</span>
+<span class="pl-s1"><span class="pl-c1">$</span>node</span> = <span class="pl-k">new</span> <span class="pl-v">Node</span>(
+    permission: <span class="pl-s">"<span class="pl-s">mycommand.use</span>"</span>,
+    state: <span class="pl-c1">true</span>,
+    expiresAt: <span class="pl-en">time</span>() + <span class="pl-c1">86400</span>, <span class="pl-c">// 1 día</span>
+    context: [<span class="pl-s">"<span class="pl-s">world</span>"</span> =&gt; <span class="pl-s">"<span class="pl-s">spawn</span>"</span>],
+);
+<span class="pl-s1"><span class="pl-c1">$</span>sessionManager</span>-&gt;<span class="pl-en">addNode</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s1"><span class="pl-c1">$</span>node</span>);
+
+<span class="pl-c">// Quitar override personal</span>
+<span class="pl-s1"><span class="pl-c1">$</span>sessionManager</span>-&gt;<span class="pl-en">removeNode</span>(<span class="pl-s1"><span class="pl-c1">$</span>player</span>, <span class="pl-s">"<span class="pl-s">essentials.fly</span>"</span>);</pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Consultar Grupos</h3><a id="user-content-consultar-grupos" class="anchor" aria-label="Permalink: Consultar Grupos" href="#consultar-grupos"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>group</span> = <span class="pl-s1"><span class="pl-c1">$</span>groupManager</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">"<span class="pl-s">youtuber</span>"</span>); <span class="pl-c">// Group|null</span>
+
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>group</span> !== <span class="pl-c1">null</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>group</span>-&gt;<span class="pl-en">getId</span>();          <span class="pl-c">// "youtuber"</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>group</span>-&gt;<span class="pl-en">getDisplayName</span>(); <span class="pl-c">// "§c§lYouTuber"</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>group</span>-&gt;<span class="pl-en">getWeight</span>();      <span class="pl-c">// 65</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>group</span>-&gt;<span class="pl-en">getParent</span>();      <span class="pl-c">// "vip" | null</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>group</span>-&gt;<span class="pl-en">getPrefix</span>();      <span class="pl-c">// "§7[§c§lYT§7] §f"</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>group</span>-&gt;<span class="pl-en">getSuffix</span>();      <span class="pl-c">// " §c♦"</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>group</span>-&gt;<span class="pl-en">getMetaValue</span>(<span class="pl-s">"<span class="pl-s">max-homes</span>"</span>); <span class="pl-c">// string|null</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>group</span>-&gt;<span class="pl-en">getNodes</span>();       <span class="pl-c">// Node[]</span>
+}
+
+<span class="pl-c">// Grupo por defecto</span>
+<span class="pl-s1"><span class="pl-c1">$</span>default</span> = <span class="pl-s1"><span class="pl-c1">$</span>groupManager</span>-&gt;<span class="pl-en">getDefault</span>(); <span class="pl-c">// siempre existe</span></pre></div>
+<div class="markdown-heading"><h3 class="heading-element">Eventos de Expiración</h3><a id="user-content-eventos-de-expiración" class="anchor" aria-label="Permalink: Eventos de Expiración" href="#eventos-de-expiración"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Clase</th>
+<th>Cuándo se dispara</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>appgallery\uperms\event\GroupExpireEvent</code></td>
+<td>Un rango temporal de un jugador expira</td>
+</tr>
+<tr>
+<td><code>appgallery\uperms\event\PermissionExpireEvent</code></td>
+<td>Un nodo personal temporal de un jugador expira</td>
+</tr>
+<tr>
+<td><code>appgallery\uperms\event\GroupPermExpireEvent</code></td>
+<td>Un nodo temporal de un grupo expira</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">appgallery</span>\<span class="pl-v">uperms</span>\<span class="pl-v">event</span>\<span class="pl-smi">GroupExpireEvent</span>;
+<span class="pl-k">use</span> <span class="pl-v">appgallery</span>\<span class="pl-v">uperms</span>\<span class="pl-v">event</span>\<span class="pl-smi">PermissionExpireEvent</span>;
+<span class="pl-k">use</span> <span class="pl-v">appgallery</span>\<span class="pl-v">uperms</span>\<span class="pl-v">event</span>\<span class="pl-smi">GroupPermExpireEvent</span>;
+<span class="pl-k">use</span> <span class="pl-v">pocketmine</span>\<span class="pl-v">event</span>\<span class="pl-smi">Listener</span>;
+
+<span class="pl-k">class</span> MyListener <span class="pl-k">implements</span> Listener {
+
+    <span class="pl-c">// Cuando expira el rango de un jugador</span>
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onGroupExpire</span>(<span class="pl-smi"><span class="pl-smi">GroupExpireEvent</span></span> <span class="pl-s1"><span class="pl-c1">$</span>event</span>): <span class="pl-smi">void</span> {
+        <span class="pl-s1"><span class="pl-c1">$</span>player</span>  = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getPlayer</span>();
+        <span class="pl-s1"><span class="pl-c1">$</span>groupId</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getGroupId</span>();
+        <span class="pl-s1"><span class="pl-c1">$</span>player</span>-&gt;<span class="pl-en">sendMessage</span>(<span class="pl-s">"<span class="pl-s">§cTu rango </span><span class="pl-s1"><span class="pl-c1">$</span>groupId</span><span class="pl-s"> ha expirado.</span>"</span>);
+    }
+
+    <span class="pl-c">// Cuando expira un permiso personal de un jugador</span>
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onPermExpire</span>(<span class="pl-smi"><span class="pl-smi">PermissionExpireEvent</span></span> <span class="pl-s1"><span class="pl-c1">$</span>event</span>): <span class="pl-smi">void</span> {
+        <span class="pl-s1"><span class="pl-c1">$</span>player</span>     = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getPlayer</span>();
+        <span class="pl-s1"><span class="pl-c1">$</span>node</span>       = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getNode</span>();      <span class="pl-c">// Node</span>
+        <span class="pl-s1"><span class="pl-c1">$</span>permission</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getPermission</span>(); <span class="pl-c">// string</span>
+    }
+
+    <span class="pl-c">// Cuando expira un nodo temporal en un grupo</span>
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">onGroupPermExpire</span>(<span class="pl-smi"><span class="pl-smi">GroupPermExpireEvent</span></span> <span class="pl-s1"><span class="pl-c1">$</span>event</span>): <span class="pl-smi">void</span> {
+        <span class="pl-s1"><span class="pl-c1">$</span>group</span>      = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getGroup</span>();      <span class="pl-c">// Group</span>
+        <span class="pl-s1"><span class="pl-c1">$</span>node</span>       = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getNode</span>();       <span class="pl-c">// Node</span>
+        <span class="pl-s1"><span class="pl-c1">$</span>permission</span> = <span class="pl-s1"><span class="pl-c1">$</span>event</span>-&gt;<span class="pl-en">getPermission</span>(); <span class="pl-c">// string</span>
+    }
+}</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">Permisos de Plugin</h2><a id="user-content-permisos-de-plugin" class="anchor" aria-label="Permalink: Permisos de Plugin" href="#permisos-de-plugin"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Todos los permisos tienen <code>default: op</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Nodo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ultimateperms.admin</code></td>
+<td>Acceso total al plugin</td>
+</tr>
+<tr>
+<td><code>ultimateperms.notify.expire</code></td>
+<td>Recibir notificaciones cuando expiran permisos o rangos</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command</code></td>
+<td>Acceso a la ayuda general</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.check</code></td>
+<td>Verificar permisos de jugadores</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.inspect</code></td>
+<td>Inspeccionar permisos de plugins</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.reload</code></td>
+<td>Recargar configuración</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.simulate</code></td>
+<td>Simular permisos con contexto</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.ui</code></td>
+<td>Interfaz gráfica (experimental)</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.group</code></td>
+<td>Comandos de gestión de grupos</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.group.create</code></td>
+<td>Crear grupos</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.group.delete</code></td>
+<td>Eliminar grupos</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.group.info</code></td>
+<td>Ver información de grupos</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.group.edit</code></td>
+<td>Editar grupos</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.user</code></td>
+<td>Comandos de gestión de usuarios</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.user.audit</code></td>
+<td>Ver auditoría de permisos</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.user.info</code></td>
+<td>Ver información de jugadores</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.user.perm</code></td>
+<td>Gestionar overrides personales</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.user.meta</code></td>
+<td>Gestionar metadata de jugadores</td>
+</tr>
+<tr>
+<td><code>ultimateperms.command.user.group</code></td>
+<td>Asignar/quitar rangos a jugadores</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>Desarrollado por AppGallery</strong></p>
