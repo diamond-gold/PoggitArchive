@@ -1,9 +1,9 @@
 # Pillars
 ## Pillars of Fortune [NEW]
 ```properties
-Version: 2.0.0
+Version: 2.0.1
     API: 5.0.0
-    Updated: 09-07-2026 14:51:41 UTC
+    Updated: 11-07-2026 01:22:28 UTC
 Repo: https://github.com/TheWindows/Pillars-Of-Fortune
 License: MIT
 Categories: Minigame,API plugins,World Editing and Management,Fun,Teleportation

@@ -1,0 +1,153 @@
+<div class="markdown-heading"><h2 class="heading-element">General</h2><a id="user-content-general" class="anchor" aria-label="Permalink: General" href="#general"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Pillars of Fortune</strong> is an exciting Minecraft Bedrock minigame plugin for PocketMine-MP. Players fight to be the last one standing across dynamically created and reset game worlds. Developed by <strong>TheWindows</strong> and <strong>Doma</strong> (v2.0.0).</p>
+<div class="markdown-heading"><h3 class="heading-element">Quick Start Guide (for admins)</h3><a id="user-content-quick-start-guide-for-admins" class="anchor" aria-label="Permalink: Quick Start Guide (for admins)" href="#quick-start-guide-for-admins"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Use <code>/pillars admin</code> → <strong>Create Game</strong>, enter the world name and settings.</li>
+<li>Use the <strong>Spawn Wand</strong> (Blaze Rod) to set spawn points by right‑clicking blocks.</li>
+<li>Create NPCs with <code>/pillars npc create</code> so players can open the game menu by hitting them.</li>
+<li>(Optional) Customize scoreboard lines and database (JSON/MySQL) in <code>config.yml</code>.</li>
+<li>Players join with <code>/pillars join [map]</code> or by using NPCs.</li>
+</ol>
+<blockquote>
+<p>The lobby world name defaults to <code>world</code> – change it in <code>config.yml</code> if needed.</p>
+</blockquote>
+<div class="markdown-heading"><h2 class="heading-element">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Interactive UI</strong> – Powered by FormAPI: join, spectate, view stats, and access the market.</li>
+<li>
+<strong>Scoreboard Integration</strong> – Fully customizable lines with placeholders for lobby, waiting, game, and spectator states.</li>
+<li>
+<strong>Boss Bar Support</strong> – Shows item drop countdowns during games (uses <code>apibossbar</code> virion).</li>
+<li>
+<strong>NPC Management</strong> – Admins can create, list, and remove NPCs that open the game menu when hit.</li>
+<li>
+<strong>Spectator System</strong> – Spectate active games from the lobby or after dying, with a compass to teleport to alive players.</li>
+<li>
+<strong>Flexible Commands</strong> – Short aliases (<code>/p</code>) for quick access.</li>
+<li>
+<strong>JSON &amp; MySQL Support</strong> – Choose your database provider in <code>config.yml</code> (JSON fallback if MySQL fails).</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Commands</h2><a id="user-content-commands" class="anchor" aria-label="Permalink: Commands" href="#commands"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>Player Commands</strong> (permission: <code>pillars.join</code>, default: <code>true</code>)</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/pillars</code></td>
+<td>Open the game menu</td>
+</tr>
+<tr>
+<td><code>/pillars join [map]</code></td>
+<td>Join a specific game or open the game menu</td>
+</tr>
+<tr>
+<td><code>/pillars leave</code></td>
+<td>Leave the current game</td>
+</tr>
+<tr>
+<td><code>/pillars list</code></td>
+<td>List all active games with player counts and status</td>
+</tr>
+<tr>
+<td><code>/pillars stats</code></td>
+<td>View your personal stats</td>
+</tr>
+<tr>
+<td><code>/pillars info</code></td>
+<td>Show plugin version, authors, and active game count</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Admin Commands</strong> (permission: <code>pillars.admin</code>, default: <code>op</code>)</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/pillars admin</code></td>
+<td>Open the admin settings menu</td>
+</tr>
+<tr>
+<td><code>/pillars npc create</code></td>
+<td>Spawn an NPC at your location</td>
+</tr>
+<tr>
+<td><code>/pillars npc list</code></td>
+<td>List all NPCs with positions</td>
+</tr>
+<tr>
+<td><code>/pillars npc remove &lt;id&gt;</code></td>
+<td>Remove an NPC by index</td>
+</tr>
+<tr>
+<td><code>/pillars npc removeall</code></td>
+<td>Remove all NPCs</td>
+</tr>
+<tr>
+<td><code>/pillars reset &lt;map|all&gt;</code></td>
+<td>Reset a map or all maps to their original state</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Alias:</strong> <code>/p</code> – e.g. <code>/p j</code> for join, <code>/p l</code> for leave.</p>
+</blockquote>
+<div class="markdown-heading"><h2 class="heading-element">Permissions</h2><a id="user-content-permissions" class="anchor" aria-label="Permalink: Permissions" href="#permissions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pillars.join</code></td>
+<td>Access to basic player commands</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>pillars.admin</code></td>
+<td>Access to admin commands</td>
+<td><code>op</code></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">Map Setup</h2><a id="user-content-map-setup" class="anchor" aria-label="Permalink: Map Setup" href="#map-setup"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Build your map and place it in the server <code>worlds/</code> folder.</li>
+<li>Run <code>/pillars admin</code> → <strong>Create Game</strong>, enter the world name and settings.</li>
+<li>Use the <strong>Spawn Wand</strong> (Blaze Rod) to place spawn points by right‑clicking blocks.</li>
+<li>The map is automatically saved as a template and restored after every game.</li>
+</ol>
+<div class="markdown-heading"><h2 class="heading-element">Scoreboard Placeholders</h2><a id="user-content-scoreboard-placeholders" class="anchor" aria-label="Permalink: Scoreboard Placeholders" href="#scoreboard-placeholders"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Configure scoreboard lines in <code>config.yml</code> using these placeholders:</p>
+<p><code>{player_name}</code> <code>{player_coins}</code> <code>{player_wins}</code> <code>{player_kills}</code> <code>{player_deaths}</code> <code>{player_kdr}</code> <code>{online_players}</code> <code>{game_id}</code> <code>{game_players}</code> <code>{game_max_players}</code> <code>{game_min_players}</code> <code>{game_time_left}</code> <code>{date}</code> <code>{time}</code></p>
+<div class="markdown-heading"><h2 class="heading-element">Support &amp; Contributing</h2><a id="user-content-support--contributing" class="anchor" aria-label="Permalink: Support &amp; Contributing" href="#support--contributing"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>Report bugs / suggest features</strong>: <a href="https://github.com/TheWindows/Pillars-of-Fortune/issues">GitHub Issues</a>
+</li>
+<li>
+<strong>Pull requests</strong>: Fork the repository and submit PRs for fixes, features, or documentation.</li>
+<li>
+<strong>Contact</strong>:
+<ul>
+<li>TheWindows – Discord: <code>TheWindowsJava</code>, GitHub: <a href="https://github.com/TheWindows">TheWindows</a>
+</li>
+<li>Doma – Discord: <code>am2ma</code>, GitHub: <a href="https://github.com/Doma-0609">Doma-0609</a>, Telegram: <a href="https://t.me/xIsGod" rel="nofollow">xIsGod</a>
+</li>
+</ul>
+</li>
+</ul>
