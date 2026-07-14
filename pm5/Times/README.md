@@ -6,7 +6,7 @@
 Version: 2.0.1
     API: 5.0.0
     Updated: 11-01-2025 23:00:28 UTC
-Repo: https://github.com/pixelwhiz/Times
+Repo: https://github.com/mdafftfa/Times
 License: GPL-3.0
 Categories: General
 Keywords: pocketmine,times

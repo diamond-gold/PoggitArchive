@@ -6,7 +6,7 @@
 Version: 1.1.1
     API: 5.0.0
     Updated: 30-10-2024 12:37:46 UTC
-Repo: https://github.com/pixelwhiz/ParachutePlus
+Repo: https://github.com/mdafftfa/ParachutePlus
 License: GPL-3.0
 Categories: Fun,Vanilla Mechanics,Mechanics
 Keywords: parachute,parachuteplus,pocketmine
