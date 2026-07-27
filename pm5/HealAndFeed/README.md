@@ -6,7 +6,7 @@
 Version: 3.4.0
     API: 5.0.0
     Updated: 15-06-2023 06:54:56 UTC
-Repo: https://github.com/Kylan1940/HealAndFeed
+Repo: https://github.com/Kylan1940/PMMP-HealAndFeed
 License: Apache-2.0
 Categories: General,Admin Tools
 Keywords: Feed,Heal,UI
